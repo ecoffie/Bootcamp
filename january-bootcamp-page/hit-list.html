@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>January 2026 Hit List - 34 Low-Competition Contracts Based on FY2026 NDAA</title>
+    <style>
+        @page {
+            size: letter;
+            margin: 0.5in;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 30px;
+            background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
+            color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .header .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .header .badge {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 20px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .intro {
+            background: #f8fafc;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            border-left: 5px solid #7c3aed;
+        }
+
+        .intro h2 {
+            color: #1e3a8a;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+
+        .intro p {
+            font-size: 1.1rem;
+            color: #4a5568;
+            margin-bottom: 10px;
+        }
+
+        .ndaa-callout {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+        }
+
+        .ndaa-callout h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .ndaa-callout p {
+            opacity: 0.95;
+        }
+
+        .cta-banner {
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #c084fc 100%);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 40px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(124, 58, 237, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(180deg); }
+        }
+
+        .cta-banner h3 {
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-banner p {
+            color: rgba(255,255,255,0.95);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-banner .date-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 20px;
+            color: white;
+            font-weight: 700;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-pricing {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-price-box {
+            background: rgba(255,255,255,0.15);
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 12px;
+            padding: 15px 25px;
+            color: white;
+        }
+
+        .cta-price-box .price {
+            font-size: 1.8rem;
+            font-weight: 800;
+        }
+
+        .cta-price-box .period {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .cta-price-box.featured {
+            background: rgba(255,255,255,0.25);
+            border-color: white;
+            transform: scale(1.05);
+        }
+
+        .cta-price-box .save-badge {
+            background: #10b981;
+            color: white;
+            font-size: 0.75rem;
+            padding: 3px 10px;
+            border-radius: 10px;
+            margin-top: 5px;
+            display: inline-block;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #7c3aed;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .hit-list {
+            display: grid;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .opportunity-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .opportunity-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 5px;
+            background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
+        }
+
+        .opportunity-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-color: #7c3aed;
+        }
+
+        .opportunity-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .opportunity-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .opportunity-value {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #059669;
+            white-space: nowrap;
+        }
+
+        .opportunity-meta {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            color: #4a5568;
+        }
+
+        .meta-item strong {
+            color: #1e3a8a;
+            font-weight: 600;
+        }
+
+        .badge-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        .badge-low-competition {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .badge-set-aside {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .badge-urgent {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .badge-naics {
+            background: #e0e7ff;
+            color: #3730a3;
+        }
+
+        .badge-ndaa {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .opportunity-details {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .opportunity-details p {
+            margin-bottom: 10px;
+            color: #4a5568;
+            line-height: 1.7;
+        }
+
+        .opportunity-details ul {
+            margin-left: 20px;
+            margin-top: 10px;
+            color: #4a5568;
+        }
+
+        .opportunity-details li {
+            margin-bottom: 8px;
+        }
+
+        .key-point {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .key-point strong {
+            color: #92400e;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: #f8fafc;
+            border-radius: 12px;
+            margin-top: 40px;
+        }
+
+        .footer p {
+            color: #4a5568;
+            font-size: 0.95rem;
+        }
+
+        .footer a {
+            color: #7c3aed;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .container { box-shadow: none; max-width: 100%; }
+            .opportunity-card, .stat-card, .agency-card,
+            .cta-banner, table, tr, h2, h3 {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+            h2, h3, h4 { page-break-after: avoid; }
+            thead { display: table-header-group; }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .opportunity-header {
+                flex-direction: column;
+            }
+
+            .opportunity-value {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>January 2026 Hit List</h1>
+            <p class="subtitle">34 Low-Competition Contracts Based on FY2026 NDAA & Unobligated Balances</p>
+            <span class="badge">$82.8B+ Unobligated | FY2026 NDAA (S.2296) Just Signed</span>
+        </div>
+
+        <div class="ndaa-callout">
+            <h3>FY2026 NDAA Signed December 18, 2025</h3>
+            <p><strong>$848 Billion</strong> authorized for DoD. Q1 obligation push is ON. Agencies must spend fast to meet goals. These 34 opportunities are based on NDAA-funded programs with the highest unobligated balances.</p>
+        </div>
+
+        <div class="intro">
+            <h2>Why January 2026 Is Critical</h2>
+            <p><strong>FY2026 NDAA just signed.</strong> Agencies now have full-year authorization and are racing to obligate Q1 funds before Q2 starts.</p>
+            <p><strong>$82.8B+ in unobligated balances</strong> across Top 10 defense agencies. Primes need small business subs to meet 23% goals.</p>
+            <p><strong>CMMC 2.0 deadline approaching.</strong> Cyber and compliance contracts are HOT right now. Get in before the rush.</p>
+        </div>
+
+        <div class="cta-banner">
+            <div class="date-badge">LIVE BOOTCAMP: January 31, 2026</div>
+            <h3>Want Expert Guidance on Winning These Contracts?</h3>
+            <p>Join the January 2026 GovCon Giants Bootcamp - Live training on targeting these opportunities and submitting winning proposals</p>
+            <div class="cta-pricing">
+                <div class="cta-price-box">
+                    <div class="price">$99</div>
+                </div>
+                <div class="cta-price-box featured">
+                    <div class="price">$799</div>
+                    <div class="period">per year</div>
+                    <div class="save-badge">SAVE $389</div>
+                </div>
+            </div>
+            <a href="https://federalhelpcenter.com/pro" class="cta-button">Join Federal Help Center Pro</a>
+        </div>
+
+        <div class="hit-list">
+            <!-- Opportunity 1 -->
+            <div class="opportunity-card">
+                <div class="opportunity-header">
+                    <div class="opportunity-title">DoD Cyber Command - Zero Trust Implementation Phase 2</div>
+                    <div class="opportunity-value">$50M-$150M</div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Agency:</strong> Cyber Command</div>
+                    <div class="meta-item"><strong>NAICS:</strong> 541512</div>
+                    <div class="meta-item"><strong>Set-Aside:</strong> Small Business</div>
+                    <div class="meta-item"><strong>Deadline:</strong> Jan 24, 2026</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-low-competition">Low Competition</span>
+                    <span class="badge-tag badge-urgent">Q1 Priority</span>
+                    <span class="badge-tag badge-set-aside">SB Set-Aside</span>
+                    <span class="badge-tag badge-ndaa">NDAA Funded</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>What:</strong> Zero Trust architecture implementation across DoD networks. Multi-year contract with $3.5B unobligated balance in Cyber Command. NDAA mandates Zero Trust by 2027.</p>
+                    <p><strong>Why Low Competition:</strong> Requires CMMC Level 2+, FedRAMP authorization, and specific Zero Trust certifications. Limited pool of qualified small businesses.</p>
+                    <p><strong>Key Primes Seeking Subs:</strong> Booz Allen Hamilton, Leidos, CACI (wayne.pizer@caci.com), SAIC</p>
+                    <p><strong>Action:</strong> Contact CACI SBLO Wayne Pizer immediately - they're building teams for Q1 task orders.</p>
+                </div>
+            </div>
+
+            <!-- Opportunity 2 -->
+            <div class="opportunity-card">
+                <div class="opportunity-header">
+                    <div class="opportunity-title">Army - Ground Vehicle Modernization Support</div>
+                    <div class="opportunity-value">$30M-$85M</div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Agency:</strong> Army Procurement</div>
+                    <div class="meta-item"><strong>NAICS:</strong> 336992, 541330</div>
+                    <div class="meta-item"><strong>Set-Aside:</strong> 8(a) / SDVOSB</div>
+                    <div class="meta-item"><strong>Deadline:</strong> Jan 22, 2026</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-low-competition">Low Competition</span>
+                    <span class="badge-tag badge-set-aside">8(a) Set-Aside</span>
+                    <span class="badge-tag badge-ndaa">NDAA Sec. 326</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>What:</strong> Stryker/Bradley vehicle upgrades, maintenance, and logistics. Part of $10B Army unobligated. NDAA Sec. 326 prohibits closure of Army Organic Industrial Base.</p>
+                    <p><strong>Why Low Competition:</strong> 8(a) and SDVOSB set-asides. Specialized ground vehicle expertise required. Secret clearance needed.</p>
+                    <p><strong>Key Primes Seeking Subs:</strong> BAE Systems (Dawn.Dunlop@baesystems.com, 703-873-3895), General Dynamics</p>
+                    <p><strong>Action:</strong> Contact BAE Systems SBLO Dawn Dunlop - they're actively seeking subs for vehicle programs.</p>
+                </div>
+            </div>
+
+            <!-- Opportunity 3 -->
+            <div class="opportunity-card">
+                <div class="opportunity-header">
+                    <div class="opportunity-title">Navy - Submarine Industrial Base Expansion</div>
+                    <div class="opportunity-value">$40M-$120M</div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Agency:</strong> Navy Shipbuilding</div>
+                    <div class="meta-item"><strong>NAICS:</strong> 336611, 332312</div>
+                    <div class="meta-item"><strong>Set-Aside:</strong> HUBZone / WOSB</div>
+                    <div class="meta-item"><strong>Deadline:</strong> Jan 28, 2026</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-low-competition">Low Competition</span>
+                    <span class="badge-tag badge-set-aside">HUBZone Set-Aside</span>
+                    <span class="badge-tag badge-ndaa">NDAA Funded</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>What:</strong> Submarine component manufacturing, repair services, and supplier development. $8B Navy unobligated. 355-ship Navy goal in NDAA.</p>
+                    <p><strong>Why Low Competition:</strong> HUBZone and WOSB set-asides. Specialized maritime/subsea welding certs required. Limited qualified pool.</p>
+                    <p><strong>Key Primes Seeking Subs:</strong> Huntington Ingalls, General Dynamics Electric Boat, Lockheed Martin</p>
+                    <p><strong>Action:</strong> Navy is DESPERATE for submarine suppliers. Contact HII and GDEB supplier portals immediately.</p>
+                </div>
+            </div>
+
+            <!-- Opportunity 4 -->
+            <div class="opportunity-card">
+                <div class="opportunity-header">
+                    <div class="opportunity-title">Air Force - JADC2 Integration Services</div>
+                    <div class="opportunity-value">$25M-$75M</div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Agency:</strong> Air Force RDT&E</div>
+                    <div class="meta-item"><strong>NAICS:</strong> 541511, 541512</div>
+                    <div class="meta-item"><strong>Set-Aside:</strong> Small Business</div>
+                    <div class="meta-item"><strong>Deadline:</strong> Jan 25, 2026</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-low-competition">Low Competition</span>
+                    <span class="badge-tag badge-urgent">Q1 Priority</span>
+                    <span class="badge-tag badge-ndaa">NDAA Priority</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>What:</strong> Joint All-Domain Command & Control integration, data fusion, and network development. Part of $7B Air Force RDT&E unobligated.</p>
+                    <p><strong>Why Low Competition:</strong> Requires TS/SCI clearance + specialized C2 systems experience. SBIR/STTR eligible.</p>
+                    <p><strong>Key Primes Seeking Subs:</strong> Boeing (tina.t.wang@boeing.com), Lockheed Martin, Northrop Grumman</p>
+                    <p><strong>Action:</strong> Contact Boeing SBLO Tina Wang - JADC2 is top priority and they need integration partners.</p>
+                </div>
+            </div>
+
+            <!-- Opportunity 5 -->
+            <div class="opportunity-card">
+                <div class="opportunity-header">
+                    <div class="opportunity-title">DLA - Critical Munitions Supply Chain</div>
+                    <div class="opportunity-value">$20M-$60M</div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Agency:</strong> Defense Logistics Agency</div>
+                    <div class="meta-item"><strong>NAICS:</strong> 332993, 493110</div>
+                    <div class="meta-item"><strong>Set-Aside:</strong> Small Business</div>
+                    <div class="meta-item"><strong>Deadline:</strong> Jan 20, 2026</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-low-competition">Low Competition</span>
+                    <span class="badge-tag badge-urgent">Urgent Timeline</span>
+                    <span class="badge-tag badge-set-aside">SB Set-Aside</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>What:</strong> Munitions component supply, warehousing, and logistics services. $5B DLA unobligated. Ukraine support driving demand.</p>
+                    <p><strong>Why Low Competition:</strong> Specialized munitions experience required. ITAR compliance. DLA awards FAST - 45-day average.</p>
+                    <p><strong>Key Primes Seeking Subs:</strong> Multiple munitions suppliers on FedMall</p>
+                    <p><strong>Action:</strong> Register on DIBBS and FedMall TODAY. DLA posts RFQs daily. Fastest path to federal contracts.</p>
+                </div>
+            </div>
+
+            <!-- Opportunity 6 -->
+            <div class="opportunity-card">
+                <div class="opportunity-header">
+                    <div class="opportunity-title">MDA - Hypersonic Defense Testing Services</div>
+                    <div class="opportunity-value">$45M-$130M</div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Agency:</strong> Missile Defense Agency</div>
+                    <div class="meta-item"><strong>NAICS:</strong> 541330, 334511</div>
+                    <div class="meta-item"><strong>Set-Aside:</strong> Small Business</div>
+                    <div class="meta-item"><strong>Deadline:</strong> Jan 27, 2026</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-low-competition">Low Competition</span>
+                    <span class="badge-tag badge-ndaa">NDAA Priority</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>What:</strong> Hypersonic weapon defense testing, sensor calibration, and engineering support. $4B MDA unobligated. NDAA fully funds hypersonic defense.</p>
+                    <p><strong>Why Low Competition:</strong> Specialized testing facilities + TS/SCI clearance required. Very limited qualified pool.</p>
+                    <p><strong>Key Primes Seeking Subs:</strong> Raytheon (Valerie King, 508-490-2331), Lockheed Martin, Northrop Grumman</p>
+                    <p><strong>Action:</strong> Contact Raytheon SBLO Valerie King immediately - hypersonic is TOP priority for 2026.</p>
+                </div>
+            </div>
+
+            <!-- Opportunity 7 -->
+            <div class="opportunity-card">
+                <div class="opportunity-header">
+                    <div class="opportunity-title">Space Force - Commercial Space Integration</div>
+                    <div class="opportunity-value">$30M-$90M</div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Agency:</strong> Space Force</div>
+                    <div class="meta-item"><strong>NAICS:</strong> 517410, 336414</div>
+                    <div class="meta-item"><strong>Set-Aside:</strong> Small Business</div>
+                    <div class="meta-item"><strong>Deadline:</strong> Jan 29, 2026</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-low-competition">Low Competition</span>
+                    <span class="badge-tag badge-set-aside">SB Set-Aside</span>
+                    <span class="badge-tag badge-ndaa">NDAA Sec. 9083</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>What:</strong> Commercial satellite integration, ground station ops, and launch support. $2.8B Space Force unobligated. NDAA Sec. 9083 expands Space Force.</p>
+                    <p><strong>Why Low Competition:</strong> New agency actively building small business base. SpaceWERX opportunities expanding. Limited space-qualified contractors.</p>
+                    <p><strong>Key Primes Seeking Subs:</strong> Lockheed Martin, Northrop Grumman, Boeing, SpaceX</p>
+                    <p><strong>Action:</strong> Check SpaceWERX portal weekly - they're posting new opportunities constantly.</p>
+                </div>
+            </div>
+
+            <!-- Opportunity 8 -->
+            <div class="opportunity-card">
+                <div class="opportunity-header">
+                    <div class="opportunity-title">DOE NNSA - Nuclear Modernization Support</div>
+                    <div class="opportunity-value">$35M-$100M</div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Agency:</strong> DOE Atomic Energy Defense</div>
+                    <div class="meta-item"><strong>NAICS:</strong> 562910, 541330</div>
+                    <div class="meta-item"><strong>Set-Aside:</strong> Small Business</div>
+                    <div class="meta-item"><strong>Deadline:</strong> Jan 26, 2026</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-low-competition">Low Competition</span>
+                    <span class="badge-tag badge-set-aside">SB Set-Aside</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>What:</strong> Nuclear weapons modernization support, facility upgrades, and environmental services. $2.5B DOE unobligated.</p>
+                    <p><strong>Why Low Competition:</strong> Q clearance required. Specialized nuclear facility experience. Environmental certifications.</p>
+                    <p><strong>Key Primes Seeking Subs:</strong> Fluor (Kenyon.taylor@fluor.com), Amentum (SBLO@Amentum.com), Jacobs (Willie.franklin@jacobs.com)</p>
+                    <p><strong>Action:</strong> Contact all three prime SBLOs - NNSA sites are ramping up for modernization work.</p>
+                </div>
+            </div>
+
+            <!-- Opportunity 9 -->
+            <div class="opportunity-card">
+                <div class="opportunity-header">
+                    <div class="opportunity-title">Defense Health - MHS GENESIS Implementation</div>
+                    <div class="opportunity-value">$20M-$55M</div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Agency:</strong> Defense Health Agency</div>
+                    <div class="meta-item"><strong>NAICS:</strong> 541512, 621999</div>
+                    <div class="meta-item"><strong>Set-Aside:</strong> WOSB / SDVOSB</div>
+                    <div class="meta-item"><strong>Deadline:</strong> Jan 23, 2026</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-low-competition">Low Competition</span>
+                    <span class="badge-tag badge-set-aside">WOSB Set-Aside</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>What:</strong> MHS GENESIS EHR rollout, telehealth integration, and medical IT services. $2B Defense Health unobligated.</p>
+                    <p><strong>Why Low Competition:</strong> WOSB and SDVOSB set-asides. Healthcare IT specialization + HIPAA compliance required.</p>
+                    <p><strong>Key Primes Seeking Subs:</strong> Leidos (sbcomp@leidos.com), General Dynamics, Booz Allen Hamilton</p>
+                    <p><strong>Action:</strong> Healthcare IT is BOOMING - contact Leidos SBLO immediately for MHS GENESIS work.</p>
+                </div>
+            </div>
+
+            <!-- Opportunity 10 -->
+            <div class="opportunity-card">
+                <div class="opportunity-header">
+                    <div class="opportunity-title">Cyber Command - CMMC Assessment & Support</div>
+                    <div class="opportunity-value">$15M-$45M</div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Agency:</strong> DoD-Wide</div>
+                    <div class="meta-item"><strong>NAICS:</strong> 541512, 541519</div>
+                    <div class="meta-item"><strong>Set-Aside:</strong> Small Business</div>
+                    <div class="meta-item"><strong>Deadline:</strong> Jan 21, 2026</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-low-competition">Low Competition</span>
+                    <span class="badge-tag badge-urgent">CMMC Deadline</span>
+                    <span class="badge-tag badge-set-aside">SB Set-Aside</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>What:</strong> CMMC 2.0 assessment preparation, gap analysis, and remediation services. DoD contractors MUST comply.</p>
+                    <p><strong>Why Low Competition:</strong> Certified CMMC assessors in short supply. C3PAO backlog creating demand. Very hot market.</p>
+                    <p><strong>Key Primes Seeking Subs:</strong> All major defense primes need CMMC support for their supply chains</p>
+                    <p><strong>Action:</strong> If you're CMMC-certified, contact EVERY prime contractor - they all need help with DIB compliance.</p>
+                </div>
+            </div>
+
+            <!-- Opportunity 11 -->
+            <div class="opportunity-card">
+                <div class="opportunity-header">
+                    <div class="opportunity-title">Army - Digital Transformation Services</div>
+                    <div class="opportunity-value">$25M-$70M</div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Agency:</strong> Army</div>
+                    <div class="meta-item"><strong>NAICS:</strong> 541512, 518210</div>
+                    <div class="meta-item"><strong>Set-Aside:</strong> 8(a)</div>
+                    <div class="meta-item"><strong>Deadline:</strong> Jan 24, 2026</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-low-competition">Low Competition</span>
+                    <span class="badge-tag badge-set-aside">8(a) Set-Aside</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>What:</strong> Cloud migration, enterprise IT modernization, and data analytics for Army commands. Part of $10B Army unobligated.</p>
+                    <p><strong>Why Low Competition:</strong> 8(a) set-aside significantly reduces competition. FedRAMP + Army IL5 authorization required.</p>
+                    <p><strong>Key Primes Seeking Subs:</strong> GDIT, Booz Allen, Leidos, Accenture Federal</p>
+                    <p><strong>Action:</strong> Army digital transformation is accelerating - contact IT primes for subcontracting.</p>
+                </div>
+            </div>
+
+            <!-- Opportunity 12 -->
+            <div class="opportunity-card">
+                <div class="opportunity-header">
+                    <div class="opportunity-title">Navy - Shipyard Modernization Support</div>
+                    <div class="opportunity-value">$35M-$95M</div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Agency:</strong> Navy</div>
+                    <div class="meta-item"><strong>NAICS:</strong> 236220, 541330</div>
+                    <div class="meta-item"><strong>Set-Aside:</strong> Small Business</div>
+                    <div class="meta-item"><strong>Deadline:</strong> Jan 27, 2026</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-low-competition">Low Competition</span>
+                    <span class="badge-tag badge-ndaa">NDAA Funded</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>What:</strong> SIOP (Shipyard Infrastructure Optimization Program) construction, engineering, and project management. $8B Navy unobligated.</p>
+                    <p><strong>Why Low Competition:</strong> Requires naval shipyard experience. Location-based (Norfolk, San Diego, Pearl Harbor, Puget Sound).</p>
+                    <p><strong>Key Primes Seeking Subs:</strong> Huntington Ingalls, Turner Construction, multiple A/E firms</p>
+                    <p><strong>Action:</strong> Navy shipyards are getting BILLIONS - contact NAVSEA for current opportunities.</p>
+                </div>
+            </div>
+
+            <!-- Opportunity 13 -->
+            <div class="opportunity-card">
+                <div class="opportunity-header">
+                    <div class="opportunity-title">Air Force - Next-Gen Fighter Support</div>
+                    <div class="opportunity-value">$40M-$110M</div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Agency:</strong> Air Force</div>
+                    <div class="meta-item"><strong>NAICS:</strong> 336411, 541330</div>
+                    <div class="meta-item"><strong>Set-Aside:</strong> Small Business</div>
+                    <div class="meta-item"><strong>Deadline:</strong> Jan 28, 2026</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-low-competition">Low Competition</span>
+                    <span class="badge-tag badge-set-aside">SB Set-Aside</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>What:</strong> NGAD program engineering support, testing, and manufacturing analysis. Part of $7B Air Force RDT&E unobligated.</p>
+                    <p><strong>Why Low Competition:</strong> TS/SCI + SAP access required. Advanced aerospace engineering experience. Very limited pool.</p>
+                    <p><strong>Key Primes Seeking Subs:</strong> Lockheed Martin, Northrop Grumman, Boeing</p>
+                    <p><strong>Action:</strong> If you have aerospace TS/SCI, contact all three primes - NGAD needs specialized subs.</p>
+                </div>
+            </div>
+
+            <!-- Opportunity 14 -->
+            <div class="opportunity-card">
+                <div class="opportunity-header">
+                    <div class="opportunity-title">DLA - Medical Equipment & Supplies</div>
+                    <div class="opportunity-value">$18M-$50M</div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Agency:</strong> Defense Logistics Agency</div>
+                    <div class="meta-item"><strong>NAICS:</strong> 339112, 423450</div>
+                    <div class="meta-item"><strong>Set-Aside:</strong> Small Business</div>
+                    <div class="meta-item"><strong>Deadline:</strong> Jan 19, 2026</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-low-competition">Low Competition</span>
+                    <span class="badge-tag badge-urgent">Urgent Timeline</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>What:</strong> Medical equipment, surgical supplies, and pharmaceuticals for military treatment facilities. $5B DLA unobligated.</p>
+                    <p><strong>Why Low Competition:</strong> FDA-approved products required. Medical distribution certifications. Established supplier relationships favored.</p>
+                    <p><strong>Key Primes Seeking Subs:</strong> McKesson, Cardinal Health, Medline</p>
+                    <p><strong>Action:</strong> DLA Troop Support posts medical opportunities daily - check their portal NOW.</p>
+                </div>
+            </div>
+
+            <!-- Opportunity 15 -->
+            <div class="opportunity-card">
+                <div class="opportunity-header">
+                    <div class="opportunity-title">Cyber Command - Offensive Cyber Tools Development</div>
+                    <div class="opportunity-value">$30M-$85M</div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Agency:</strong> Cyber Command</div>
+                    <div class="meta-item"><strong>NAICS:</strong> 541511, 541512</div>
+                    <div class="meta-item"><strong>Set-Aside:</strong> Small Business</div>
+                    <div class="meta-item"><strong>Deadline:</strong> Jan 25, 2026</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-low-competition">Low Competition</span>
+                    <span class="badge-tag badge-ndaa">NDAA Funded</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>What:</strong> Cyber tool development, vulnerability research, and offensive operations support. $3.5B Cyber Command unobligated.</p>
+                    <p><strong>Why Low Competition:</strong> TS/SCI + poly required. Specialized offensive cyber skills. Very limited cleared workforce.</p>
+                    <p><strong>Key Primes Seeking Subs:</strong> Booz Allen, ManTech, CACI, NSA-cleared boutique firms</p>
+                    <p><strong>Action:</strong> If you have cleared cyber talent, you are in HIGH demand. Contact all major cyber primes.</p>
+                </div>
+            </div>
+
+            <!-- Opportunity 16 -->
+            <div class="opportunity-card">
+                <div class="opportunity-header">
+                    <div class="opportunity-title">Army - Autonomous Systems Testing</div>
+                    <div class="opportunity-value">$22M-$65M</div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Agency:</strong> Army</div>
+                    <div class="meta-item"><strong>NAICS:</strong> 541715, 541330</div>
+                    <div class="meta-item"><strong>Set-Aside:</strong> Small Business</div>
+                    <div class="meta-item"><strong>Deadline:</strong> Jan 23, 2026</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-low-competition">Low Competition</span>
+                    <span class="badge-tag badge-set-aside">SB Set-Aside</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>What:</strong> UGV/UAV testing, autonomy software development, and robotics integration. Part of $10B Army unobligated.</p>
+                    <p><strong>Why Low Competition:</strong> Specialized autonomy and robotics experience. Test range access required. Limited qualified pool.</p>
+                    <p><strong>Key Primes Seeking Subs:</strong> General Dynamics, BAE Systems, L3Harris</p>
+                    <p><strong>Action:</strong> Army Futures Command is pushing autonomous systems hard - contact AFC contracting.</p>
+                </div>
+            </div>
+
+            <!-- Opportunity 17 -->
+            <div class="opportunity-card">
+                <div class="opportunity-header">
+                    <div class="opportunity-title">Navy - Undersea Warfare Systems</div>
+                    <div class="opportunity-value">$35M-$100M</div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Agency:</strong> Navy</div>
+                    <div class="meta-item"><strong>NAICS:</strong> 334511, 336611</div>
+                    <div class="meta-item"><strong>Set-Aside:</strong> Small Business</div>
+                    <div class="meta-item"><strong>Deadline:</strong> Jan 26, 2026</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-low-competition">Low Competition</span>
+                    <span class="badge-tag badge-ndaa">NDAA Priority</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>What:</strong> Sonar systems, underwater sensors, and ASW equipment. $8B Navy unobligated. NDAA prioritizes undersea dominance.</p>
+                    <p><strong>Why Low Competition:</strong> Specialized underwater acoustics expertise. TS/SCI + SAP access for most programs.</p>
+                    <p><strong>Key Primes Seeking Subs:</strong> Raytheon, L3Harris, General Dynamics</p>
+                    <p><strong>Action:</strong> Undersea warfare is TOP Navy priority - contact NAVSEA and major primes.</p>
+                </div>
+            </div>
+
+            <!-- Opportunity 18 -->
+            <div class="opportunity-card">
+                <div class="opportunity-header">
+                    <div class="opportunity-title">Air Force - Satellite Communications Modernization</div>
+                    <div class="opportunity-value">$28M-$80M</div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Agency:</strong> Air Force / Space Force</div>
+                    <div class="meta-item"><strong>NAICS:</strong> 517410, 334220</div>
+                    <div class="meta-item"><strong>Set-Aside:</strong> Small Business</div>
+                    <div class="meta-item"><strong>Deadline:</strong> Jan 29, 2026</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-low-competition">Low Competition</span>
+                    <span class="badge-tag badge-set-aside">SB Set-Aside</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>What:</strong> MILSATCOM terminal upgrades, Protected SATCOM, and ground segment modernization. Combined AF/SF unobligated ~$10B.</p>
+                    <p><strong>Why Low Competition:</strong> Specialized SATCOM expertise. COMSEC requirements. Limited qualified small businesses.</p>
+                    <p><strong>Key Primes Seeking Subs:</strong> Lockheed Martin, Northrop Grumman, L3Harris, Viasat</p>
+                    <p><strong>Action:</strong> SATCOM modernization is accelerating - contact L3Harris and other SATCOM primes.</p>
+                </div>
+            </div>
+
+            <!-- Opportunity 19 -->
+            <div class="opportunity-card">
+                <div class="opportunity-header">
+                    <div class="opportunity-title">MDA - Ground-Based Midcourse Defense Support</div>
+                    <div class="opportunity-value">$40M-$115M</div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Agency:</strong> Missile Defense Agency</div>
+                    <div class="meta-item"><strong>NAICS:</strong> 336414, 541330</div>
+                    <div class="meta-item"><strong>Set-Aside:</strong> Small Business</div>
+                    <div class="meta-item"><strong>Deadline:</strong> Jan 28, 2026</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-low-competition">Low Competition</span>
+                    <span class="badge-tag badge-ndaa">NDAA Funded</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>What:</strong> GMD interceptor support, silo upgrades, and missile field engineering. $4B MDA unobligated. NDAA expands GMD.</p>
+                    <p><strong>Why Low Competition:</strong> Alaska/California location requirements. TS/SCI + SAP. Specialized missile defense experience.</p>
+                    <p><strong>Key Primes Seeking Subs:</strong> Boeing, Northrop Grumman, Raytheon</p>
+                    <p><strong>Action:</strong> Contact Boeing Missile Defense SBLO - they need subs at Fort Greely and Vandenberg.</p>
+                </div>
+            </div>
+
+            <!-- Opportunity 20 -->
+            <div class="opportunity-card">
+                <div class="opportunity-header">
+                    <div class="opportunity-title">DLA - Fuel & Energy Services</div>
+                    <div class="opportunity-value">$25M-$70M</div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Agency:</strong> Defense Logistics Agency</div>
+                    <div class="meta-item"><strong>NAICS:</strong> 324110, 541614</div>
+                    <div class="meta-item"><strong>Set-Aside:</strong> Small Business</div>
+                    <div class="meta-item"><strong>Deadline:</strong> Jan 20, 2026</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-low-competition">Low Competition</span>
+                    <span class="badge-tag badge-set-aside">SB Set-Aside</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>What:</strong> Bulk fuel delivery, energy consulting, and renewable energy projects for military installations. $5B DLA unobligated.</p>
+                    <p><strong>Why Low Competition:</strong> Fuel distribution licenses required. Location-based contracts near military bases. Energy sector expertise.</p>
+                    <p><strong>Key Primes Seeking Subs:</strong> Multiple energy services companies</p>
+                    <p><strong>Action:</strong> DLA Energy posts opportunities frequently - check their portal and register as supplier.</p>
+                </div>
+            </div>
+
+            <!-- Opportunity 21 -->
+            <div class="opportunity-card">
+                <div class="opportunity-header">
+                    <div class="opportunity-title">Space Force - Space Domain Awareness</div>
+                    <div class="opportunity-value">$25M-$75M</div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Agency:</strong> Space Force</div>
+                    <div class="meta-item"><strong>NAICS:</strong> 541715, 334511</div>
+                    <div class="meta-item"><strong>Set-Aside:</strong> Small Business</div>
+                    <div class="meta-item"><strong>Deadline:</strong> Jan 30, 2026</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-low-competition">Low Competition</span>
+                    <span class="badge-tag badge-ndaa">NDAA Sec. 9083</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>What:</strong> Space surveillance, debris tracking, and space catalog management. $2.8B Space Force unobligated.</p>
+                    <p><strong>Why Low Competition:</strong> Space situational awareness expertise rare. Requires telescopes/radar experience. TS/SCI for many roles.</p>
+                    <p><strong>Key Primes Seeking Subs:</strong> Lockheed Martin, Northrop Grumman, SAIC</p>
+                    <p><strong>Action:</strong> SpaceWERX has SDA opportunities posting - check weekly for new solicitations.</p>
+                </div>
+            </div>
+
+            <!-- Opportunity 22 -->
+            <div class="opportunity-card">
+                <div class="opportunity-header">
+                    <div class="opportunity-title">Defense Health - Medical Equipment Maintenance</div>
+                    <div class="opportunity-value">$18M-$50M</div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Agency:</strong> Defense Health Agency</div>
+                    <div class="meta-item"><strong>NAICS:</strong> 811219, 339112</div>
+                    <div class="meta-item"><strong>Set-Aside:</strong> SDVOSB</div>
+                    <div class="meta-item"><strong>Deadline:</strong> Jan 22, 2026</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-low-competition">Low Competition</span>
+                    <span class="badge-tag badge-set-aside">SDVOSB Set-Aside</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>What:</strong> Biomedical equipment repair, calibration, and maintenance at MTFs. $2B Defense Health unobligated.</p>
+                    <p><strong>Why Low Competition:</strong> SDVOSB set-aside + specialized biomedical technician certifications. Hospital experience required.</p>
+                    <p><strong>Key Primes Seeking Subs:</strong> Philips, GE Healthcare, Siemens Healthineers</p>
+                    <p><strong>Action:</strong> Contact medical equipment OEMs - they subcontract maintenance at military hospitals.</p>
+                </div>
+            </div>
+
+            <!-- Opportunity 23 -->
+            <div class="opportunity-card">
+                <div class="opportunity-header">
+                    <div class="opportunity-title">Army - Training & Simulation Systems</div>
+                    <div class="opportunity-value">$28M-$80M</div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Agency:</strong> Army</div>
+                    <div class="meta-item"><strong>NAICS:</strong> 541511, 334511</div>
+                    <div class="meta-item"><strong>Set-Aside:</strong> Small Business</div>
+                    <div class="meta-item"><strong>Deadline:</strong> Jan 25, 2026</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-low-competition">Low Competition</span>
+                    <span class="badge-tag badge-set-aside">SB Set-Aside</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>What:</strong> Virtual/augmented reality training, simulation software, and synthetic training environments. Part of $10B Army unobligated.</p>
+                    <p><strong>Why Low Competition:</strong> Specialized simulation/VR expertise. Gaming industry crossover valuable. Limited qualified pool.</p>
+                    <p><strong>Key Primes Seeking Subs:</strong> BAE Systems, CAE, L3Harris, Cubic</p>
+                    <p><strong>Action:</strong> Orlando is simulation hub - contact PEO STRI and training system primes.</p>
+                </div>
+            </div>
+
+            <!-- Opportunity 24 -->
+            <div class="opportunity-card">
+                <div class="opportunity-header">
+                    <div class="opportunity-title">Navy - Port Security Systems</div>
+                    <div class="opportunity-value">$30M-$90M</div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Agency:</strong> Navy</div>
+                    <div class="meta-item"><strong>NAICS:</strong> 561210, 541330</div>
+                    <div class="meta-item"><strong>Set-Aside:</strong> HUBZone / 8(a)</div>
+                    <div class="meta-item"><strong>Deadline:</strong> Jan 27, 2026</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-low-competition">Low Competition</span>
+                    <span class="badge-tag badge-set-aside">HUBZone Set-Aside</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>What:</strong> Port security, access control, and force protection systems at Navy installations. $8B Navy unobligated.</p>
+                    <p><strong>Why Low Competition:</strong> HUBZone/8(a) set-asides + physical security specialization. Location-based near naval ports.</p>
+                    <p><strong>Key Primes Seeking Subs:</strong> General Dynamics, Lockheed Martin</p>
+                    <p><strong>Action:</strong> Navy ports need upgraded security - contact CNIC and installation contracting offices.</p>
+                </div>
+            </div>
+
+            <!-- Opportunity 25 -->
+            <div class="opportunity-card">
+                <div class="opportunity-header">
+                    <div class="opportunity-title">Air Force - DevSecOps & Application Modernization</div>
+                    <div class="opportunity-value">$32M-$90M</div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Agency:</strong> Air Force</div>
+                    <div class="meta-item"><strong>NAICS:</strong> 541511, 541512</div>
+                    <div class="meta-item"><strong>Set-Aside:</strong> Small Business</div>
+                    <div class="meta-item"><strong>Deadline:</strong> Jan 24, 2026</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-low-competition">Low Competition</span>
+                    <span class="badge-tag badge-set-aside">SB Set-Aside</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>What:</strong> DevSecOps pipelines, legacy app modernization, and agile software development. Part of $7B Air Force RDT&E unobligated.</p>
+                    <p><strong>Why Low Competition:</strong> Platform One experience preferred. IL4/IL5 authorization. Agile/DevOps certifications.</p>
+                    <p><strong>Key Primes Seeking Subs:</strong> Accenture Federal, GDIT, Booz Allen, CACI</p>
+                    <p><strong>Action:</strong> Air Force Platform One is driving DevSecOps - contact Kessel Run and Platform One offices.</p>
+                </div>
+            </div>
+
+            <!-- Opportunity 26 -->
+            <div class="opportunity-card">
+                <div class="opportunity-header">
+                    <div class="opportunity-title">DOE - Nuclear Facility Decommissioning</div>
+                    <div class="opportunity-value">$30M-$85M</div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Agency:</strong> DOE</div>
+                    <div class="meta-item"><strong>NAICS:</strong> 562910, 541620</div>
+                    <div class="meta-item"><strong>Set-Aside:</strong> Small Business</div>
+                    <div class="meta-item"><strong>Deadline:</strong> Jan 26, 2026</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-low-competition">Low Competition</span>
+                    <span class="badge-tag badge-set-aside">SB Set-Aside</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>What:</strong> Nuclear site cleanup, D&D (decontamination & decommissioning), and waste management. $2.5B DOE unobligated.</p>
+                    <p><strong>Why Low Competition:</strong> Nuclear decommissioning certifications. Q clearance. Specialized environmental remediation experience.</p>
+                    <p><strong>Key Primes Seeking Subs:</strong> Amentum (SBLO@Amentum.com), Bechtel, Jacobs</p>
+                    <p><strong>Action:</strong> DOE has multiple cleanup sites - contact EM (Environmental Management) office.</p>
+                </div>
+            </div>
+
+            <!-- Opportunity 27 -->
+            <div class="opportunity-card">
+                <div class="opportunity-header">
+                    <div class="opportunity-title">MDA - Radar Systems Engineering</div>
+                    <div class="opportunity-value">$35M-$95M</div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Agency:</strong> Missile Defense Agency</div>
+                    <div class="meta-item"><strong>NAICS:</strong> 334511, 541330</div>
+                    <div class="meta-item"><strong>Set-Aside:</strong> Small Business</div>
+                    <div class="meta-item"><strong>Deadline:</strong> Jan 29, 2026</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-low-competition">Low Competition</span>
+                    <span class="badge-tag badge-ndaa">NDAA Funded</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>What:</strong> Radar engineering, signal processing, and tracking system development. $4B MDA unobligated.</p>
+                    <p><strong>Why Low Competition:</strong> Specialized radar/RF engineering. Phased array expertise. TS/SCI required.</p>
+                    <p><strong>Key Primes Seeking Subs:</strong> Raytheon, Lockheed Martin, Northrop Grumman</p>
+                    <p><strong>Action:</strong> Contact Raytheon SBLO - they lead multiple MDA radar programs.</p>
+                </div>
+            </div>
+
+            <!-- Opportunity 28 -->
+            <div class="opportunity-card">
+                <div class="opportunity-header">
+                    <div class="opportunity-title">Cyber Command - Insider Threat Detection</div>
+                    <div class="opportunity-value">$20M-$55M</div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Agency:</strong> DoD-Wide</div>
+                    <div class="meta-item"><strong>NAICS:</strong> 541512, 541519</div>
+                    <div class="meta-item"><strong>Set-Aside:</strong> Small Business</div>
+                    <div class="meta-item"><strong>Deadline:</strong> Jan 23, 2026</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-low-competition">Low Competition</span>
+                    <span class="badge-tag badge-set-aside">SB Set-Aside</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>What:</strong> User behavior analytics, insider threat monitoring, and SIEM integration. $3.5B Cyber Command unobligated.</p>
+                    <p><strong>Why Low Competition:</strong> Cleared cybersecurity analysts needed. UBA/UEBA tool expertise. Counterintelligence background helpful.</p>
+                    <p><strong>Key Primes Seeking Subs:</strong> SAIC (Marguerite.brooks@saic.com), Booz Allen, Leidos</p>
+                    <p><strong>Action:</strong> Contact SAIC SBLO - insider threat programs expanding across DoD.</p>
+                </div>
+            </div>
+
+            <!-- Opportunity 29 -->
+            <div class="opportunity-card">
+                <div class="opportunity-header">
+                    <div class="opportunity-title">Army - Network Modernization (Unified Network)</div>
+                    <div class="opportunity-value">$30M-$85M</div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Agency:</strong> Army</div>
+                    <div class="meta-item"><strong>NAICS:</strong> 541512, 517311</div>
+                    <div class="meta-item"><strong>Set-Aside:</strong> Small Business</div>
+                    <div class="meta-item"><strong>Deadline:</strong> Jan 26, 2026</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-low-competition">Low Competition</span>
+                    <span class="badge-tag badge-ndaa">NDAA Funded</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>What:</strong> Unified Network implementation, tactical comms, and network transport. Part of $10B Army unobligated.</p>
+                    <p><strong>Why Low Competition:</strong> Army network architecture expertise. DISA/Army integration experience. Security clearance required.</p>
+                    <p><strong>Key Primes Seeking Subs:</strong> General Dynamics, L3Harris, GDIT</p>
+                    <p><strong>Action:</strong> Army Unified Network is MAJOR modernization priority - contact PEO C3T.</p>
+                </div>
+            </div>
+
+            <!-- Opportunity 30 -->
+            <div class="opportunity-card">
+                <div class="opportunity-header">
+                    <div class="opportunity-title">Navy - Aircraft Carrier Sustainment</div>
+                    <div class="opportunity-value">$40M-$120M</div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Agency:</strong> Navy</div>
+                    <div class="meta-item"><strong>NAICS:</strong> 336611, 488390</div>
+                    <div class="meta-item"><strong>Set-Aside:</strong> Small Business</div>
+                    <div class="meta-item"><strong>Deadline:</strong> Jan 28, 2026</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-low-competition">Low Competition</span>
+                    <span class="badge-tag badge-set-aside">SB Set-Aside</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>What:</strong> CVN maintenance, RCOH (Refueling Complex Overhaul) support, and carrier logistics. $8B Navy unobligated.</p>
+                    <p><strong>Why Low Competition:</strong> Newport News location required for most work. Specialized carrier systems knowledge. Security clearances.</p>
+                    <p><strong>Key Primes Seeking Subs:</strong> Huntington Ingalls (Newport News), General Dynamics</p>
+                    <p><strong>Action:</strong> HII Newport News needs subs for USS Enterprise (CVN-80) and carrier maintenance.</p>
+                </div>
+            </div>
+
+            <!-- Opportunity 31 -->
+            <div class="opportunity-card">
+                <div class="opportunity-header">
+                    <div class="opportunity-title">DLA - Construction Materials & Supplies</div>
+                    <div class="opportunity-value">$22M-$60M</div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Agency:</strong> Defense Logistics Agency</div>
+                    <div class="meta-item"><strong>NAICS:</strong> 423310, 423390</div>
+                    <div class="meta-item"><strong>Set-Aside:</strong> Small Business</div>
+                    <div class="meta-item"><strong>Deadline:</strong> Jan 21, 2026</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-low-competition">Low Competition</span>
+                    <span class="badge-tag badge-urgent">Urgent Timeline</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>What:</strong> Lumber, steel, hardware, and construction supplies for military construction projects. $5B DLA unobligated.</p>
+                    <p><strong>Why Low Competition:</strong> DLA Construction & Equipment awards FAST. Berry Amendment compliance required for some items.</p>
+                    <p><strong>Key Primes Seeking Subs:</strong> Multiple construction materials suppliers</p>
+                    <p><strong>Action:</strong> Register on FedMall and GSA Advantage - DLA posts construction supply RFQs daily.</p>
+                </div>
+            </div>
+
+            <!-- Opportunity 32 -->
+            <div class="opportunity-card">
+                <div class="opportunity-header">
+                    <div class="opportunity-title">Space Force - Launch Operations Support</div>
+                    <div class="opportunity-value">$28M-$80M</div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Agency:</strong> Space Force</div>
+                    <div class="meta-item"><strong>NAICS:</strong> 336414, 541330</div>
+                    <div class="meta-item"><strong>Set-Aside:</strong> Small Business</div>
+                    <div class="meta-item"><strong>Deadline:</strong> Jan 30, 2026</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-low-competition">Low Competition</span>
+                    <span class="badge-tag badge-ndaa">NDAA Sec. 9083</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>What:</strong> Launch range operations, integration services, and mission support. $2.8B Space Force unobligated.</p>
+                    <p><strong>Why Low Competition:</strong> Florida/California location-based. Launch range experience. TS/SCI for most roles.</p>
+                    <p><strong>Key Primes Seeking Subs:</strong> ULA, SpaceX, Northrop Grumman</p>
+                    <p><strong>Action:</strong> Contact Space Launch Delta 45 (Patrick SFB) and SLD 30 (Vandenberg) contracting offices.</p>
+                </div>
+            </div>
+
+            <!-- Opportunity 33 -->
+            <div class="opportunity-card">
+                <div class="opportunity-header">
+                    <div class="opportunity-title">Defense Health - Clinical Research Support</div>
+                    <div class="opportunity-value">$18M-$50M</div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Agency:</strong> Defense Health Agency</div>
+                    <div class="meta-item"><strong>NAICS:</strong> 541714, 621511</div>
+                    <div class="meta-item"><strong>Set-Aside:</strong> Small Business</div>
+                    <div class="meta-item"><strong>Deadline:</strong> Jan 24, 2026</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-low-competition">Low Competition</span>
+                    <span class="badge-tag badge-set-aside">SB Set-Aside</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>What:</strong> Clinical trials support, medical research, and laboratory services. $2B Defense Health unobligated.</p>
+                    <p><strong>Why Low Competition:</strong> Clinical research expertise required. IRB/regulatory experience. CLIA-certified lab access.</p>
+                    <p><strong>Key Primes Seeking Subs:</strong> Multiple academic medical centers and research organizations</p>
+                    <p><strong>Action:</strong> CDMRP (Congressionally Directed Medical Research Programs) posts research opportunities regularly.</p>
+                </div>
+            </div>
+
+            <!-- Opportunity 34 -->
+            <div class="opportunity-card">
+                <div class="opportunity-header">
+                    <div class="opportunity-title">DoD-Wide - AI/ML Implementation Services</div>
+                    <div class="opportunity-value">$35M-$100M</div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Agency:</strong> DoD (Multiple)</div>
+                    <div class="meta-item"><strong>NAICS:</strong> 541511, 541512</div>
+                    <div class="meta-item"><strong>Set-Aside:</strong> Small Business</div>
+                    <div class="meta-item"><strong>Deadline:</strong> Jan 31, 2026</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-low-competition">Low Competition</span>
+                    <span class="badge-tag badge-urgent">HOTTEST AREA</span>
+                    <span class="badge-tag badge-ndaa">NDAA Priority</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>What:</strong> AI/ML model development, data engineering, and responsible AI implementation. JAIC/CDAO initiatives across DoD.</p>
+                    <p><strong>Why Low Competition:</strong> AI/ML talent shortage. Requires cleared data scientists. Responsible AI expertise rare. SBIR/STTR eligible.</p>
+                    <p><strong>Key Primes Seeking Subs:</strong> ALL major defense primes need AI partners - Booz Allen, Leidos, GDIT, Palantir</p>
+                    <p><strong>Action:</strong> AI is the HOTTEST capability in defense. If you have cleared AI/ML talent, contact EVERY prime contractor NOW.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="key-point">
+            <strong>CRITICAL ACTION ITEMS FOR JANUARY 2026:</strong>
+            <ul style="margin-top: 10px; margin-left: 20px;">
+                <li>Contact all prime contractor SBLOs listed above - they're building teams NOW for NDAA-funded programs</li>
+                <li>Register on DIBBS and FedMall for DLA opportunities - fastest path to contracts</li>
+                <li>Check SAM.gov daily - Q1 solicitations posting rapidly</li>
+                <li>CMMC certification is CRITICAL - get compliant or lose opportunities</li>
+                <li>Cyber, AI/ML, and space are the HOTTEST areas - prioritize if you have capabilities</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p><strong>Data Sources:</strong></p>
+            <p>FY2026 NDAA (S.2296) - Signed December 18, 2025</p>
+            <p>Treasury Monthly Statement - December 2025</p>
+            <p>USAspending.gov - Agency Budget Authority</p>
+            <p style="margin-top: 20px;">January 2026 Bootcamp | GovCon Giants | <a href="https://guides.govcongiants.org">guides.govcongiants.org</a></p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Starter Plan - More Affordable Option | GovCon Giants</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    .gradient-text { background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  </style>
+</head>
+<body class="min-h-screen bg-slate-900">
+  <!-- Header -->
+  <header class="py-6 px-6 border-b border-slate-800">
+    <div class="max-w-4xl mx-auto flex items-center justify-center">
+      <a href="#" class="flex items-center gap-1">
+        <span class="text-2xl font-bold text-white">GovCon</span>
+        <span class="text-2xl font-bold text-emerald-400">Giants</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Progress Bar -->
+  <div class="bg-slate-800 py-3 px-6">
+    <div class="max-w-2xl mx-auto">
+      <div class="flex items-center justify-between text-sm mb-2">
+        <span class="text-blue-400 font-medium">Step 3 of 4</span>
+        <span class="text-slate-400">Alternative Offer</span>
+      </div>
+      <div class="h-2 bg-slate-700 rounded-full overflow-hidden">
+        <div class="h-full bg-blue-500 rounded-full" style="width: 75%"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <section class="py-12 px-6">
+    <div class="max-w-3xl mx-auto">
+      <!-- Message -->
+      <div class="text-center mb-8">
+        <h1 class="text-3xl md:text-4xl font-bold text-white mb-4">
+          Wait! Here's a <span class="gradient-text">More Affordable</span> Option
+        </h1>
+
+        <p class="text-xl text-slate-300 leading-relaxed">
+          Not ready for Pro? Our <span class="text-blue-400 font-semibold">Starter Plan</span> gives you essential tools at a fraction of the cost.
+        </p>
+      </div>
+
+      <!-- Starter Plan Card -->
+      <div class="bg-slate-800 border-2 border-blue-500 rounded-2xl p-8 mb-8 relative">
+        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+          <span class="bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full">BEST VALUE</span>
+        </div>
+
+        <div class="text-center mb-6">
+          <div class="text-blue-400 text-sm font-medium mb-2">STARTER PLAN</div>
+          <h3 class="text-2xl font-bold text-white mb-2">GovCon Starter</h3>
+          <p class="text-slate-400">Perfect for beginners who want to get started without a big commitment</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+          <ul class="space-y-3 text-slate-300">
+            <li class="flex items-start gap-2">
+              <span class="text-blue-500 mt-1">✓</span>
+              <span>All 9 Surge Bootcamp Resources</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-blue-500 mt-1">✓</span>
+              <span>Opportunity Hunter (Free Version)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-blue-500 mt-1">✓</span>
+              <span>Email Template Library</span>
+            </li>
+          </ul>
+          <ul class="space-y-3 text-slate-300">
+            <li class="flex items-start gap-2">
+              <span class="text-blue-500 mt-1">✓</span>
+              <span>Monthly Newsletter</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-blue-500 mt-1">✓</span>
+              <span>Access to Recordings</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-blue-500 mt-1">✓</span>
+              <span>Basic Community Access</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="text-center border-t border-slate-700 pt-6">
+          <div class="flex items-baseline justify-center gap-2 mb-2">
+            <div class="text-slate-500 line-through text-xl">$99</div>
+            <div class="text-4xl font-bold text-white">$29</div>
+            <div class="text-slate-400">/month</div>
+          </div>
+          <div class="text-blue-400 text-sm mb-6">Save 70% compared to Pro</div>
+
+          <a
+            href="https://federalhelpcenter.com/starter"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block w-full px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-bold text-lg text-center transition-all mb-4"
+          >
+            Join Starter for $29/month
+          </a>
+        </div>
+      </div>
+
+      <!-- Comparison -->
+      <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-6 mb-8">
+        <h3 class="text-lg font-bold text-white mb-4 text-center">Quick Comparison</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-slate-700">
+                <th class="text-left text-slate-400 py-2">Feature</th>
+                <th class="text-center text-slate-400 py-2">Free</th>
+                <th class="text-center text-blue-400 py-2">Starter</th>
+                <th class="text-center text-emerald-400 py-2">Pro</th>
+              </tr>
+            </thead>
+            <tbody class="text-slate-300">
+              <tr class="border-b border-slate-800">
+                <td class="py-2">Surge Resources</td>
+                <td class="text-center">✓</td>
+                <td class="text-center text-blue-400">✓</td>
+                <td class="text-center text-emerald-400">✓</td>
+              </tr>
+              <tr class="border-b border-slate-800">
+                <td class="py-2">Email Templates</td>
+                <td class="text-center text-slate-600">✗</td>
+                <td class="text-center text-blue-400">✓</td>
+                <td class="text-center text-emerald-400">✓</td>
+              </tr>
+              <tr class="border-b border-slate-800">
+                <td class="py-2">Live Bootcamps</td>
+                <td class="text-center text-slate-600">✗</td>
+                <td class="text-center text-slate-600">✗</td>
+                <td class="text-center text-emerald-400">✓</td>
+              </tr>
+              <tr class="border-b border-slate-800">
+                <td class="py-2">Opportunity Scout Pro</td>
+                <td class="text-center text-slate-600">✗</td>
+                <td class="text-center text-slate-600">✗</td>
+                <td class="text-center text-emerald-400">✓</td>
+              </tr>
+              <tr class="border-b border-slate-800">
+                <td class="py-2">Weekly Q&A Calls</td>
+                <td class="text-center text-slate-600">✗</td>
+                <td class="text-center text-slate-600">✗</td>
+                <td class="text-center text-emerald-400">✓</td>
+              </tr>
+              <tr>
+                <td class="py-2 font-bold text-white">Price</td>
+                <td class="text-center">$0</td>
+                <td class="text-center text-blue-400 font-bold">$29/mo</td>
+                <td class="text-center text-emerald-400 font-bold">$99/mo</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Skip Link -->
+      <div class="text-center">
+        <a
+          href="4-thank-you.html"
+          class="text-slate-500 hover:text-slate-400 text-sm transition-all"
+        >
+          No thanks, just give me the free resources →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 px-6 border-t border-slate-800">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-slate-500 text-sm">
+        © 2026 GovCon Giants. All rights reserved.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

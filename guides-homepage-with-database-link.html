@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GovCon Giants Guides | Master Federal Contracting</title>
+    <meta name="description" content="Free guides and tools for winning federal contracts. Learn how to find prime contractors, win subcontracts, and grow your GovCon business.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background: #f9fafb;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin: 30px 0 20px;
+            border-bottom: 2px solid #e5e7eb;
+            flex-wrap: wrap;
+        }
+
+        .tab {
+            padding: 15px 25px;
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-bottom: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            color: #6b7280;
+            border-radius: 8px 8px 0 0;
+            transition: all 0.3s ease;
+        }
+
+        .tab:hover {
+            background: #f3f4f6;
+            color: #1e3a8a;
+        }
+
+        .tab.active {
+            background: white;
+            color: #1e3a8a;
+            border-color: #1e3a8a;
+            border-bottom: 2px solid white;
+            margin-bottom: -2px;
+        }
+
+        .tab-content {
+            display: none;
+            background: white;
+            padding: 40px;
+            border-radius: 0 8px 8px 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .resource-card {
+            background: #f9fafb;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .resource-card:hover {
+            border-color: #1e3a8a;
+            box-shadow: 0 8px 16px rgba(30, 58, 138, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .resource-card h3 {
+            font-size: 20px;
+            color: #1e3a8a;
+            margin-bottom: 15px;
+        }
+
+        .resource-card p {
+            color: #6b7280;
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+
+        .resource-card .btn {
+            display: inline-block;
+            background: #1e3a8a;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .resource-card .btn:hover {
+            background: #1e40af;
+            transform: translateX(2px);
+        }
+
+        .featured-tool {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        .featured-tool h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .featured-tool p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            opacity: 0.95;
+        }
+
+        .featured-tool .btn {
+            background: white;
+            color: #059669;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .featured-tool .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .featured-tool .stats {
+            display: flex;
+            gap: 30px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .featured-tool .stat {
+            background: rgba(255,255,255,0.15);
+            padding: 15px 20px;
+            border-radius: 8px;
+        }
+
+        .featured-tool .stat-number {
+            font-size: 32px;
+            font-weight: 700;
+            display: block;
+        }
+
+        .featured-tool .stat-label {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .guide-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .guide-list li {
+            padding: 15px;
+            margin-bottom: 10px;
+            background: #f9fafb;
+            border-left: 4px solid #1e3a8a;
+            border-radius: 4px;
+        }
+
+        .guide-list li a {
+            color: #1e3a8a;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .guide-list li a:hover {
+            text-decoration: underline;
+        }
+
+        .section-title {
+            font-size: 24px;
+            color: #1e3a8a;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #1e3a8a;
+        }
+
+        .footer {
+            background: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        .footer a {
+            color: #10b981;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>GovCon Giants Guides</h1>
+        <p>Free tools and resources for winning federal contracts</p>
+    </div>
+
+    <div class="container">
+        <!-- Tabs Navigation -->
+        <div class="tabs">
+            <div class="tab active" onclick="openTab(event, 'finding-primes')">Finding Prime Contractors</div>
+            <div class="tab" onclick="openTab(event, 'getting-started')">Getting Started</div>
+            <div class="tab" onclick="openTab(event, 'marketing')">Marketing & Outreach</div>
+            <div class="tab" onclick="openTab(event, 'compliance')">Compliance</div>
+            <div class="tab" onclick="openTab(event, 'resources')">Resources</div>
+        </div>
+
+        <!-- Tab 1: Finding Prime Contractors -->
+        <div id="finding-primes" class="tab-content active">
+            <h2 class="section-title">Finding Prime Contractors</h2>
+
+            <!-- Featured: Database Tool -->
+            <div class="featured-tool">
+                <h2>🎯 Federal Contractor Database (FREE TOOL)</h2>
+                <p>Search 2,768 federal prime contractors with $479.9B in contract data. Find SBLO contacts, identify subcontracting opportunities, and research potential partners.</p>
+
+                <div class="stats">
+                    <div class="stat">
+                        <span class="stat-number">2,768</span>
+                        <span class="stat-label">Prime Contractors</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">$479.9B</span>
+                        <span class="stat-label">Contract Value</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">625</span>
+                        <span class="stat-label">SBLO Contacts</span>
+                    </div>
+                </div>
+
+                <a href="https://guides.govcongiants.org/database" class="btn">Access Database →</a>
+            </div>
+
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <h3>📚 How to Use the Database</h3>
+                    <p>Learn how to search, filter, and export data to find the perfect prime contractor partners for your business.</p>
+                    <a href="#" class="btn">View Guide</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>🎯 Identifying Target Primes</h3>
+                    <p>Step-by-step guide to researching and qualifying prime contractors who need your services.</p>
+                    <a href="#" class="btn">View Guide</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>📧 Contacting SBLOs</h3>
+                    <p>Best practices for reaching out to Small Business Liaison Officers and getting responses.</p>
+                    <a href="#" class="btn">View Guide</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>🔍 Understanding Subcontract Plans</h3>
+                    <p>Learn which contractors are REQUIRED to subcontract and how to take advantage of it.</p>
+                    <a href="#" class="btn">View Guide</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 2: Getting Started -->
+        <div id="getting-started" class="tab-content">
+            <h2 class="section-title">Getting Started in GovCon</h2>
+
+            <ul class="guide-list">
+                <li><a href="#">Setting Up Your SAM.gov Registration</a></li>
+                <li><a href="#">Understanding NAICS Codes</a></li>
+                <li><a href="#">Getting Your First Certification</a></li>
+                <li><a href="#">Building Your Capability Statement</a></li>
+                <li><a href="#">Understanding Past Performance</a></li>
+            </ul>
+
+            <div class="resource-grid" style="margin-top: 30px;">
+                <div class="resource-card">
+                    <h3>📋 GovCon Checklist</h3>
+                    <p>Complete checklist of everything you need to start winning federal contracts.</p>
+                    <a href="#" class="btn">Download</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>🎓 Free Training</h3>
+                    <p>Join GovCon Giants for expert mentorship and community support.</p>
+                    <a href="https://govcongiants.org" class="btn">Join Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 3: Marketing & Outreach -->
+        <div id="marketing" class="tab-content">
+            <h2 class="section-title">Marketing & Outreach</h2>
+
+            <ul class="guide-list">
+                <li><a href="#">Creating an Effective Capability Statement</a></li>
+                <li><a href="#">Email Templates for SBLO Outreach</a></li>
+                <li><a href="#">LinkedIn Strategies for GovCon</a></li>
+                <li><a href="#">Attending Industry Days</a></li>
+                <li><a href="#">Following Up After Meetings</a></li>
+            </ul>
+        </div>
+
+        <!-- Tab 4: Compliance -->
+        <div id="compliance" class="tab-content">
+            <h2 class="section-title">Compliance & Regulations</h2>
+
+            <ul class="guide-list">
+                <li><a href="#">Understanding FAR Basics</a></li>
+                <li><a href="#">Small Business Set-Asides</a></li>
+                <li><a href="#">WOSB Certification Guide</a></li>
+                <li><a href="#">8(a) Program Overview</a></li>
+                <li><a href="#">HUBZone Requirements</a></li>
+            </ul>
+        </div>
+
+        <!-- Tab 5: Resources -->
+        <div id="resources" class="tab-content">
+            <h2 class="section-title">Additional Resources</h2>
+
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <h3>🔗 SAM.gov</h3>
+                    <p>Official government system for federal contract opportunities.</p>
+                    <a href="https://sam.gov" target="_blank" class="btn">Visit Site</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>🔗 SBA.gov</h3>
+                    <p>Small Business Administration resources and certifications.</p>
+                    <a href="https://sba.gov" target="_blank" class="btn">Visit Site</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>🔗 FPDS</h3>
+                    <p>Federal Procurement Data System for contract research.</p>
+                    <a href="https://fpds.gov" target="_blank" class="btn">Visit Site</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>🎓 GovCon Giants</h3>
+                    <p>Join our community for expert training and mentorship.</p>
+                    <a href="https://govcongiants.org" class="btn">Join Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p><strong>GovCon Giants Guides</strong></p>
+        <p>Free tools and resources for winning federal contracts</p>
+        <p style="margin-top: 20px;">
+            <a href="https://govcongiants.org">Visit GovConGiants.org</a> for expert training and mentorship
+        </p>
+        <p style="margin-top: 10px; font-size: 14px; opacity: 0.8;">
+            © 2025 GovCon Giants. All rights reserved.
+        </p>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            // Hide all tab contents
+            const tabContents = document.getElementsByClassName('tab-content');
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove('active');
+            }
+
+            // Remove active class from all tabs
+            const tabs = document.getElementsByClassName('tab');
+            for (let i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove('active');
+            }
+
+            // Show the clicked tab's content
+            document.getElementById(tabName).classList.add('active');
+
+            // Add active class to the clicked tab
+            evt.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>

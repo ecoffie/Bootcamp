@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>January 2026 Bootcamp - YouTube Promo Lives Content</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 16px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            opacity: 0.95;
+        }
+
+        .live-card {
+            background: white;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .live-header {
+            padding: 25px 30px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .live-1 .live-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        }
+
+        .live-2 .live-header {
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+        }
+
+        .live-3 .live-header {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        }
+
+        .live-number {
+            font-size: 3rem;
+            font-weight: 800;
+            opacity: 0.3;
+        }
+
+        .live-info h2 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .live-date {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        .live-content {
+            padding: 30px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e5e7eb;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .title-options {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 15px;
+        }
+
+        .title-option {
+            padding: 10px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .title-option:last-child {
+            border-bottom: none;
+        }
+
+        .title-option strong {
+            color: #7c3aed;
+        }
+
+        .thumbnail-desc {
+            background: #fef3c7;
+            border: 2px solid #f59e0b;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .thumbnail-desc h4 {
+            color: #92400e;
+            margin-bottom: 10px;
+        }
+
+        .thumbnail-desc ul {
+            margin-left: 20px;
+            color: #78350f;
+        }
+
+        .script-section {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .script-part {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .script-part:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .script-label {
+            display: inline-block;
+            background: #1e3a8a;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .script-label.hook {
+            background: #dc2626;
+        }
+
+        .script-label.content {
+            background: #7c3aed;
+        }
+
+        .script-label.cta {
+            background: #059669;
+        }
+
+        .script-label.transition {
+            background: #f59e0b;
+        }
+
+        .script-text {
+            font-style: italic;
+            color: #444;
+            line-height: 1.8;
+        }
+
+        .script-text p {
+            margin-bottom: 12px;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+            color: white;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .cta-box h4 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .cta-box p {
+            opacity: 0.95;
+            margin-bottom: 15px;
+        }
+
+        .cta-link {
+            display: inline-block;
+            background: white;
+            color: #7c3aed;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .talking-points {
+            list-style: none;
+        }
+
+        .talking-points li {
+            padding: 10px 0 10px 30px;
+            position: relative;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .talking-points li::before {
+            content: '>';
+            position: absolute;
+            left: 0;
+            color: #7c3aed;
+            font-weight: bold;
+        }
+
+        .talking-points li:last-child {
+            border-bottom: none;
+        }
+
+        .timing-note {
+            background: #fef2f2;
+            border: 2px solid #fecaca;
+            border-radius: 8px;
+            padding: 15px;
+            color: #991b1b;
+            margin-top: 20px;
+        }
+
+        .timing-note strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .summary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .summary-table th, .summary-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .summary-table th {
+            background: #1e3a8a;
+            color: white;
+        }
+
+        .summary-table tr:nth-child(even) {
+            background: #f8fafc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>January 2026 Bootcamp Promo Lives</h1>
+            <p>3 Weekly YouTube Lives to Drive Registrations | Jan 10, 17, 24</p>
+        </div>
+
+        <!-- SUMMARY TABLE -->
+        <div class="live-card">
+            <div class="live-content">
+                <div class="section-title">Schedule Overview</div>
+                <table class="summary-table">
+                    <tr>
+                        <th>Date</th>
+                        <th>Theme</th>
+                        <th>Goal</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Jan 10</strong></td>
+                        <td>The $82B Opportunity</td>
+                        <td>Awareness - Show the opportunity</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Jan 17</strong></td>
+                        <td>Agency Pain Points Revealed</td>
+                        <td>Education - Build trust with value</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Jan 24</strong></td>
+                        <td>Final Call - What You'll Get</td>
+                        <td>Conversion - Urgency to register</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- LIVE #1 -->
+        <div class="live-card live-1">
+            <div class="live-header">
+                <div>
+                    <h2>LIVE #1: The $82B Opportunity</h2>
+                    <div class="live-date">Friday, January 10, 2026</div>
+                </div>
+                <div class="live-number">01</div>
+            </div>
+            <div class="live-content">
+                <div class="section">
+                    <div class="section-title">Title Options (Pick One)</div>
+                    <div class="title-options">
+                        <div class="title-option"><strong>Option 1:</strong> "$82 BILLION in Unspent Federal Money - Here's How to Get It (2026)"</div>
+                        <div class="title-option"><strong>Option 2:</strong> "FY2026 NDAA Just Passed - What Government Contractors NEED to Know"</div>
+                        <div class="title-option"><strong>Option 3:</strong> "The Government Has $82B to Spend in 90 Days - Are You Ready?"</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Thumbnail Concept</div>
+                    <div class="thumbnail-desc">
+                        <h4>Visual Elements:</h4>
+                        <ul>
+                            <li>Large text: "$82 BILLION" in green/money color</li>
+                            <li>Subtext: "UNSPENT" in red with arrow pointing down</li>
+                            <li>Your face with surprised/excited expression</li>
+                            <li>Small badge: "FY2026 NDAA"</li>
+                            <li>Background: Dark blue with money graphics or Capitol building</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Talking Points</div>
+                    <ul class="talking-points">
+                        <li>FY2026 NDAA signed December 18th - $848B for DoD alone</li>
+                        <li>$82.8B sitting in unobligated balances across Top 10 defense agencies</li>
+                        <li>Q1 obligation pressure - agencies MUST spend or lose it</li>
+                        <li>New sole source thresholds: $8M (non-manufacturing), $10M (manufacturing)</li>
+                        <li>CMMC 2.0 deadline creating compliance contract rush</li>
+                        <li>23% small business goal - primes desperately need subs</li>
+                        <li>Top agencies: DoD ($38B), Army ($10B), Navy ($8B), Air Force ($7B)</li>
+                        <li>Why January-March is the BEST time to win contracts</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Script</div>
+                    <div class="script-section">
+                        <div class="script-part">
+                            <span class="script-label hook">HOOK (0:00-1:00)</span>
+                            <div class="script-text">
+                                <p>"The government is sitting on 82 BILLION dollars right now - and they have to spend it in the next 90 days or they lose it. I'm not making this up. The FY2026 NDAA was just signed on December 18th, and I've been digging through the numbers. What I found is going to change how you think about government contracting in 2026."</p>
+                                <p>"If you're a small business owner who's been on the fence about federal contracts, or if you've tried before and it didn't work out - stay with me. Because the window that's opening right now only happens once a year, and it's about to slam shut."</p>
+                            </div>
+                        </div>
+
+                        <div class="script-part">
+                            <span class="script-label content">CONTENT (1:00-20:00)</span>
+                            <div class="script-text">
+                                <p><strong>Section 1: The NDAA Breakdown (5 min)</strong></p>
+                                <p>"Let me break down what just happened. The National Defense Authorization Act for FY2026 - that's the bill that tells the government how much they can spend on defense - was signed into law. $848 billion dollars. But here's what most people don't understand..."</p>
+                                <p>[Explain authorization vs. appropriation, Q1 spending pressure, use-it-or-lose-it]</p>
+
+                                <p><strong>Section 2: The Unobligated Balance Opportunity (5 min)</strong></p>
+                                <p>"Now let me show you where this money is sitting right now. I pulled the Treasury data and here's what I found..."</p>
+                                <p>[Go through Top 10 agencies with unobligated balances, explain what this means for contractors]</p>
+
+                                <p><strong>Section 3: New Rules That Help Small Business (5 min)</strong></p>
+                                <p>"The NDAA also changed some rules that directly benefit small businesses. The sole source thresholds just went up..."</p>
+                                <p>[Explain new thresholds, what sole source means, how to position for it]</p>
+
+                                <p><strong>Section 4: What This Means For YOU (5 min)</strong></p>
+                                <p>"So what does this actually mean if you're watching this trying to figure out how to break into government contracting? It means..."</p>
+                                <p>[Practical implications, why timing matters, what to do now]</p>
+                            </div>
+                        </div>
+
+                        <div class="script-part">
+                            <span class="script-label cta">CTA (20:00-25:00)</span>
+                            <div class="script-text">
+                                <p>"Now look - I just gave you a lot of information. And I know some of you are thinking 'this sounds great but HOW do I actually do this?' That's exactly why we're doing something special this month."</p>
+                                <p>"On January 31st, we're running a full-day bootcamp for Federal Help Center Pro members. This isn't a webinar where I talk at you for an hour. This is 8 hours of working sessions where you're going to walk out with actual opportunities matched to YOUR business, YOUR capability statement reviewed, and a 90-day action plan."</p>
+                                <p>"The link to join Pro is in the description. It's $99 a month or $799 for the year. And honestly, if you're serious about government contracting in 2026, this bootcamp alone is worth way more than that."</p>
+                                <p>"Next week I'm going to go deeper on something that's going to help you even if you don't join the bootcamp - the 8 pain points that agencies struggle with and how to position your business as the solution. Make sure you're subscribed so you don't miss it."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Call-to-Action</div>
+                    <div class="cta-box">
+                        <h4>Join Federal Help Center Pro</h4>
+                        <p>Get access to the January 31st Bootcamp + all Pro resources</p>
+                        <a href="https://federalhelpcenter.com/pro" class="cta-link">$99/mo or $799/year</a>
+                    </div>
+                </div>
+
+                <div class="timing-note">
+                    <strong>Recommended Length: 25-30 minutes</strong>
+                    Focus on the OPPORTUNITY and URGENCY. Give enough value that people trust you, but leave them wanting the full picture (which they get at the bootcamp).
+                </div>
+            </div>
+        </div>
+
+        <!-- LIVE #2 -->
+        <div class="live-card live-2">
+            <div class="live-header">
+                <div>
+                    <h2>LIVE #2: Agency Pain Points Revealed</h2>
+                    <div class="live-date">Friday, January 17, 2026</div>
+                </div>
+                <div class="live-number">02</div>
+            </div>
+            <div class="live-content">
+                <div class="section">
+                    <div class="section-title">Title Options (Pick One)</div>
+                    <div class="title-options">
+                        <div class="title-option"><strong>Option 1:</strong> "8 Problems Federal Agencies CAN'T Solve (Your Opportunity)"</div>
+                        <div class="title-option"><strong>Option 2:</strong> "What Government Buyers Actually Want From Small Businesses"</div>
+                        <div class="title-option"><strong>Option 3:</strong> "Why Agencies Struggle to Find Small Businesses (And How to Get Found)"</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Thumbnail Concept</div>
+                    <div class="thumbnail-desc">
+                        <h4>Visual Elements:</h4>
+                        <ul>
+                            <li>Large text: "8 PAIN POINTS" or "THEY CAN'T FIND YOU"</li>
+                            <li>Government building or seal looking stressed/confused</li>
+                            <li>Your face with knowing/teaching expression</li>
+                            <li>Red X marks or warning symbols</li>
+                            <li>Small text: "Federal Agencies" with arrow</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Talking Points</div>
+                    <ul class="talking-points">
+                        <li>Why agencies struggle to find qualified small businesses</li>
+                        <li>The capability matching problem - they can't find you even when you're perfect</li>
+                        <li>8 Agency Pain Points: IT modernization, cybersecurity, workforce gaps, supply chain, compliance, data analytics, facilities, and mission support</li>
+                        <li>How to position your business as a SOLUTION not a vendor</li>
+                        <li>The SBLO relationship and why it matters</li>
+                        <li>Making yourself findable: SAM, DSBS, LinkedIn, capability statements</li>
+                        <li>Why agencies prefer contractors who understand their problems</li>
+                        <li>Real examples of businesses that positioned around pain points</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Script</div>
+                    <div class="script-section">
+                        <div class="script-part">
+                            <span class="script-label hook">HOOK (0:00-1:00)</span>
+                            <div class="script-text">
+                                <p>"I'm about to tell you something that most government contracting 'gurus' won't admit. Federal agencies are STRUGGLING to find small businesses to work with. Not because there aren't enough of you - but because they literally cannot find you. And the ones they do find? Most of them are pitching the wrong thing."</p>
+                                <p>"Last week I showed you the $82 billion opportunity. Today I'm going to show you exactly what agencies are looking for - and why most small businesses are invisible to them."</p>
+                            </div>
+                        </div>
+
+                        <div class="script-part">
+                            <span class="script-label content">CONTENT (1:00-25:00)</span>
+                            <div class="script-text">
+                                <p><strong>Section 1: The Finding Problem (5 min)</strong></p>
+                                <p>"Let me explain something about how government buying works. Contracting officers have goals they have to meet. They're supposed to award 23% of contracts to small businesses. But here's the problem..."</p>
+                                <p>[Explain the discoverability problem, SAM searches, how COs actually find contractors]</p>
+
+                                <p><strong>Section 2: The 8 Pain Points (12 min)</strong></p>
+                                <p>"Now let me walk you through the 8 biggest problems agencies are dealing with right now. If your business solves ANY of these, you need to pay attention..."</p>
+                                <p>[Go through each pain point with examples: IT modernization, cybersecurity, workforce, supply chain, compliance, data, facilities, mission support]</p>
+
+                                <p><strong>Section 3: Positioning as a Solution (5 min)</strong></p>
+                                <p>"Here's where most small businesses get it wrong. They pitch their capabilities. 'We do IT services. We do consulting.' But agencies don't buy capabilities - they buy solutions to problems..."</p>
+                                <p>[How to reframe your pitch, examples of good vs bad positioning]</p>
+
+                                <p><strong>Section 4: Getting Found (3 min)</strong></p>
+                                <p>"Quick tactical advice on making yourself findable..."</p>
+                                <p>[SAM profile optimization, DSBS, LinkedIn, capability statement tips]</p>
+                            </div>
+                        </div>
+
+                        <div class="script-part">
+                            <span class="script-label cta">CTA (25:00-30:00)</span>
+                            <div class="script-text">
+                                <p>"Alright, I just gave you the framework. But I know what you're thinking - 'How do I actually apply this to MY business?' That's the hard part, right?"</p>
+                                <p>"In two weeks - January 31st - we're spending an entire day on this. The bootcamp is specifically designed to help you identify which agencies match YOUR capabilities, find specific opportunities, and build an outreach strategy that actually works."</p>
+                                <p>"We're also doing live capability statement reviews. You submit yours, we tear it apart and rebuild it together. That alone is worth the price of admission."</p>
+                                <p>"Federal Help Center Pro members get access. Link in the description. $99 or $799 for the year."</p>
+                                <p>"Next week is the last live before the bootcamp, and I'm going to break down exactly what you're going to get on January 31st. If you're still on the fence, that one's for you."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Call-to-Action</div>
+                    <div class="cta-box">
+                        <h4>Join Federal Help Center Pro</h4>
+                        <p>Get access to the January 31st Bootcamp + Agency Pain Points Guide</p>
+                        <a href="https://federalhelpcenter.com/pro" class="cta-link">$99/mo or $799/year</a>
+                    </div>
+                </div>
+
+                <div class="timing-note">
+                    <strong>Recommended Length: 30-35 minutes</strong>
+                    This is your VALUE live. Give away real, actionable insights. Build trust by demonstrating expertise. The goal is for viewers to think "if this is the free content, what's the paid stuff like?"
+                </div>
+            </div>
+        </div>
+
+        <!-- LIVE #3 -->
+        <div class="live-card live-3">
+            <div class="live-header">
+                <div>
+                    <h2>LIVE #3: Final Call - Bootcamp Breakdown</h2>
+                    <div class="live-date">Friday, January 24, 2026</div>
+                </div>
+                <div class="live-number">03</div>
+            </div>
+            <div class="live-content">
+                <div class="section">
+                    <div class="section-title">Title Options (Pick One)</div>
+                    <div class="title-options">
+                        <div class="title-option"><strong>Option 1:</strong> "January 31st Bootcamp - Everything You Need to Know (Final Call)"</div>
+                        <div class="title-option"><strong>Option 2:</strong> "Last Chance: Win Federal Contracts in 2026 (Bootcamp Preview)"</div>
+                        <div class="title-option"><strong>Option 3:</strong> "What You'll Get at the January 2026 GovCon Bootcamp"</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Thumbnail Concept</div>
+                    <div class="thumbnail-desc">
+                        <h4>Visual Elements:</h4>
+                        <ul>
+                            <li>Large text: "JAN 31" in bold with calendar icon</li>
+                            <li>Subtext: "BOOTCAMP" or "FINAL CALL"</li>
+                            <li>Countdown/urgency element (clock, "7 DAYS LEFT")</li>
+                            <li>Your face with direct/serious expression</li>
+                            <li>Green checkmarks showing what's included</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Talking Points</div>
+                    <ul class="talking-points">
+                        <li>Recap of the opportunity (NDAA, unobligated balances, Q1 window)</li>
+                        <li>Full bootcamp agenda walkthrough - 8 hours, what happens each hour</li>
+                        <li>What you'll walk away with: target list, opportunities, reviewed cap statement, templates, 90-day plan</li>
+                        <li>Live capability statement reviews - how that works</li>
+                        <li>Who this is for (and who it's NOT for)</li>
+                        <li>The investment: $99/mo or $799/year gets you in</li>
+                        <li>What happens after the bootcamp - ongoing support</li>
+                        <li>Q&A from audience</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Script</div>
+                    <div class="script-section">
+                        <div class="script-part">
+                            <span class="script-label hook">HOOK (0:00-2:00)</span>
+                            <div class="script-text">
+                                <p>"One week from today, we're doing something we've never done before. An 8-hour, full-day bootcamp designed to help you win federal contracts in Q1 2026. And this is the last time I'm going to talk about it before it happens."</p>
+                                <p>"Over the last two weeks, I've shown you the opportunity - $82 billion in unobligated balances. I've shown you what agencies are looking for - the 8 pain points they can't solve. Today, I'm going to show you exactly what happens on January 31st and help you decide if this is right for you."</p>
+                                <p>"And I'm going to be real with you - this isn't for everyone. So stay until the end because I'm going to tell you who should NOT join."</p>
+                            </div>
+                        </div>
+
+                        <div class="script-part">
+                            <span class="script-label content">CONTENT (2:00-20:00)</span>
+                            <div class="script-text">
+                                <p><strong>Section 1: The Agenda (10 min)</strong></p>
+                                <p>"Let me walk you through exactly what we're covering..."</p>
+                                <p>[Go through each session: Opening/NDAA, Agency Targeting, Opportunity Research, Cap Statement Workshop, Outreach, Teaming, 90-Day Plan, Q&A]</p>
+                                <p>"This isn't a passive webinar. You're going to be WORKING. Building YOUR target list. Finding YOUR opportunities. Getting YOUR capability statement reviewed."</p>
+
+                                <p><strong>Section 2: What You Walk Away With (5 min)</strong></p>
+                                <p>"By 6pm on January 31st, here's what you'll have..."</p>
+                                <p>[List deliverables: personalized agency list, 3-5 matched opportunities, reviewed cap statement, email templates, 90-day action plan, recording access, database access]</p>
+
+                                <p><strong>Section 3: Who This Is For (3 min)</strong></p>
+                                <p>"This bootcamp is designed for..."</p>
+                                <p>[Small business owners serious about federal contracts, people who've tried before and struggled, businesses with real capabilities looking to break in, people willing to put in the work]</p>
+
+                                <p><strong>Section 4: Who Should NOT Join (2 min)</strong></p>
+                                <p>"Let me be honest about who this is NOT for..."</p>
+                                <p>[People looking for a magic bullet, those not willing to do outreach, people who just want to collect another certificate, businesses with no real capabilities to sell]</p>
+                            </div>
+                        </div>
+
+                        <div class="script-part">
+                            <span class="script-label cta">CTA (20:00-30:00)</span>
+                            <div class="script-text">
+                                <p>"So here's the deal. The bootcamp is one week from today. January 31st, 10am to 6pm Eastern. It's for Federal Help Center Pro members."</p>
+                                <p>"Pro membership is $99 a month or $799 for the year - which saves you almost $400 if you're planning to stick around. And you should, because the bootcamp is just the beginning."</p>
+                                <p>"The link is in the description. If you've been watching these lives and you're ready to actually do something about government contracting in 2026, this is your moment."</p>
+                                <p>"The Q1 window is open NOW. Agencies are spending NOW. The NDAA money is flowing NOW. You can keep watching from the sidelines, or you can get in the game."</p>
+                                <p>"I'll see you on January 31st."</p>
+                                <p>[Open for live Q&A for remaining time]</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Call-to-Action</div>
+                    <div class="cta-box">
+                        <h4>Last Chance - Join Before January 31st</h4>
+                        <p>Federal Help Center Pro - Bootcamp access included</p>
+                        <a href="https://federalhelpcenter.com/pro" class="cta-link">$99/mo or $799/year</a>
+                    </div>
+                </div>
+
+                <div class="timing-note">
+                    <strong>Recommended Length: 30-45 minutes (include Q&A)</strong>
+                    This is your CONVERSION live. Be direct about the offer. Answer objections. Create urgency without being pushy. End with live Q&A to handle any remaining concerns.
+                </div>
+            </div>
+        </div>
+
+        <!-- BONUS TIPS -->
+        <div class="live-card">
+            <div class="live-content">
+                <div class="section-title">General Tips for All Lives</div>
+                <ul class="talking-points">
+                    <li>Go live at a consistent time (recommend Friday 12pm or 1pm ET)</li>
+                    <li>Promote each live 24-48 hours before on all socials</li>
+                    <li>Pin a comment with the Pro signup link during the live</li>
+                    <li>Mention the bootcamp date (Jan 31) multiple times</li>
+                    <li>Engage with chat - answer questions, give shoutouts</li>
+                    <li>Save and repost clips to shorts/reels</li>
+                    <li>Follow up with email to your list same day</li>
+                    <li>The free handouts drive traffic - mention they can download those from links in description</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

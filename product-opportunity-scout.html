@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opportunity Scout | GovCon Giants Tools</title>
+    <meta name="description" content="Find which government buyers buy what you sell. Free tool to identify federal agencies and prime contractors in your market.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #3b82f6;
+            --secondary-color: #1d4ed8;
+            --accent-color: #10b981;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f9fafb;
+            --border-color: #e5e7eb;
+            --yellow: #fbbf24;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            color: var(--text-dark);
+            background: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .header {
+            background: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .header-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e40af;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+        }
+
+        /* Product Nav */
+        .product-nav {
+            border-bottom: 1px solid var(--border-color);
+            background: white;
+        }
+
+        .product-nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .product-nav a {
+            padding: 16px 0;
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .product-nav a.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+
+        .btn-primary-large {
+            background: var(--accent-color);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            margin-left: auto;
+        }
+
+        /* Main Content */
+        .main-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 40px 24px;
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 40px;
+        }
+
+        /* Left Column */
+        .product-main {
+            min-width: 0;
+        }
+
+        .product-title-section {
+            margin-bottom: 24px;
+        }
+
+        .product-title {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            line-height: 1.1;
+        }
+
+        .product-tagline {
+            font-size: 20px;
+            color: var(--text-light);
+            margin-bottom: 24px;
+        }
+
+        /* Free Badge Banner */
+        .free-banner {
+            background: linear-gradient(135deg, var(--accent-color) 0%, #059669 100%);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 32px;
+            color: white;
+            text-align: center;
+        }
+
+        .free-banner h3 {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .free-banner p {
+            opacity: 0.9;
+        }
+
+        /* Video/Media Section */
+        .product-media {
+            margin-bottom: 40px;
+        }
+
+        .main-video {
+            width: 100%;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            aspect-ratio: 16/9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 16px;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .play-button:hover {
+            transform: scale(1.1);
+        }
+
+        .play-button::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 24px solid var(--primary-color);
+            border-top: 16px solid transparent;
+            border-bottom: 16px solid transparent;
+            margin-left: 4px;
+        }
+
+        .thumbnail-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        .thumbnail {
+            aspect-ratio: 16/9;
+            border-radius: 8px;
+            background: var(--bg-light);
+            border: 2px solid var(--border-color);
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .thumbnail:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Product Description */
+        .product-description {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 32px;
+            color: var(--text-dark);
+        }
+
+        /* TL;DR Section */
+        .tldr {
+            background: #eff6ff;
+            border-left: 4px solid var(--primary-color);
+            padding: 24px;
+            border-radius: 8px;
+            margin-bottom: 32px;
+        }
+
+        .tldr-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .tldr-list {
+            list-style: none;
+        }
+
+        .tldr-list li {
+            padding: 8px 0;
+            padding-left: 28px;
+            position: relative;
+            font-size: 16px;
+        }
+
+        .tldr-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        /* At-a-glance */
+        .at-a-glance {
+            background: var(--bg-light);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .at-a-glance-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .glance-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .glance-item:last-child {
+            border-bottom: none;
+        }
+
+        .glance-label {
+            font-weight: 600;
+            color: var(--text-light);
+        }
+
+        .glance-value {
+            color: var(--text-dark);
+        }
+
+        .glance-value a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        /* Features Section */
+        .features-section {
+            margin: 60px 0;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 32px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .feature-card {
+            padding: 24px;
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .feature-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .feature-desc {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Right Column - Signup */
+        .signup-sidebar {
+            position: sticky;
+            top: 80px;
+            height: fit-content;
+        }
+
+        .signup-card {
+            background: white;
+            border: 2px solid var(--accent-color);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .signup-header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .free-badge {
+            background: var(--accent-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        .price-current {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--accent-color);
+            margin-bottom: 4px;
+        }
+
+        .signup-badge {
+            background: var(--bg-light);
+            color: var(--text-dark);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 24px;
+        }
+
+        .signup-form {
+            margin-bottom: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--text-dark);
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 16px;
+            background: white;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .btn-signup {
+            width: 100%;
+            background: var(--accent-color);
+            color: white;
+            padding: 16px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-bottom: 16px;
+            transition: transform 0.2s;
+        }
+
+        .btn-signup:hover {
+            transform: translateY(-2px);
+            background: #059669;
+        }
+
+        .benefits-list {
+            list-style: none;
+            margin-top: 24px;
+        }
+
+        .benefits-list li {
+            padding: 12px 0;
+            padding-left: 32px;
+            position: relative;
+            font-size: 14px;
+        }
+
+        .benefits-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .privacy-note {
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-light);
+            margin-top: 16px;
+        }
+
+        /* Reviews Section */
+        .reviews-section {
+            margin: 60px 0;
+        }
+
+        .review-summary {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .review-stars {
+            font-size: 24px;
+            color: var(--yellow);
+        }
+
+        .review-count {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .review-card {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 16px;
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 12px;
+        }
+
+        .reviewer-name {
+            font-weight: 700;
+        }
+
+        .review-date {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+
+            .signup-sidebar {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <nav class="nav">
+                <a href="govcon-giants-tools-appsumo-style.html" class="logo">GovCon Giants</a>
+                <ul class="nav-links">
+                    <li><a href="govcon-giants-tools-appsumo-style.html#tools">Tools</a></li>
+                    <li><a href="govcon-giants-tools-appsumo-style.html#databases">Databases</a></li>
+                    <li><a href="govcon-giants-tools-appsumo-style.html#guides">Guides</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Product Nav -->
+    <div class="product-nav">
+        <div class="product-nav-container">
+            <a href="#overview" class="active">Overview</a>
+            <a href="#features">Features</a>
+            <a href="#signup">Sign Up</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#signup" class="btn-primary-large">Sign Up Free</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <!-- Left Column -->
+        <div class="product-main">
+            <!-- Title Section -->
+            <div class="product-title-section">
+                <h1 class="product-title">Opportunity Scout</h1>
+                <p class="product-tagline">Find out which government buyers buy what you sell. Identify your ideal federal customers in minutes.</p>
+            </div>
+
+            <!-- Free Banner -->
+            <div class="free-banner">
+                <h3>100% Free - No Credit Card Required</h3>
+                <p>Join 2,500+ contractors who know exactly who to target</p>
+            </div>
+
+            <!-- Video/Media -->
+            <div class="product-media">
+                <div class="main-video">
+                    <div class="video-placeholder">
+                        <div class="play-button"></div>
+                        <h2 style="font-size: 28px; margin-bottom: 12px;">Opportunity Scout Demo</h2>
+                        <p style="font-size: 18px; opacity: 0.9;">See how to find government buyers<br>who need what you sell</p>
+                    </div>
+                </div>
+                <div class="thumbnail-grid">
+                    <div class="thumbnail">📧</div>
+                    <div class="thumbnail">🔍</div>
+                    <div class="thumbnail">📊</div>
+                    <div class="thumbnail">🎯</div>
+                </div>
+            </div>
+
+            <!-- Description -->
+            <div class="product-description">
+                <p>The biggest challenge in federal contracting isn't finding opportunities—it's knowing WHO to target. Opportunity Scout analyzes federal spending data to show you exactly which agencies and prime contractors are buying what you sell.</p>
+                <br>
+                <p>Stop wasting time chasing the wrong buyers. Focus your business development on government customers who actually need your products and services.</p>
+            </div>
+
+            <!-- TL;DR -->
+            <div class="tldr">
+                <div class="tldr-title">TL;DR - What You Get</div>
+                <ul class="tldr-list">
+                    <li>Discover which federal agencies spend money in your NAICS codes</li>
+                    <li>Find prime contractors who need subcontractors like you</li>
+                    <li>See historical spending data to identify real buyers</li>
+                    <li>Get a targeted list of government customers to pursue</li>
+                    <li>Completely free - just sign up with your email</li>
+                </ul>
+            </div>
+
+            <!-- At-a-glance -->
+            <div class="at-a-glance">
+                <div class="at-a-glance-title">At-a-glance</div>
+                <div class="glance-item">
+                    <span class="glance-label">Price</span>
+                    <span class="glance-value">Free (email signup required)</span>
+                </div>
+                <div class="glance-item">
+                    <span class="glance-label">What it does</span>
+                    <span class="glance-value">Matches you with government buyers</span>
+                </div>
+                <div class="glance-item">
+                    <span class="glance-label">Data source</span>
+                    <span class="glance-value">USASpending, FPDS, SAM.gov</span>
+                </div>
+                <div class="glance-item">
+                    <span class="glance-label">Best for</span>
+                    <span class="glance-value">Small businesses, BD teams, New contractors</span>
+                </div>
+            </div>
+
+            <!-- Features -->
+            <div class="features-section" id="features">
+                <h2 class="section-title">How Opportunity Scout Works</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <div class="feature-title">NAICS-Based Matching</div>
+                        <div class="feature-desc">Enter your NAICS codes and instantly see which government buyers are spending money in your market.</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🏛️</div>
+                        <div class="feature-title">Agency Spending Analysis</div>
+                        <div class="feature-desc">See exactly which federal agencies have budgets for what you sell and how much they're spending.</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🏢</div>
+                        <div class="feature-title">Prime Contractor Matching</div>
+                        <div class="feature-desc">Find prime contractors who win contracts in your space and need subcontractors like you.</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <div class="feature-title">Historical Spend Data</div>
+                        <div class="feature-desc">See who's been buying, how much, and how often—so you can target real buyers, not wishful thinking.</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📋</div>
+                        <div class="feature-title">Target List Generation</div>
+                        <div class="feature-desc">Get a focused list of government customers to pursue based on actual spending patterns.</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <div class="feature-title">Instant Results</div>
+                        <div class="feature-desc">Sign up with your email and NAICS code. Get your buyer analysis delivered right away.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reviews -->
+            <div class="reviews-section" id="reviews">
+                <h2 class="section-title">What users are saying</h2>
+                <div class="review-summary">
+                    <div class="review-stars">★★★★★</div>
+                    <div class="review-count">1,247 users</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div>
+                            <div class="reviewer-name">Amanda S.</div>
+                            <div class="review-date">3 days ago</div>
+                        </div>
+                        <div class="review-stars" style="font-size: 16px;">★★★★★</div>
+                    </div>
+                    <p>"I finally know exactly which agencies to target. Instead of guessing, I now have data showing who actually buys IT services in my NAICS codes. Game changer for my BD strategy."</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div>
+                            <div class="reviewer-name">James W.</div>
+                            <div class="review-date">1 week ago</div>
+                        </div>
+                        <div class="review-stars" style="font-size: 16px;">★★★★★</div>
+                    </div>
+                    <p>"Can't believe this is free. Found 3 prime contractors actively buying in my space that I didn't even know existed. Already set up meetings with their small business liaisons."</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div>
+                            <div class="reviewer-name">Lisa M.</div>
+                            <div class="review-date">2 weeks ago</div>
+                        </div>
+                        <div class="review-stars" style="font-size: 16px;">★★★★★</div>
+                    </div>
+                    <p>"We were targeting the wrong agencies for months. Opportunity Scout showed us where the real money is being spent in our NAICS. Now our pipeline is full of qualified opportunities."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column - Signup -->
+        <div class="signup-sidebar" id="signup">
+            <div class="signup-card">
+                <div class="signup-header">
+                    <span class="free-badge">100% FREE</span>
+                    <div class="price-current">$0</div>
+                    <div class="signup-badge">NO CREDIT CARD REQUIRED</div>
+                </div>
+
+                <form class="signup-form" onsubmit="handleSignup(event)">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="you@company.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Company Name</label>
+                        <input type="text" id="name" placeholder="Your Company Name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="naics">Primary NAICS Code</label>
+                        <input type="text" id="naics" placeholder="e.g., 541511">
+                    </div>
+
+                    <button type="submit" class="btn-signup">Find My Government Buyers</button>
+                </form>
+
+                <ul class="benefits-list">
+                    <li>See who buys what you sell</li>
+                    <li>Agency spending analysis</li>
+                    <li>Prime contractor matching</li>
+                    <li>Historical spend data</li>
+                    <li>Target list generation</li>
+                    <li>100% free forever</li>
+                </ul>
+
+                <p class="privacy-note">We respect your privacy. Unsubscribe at any time.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function handleSignup(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const name = document.getElementById('name').value;
+            const naics = document.getElementById('naics').value;
+
+            // TODO: Integrate with email service
+            alert('Thank you for signing up! You will start receiving opportunity alerts at ' + email + '. (Email integration coming soon)');
+        }
+
+        // Video placeholder click
+        document.querySelector('.play-button').addEventListener('click', function() {
+            alert('Video demo coming soon!');
+        });
+    </script>
+</body>
+</html>

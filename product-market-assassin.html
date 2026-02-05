@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Federal Market Assassin | GovCon Giants Tools</title>
+    <meta name="description" content="The ultimate government contracting intelligence system. Enter 5 inputs, select target agencies, get 8 comprehensive strategic reports instantly. $597 one-time.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #dc2626;
+            --secondary-color: #991b1b;
+            --accent-color: #10b981;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f9fafb;
+            --border-color: #e5e7eb;
+            --yellow: #fbbf24;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            color: var(--text-dark);
+            background: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .header {
+            background: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .header-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e40af;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+        }
+
+        /* Product Nav */
+        .product-nav {
+            border-bottom: 1px solid var(--border-color);
+            background: white;
+        }
+
+        .product-nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .product-nav a {
+            padding: 16px 0;
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .product-nav a.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+
+        .btn-primary-large {
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            margin-left: auto;
+        }
+
+        /* Main Content */
+        .main-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 40px 24px;
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 40px;
+        }
+
+        /* Left Column */
+        .product-main {
+            min-width: 0;
+        }
+
+        .product-title-section {
+            margin-bottom: 24px;
+        }
+
+        .product-title {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            line-height: 1.1;
+        }
+
+        .product-tagline {
+            font-size: 20px;
+            color: var(--text-light);
+            margin-bottom: 24px;
+        }
+
+        /* Deal Timer */
+        .deal-timer {
+            background: #fef2f2;
+            border: 2px solid #fca5a5;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 32px;
+        }
+
+        .deal-timer-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 12px;
+        }
+
+        .timer-display {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        .timer-unit {
+            text-align: center;
+        }
+
+        .timer-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: block;
+        }
+
+        .timer-label {
+            font-size: 12px;
+            color: var(--text-light);
+            text-transform: uppercase;
+        }
+
+        /* Video/Media Section */
+        .product-media {
+            margin-bottom: 40px;
+        }
+
+        .main-video {
+            width: 100%;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            aspect-ratio: 16/9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 16px;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .play-button:hover {
+            transform: scale(1.1);
+        }
+
+        .play-button::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 24px solid var(--primary-color);
+            border-top: 16px solid transparent;
+            border-bottom: 16px solid transparent;
+            margin-left: 4px;
+        }
+
+        .thumbnail-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        .thumbnail {
+            aspect-ratio: 16/9;
+            border-radius: 8px;
+            background: var(--bg-light);
+            border: 2px solid var(--border-color);
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .thumbnail:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Product Description */
+        .product-description {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 32px;
+            color: var(--text-dark);
+        }
+
+        /* TL;DR Section */
+        .tldr {
+            background: #fef2f2;
+            border-left: 4px solid var(--primary-color);
+            padding: 24px;
+            border-radius: 8px;
+            margin-bottom: 32px;
+        }
+
+        .tldr-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .tldr-list {
+            list-style: none;
+        }
+
+        .tldr-list li {
+            padding: 8px 0;
+            padding-left: 28px;
+            position: relative;
+            font-size: 16px;
+        }
+
+        .tldr-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        /* At-a-glance */
+        .at-a-glance {
+            background: var(--bg-light);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .at-a-glance-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .glance-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .glance-item:last-child {
+            border-bottom: none;
+        }
+
+        .glance-label {
+            font-weight: 600;
+            color: var(--text-light);
+        }
+
+        .glance-value {
+            color: var(--text-dark);
+        }
+
+        .glance-value a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        /* Features Section */
+        .features-section {
+            margin: 60px 0;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 32px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .feature-card {
+            padding: 24px;
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .feature-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .feature-desc {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Right Column - Pricing */
+        .pricing-sidebar {
+            position: sticky;
+            top: 80px;
+            height: fit-content;
+        }
+
+        .pricing-card {
+            background: white;
+            border: 2px solid var(--primary-color);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .discount-badge {
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        .price-current {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+        }
+
+        .price-original {
+            font-size: 20px;
+            color: var(--text-light);
+            text-decoration: line-through;
+        }
+
+        .pricing-badge {
+            background: var(--primary-color);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 24px;
+        }
+
+        .plan-select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 16px;
+            margin-bottom: 16px;
+            background: white;
+        }
+
+        .btn-buy {
+            width: 100%;
+            background: var(--primary-color);
+            color: white;
+            padding: 16px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-bottom: 16px;
+            transition: transform 0.2s;
+        }
+
+        .btn-buy:hover {
+            transform: translateY(-2px);
+            background: var(--secondary-color);
+        }
+
+        .benefits-list {
+            list-style: none;
+            margin-top: 24px;
+        }
+
+        .benefits-list li {
+            padding: 12px 0;
+            padding-left: 32px;
+            position: relative;
+            font-size: 14px;
+        }
+
+        .benefits-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .guarantee-badge {
+            background: #f0fdf4;
+            border: 2px solid var(--accent-color);
+            border-radius: 8px;
+            padding: 16px;
+            margin-top: 16px;
+            text-align: center;
+        }
+
+        .guarantee-badge strong {
+            color: var(--accent-color);
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        /* Reviews Section */
+        .reviews-section {
+            margin: 60px 0;
+        }
+
+        .review-summary {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .review-stars {
+            font-size: 24px;
+            color: var(--yellow);
+        }
+
+        .review-count {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .review-card {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 16px;
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 12px;
+        }
+
+        .reviewer-name {
+            font-weight: 700;
+        }
+
+        .review-date {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-sidebar {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <nav class="nav">
+                <a href="govcon-giants-tools-appsumo-style.html" class="logo">GovCon Giants</a>
+                <ul class="nav-links">
+                    <li><a href="govcon-giants-tools-appsumo-style.html#tools">Tools</a></li>
+                    <li><a href="govcon-giants-tools-appsumo-style.html#databases">Databases</a></li>
+                    <li><a href="govcon-giants-tools-appsumo-style.html#guides">Guides</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Product Nav -->
+    <div class="product-nav">
+        <div class="product-nav-container">
+            <a href="#overview" class="active">Overview</a>
+            <a href="#features">Features</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#pricing" class="btn-primary-large">Get Market Assassin</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <!-- Left Column -->
+        <div class="product-main">
+            <!-- Title Section -->
+            <div class="product-title-section">
+                <h1 class="product-title">Federal Market Assassin</h1>
+                <p class="product-tagline">The Ultimate Government Contracting Intelligence System. Enter 5 inputs. Select agencies. Get 8 strategic reports instantly.</p>
+            </div>
+
+            <!-- Deal Timer -->
+            <div class="deal-timer">
+                <div class="deal-timer-label">Limited Time Offer - Deal ends in</div>
+                <div class="timer-display">
+                    <div class="timer-unit">
+                        <span class="timer-value" id="days">07</span>
+                        <span class="timer-label">Days</span>
+                    </div>
+                    <div class="timer-unit">
+                        <span class="timer-value" id="hours">12</span>
+                        <span class="timer-label">Hours</span>
+                    </div>
+                    <div class="timer-unit">
+                        <span class="timer-value" id="mins">00</span>
+                        <span class="timer-label">Mins</span>
+                    </div>
+                    <div class="timer-unit">
+                        <span class="timer-value" id="secs">00</span>
+                        <span class="timer-label">Secs</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video/Media -->
+            <div class="product-media">
+                <div class="main-video">
+                    <div class="video-placeholder">
+                        <div class="play-button"></div>
+                        <h2 style="font-size: 28px; margin-bottom: 12px;">Federal Market Assassin Demo</h2>
+                        <p style="font-size: 18px; opacity: 0.9;">5 inputs → Select agencies → 8 strategic reports<br>Your complete market intelligence in minutes</p>
+                    </div>
+                </div>
+                <div class="thumbnail-grid">
+                    <div class="thumbnail">🎯</div>
+                    <div class="thumbnail">📊</div>
+                    <div class="thumbnail">🔍</div>
+                    <div class="thumbnail">💰</div>
+                </div>
+            </div>
+
+            <!-- Description -->
+            <div class="product-description">
+                <p>Stop spending weeks on market research. Federal Market Assassin generates comprehensive market reports from just 5 core inputs—your certification status, ZIP code, PSC code, NAICS codes, and target agencies.</p>
+                <br>
+                <p>Select your target agencies and instantly receive 8 strategic reports: Market Analytics, Government Buyers, Subcontracting Opportunities, IDV Contracts, Similar Awards, Tribal Contracting, and OSBP Contacts. Everything you need to dominate your market.</p>
+            </div>
+
+            <!-- TL;DR -->
+            <div class="tldr">
+                <div class="tldr-title">TL;DR - What You Get</div>
+                <ul class="tldr-list">
+                    <li>Enter 5 inputs: Certification, ZIP, PSC, NAICS, Target Agencies</li>
+                    <li>Select from 20+ federal agencies to target</li>
+                    <li>Get 8 comprehensive strategic reports instantly</li>
+                    <li>Market Analytics with spending trends and forecasts</li>
+                    <li>Government Buyers, Subcontracting, IDV Contracts, Similar Awards</li>
+                    <li>Tribal Contracting opportunities and OSBP Contact directory</li>
+                    <li>Export to HTML, PDF, or JSON for your team</li>
+                </ul>
+            </div>
+
+            <!-- At-a-glance -->
+            <div class="at-a-glance">
+                <div class="at-a-glance-title">At-a-glance</div>
+                <div class="glance-item">
+                    <span class="glance-label">Access</span>
+                    <span class="glance-value">Lifetime (one-time payment)</span>
+                </div>
+                <div class="glance-item">
+                    <span class="glance-label">Reports Generated</span>
+                    <span class="glance-value">8 comprehensive strategic reports</span>
+                </div>
+                <div class="glance-item">
+                    <span class="glance-label">Inputs Required</span>
+                    <span class="glance-value">5 (Certification, ZIP, PSC, NAICS, Agencies)</span>
+                </div>
+                <div class="glance-item">
+                    <span class="glance-label">Best for</span>
+                    <span class="glance-value">8(a), HUBZone, SDVOSB, Small businesses</span>
+                </div>
+                <div class="glance-item">
+                    <span class="glance-label">Export Options</span>
+                    <span class="glance-value">HTML, PDF, JSON</span>
+                </div>
+            </div>
+
+            <!-- Features -->
+            <div class="features-section" id="features">
+                <h2 class="section-title">Your 8 Strategic Reports</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">📈</div>
+                        <div class="feature-title">Market Analytics Dashboard</div>
+                        <div class="feature-desc">Agency spending analysis, spending trends & forecasts, geographic distribution charts. See exactly where the money is flowing.</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">👥</div>
+                        <div class="feature-title">Government Buyers Report</div>
+                        <div class="feature-desc">Identify the specific contracting officers and program managers at your target agencies who buy what you sell.</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔗</div>
+                        <div class="feature-title">Subcontracting Opportunities</div>
+                        <div class="feature-desc">Find prime contractors with subcontracting goals in your NAICS codes. Get their contact info and teaming opportunities.</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📋</div>
+                        <div class="feature-title">IDV Contracts Analysis</div>
+                        <div class="feature-desc">Indefinite Delivery Vehicles in your space—BPAs, IDIQs, and GWACs you should be pursuing or teaming on.</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <div class="feature-title">Similar Awards Report</div>
+                        <div class="feature-desc">See contracts awarded to companies like yours. Understand pricing, terms, and what's winning in your market.</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🏛️</div>
+                        <div class="feature-title">Tribal Contracting</div>
+                        <div class="feature-desc">Opportunities specific to tribal enterprises and 8(a) Alaska Native Corporations. A hidden goldmine for teaming.</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📞</div>
+                        <div class="feature-title">OSBP Contacts Directory</div>
+                        <div class="feature-desc">Office of Small Business Programs contacts at every target agency. The gatekeepers who can open doors for you.</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💾</div>
+                        <div class="feature-title">Export Everything</div>
+                        <div class="feature-desc">Download all reports as HTML, print to PDF, or export raw JSON data for your CRM or proposal team.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reviews -->
+            <div class="reviews-section" id="reviews">
+                <h2 class="section-title">What our users are saying</h2>
+                <div class="review-summary">
+                    <div class="review-stars">★★★★★</div>
+                    <div class="review-count">89 reviews</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div>
+                            <div class="reviewer-name">David K.</div>
+                            <div class="review-date">1 week ago</div>
+                        </div>
+                        <div class="review-stars" style="font-size: 16px;">★★★★★</div>
+                    </div>
+                    <p>"I entered my 5 inputs and within minutes had 8 reports that would have taken my BD team weeks to compile. The subcontracting report alone identified 12 primes we should be teaming with."</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div>
+                            <div class="reviewer-name">Patricia M.</div>
+                            <div class="review-date">2 weeks ago</div>
+                        </div>
+                        <div class="review-stars" style="font-size: 16px;">★★★★★</div>
+                    </div>
+                    <p>"As an 8(a) company, the Market Analytics dashboard showing agency spending by quarter was eye-opening. We now know exactly when to time our outreach for Q4 spending pushes."</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div>
+                            <div class="reviewer-name">Robert T.</div>
+                            <div class="review-date">3 weeks ago</div>
+                        </div>
+                        <div class="review-stars" style="font-size: 16px;">★★★★★</div>
+                    </div>
+                    <p>"The OSBP contacts directory and Government Buyers report gave us direct access to decision makers. We set up 6 capability briefings in the first month. $597 is a steal for this intel."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column - Pricing -->
+        <div class="pricing-sidebar" id="pricing">
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <span class="discount-badge">FLAGSHIP PRODUCT</span>
+                    <div class="price-current">$597</div>
+                    <div class="price-original">$1,997</div>
+                    <div class="pricing-badge">ONE-TIME PAYMENT</div>
+                </div>
+
+                <select class="plan-select">
+                    <option>Market Assassin - Lifetime Access</option>
+                </select>
+
+                <button class="btn-buy" onclick="alert('Payment integration coming soon!')">Get Federal Market Assassin</button>
+
+                <ul class="benefits-list">
+                    <li>Lifetime access</li>
+                    <li>8 comprehensive reports</li>
+                    <li>Market Analytics Dashboard</li>
+                    <li>Government Buyers Report</li>
+                    <li>Subcontracting Opportunities</li>
+                    <li>IDV Contracts Analysis</li>
+                    <li>Similar Awards Report</li>
+                    <li>OSBP Contacts Directory</li>
+                    <li>Export to HTML/PDF/JSON</li>
+                    <li>All future updates</li>
+                </ul>
+
+                <div class="guarantee-badge">
+                    <strong>30-Day Money Back Guarantee</strong>
+                    <div style="font-size: 12px; color: var(--text-light);">Try it risk-free. Full refund if not satisfied.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Countdown timer
+        function updateTimer() {
+            let days = parseInt(document.getElementById('days').textContent);
+            let hours = parseInt(document.getElementById('hours').textContent);
+            let mins = parseInt(document.getElementById('mins').textContent);
+            let secs = parseInt(document.getElementById('secs').textContent);
+
+            secs--;
+            if (secs < 0) {
+                secs = 59;
+                mins--;
+                if (mins < 0) {
+                    mins = 59;
+                    hours--;
+                    if (hours < 0) {
+                        hours = 23;
+                        days--;
+                    }
+                }
+            }
+
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('mins').textContent = String(mins).padStart(2, '0');
+            document.getElementById('secs').textContent = String(secs).padStart(2, '0');
+        }
+
+        setInterval(updateTimer, 1000);
+
+        // Video placeholder click
+        document.querySelector('.play-button').addEventListener('click', function() {
+            alert('Video demo coming soon!');
+        });
+    </script>
+</body>
+</html>

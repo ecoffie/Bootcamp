@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Resource Library | GovCon Giants</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    .resource-card { transition: transform 0.2s, box-shadow 0.2s; }
+    .resource-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3); }
+    .category-btn.active { background-color: #1e293b; border-color: #22c55e; color: #22c55e; }
+  </style>
+</head>
+<body class="min-h-screen bg-slate-950">
+  <!-- Header -->
+  <header class="py-6 px-6 border-b border-slate-800 sticky top-0 bg-slate-950/95 backdrop-blur z-50">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <a href="#" class="flex items-center gap-1">
+        <span class="text-2xl font-bold text-white">GovCon</span>
+        <span class="text-2xl font-bold text-green-500">Giants</span>
+      </a>
+      <div class="flex items-center gap-4">
+        <a href="https://federalhelpcenter.com/pro" target="_blank" class="hidden sm:inline-flex px-4 py-2 bg-green-600 hover:bg-green-500 text-white rounded-lg font-semibold text-sm transition">
+          Upgrade to Pro
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="py-12 px-6 border-b border-slate-800">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-8">
+        <h1 class="text-3xl md:text-4xl font-bold text-white mb-4">
+          Free <span class="text-green-500">GovCon Resource Library</span>
+        </h1>
+        <p class="text-xl text-slate-400 max-w-2xl mx-auto">
+          Tools, templates, videos, and guides to help you win federal contracts. Some resources are open access, others require a free email signup.
+        </p>
+      </div>
+
+      <!-- Legend -->
+      <div class="flex flex-wrap gap-4 justify-center">
+        <div class="flex items-center gap-2">
+          <span class="px-3 py-1 bg-green-600 text-white text-xs font-bold rounded">FREE</span>
+          <span class="text-slate-400 text-sm">Open access - no signup required</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="px-3 py-1 bg-blue-600 text-white text-xs font-bold rounded">FREE + EMAIL</span>
+          <span class="text-slate-400 text-sm">Requires free email signup</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter Tabs -->
+  <section class="py-6 px-6 border-b border-slate-800 sticky top-[73px] bg-slate-950/95 backdrop-blur z-40">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-wrap gap-2 justify-center" id="categoryFilters">
+        <button class="category-btn active px-4 py-2 bg-slate-900 border border-slate-700 rounded-full text-white text-sm font-medium transition hover:border-green-500" data-category="all">
+          All Resources
+        </button>
+        <button class="category-btn px-4 py-2 bg-slate-900 border border-slate-700 rounded-full text-white text-sm font-medium transition hover:border-green-500" data-category="videos">
+          Videos
+        </button>
+        <button class="category-btn px-4 py-2 bg-slate-900 border border-slate-700 rounded-full text-white text-sm font-medium transition hover:border-green-500" data-category="templates">
+          Templates & Guides
+        </button>
+        <button class="category-btn px-4 py-2 bg-slate-900 border border-slate-700 rounded-full text-white text-sm font-medium transition hover:border-green-500" data-category="contacts">
+          Contact Lists
+        </button>
+        <button class="category-btn px-4 py-2 bg-slate-900 border border-slate-700 rounded-full text-white text-sm font-medium transition hover:border-green-500" data-category="tools">
+          Tools & Data
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resources Grid -->
+  <section class="py-12 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div id="resourcesGrid">
+
+        <!-- ==================== GETTING STARTED ==================== -->
+        <div class="mb-12" data-section="getting-started">
+          <h2 class="text-2xl font-bold text-white mb-2">Getting Started</h2>
+          <p class="text-slate-400 mb-6">New to GovCon? Start here to learn the fundamentals.</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Where Do I Start Video -->
+            <div class="resource-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden" data-category="videos" data-gated="false">
+              <div class="h-48 bg-gradient-to-br from-purple-900/50 to-slate-900 flex items-center justify-center relative">
+                <img src="https://i.ytimg.com/vi/VwerrdguYTE/hqdefault.jpg" alt="Where Do I Start?" class="w-full h-full object-cover opacity-80">
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center backdrop-blur">
+                    <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <span class="px-3 py-1 bg-green-600 text-white text-xs font-bold rounded">FREE VIDEO</span>
+                <h3 class="text-xl font-bold text-white mt-3 mb-2">Where Do I Start in GovCon?</h3>
+                <p class="text-slate-400 text-sm mb-4">Complete introduction to government contracting. Perfect for beginners who want to understand the fundamentals.</p>
+                <ul class="space-y-2 mb-6">
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> GovCon basics explained</li>
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> How to get registered</li>
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Finding your first contract</li>
+                </ul>
+                <div class="flex items-center justify-between">
+                  <div>
+                    <div class="text-slate-500 text-sm line-through">$97 value</div>
+                    <div class="text-2xl font-bold text-green-500">FREE</div>
+                  </div>
+                  <a href="https://www.youtube.com/live/VwerrdguYTE" target="_blank" class="px-6 py-3 bg-green-600 hover:bg-green-500 text-white rounded-lg font-semibold transition">Watch Now</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- SBA Profile Video -->
+            <div class="resource-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden" data-category="videos" data-gated="false">
+              <div class="h-48 bg-gradient-to-br from-purple-900/50 to-slate-900 flex items-center justify-center relative">
+                <img src="https://i.ytimg.com/vi/g0NsG4SogDM/hqdefault.jpg" alt="SBA Profile" class="w-full h-full object-cover opacity-80" onerror="this.style.display='none'">
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center backdrop-blur">
+                    <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <span class="px-3 py-1 bg-green-600 text-white text-xs font-bold rounded">FREE VIDEO</span>
+                <h3 class="text-xl font-bold text-white mt-3 mb-2">SBA Profile Setup</h3>
+                <p class="text-slate-400 text-sm mb-4">Complete guide to setting up your SBA profile and certifications for small business set-asides.</p>
+                <ul class="space-y-2 mb-6">
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Profile setup walkthrough</li>
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Certification options</li>
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Set-aside eligibility</li>
+                </ul>
+                <div class="flex items-center justify-between">
+                  <div>
+                    <div class="text-slate-500 text-sm line-through">$97 value</div>
+                    <div class="text-2xl font-bold text-green-500">FREE</div>
+                  </div>
+                  <a href="https://youtu.be/g0NsG4SogDM" target="_blank" class="px-6 py-3 bg-green-600 hover:bg-green-500 text-white rounded-lg font-semibold transition">Watch Now</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ==================== FINDING OPPORTUNITIES ==================== -->
+        <div class="mb-12" data-section="finding-opportunities">
+          <h2 class="text-2xl font-bold text-white mb-2">Finding Opportunities</h2>
+          <p class="text-slate-400 mb-6">Learn how to find and research federal contract opportunities.</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Market Research Video -->
+            <div class="resource-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden" data-category="videos" data-gated="false">
+              <div class="h-48 bg-gradient-to-br from-purple-900/50 to-slate-900 flex items-center justify-center relative">
+                <img src="https://i.ytimg.com/vi/JAa1qkOrtic/hqdefault.jpg" alt="Market Research" class="w-full h-full object-cover opacity-80">
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center backdrop-blur">
+                    <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <span class="px-3 py-1 bg-green-600 text-white text-xs font-bold rounded">FREE VIDEO</span>
+                <h3 class="text-xl font-bold text-white mt-3 mb-2">Market Research for GovCon</h3>
+                <p class="text-slate-400 text-sm mb-4">How to conduct market research to find the right federal opportunities that match your business.</p>
+                <ul class="space-y-2 mb-6">
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Research techniques</li>
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Finding target agencies</li>
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Analyzing competition</li>
+                </ul>
+                <div class="flex items-center justify-between">
+                  <div>
+                    <div class="text-slate-500 text-sm line-through">$97 value</div>
+                    <div class="text-2xl font-bold text-green-500">FREE</div>
+                  </div>
+                  <a href="https://youtube.com/live/JAa1qkOrtic" target="_blank" class="px-6 py-3 bg-green-600 hover:bg-green-500 text-white rounded-lg font-semibold transition">Watch Now</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Finding Contract Opportunities Video -->
+            <div class="resource-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden" data-category="videos" data-gated="false">
+              <div class="h-48 bg-gradient-to-br from-purple-900/50 to-slate-900 flex items-center justify-center relative">
+                <img src="https://i.ytimg.com/vi/Ko1N0TMAAs0/hqdefault.jpg" alt="Finding Contract Opportunities" class="w-full h-full object-cover opacity-80">
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center backdrop-blur">
+                    <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <span class="px-3 py-1 bg-green-600 text-white text-xs font-bold rounded">FREE VIDEO</span>
+                <h3 class="text-xl font-bold text-white mt-3 mb-2">Finding Contract Opportunities</h3>
+                <p class="text-slate-400 text-sm mb-4">Master the art of finding federal contract opportunities using SAM.gov, agency websites, and more.</p>
+                <ul class="space-y-2 mb-6">
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> SAM.gov navigation</li>
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Opportunity sources</li>
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Search strategies</li>
+                </ul>
+                <div class="flex items-center justify-between">
+                  <div>
+                    <div class="text-slate-500 text-sm line-through">$97 value</div>
+                    <div class="text-2xl font-bold text-green-500">FREE</div>
+                  </div>
+                  <a href="https://www.youtube.com/live/Ko1N0TMAAs0" target="_blank" class="px-6 py-3 bg-green-600 hover:bg-green-500 text-white rounded-lg font-semibold transition">Watch Now</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- PSC Code Video -->
+            <div class="resource-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden" data-category="videos" data-gated="false">
+              <div class="h-48 bg-gradient-to-br from-purple-900/50 to-slate-900 flex items-center justify-center relative">
+                <img src="https://i.ytimg.com/vi/eCtnAM0j5gY/hqdefault.jpg" alt="PSC Code" class="w-full h-full object-cover opacity-80">
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center backdrop-blur">
+                    <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <span class="px-3 py-1 bg-green-600 text-white text-xs font-bold rounded">FREE VIDEO</span>
+                <h3 class="text-xl font-bold text-white mt-3 mb-2">Understanding PSC Codes</h3>
+                <p class="text-slate-400 text-sm mb-4">Complete guide to Product Service Codes (PSC) and how to use them to find relevant opportunities.</p>
+                <ul class="space-y-2 mb-6">
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> What are PSC codes</li>
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Finding your PSC codes</li>
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> PSC vs NAICS</li>
+                </ul>
+                <div class="flex items-center justify-between">
+                  <div>
+                    <div class="text-slate-500 text-sm line-through">$97 value</div>
+                    <div class="text-2xl font-bold text-green-500">FREE</div>
+                  </div>
+                  <a href="https://youtu.be/eCtnAM0j5gY" target="_blank" class="px-6 py-3 bg-green-600 hover:bg-green-500 text-white rounded-lg font-semibold transition">Watch Now</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Agency Pain Points Video -->
+            <div class="resource-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden" data-category="videos" data-gated="false">
+              <div class="h-48 bg-gradient-to-br from-purple-900/50 to-slate-900 flex items-center justify-center relative">
+                <img src="https://i.ytimg.com/vi/ke5RmuRQN_8/hqdefault.jpg" alt="Agency Pain Points" class="w-full h-full object-cover opacity-80">
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center backdrop-blur">
+                    <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <span class="px-3 py-1 bg-green-600 text-white text-xs font-bold rounded">FREE VIDEO</span>
+                <h3 class="text-xl font-bold text-white mt-3 mb-2">Agency Pain Points with Lori Smith</h3>
+                <p class="text-slate-400 text-sm mb-4">Learn how to identify and address federal agency pain points to position your solutions effectively.</p>
+                <ul class="space-y-2 mb-6">
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Identifying agency needs</li>
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Pain point analysis</li>
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Solution positioning</li>
+                </ul>
+                <div class="flex items-center justify-between">
+                  <div>
+                    <div class="text-slate-500 text-sm line-through">$97 value</div>
+                    <div class="text-2xl font-bold text-green-500">FREE</div>
+                  </div>
+                  <a href="https://youtube.com/live/ke5RmuRQN_8" target="_blank" class="px-6 py-3 bg-green-600 hover:bg-green-500 text-white rounded-lg font-semibold transition">Watch Now</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ==================== WINNING CONTRACTS ==================== -->
+        <div class="mb-12" data-section="winning-contracts">
+          <h2 class="text-2xl font-bold text-white mb-2">Winning Contracts</h2>
+          <p class="text-slate-400 mb-6">Master proposals, pricing, and capability statements to win contracts.</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Proposal Writing Video -->
+            <div class="resource-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden" data-category="videos" data-gated="false">
+              <div class="h-48 bg-gradient-to-br from-purple-900/50 to-slate-900 flex items-center justify-center relative">
+                <img src="https://i.ytimg.com/vi/MTaIUOBbE1Q/hqdefault.jpg" alt="Proposal Writing" class="w-full h-full object-cover opacity-80">
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center backdrop-blur">
+                    <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <span class="px-3 py-1 bg-green-600 text-white text-xs font-bold rounded">FREE VIDEO</span>
+                <h3 class="text-xl font-bold text-white mt-3 mb-2">Proposal Writing & Bidding</h3>
+                <p class="text-slate-400 text-sm mb-4">Learn the essentials of writing winning government proposals and how to bid effectively on contracts.</p>
+                <ul class="space-y-2 mb-6">
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Proposal structure</li>
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Winning strategies</li>
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Common mistakes to avoid</li>
+                </ul>
+                <div class="flex items-center justify-between">
+                  <div>
+                    <div class="text-slate-500 text-sm line-through">$97 value</div>
+                    <div class="text-2xl font-bold text-green-500">FREE</div>
+                  </div>
+                  <a href="https://youtu.be/MTaIUOBbE1Q" target="_blank" class="px-6 py-3 bg-green-600 hover:bg-green-500 text-white rounded-lg font-semibold transition">Watch Now</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Capability Statements Video -->
+            <div class="resource-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden" data-category="videos" data-gated="false">
+              <div class="h-48 bg-gradient-to-br from-purple-900/50 to-slate-900 flex items-center justify-center relative">
+                <img src="https://i.ytimg.com/vi/paUgQSU5v6c/hqdefault.jpg" alt="Capability Statements" class="w-full h-full object-cover opacity-80">
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center backdrop-blur">
+                    <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <span class="px-3 py-1 bg-green-600 text-white text-xs font-bold rounded">FREE VIDEO</span>
+                <h3 class="text-xl font-bold text-white mt-3 mb-2">Capability Statements</h3>
+                <p class="text-slate-400 text-sm mb-4">How to create compelling capability statements that get you noticed by federal buyers and prime contractors.</p>
+                <ul class="space-y-2 mb-6">
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> What to include</li>
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Design best practices</li>
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Real examples</li>
+                </ul>
+                <div class="flex items-center justify-between">
+                  <div>
+                    <div class="text-slate-500 text-sm line-through">$97 value</div>
+                    <div class="text-2xl font-bold text-green-500">FREE</div>
+                  </div>
+                  <a href="https://youtube.com/live/paUgQSU5v6c" target="_blank" class="px-6 py-3 bg-green-600 hover:bg-green-500 text-white rounded-lg font-semibold transition">Watch Now</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pricing Strategies Video -->
+            <div class="resource-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden" data-category="videos" data-gated="false">
+              <div class="h-48 bg-gradient-to-br from-purple-900/50 to-slate-900 flex items-center justify-center relative">
+                <img src="https://i.ytimg.com/vi/5o5V8YkNjIM/hqdefault.jpg" alt="Pricing Strategies" class="w-full h-full object-cover opacity-80">
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center backdrop-blur">
+                    <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <span class="px-3 py-1 bg-green-600 text-white text-xs font-bold rounded">FREE VIDEO</span>
+                <h3 class="text-xl font-bold text-white mt-3 mb-2">Pricing Strategies</h3>
+                <p class="text-slate-400 text-sm mb-4">How to price your government contracts competitively while maintaining healthy profit margins.</p>
+                <ul class="space-y-2 mb-6">
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Pricing models</li>
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Cost analysis</li>
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Competitive positioning</li>
+                </ul>
+                <div class="flex items-center justify-between">
+                  <div>
+                    <div class="text-slate-500 text-sm line-through">$97 value</div>
+                    <div class="text-2xl font-bold text-green-500">FREE</div>
+                  </div>
+                  <a href="https://youtu.be/5o5V8YkNjIM" target="_blank" class="px-6 py-3 bg-green-600 hover:bg-green-500 text-white rounded-lg font-semibold transition">Watch Now</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pricing Part 2 Video -->
+            <div class="resource-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden" data-category="videos" data-gated="false">
+              <div class="h-48 bg-gradient-to-br from-purple-900/50 to-slate-900 flex items-center justify-center relative">
+                <img src="https://i.ytimg.com/vi/3eBlk6J1Hig/hqdefault.jpg" alt="Pricing Part 2" class="w-full h-full object-cover opacity-80">
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center backdrop-blur">
+                    <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <span class="px-3 py-1 bg-green-600 text-white text-xs font-bold rounded">FREE VIDEO</span>
+                <h3 class="text-xl font-bold text-white mt-3 mb-2">Pricing Strategies Part 2</h3>
+                <p class="text-slate-400 text-sm mb-4">Advanced pricing techniques for federal contracts. Build on the fundamentals with deeper strategies.</p>
+                <ul class="space-y-2 mb-6">
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Advanced pricing methods</li>
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Rate development</li>
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Profit optimization</li>
+                </ul>
+                <div class="flex items-center justify-between">
+                  <div>
+                    <div class="text-slate-500 text-sm line-through">$97 value</div>
+                    <div class="text-2xl font-bold text-green-500">FREE</div>
+                  </div>
+                  <a href="https://youtu.be/3eBlk6J1Hig" target="_blank" class="px-6 py-3 bg-green-600 hover:bg-green-500 text-white rounded-lg font-semibold transition">Watch Now</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- No Past Performance Video -->
+            <div class="resource-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden" data-category="videos" data-gated="false">
+              <div class="h-48 bg-gradient-to-br from-purple-900/50 to-slate-900 flex items-center justify-center relative">
+                <img src="https://i.ytimg.com/vi/uR8vdTtvuyU/hqdefault.jpg" alt="No Past Performance" class="w-full h-full object-cover opacity-80">
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center backdrop-blur">
+                    <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <span class="px-3 py-1 bg-green-600 text-white text-xs font-bold rounded">FREE VIDEO</span>
+                <h3 class="text-xl font-bold text-white mt-3 mb-2">Winning Without Past Performance</h3>
+                <p class="text-slate-400 text-sm mb-4">Strategies to win government contracts when you don't have federal past performance history.</p>
+                <ul class="space-y-2 mb-6">
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Overcoming no experience</li>
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Alternative qualifications</li>
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Building your track record</li>
+                </ul>
+                <div class="flex items-center justify-between">
+                  <div>
+                    <div class="text-slate-500 text-sm line-through">$97 value</div>
+                    <div class="text-2xl font-bold text-green-500">FREE</div>
+                  </div>
+                  <a href="https://youtu.be/uR8vdTtvuyU" target="_blank" class="px-6 py-3 bg-green-600 hover:bg-green-500 text-white rounded-lg font-semibold transition">Watch Now</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ==================== FULFILLMENT & GROWTH ==================== -->
+        <div class="mb-12" data-section="fulfillment-growth">
+          <h2 class="text-2xl font-bold text-white mb-2">Fulfillment & Growth</h2>
+          <p class="text-slate-400 mb-6">Financing, suppliers, and scaling your government contracting business.</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Finance Contract Video -->
+            <div class="resource-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden" data-category="videos" data-gated="false">
+              <div class="h-48 bg-gradient-to-br from-purple-900/50 to-slate-900 flex items-center justify-center relative">
+                <img src="https://i.ytimg.com/vi/HSWGMzkD0Vg/hqdefault.jpg" alt="Finance Contract" class="w-full h-full object-cover opacity-80">
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center backdrop-blur">
+                    <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <span class="px-3 py-1 bg-green-600 text-white text-xs font-bold rounded">FREE VIDEO</span>
+                <h3 class="text-xl font-bold text-white mt-3 mb-2">Financing Your Contract</h3>
+                <p class="text-slate-400 text-sm mb-4">Learn financing options for government contracts including factoring, lines of credit, and SBA loans.</p>
+                <ul class="space-y-2 mb-6">
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Contract financing options</li>
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Cash flow management</li>
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Factoring explained</li>
+                </ul>
+                <div class="flex items-center justify-between">
+                  <div>
+                    <div class="text-slate-500 text-sm line-through">$97 value</div>
+                    <div class="text-2xl font-bold text-green-500">FREE</div>
+                  </div>
+                  <a href="https://youtube.com/live/HSWGMzkD0Vg" target="_blank" class="px-6 py-3 bg-green-600 hover:bg-green-500 text-white rounded-lg font-semibold transition">Watch Now</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Vendor/Supplier Credit Video -->
+            <div class="resource-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden" data-category="videos" data-gated="false">
+              <div class="h-48 bg-gradient-to-br from-purple-900/50 to-slate-900 flex items-center justify-center relative">
+                <img src="https://i.ytimg.com/vi/TDtk3mVWZDQ/hqdefault.jpg" alt="Vendor Supplier Credit" class="w-full h-full object-cover opacity-80">
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center backdrop-blur">
+                    <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <span class="px-3 py-1 bg-green-600 text-white text-xs font-bold rounded">FREE VIDEO</span>
+                <h3 class="text-xl font-bold text-white mt-3 mb-2">Vendor & Supplier Credit</h3>
+                <p class="text-slate-400 text-sm mb-4">Understand vendor credit, supplier relationships, and how to leverage credit for contract fulfillment.</p>
+                <ul class="space-y-2 mb-6">
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Vendor credit basics</li>
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Building supplier relationships</li>
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Credit terms negotiation</li>
+                </ul>
+                <div class="flex items-center justify-between">
+                  <div>
+                    <div class="text-slate-500 text-sm line-through">$97 value</div>
+                    <div class="text-2xl font-bold text-green-500">FREE</div>
+                  </div>
+                  <a href="https://www.youtube.com/live/TDtk3mVWZDQ" target="_blank" class="px-6 py-3 bg-green-600 hover:bg-green-500 text-white rounded-lg font-semibold transition">Watch Now</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Finding Suppliers Video -->
+            <div class="resource-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden" data-category="videos" data-gated="false">
+              <div class="h-48 bg-gradient-to-br from-purple-900/50 to-slate-900 flex items-center justify-center relative">
+                <img src="https://i.ytimg.com/vi/gHcWcYFWa4I/hqdefault.jpg" alt="Finding Suppliers" class="w-full h-full object-cover opacity-80">
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center backdrop-blur">
+                    <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <span class="px-3 py-1 bg-green-600 text-white text-xs font-bold rounded">FREE VIDEO</span>
+                <h3 class="text-xl font-bold text-white mt-3 mb-2">Finding Suppliers</h3>
+                <p class="text-slate-400 text-sm mb-4">How to find reliable suppliers and build a supply chain for fulfilling government contracts.</p>
+                <ul class="space-y-2 mb-6">
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Supplier sourcing</li>
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Vetting suppliers</li>
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Supply chain setup</li>
+                </ul>
+                <div class="flex items-center justify-between">
+                  <div>
+                    <div class="text-slate-500 text-sm line-through">$97 value</div>
+                    <div class="text-2xl font-bold text-green-500">FREE</div>
+                  </div>
+                  <a href="https://www.youtube.com/live/gHcWcYFWa4I?t=3775" target="_blank" class="px-6 py-3 bg-green-600 hover:bg-green-500 text-white rounded-lg font-semibold transition">Watch Now</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ==================== INDUSTRY SPECIFIC ==================== -->
+        <div class="mb-12" data-section="industry-specific">
+          <h2 class="text-2xl font-bold text-white mb-2">Industry Specific</h2>
+          <p class="text-slate-400 mb-6">Specialized guidance for specific industries and situations.</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Construction Video -->
+            <div class="resource-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden" data-category="videos" data-gated="false">
+              <div class="h-48 bg-gradient-to-br from-purple-900/50 to-slate-900 flex items-center justify-center relative">
+                <img src="https://i.ytimg.com/vi/gHcWcYFWa4I/hqdefault.jpg" alt="Construction Contracting" class="w-full h-full object-cover opacity-80">
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center backdrop-blur">
+                    <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <span class="px-3 py-1 bg-green-600 text-white text-xs font-bold rounded">FREE VIDEO</span>
+                <h3 class="text-xl font-bold text-white mt-3 mb-2">How to Start a Construction Business</h3>
+                <p class="text-slate-400 text-sm mb-4">Complete guide to starting a construction business in federal contracting, including bonding and certifications.</p>
+                <ul class="space-y-2 mb-6">
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Construction bonding</li>
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Required certifications</li>
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Bidding process</li>
+                </ul>
+                <div class="flex items-center justify-between">
+                  <div>
+                    <div class="text-slate-500 text-sm line-through">$97 value</div>
+                    <div class="text-2xl font-bold text-green-500">FREE</div>
+                  </div>
+                  <a href="https://youtube.com/live/gHcWcYFWa4I" target="_blank" class="px-6 py-3 bg-green-600 hover:bg-green-500 text-white rounded-lg font-semibold transition">Watch Now</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Foreign Based Company Video -->
+            <div class="resource-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden" data-category="videos" data-gated="false">
+              <div class="h-48 bg-gradient-to-br from-purple-900/50 to-slate-900 flex items-center justify-center relative">
+                <img src="https://i.ytimg.com/vi/XvWaAownrZU/hqdefault.jpg" alt="Foreign Based Company" class="w-full h-full object-cover opacity-80">
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center backdrop-blur">
+                    <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <span class="px-3 py-1 bg-green-600 text-white text-xs font-bold rounded">FREE VIDEO</span>
+                <h3 class="text-xl font-bold text-white mt-3 mb-2">Foreign-Based Companies</h3>
+                <p class="text-slate-400 text-sm mb-4">How foreign-owned businesses can participate in US government contracting legally and effectively.</p>
+                <ul class="space-y-2 mb-6">
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Eligibility requirements</li>
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> US entity options</li>
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Compliance considerations</li>
+                </ul>
+                <div class="flex items-center justify-between">
+                  <div>
+                    <div class="text-slate-500 text-sm line-through">$97 value</div>
+                    <div class="text-2xl font-bold text-green-500">FREE</div>
+                  </div>
+                  <a href="https://youtu.be/XvWaAownrZU" target="_blank" class="px-6 py-3 bg-green-600 hover:bg-green-500 text-white rounded-lg font-semibold transition">Watch Now</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- GSA Schedule Video -->
+            <div class="resource-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden" data-category="videos" data-gated="false">
+              <div class="h-48 bg-gradient-to-br from-purple-900/50 to-slate-900 flex items-center justify-center relative">
+                <img src="https://i.ytimg.com/vi/SdefXaGSS5Q/hqdefault.jpg" alt="GSA Schedule" class="w-full h-full object-cover opacity-80">
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center backdrop-blur">
+                    <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <span class="px-3 py-1 bg-green-600 text-white text-xs font-bold rounded">FREE VIDEO</span>
+                <h3 class="text-xl font-bold text-white mt-3 mb-2">GSA Schedule Overview</h3>
+                <p class="text-slate-400 text-sm mb-4">Everything you need to know about GSA Schedules and how to get on contract with the government.</p>
+                <ul class="space-y-2 mb-6">
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> What is GSA?</li>
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Application process</li>
+                  <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Benefits & requirements</li>
+                </ul>
+                <div class="flex items-center justify-between">
+                  <div>
+                    <div class="text-slate-500 text-sm line-through">$97 value</div>
+                    <div class="text-2xl font-bold text-green-500">FREE</div>
+                  </div>
+                  <a href="https://youtu.be/SdefXaGSS5Q" target="_blank" class="px-6 py-3 bg-green-600 hover:bg-green-500 text-white rounded-lg font-semibold transition">Watch Now</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ==================== EMAIL REQUIRED RESOURCES ==================== -->
+        <div class="mb-12" data-section="templates-tools">
+          <h2 class="text-2xl font-bold text-white mb-2">Templates, Tools & Contact Lists</h2>
+          <p class="text-slate-400 mb-6">Premium resources that require a free email signup to access.</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- GovCon Guides & Templates Bundle -->
+        <div class="resource-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden" data-category="templates" data-gated="true">
+          <div class="h-48 bg-gradient-to-br from-blue-900/50 to-slate-900 p-4 flex items-center justify-center">
+            <div class="bg-white rounded-lg shadow-xl p-3 transform -rotate-3">
+              <div class="w-40 h-28 bg-gradient-to-br from-slate-100 to-slate-200 rounded flex flex-col items-center justify-center">
+                <div class="text-3xl mb-1">📄</div>
+                <div class="text-xs text-slate-600 font-medium">PDF Bundle</div>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <span class="px-3 py-1 bg-blue-600 text-white text-xs font-bold rounded">FREE + EMAIL</span>
+            <h3 class="text-xl font-bold text-white mt-3 mb-2">GovCon Guides & Templates</h3>
+            <p class="text-slate-400 text-sm mb-4">Comprehensive guides and ready-to-use templates for federal contracting success.</p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> SAM Registration Guide</li>
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> SBLO Email Templates</li>
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Proposal Checklists</li>
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> BD Pipeline Tracker</li>
+            </ul>
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="text-slate-500 text-sm line-through">$97 value</div>
+                <div class="text-2xl font-bold text-green-500">FREE</div>
+              </div>
+              <button onclick="handleGatedResource(this)" class="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-semibold transition gated-btn">Download PDF</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tier-2 Supplier List -->
+        <div class="resource-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden" data-category="contacts" data-gated="true">
+          <div class="h-48 bg-gradient-to-br from-blue-900/50 to-slate-900 p-4 flex items-center justify-center">
+            <div class="bg-white rounded-lg shadow-xl p-2 transform rotate-2">
+              <div class="w-44 h-32 bg-gradient-to-br from-slate-100 to-slate-200 rounded overflow-hidden">
+                <div class="bg-slate-700 text-white text-xs p-1 text-center">Tier 2 Subcontractor Directory</div>
+                <div class="p-2 space-y-1">
+                  <div class="flex gap-2 text-xs">
+                    <span class="bg-blue-100 text-blue-800 px-1 rounded">68</span>
+                    <span class="bg-green-100 text-green-800 px-1 rounded">59</span>
+                    <span class="bg-purple-100 text-purple-800 px-1 rounded">121</span>
+                  </div>
+                  <div class="h-2 bg-slate-300 rounded w-full"></div>
+                  <div class="h-2 bg-slate-300 rounded w-3/4"></div>
+                  <div class="h-2 bg-slate-300 rounded w-5/6"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <span class="px-3 py-1 bg-blue-600 text-white text-xs font-bold rounded">FREE + EMAIL</span>
+            <h3 class="text-xl font-bold text-white mt-3 mb-2">Tier-2 Supplier List</h3>
+            <p class="text-slate-400 text-sm mb-4">Access Tier-2 supplier contacts and vendor registration portals at major prime contractors.</p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> 50+ Prime Contractors</li>
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Vendor Portal Links</li>
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Supplier Contacts</li>
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Organized by NAICS</li>
+            </ul>
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="text-slate-500 text-sm line-through">$697 value</div>
+                <div class="text-2xl font-bold text-green-500">FREE</div>
+              </div>
+              <button onclick="handleGatedResource(this)" class="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-semibold transition gated-btn">Download PDF</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Expiring Contracts CSV -->
+        <div class="resource-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden" data-category="tools" data-gated="true">
+          <div class="h-48 bg-gradient-to-br from-blue-900/50 to-slate-900 p-4 flex items-center justify-center">
+            <div class="bg-white rounded-lg shadow-xl p-2 transform -rotate-2">
+              <div class="w-44 h-32 bg-gradient-to-br from-green-50 to-green-100 rounded overflow-hidden">
+                <div class="bg-green-700 text-white text-xs p-1 text-center">Expiring Contracts 2026</div>
+                <div class="p-1 text-xs font-mono">
+                  <div class="flex gap-1 text-green-800 border-b border-green-200 pb-1 mb-1">
+                    <span class="w-16 truncate">Award ID</span>
+                    <span class="w-16 truncate">Agency</span>
+                  </div>
+                  <div class="space-y-0.5 text-green-700">
+                    <div class="flex gap-1"><span class="w-16 truncate">47QF...</span><span class="w-16 truncate">DOD</span></div>
+                    <div class="flex gap-1"><span class="w-16 truncate">FA88...</span><span class="w-16 truncate">USAF</span></div>
+                    <div class="flex gap-1"><span class="w-16 truncate">W912...</span><span class="w-16 truncate">Army</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <span class="px-3 py-1 bg-blue-600 text-white text-xs font-bold rounded">FREE + EMAIL</span>
+            <h3 class="text-xl font-bold text-white mt-3 mb-2">Expiring Contracts CSV</h3>
+            <p class="text-slate-400 text-sm mb-4">Sample of expiring federal contracts data. Import into Excel, Sheets, or your CRM.</p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Sample Contract Data</li>
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Prime Contractor Info</li>
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Expiration Dates</li>
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Works with Any CRM</li>
+            </ul>
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="text-slate-500 text-sm line-through">$697 value</div>
+                <div class="text-2xl font-bold text-green-500">FREE</div>
+              </div>
+              <button onclick="handleGatedResource(this)" class="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-semibold transition gated-btn">Download CSV</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- SBLO Contact Directory -->
+        <div class="resource-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden" data-category="contacts" data-gated="true">
+          <div class="h-48 bg-gradient-to-br from-blue-900/50 to-slate-900 p-4 flex items-center justify-center">
+            <div class="bg-white rounded-lg shadow-xl p-3 transform rotate-1">
+              <div class="w-40 h-28 bg-gradient-to-br from-slate-100 to-slate-200 rounded flex flex-col items-center justify-center">
+                <div class="text-3xl mb-1">📋</div>
+                <div class="text-xs text-slate-600 font-medium text-center">SBLO Directory<br>100+ Contacts</div>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <span class="px-3 py-1 bg-blue-600 text-white text-xs font-bold rounded">FREE + EMAIL</span>
+            <h3 class="text-xl font-bold text-white mt-3 mb-2">SBLO Contact Directory</h3>
+            <p class="text-slate-400 text-sm mb-4">Small Business Liaison Officers by agency with direct email and phone contacts.</p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> 100+ SBLO Contacts</li>
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Direct Email Addresses</li>
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Phone Numbers</li>
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Agency Breakdown</li>
+            </ul>
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="text-slate-500 text-sm line-through">$297 value</div>
+                <div class="text-2xl font-bold text-green-500">FREE</div>
+              </div>
+              <button onclick="handleGatedResource(this)" class="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-semibold transition gated-btn">Download PDF</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 75 AI Prompts -->
+        <div class="resource-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden" data-category="templates" data-gated="true">
+          <div class="h-48 bg-gradient-to-br from-blue-900/50 to-slate-900 p-4 flex items-center justify-center">
+            <div class="bg-white rounded-lg shadow-xl p-3 transform -rotate-2">
+              <div class="w-40 h-28 bg-gradient-to-br from-violet-100 to-violet-200 rounded flex flex-col items-center justify-center">
+                <div class="text-3xl mb-1">🤖</div>
+                <div class="text-xs text-violet-700 font-medium text-center">75 AI Prompts<br>for GovCon</div>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <span class="px-3 py-1 bg-blue-600 text-white text-xs font-bold rounded">FREE + EMAIL</span>
+            <h3 class="text-xl font-bold text-white mt-3 mb-2">75 GovCon AI Prompts</h3>
+            <p class="text-slate-400 text-sm mb-4">Ready-to-use AI prompts for proposals, research, capability statements, and business development.</p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Proposal Writing Prompts</li>
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Research Prompts</li>
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Cap Statement Prompts</li>
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Outreach Templates</li>
+            </ul>
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="text-slate-500 text-sm line-through">$47 value</div>
+                <div class="text-2xl font-bold text-green-500">FREE</div>
+              </div>
+              <button onclick="handleGatedResource(this)" class="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-semibold transition gated-btn">Download PDF</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Opportunity Hunter Tool -->
+        <div class="resource-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden" data-category="tools" data-gated="true">
+          <div class="h-48 bg-gradient-to-br from-green-900/50 to-slate-900 p-4 flex items-center justify-center">
+            <div class="bg-slate-800 rounded-lg shadow-xl p-3 border border-slate-700">
+              <div class="w-44 h-28 rounded flex flex-col">
+                <div class="text-green-500 text-xs font-bold mb-2">Opportunity Hunter</div>
+                <div class="space-y-1">
+                  <div class="h-2 bg-slate-600 rounded w-full"></div>
+                  <div class="h-2 bg-green-600 rounded w-3/4"></div>
+                  <div class="h-2 bg-slate-600 rounded w-5/6"></div>
+                  <div class="flex gap-1 mt-2">
+                    <div class="h-6 w-6 bg-green-600/30 rounded"></div>
+                    <div class="h-6 w-6 bg-green-600/30 rounded"></div>
+                    <div class="h-6 w-6 bg-green-600/30 rounded"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <span class="px-3 py-1 bg-blue-600 text-white text-xs font-bold rounded">FREE + EMAIL</span>
+            <h3 class="text-xl font-bold text-white mt-3 mb-2">Opportunity Hunter Tool</h3>
+            <p class="text-slate-400 text-sm mb-4">Find federal agencies that buy what you sell. Analyze spending data by NAICS code or keyword.</p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Agency Spending Data</li>
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> NAICS Code Search</li>
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Top Buyers List</li>
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> 5 Free Searches/Day</li>
+            </ul>
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="text-slate-500 text-sm line-through">$500/yr value</div>
+                <div class="text-2xl font-bold text-green-500">FREE</div>
+              </div>
+              <button onclick="handleGatedResource(this)" data-url="https://tools.govcongiants.org/opportunity-hunter" class="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-semibold transition gated-btn">Launch Tool</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2026 Action Plan -->
+        <div class="resource-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden" data-category="templates" data-gated="true">
+          <div class="h-48 bg-gradient-to-br from-blue-900/50 to-slate-900 p-4 flex items-center justify-center">
+            <div class="bg-white rounded-lg shadow-xl p-3 transform rotate-1">
+              <div class="w-40 h-28 bg-gradient-to-br from-amber-100 to-amber-200 rounded flex flex-col items-center justify-center">
+                <div class="text-3xl mb-1">📅</div>
+                <div class="text-xs text-amber-700 font-medium text-center">2026 Action Plan</div>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <span class="px-3 py-1 bg-blue-600 text-white text-xs font-bold rounded">FREE + EMAIL</span>
+            <h3 class="text-xl font-bold text-white mt-3 mb-2">2026 GovCon Action Plan</h3>
+            <p class="text-slate-400 text-sm mb-4">Your step-by-step roadmap to winning government contracts in 2026.</p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Monthly action items</li>
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Key milestones</li>
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Goal tracking</li>
+            </ul>
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="text-slate-500 text-sm line-through">$97 value</div>
+                <div class="text-2xl font-bold text-green-500">FREE</div>
+              </div>
+              <button onclick="handleGatedResource(this)" class="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-semibold transition gated-btn">Download PDF</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- December 2025 Bootcamp Slides -->
+        <div class="resource-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden" data-category="templates" data-gated="true">
+          <div class="h-48 bg-gradient-to-br from-blue-900/50 to-slate-900 p-4 flex items-center justify-center">
+            <div class="bg-white rounded-lg shadow-xl p-3 transform -rotate-2">
+              <div class="w-40 h-28 bg-gradient-to-br from-red-100 to-red-200 rounded flex flex-col items-center justify-center">
+                <div class="text-3xl mb-1">📊</div>
+                <div class="text-xs text-red-700 font-medium text-center">December 2025<br>Bootcamp Slides</div>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <span class="px-3 py-1 bg-blue-600 text-white text-xs font-bold rounded">FREE + EMAIL</span>
+            <h3 class="text-xl font-bold text-white mt-3 mb-2">December 2025 Bootcamp Slides</h3>
+            <p class="text-slate-400 text-sm mb-4">Complete slide deck from our December 2025 Surge Bootcamp event.</p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Full presentation</li>
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Reference material</li>
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Downloadable PDF</li>
+            </ul>
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="text-slate-500 text-sm line-through">$197 value</div>
+                <div class="text-2xl font-bold text-green-500">FREE</div>
+              </div>
+              <button onclick="handleGatedResource(this)" class="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-semibold transition gated-btn">Download PDF</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- December 2025 Hit List - Low Competition -->
+        <div class="resource-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden" data-category="tools" data-gated="true">
+          <div class="h-48 bg-gradient-to-br from-blue-900/50 to-slate-900 p-4 flex items-center justify-center">
+            <div class="bg-white rounded-lg shadow-xl p-3 transform rotate-2">
+              <div class="w-40 h-28 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded flex flex-col items-center justify-center">
+                <div class="text-3xl mb-1">🎯</div>
+                <div class="text-xs text-emerald-700 font-medium text-center">30+ Low-Competition<br>Contracts</div>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <span class="px-3 py-1 bg-blue-600 text-white text-xs font-bold rounded">FREE + EMAIL</span>
+            <h3 class="text-xl font-bold text-white mt-3 mb-2">December 2025 Hit List - 30+ Low-Competition Contracts</h3>
+            <p class="text-slate-400 text-sm mb-4">Curated list of 30+ low-competition federal contracts perfect for small businesses.</p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Hand-picked opportunities</li>
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Less competition</li>
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Small business friendly</li>
+            </ul>
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="text-slate-500 text-sm line-through">$297 value</div>
+                <div class="text-2xl font-bold text-green-500">FREE</div>
+              </div>
+              <button onclick="handleGatedResource(this)" class="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-semibold transition gated-btn">Download PDF</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- December 2025 Hit List - Top 10 Beginners -->
+        <div class="resource-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden" data-category="tools" data-gated="true">
+          <div class="h-48 bg-gradient-to-br from-blue-900/50 to-slate-900 p-4 flex items-center justify-center">
+            <div class="bg-white rounded-lg shadow-xl p-3 transform -rotate-1">
+              <div class="w-40 h-28 bg-gradient-to-br from-cyan-100 to-cyan-200 rounded flex flex-col items-center justify-center">
+                <div class="text-3xl mb-1">🏆</div>
+                <div class="text-xs text-cyan-700 font-medium text-center">Top 10 for<br>Beginners</div>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <span class="px-3 py-1 bg-blue-600 text-white text-xs font-bold rounded">FREE + EMAIL</span>
+            <h3 class="text-xl font-bold text-white mt-3 mb-2">December 2025 Hit List - Top 10 for Beginners</h3>
+            <p class="text-slate-400 text-sm mb-4">The top 10 easiest contracts for newcomers to federal contracting.</p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Beginner-friendly</li>
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Lower barriers to entry</li>
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Quick wins possible</li>
+            </ul>
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="text-slate-500 text-sm line-through">$197 value</div>
+                <div class="text-2xl font-bold text-green-500">FREE</div>
+              </div>
+              <button onclick="handleGatedResource(this)" class="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-semibold transition gated-btn">Download PDF</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- December 2025 Spend Forecast + Buyers List -->
+        <div class="resource-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden" data-category="tools" data-gated="true">
+          <div class="h-48 bg-gradient-to-br from-blue-900/50 to-slate-900 p-4 flex items-center justify-center">
+            <div class="bg-white rounded-lg shadow-xl p-3 transform rotate-1">
+              <div class="w-40 h-28 bg-gradient-to-br from-orange-100 to-orange-200 rounded flex flex-col items-center justify-center">
+                <div class="text-3xl mb-1">💰</div>
+                <div class="text-xs text-orange-700 font-medium text-center">Spend Forecast +<br>Buyers List</div>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <span class="px-3 py-1 bg-blue-600 text-white text-xs font-bold rounded">FREE + EMAIL</span>
+            <h3 class="text-xl font-bold text-white mt-3 mb-2">December 2025 Spend Forecast + Immediate Buyers</h3>
+            <p class="text-slate-400 text-sm mb-4">Forecasted government spending and a list of agencies actively buying right now.</p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Spending predictions</li>
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Active buyers list</li>
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Hot opportunities</li>
+            </ul>
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="text-slate-500 text-sm line-through">$297 value</div>
+                <div class="text-2xl font-bold text-green-500">FREE</div>
+              </div>
+              <button onclick="handleGatedResource(this)" class="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-semibold transition gated-btn">Download PDF</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tribal Small Business List -->
+        <div class="resource-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden" data-category="contacts" data-gated="true">
+          <div class="h-48 bg-gradient-to-br from-blue-900/50 to-slate-900 p-4 flex items-center justify-center">
+            <div class="bg-white rounded-lg shadow-xl p-3 transform -rotate-2">
+              <div class="w-40 h-28 bg-gradient-to-br from-amber-100 to-amber-200 rounded flex flex-col items-center justify-center">
+                <div class="text-3xl mb-1">🏛️</div>
+                <div class="text-xs text-amber-700 font-medium text-center">Tribal Small<br>Business List</div>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <span class="px-3 py-1 bg-blue-600 text-white text-xs font-bold rounded">FREE + EMAIL</span>
+            <h3 class="text-xl font-bold text-white mt-3 mb-2">Tribal Small Business Directory</h3>
+            <p class="text-slate-400 text-sm mb-4">Directory of tribal-owned small businesses for teaming and subcontracting opportunities.</p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Tribal business contacts</li>
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Teaming opportunities</li>
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> 8(a) eligible partners</li>
+            </ul>
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="text-slate-500 text-sm line-through">$297 value</div>
+                <div class="text-2xl font-bold text-green-500">FREE</div>
+              </div>
+              <button onclick="handleGatedResource(this)" class="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-semibold transition gated-btn">Download CSV</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- January 2026 Agency Pain Points Guide -->
+        <div class="resource-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden" data-category="templates" data-gated="true">
+          <div class="h-48 bg-gradient-to-br from-blue-900/50 to-slate-900 p-4 flex items-center justify-center">
+            <div class="bg-white rounded-lg shadow-xl p-3 transform rotate-2">
+              <div class="w-40 h-28 bg-gradient-to-br from-rose-100 to-rose-200 rounded flex flex-col items-center justify-center">
+                <div class="text-3xl mb-1">🔍</div>
+                <div class="text-xs text-rose-700 font-medium text-center">Agency Pain Points<br>Strategic Guide</div>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <span class="px-3 py-1 bg-blue-600 text-white text-xs font-bold rounded">FREE + EMAIL</span>
+            <h3 class="text-xl font-bold text-white mt-3 mb-2">Agency Pain Points: Complete Strategic Guide</h3>
+            <p class="text-slate-400 text-sm mb-4">Comprehensive guide to understanding and leveraging federal agency pain points.</p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Agency-by-agency breakdown</li>
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Strategic positioning</li>
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Solution messaging</li>
+            </ul>
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="text-slate-500 text-sm line-through">$197 value</div>
+                <div class="text-2xl font-bold text-green-500">FREE</div>
+              </div>
+              <button onclick="handleGatedResource(this)" class="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-semibold transition gated-btn">Download PDF</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- FY2026 NDAA Guide -->
+        <div class="resource-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden" data-category="templates" data-gated="true">
+          <div class="h-48 bg-gradient-to-br from-blue-900/50 to-slate-900 p-4 flex items-center justify-center">
+            <div class="bg-white rounded-lg shadow-xl p-3 transform -rotate-1">
+              <div class="w-40 h-28 bg-gradient-to-br from-sky-100 to-sky-200 rounded flex flex-col items-center justify-center">
+                <div class="text-3xl mb-1">📜</div>
+                <div class="text-xs text-sky-700 font-medium text-center">FY2026 NDAA<br>What You Need to Know</div>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <span class="px-3 py-1 bg-blue-600 text-white text-xs font-bold rounded">FREE + EMAIL</span>
+            <h3 class="text-xl font-bold text-white mt-3 mb-2">FY2026 NDAA - What Contractors Need to Know</h3>
+            <p class="text-slate-400 text-sm mb-4">Key provisions from the FY2026 National Defense Authorization Act affecting contractors.</p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Key provisions breakdown</li>
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Impact analysis</li>
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Opportunity highlights</li>
+            </ul>
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="text-slate-500 text-sm line-through">$97 value</div>
+                <div class="text-2xl font-bold text-green-500">FREE</div>
+              </div>
+              <button onclick="handleGatedResource(this)" class="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-semibold transition gated-btn">Download PDF</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- January 2026 Agency Buyers List -->
+        <div class="resource-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden" data-category="tools" data-gated="true">
+          <div class="h-48 bg-gradient-to-br from-blue-900/50 to-slate-900 p-4 flex items-center justify-center">
+            <div class="bg-white rounded-lg shadow-xl p-3 transform rotate-1">
+              <div class="w-40 h-28 bg-gradient-to-br from-lime-100 to-lime-200 rounded flex flex-col items-center justify-center">
+                <div class="text-3xl mb-1">💵</div>
+                <div class="text-xs text-lime-700 font-medium text-center">January 2026<br>Agency Buyers List</div>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <span class="px-3 py-1 bg-blue-600 text-white text-xs font-bold rounded">FREE + EMAIL</span>
+            <h3 class="text-xl font-bold text-white mt-3 mb-2">January 2026 Agency Buyers List</h3>
+            <p class="text-slate-400 text-sm mb-4">Where the money is dropping RIGHT NOW - agencies actively spending in January 2026.</p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Active spending agencies</li>
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Current opportunities</li>
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Immediate action items</li>
+            </ul>
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="text-slate-500 text-sm line-through">$297 value</div>
+                <div class="text-2xl font-bold text-green-500">FREE</div>
+              </div>
+              <button onclick="handleGatedResource(this)" class="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-semibold transition gated-btn">Download PDF</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- January 2026 Hit List - NDAA Based -->
+        <div class="resource-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden" data-category="tools" data-gated="true">
+          <div class="h-48 bg-gradient-to-br from-blue-900/50 to-slate-900 p-4 flex items-center justify-center">
+            <div class="bg-white rounded-lg shadow-xl p-3 transform -rotate-2">
+              <div class="w-40 h-28 bg-gradient-to-br from-teal-100 to-teal-200 rounded flex flex-col items-center justify-center">
+                <div class="text-3xl mb-1">🎯</div>
+                <div class="text-xs text-teal-700 font-medium text-center">34 Low-Competition<br>NDAA Contracts</div>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <span class="px-3 py-1 bg-blue-600 text-white text-xs font-bold rounded">FREE + EMAIL</span>
+            <h3 class="text-xl font-bold text-white mt-3 mb-2">January 2026 Hit List - 34 Low-Competition Contracts</h3>
+            <p class="text-slate-400 text-sm mb-4">34 low-competition contracts based on FY2026 NDAA priorities and funding.</p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> NDAA-aligned opportunities</li>
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Funded priorities</li>
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Less competition</li>
+            </ul>
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="text-slate-500 text-sm line-through">$297 value</div>
+                <div class="text-2xl font-bold text-green-500">FREE</div>
+              </div>
+              <button onclick="handleGatedResource(this)" class="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-semibold transition gated-btn">Download PDF</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- January 2026 Recompete Contracts List -->
+        <div class="resource-card bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden" data-category="tools" data-gated="true">
+          <div class="h-48 bg-gradient-to-br from-blue-900/50 to-slate-900 p-4 flex items-center justify-center">
+            <div class="bg-white rounded-lg shadow-xl p-3 transform rotate-2">
+              <div class="w-40 h-28 bg-gradient-to-br from-fuchsia-100 to-fuchsia-200 rounded flex flex-col items-center justify-center">
+                <div class="text-3xl mb-1">🔄</div>
+                <div class="text-xs text-fuchsia-700 font-medium text-center">Recompete<br>Contracts List</div>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <span class="px-3 py-1 bg-blue-600 text-white text-xs font-bold rounded">FREE + EMAIL</span>
+            <h3 class="text-xl font-bold text-white mt-3 mb-2">January 2026 Recompete Contracts List</h3>
+            <p class="text-slate-400 text-sm mb-4">Contracts coming up for recompete - your chance to unseat incumbents.</p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Upcoming recompetes</li>
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Incumbent info</li>
+              <li class="flex items-center gap-2 text-slate-300 text-sm"><span class="text-green-500">✓</span> Timeline details</li>
+            </ul>
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="text-slate-500 text-sm line-through">$497 value</div>
+                <div class="text-2xl font-bold text-green-500">FREE</div>
+              </div>
+              <button onclick="handleGatedResource(this)" class="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-semibold transition gated-btn">Download PDF</button>
+            </div>
+          </div>
+        </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Upgrade CTA -->
+  <section class="py-16 px-6 bg-gradient-to-r from-slate-900 to-slate-900 border-t border-slate-800">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-white mb-4">
+        Want Even More Resources + Live Support?
+      </h2>
+      <p class="text-slate-400 text-lg mb-8 max-w-2xl mx-auto">
+        Pro Members get exclusive tools, monthly live bootcamps, weekly Q&A calls, and direct access to our team of GovCon experts.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="https://federalhelpcenter.com/pro" target="_blank" class="px-8 py-4 bg-green-600 hover:bg-green-500 text-white rounded-full font-bold text-lg transition-all">
+          Upgrade to Pro - $99/mo
+        </a>
+        <a href="https://federalhelpcenter.com/starter" target="_blank" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-full font-bold text-lg transition-all border border-slate-700">
+          Try Starter - $27/mo
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 px-6 border-t border-slate-800">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-1">
+          <span class="text-xl font-bold text-white">GovCon</span>
+          <span class="text-xl font-bold text-green-500">Giants</span>
+        </div>
+        <p class="text-slate-600 text-sm">© 2026 GovCon Giants. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Unlock Modal -->
+  <div id="unlockModal" class="fixed inset-0 bg-black/80 z-50 hidden items-center justify-center p-6">
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 max-w-md w-full">
+      <!-- Sign Up View -->
+      <div id="signupView">
+        <div class="text-center mb-6">
+          <div class="w-16 h-16 bg-blue-900/50 border border-blue-700/50 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="text-2xl font-bold text-white mb-2">Unlock This Resource</h3>
+          <p class="text-slate-400">Enter your email to access this and all gated resources for free.</p>
+        </div>
+        <form id="unlockForm" class="space-y-4">
+          <input type="text" name="name" placeholder="Your Name" required class="w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition">
+          <input type="email" name="email" placeholder="Your Email" required class="w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition">
+          <input type="tel" name="phone" placeholder="Your Phone Number" required class="w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition">
+          <button type="submit" class="w-full px-6 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-bold text-lg transition-all">Unlock Free Resources</button>
+        </form>
+        <p class="text-center text-slate-500 text-sm mt-4">Already signed up? <button onclick="showVerifyView()" class="text-blue-400 hover:text-blue-300 underline">Verify your email</button></p>
+      </div>
+
+      <!-- Verify View -->
+      <div id="verifyView" class="hidden">
+        <div class="text-center mb-6">
+          <div class="w-16 h-16 bg-green-900/50 border border-green-700/50 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="text-2xl font-bold text-white mb-2">Verify Your Email</h3>
+          <p class="text-slate-400">Enter the email you used to sign up.</p>
+        </div>
+        <form id="verifyForm" class="space-y-4">
+          <input type="email" name="email" placeholder="Your Email" required class="w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-green-500 transition">
+          <div id="verifyError" class="hidden text-red-400 text-sm text-center"></div>
+          <button type="submit" class="w-full px-6 py-4 bg-green-600 hover:bg-green-500 text-white rounded-lg font-bold text-lg transition-all">Verify & Unlock</button>
+        </form>
+        <p class="text-center text-slate-500 text-sm mt-4">New here? <button onclick="showSignupView()" class="text-blue-400 hover:text-blue-300 underline">Sign up for free</button></p>
+      </div>
+
+      <button onclick="hideUnlockModal()" class="w-full mt-4 text-slate-500 hover:text-slate-400 text-sm transition">Cancel</button>
+    </div>
+  </div>
+
+  <script>
+    let isUserVerified = false;
+    let pendingResourceBtn = null;
+
+    // Check verification on page load
+    async function checkVerificationStatus() {
+      const cachedEmail = sessionStorage.getItem('verifiedEmail');
+      if (cachedEmail) {
+        try {
+          const response = await fetch('/api/verify', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: cachedEmail })
+          });
+          const data = await response.json();
+          if (data.verified) {
+            isUserVerified = true;
+            updateGatedButtons();
+          } else {
+            sessionStorage.removeItem('verifiedEmail');
+          }
+        } catch (err) {
+          console.log('Verification check failed:', err);
+        }
+      }
+    }
+
+    // Update gated buttons to show unlocked state
+    function updateGatedButtons() {
+      document.querySelectorAll('.gated-btn').forEach(btn => {
+        btn.classList.remove('bg-blue-600', 'hover:bg-blue-500');
+        btn.classList.add('bg-green-600', 'hover:bg-green-500');
+      });
+    }
+
+    // Handle gated resource click
+    function handleGatedResource(btn) {
+      if (isUserVerified) {
+        // User is verified, proceed with action
+        const url = btn.dataset.url;
+        if (url) {
+          window.open(url, '_blank');
+        } else {
+          alert('Download link coming soon!');
+        }
+      } else {
+        // Show unlock modal
+        pendingResourceBtn = btn;
+        showUnlockModal();
+      }
+    }
+
+    // Modal controls
+    function showUnlockModal() {
+      document.getElementById('unlockModal').classList.remove('hidden');
+      document.getElementById('unlockModal').classList.add('flex');
+    }
+
+    function hideUnlockModal() {
+      document.getElementById('unlockModal').classList.add('hidden');
+      document.getElementById('unlockModal').classList.remove('flex');
+      document.getElementById('signupView').classList.remove('hidden');
+      document.getElementById('verifyView').classList.add('hidden');
+      document.getElementById('verifyError').classList.add('hidden');
+    }
+
+    function showVerifyView() {
+      document.getElementById('signupView').classList.add('hidden');
+      document.getElementById('verifyView').classList.remove('hidden');
+    }
+
+    function showSignupView() {
+      document.getElementById('verifyView').classList.add('hidden');
+      document.getElementById('signupView').classList.remove('hidden');
+    }
+
+    // Handle sign up form
+    document.getElementById('unlockForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const submitBtn = this.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Unlocking...';
+      submitBtn.disabled = true;
+
+      const name = this.querySelector('input[name="name"]').value;
+      const email = this.querySelector('input[name="email"]').value.toLowerCase().trim();
+      const phone = this.querySelector('input[name="phone"]').value;
+
+      try {
+        const response = await fetch('/api/lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name, email, phone,
+            source: 'free-resources-unlock',
+            tags: ['free-resources', 'resource-library']
+          })
+        });
+
+        if (response.ok) {
+          sessionStorage.setItem('verifiedEmail', email);
+          isUserVerified = true;
+          updateGatedButtons();
+          hideUnlockModal();
+
+          // Trigger pending resource
+          if (pendingResourceBtn) {
+            const url = pendingResourceBtn.dataset.url;
+            if (url) window.open(url, '_blank');
+          }
+        } else {
+          throw new Error('Failed to save');
+        }
+      } catch (err) {
+        alert('Something went wrong. Please try again.');
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      }
+    });
+
+    // Handle verify form
+    document.getElementById('verifyForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const submitBtn = this.querySelector('button[type="submit"]');
+      const errorDiv = document.getElementById('verifyError');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Verifying...';
+      submitBtn.disabled = true;
+      errorDiv.classList.add('hidden');
+
+      const email = this.querySelector('input[name="email"]').value.toLowerCase().trim();
+
+      try {
+        const response = await fetch('/api/verify', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email })
+        });
+
+        const data = await response.json();
+
+        if (data.verified) {
+          sessionStorage.setItem('verifiedEmail', email);
+          isUserVerified = true;
+          updateGatedButtons();
+          hideUnlockModal();
+
+          if (pendingResourceBtn) {
+            const url = pendingResourceBtn.dataset.url;
+            if (url) window.open(url, '_blank');
+          }
+        } else {
+          errorDiv.textContent = 'Email not found. Please sign up first.';
+          errorDiv.classList.remove('hidden');
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+        }
+      } catch (err) {
+        errorDiv.textContent = 'Verification failed. Please try again.';
+        errorDiv.classList.remove('hidden');
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      }
+    });
+
+    // Category filtering
+    const filterBtns = document.querySelectorAll('.category-btn');
+    const resourceCards = document.querySelectorAll('.resource-card');
+    const sections = document.querySelectorAll('[data-section]');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const category = btn.dataset.category;
+
+        // Show/hide individual cards
+        resourceCards.forEach(card => {
+          if (category === 'all' || card.dataset.category === category) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        // Show/hide sections based on whether they have visible cards
+        sections.forEach(section => {
+          const visibleCards = section.querySelectorAll('.resource-card[style="display: block"], .resource-card:not([style*="display: none"])');
+          let hasVisibleCards = false;
+
+          section.querySelectorAll('.resource-card').forEach(card => {
+            if (category === 'all' || card.dataset.category === category) {
+              hasVisibleCards = true;
+            }
+          });
+
+          section.style.display = hasVisibleCards ? 'block' : 'none';
+        });
+      });
+    });
+
+    // Check verification on load
+    checkVerificationStatus();
+  </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "functions": {
+    "api/lead.js": {
+      "memory": 128,
+      "maxDuration": 10
+    }
+  },
+  "routes": [
+    {
+      "src": "/api/lead",
+      "dest": "/api/lead.js"
+    }
+  ]
+}

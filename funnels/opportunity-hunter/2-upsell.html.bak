@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upgrade to Opportunity Scout Pro | GovCon Giants</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    .gradient-text { background: linear-gradient(135deg, #10b981 0%, #34d399 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .pulse-border { animation: pulse-border 2s infinite; }
+    @keyframes pulse-border { 0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); } 50% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); } }
+  </style>
+</head>
+<body class="min-h-screen bg-slate-900">
+  <!-- Header -->
+  <header class="py-6 px-6 border-b border-slate-800">
+    <div class="max-w-4xl mx-auto flex items-center justify-center">
+      <a href="#" class="flex items-center gap-1">
+        <span class="text-2xl font-bold text-white">GovCon</span>
+        <span class="text-2xl font-bold text-emerald-400">Giants</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Progress Bar -->
+  <div class="bg-slate-800 py-3 px-6">
+    <div class="max-w-2xl mx-auto">
+      <div class="flex items-center justify-between text-sm mb-2">
+        <span class="text-emerald-400 font-medium">Step 2 of 3</span>
+        <span class="text-slate-400">Almost there!</span>
+      </div>
+      <div class="h-2 bg-slate-700 rounded-full overflow-hidden">
+        <div class="h-full bg-emerald-500 rounded-full" style="width: 66%"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <section class="py-12 px-6">
+    <div class="max-w-3xl mx-auto">
+      <!-- Wait Message -->
+      <div class="text-center mb-8">
+        <div class="inline-flex items-center gap-2 bg-amber-900/50 border border-amber-700/50 text-amber-300 px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <span>⚡</span> ONE-TIME OFFER - Limited Time
+        </div>
+
+        <h1 class="text-3xl md:text-4xl font-bold text-white mb-4">
+          Want to 10x Your Results?
+        </h1>
+
+        <p class="text-xl text-slate-300 leading-relaxed">
+          The free tool is great for getting started. But <span class="text-emerald-400 font-semibold">Opportunity Scout Pro</span> gives you everything you need to actually WIN contracts.
+        </p>
+      </div>
+
+      <!-- Comparison Section -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+        <!-- Free Version -->
+        <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6">
+          <div class="text-slate-400 text-sm font-medium mb-2">FREE VERSION</div>
+          <h3 class="text-xl font-bold text-white mb-4">Opportunity Hunter</h3>
+          <ul class="space-y-3 text-slate-400">
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-500 mt-1">✓</span>
+              <span>Basic agency search</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-500 mt-1">✓</span>
+              <span>5 searches per day</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-500 mt-1">✓</span>
+              <span>Top 5 agency results</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-slate-600 mt-1">✗</span>
+              <span class="line-through">Detailed spending data</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-slate-600 mt-1">✗</span>
+              <span class="line-through">Agency pain points</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-slate-600 mt-1">✗</span>
+              <span class="line-through">SBLO contact info</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-slate-600 mt-1">✗</span>
+              <span class="line-through">Export & print reports</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-slate-600 mt-1">✗</span>
+              <span class="line-through">Saved searches</span>
+            </li>
+          </ul>
+          <div class="mt-6 pt-4 border-t border-slate-700">
+            <div class="text-2xl font-bold text-white">$0</div>
+            <div class="text-slate-500 text-sm">Limited features</div>
+          </div>
+        </div>
+
+        <!-- Pro Version -->
+        <div class="bg-gradient-to-b from-emerald-900/50 to-slate-800 border-2 border-emerald-500 rounded-2xl p-6 pulse-border relative">
+          <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+            <span class="bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full">RECOMMENDED</span>
+          </div>
+          <div class="text-emerald-400 text-sm font-medium mb-2">PRO VERSION</div>
+          <h3 class="text-xl font-bold text-white mb-4">Opportunity Scout Pro</h3>
+          <ul class="space-y-3 text-slate-300">
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-500 mt-1">✓</span>
+              <span>Advanced agency search</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-500 mt-1">✓</span>
+              <span><strong>Unlimited</strong> searches</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-500 mt-1">✓</span>
+              <span><strong>All agencies</strong> in results</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-500 mt-1">✓</span>
+              <span>Detailed spending breakdowns</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-500 mt-1">✓</span>
+              <span>Agency pain points analysis</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-500 mt-1">✓</span>
+              <span>SBLO contact directory</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-500 mt-1">✓</span>
+              <span>Export & print PDF reports</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-500 mt-1">✓</span>
+              <span>Save & track opportunities</span>
+            </li>
+          </ul>
+          <div class="mt-6 pt-4 border-t border-emerald-700/50">
+            <div class="flex items-baseline gap-2">
+              <div class="text-3xl font-bold text-white">$47</div>
+              <div class="text-slate-400">/month</div>
+            </div>
+            <div class="text-emerald-400 text-sm">or $397/year (save $167)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- What Pro Unlocks -->
+      <div class="bg-slate-800 border border-slate-700 rounded-2xl p-8 mb-8">
+        <h3 class="text-xl font-bold text-white mb-6 text-center">What Pro Unlocks For You</h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+          <div>
+            <div class="text-3xl mb-2">📊</div>
+            <div class="text-white text-sm font-medium">Full Spending Data</div>
+          </div>
+          <div>
+            <div class="text-3xl mb-2">📋</div>
+            <div class="text-white text-sm font-medium">SBLO Contacts</div>
+          </div>
+          <div>
+            <div class="text-3xl mb-2">💡</div>
+            <div class="text-white text-sm font-medium">Pain Points</div>
+          </div>
+          <div>
+            <div class="text-3xl mb-2">📄</div>
+            <div class="text-white text-sm font-medium">PDF Reports</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="space-y-4 max-w-md mx-auto">
+        <a
+          href="https://tools.govcongiants.org/opportunity-scout"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="block w-full px-8 py-4 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-bold text-lg text-center transition-all"
+        >
+          Yes! Upgrade to Pro for $47/month
+        </a>
+
+        <a
+          href="https://tools.govcongiants.org/opportunity-scout"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="block w-full px-8 py-4 bg-slate-700 hover:bg-slate-600 text-white rounded-xl font-bold text-lg text-center transition-all border border-slate-600"
+        >
+          Save $167 - Get Annual for $397
+        </a>
+
+        <a
+          href="3-thank-you.html"
+          class="block w-full py-3 text-slate-500 hover:text-slate-400 text-sm text-center transition-all"
+        >
+          No thanks, I'll use the free version →
+        </a>
+      </div>
+
+      <!-- Guarantee -->
+      <div class="mt-10 text-center">
+        <div class="inline-flex items-center gap-2 text-slate-400 text-sm">
+          <svg class="w-5 h-5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <span>7-day money-back guarantee • Cancel anytime</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 px-6 border-t border-slate-800">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-slate-500 text-sm">
+        © 2026 GovCon Giants. All rights reserved.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

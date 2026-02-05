@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Live #1 - The $82B Opportunity | January 10, 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial Black', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0a0a0a;
+            color: white;
+        }
+
+        .slide {
+            width: 1920px;
+            height: 1080px;
+            position: relative;
+            overflow: hidden;
+            page-break-after: always;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Slide 1: Title Slide */
+        .slide-title {
+            background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 50%, #059669 100%);
+        }
+
+        .slide-title .content {
+            text-align: center;
+            padding: 60px;
+        }
+
+        .slide-title .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 28px;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .slide-title h1 {
+            font-size: 120px;
+            font-weight: 900;
+            margin-bottom: 30px;
+            text-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        .slide-title h1 .money {
+            color: #4ade80;
+        }
+
+        .slide-title .subtitle {
+            font-size: 48px;
+            opacity: 0.95;
+            font-weight: 400;
+        }
+
+        .slide-title .date {
+            position: absolute;
+            bottom: 60px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 32px;
+            opacity: 0.8;
+        }
+
+        /* Dark slide base */
+        .slide-dark {
+            background: #0f172a;
+        }
+
+        .slide-dark .content {
+            text-align: center;
+            padding: 80px;
+        }
+
+        .slide-dark h2 {
+            font-size: 90px;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 50px;
+        }
+
+        .slide-dark h2 .highlight {
+            color: #4ade80;
+        }
+
+        .slide-dark h2 .red {
+            color: #ef4444;
+        }
+
+        .slide-dark p {
+            font-size: 48px;
+            opacity: 0.9;
+            max-width: 1400px;
+        }
+
+        /* Blue gradient slide */
+        .slide-blue {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        }
+
+        .slide-blue .content {
+            padding: 80px;
+            width: 100%;
+        }
+
+        .slide-blue h2 {
+            font-size: 72px;
+            font-weight: 900;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        /* Purple gradient slide */
+        .slide-purple {
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+        }
+
+        .slide-purple .content {
+            padding: 80px;
+            width: 100%;
+        }
+
+        .slide-purple h2 {
+            font-size: 80px;
+            font-weight: 900;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        /* Green gradient slide */
+        .slide-green {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        }
+
+        .slide-green .content {
+            text-align: center;
+            padding: 80px;
+        }
+
+        .slide-green h2 {
+            font-size: 72px;
+            font-weight: 900;
+            margin-bottom: 50px;
+        }
+
+        /* Stat grid */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .stat-box {
+            background: rgba(255,255,255,0.1);
+            border-radius: 30px;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .stat-box .number {
+            font-size: 100px;
+            font-weight: 900;
+            color: #4ade80;
+        }
+
+        .stat-box .label {
+            font-size: 32px;
+            opacity: 0.9;
+            margin-top: 15px;
+        }
+
+        /* Agency list */
+        .agency-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            max-width: 1500px;
+            margin: 0 auto;
+        }
+
+        .agency-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 30px 40px;
+            border-left: 6px solid #4ade80;
+        }
+
+        .agency-item .name {
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .agency-item .amount {
+            font-size: 40px;
+            font-weight: 900;
+            color: #4ade80;
+        }
+
+        /* Reason list */
+        .reason-list {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .reason-item {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 40px;
+            font-size: 42px;
+        }
+
+        .reason-item .icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            flex-shrink: 0;
+        }
+
+        /* Threshold boxes */
+        .threshold-boxes {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .threshold-box {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            border-radius: 30px;
+            padding: 60px 80px;
+            text-align: center;
+        }
+
+        .threshold-box .amount {
+            font-size: 120px;
+            font-weight: 900;
+        }
+
+        .threshold-box .type {
+            font-size: 32px;
+            opacity: 0.9;
+            margin-top: 10px;
+        }
+
+        /* Big number */
+        .big-number {
+            font-size: 250px;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .big-label {
+            font-size: 48px;
+            margin-top: 20px;
+            opacity: 0.95;
+        }
+
+        /* Action list */
+        .action-list {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .action-item {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 35px;
+            font-size: 40px;
+        }
+
+        .action-item .number {
+            width: 70px;
+            height: 70px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            flex-shrink: 0;
+        }
+
+        /* Free giveaway slide */
+        .slide-giveaway {
+            background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+        }
+
+        .slide-giveaway .content {
+            text-align: center;
+            padding: 80px;
+        }
+
+        .slide-giveaway h2 {
+            font-size: 90px;
+            font-weight: 900;
+            margin-bottom: 40px;
+        }
+
+        .slide-giveaway .free-badge {
+            display: inline-block;
+            background: white;
+            color: #dc2626;
+            padding: 20px 60px;
+            border-radius: 50px;
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 40px;
+        }
+
+        .giveaway-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .giveaway-item {
+            background: rgba(255,255,255,0.15);
+            border-radius: 20px;
+            padding: 30px 50px;
+            font-size: 36px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .giveaway-item .check {
+            font-size: 40px;
+        }
+
+        /* Document preview slide */
+        .slide-doc {
+            background: #0f172a;
+        }
+
+        .slide-doc .content {
+            display: flex;
+            gap: 60px;
+            padding: 60px;
+            width: 100%;
+            align-items: center;
+        }
+
+        .slide-doc .preview {
+            flex: 1;
+            background: white;
+            border-radius: 20px;
+            height: 800px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+
+        .slide-doc .preview-content {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            padding: 40px;
+        }
+
+        .slide-doc .preview-content.green {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        }
+
+        .slide-doc .preview-content.purple {
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+        }
+
+        .slide-doc .preview-content.red {
+            background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+        }
+
+        .slide-doc .preview-content .doc-icon {
+            font-size: 120px;
+            margin-bottom: 30px;
+        }
+
+        .slide-doc .preview-content .doc-title {
+            font-size: 42px;
+            font-weight: 900;
+            text-align: center;
+        }
+
+        .slide-doc .info {
+            flex: 1;
+            padding: 40px;
+        }
+
+        .slide-doc .info h2 {
+            font-size: 64px;
+            font-weight: 900;
+            margin-bottom: 30px;
+            color: #4ade80;
+        }
+
+        .slide-doc .info p {
+            font-size: 32px;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .slide-doc .info .features {
+            list-style: none;
+        }
+
+        .slide-doc .info .features li {
+            font-size: 28px;
+            padding: 15px 0;
+            padding-left: 40px;
+            position: relative;
+            opacity: 0.9;
+        }
+
+        .slide-doc .info .features li::before {
+            content: '>';
+            position: absolute;
+            left: 0;
+            color: #4ade80;
+            font-weight: bold;
+        }
+
+        /* Text-focused handout slide */
+        .slide-handout {
+            background: #0f172a;
+        }
+
+        .slide-handout .content {
+            text-align: center;
+            padding: 80px;
+            width: 100%;
+        }
+
+        .slide-handout .doc-icon {
+            font-size: 80px;
+            margin-bottom: 30px;
+        }
+
+        .slide-handout h2 {
+            font-size: 90px;
+            font-weight: 900;
+            margin-bottom: 30px;
+            color: #4ade80;
+        }
+
+        .slide-handout .subtitle {
+            font-size: 42px;
+            opacity: 0.95;
+            margin-bottom: 60px;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .slide-handout .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px 60px;
+            max-width: 1500px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .slide-handout .feature-item {
+            font-size: 36px;
+            padding: 20px 30px;
+            padding-left: 60px;
+            position: relative;
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+        }
+
+        .slide-handout .feature-item::before {
+            content: '✓';
+            position: absolute;
+            left: 20px;
+            color: #4ade80;
+            font-weight: bold;
+        }
+
+        /* CTA Slide */
+        .slide-cta {
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #059669 100%);
+        }
+
+        .slide-cta .content {
+            text-align: center;
+            padding: 80px;
+        }
+
+        .slide-cta .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 28px;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .slide-cta h2 {
+            font-size: 80px;
+            font-weight: 900;
+            margin-bottom: 30px;
+        }
+
+        .slide-cta .date {
+            font-size: 60px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: #4ade80;
+        }
+
+        .slide-cta .features {
+            font-size: 36px;
+            opacity: 0.95;
+            line-height: 1.8;
+            margin-bottom: 50px;
+        }
+
+        .slide-cta .cta-box {
+            display: inline-block;
+            background: white;
+            color: #7c3aed;
+            padding: 30px 80px;
+            border-radius: 50px;
+            font-size: 42px;
+            font-weight: 900;
+        }
+
+        .slide-cta .price {
+            margin-top: 30px;
+            font-size: 36px;
+            opacity: 0.95;
+        }
+
+        /* Download CTA slide */
+        .slide-download {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        }
+
+        .slide-download .content {
+            text-align: center;
+            padding: 80px;
+        }
+
+        .slide-download h2 {
+            font-size: 80px;
+            font-weight: 900;
+            margin-bottom: 30px;
+        }
+
+        .slide-download .url {
+            font-size: 56px;
+            font-weight: 700;
+            background: rgba(255,255,255,0.2);
+            padding: 30px 60px;
+            border-radius: 20px;
+            margin: 40px 0;
+            display: inline-block;
+        }
+
+        .slide-download p {
+            font-size: 36px;
+            opacity: 0.95;
+            margin-top: 30px;
+        }
+
+        /* Opportunity grid */
+        .opportunity-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            max-width: 1500px;
+            margin: 0 auto;
+        }
+
+        .opportunity-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 25px;
+            padding: 40px;
+            border-top: 5px solid #7c3aed;
+        }
+
+        .opportunity-card h3 {
+            font-size: 36px;
+            color: #7c3aed;
+            margin-bottom: 15px;
+        }
+
+        .opportunity-card p {
+            font-size: 28px;
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+        .nav-hint {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-size: 16px;
+            z-index: 1000;
+            font-family: Arial, sans-serif;
+        }
+
+        .slide-counter {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-size: 18px;
+            z-index: 1000;
+            font-family: Arial, sans-serif;
+        }
+
+        @media print {
+            .slide {
+                page-break-after: always;
+            }
+            .nav-hint, .slide-counter {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-hint">Arrow keys to navigate | F11 for fullscreen</div>
+    <div class="slide-counter">Slide <span id="currentSlide">1</span> of <span id="totalSlides">22</span></div>
+
+    <!-- SLIDE 1: Title -->
+    <div class="slide slide-title">
+        <div class="content">
+            <div class="badge">YouTube Live - January 10, 2026</div>
+            <h1><span class="money">$82 BILLION</span><br>In Unspent Federal Money</h1>
+            <p class="subtitle">Here's How To Get It in 2026</p>
+            <div class="date">GovCon Giants | Federal Help Center</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 2: The Hook -->
+    <div class="slide slide-dark">
+        <div class="content">
+            <h2>The Government Has <span class="highlight">90 Days</span><br>To Spend This Money</h2>
+            <p>Or they lose it. This is YOUR opportunity.</p>
+        </div>
+    </div>
+
+    <!-- SLIDE 3: What We're Covering -->
+    <div class="slide slide-purple">
+        <div class="content">
+            <h2>What We're Covering Today</h2>
+            <div class="reason-list">
+                <div class="reason-item">
+                    <div class="icon">1</div>
+                    <span>The FY2026 NDAA and what it means for you</span>
+                </div>
+                <div class="reason-item">
+                    <div class="icon">2</div>
+                    <span>$82.8B in unobligated balances - where it's sitting</span>
+                </div>
+                <div class="reason-item">
+                    <div class="icon">3</div>
+                    <span>New rules that help small businesses win</span>
+                </div>
+                <div class="reason-item">
+                    <div class="icon">4</div>
+                    <span>FREE resources to get you started TODAY</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 4: NDAA Breakdown -->
+    <div class="slide slide-blue">
+        <div class="content">
+            <h2>FY2026 NDAA - Signed December 18, 2025</h2>
+            <div class="stat-grid">
+                <div class="stat-box">
+                    <div class="number">$848B</div>
+                    <div class="label">DoD Authorization</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">$82.8B</div>
+                    <div class="label">Unobligated Balances</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">Q1</div>
+                    <div class="label">Spending Window</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 5: What Does This Mean -->
+    <div class="slide slide-dark">
+        <div class="content">
+            <h2>What Does <span class="highlight">Unobligated Balance</span> Mean?</h2>
+            <p>Money that's been authorized but NOT yet committed to contracts.<br><br>Agencies MUST spend it or lose it to budget cuts.</p>
+        </div>
+    </div>
+
+    <!-- SLIDE 6: Where The Money Is -->
+    <div class="slide slide-dark">
+        <div class="content" style="padding: 60px; width: 100%;">
+            <h2 style="text-align: center; margin-bottom: 50px;">Where The <span class="highlight">$82.8B</span> Is Sitting</h2>
+            <div class="agency-list">
+                <div class="agency-item">
+                    <span class="name">Department of Defense</span>
+                    <span class="amount">$38B</span>
+                </div>
+                <div class="agency-item">
+                    <span class="name">Department of the Army</span>
+                    <span class="amount">$10B</span>
+                </div>
+                <div class="agency-item">
+                    <span class="name">Department of the Navy</span>
+                    <span class="amount">$8B</span>
+                </div>
+                <div class="agency-item">
+                    <span class="name">Department of the Air Force</span>
+                    <span class="amount">$7B</span>
+                </div>
+                <div class="agency-item">
+                    <span class="name">Defense Logistics Agency</span>
+                    <span class="amount">$5B</span>
+                </div>
+                <div class="agency-item">
+                    <span class="name">Missile Defense Agency</span>
+                    <span class="amount">$4B</span>
+                </div>
+                <div class="agency-item">
+                    <span class="name">Cyber Command</span>
+                    <span class="amount">$3.5B</span>
+                </div>
+                <div class="agency-item">
+                    <span class="name">Space Force</span>
+                    <span class="amount">$2.8B</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 7: Why Now -->
+    <div class="slide slide-purple">
+        <div class="content">
+            <h2>Why January-March Is CRITICAL</h2>
+            <div class="reason-list">
+                <div class="reason-item">
+                    <div class="icon">1</div>
+                    <span>NDAA just signed = full-year authorization is GO</span>
+                </div>
+                <div class="reason-item">
+                    <div class="icon">2</div>
+                    <span>Agencies must obligate Q1 funds before Q2 starts</span>
+                </div>
+                <div class="reason-item">
+                    <div class="icon">3</div>
+                    <span>Use-it-or-lose-it pressure is at MAXIMUM</span>
+                </div>
+                <div class="reason-item">
+                    <div class="icon">4</div>
+                    <span>Primes need small business subs to meet goals</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 8: Sole Source Thresholds -->
+    <div class="slide slide-dark">
+        <div class="content">
+            <h2 style="margin-bottom: 60px;">NEW Sole Source Thresholds</h2>
+            <div class="threshold-boxes">
+                <div class="threshold-box">
+                    <div class="amount">$8M</div>
+                    <div class="type">Non-Manufacturing</div>
+                </div>
+                <div class="threshold-box">
+                    <div class="amount">$10M</div>
+                    <div class="type">Manufacturing</div>
+                </div>
+            </div>
+            <p style="font-size: 36px; opacity: 0.9; max-width: 1200px; margin: 0 auto;">Agencies can now award larger contracts directly to small businesses without full competition</p>
+        </div>
+    </div>
+
+    <!-- SLIDE 9: Small Business Goals -->
+    <div class="slide slide-green">
+        <div class="content">
+            <h2>Federal Small Business Goal</h2>
+            <div class="big-number">23%</div>
+            <div class="big-label">Of All Federal Contracts</div>
+            <p style="font-size: 36px; opacity: 0.9; margin-top: 40px; max-width: 1200px;">Prime contractors NEED small business subcontractors. This is your leverage.</p>
+        </div>
+    </div>
+
+    <!-- SLIDE 10: The Perfect Storm -->
+    <div class="slide slide-dark">
+        <div class="content" style="padding: 80px; width: 100%;">
+            <h2 style="text-align: center; font-size: 72px; margin-bottom: 60px;">The Perfect Storm For Small Business</h2>
+            <div class="opportunity-grid">
+                <div class="opportunity-card">
+                    <h3>Money Is Flowing</h3>
+                    <p>$82.8B across Top 10 defense agencies</p>
+                </div>
+                <div class="opportunity-card">
+                    <h3>Time Pressure</h3>
+                    <p>Spend in Q1 or lose budget authority</p>
+                </div>
+                <div class="opportunity-card">
+                    <h3>Higher Thresholds</h3>
+                    <p>Larger sole source awards allowed</p>
+                </div>
+                <div class="opportunity-card">
+                    <h3>Goal Pressure</h3>
+                    <p>23% goal means primes need YOU</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 11: Free Giveaways Intro -->
+    <div class="slide slide-giveaway">
+        <div class="content">
+            <div class="free-badge">100% FREE</div>
+            <h2>I've Got Something For You</h2>
+            <p style="font-size: 42px; opacity: 0.95;">5 resources to help you take action on everything I just shared</p>
+        </div>
+    </div>
+
+    <!-- SLIDE 12: Giveaway List -->
+    <div class="slide slide-giveaway">
+        <div class="content">
+            <h2>Your Free Resources</h2>
+            <div class="giveaway-list">
+                <div class="giveaway-item">
+                    <span class="check">1.</span>
+                    <span>Agency Buyers List - Top 10 agencies with unobligated $$$</span>
+                </div>
+                <div class="giveaway-item">
+                    <span class="check">2.</span>
+                    <span>34-Opportunity Hit List - Low competition contracts</span>
+                </div>
+                <div class="giveaway-item">
+                    <span class="check">3.</span>
+                    <span>FY2026 NDAA Report - What contractors need to know</span>
+                </div>
+                <div class="giveaway-item">
+                    <span class="check">4.</span>
+                    <span>Agency Pain Points Guide - How to position your business</span>
+                </div>
+                <div class="giveaway-item">
+                    <span class="check">5.</span>
+                    <span>Recompete Contracts List - Expiring contracts to target</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 13: Agency Buyers List -->
+    <div class="slide slide-handout">
+        <div class="content">
+            <div class="doc-icon">📊</div>
+            <h2>Agency Buyers List</h2>
+            <p class="subtitle">The Top 10 federal agencies with the most unobligated balances RIGHT NOW.</p>
+            <div class="features-grid">
+                <div class="feature-item">Agency name & unobligated balance amount</div>
+                <div class="feature-item">Hot NAICS codes for each agency</div>
+                <div class="feature-item">Key prime contractors to partner with</div>
+                <div class="feature-item">SBLO contact information</div>
+                <div class="feature-item">Immediate action items for each</div>
+                <div class="feature-item">Contact info for each agency</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 14: 34-Opportunity Hit List -->
+    <div class="slide slide-handout">
+        <div class="content">
+            <div class="doc-icon">🎯</div>
+            <h2>34-Opportunity Hit List</h2>
+            <p class="subtitle">Curated low-competition contracts based on NDAA funding and unobligated balances.</p>
+            <div class="features-grid">
+                <div class="feature-item">Opportunity name & agency</div>
+                <div class="feature-item">Value range ($5M - $100M+)</div>
+                <div class="feature-item">NAICS code & set-aside type</div>
+                <div class="feature-item">Why competition is LOW</div>
+                <div class="feature-item">Prime contractors on each</div>
+                <div class="feature-item">Action items to get started</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 15: NDAA Report -->
+    <div class="slide slide-handout">
+        <div class="content">
+            <div class="doc-icon">📋</div>
+            <h2>FY2026 NDAA Report</h2>
+            <p class="subtitle">Everything government contractors need to know about the new defense authorization.</p>
+            <div class="features-grid">
+                <div class="feature-item">7 key provisions affecting small business</div>
+                <div class="feature-item">New sole source thresholds explained</div>
+                <div class="feature-item">CMMC 2.0 timeline and requirements</div>
+                <div class="feature-item">Supply chain transparency rules</div>
+                <div class="feature-item">Subcontracting plan changes</div>
+                <div class="feature-item">Action checklist for compliance</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 16: Agency Pain Points -->
+    <div class="slide slide-handout">
+        <div class="content">
+            <div class="doc-icon">🔍</div>
+            <h2>Agency Pain Points Guide</h2>
+            <p class="subtitle">The 8 biggest problems agencies struggle with - and how to position as the solution.</p>
+            <div class="features-grid">
+                <div class="feature-item">Why agencies can't find small businesses</div>
+                <div class="feature-item">8 critical pain points explained</div>
+                <div class="feature-item">Agency-by-agency profiles</div>
+                <div class="feature-item">Decision matrix for targeting</div>
+                <div class="feature-item">Outreach strategy framework</div>
+                <div class="feature-item">30-day action plan</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 17: Recompete List -->
+    <div class="slide slide-handout">
+        <div class="content">
+            <div class="doc-icon">📅</div>
+            <h2>Recompete Contracts List</h2>
+            <p class="subtitle">100 high-value contracts expiring in January-February 2026 that will be rebid.</p>
+            <div class="features-grid">
+                <div class="feature-item">Contract value & expiration date</div>
+                <div class="feature-item">Current incumbent contractor</div>
+                <div class="feature-item">Agency & contracting office</div>
+                <div class="feature-item">NAICS code for each</div>
+                <div class="feature-item">Sorted by value (highest first)</div>
+                <div class="feature-item">Your chance to displace incumbents</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 18: Download CTA -->
+    <div class="slide slide-download">
+        <div class="content">
+            <h2>Download All 5 FREE Resources</h2>
+            <div class="url">govcongiants.org/surge</div>
+            <p>Link In Description</p>
+        </div>
+    </div>
+
+    <!-- SLIDE 19: What To Do Now -->
+    <div class="slide slide-blue">
+        <div class="content">
+            <h2 style="text-align: center; margin-bottom: 60px;">What You Should Do RIGHT NOW</h2>
+            <div class="action-list">
+                <div class="action-item">
+                    <div class="number">1</div>
+                    <span>Download the free resources (link in description)</span>
+                </div>
+                <div class="action-item">
+                    <div class="number">2</div>
+                    <span>Review the Agency Buyers List - pick your targets</span>
+                </div>
+                <div class="action-item">
+                    <div class="number">3</div>
+                    <span>Match your NAICS to opportunities on the Hit List</span>
+                </div>
+                <div class="action-item">
+                    <div class="number">4</div>
+                    <span>Update your SAM.gov profile this week</span>
+                </div>
+                <div class="action-item">
+                    <div class="number">5</div>
+                    <span>Start outreach to SBLOs and primes</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 20: But Wait - Bootcamp -->
+    <div class="slide slide-dark">
+        <div class="content">
+            <h2>Want <span class="highlight">Expert Guidance</span><br>On All Of This?</h2>
+            <p>The free resources get you started.<br>The bootcamp gets you WINNING.</p>
+        </div>
+    </div>
+
+    <!-- SLIDE 21: Bootcamp CTA -->
+    <div class="slide slide-cta">
+        <div class="content">
+            <div class="badge">Federal Help Center Pro Members</div>
+            <h2>January 2026 GovCon Bootcamp</h2>
+            <div class="date">January 31, 2026</div>
+            <div class="features">
+                8 Hours Live Training | Capability Statement Review<br>
+                Personalized Target List | 90-Day Action Plan<br>
+                Searchable Database Access | Full Recording
+            </div>
+            <div class="cta-box">Join Federal Help Center Pro</div>
+            <div class="price">$99/month or $799/year</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 22: Next Week Teaser -->
+    <div class="slide slide-dark">
+        <div class="content">
+            <h2 style="margin-bottom: 40px;">Next Week</h2>
+            <p style="font-size: 72px; font-weight: 900; color: #7c3aed; margin-bottom: 40px;">8 Agency Pain Points<br>You Can Solve</p>
+            <p style="font-size: 36px;">I'll show you exactly what agencies are struggling with - and how to position your business as the solution.</p>
+            <p style="font-size: 42px; color: #ef4444; font-weight: 700; margin-top: 60px;">Subscribe so you don't miss it!</p>
+        </div>
+    </div>
+
+    <!-- SLIDE 23: Data Sources -->
+    <div class="slide slide-dark">
+        <div class="content" style="text-align: left; padding: 60px 80px;">
+            <h2 style="text-align: center; margin-bottom: 40px; font-size: 56px;">Data Sources</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px 50px; font-size: 24px;">
+                <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 15px; border-left: 4px solid #4ade80;">
+                    <h3 style="color: #4ade80; font-size: 28px; margin-bottom: 15px;">1. USASpending.gov</h3>
+                    <p style="opacity: 0.9; line-height: 1.6;">Official federal spending database<br>
+                    > api.usaspending.gov - agency-level unobligated balances<br>
+                    > Real-time appropriations, obligations & outlays by agency</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 15px; border-left: 4px solid #4ade80;">
+                    <h3 style="color: #4ade80; font-size: 28px; margin-bottom: 15px;">2. Treasury Fiscal Data</h3>
+                    <p style="opacity: 0.9; line-height: 1.6;">fiscaldata.treasury.gov<br>
+                    > Monthly Treasury Statement<br>
+                    > Budget data by agency</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 15px; border-left: 4px solid #4ade80;">
+                    <h3 style="color: #4ade80; font-size: 28px; margin-bottom: 15px;">3. Congressional Budget Office</h3>
+                    <p style="opacity: 0.9; line-height: 1.6;">cbo.gov<br>
+                    > Budget and spending analysis reports<br>
+                    > NDAA cost estimates</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 15px; border-left: 4px solid #4ade80;">
+                    <h3 style="color: #4ade80; font-size: 28px; margin-bottom: 15px;">4. NDAA Legislation</h3>
+                    <p style="opacity: 0.9; line-height: 1.6;">congress.gov<br>
+                    > FY2026 National Defense Authorization Act text<br>
+                    > Appropriations amounts by account</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 15px; border-left: 4px solid #4ade80; grid-column: span 2; max-width: 700px; margin: 0 auto;">
+                    <h3 style="color: #4ade80; font-size: 28px; margin-bottom: 15px;">5. GAO Reports</h3>
+                    <p style="opacity: 0.9; line-height: 1.6;">gao.gov<br>
+                    > Unobligated balance analysis | Agency spending audits</p>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 30px; font-size: 22px; opacity: 0.7;">Data current as of January 2026</p>
+        </div>
+    </div>
+
+    <script>
+        // Keyboard navigation
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const currentSlideEl = document.getElementById('currentSlide');
+        const totalSlidesEl = document.getElementById('totalSlides');
+
+        totalSlidesEl.textContent = slides.length;
+
+        function updateCounter() {
+            currentSlideEl.textContent = currentSlide + 1;
+        }
+
+        function goToSlide(n) {
+            if (n >= 0 && n < slides.length) {
+                currentSlide = n;
+                slides[n].scrollIntoView({ behavior: 'smooth' });
+                updateCounter();
+            }
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') {
+                e.preventDefault();
+                goToSlide(currentSlide + 1);
+            } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                e.preventDefault();
+                goToSlide(currentSlide - 1);
+            } else if (e.key === 'Home') {
+                goToSlide(0);
+            } else if (e.key === 'End') {
+                goToSlide(slides.length - 1);
+            }
+        });
+
+        // Update counter on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    currentSlide = Array.from(slides).indexOf(entry.target);
+                    updateCounter();
+                }
+            });
+        }, { threshold: 0.5 });
+
+        slides.forEach(slide => observer.observe(slide));
+    </script>
+</body>
+</html>

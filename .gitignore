@@ -1,0 +1,7 @@
+.vercel
+.env*.local
+.DS_Store
+**/.DS_Store
+# Large files
+*.mov
+*.mp4

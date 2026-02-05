@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join Pro Member Group | GovCon Giants</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    .gradient-text { background: linear-gradient(135deg, #10b981 0%, #34d399 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .pulse-border { animation: pulse-border 2s infinite; }
+    @keyframes pulse-border { 0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); } 50% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); } }
+  </style>
+</head>
+<body class="min-h-screen bg-slate-900">
+  <!-- Header -->
+  <header class="py-6 px-6 border-b border-slate-800">
+    <div class="max-w-4xl mx-auto flex items-center justify-center">
+      <a href="#" class="flex items-center gap-1">
+        <span class="text-2xl font-bold text-white">GovCon</span>
+        <span class="text-2xl font-bold text-emerald-400">Giants</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Progress Bar -->
+  <div class="bg-slate-800 py-3 px-6">
+    <div class="max-w-2xl mx-auto">
+      <div class="flex items-center justify-between text-sm mb-2">
+        <span class="text-emerald-400 font-medium">Step 2 of 4</span>
+        <span class="text-slate-400">Special Offer</span>
+      </div>
+      <div class="h-2 bg-slate-700 rounded-full overflow-hidden">
+        <div class="h-full bg-emerald-500 rounded-full" style="width: 50%"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <section class="py-12 px-6">
+    <div class="max-w-3xl mx-auto">
+      <!-- Message -->
+      <div class="text-center mb-8">
+        <div class="inline-flex items-center gap-2 bg-amber-900/50 border border-amber-700/50 text-amber-300 px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <span>⚡</span> ONE-TIME OFFER - For New Members Only
+        </div>
+
+        <h1 class="text-3xl md:text-4xl font-bold text-white mb-4">
+          Want Even MORE Resources + Live Support?
+        </h1>
+
+        <p class="text-xl text-slate-300 leading-relaxed">
+          The free resources are great for getting started. But <span class="text-emerald-400 font-semibold">Pro Members</span> get exclusive tools, live training, and direct support to win contracts faster.
+        </p>
+      </div>
+
+      <!-- Pro Membership Card -->
+      <div class="bg-gradient-to-b from-emerald-900/50 to-slate-800 border-2 border-emerald-500 rounded-2xl p-8 mb-8 pulse-border relative">
+        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+          <span class="bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full">MOST POPULAR</span>
+        </div>
+
+        <div class="text-center mb-6">
+          <div class="text-emerald-400 text-sm font-medium mb-2">PRO MEMBER GROUP</div>
+          <h3 class="text-2xl font-bold text-white mb-2">Federal Help Center Pro</h3>
+          <p class="text-slate-400">The complete system to win federal contracts consistently</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+          <ul class="space-y-3 text-slate-300">
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-500 mt-1">✓</span>
+              <span>Everything in Free Resources</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-500 mt-1">✓</span>
+              <span>Monthly LIVE Bootcamps</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-500 mt-1">✓</span>
+              <span>Opportunity Scout Pro</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-500 mt-1">✓</span>
+              <span>Federal Contractor Database</span>
+            </li>
+          </ul>
+          <ul class="space-y-3 text-slate-300">
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-500 mt-1">✓</span>
+              <span>Private Community Access</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-500 mt-1">✓</span>
+              <span>Weekly Q&A Calls</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-500 mt-1">✓</span>
+              <span>Proposal Review Support</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-500 mt-1">✓</span>
+              <span>All Future Resources</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="text-center border-t border-emerald-700/50 pt-6">
+          <div class="flex items-baseline justify-center gap-2 mb-2">
+            <div class="text-4xl font-bold text-white">$99</div>
+            <div class="text-slate-400">/month</div>
+          </div>
+          <div class="text-emerald-400 text-sm mb-6">or $799/year (save $389)</div>
+
+          <a
+            href="https://federalhelpcenter.com/pro"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block w-full px-8 py-4 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-bold text-lg text-center transition-all mb-4"
+          >
+            Yes! Join Pro for $99/month
+          </a>
+
+          <a
+            href="https://federalhelpcenter.com/pro-annual"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block w-full px-8 py-4 bg-slate-700 hover:bg-slate-600 text-white rounded-xl font-bold text-lg text-center transition-all border border-slate-600"
+          >
+            Save $389 - Get Annual for $799
+          </a>
+        </div>
+      </div>
+
+      <!-- Testimonial -->
+      <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 mb-8">
+        <div class="flex justify-center gap-1 mb-4">
+          <span class="text-yellow-400">★</span>
+          <span class="text-yellow-400">★</span>
+          <span class="text-yellow-400">★</span>
+          <span class="text-yellow-400">★</span>
+          <span class="text-yellow-400">★</span>
+        </div>
+        <p class="text-slate-300 text-center italic mb-4">
+          "The Pro membership gave me access to tools and training I couldn't find anywhere else. Within 3 months, I won my first $150K contract!"
+        </p>
+        <p class="text-slate-500 text-sm text-center">— Pro Member</p>
+      </div>
+
+      <!-- Skip Link -->
+      <div class="text-center">
+        <a
+          href="3-downsell.html"
+          class="text-slate-500 hover:text-slate-400 text-sm transition-all"
+        >
+          No thanks, show me other options →
+        </a>
+      </div>
+
+      <!-- Guarantee -->
+      <div class="mt-8 text-center">
+        <div class="inline-flex items-center gap-2 text-slate-400 text-sm">
+          <svg class="w-5 h-5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <span>30-day money-back guarantee • Cancel anytime</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 px-6 border-t border-slate-800">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-slate-500 text-sm">
+        © 2026 GovCon Giants. All rights reserved.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

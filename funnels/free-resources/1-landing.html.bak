@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free GovCon Resources - Tools, Videos & More | GovCon Giants</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    .gradient-text { background: linear-gradient(135deg, #f43f5e 0%, #ec4899 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  </style>
+</head>
+<body class="min-h-screen bg-slate-900">
+  <!-- Header -->
+  <header class="py-6 px-6 border-b border-slate-800">
+    <div class="max-w-4xl mx-auto flex items-center justify-center">
+      <a href="#" class="flex items-center gap-1">
+        <span class="text-2xl font-bold text-white">GovCon</span>
+        <span class="text-2xl font-bold text-emerald-400">Giants</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="py-16 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-2 bg-rose-900/50 border border-rose-700/50 text-rose-300 px-4 py-2 rounded-full text-sm font-medium mb-8">
+        <span>🎁</span> 100% FREE - No Credit Card Required
+      </div>
+
+      <!-- Headline -->
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+        Your Complete <span class="gradient-text">GovCon Resource Library</span>
+      </h1>
+
+      <!-- Subheadline -->
+      <p class="text-xl text-slate-300 mb-8 leading-relaxed">
+        Access our entire collection of free tools, videos, templates, contact lists,
+        and knowledge base resources. Everything you need to win federal contracts.
+      </p>
+
+      <!-- Categories Preview -->
+      <div class="flex flex-wrap justify-center gap-3 mb-12">
+        <div class="bg-slate-800 border border-slate-700 rounded-lg px-4 py-2 text-slate-300 text-sm">
+          📢 Marketing Materials
+        </div>
+        <div class="bg-slate-800 border border-slate-700 rounded-lg px-4 py-2 text-slate-300 text-sm">
+          🎬 Free Videos
+        </div>
+        <div class="bg-slate-800 border border-slate-700 rounded-lg px-4 py-2 text-slate-300 text-sm">
+          📋 Contact Lists
+        </div>
+        <div class="bg-slate-800 border border-slate-700 rounded-lg px-4 py-2 text-slate-300 text-sm">
+          📚 Knowledge Base
+        </div>
+        <div class="bg-slate-800 border border-slate-700 rounded-lg px-4 py-2 text-slate-300 text-sm">
+          🛠️ Tools & Handouts
+        </div>
+      </div>
+
+      <!-- Email Capture Form -->
+      <div class="bg-slate-800 border border-slate-700 rounded-2xl p-8 max-w-md mx-auto">
+        <h3 class="text-xl font-bold text-white mb-2">Unlock Free Access</h3>
+        <p class="text-slate-400 text-sm mb-6">Enter your email to access all resources instantly</p>
+
+        <form id="leadForm" class="space-y-4">
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            required
+            class="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-rose-500 transition"
+          >
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            required
+            class="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-rose-500 transition"
+          >
+          <button
+            type="submit"
+            class="w-full px-6 py-4 bg-rose-600 hover:bg-rose-500 text-white rounded-lg font-bold text-lg transition-all"
+          >
+            Get Free Access
+          </button>
+        </form>
+
+        <p class="text-slate-500 text-xs mt-4">
+          Instant access. No spam. Unsubscribe anytime.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's Included -->
+  <section class="py-16 px-6 bg-slate-800/50">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-white text-center mb-12">What You'll Get Access To</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Marketing Materials -->
+        <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
+          <div class="w-12 h-12 bg-rose-900/50 border border-rose-700/50 rounded-xl flex items-center justify-center mb-4">
+            <span class="text-2xl">📢</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Marketing Materials</h3>
+          <p class="text-slate-400 text-sm mb-4">Professional marketing templates, social media content, and promotional materials.</p>
+          <ul class="text-slate-400 text-sm space-y-1">
+            <li>• LinkedIn post templates</li>
+            <li>• Capability statement examples</li>
+            <li>• Email outreach scripts</li>
+          </ul>
+        </div>
+
+        <!-- Free Videos -->
+        <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
+          <div class="w-12 h-12 bg-rose-900/50 border border-rose-700/50 rounded-xl flex items-center justify-center mb-4">
+            <span class="text-2xl">🎬</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Free Videos</h3>
+          <p class="text-slate-400 text-sm mb-4">Training videos, tutorials, and recorded sessions to accelerate your learning.</p>
+          <ul class="text-slate-400 text-sm space-y-1">
+            <li>• GovCon fundamentals</li>
+            <li>• SAM.gov walkthrough</li>
+            <li>• Strategy sessions</li>
+          </ul>
+        </div>
+
+        <!-- Contact Lists -->
+        <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
+          <div class="w-12 h-12 bg-rose-900/50 border border-rose-700/50 rounded-xl flex items-center justify-center mb-4">
+            <span class="text-2xl">📋</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Contact Lists</h3>
+          <p class="text-slate-400 text-sm mb-4">Curated contact directories to help you connect with the right people.</p>
+          <ul class="text-slate-400 text-sm space-y-1">
+            <li>• SBLO directory</li>
+            <li>• Prime contractor contacts</li>
+            <li>• Teaming partner lists</li>
+          </ul>
+        </div>
+
+        <!-- Knowledge Base -->
+        <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
+          <div class="w-12 h-12 bg-rose-900/50 border border-rose-700/50 rounded-xl flex items-center justify-center mb-4">
+            <span class="text-2xl">📚</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Knowledge Base</h3>
+          <p class="text-slate-400 text-sm mb-4">In-depth guides, frameworks, and insider knowledge for GovCon success.</p>
+          <ul class="text-slate-400 text-sm space-y-1">
+            <li>• Agency pain points</li>
+            <li>• NDAA breakdowns</li>
+            <li>• Strategy frameworks</li>
+          </ul>
+        </div>
+
+        <!-- Tools & Handouts -->
+        <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
+          <div class="w-12 h-12 bg-rose-900/50 border border-rose-700/50 rounded-xl flex items-center justify-center mb-4">
+            <span class="text-2xl">🛠️</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Tools & Handouts</h3>
+          <p class="text-slate-400 text-sm mb-4">Ready-to-use tools, checklists, and downloadable handouts.</p>
+          <ul class="text-slate-400 text-sm space-y-1">
+            <li>• Opportunity Hunter</li>
+            <li>• Hit lists & forecasts</li>
+            <li>• AI prompts library</li>
+          </ul>
+        </div>
+
+        <!-- Bonus -->
+        <div class="bg-gradient-to-br from-rose-900/30 to-slate-800 border border-rose-700/50 rounded-xl p-6">
+          <div class="w-12 h-12 bg-rose-900/50 border border-rose-700/50 rounded-xl flex items-center justify-center mb-4">
+            <span class="text-2xl">⭐</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">New Resources Added</h3>
+          <p class="text-slate-400 text-sm mb-4">We're constantly adding new resources. Get access once and receive updates forever.</p>
+          <ul class="text-slate-400 text-sm space-y-1">
+            <li>• Monthly updates</li>
+            <li>• New tools & templates</li>
+            <li>• Fresh content</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 px-6 bg-gradient-to-r from-rose-900 to-pink-900">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-white mb-4">
+        Ready to Access Everything for Free?
+      </h2>
+      <p class="text-rose-200 text-lg mb-8">
+        Join thousands of contractors using our free resources to win federal contracts.
+      </p>
+      <a
+        href="#"
+        onclick="document.getElementById('leadForm').scrollIntoView({behavior: 'smooth'}); return false;"
+        class="inline-block px-8 py-4 bg-white hover:bg-gray-100 text-rose-900 rounded-full font-bold text-lg transition-all"
+      >
+        Get Free Access Now
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 px-6 border-t border-slate-800">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="flex items-center justify-center gap-1 mb-4">
+        <span class="text-xl font-bold text-white">GovCon</span>
+        <span class="text-xl font-bold text-emerald-400">Giants</span>
+      </div>
+      <p class="text-slate-500 text-sm">
+        © 2026 GovCon Giants. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('leadForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = this.querySelector('input[name="name"]').value;
+      const email = this.querySelector('input[name="email"]').value;
+
+      // Store in localStorage
+      localStorage.setItem('leadName', name);
+      localStorage.setItem('leadEmail', email);
+
+      // Redirect to upsell page
+      window.location.href = '2-upsell.html';
+    });
+  </script>
+</body>
+</html>

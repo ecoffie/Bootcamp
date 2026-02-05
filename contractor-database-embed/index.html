@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Federal Contractor Database</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: white;
+            padding: 10px;
+        }
+
+        .search-container {
+            position: sticky;
+            top: 0;
+            background: white;
+            padding: 15px;
+            border-bottom: 2px solid #e5e7eb;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .search-box {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        #searchInput {
+            flex: 1;
+            min-width: 200px;
+            padding: 12px 16px;
+            border: 2px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: border-color 0.2s;
+        }
+
+        #searchInput:focus {
+            outline: none;
+            border-color: #7c3aed;
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        select {
+            padding: 10px 14px;
+            border: 2px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 14px;
+            background: white;
+            cursor: pointer;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #7c3aed;
+        }
+
+        .stats {
+            display: flex;
+            gap: 15px;
+            padding: 10px 0;
+            font-size: 13px;
+            color: #6b7280;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .stat-value {
+            font-weight: 700;
+            color: #1e3a8a;
+        }
+
+        #results {
+            padding: 10px;
+        }
+
+        .company-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 12px;
+            transition: all 0.2s;
+        }
+
+        .company-card:hover {
+            border-color: #7c3aed;
+            box-shadow: 0 4px 12px rgba(124, 58, 237, 0.1);
+        }
+
+        .company-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin-bottom: 8px;
+        }
+
+        .company-details {
+            display: grid;
+            gap: 6px;
+            font-size: 13px;
+            color: #4b5563;
+        }
+
+        .detail-row {
+            display: flex;
+            gap: 6px;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            min-width: 100px;
+            color: #6b7280;
+        }
+
+        .detail-value {
+            color: #1f2937;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-right: 6px;
+            margin-top: 4px;
+        }
+
+        .badge-green {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .badge-blue {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .badge-purple {
+            background: #ede9fe;
+            color: #5b21b6;
+        }
+
+        .contact-info {
+            margin-top: 8px;
+            padding: 8px;
+            background: #f9fafb;
+            border-radius: 6px;
+            font-size: 13px;
+        }
+
+        .contact-item {
+            margin: 4px 0;
+        }
+
+        .contact-link {
+            color: #7c3aed;
+            text-decoration: none;
+        }
+
+        .contact-link:hover {
+            text-decoration: underline;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: #6b7280;
+            font-size: 16px;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 20px;
+            color: #6b7280;
+        }
+
+        @media (max-width: 768px) {
+            .search-box {
+                flex-direction: column;
+            }
+
+            #searchInput {
+                width: 100%;
+            }
+
+            .stats {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="🔍 Search by company name, NAICS code, or agency...">
+        </div>
+        <div class="filter-group">
+            <select id="contactFilter">
+                <option value="">All Contact Info</option>
+                <option value="has_email">Has Email</option>
+                <option value="has_phone">Has Phone</option>
+                <option value="has_contact">Has Any Contact</option>
+            </select>
+            <select id="subcontractFilter">
+                <option value="">All Companies</option>
+                <option value="true">Has Subcontract Plan</option>
+            </select>
+            <select id="sizeFilter">
+                <option value="">All Contract Sizes</option>
+                <option value="mega">Mega ($1B+)</option>
+                <option value="large">Large ($100M - $1B)</option>
+                <option value="medium">Medium ($10M - $100M)</option>
+                <option value="small">Small (Under $10M)</option>
+            </select>
+        </div>
+        <div class="stats">
+            <div class="stat-item">
+                <span class="stat-label">Showing:</span>
+                <span class="stat-value" id="resultCount">0</span>
+                <span>companies</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Total Value:</span>
+                <span class="stat-value" id="totalValue">$0</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="results">
+        <div class="loading">Loading contractors...</div>
+    </div>
+
+    <script src="data-extract.js"></script>
+    <script>
+        let filteredCompanies = companies;
+
+        function formatCurrency(value) {
+            if (value >= 1e9) return '$' + (value / 1e9).toFixed(1) + 'B';
+            if (value >= 1e6) return '$' + (value / 1e6).toFixed(1) + 'M';
+            if (value >= 1e3) return '$' + (value / 1e3).toFixed(1) + 'K';
+            return '$' + value.toFixed(0);
+        }
+
+        function renderCompanies(companiesToShow) {
+            const resultsDiv = document.getElementById('results');
+            const resultCountSpan = document.getElementById('resultCount');
+            const totalValueSpan = document.getElementById('totalValue');
+
+            if (companiesToShow.length === 0) {
+                resultsDiv.innerHTML = '<div class="no-results">No companies found matching your criteria.</div>';
+                resultCountSpan.textContent = '0';
+                totalValueSpan.textContent = '$0';
+                return;
+            }
+
+            const totalValue = companiesToShow.reduce((sum, c) => sum + (c.contract_value_num || 0), 0);
+            resultCountSpan.textContent = companiesToShow.length.toLocaleString();
+            totalValueSpan.textContent = formatCurrency(totalValue);
+
+            resultsDiv.innerHTML = companiesToShow.slice(0, 100).map(company => {
+                const contractValue = company.contract_value_num || 0;
+                const naicsList = company.naics ? company.naics.split(',').slice(0, 5) : [];
+                const agenciesList = company.agencies ? company.agencies.split(',').slice(0, 3) : [];
+
+                let contactHTML = '';
+                if (company.sblo_name || company.email || company.phone) {
+                    contactHTML = `
+                        <div class="contact-info">
+                            ${company.sblo_name ? `<div class="contact-item"><strong>SBLO:</strong> ${company.sblo_name}</div>` : ''}
+                            ${company.email ? `<div class="contact-item">✉️ <a href="mailto:${company.email}" class="contact-link">${company.email}</a></div>` : ''}
+                            ${company.phone ? `<div class="contact-item">📞 ${company.phone}</div>` : ''}
+                        </div>
+                    `;
+                }
+
+                return `
+                    <div class="company-card">
+                        <div class="company-name">${company.company}</div>
+                        <div class="company-details">
+                            <div class="detail-row">
+                                <span class="detail-label">Contract Value:</span>
+                                <span class="detail-value"><strong>${formatCurrency(contractValue)}</strong> (${company.contract_count || 0} contracts)</span>
+                            </div>
+                            ${naicsList.length > 0 ? `
+                                <div class="detail-row">
+                                    <span class="detail-label">NAICS Codes:</span>
+                                    <span class="detail-value">
+                                        ${naicsList.map(n => `<span class="badge badge-blue">${n.trim()}</span>`).join('')}
+                                    </span>
+                                </div>
+                            ` : ''}
+                            ${agenciesList.length > 0 ? `
+                                <div class="detail-row">
+                                    <span class="detail-label">Agencies:</span>
+                                    <span class="detail-value">
+                                        ${agenciesList.map(a => `<span class="badge badge-purple">${a.trim()}</span>`).join('')}
+                                    </span>
+                                </div>
+                            ` : ''}
+                            ${company.has_subcontract_plan === 'True' ? `
+                                <div class="detail-row">
+                                    <span class="badge badge-green">✓ Has Subcontract Plan</span>
+                                </div>
+                            ` : ''}
+                        </div>
+                        ${contactHTML}
+                    </div>
+                `;
+            }).join('');
+
+            if (companiesToShow.length > 100) {
+                resultsDiv.innerHTML += `<div class="no-results">Showing first 100 of ${companiesToShow.length.toLocaleString()} results. Refine your search to see more.</div>`;
+            }
+        }
+
+        function filterCompanies() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const contactFilter = document.getElementById('contactFilter').value;
+            const subcontractFilter = document.getElementById('subcontractFilter').value;
+            const sizeFilter = document.getElementById('sizeFilter').value;
+
+            filteredCompanies = companies.filter(company => {
+                // Search filter
+                const matchesSearch = !searchTerm ||
+                    company.company.toLowerCase().includes(searchTerm) ||
+                    (company.naics && company.naics.toLowerCase().includes(searchTerm)) ||
+                    (company.agencies && company.agencies.toLowerCase().includes(searchTerm)) ||
+                    (company.sblo_name && company.sblo_name.toLowerCase().includes(searchTerm));
+
+                // Contact filter
+                const matchesContact = !contactFilter || company[contactFilter];
+
+                // Subcontract filter
+                const matchesSubcontract = !subcontractFilter || company.has_subcontract_plan === 'True';
+
+                // Size filter
+                let matchesSize = true;
+                if (sizeFilter) {
+                    const value = company.contract_value_num || 0;
+                    switch(sizeFilter) {
+                        case 'mega': matchesSize = value >= 1e9; break;
+                        case 'large': matchesSize = value >= 1e8 && value < 1e9; break;
+                        case 'medium': matchesSize = value >= 1e7 && value < 1e8; break;
+                        case 'small': matchesSize = value < 1e7; break;
+                    }
+                }
+
+                return matchesSearch && matchesContact && matchesSubcontract && matchesSize;
+            });
+
+            renderCompanies(filteredCompanies);
+        }
+
+        // Event listeners
+        document.getElementById('searchInput').addEventListener('input', filterCompanies);
+        document.getElementById('contactFilter').addEventListener('change', filterCompanies);
+        document.getElementById('subcontractFilter').addEventListener('change', filterCompanies);
+        document.getElementById('sizeFilter').addEventListener('change', filterCompanies);
+
+        // Initial render
+        filterCompanies();
+    </script>
+</body>
+</html>

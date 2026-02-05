@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SBLO Contact List - Federal Agencies</title>
+    <style>
+        @page {
+            size: letter;
+            margin: 0.75in;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #001F3F;
+            background: white;
+            padding: 20px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #001F3F 0%, #003366 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            color: #FFD700;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            color: white;
+        }
+
+        .agency-section {
+            margin-bottom: 3rem;
+            page-break-inside: avoid;
+        }
+
+        .agency-header {
+            background: #001F3F;
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 8px 8px 0 0;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .agency-content {
+            border: 2px solid #001F3F;
+            border-top: none;
+            padding: 1.5rem;
+            background: #f9f9f9;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #FFD700;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .contact-card h3 {
+            color: #001F3F;
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            border-bottom: 2px solid #FFD700;
+            padding-bottom: 0.5rem;
+        }
+
+        .contact-info {
+            margin: 0.5rem 0;
+        }
+
+        .contact-info strong {
+            color: #001F3F;
+            display: inline-block;
+            width: 120px;
+        }
+
+        .contact-info a {
+            color: #FF4136;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .notes {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: #fff3cd;
+            border-left: 4px solid #FFD700;
+            border-radius: 4px;
+        }
+
+        .notes strong {
+            color: #001F3F;
+        }
+
+        .search-box {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: #f0f0f0;
+            border-radius: 8px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.75rem;
+            font-size: 1rem;
+            border: 2px solid #001F3F;
+            border-radius: 5px;
+        }
+
+        .empty-placeholder {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        @media print {
+            .search-box {
+                display: none;
+            }
+            .agency-section {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Small Business Liaison Officer (SBLO) Contact List</h1>
+        <p>Federal Agency Contacts for Contracting Opportunities</p>
+        <p style="font-size: 0.9rem; margin-top: 0.5rem;">Updated: December 2025</p>
+    </div>
+
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search agencies or contacts..." onkeyup="filterAgencies()">
+    </div>
+
+    <!-- Department of Defense -->
+    <div class="agency-section" data-agency="Department of Defense">
+        <div class="agency-header">Department of Defense (DoD)</div>
+        <div class="agency-content">
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>DoD Office of Small Business Programs</h3>
+                    <div class="contact-info">
+                        <strong>Director:</strong> <span id="dod-director">[Name]</span><br>
+                        <strong>Email:</strong> <a href="mailto:" id="dod-email">[Email]</a><br>
+                        <strong>Phone:</strong> <span id="dod-phone">[Phone]</span><br>
+                        <strong>Website:</strong> <a href="https://business.defense.gov/" target="_blank">business.defense.gov</a>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <h3>Location</h3>
+                    <div class="contact-info">
+                        <strong>Address:</strong> Pentagon<br>
+                        <strong>City, State:</strong> Arlington, VA
+                    </div>
+                </div>
+            </div>
+            <div class="notes">
+                <strong>Notes:</strong> Central point for all DoD small business programs. Contact for questions about set-asides, certifications, and opportunities across all military branches.
+            </div>
+        </div>
+    </div>
+
+    <!-- Army -->
+    <div class="agency-section" data-agency="Army">
+        <div class="agency-header">U.S. Army</div>
+        <div class="agency-content">
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>Army Office of Small Business Programs</h3>
+                    <div class="contact-info">
+                        <strong>Director:</strong> <span>[Name]</span><br>
+                        <strong>Email:</strong> <a href="mailto:">[Email]</a><br>
+                        <strong>Phone:</strong> <span>[Phone]</span><br>
+                        <strong>Website:</strong> <a href="https://www.selltoarmy.info/" target="_blank">selltoarmy.info</a>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <h3>Procurement</h3>
+                    <div class="contact-info">
+                        <strong>Contact:</strong> <span>[Name]</span><br>
+                        <strong>Email:</strong> <a href="mailto:">[Email]</a><br>
+                        <strong>Phone:</strong> <span>[Phone]</span>
+                    </div>
+                </div>
+            </div>
+            <div class="notes">
+                <strong>Notes:</strong> Focus areas: Ground vehicles, weapons systems, logistics. $10B unobligated balance in December 2025. Key NAICS: 336611, 336992.
+            </div>
+        </div>
+    </div>
+
+    <!-- Navy -->
+    <div class="agency-section" data-agency="Navy">
+        <div class="agency-header">U.S. Navy</div>
+        <div class="agency-content">
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>Navy Office of Small Business Programs</h3>
+                    <div class="contact-info">
+                        <strong>Director:</strong> <span>[Name]</span><br>
+                        <strong>Email:</strong> <a href="mailto:">[Email]</a><br>
+                        <strong>Phone:</strong> <span>[Phone]</span><br>
+                        <strong>Website:</strong> <a href="https://www.secnav.navy.mil/portal/page/portal/pptm/osbp" target="_blank">Navy OSBP</a>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <h3>Shipbuilding & Procurement</h3>
+                    <div class="contact-info">
+                        <strong>Contact:</strong> <span>[Name]</span><br>
+                        <strong>Email:</strong> <a href="mailto:">[Email]</a><br>
+                        <strong>Phone:</strong> <span>[Phone]</span>
+                    </div>
+                </div>
+            </div>
+            <div class="notes">
+                <strong>Notes:</strong> Focus areas: Shipbuilding, maritime tech, ship repair. $8B unobligated balance in December 2025. Small biz pilots extended (NDAA Sec. 863).
+            </div>
+        </div>
+    </div>
+
+    <!-- Air Force -->
+    <div class="agency-section" data-agency="Air Force">
+        <div class="agency-header">U.S. Air Force</div>
+        <div class="agency-content">
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>Air Force Office of Small Business Programs</h3>
+                    <div class="contact-info">
+                        <strong>Director:</strong> <span>[Name]</span><br>
+                        <strong>Email:</strong> <a href="mailto:">[Email]</a><br>
+                        <strong>Phone:</strong> <span>[Phone]</span><br>
+                        <strong>Website:</strong> <a href="https://www.airforcesmallbiz.org/" target="_blank">airforcesmallbiz.org</a>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <h3>RDT&E Programs</h3>
+                    <div class="contact-info">
+                        <strong>Contact:</strong> <span>[Name]</span><br>
+                        <strong>Email:</strong> <a href="mailto:">[Email]</a><br>
+                        <strong>Phone:</strong> <span>[Phone]</span>
+                    </div>
+                </div>
+            </div>
+            <div class="notes">
+                <strong>Notes:</strong> Focus areas: Aircraft upgrades, space systems, AI prototypes. $7B unobligated balance in RDT&E. VOSB goal 5% (NDAA).
+            </div>
+        </div>
+    </div>
+
+    <!-- Missile Defense Agency -->
+    <div class="agency-section" data-agency="Missile Defense Agency">
+        <div class="agency-header">Missile Defense Agency (MDA)</div>
+        <div class="agency-content">
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>MDA Small Business Office</h3>
+                    <div class="contact-info">
+                        <strong>SBLO:</strong> <span>[Name]</span><br>
+                        <strong>Email:</strong> <a href="mailto:">[Email]</a><br>
+                        <strong>Phone:</strong> <span>[Phone]</span><br>
+                        <strong>Website:</strong> <a href="https://www.mda.mil/business/" target="_blank">mda.mil/business</a>
+                    </div>
+                </div>
+            </div>
+            <div class="notes">
+                <strong>Notes:</strong> Focus areas: Missile tech, sensors, testing. $4B unobligated balance. Small biz OTAs tracked (NDAA Sec. 888).
+            </div>
+        </div>
+    </div>
+
+    <!-- Cyber Command -->
+    <div class="agency-section" data-agency="Cyber Command">
+        <div class="agency-header">U.S. Cyber Command</div>
+        <div class="agency-content">
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>CYBERCOM Small Business</h3>
+                    <div class="contact-info">
+                        <strong>SBLO:</strong> <span>[Name]</span><br>
+                        <strong>Email:</strong> <a href="mailto:">[Email]</a><br>
+                        <strong>Phone:</strong> <span>[Phone]</span>
+                    </div>
+                </div>
+            </div>
+            <div class="notes">
+                <strong>Notes:</strong> Focus areas: Cybersecurity, zero trust, cloud migration. $3.5B unobligated balance. AI pilots for small biz (NDAA Sec. 861).
+            </div>
+        </div>
+    </div>
+
+    <!-- Defense Logistics Agency -->
+    <div class="agency-section" data-agency="Defense Logistics Agency">
+        <div class="agency-header">Defense Logistics Agency (DLA)</div>
+        <div class="agency-content">
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>DLA Office of Small Business Programs</h3>
+                    <div class="contact-info">
+                        <strong>Director:</strong> <span>[Name]</span><br>
+                        <strong>Email:</strong> <a href="mailto:">[Email]</a><br>
+                        <strong>Phone:</strong> <span>[Phone]</span><br>
+                        <strong>Website:</strong> <a href="https://www.dla.mil/SmallBusiness/" target="_blank">dla.mil/SmallBusiness</a>
+                    </div>
+                </div>
+            </div>
+            <div class="notes">
+                <strong>Notes:</strong> Focus areas: Supply chain, MRO, energy products. $5B unobligated balance. HUBZone set-asides prioritized.
+            </div>
+        </div>
+    </div>
+
+    <!-- Space Force -->
+    <div class="agency-section" data-agency="Space Force">
+        <div class="agency-header">U.S. Space Force</div>
+        <div class="agency-content">
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>Space Force Small Business</h3>
+                    <div class="contact-info">
+                        <strong>SBLO:</strong> <span>[Name]</span><br>
+                        <strong>Email:</strong> <a href="mailto:">[Email]</a><br>
+                        <strong>Phone:</strong> <span>[Phone]</span>
+                    </div>
+                </div>
+            </div>
+            <div class="notes">
+                <strong>Notes:</strong> Focus areas: Satellite support, launch services. $2.8B unobligated balance. Nontraditional small biz pilots (NDAA Sec. 863).
+            </div>
+        </div>
+    </div>
+
+    <!-- Defense Health Program -->
+    <div class="agency-section" data-agency="Defense Health Program">
+        <div class="agency-header">Defense Health Program</div>
+        <div class="agency-content">
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>DHP Small Business Office</h3>
+                    <div class="contact-info">
+                        <strong>SBLO:</strong> <span>[Name]</span><br>
+                        <strong>Email:</strong> <a href="mailto:">[Email]</a><br>
+                        <strong>Phone:</strong> <span>[Phone]</span>
+                    </div>
+                </div>
+            </div>
+            <div class="notes">
+                <strong>Notes:</strong> Focus areas: Medical IT, telehealth, equipment. $2B unobligated balance. WOSB set-asides.
+            </div>
+        </div>
+    </div>
+
+    <!-- DOE - Atomic Energy Defense -->
+    <div class="agency-section" data-agency="DOE">
+        <div class="agency-header">Department of Energy - Atomic Energy Defense</div>
+        <div class="agency-content">
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>DOE Small Business Office</h3>
+                    <div class="contact-info">
+                        <strong>Director:</strong> <span>[Name]</span><br>
+                        <strong>Email:</strong> <a href="mailto:">[Email]</a><br>
+                        <strong>Phone:</strong> <span>[Phone]</span><br>
+                        <strong>Website:</strong> <a href="https://www.energy.gov/management/office-management/operations/small-business-program" target="_blank">DOE Small Business</a>
+                    </div>
+                </div>
+            </div>
+            <div class="notes">
+                <strong>Notes:</strong> Focus areas: Nuclear cleanup, environmental services. $2.5B unobligated balance. Small biz grants (NDAA Sec. 815).
+            </div>
+        </div>
+    </div>
+
+    <!-- Prime Contractors Section -->
+    <div class="agency-section" data-agency="Prime Contractors">
+        <div class="agency-header" style="background: #FF4136;">Prime Contractors - Top Opportunities</div>
+        <div class="agency-content">
+            <div class="notes" style="background: #fff3cd; margin-bottom: 1.5rem;">
+                <strong>Data Sources:</strong> SBA Prime Directory (300+), DoD CSP Directory (100+), DHS Primes (50+), DOT Directory (100+). See <a href="sblo-research-guide.md" target="_blank">sblo-research-guide.md</a> for download links.
+            </div>
+            
+            <h3 style="color: #001F3F; margin-bottom: 1rem;">Top DoD Primes (DoD CSP Directory)</h3>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>BAE Systems</h3>
+                    <div class="contact-info">
+                        <strong>SBLO:</strong> <span>Marianne Tenore</span><br>
+                        <strong>Email:</strong> <a href="mailto:">[Search website]</a><br>
+                        <strong>Phone:</strong> <span>703-xxx-xxxx</span><br>
+                        <strong>Website:</strong> <a href="https://www.baesystems.com/" target="_blank">baesystems.com</a>
+                    </div>
+                </div>
+                <!-- Add more primes here as you download the directories -->
+            </div>
+
+            <h3 style="color: #001F3F; margin-top: 2rem; margin-bottom: 1rem;">DHS Primes</h3>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>Accenture Federal</h3>
+                    <div class="contact-info">
+                        <strong>SBLO Email:</strong> <a href="mailto:smallbusiness@accenturefederal.com">smallbusiness@accenturefederal.com</a><br>
+                        <strong>Website:</strong> <a href="https://www.accenturefederal.com/" target="_blank">accenturefederal.com</a>
+                    </div>
+                </div>
+                <!-- Add more DHS primes here -->
+            </div>
+
+            <div class="notes" style="margin-top: 1.5rem;">
+                <strong>How to Build This List:</strong><br>
+                1. Download SBA Prime Directory Excel (300+ primes): <a href="https://www.sba.gov/document/support-directory-federal-government-prime-contractors-subcontracting-plans" target="_blank">Download Here</a><br>
+                2. Download DoD CSP Prime Directory (100+ primes): <a href="https://business.defense.gov/Portals/57/Documents/Dod%20CSP%20Prime%20Contractor%20Directory_May%202025.pdf" target="_blank">Download Here</a><br>
+                3. Visit DHS Prime Contractors List: <a href="https://www.dhs.gov/osdbu/prime-contractors" target="_blank">View Here</a><br>
+                4. Extract contacts and add to this list<br>
+                5. See <strong>sblo-research-guide.md</strong> for complete instructions
+            </div>
+        </div>
+    </div>
+
+    <!-- Template for adding more agencies -->
+    <div class="agency-section" data-agency="Template" style="display: none;">
+        <div class="agency-header">[Agency Name]</div>
+        <div class="agency-content">
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>[SBLO/Office Name]</h3>
+                    <div class="contact-info">
+                        <strong>Director/SBLO:</strong> <span>[Name]</span><br>
+                        <strong>Email:</strong> <a href="mailto:">[Email]</a><br>
+                        <strong>Phone:</strong> <span>[Phone]</span><br>
+                        <strong>Website:</strong> <a href="" target="_blank">[URL]</a>
+                    </div>
+                </div>
+            </div>
+            <div class="notes">
+                <strong>Notes:</strong> [Add relevant notes about opportunities, focus areas, etc.]
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function filterAgencies() {
+            const input = document.getElementById('searchInput');
+            const filter = input.value.toLowerCase();
+            const sections = document.querySelectorAll('.agency-section');
+            
+            sections.forEach(section => {
+                const agency = section.getAttribute('data-agency');
+                const text = section.textContent.toLowerCase();
+                
+                if (text.includes(filter) || filter === '') {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+        }
+
+        // Print-friendly function
+        function printList() {
+            window.print();
+        }
+    </script>
+</body>
+</html>
+

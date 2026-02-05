@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surge Bootcamp Lessons | GovCon Giants</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+    .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+    .lesson-item { transition: all 0.2s; }
+    .lesson-item:hover { background: rgba(59, 130, 246, 0.1); }
+    .lesson-item.active { background: rgba(59, 130, 246, 0.2); border-left: 3px solid #3b82f6; }
+    .lesson-item.completed { opacity: 0.7; }
+    .lesson-item.completed::after { content: '✓'; position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: #22c55e; font-weight: bold; }
+  </style>
+</head>
+<body class="min-h-screen bg-slate-950">
+  <!-- Header -->
+  <header class="py-4 px-6 border-b border-slate-800 bg-slate-900">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="/" class="flex items-center gap-1">
+        <span class="text-xl font-bold text-white">GovCon</span>
+        <span class="text-xl font-bold text-green-500">Giants</span>
+      </a>
+      <a
+        href="4-thank-you.html"
+        class="text-slate-400 hover:text-white text-sm transition flex items-center gap-2"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+        </svg>
+        Downloads
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="flex flex-col lg:flex-row min-h-[calc(100vh-65px)]">
+    <!-- Sidebar -->
+    <aside class="w-full lg:w-80 bg-slate-900 border-r border-slate-800 lg:overflow-y-auto">
+      <div class="p-4 border-b border-slate-800">
+        <h2 class="text-lg font-bold text-white">Surge Bootcamp</h2>
+        <p class="text-slate-500 text-sm">10 Lessons</p>
+      </div>
+
+      <nav id="lessonNav" class="py-2">
+        <!-- Lessons will be populated by JavaScript -->
+      </nav>
+    </aside>
+
+    <!-- Video Player Area -->
+    <main class="flex-1 p-6 lg:p-10">
+      <div class="max-w-4xl mx-auto">
+        <!-- Current Lesson Title -->
+        <div class="mb-6">
+          <h1 id="lessonTitle" class="text-2xl md:text-3xl font-bold text-white mb-2">Bootcamp Overview</h1>
+          <p id="lessonDescription" class="text-slate-400">Introduction to the Surge Bootcamp and what you'll learn</p>
+        </div>
+
+        <!-- Video Player -->
+        <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden mb-8">
+          <div class="video-container">
+            <iframe
+              id="videoPlayer"
+              src="https://player.vimeo.com/video/1148509044?badge=0&autopause=0&player_id=0&app_id=58479"
+              frameborder="0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="flex items-center justify-between">
+          <button
+            id="prevBtn"
+            onclick="prevLesson()"
+            class="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-lg font-medium transition flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+            disabled
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+            </svg>
+            Previous
+          </button>
+
+          <button
+            id="markCompleteBtn"
+            onclick="markComplete()"
+            class="px-6 py-3 bg-green-600 hover:bg-green-500 text-white rounded-lg font-medium transition"
+          >
+            Mark as Complete
+          </button>
+
+          <button
+            id="nextBtn"
+            onclick="nextLesson()"
+            class="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-medium transition flex items-center gap-2"
+          >
+            Next
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Downloads CTA -->
+        <div class="mt-10 bg-slate-900/50 border border-slate-800 rounded-xl p-6 text-center">
+          <p class="text-slate-400 mb-4">Don't forget to download all your free resources!</p>
+          <a
+            href="4-thank-you.html"
+            class="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-lg font-medium transition"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>
+            Get All Free Downloads
+          </a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const lessons = [
+      {
+        id: 'overview',
+        title: 'Bootcamp Overview',
+        description: 'Introduction to the Surge Bootcamp and what you\'ll learn',
+        vimeoId: '1148509044'
+      },
+      {
+        id: 'part1',
+        title: 'Part 1 - Bootcamp Introduction: 5 Phases',
+        description: 'The 5 phases of winning government contracts',
+        vimeoId: '1148509557'
+      },
+      {
+        id: 'part2a',
+        title: 'Part 2 - Local Contracting (Part 1)',
+        description: 'How to win local and state government contracts',
+        vimeoId: '1148504747'
+      },
+      {
+        id: 'part2b',
+        title: 'Part 2 - Local Contracting (Part 2)',
+        description: 'Advanced local contracting strategies',
+        vimeoId: '1148505549'
+      },
+      {
+        id: 'part3',
+        title: 'Part 3 - December Spend Forecast',
+        description: 'Understanding year-end government spending patterns',
+        vimeoId: '1148503833'
+      },
+      {
+        id: 'part4',
+        title: 'Part 4 - SBLO Prime and Tier 2 Lists',
+        description: 'How to use the prime contractor and subcontractor directories',
+        vimeoId: '1148507357'
+      },
+      {
+        id: 'part5',
+        title: 'Part 5 - Recompete List',
+        description: 'Finding and targeting recompete contract opportunities',
+        vimeoId: '1148505963'
+      },
+      {
+        id: 'part6',
+        title: 'Part 6 - IDIQ Contract Deal Breakdown',
+        description: 'Understanding IDIQ contracts and how to win them',
+        vimeoId: '1148506613'
+      },
+      {
+        id: 'part7',
+        title: 'Part 7 - Finding Recompete Contracts',
+        description: 'Step-by-step guide to finding recompete opportunities',
+        vimeoId: '1148504306'
+      },
+      {
+        id: 'nextsteps',
+        title: 'Next Steps',
+        description: 'Your action plan after completing the bootcamp',
+        vimeoId: '1148717056'
+      }
+    ];
+
+    let currentLesson = 0;
+    let completedLessons = JSON.parse(localStorage.getItem('surgeBootcampCompleted') || '[]');
+
+    function renderNav() {
+      const nav = document.getElementById('lessonNav');
+      nav.innerHTML = lessons.map((lesson, index) => `
+        <div
+          class="lesson-item relative px-4 py-3 cursor-pointer ${index === currentLesson ? 'active' : ''} ${completedLessons.includes(lesson.id) ? 'completed' : ''}"
+          onclick="goToLesson(${index})"
+        >
+          <div class="text-sm font-medium ${index === currentLesson ? 'text-blue-400' : 'text-slate-300'}">${lesson.title}</div>
+        </div>
+      `).join('');
+    }
+
+    function updatePlayer() {
+      const lesson = lessons[currentLesson];
+      document.getElementById('lessonTitle').textContent = lesson.title;
+      document.getElementById('lessonDescription').textContent = lesson.description;
+      document.getElementById('videoPlayer').src = `https://player.vimeo.com/video/${lesson.vimeoId}?badge=0&autopause=0&player_id=0&app_id=58479`;
+
+      // Update buttons
+      document.getElementById('prevBtn').disabled = currentLesson === 0;
+      document.getElementById('nextBtn').textContent = currentLesson === lessons.length - 1 ? 'Finish' : 'Next';
+      document.getElementById('nextBtn').innerHTML = currentLesson === lessons.length - 1
+        ? 'Finish'
+        : `Next <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>`;
+
+      // Update mark complete button
+      const markBtn = document.getElementById('markCompleteBtn');
+      if (completedLessons.includes(lesson.id)) {
+        markBtn.textContent = 'Completed';
+        markBtn.classList.remove('bg-green-600', 'hover:bg-green-500');
+        markBtn.classList.add('bg-slate-700', 'cursor-default');
+      } else {
+        markBtn.textContent = 'Mark as Complete';
+        markBtn.classList.add('bg-green-600', 'hover:bg-green-500');
+        markBtn.classList.remove('bg-slate-700', 'cursor-default');
+      }
+
+      renderNav();
+    }
+
+    function goToLesson(index) {
+      currentLesson = index;
+      updatePlayer();
+      // Scroll to top on mobile
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function prevLesson() {
+      if (currentLesson > 0) {
+        currentLesson--;
+        updatePlayer();
+      }
+    }
+
+    function nextLesson() {
+      if (currentLesson < lessons.length - 1) {
+        currentLesson++;
+        updatePlayer();
+      } else {
+        // Last lesson - redirect to downloads
+        window.location.href = '4-thank-you.html';
+      }
+    }
+
+    function markComplete() {
+      const lesson = lessons[currentLesson];
+      if (!completedLessons.includes(lesson.id)) {
+        completedLessons.push(lesson.id);
+        localStorage.setItem('surgeBootcampCompleted', JSON.stringify(completedLessons));
+        updatePlayer();
+      }
+    }
+
+    // Initialize
+    renderNav();
+    updatePlayer();
+  </script>
+</body>
+</html>

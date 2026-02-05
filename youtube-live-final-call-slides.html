@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Live - Final Call: January 31st Bootcamp Breakdown | GovCon Giants</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            font-family: 'Arial Black', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0a0a0a;
+            color: white;
+        }
+
+        .slides-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 100vh;
+        }
+
+        .slide {
+            min-width: 100vw;
+            width: 100vw;
+            height: 100vh;
+            max-height: 100vh;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        /* Slide backgrounds */
+        .slide-title {
+            background: linear-gradient(135deg, #059669 0%, #7c3aed 50%, #1e3a8a 100%);
+        }
+
+        .slide-dark {
+            background: #0f172a;
+        }
+
+        .slide-green {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        }
+
+        .slide-purple {
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+        }
+
+        .slide-blue {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        }
+
+        .slide-orange {
+            background: linear-gradient(135deg, #ea580c 0%, #f97316 100%);
+        }
+
+        .slide-red {
+            background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+        }
+
+        .content {
+            text-align: center;
+            padding: 3vh 5vw;
+            width: 100%;
+            max-width: 95vw;
+            max-height: 95vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Title slide */
+        .slide-title .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 0.8vh 2vw;
+            border-radius: 50px;
+            font-size: clamp(12px, 1.5vw, 22px);
+            margin-bottom: 2vh;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .slide-title h1 {
+            font-size: clamp(32px, 5vw, 75px);
+            font-weight: 900;
+            margin-bottom: 1.5vh;
+            text-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            line-height: 1.1;
+        }
+
+        .slide-title h1 .highlight {
+            color: #fef08a;
+        }
+
+        .slide-title .subtitle {
+            font-size: clamp(18px, 2.5vw, 38px);
+            opacity: 0.95;
+            font-weight: 400;
+        }
+
+        .slide-title .date {
+            position: absolute;
+            bottom: 3vh;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: clamp(14px, 1.8vw, 26px);
+            opacity: 0.8;
+        }
+
+        /* Headers */
+        h2 {
+            font-size: clamp(28px, 4vw, 60px);
+            font-weight: 900;
+            margin-bottom: 2vh;
+            line-height: 1.2;
+        }
+
+        h2 .highlight { color: #4ade80; }
+        h2 .yellow { color: #fef08a; }
+        h2 .red { color: #ef4444; }
+        h2 .purple { color: #a855f7; }
+
+        /* Big stats */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: clamp(10px, 1.5vw, 25px);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .stat-grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .stat-box {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: clamp(15px, 2vw, 30px) clamp(10px, 1.5vw, 25px);
+            text-align: center;
+        }
+
+        .stat-box .number {
+            font-size: clamp(22px, 3vw, 50px);
+            font-weight: 900;
+            color: #4ade80;
+        }
+
+        .stat-box .label {
+            font-size: clamp(11px, 1.2vw, 18px);
+            opacity: 0.9;
+            margin-top: 6px;
+        }
+
+        /* Agenda items */
+        .agenda-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(10px, 1.2vw, 20px);
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .agenda-item {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: clamp(10px, 1.5vw, 22px);
+            border-left: 4px solid #4ade80;
+        }
+
+        .agenda-item .time {
+            font-size: clamp(12px, 1.2vw, 18px);
+            color: #4ade80;
+            font-weight: 900;
+            margin-bottom: 4px;
+        }
+
+        .agenda-item h3 {
+            font-size: clamp(14px, 1.5vw, 24px);
+            margin-bottom: 4px;
+        }
+
+        .agenda-item p {
+            font-size: clamp(11px, 1.2vw, 18px);
+            opacity: 0.85;
+        }
+
+        /* Checklist */
+        .checklist {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: clamp(10px, 1.5vw, 20px);
+            margin-bottom: clamp(8px, 1vh, 15px);
+            font-size: clamp(14px, 1.8vw, 28px);
+            background: rgba(255,255,255,0.05);
+            padding: clamp(10px, 1.5vh, 20px) clamp(15px, 2vw, 30px);
+            border-radius: 10px;
+        }
+
+        .checklist-item .check {
+            width: clamp(28px, 3vw, 40px);
+            height: clamp(28px, 3vw, 40px);
+            background: #10b981;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: clamp(14px, 1.5vw, 22px);
+            flex-shrink: 0;
+        }
+
+        /* Reason list */
+        .reason-list {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .reason-item {
+            display: flex;
+            align-items: center;
+            gap: clamp(10px, 1.5vw, 25px);
+            margin-bottom: clamp(8px, 1.2vh, 20px);
+            font-size: clamp(14px, 1.8vw, 28px);
+        }
+
+        .reason-item .icon {
+            width: clamp(35px, 4vw, 55px);
+            height: clamp(35px, 4vw, 55px);
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: clamp(16px, 1.8vw, 26px);
+            flex-shrink: 0;
+        }
+
+        /* Two paths comparison */
+        .paths-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(15px, 2vw, 40px);
+            max-width: 1500px;
+            margin: 0 auto;
+        }
+
+        .path-box {
+            border-radius: 15px;
+            padding: clamp(15px, 2vw, 35px);
+            text-align: left;
+        }
+
+        .path-box.bad {
+            background: rgba(239, 68, 68, 0.2);
+            border: 2px solid #ef4444;
+        }
+
+        .path-box.good {
+            background: rgba(16, 185, 129, 0.2);
+            border: 2px solid #10b981;
+        }
+
+        .path-box h3 {
+            font-size: clamp(18px, 2.2vw, 32px);
+            margin-bottom: clamp(10px, 1.5vh, 20px);
+        }
+
+        .path-box.bad h3 { color: #ef4444; }
+        .path-box.good h3 { color: #4ade80; }
+
+        .path-box p {
+            font-size: clamp(13px, 1.5vw, 22px);
+            margin-bottom: clamp(6px, 1vh, 14px);
+            opacity: 0.9;
+        }
+
+        /* Big text */
+        .big-text {
+            font-size: clamp(36px, 5vw, 80px);
+            font-weight: 900;
+            line-height: 1.2;
+        }
+
+        .medium-text {
+            font-size: clamp(16px, 2vw, 32px);
+            opacity: 0.95;
+            margin-top: 1.5vh;
+        }
+
+        /* Countdown */
+        .countdown-box {
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: clamp(20px, 3vw, 50px);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .countdown-box .days {
+            font-size: clamp(80px, 12vw, 160px);
+            font-weight: 900;
+            color: #ef4444;
+            line-height: 1;
+        }
+
+        .countdown-box .label {
+            font-size: clamp(22px, 3vw, 40px);
+            opacity: 0.9;
+        }
+
+        /* CTA slide */
+        .slide-cta {
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #059669 100%);
+        }
+
+        .slide-cta .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 0.8vh 2vw;
+            border-radius: 50px;
+            font-size: clamp(12px, 1.5vw, 22px);
+            margin-bottom: 2vh;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .slide-cta .date {
+            font-size: clamp(24px, 3vw, 48px);
+            font-weight: 700;
+            margin-bottom: 2vh;
+            color: #4ade80;
+        }
+
+        .slide-cta .features {
+            font-size: clamp(14px, 1.8vw, 26px);
+            opacity: 0.95;
+            line-height: 1.6;
+            margin-bottom: 2vh;
+        }
+
+        .slide-cta .cta-box {
+            display: inline-block;
+            background: white;
+            color: #7c3aed;
+            padding: clamp(10px, 1.5vw, 25px) clamp(30px, 4vw, 60px);
+            border-radius: 50px;
+            font-size: clamp(18px, 2.2vw, 34px);
+            font-weight: 900;
+        }
+
+        .slide-cta .price {
+            margin-top: 1.5vh;
+            font-size: clamp(16px, 2vw, 28px);
+            opacity: 0.95;
+        }
+
+        /* Download slide */
+        .slide-download {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        }
+
+        .slide-download .url {
+            font-size: clamp(18px, 2.5vw, 42px);
+            font-weight: 700;
+            background: rgba(255,255,255,0.2);
+            padding: clamp(10px, 1.5vw, 25px) clamp(20px, 3vw, 50px);
+            border-radius: 15px;
+            margin: 2vh 0;
+            display: inline-block;
+        }
+
+        /* Deliverables grid */
+        .deliverables-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: clamp(8px, 1vw, 20px);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .deliverable-box {
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: clamp(12px, 1.5vw, 25px) clamp(10px, 1.2vw, 20px);
+            text-align: center;
+        }
+
+        .deliverable-box .icon {
+            font-size: clamp(24px, 2.5vw, 40px);
+            margin-bottom: 6px;
+        }
+
+        .deliverable-box h4 {
+            font-size: clamp(12px, 1.3vw, 20px);
+            font-weight: 700;
+        }
+
+        /* Navigation Arrows */
+        .nav-arrow {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            cursor: pointer;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+
+        .nav-arrow:hover {
+            background: rgba(255,255,255,0.4);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .nav-prev {
+            left: 20px;
+        }
+
+        .nav-next {
+            right: 20px;
+        }
+
+        /* Navigation */
+        .nav-hint {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-size: 16px;
+            z-index: 1000;
+            font-family: Arial, sans-serif;
+        }
+
+        .slide-counter {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-size: 18px;
+            z-index: 1000;
+            font-family: Arial, sans-serif;
+        }
+
+        @media print {
+            .slide { page-break-after: always; }
+            .nav-hint, .slide-counter { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-hint">← → Arrow keys or click arrows to navigate</div>
+    <div class="slide-counter">Slide <span id="currentSlide">1</span> of <span id="totalSlides">18</span></div>
+
+    <!-- Navigation Arrows -->
+    <div class="nav-arrow nav-prev" onclick="prevSlide()">‹</div>
+    <div class="nav-arrow nav-next" onclick="nextSlide()">›</div>
+
+    <div class="slides-container" id="slidesContainer">
+    <!-- SLIDE 1: Title -->
+    <div class="slide slide-title">
+        <div class="content">
+            <div class="badge">Final Call - January 2026</div>
+            <h1>January 31st<br><span class="highlight">Bootcamp Breakdown</span></h1>
+            <p class="subtitle">Everything You Need To Know Before Friday</p>
+            <div class="date">GovCon Giants | Federal Help Center</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 2: The Countdown -->
+    <div class="slide slide-dark">
+        <div class="content">
+            <h2>The Bootcamp Is In...</h2>
+            <div class="countdown-box">
+                <div class="days">7</div>
+                <div class="label">DAYS</div>
+            </div>
+            <p class="medium-text" style="margin-top: 50px;">January 31st, 2026 | 9:00 AM - 5:00 PM Eastern</p>
+        </div>
+    </div>
+
+    <!-- SLIDE 3: What Is This -->
+    <div class="slide slide-purple">
+        <div class="content">
+            <h2>What Is The Bootcamp?</h2>
+            <div class="stat-grid stat-grid-3" style="margin-top: 50px;">
+                <div class="stat-box">
+                    <div class="number">8</div>
+                    <div class="label">Hours Live Training</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">7</div>
+                    <div class="label">Working Sessions</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">1</div>
+                    <div class="label">Complete Action Plan</div>
+                </div>
+            </div>
+            <p class="medium-text" style="margin-top: 50px;">This isn't a webinar. You'll DO the work during the bootcamp<br>and leave with real deliverables.</p>
+        </div>
+    </div>
+
+    <!-- SLIDE 4: The Opportunity -->
+    <div class="slide slide-green">
+        <div class="content">
+            <h2>Why <span style="color: #fef08a;">January</span> Matters</h2>
+            <div class="stat-grid" style="margin-top: 50px;">
+                <div class="stat-box">
+                    <div class="number">$82.8B</div>
+                    <div class="label">Unobligated Balances</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">$848B</div>
+                    <div class="label">FY2026 NDAA</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">$8-10M</div>
+                    <div class="label">New Sole Source Limits</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">23%</div>
+                    <div class="label">Small Business Goals</div>
+                </div>
+            </div>
+            <p class="medium-text" style="margin-top: 50px;">Q1 is when agencies spend. Q4 is when everyone competes.<br><strong>Be early. Be ready.</strong></p>
+        </div>
+    </div>
+
+    <!-- SLIDE 5: Full Agenda Part 1 -->
+    <div class="slide slide-dark">
+        <div class="content">
+            <h2>The Full Agenda <span class="highlight">(Morning)</span></h2>
+            <div class="agenda-grid" style="margin-top: 40px;">
+                <div class="agenda-item">
+                    <div class="time">9:00 AM</div>
+                    <h3>The January 2026 Opportunity</h3>
+                    <p>NDAA breakdown, unobligated balances, new sole source thresholds</p>
+                </div>
+                <div class="agenda-item">
+                    <div class="time">9:45 AM</div>
+                    <h3>Agency Targeting: Finding YOUR Buyers</h3>
+                    <p>Build your personalized agency target list based on your NAICS</p>
+                </div>
+                <div class="agenda-item">
+                    <div class="time">11:00 AM</div>
+                    <h3>Opportunity Research: Hit List Method</h3>
+                    <p>SAM.gov techniques - find 3-5 opportunities for YOUR business</p>
+                </div>
+                <div class="agenda-item">
+                    <div class="time">12:45 PM</div>
+                    <h3>Opportunity Scout Mastery</h3>
+                    <p>Complete workflow from Opportunity Scout to SAM.gov to action</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 6: Full Agenda Part 2 -->
+    <div class="slide slide-dark">
+        <div class="content">
+            <h2>The Full Agenda <span class="highlight">(Afternoon)</span></h2>
+            <div class="agenda-grid" style="margin-top: 40px;">
+                <div class="agenda-item">
+                    <div class="time">2:00 PM</div>
+                    <h3>2026 Recompetes & Expiring Contracts</h3>
+                    <p>Pick 2-3 recompetes to position for early</p>
+                </div>
+                <div class="agenda-item">
+                    <div class="time">2:30 PM</div>
+                    <h3>Agency Pain Points Strategic Guide</h3>
+                    <p>Map your solution to buyer needs + draft value proposition</p>
+                </div>
+                <div class="agenda-item">
+                    <div class="time">3:00 PM</div>
+                    <h3>Teaming & Subcontracting Strategy</h3>
+                    <p>Identify 5 prime contractors using the Recompete List</p>
+                </div>
+                <div class="agenda-item">
+                    <div class="time">4:15 PM</div>
+                    <h3>Your 90-Day Action Plan + Q&A</h3>
+                    <p>Week-by-week breakdown for Q1 success</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 7: What You'll Leave With -->
+    <div class="slide slide-blue">
+        <div class="content">
+            <h2>What You'll Walk Away With</h2>
+            <div class="deliverables-grid" style="margin-top: 50px;">
+                <div class="deliverable-box">
+                    <div class="icon">🎯</div>
+                    <h4>Top 5 Target Agencies</h4>
+                </div>
+                <div class="deliverable-box">
+                    <div class="icon">📋</div>
+                    <h4>3-5 Real Opportunities</h4>
+                </div>
+                <div class="deliverable-box">
+                    <div class="icon">📅</div>
+                    <h4>2-3 Recompetes to Target</h4>
+                </div>
+                <div class="deliverable-box">
+                    <div class="icon">💡</div>
+                    <h4>Value Proposition Draft</h4>
+                </div>
+                <div class="deliverable-box">
+                    <div class="icon">🤝</div>
+                    <h4>5 Prime Contractors</h4>
+                </div>
+                <div class="deliverable-box">
+                    <div class="icon">📆</div>
+                    <h4>90-Day Action Plan</h4>
+                </div>
+                <div class="deliverable-box">
+                    <div class="icon">🔍</div>
+                    <h4>Database Access</h4>
+                </div>
+                <div class="deliverable-box">
+                    <div class="icon">🎬</div>
+                    <h4>Full Recording</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 8: Two Paths -->
+    <div class="slide slide-dark">
+        <div class="content">
+            <h2>Where Will You Be In 90 Days?</h2>
+            <div class="paths-grid" style="margin-top: 50px;">
+                <div class="path-box bad">
+                    <h3>Path A: Same Position</h3>
+                    <p>Still watching YouTube videos</p>
+                    <p>Still "learning" but not doing</p>
+                    <p>Haven't submitted a proposal</p>
+                    <p>Haven't talked to a buyer</p>
+                    <p>Wondering if this will ever happen</p>
+                </div>
+                <div class="path-box good">
+                    <h3>Path B: Real Progress</h3>
+                    <p>Submitted 2-3 proposals</p>
+                    <p>Talked to 10+ buyers</p>
+                    <p>Active relationships with primes</p>
+                    <p>Clear pipeline of opportunities</p>
+                    <p>You're IN the game</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 9: The Difference -->
+    <div class="slide slide-orange">
+        <div class="content">
+            <h2>The Difference Between Path A & B?</h2>
+            <p class="big-text" style="margin-top: 50px; color: white;">A System.<br>A Plan.<br>Accountability.</p>
+            <p class="medium-text">That's what the bootcamp gives you in 8 hours.</p>
+        </div>
+    </div>
+
+    <!-- SLIDE 10: Free Resources -->
+    <div class="slide slide-download">
+        <div class="content">
+            <h2>Free Resources (Available Now)</h2>
+            <div class="reason-list" style="margin: 40px auto; max-width: 1200px;">
+                <div class="reason-item"><div class="icon">📊</div><span>Agency Buyers List - Top 10 agencies with $82.8B to spend</span></div>
+                <div class="reason-item"><div class="icon">🎯</div><span>34-Opportunity Hit List - Curated low-competition contracts</span></div>
+                <div class="reason-item"><div class="icon">📋</div><span>FY2026 NDAA Report - Small business provisions breakdown</span></div>
+                <div class="reason-item"><div class="icon">🔍</div><span>Agency Pain Points Guide - 8 problems you can solve</span></div>
+                <div class="reason-item"><div class="icon">📅</div><span>Recompete Contracts List - 100 contracts expiring soon</span></div>
+            </div>
+            <div class="url">january-bootcamp-page.vercel.app</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 11: Who Is This For -->
+    <div class="slide slide-purple">
+        <div class="content">
+            <h2>Who Is This Bootcamp For?</h2>
+            <div class="checklist" style="margin-top: 40px;">
+                <div class="checklist-item"><div class="check">✓</div>Small business owners serious about federal contracts</div>
+                <div class="checklist-item"><div class="check">✓</div>You've tried before but struggled to break in</div>
+                <div class="checklist-item"><div class="check">✓</div>You have real capabilities but don't know how to market them</div>
+                <div class="checklist-item"><div class="check">✓</div>You're willing to put in the work to build relationships</div>
+                <div class="checklist-item"><div class="check">✓</div>You want accountability and a clear action plan</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 12: Who Is This NOT For -->
+    <div class="slide slide-red">
+        <div class="content">
+            <h2>Who Is This <span style="color: #fef08a;">NOT</span> For?</h2>
+            <div class="reason-list" style="margin-top: 40px;">
+                <div class="reason-item"><div class="icon">X</div><span>Looking for a magic bullet or get-rich-quick scheme</span></div>
+                <div class="reason-item"><div class="icon">X</div><span>Not willing to do outreach and follow-up</span></div>
+                <div class="reason-item"><div class="icon">X</div><span>Just want another certificate to hang on the wall</span></div>
+                <div class="reason-item"><div class="icon">X</div><span>Not ready to take action in the next 90 days</span></div>
+            </div>
+            <p class="medium-text" style="margin-top: 40px;">This bootcamp requires work. If you're not ready to act, wait for the next one.</p>
+        </div>
+    </div>
+
+    <!-- SLIDE 13: How To Join -->
+    <div class="slide slide-dark">
+        <div class="content">
+            <h2>How Do You Join?</h2>
+            <p style="font-size: 48px; margin: 40px 0;">The bootcamp is included with <span class="highlight">Pro Membership</span></p>
+            <div class="stat-grid stat-grid-3" style="margin-top: 50px; max-width: 1200px;">
+                <div class="stat-box">
+                    <div class="number">$99</div>
+                    <div class="label">Per Month</div>
+                </div>
+                <div class="stat-box" style="border: 4px solid #4ade80;">
+                    <div class="number">$799</div>
+                    <div class="label">Per Year (Save $389)</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">$0</div>
+                    <div class="label">Extra For Bootcamp</div>
+                </div>
+            </div>
+            <p class="medium-text" style="margin-top: 40px;">Pro members also get: Contract database, Opportunity Scout,<br>monthly training, all recordings, resource library</p>
+        </div>
+    </div>
+
+    <!-- SLIDE 14: What If I Can't Attend Live -->
+    <div class="slide slide-blue">
+        <div class="content">
+            <h2>What If I Can't Attend Live?</h2>
+            <div class="paths-grid" style="margin-top: 50px;">
+                <div class="path-box" style="background: rgba(255,255,255,0.1); border: 4px solid rgba(255,255,255,0.3);">
+                    <h3 style="color: white;">You'll Get The Recording</h3>
+                    <p>Full 8-hour recording in your Pro library</p>
+                    <p>Complete every exercise at your own pace</p>
+                    <p>All resources and templates included</p>
+                    <p>Access forever as a Pro member</p>
+                </div>
+                <div class="path-box" style="background: rgba(16, 185, 129, 0.2); border: 4px solid #10b981;">
+                    <h3 style="color: #4ade80;">But Live Is Better</h3>
+                    <p>Ask questions in real-time</p>
+                    <p>Get live feedback on your work</p>
+                    <p>Network with other attendees</p>
+                    <p>The energy and accountability of live</p>
+                </div>
+            </div>
+            <p class="medium-text" style="margin-top: 40px;">Block your calendar for January 31st if you can. It's worth it.</p>
+        </div>
+    </div>
+
+    <!-- SLIDE 15: The Clock Is Ticking -->
+    <div class="slide slide-orange">
+        <div class="content">
+            <h2>The Clock Is Ticking</h2>
+            <p class="big-text" style="margin-top: 40px;">Q1 won't wait.</p>
+            <p class="medium-text">Every week you delay is a week of Q1 opportunity lost.<br>Agencies are spending NOW. Not in September.</p>
+            <p style="font-size: 48px; margin-top: 50px; color: white; font-weight: 900;">January 31st is your launchpad.</p>
+        </div>
+    </div>
+
+    <!-- SLIDE 16: CTA -->
+    <div class="slide slide-cta">
+        <div class="content">
+            <div class="badge">Federal Help Center Pro</div>
+            <h2>January 31st Bootcamp</h2>
+            <div class="date">9:00 AM - 5:00 PM Eastern</div>
+            <div class="features">
+                8 Hours Live Training | Agency Pain Points Workshop<br>
+                Recompete Strategy | Teaming Masterclass<br>
+                90-Day Action Plan | Full Recording Access
+            </div>
+            <div class="cta-box">federalhelpcenter.com/pro</div>
+            <div class="price">$99/month or $799/year</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 17: Final Message -->
+    <div class="slide slide-dark">
+        <div class="content">
+            <h2 style="font-size: 60px; margin-bottom: 40px;">One Last Thing...</h2>
+            <p class="big-text" style="color: #4ade80;">This is happening<br>with or without you.</p>
+            <p class="medium-text">The agencies are spending. The primes need subs.<br>The opportunities are there. The question is: will you be ready?</p>
+        </div>
+    </div>
+
+    <!-- SLIDE 18: End -->
+    <div class="slide slide-title">
+        <div class="content">
+            <h1 style="font-size: clamp(40px, 5.5vw, 80px);">See You January 31st</h1>
+            <p class="subtitle" style="margin-top: 3vh;">federalhelpcenter.com/pro</p>
+            <p style="font-size: clamp(22px, 2.5vw, 36px); margin-top: 5vh; opacity: 0.9;">Free resources: january-bootcamp-page.vercel.app</p>
+            <div class="date">GovCon Giants | Federal Help Center</div>
+        </div>
+    </div>
+
+    </div><!-- End slides-container -->
+
+    <script>
+        let currentSlide = 0;
+        const slidesContainer = document.getElementById('slidesContainer');
+        const slides = document.querySelectorAll('.slide');
+        const currentSlideEl = document.getElementById('currentSlide');
+        const totalSlidesEl = document.getElementById('totalSlides');
+        const totalSlides = slides.length;
+
+        totalSlidesEl.textContent = totalSlides;
+
+        function updateSlide() {
+            slidesContainer.style.transform = `translateX(-${currentSlide * 100}vw)`;
+            currentSlideEl.textContent = currentSlide + 1;
+
+            // Update arrow visibility
+            document.querySelector('.nav-prev').style.opacity = currentSlide === 0 ? '0.3' : '1';
+            document.querySelector('.nav-next').style.opacity = currentSlide === totalSlides - 1 ? '0.3' : '1';
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+                updateSlide();
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlide();
+            }
+        }
+
+        function goToSlide(n) {
+            if (n >= 0 && n < totalSlides) {
+                currentSlide = n;
+                updateSlide();
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') {
+                e.preventDefault();
+                nextSlide();
+            } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                e.preventDefault();
+                prevSlide();
+            } else if (e.key === 'Home') {
+                goToSlide(0);
+            } else if (e.key === 'End') {
+                goToSlide(totalSlides - 1);
+            }
+        });
+
+        // Touch/swipe support
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            if (touchStartX - touchEndX > 50) {
+                nextSlide(); // Swipe left
+            } else if (touchEndX - touchStartX > 50) {
+                prevSlide(); // Swipe right
+            }
+        });
+
+        // Click anywhere to advance (except on arrows)
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.nav-arrow') && !e.target.closest('.nav-hint') && !e.target.closest('.slide-counter')) {
+                const clickX = e.clientX;
+                const windowWidth = window.innerWidth;
+                if (clickX > windowWidth * 0.7) {
+                    nextSlide();
+                } else if (clickX < windowWidth * 0.3) {
+                    prevSlide();
+                }
+            }
+        });
+
+        // Initialize
+        updateSlide();
+    </script>
+</body>
+</html>

@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>January 31, 2026 Bootcamp Agenda | GovCon Giants</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a2e;
+            background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .header .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            margin-bottom: 20px;
+        }
+
+        .header-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .header-stat {
+            text-align: center;
+        }
+
+        .header-stat .value {
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        .header-stat .label {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .intro {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border: 2px solid #86efac;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 40px;
+        }
+
+        .intro h2 {
+            color: #166534;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .intro p {
+            color: #15803d;
+        }
+
+        .intro ul {
+            margin-top: 15px;
+            margin-left: 20px;
+            color: #15803d;
+        }
+
+        .intro li {
+            margin-bottom: 8px;
+        }
+
+        .schedule-section {
+            margin-bottom: 40px;
+        }
+
+        .time-block {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .time-block:last-child {
+            border-bottom: none;
+        }
+
+        .time-column {
+            min-width: 120px;
+            text-align: right;
+        }
+
+        .time {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #7c3aed;
+        }
+
+        .duration {
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        .content-column {
+            flex: 1;
+        }
+
+        .session-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin-bottom: 8px;
+        }
+
+        .session-description {
+            color: #555;
+            margin-bottom: 12px;
+        }
+
+        .session-bullets {
+            list-style: none;
+            padding: 0;
+        }
+
+        .session-bullets li {
+            padding: 6px 0 6px 25px;
+            position: relative;
+            color: #444;
+        }
+
+        .session-bullets li::before {
+            content: '>';
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        .break-block {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 15px 20px;
+            text-align: center;
+            color: #666;
+            font-style: italic;
+        }
+
+        .break-block .time {
+            color: #888;
+        }
+
+        .session-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-right: 8px;
+            margin-bottom: 10px;
+        }
+
+        .tag-strategy {
+            background: #e0e7ff;
+            color: #3730a3;
+        }
+
+        .tag-tactical {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .tag-workshop {
+            background: #fce7f3;
+            color: #9d174d;
+        }
+
+        .tag-qa {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .tag-bonus {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .deliverables {
+            background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
+            color: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        .deliverables h2 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .deliverables-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .deliverable-item {
+            background: rgba(255,255,255,0.15);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .deliverable-item .icon {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        .footer {
+            background: #f8fafc;
+            padding: 30px 40px;
+            text-align: center;
+            border-top: 3px solid #e2e8f0;
+        }
+
+        .footer p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .footer .cta {
+            display: inline-block;
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-weight: 700;
+            text-decoration: none;
+            margin-top: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .time-block {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .time-column {
+                text-align: left;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header-stats {
+                gap: 20px;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .container { box-shadow: none; max-width: 100%; }
+            .session-card, .stat-card, .agenda-item,
+            .cta-section, .header, table, tr, h2, h3 {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+            h2, h3, h4 { page-break-after: avoid; }
+            thead { display: table-header-group; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-badge">Federal Help Center Pro Members</div>
+            <h1>January 2026 GovCon Bootcamp</h1>
+            <p class="subtitle">Full-Day Intensive: Win Federal Contracts in Q1 2026</p>
+            <div class="header-stats">
+                <div class="header-stat">
+                    <div class="value">Jan 31</div>
+                    <div class="label">Date</div>
+                </div>
+                <div class="header-stat">
+                    <div class="value">9am-5pm</div>
+                    <div class="label">Eastern Time</div>
+                </div>
+                <div class="header-stat">
+                    <div class="value">8 Hours</div>
+                    <div class="label">Live Training</div>
+                </div>
+                <div class="header-stat">
+                    <div class="value">LIVE</div>
+                    <div class="label">Virtual Event</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="intro">
+                <h2>What You'll Walk Away With</h2>
+                <p>This isn't theory - it's a working session. By the end of the day, you'll have:</p>
+                <ul>
+                    <li>Your personalized target agency list with decision-maker contacts</li>
+                    <li>5+ specific opportunities matched to your capabilities</li>
+                    <li>Mastery of Opportunity Scout tool and the SAM.gov workflow</li>
+                    <li>Know exactly who to contact for teaming opportunities (incumbents vs. COs)</li>
+                    <li>90-day action plan to win your first (or next) contract</li>
+                </ul>
+            </div>
+
+            <div class="intro" style="background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-color: #93c5fd; margin-top: 20px;">
+                <h2 style="color: #1e40af;">Questions You'll Get Answered</h2>
+                <p style="color: #1e40af;">Real questions from real contractors - this is what we'll cover:</p>
+                <ul style="color: #1d4ed8;">
+                    <li>"Based on my search results in Opportunity Scout, do I then search SAM.gov by using the parent agency code? What are the next steps?"</li>
+                    <li>"For expired contracts, if I'm interested in teaming or subcontracting, do I reach out to the recipient who won the award or the POC on SAM.gov?"</li>
+                    <li>"How do I filter by my NAICS and find opportunities at specific agencies like Department of Army (code 2100)?"</li>
+                    <li>"How do I position myself to incumbents who need small business subs?"</li>
+                </ul>
+            </div>
+
+            <div class="schedule-section">
+                <!-- Session 1 -->
+                <div class="time-block">
+                    <div class="time-column">
+                        <div class="time">9:00 AM</div>
+                        <div class="duration">60 min</div>
+                    </div>
+                    <div class="content-column">
+                        <span class="session-tag tag-workshop">Workshop</span>
+                        <div class="session-title">Agency Targeting with Market Assassin</div>
+                        <p class="session-description">Use our proprietary Market Assassin tool to identify YOUR target agencies with precision.</p>
+                        <ul class="session-bullets">
+                            <li>Enter 5 inputs: Certification, ZIP, PSC, NAICS, Target Agencies</li>
+                            <li>Generate 8 strategic reports instantly</li>
+                            <li>Market Analytics: See where agencies are spending money</li>
+                            <li>Government Buyers Report: Find contracting officers and program managers</li>
+                            <li>WORKSHOP: Run Market Assassin for YOUR business</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Session 2 -->
+                <div class="time-block">
+                    <div class="time-column">
+                        <div class="time">10:00 AM</div>
+                        <div class="duration">45 min</div>
+                    </div>
+                    <div class="content-column">
+                        <span class="session-tag tag-strategy">Strategy</span>
+                        <div class="session-title">Agency Pain Points: Position as the Solution</div>
+                        <p class="session-description">Understand what agencies struggle with and position your business to solve their problems.</p>
+                        <ul class="session-bullets">
+                            <li>The 2 core struggles: Finding small businesses + Matching capabilities</li>
+                            <li>8 major agency pain points that create contract opportunities</li>
+                            <li>Agency Decision Matrix: Match your business type to the right agencies</li>
+                            <li>WORKSHOP: Score your target agencies using the Pain Points Guide</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Break -->
+                <div class="break-block">
+                    <div class="time">10:45 AM - 11:00 AM</div>
+                    <p>15-Minute Break</p>
+                </div>
+
+                <!-- Session 3 - AI Prompts -->
+                <div class="time-block">
+                    <div class="time-column">
+                        <div class="time">11:00 AM</div>
+                        <div class="duration">45 min</div>
+                    </div>
+                    <div class="content-column">
+                        <span class="session-tag tag-tactical">Tactical</span>
+                        <div class="session-title">AI Prompts for Government Contracting</div>
+                        <p class="session-description">Use AI to accelerate your research, outreach, and proposals with 75 ready-to-use prompts.</p>
+                        <ul class="session-bullets">
+                            <li>Prompts for agency research and opportunity analysis</li>
+                            <li>Prompts for outreach emails and capability statements</li>
+                            <li>Prompts for proposal writing and compliance checks</li>
+                            <li>LIVE: Walk through prompts using YOUR business info</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Session 4 - Capability Statement -->
+                <div class="time-block">
+                    <div class="time-column">
+                        <div class="time">11:45 AM</div>
+                        <div class="duration">45 min</div>
+                    </div>
+                    <div class="content-column">
+                        <span class="session-tag tag-workshop">Workshop</span>
+                        <div class="session-title">Capability Statement That Wins</div>
+                        <p class="session-description">Your capability statement is your first impression. Make it count.</p>
+                        <ul class="session-bullets">
+                            <li>Why most capability statements fail (and how to fix yours)</li>
+                            <li>The anatomy of a winning capability statement</li>
+                            <li>Tailoring your cap statement to specific agencies</li>
+                            <li>WORKSHOP: Build or improve YOUR capability statement using the template</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Lunch -->
+                <div class="break-block">
+                    <div class="time">12:30 PM - 1:15 PM</div>
+                    <p>45-Minute Lunch Break</p>
+                </div>
+
+                <!-- Session 5 - Opportunity Research -->
+                <div class="time-block">
+                    <div class="time-column">
+                        <div class="time">1:15 PM</div>
+                        <div class="duration">60 min</div>
+                    </div>
+                    <div class="content-column">
+                        <span class="session-tag tag-tactical">Tactical</span>
+                        <div class="session-title">Opportunity Research: The Hit List Method</div>
+                        <p class="session-description">How to find low-competition, high-value opportunities before everyone else.</p>
+                        <ul class="session-bullets">
+                            <li>Using the Hit List to find matched opportunities</li>
+                            <li>Agency Buyers List: Who's spending and where</li>
+                            <li>SAM.gov advanced search techniques</li>
+                            <li>WORKSHOP: Find 3-5 opportunities matching your capabilities</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Break -->
+                <div class="break-block">
+                    <div class="time">2:15 PM - 2:30 PM</div>
+                    <p>15-Minute Break</p>
+                </div>
+
+                <!-- Session 6 - Sources Sought / RFI -->
+                <div class="time-block">
+                    <div class="time-column">
+                        <div class="time">2:30 PM</div>
+                        <div class="duration">60 min</div>
+                    </div>
+                    <div class="content-column">
+                        <span class="session-tag tag-workshop">Workshop</span>
+                        <div class="session-title">Sources Sought & RFI Response</div>
+                        <p class="session-description">Get on agencies' radar before contracts drop. Most small businesses skip this step - don't be one of them.</p>
+                        <ul class="session-bullets">
+                            <li>What Sources Sought and RFI notices are and why they matter</li>
+                            <li>How responding influences how agencies structure contracts</li>
+                            <li>Walk through the response template step by step</li>
+                            <li>WORKSHOP: Draft a Sources Sought response for a real opportunity</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Session 7 - Expiring Contracts -->
+                <div class="time-block">
+                    <div class="time-column">
+                        <div class="time">3:30 PM</div>
+                        <div class="duration">60 min</div>
+                    </div>
+                    <div class="content-column">
+                        <span class="session-tag tag-tactical">Tactical</span>
+                        <div class="session-title">Expiring Contracts: Find Your Next Win</div>
+                        <p class="session-description">The fastest path to contracts: Target expiring contracts and position before the recompete.</p>
+                        <ul class="session-bullets">
+                            <li>How to use the Expiring Contracts sheet to find opportunities</li>
+                            <li>Who to contact: Incumbent vs. Contracting Officer</li>
+                            <li>Positioning strategy: Team with incumbent OR compete against them</li>
+                            <li>WORKSHOP: Identify 3-5 expiring contracts in your NAICS codes</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Q&A -->
+                <div class="time-block">
+                    <div class="time-column">
+                        <div class="time">4:30 PM</div>
+                        <div class="duration">30 min</div>
+                    </div>
+                    <div class="content-column">
+                        <span class="session-tag tag-qa">Q&A</span>
+                        <div class="session-title">Open Q&A + Closing</div>
+                        <p class="session-description">Get your specific questions answered and set your intentions for Q1 2026.</p>
+                        <ul class="session-bullets">
+                            <li>Live Q&A with the team</li>
+                            <li>Next steps and resources</li>
+                            <li>Community support and follow-up</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="deliverables">
+                <h2>What You'll Receive</h2>
+                <div class="deliverables-grid">
+                    <div class="deliverable-item">
+                        <div class="icon">🎯</div>
+                        <div>Market Assassin Report</div>
+                    </div>
+                    <div class="deliverable-item">
+                        <div class="icon">📋</div>
+                        <div>Agency Pain Points Guide</div>
+                    </div>
+                    <div class="deliverable-item">
+                        <div class="icon">🤖</div>
+                        <div>75 AI Prompts</div>
+                    </div>
+                    <div class="deliverable-item">
+                        <div class="icon">📝</div>
+                        <div>Cap Statement Template</div>
+                    </div>
+                    <div class="deliverable-item">
+                        <div class="icon">📊</div>
+                        <div>Hit List + Buyers List</div>
+                    </div>
+                    <div class="deliverable-item">
+                        <div class="icon">📑</div>
+                        <div>Sources Sought Template</div>
+                    </div>
+                    <div class="deliverable-item">
+                        <div class="icon">📆</div>
+                        <div>Expiring Contracts Sheet</div>
+                    </div>
+                    <div class="deliverable-item">
+                        <div class="icon">🎬</div>
+                        <div>Full Recording Access</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>January 31, 2026 | 9:00 AM - 5:00 PM Eastern</strong></p>
+            <p>Federal Help Center Pro Members Only</p>
+            <a href="https://federalhelpcenter.com/pro" class="cta">Join Pro - $99/mo or $799/year</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agency Pain Points: Finding Small Businesses & Matching Capabilities | January 2026 Bootcamp</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f7fa;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            border-bottom: 4px solid #667eea;
+            padding-bottom: 15px;
+        }
+
+        h2 {
+            color: #764ba2;
+            font-size: 2rem;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-top: 20px;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        h3 {
+            color: #667eea;
+            font-size: 1.5rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        h4 {
+            color: #555;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .executive-summary h2 {
+            color: white;
+            border: none;
+            margin-top: 0;
+            padding-top: 0;
+        }
+
+        .pain-point-card {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .pain-point-card h3 {
+            color: #667eea;
+            margin-top: 0;
+        }
+
+        .quote-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+            font-style: italic;
+        }
+
+        .quote-box::before {
+            content: '"';
+            font-size: 3rem;
+            color: #ffc107;
+            line-height: 0;
+            vertical-align: -0.4em;
+            margin-right: 5px;
+        }
+
+        .agency-profile {
+            background: #fff;
+            border: 2px solid #e0e0e0;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-left: 5px solid #764ba2;
+        }
+
+        .agency-profile h4 {
+            color: #764ba2;
+            margin-top: 0;
+        }
+
+        .solution-box {
+            background: #d1fae5;
+            border-left: 4px solid #10b981;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .solution-box h4 {
+            color: #10b981;
+            margin-top: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        .action-plan {
+            background: #f0f9ff;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+            border-left: 5px solid #667eea;
+        }
+
+        .action-plan ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .action-plan li {
+            padding: 10px;
+            margin: 10px 0;
+            background: white;
+            border-radius: 4px;
+            border-left: 3px solid #667eea;
+        }
+
+        .framework-box {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+            border: 2px solid #667eea;
+        }
+
+        .sample-message {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        .key-finding {
+            background: #dbeafe;
+            border-left: 4px solid #3b82f6;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .checklist {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .checklist li {
+            padding: 8px 0 8px 30px;
+            position: relative;
+        }
+
+        .checklist li::before {
+            content: '✅';
+            position: absolute;
+            left: 0;
+        }
+
+        .footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 2px solid #e0e0e0;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        ul, ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div style="background: linear-gradient(135deg, #059669 0%, #10b981 100%); color: white; padding: 10px 20px; border-radius: 8px; display: inline-block; font-weight: 700; font-size: 14px; margin-bottom: 20px;">January 2026 Bootcamp</div>
+        <h1>🔍 Agency Pain Points: Finding Small Businesses & Matching Capabilities</h1>
+        <p style="font-size: 1.1rem; color: #666; margin-bottom: 30px;">
+            <strong>Strategic Report: How Agencies Struggle to Find and Match Small Business Capabilities</strong><br>
+            <em>Government Contracting Bootcamp</em><br>
+            <strong>Date:</strong> January 2026
+        </p>
+
+        <div class="executive-summary">
+            <h2>Executive Summary</h2>
+            <p style="font-size: 1.1rem; line-height: 1.8;">
+                Federal agencies consistently report two primary pain points when working with small businesses:
+            </p>
+            <div style="margin-top: 20px; font-size: 1.2rem;">
+                <p><strong>1. "We have a hard time finding small businesses"</strong></p>
+                <p><strong>2. "Matching capabilities is challenging"</strong></p>
+            </div>
+            <p style="margin-top: 20px; font-size: 1.1rem; line-height: 1.8;">
+                These pain points create significant opportunities for small businesses that understand how to position themselves effectively. 
+                This report details what agencies say about these challenges and provides actionable solutions for small businesses to address them.
+            </p>
+        </div>
+
+        <h2>🎯 The Core Challenge</h2>
+        <div class="key-finding">
+            <p style="font-size: 1.1rem;">
+                <strong>Key Finding:</strong> Agencies WANT to work with small businesses to meet their 23% contracting goals, but they struggle with 
+                <strong>finding qualified small businesses</strong> and <strong>matching capabilities to mission requirements</strong>. 
+                Small businesses that address these pain points gain significant competitive advantages.
+            </p>
+        </div>
+
+        <h2>📋 Pain Point #1: Finding Small Businesses</h2>
+
+        <div class="pain-point-card">
+            <h3>What Agencies Say</h3>
+            <div class="quote-box">
+                "We struggle to locate qualified small businesses with the right capabilities"
+            </div>
+            <div class="quote-box">
+                "Small businesses aren't registered where we can find them"
+            </div>
+            <div class="quote-box">
+                "We don't know where to look for qualified small business vendors"
+            </div>
+            <div class="quote-box">
+                "We have limited visibility into small business capabilities"
+            </div>
+            <div class="quote-box">
+                "It's difficult to discover small businesses that can meet our requirements"
+            </div>
+        </div>
+
+        <h3>Why This Happens</h3>
+        <ul>
+            <li>Small businesses aren't always registered in SAM.gov</li>
+            <li>Agencies rely on databases that may be incomplete</li>
+            <li>Small businesses don't proactively reach out to agencies</li>
+            <li>SBLOs don't have comprehensive vendor directories</li>
+            <li>Small businesses aren't visible in industry days or matchmaking events</li>
+            <li>Incomplete vendor profiles in agency procurement systems</li>
+        </ul>
+
+        <div class="solution-box">
+            <h4>Your Opportunity: Make Yourself Easy to Find</h4>
+            <h4>Registration & Visibility</h4>
+            <ul class="checklist">
+                <li><strong>Complete SAM.gov registration</strong> - Keep it current and comprehensive</li>
+                <li><strong>Register in agency vendor systems</strong> - Don't wait for solicitations</li>
+                <li><strong>Participate in vendor directories</strong> - Get listed where agencies look</li>
+                <li><strong>Attend industry days</strong> - Increase visibility and face-to-face contact</li>
+                <li><strong>Join matchmaking events</strong> - Connect directly with SBLOs</li>
+                <li><strong>Participate in small business outreach</strong> - Be where agencies look</li>
+            </ul>
+
+            <h4>Proactive Outreach</h4>
+            <ul class="checklist">
+                <li><strong>Contact SBLOs directly</strong> - Don't wait for them to find you</li>
+                <li><strong>Submit capability statements proactively</strong> - Before opportunities are announced</li>
+                <li><strong>Follow up regularly</strong> - Stay on their radar</li>
+                <li><strong>Request meetings</strong> - Build relationships before opportunities arise</li>
+            </ul>
+        </div>
+
+        <h2>🔗 Pain Point #2: Matching Capabilities</h2>
+
+        <div class="pain-point-card">
+            <h3>What Agencies Say</h3>
+            <div class="quote-box">
+                "It's challenging to match small business capabilities to our mission requirements"
+            </div>
+            <div class="quote-box">
+                "We can't easily identify which small businesses have the technical expertise we need"
+            </div>
+            <div class="quote-box">
+                "Capability statements are often too generic or don't clearly show how they help our mission"
+            </div>
+            <div class="quote-box">
+                "We struggle to connect small business offerings to our specific needs"
+            </div>
+            <div class="quote-box">
+                "Small businesses don't clearly communicate how they solve our problems"
+            </div>
+        </div>
+
+        <h3>Why This Happens</h3>
+        <ul>
+            <li>Capability statements are too generic ("we do everything")</li>
+            <li>Small businesses don't research agency missions before reaching out</li>
+            <li>Capabilities aren't presented in terms of agency pain points</li>
+            <li>Technical expertise isn't clearly matched to agency needs</li>
+            <li>Small businesses don't use agency-specific language or terminology</li>
+            <li>Lack of clear connection between offerings and mission requirements</li>
+        </ul>
+
+        <div class="solution-box">
+            <h4>Your Opportunity: Make Capabilities Easy to Match</h4>
+            <h4>Research First</h4>
+            <ul class="checklist">
+                <li><strong>Study agency missions</strong> - Understand what they do</li>
+                <li><strong>Review strategic plans</strong> - Know their priorities</li>
+                <li><strong>Research recent contracts</strong> - See what they buy</li>
+                <li><strong>Attend industry days</strong> - Learn their language and needs</li>
+                <li><strong>Read budget requests</strong> - Understand their funding priorities</li>
+            </ul>
+
+            <h4>Tailor Your Approach</h4>
+            <ul class="checklist">
+                <li><strong>Create agency-specific capability statements</strong> - Not generic ones</li>
+                <li><strong>Use agency terminology</strong> - Speak their language</li>
+                <li><strong>Reference strategic plans</strong> - Show you understand their mission</li>
+                <li><strong>Present capabilities in terms of pain points</strong> - Solve their problems</li>
+                <li><strong>Show specific examples</strong> - Connect capabilities to mission needs</li>
+                <li><strong>Match technical expertise to requirements</strong> - Be specific, not general</li>
+            </ul>
+        </div>
+
+        <h2>🏢 Agency-Specific Examples</h2>
+
+        <div class="agency-profile">
+            <h4>Department of Homeland Security (DHS)</h4>
+            <p><strong>Challenge Statements:</strong></p>
+            <ul>
+                <li><em>"We need small businesses with cybersecurity expertise, but it's hard to find them"</em></li>
+                <li><em>"Finding small businesses that understand border security technology needs is challenging"</em></li>
+                <li><em>"We struggle to match emergency response capabilities to our mission requirements"</em></li>
+            </ul>
+            <p><strong>What DHS Needs:</strong></p>
+            <ul>
+                <li>Small businesses that proactively reach out with relevant capabilities</li>
+                <li>Capability statements that reference DHS strategic goals</li>
+                <li>Clear connection between offerings and homeland security challenges</li>
+                <li>Technical expertise presented in terms of DHS mission areas</li>
+            </ul>
+        </div>
+
+        <div class="agency-profile">
+            <h4>Department of Defense (DoD)</h4>
+            <p><strong>Challenge Statements:</strong></p>
+            <ul>
+                <li><em>"We need small business manufacturers but struggle to find qualified ones"</em></li>
+                <li><em>"Matching technical capabilities to defense requirements is difficult"</em></li>
+                <li><em>"Finding small businesses with defense-related expertise takes too long"</em></li>
+            </ul>
+            <p><strong>What DoD Needs:</strong></p>
+            <ul>
+                <li>Small businesses registered in Defense procurement systems</li>
+                <li>Capabilities clearly linked to defense mission areas</li>
+                <li>Technical expertise matched to specific DoD component needs</li>
+                <li>Small businesses that understand defense contracting requirements</li>
+            </ul>
+        </div>
+
+        <div class="agency-profile">
+            <h4>Department of Energy (DOE)</h4>
+            <p><strong>Challenge Statements:</strong></p>
+            <ul>
+                <li><em>"We need small businesses with nuclear or energy expertise but they're hard to find"</em></li>
+                <li><em>"Matching technical capabilities to our specialized requirements is challenging"</em></li>
+                <li><em>"We struggle to identify small businesses that can support our national security missions"</em></li>
+            </ul>
+            <p><strong>What DOE Needs:</strong></p>
+            <ul>
+                <li>Small businesses with specialized technical expertise</li>
+                <li>Capabilities clearly presented in terms of energy/nuclear missions</li>
+                <li>Technical qualifications matched to specific DOE program areas</li>
+                <li>Small businesses that understand DOE's unique requirements</li>
+            </ul>
+        </div>
+
+        <div class="agency-profile">
+            <h4>Space Force</h4>
+            <p><strong>Challenge Statements:</strong></p>
+            <ul>
+                <li><em>"We're a new agency and don't have established small business vendor networks"</em></li>
+                <li><em>"Finding small businesses with space operations expertise is difficult"</em></li>
+                <li><em>"We need to build our small business base from scratch"</em></li>
+            </ul>
+            <p><strong>What Space Force Needs:</strong></p>
+            <ul>
+                <li>Small businesses that proactively reach out to new agency</li>
+                <li>Capabilities presented in terms of space mission requirements</li>
+                <li>Technical expertise clearly matched to space operations</li>
+                <li>Small businesses willing to work with a new agency</li>
+            </ul>
+        </div>
+
+        <h2>🎯 Agency Matching Framework</h2>
+        <div class="framework-box">
+            <h3>Step 1: Research Agency Mission</h3>
+            <p><strong>Questions to Answer:</strong></p>
+            <ul>
+                <li>What is the agency's primary mission?</li>
+                <li>What are their current strategic priorities?</li>
+                <li>What are their biggest challenges?</li>
+                <li>What types of contracts do they award?</li>
+                <li>What NAICS codes do they use most?</li>
+            </ul>
+
+            <h3>Step 2: Identify Pain Points</h3>
+            <p><strong>Questions to Answer:</strong></p>
+            <ul>
+                <li>What keeps agency leadership awake at night?</li>
+                <li>What are their biggest operational challenges?</li>
+                <li>What capabilities do they struggle to find?</li>
+                <li>Where are their capability gaps?</li>
+                <li>What do their recent contracts tell you about needs?</li>
+            </ul>
+
+            <h3>Step 3: Match Your Capabilities</h3>
+            <p><strong>Questions to Answer:</strong></p>
+            <ul>
+                <li>How does your expertise address their mission?</li>
+                <li>Which of their pain points do you solve?</li>
+                <li>How does your experience relate to their needs?</li>
+                <li>What specific value do you provide?</li>
+                <li>Why should they work with you?</li>
+            </ul>
+
+            <h3>Step 4: Tailor Your Communication</h3>
+            <p><strong>Questions to Answer:</strong></p>
+            <ul>
+                <li>How should you present your capabilities?</li>
+                <li>What language should you use?</li>
+                <li>What examples are most relevant?</li>
+                <li>How do you connect to their strategic plans?</li>
+                <li>What makes you easy to match to their needs?</li>
+            </ul>
+        </div>
+
+        <h2>📊 Common Matching Challenges & Solutions</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Challenge</th>
+                    <th>Problem</th>
+                    <th>Agency Perspective</th>
+                    <th>Solution</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Generic Capability Statements</strong></td>
+                    <td>Small businesses send generic "we do everything" statements</td>
+                    <td>"This doesn't tell me how you help our mission"</td>
+                    <td>Research agency mission, create agency-specific statements, present capabilities as solutions, use agency terminology</td>
+                </tr>
+                <tr>
+                    <td><strong>Missing Information</strong></td>
+                    <td>Small businesses don't provide enough detail</td>
+                    <td>"I can't tell if this matches our needs"</td>
+                    <td>Include specific technical qualifications, relevant past performance, list relevant NAICS codes, show clear connection to mission</td>
+                </tr>
+                <tr>
+                    <td><strong>Wrong Timing</strong></td>
+                    <td>Small businesses reach out only when opportunities are announced</td>
+                    <td>"It's too late - we've already identified potential vendors"</td>
+                    <td>Reach out proactively, submit capability statements regularly, build relationships with SBLOs in advance, stay on their radar</td>
+                </tr>
+                <tr>
+                    <td><strong>No Visibility</strong></td>
+                    <td>Small businesses aren't where agencies look for vendors</td>
+                    <td>"We don't know you exist"</td>
+                    <td>Complete SAM.gov registration, register in agency vendor systems, attend industry days, participate in small business outreach</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>🚀 Action Plan: Making Yourself Easy to Find & Match</h2>
+        <div class="action-plan">
+            <h3>Week 1: Registration & Visibility</h3>
+            <ul>
+                <li>Complete/update SAM.gov registration (comprehensive profile)</li>
+                <li>Register in target agency vendor systems</li>
+                <li>Get listed in relevant vendor directories</li>
+                <li>Sign up for agency small business newsletters</li>
+            </ul>
+
+            <h3>Week 2: Research & Preparation</h3>
+            <ul>
+                <li>Research target agency missions and strategic plans</li>
+                <li>Identify agency pain points and priorities</li>
+                <li>Review recent contracts and opportunities</li>
+                <li>Understand agency terminology and language</li>
+            </ul>
+
+            <h3>Week 3: Capability Statement Development</h3>
+            <ul>
+                <li>Create agency-specific capability statements (one per target agency)</li>
+                <li>Match capabilities to agency pain points</li>
+                <li>Use agency terminology and reference strategic plans</li>
+                <li>Include specific examples relevant to their mission</li>
+            </ul>
+
+            <h3>Week 4: Proactive Outreach</h3>
+            <ul>
+                <li>Contact SBLOs from target agencies</li>
+                <li>Submit capability statements proactively</li>
+                <li>Request meetings to discuss capabilities</li>
+                <li>Register for upcoming industry days</li>
+            </ul>
+
+            <h3>Ongoing: Relationship Building</h3>
+            <ul>
+                <li>Follow up regularly with SBLOs</li>
+                <li>Update capability statements as agency needs evolve</li>
+                <li>Participate in industry days and matchmaking events</li>
+                <li>Stay on agency radar with periodic updates</li>
+            </ul>
+        </div>
+
+        <h2>💬 Sample Outreach Messages</h2>
+
+        <div class="sample-message">
+            <h4>For Agencies Struggling to Find Small Businesses</h4>
+            <p><strong>Subject:</strong> Small Business Capabilities - [Your Company] - [Agency Name]</p>
+            <br>
+            <p><strong>Message:</strong></p>
+            <p>"I understand [Agency Name] is actively seeking small businesses with [specific capability]. We are a [certification] certified small business specializing in [specific expertise relevant to their mission].</p>
+            <p>We've reviewed [Agency Name]'s strategic plan and believe our capabilities directly support your [specific mission area/goal]. Specifically, we help agencies [solve specific pain point you identified].</p>
+            <p>I've attached our capability statement tailored to [Agency Name]'s mission. I'd welcome the opportunity to discuss how we can support your small business goals and mission requirements.</p>
+            <p>Would you be available for a brief call to discuss our capabilities?"</p>
+        </div>
+
+        <div class="sample-message">
+            <h4>For Capability Matching</h4>
+            <p><strong>Subject:</strong> Capability Match - [Specific Mission Area] - [Your Company]</p>
+            <br>
+            <p><strong>Message:</strong></p>
+            <p>"I've researched [Agency Name]'s mission and noticed your focus on [specific area]. Our expertise in [specific capability] directly addresses [specific challenge/pain point you identified].</p>
+            <p>We understand that matching capabilities to mission requirements can be challenging. To make this easier, I've prepared a capability statement that:</p>
+            <ul>
+                <li>References your strategic plan priorities</li>
+                <li>Shows how our [specific expertise] supports your [specific mission area]</li>
+                <li>Includes examples of similar work for [relevant agencies/programs]</li>
+            </ul>
+            <p>I'd welcome the opportunity to discuss how our capabilities align with your mission requirements and help you meet your small business goals."</p>
+        </div>
+
+        <h2>📈 Success Metrics</h2>
+        <p>Track your success in addressing agency pain points:</p>
+
+        <h3>Visibility Metrics</h3>
+        <ul>
+            <li>SAM.gov registration completeness</li>
+            <li>Agency vendor system registrations</li>
+            <li>Industry day participation</li>
+            <li>SBLO contact list growth</li>
+        </ul>
+
+        <h3>Matching Metrics</h3>
+        <ul>
+            <li>Agency-specific capability statements created</li>
+            <li>Positive responses from SBLOs</li>
+            <li>Requests for more information</li>
+            <li>Meeting requests received</li>
+        </ul>
+
+        <h3>Relationship Metrics</h3>
+        <ul>
+            <li>SBLO response rates</li>
+            <li>Follow-up meeting requests</li>
+            <li>Opportunity notifications received</li>
+            <li>Capability statement requests</li>
+        </ul>
+
+        <h2>✅ Bottom Line</h2>
+        <div class="key-finding">
+            <p style="font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">
+                Agencies have two primary pain points:
+            </p>
+            <ol style="font-size: 1.1rem; margin-left: 30px;">
+                <li><strong>Finding small businesses</strong> - Make yourself easy to find</li>
+                <li><strong>Matching capabilities</strong> - Make your capabilities easy to match</li>
+            </ol>
+            <p style="font-size: 1.1rem; margin-top: 20px;">
+                <strong>Small businesses that address these pain points:</strong>
+            </p>
+            <ul style="font-size: 1.1rem; margin-left: 30px; margin-top: 10px;">
+                <li>✅ Get faster responses from agencies</li>
+                <li>✅ Face less competition</li>
+                <li>✅ Build better relationships</li>
+                <li>✅ Win more contracts</li>
+            </ul>
+            <p style="font-size: 1.2rem; margin-top: 20px; font-weight: bold; text-align: center;">
+                Remember: Agencies WANT to work with small businesses - they just need help finding you and matching your capabilities to their needs. Make it easy for them!
+            </p>
+        </div>
+
+        <div class="key-finding" style="background: #fef3c7; border-left-color: #f59e0b; margin-top: 30px;">
+            <p style="font-size: 1.1rem; font-weight: bold; margin-bottom: 10px;">
+                Key Takeaway:
+            </p>
+            <p style="font-size: 1.1rem;">
+                Your competitive advantage comes from making yourself easy to find and your capabilities easy to match. 
+                Agencies are actively looking for you - meet them halfway by being visible and making the match clear.
+            </p>
+        </div>
+
+        <div class="footer">
+            <p><strong>Agency Pain Points: Finding Small Businesses & Matching Capabilities</strong></p>
+            <p>Prepared for: Government Contracting Bootcamp | December 2025</p>
+            <p>This report provides actionable guidance for small businesses to address agency challenges in finding and matching capabilities.</p>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

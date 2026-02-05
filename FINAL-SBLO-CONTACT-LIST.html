@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Contractor SBLO Contact Directory</title>
+    <style>
+        @page {
+            size: letter;
+            margin: 0.5in;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 9pt;
+            line-height: 1.3;
+            color: #333;
+            background: white;
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 3px solid #2c5282;
+            margin-bottom: 20px;
+            page-break-after: avoid;
+        }
+
+        .header h1 {
+            font-size: 24pt;
+            color: #2c5282;
+            margin-bottom: 5px;
+        }
+
+        .header .subtitle {
+            font-size: 12pt;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .stats {
+            background: #f7fafc;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #e2e8f0;
+            page-break-inside: avoid;
+        }
+
+        .stats h2 {
+            font-size: 14pt;
+            color: #2c5282;
+            margin-bottom: 10px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .stat-box {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 24pt;
+            font-weight: bold;
+            color: #2c5282;
+        }
+
+        .stat-label {
+            font-size: 9pt;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .contact-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .contact-table thead {
+            background: #2c5282;
+            color: white;
+        }
+
+        .contact-table th {
+            padding: 10px 8px;
+            text-align: left;
+            font-size: 9pt;
+            font-weight: 600;
+            border-right: 1px solid white;
+        }
+
+        .contact-table th:last-child {
+            border-right: none;
+        }
+
+        .contact-table tbody tr {
+            border-bottom: 1px solid #e2e8f0;
+            page-break-inside: avoid;
+        }
+
+        .contact-table tbody tr:nth-child(even) {
+            background: #f7fafc;
+        }
+
+        .contact-table td {
+            padding: 8px;
+            font-size: 8pt;
+            vertical-align: top;
+        }
+
+        .company-name {
+            font-weight: 600;
+            color: #2c5282;
+        }
+
+        .email {
+            color: #2b6cb0;
+            word-break: break-all;
+        }
+
+        .phone {
+            color: #2d3748;
+            white-space: nowrap;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 7pt;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .badge-both {
+            background: #c6f6d5;
+            color: #22543d;
+        }
+
+        .badge-email {
+            background: #bee3f8;
+            color: #2c5282;
+        }
+
+        .badge-phone {
+            background: #feebc8;
+            color: #7c2d12;
+        }
+
+        .footer {
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 2px solid #e2e8f0;
+            text-align: center;
+            font-size: 8pt;
+            color: #666;
+            page-break-inside: avoid;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+
+            .header {
+                page-break-after: avoid;
+            }
+
+            .stats {
+                page-break-after: avoid;
+            }
+
+            .contact-table thead {
+                display: table-header-group;
+            }
+
+            .contact-table tbody tr {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Prime Contractor SBLO Contact Directory</h1>
+    <div class="subtitle">Small Business Liaison Officer Contact Information</div>
+    <div style="font-size: 9pt; color: #718096; margin-top: 10px;">
+        December 2025 | Federal Government Prime Contractors
+    </div>
+</div>
+
+<div class="stats">
+    <h2>📊 Directory Statistics</h2>
+    <div class="stats-grid">
+        <div class="stat-box">
+            <div class="stat-number">225</div>
+            <div class="stat-label">Total Companies</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-number">93</div>
+            <div class="stat-label">With Email</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-number">161</div>
+            <div class="stat-label">With Phone</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-number">29</div>
+            <div class="stat-label">Both Contacts</div>
+        </div>
+    </div>
+</div>
+
+<table class="contact-table" id="contactTable">
+    <thead>
+        <tr>
+            <th style="width: 25%">Company</th>
+            <th style="width: 15%">SBLO Name</th>
+            <th style="width: 30%">Email</th>
+            <th style="width: 15%">Phone</th>
+            <th style="width: 15%">Contact Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Contacts will be inserted here by script -->
+    </tbody>
+</table>
+
+<div class="footer">
+    <p><strong>Prime Contractor SBLO Directory</strong> | December 2025</p>
+    <p style="margin-top: 5px;">
+        Sources: DHS Prime Contractors, SBA Prime Directory FY24, DoD CSP Directory, DOT Subcontracting Directory
+    </p>
+    <p style="margin-top: 10px; font-style: italic;">
+        🤖 Generated with <a href="https://claude.com/claude-code" style="color: #2c5282; text-decoration: none;">Claude Code</a>
+    </p>
+</div>
+
+<script>
+// Load and display contact data
+async function loadContacts() {
+    try {
+        const response = await fetch('FINAL-SBLO-CONTACT-LIST.csv');
+        const text = await response.text();
+        const lines = text.trim().split('\n');
+
+        // Skip header line
+        const contacts = lines.slice(1).map(line => {
+            // Simple CSV parsing (handles basic cases)
+            const parts = line.split(',');
+            return {
+                company: parts[0] || '',
+                sblo_name: parts[1] || '',
+                email: parts[2] || '',
+                phone: parts[3] || '',
+                contact_quality: parts[4] || ''
+            };
+        });
+
+        // Sort alphabetically by company
+        contacts.sort((a, b) => a.company.localeCompare(b.company));
+
+        // Build table rows
+        const tbody = document.querySelector('#contactTable tbody');
+        contacts.forEach(contact => {
+            const row = document.createElement('tr');
+
+            // Badge class based on contact quality
+            let badgeClass = 'badge-email';
+            if (contact.contact_quality.includes('Both')) {
+                badgeClass = 'badge-both';
+            } else if (contact.contact_quality.includes('Phone Only')) {
+                badgeClass = 'badge-phone';
+            }
+
+            row.innerHTML = `
+                <td class="company-name">${contact.company}</td>
+                <td>${contact.sblo_name}</td>
+                <td class="email">${contact.email}</td>
+                <td class="phone">${contact.phone}</td>
+                <td><span class="badge ${badgeClass}">${contact.contact_quality}</span></td>
+            `;
+
+            tbody.appendChild(row);
+        });
+
+    } catch (error) {
+        console.error('Error loading contacts:', error);
+        document.querySelector('#contactTable tbody').innerHTML =
+            '<tr><td colspan="5" style="text-align: center; padding: 20px;">Data will be embedded when exported to PDF</td></tr>';
+    }
+}
+
+// Load contacts when page loads
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadContacts);
+} else {
+    loadContacts();
+}
+</script>
+
+</body>
+</html>

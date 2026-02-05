@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>January Bootcamp Recap | GovCon Giants Live</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --green: #10b981;
+            --green-dark: #059669;
+            --purple: #7c3aed;
+            --blue: #1e3a8a;
+            --red: #ef4444;
+            --orange: #f59e0b;
+            --gold: #fbbf24;
+            --black: #1a1a1a;
+            --gray: #6b7280;
+            --light: #f8fafc;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #1a1a2e;
+            line-height: 1.4;
+            color: var(--black);
+        }
+
+        .slide {
+            width: 1280px;
+            height: 720px;
+            background: white;
+            margin: 20px auto;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Slide Header Bar */
+        .slide-header {
+            background: linear-gradient(135deg, var(--blue) 0%, var(--purple) 100%);
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .slide-header .logo {
+            color: white;
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+
+        .slide-header .live-badge {
+            background: var(--red);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .slide-content {
+            flex: 1;
+            padding: 50px 60px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Title Slide */
+        .slide-title {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, var(--blue) 0%, var(--purple) 50%, var(--green-dark) 100%);
+        }
+
+        .slide-title .slide-content {
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slide-title h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .slide-title .subtitle {
+            font-size: 1.8rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 40px;
+        }
+
+        .slide-title .meta {
+            display: flex;
+            gap: 40px;
+            color: white;
+            font-size: 1.1rem;
+        }
+
+        .slide-title .meta span {
+            background: rgba(255,255,255,0.15);
+            padding: 12px 25px;
+            border-radius: 30px;
+        }
+
+        /* Standard Content Slides */
+        h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--blue);
+            margin-bottom: 40px;
+            line-height: 1.2;
+        }
+
+        h2 .highlight {
+            color: var(--green);
+        }
+
+        h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--purple);
+            margin-bottom: 15px;
+        }
+
+        /* Big Number Callout */
+        .big-number {
+            font-size: 8rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+        }
+
+        .big-number-label {
+            font-size: 2rem;
+            color: var(--gray);
+            margin-top: 10px;
+        }
+
+        /* Bullet Lists */
+        ul.main-bullets {
+            list-style: none;
+            flex: 1;
+        }
+
+        ul.main-bullets li {
+            font-size: 1.6rem;
+            padding: 18px 0 18px 55px;
+            position: relative;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        ul.main-bullets li:last-child {
+            border-bottom: none;
+        }
+
+        ul.main-bullets li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+            border-radius: 50%;
+        }
+
+        ul.main-bullets li::after {
+            content: '>';
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        ul.main-bullets li strong {
+            color: var(--blue);
+        }
+
+        /* Numbered List */
+        ul.numbered {
+            list-style: none;
+            counter-reset: item;
+        }
+
+        ul.numbered li {
+            font-size: 1.5rem;
+            padding: 15px 0 15px 60px;
+            position: relative;
+            counter-increment: item;
+        }
+
+        ul.numbered li::before {
+            content: counter(item);
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: var(--purple);
+            border-radius: 50%;
+            color: white;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        /* Simple bullets */
+        ul.simple {
+            list-style: disc;
+            padding-left: 30px;
+            margin-top: 15px;
+        }
+
+        ul.simple li {
+            font-size: 1.25rem;
+            padding: 8px 0;
+        }
+
+        /* Two Column Layout */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            flex: 1;
+            margin-top: 15px;
+        }
+
+        .col {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Card Style */
+        .card {
+            background: var(--light);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+
+        .card.green {
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+            border-left: 5px solid var(--green);
+        }
+
+        .card.purple {
+            background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+            border-left: 5px solid var(--purple);
+        }
+
+        .card.orange {
+            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+            border-left: 5px solid var(--orange);
+        }
+
+        /* Stat Grid */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .stat-box {
+            background: var(--light);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .stat-box .value {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--purple);
+        }
+
+        .stat-box .label {
+            font-size: 1rem;
+            color: var(--gray);
+            margin-top: 5px;
+        }
+
+        /* Takeaway Box */
+        .takeaway {
+            background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+            color: white;
+            border-radius: 16px;
+            padding: 30px 40px;
+            margin-top: auto;
+        }
+
+        .takeaway h4 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+
+        .takeaway p {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        /* Pain Points Grid */
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            flex: 1;
+        }
+
+        .pain-item {
+            background: var(--light);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .pain-item .number {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--purple);
+            margin-bottom: 10px;
+        }
+
+        .pain-item p {
+            font-size: 1rem;
+            color: var(--gray);
+            line-height: 1.4;
+        }
+
+        /* CTA Slide */
+        .slide-cta {
+            background: linear-gradient(135deg, var(--blue) 0%, var(--purple) 100%);
+        }
+
+        .slide-cta .slide-content {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .slide-cta h2 {
+            color: white;
+            font-size: 3rem;
+        }
+
+        .slide-cta .price {
+            font-size: 5rem;
+            font-weight: 900;
+            margin: 30px 0;
+        }
+
+        .slide-cta .price span {
+            font-size: 1.5rem;
+            opacity: 0.8;
+        }
+
+        .slide-cta .old-price {
+            font-size: 2.5rem;
+            color: rgba(255,255,255,0.5);
+            text-decoration: line-through;
+        }
+
+        .slide-cta .savings {
+            background: var(--green);
+            display: inline-block;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-top: 15px;
+        }
+
+        .slide-cta .url {
+            background: white;
+            color: var(--purple);
+            padding: 20px 60px;
+            border-radius: 50px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 30px;
+        }
+
+        .slide-cta .deadline {
+            background: var(--red);
+            padding: 15px 40px;
+            border-radius: 10px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-top: 25px;
+        }
+
+        /* Q&A Slide */
+        .qa-prompts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .qa-prompt {
+            background: var(--light);
+            border-radius: 12px;
+            padding: 25px 30px;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--purple);
+        }
+
+        /* Bundle Stack */
+        .bundle-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .bundle-item {
+            background: var(--light);
+            border-radius: 12px;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 4px solid var(--purple);
+        }
+
+        .bundle-item .name {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .bundle-item .value {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--purple);
+        }
+
+        /* Footer */
+        .slide-footer {
+            background: var(--light);
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SLIDE 1: Title -->
+    <div class="slide slide-title">
+        <div class="slide-header">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge">LIVE</div>
+        </div>
+        <div class="slide-content">
+            <h1>January Bootcamp<br>RECAP</h1>
+            <p class="subtitle">8 Hours of GovCon Strategy in 45 Minutes</p>
+            <div class="meta">
+                <span>February 2, 2026</span>
+                <span>Value Drop Edition</span>
+                <span>Let's Get These Contracts</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 2: What We Covered -->
+    <div class="slide">
+        <div class="slide-header">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge">LIVE</div>
+        </div>
+        <div class="slide-content">
+            <h2>What We Covered at the <span class="highlight">Bootcamp</span></h2>
+            <div class="stat-grid">
+                <div class="stat-box">
+                    <div class="value">8</div>
+                    <div class="label">Hours of Training</div>
+                </div>
+                <div class="stat-box">
+                    <div class="value">5</div>
+                    <div class="label">Core Steps</div>
+                </div>
+                <div class="stat-box">
+                    <div class="value">AI</div>
+                    <div class="label">Market Research</div>
+                </div>
+                <div class="stat-box">
+                    <div class="value">4</div>
+                    <div class="label">Premium Tools</div>
+                </div>
+            </div>
+            <div class="takeaway" style="margin-top: 40px;">
+                <h4>Tonight's Mission</h4>
+                <p>I'm sharing the TOP strategies so you can start winning contracts THIS quarter.</p>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>January 2026 Bootcamp Recap</span>
+            <span>@GovConGiants</span>
+        </div>
+    </div>
+
+    <!-- SLIDE 2b: One-Page Execution Sheet -->
+    <div class="slide">
+        <div class="slide-header">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge">LIVE</div>
+        </div>
+        <div class="slide-content">
+            <h2>The <span class="highlight">One-Page Execution Sheet</span></h2>
+            <p style="font-size: 1.3rem; color: var(--gray); margin-bottom: 25px;">Everyone at the bootcamp filled this out. Here's what it covers:</p>
+            <div class="two-col">
+                <div class="col">
+                    <div style="background: var(--light); border-radius: 12px; padding: 20px; margin-bottom: 15px; border-left: 4px solid var(--green);">
+                        <p style="font-size: 1.1rem;"><strong style="color: var(--green);">Step 1:</strong> Agency Targeting</p>
+                        <p style="font-size: 0.95rem; color: var(--gray);">Pick 3 agencies + why they buy what you sell</p>
+                    </div>
+                    <div style="background: var(--light); border-radius: 12px; padding: 20px; margin-bottom: 15px; border-left: 4px solid var(--red);">
+                        <p style="font-size: 1.1rem;"><strong style="color: var(--red);">Step 2:</strong> Pain Points</p>
+                        <p style="font-size: 0.95rem; color: var(--gray);">Their problem + how you solve it</p>
+                    </div>
+                    <div style="background: var(--light); border-radius: 12px; padding: 20px; margin-bottom: 15px; border-left: 4px solid var(--purple);">
+                        <p style="font-size: 1.1rem;"><strong style="color: var(--purple);">Step 3:</strong> AI Prompts</p>
+                        <p style="font-size: 0.95rem; color: var(--gray);">Market research prompts to use</p>
+                    </div>
+                    <div style="background: var(--light); border-radius: 12px; padding: 20px; border-left: 4px solid #06b6d4;">
+                        <p style="font-size: 1.1rem;"><strong style="color: #06b6d4;">Step 4:</strong> Capability Statement</p>
+                        <p style="font-size: 0.95rem; color: var(--gray);">What you do + differentiator</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div style="background: var(--light); border-radius: 12px; padding: 20px; margin-bottom: 15px; border-left: 4px solid var(--orange);">
+                        <p style="font-size: 1.1rem;"><strong style="color: var(--orange);">Step 5:</strong> Opportunity Research</p>
+                        <p style="font-size: 0.95rem; color: var(--gray);">Find 3 opportunities from Hit List</p>
+                    </div>
+                    <div style="background: var(--light); border-radius: 12px; padding: 20px; margin-bottom: 15px; border-left: 4px solid #14b8a6;">
+                        <p style="font-size: 1.1rem;"><strong style="color: #14b8a6;">Step 6:</strong> Response Plan</p>
+                        <p style="font-size: 0.95rem; color: var(--gray);">What you'll submit + sections to complete</p>
+                    </div>
+                    <div style="background: var(--light); border-radius: 12px; padding: 20px; margin-bottom: 15px; border-left: 4px solid #b91c1c;">
+                        <p style="font-size: 1.1rem;"><strong style="color: #b91c1c;">Step 7:</strong> Expiring Contracts</p>
+                        <p style="font-size: 0.95rem; color: var(--gray);">Track recompetes for future positioning</p>
+                    </div>
+                    <div style="background: linear-gradient(135deg, #1e293b 0%, #334155 100%); border-radius: 12px; padding: 20px; color: white;">
+                        <p style="font-size: 1.1rem;"><strong>24-Hour Commitment</strong></p>
+                        <p style="font-size: 0.95rem; opacity: 0.9;">ONE action to complete in 24 hours</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>One-Page Execution Sheet</span>
+            <span>@GovConGiants</span>
+        </div>
+    </div>
+
+    <!-- SLIDE 2c: The Rule -->
+    <div class="slide">
+        <div class="slide-header">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge">LIVE</div>
+        </div>
+        <div class="slide-content" style="justify-content: center; align-items: center; text-align: center;">
+            <p style="font-size: 1.5rem; color: var(--gray); margin-bottom: 30px;">The Rule We Follow:</p>
+            <h2 style="font-size: 3.5rem; color: var(--green); margin-bottom: 20px;">One agency.</h2>
+            <h2 style="font-size: 3.5rem; color: var(--purple); margin-bottom: 20px;">One opportunity.</h2>
+            <h2 style="font-size: 3.5rem; color: var(--blue); margin-bottom: 40px;">One action.</h2>
+            <p style="font-size: 2.5rem; font-weight: 900; color: var(--black);">Repeat daily.</p>
+        </div>
+        <div class="slide-footer">
+            <span>The GovCon Giants Rule</span>
+            <span>@GovConGiants</span>
+        </div>
+    </div>
+
+    <!-- SLIDE 3: Strategy #1 - Market Assassin Intro -->
+    <div class="slide">
+        <div class="slide-header">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge">LIVE</div>
+        </div>
+        <div class="slide-content">
+            <h2>Strategy #1: <span class="highlight">Target Like a Sniper</span></h2>
+            <p style="font-size: 1.8rem; color: var(--gray); margin-bottom: 40px;">Stop spraying and praying. Start TARGETING.</p>
+            <div class="two-col">
+                <div class="col">
+                    <div class="card purple">
+                        <h3>The Problem</h3>
+                        <p style="font-size: 1.2rem;">Most contractors go after every opportunity. That's a losing strategy. The winners? They TARGET with precision.</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card green">
+                        <h3>The Solution</h3>
+                        <p style="font-size: 1.2rem;">5 inputs that change everything. Know these, and you'll know exactly where to focus your energy.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="takeaway">
+                <h4>Key Insight</h4>
+                <p>Focus beats everything. Pick your TOP 3 agencies - not 10, not 5. THREE.</p>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>Strategy 1: Agency Targeting</span>
+            <span>@GovConGiants</span>
+        </div>
+    </div>
+
+    <!-- SLIDE 4: The 5 Inputs -->
+    <div class="slide">
+        <div class="slide-header">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge">LIVE</div>
+        </div>
+        <div class="slide-content">
+            <h2>The <span class="highlight">5 Inputs</span> That Change Everything</h2>
+            <ul class="numbered" style="margin-top: 20px;">
+                <li><strong>Your Certification(s)</strong> - 8(a), WOSB, SDVOSB, HUBZone, etc.</li>
+                <li><strong>Your ZIP Code</strong> - Geographic presence and local preference</li>
+                <li><strong>Your PSC Codes</strong> - What you DO (Product/Service Codes)</li>
+                <li><strong>Your NAICS Codes</strong> - Your industry classification</li>
+                <li><strong>Target Agencies</strong> - Who you WANT to work with</li>
+            </ul>
+            <div class="takeaway">
+                <h4>Action Step</h4>
+                <p>Write these 5 things down RIGHT NOW. This is your targeting foundation.</p>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>Strategy 1: Agency Targeting</span>
+            <span>@GovConGiants</span>
+        </div>
+    </div>
+
+    <!-- TOOL DEMO - Market Assassin (after Strategy 1) -->
+    <div class="slide">
+        <div class="slide-header">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge">LIVE</div>
+        </div>
+        <div class="slide-content" style="justify-content: center; align-items: center; text-align: center;">
+            <p style="font-size: 1.2rem; color: var(--green); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 15px;">Live Demo</p>
+            <h2 style="font-size: 3.5rem; margin-bottom: 30px;"><span class="highlight">Market Assassin</span></h2>
+            <p style="font-size: 1.5rem; color: var(--gray); max-width: 800px; margin-bottom: 40px;">Enter your 5 inputs → Get 8 detailed reports<br>Agency targeting on autopilot</p>
+            <div style="display: flex; gap: 30px; justify-content: center; flex-wrap: wrap;">
+                <div style="background: var(--light); padding: 20px 30px; border-radius: 12px;">
+                    <p style="font-size: 1.1rem; color: var(--purple); font-weight: 700;">Market Analytics</p>
+                </div>
+                <div style="background: var(--light); padding: 20px 30px; border-radius: 12px;">
+                    <p style="font-size: 1.1rem; color: var(--purple); font-weight: 700;">Government Buyers</p>
+                </div>
+                <div style="background: var(--light); padding: 20px 30px; border-radius: 12px;">
+                    <p style="font-size: 1.1rem; color: var(--purple); font-weight: 700;">Competition Analysis</p>
+                </div>
+                <div style="background: var(--light); padding: 20px 30px; border-radius: 12px;">
+                    <p style="font-size: 1.1rem; color: var(--purple); font-weight: 700;">Agency Forecast</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>Tool Demo: Market Assassin</span>
+            <span>@GovConGiants</span>
+        </div>
+    </div>
+
+    <!-- SLIDE 5: Strategy #2 - Agency Pain Points -->
+    <div class="slide">
+        <div class="slide-header">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge">LIVE</div>
+        </div>
+        <div class="slide-content">
+            <h2>Strategy #2: <span class="highlight">Agency Pain Points</span></h2>
+            <p style="font-size: 1.5rem; color: var(--gray); margin-bottom: 30px;">They NEED you. They're REQUIRED to spend with small businesses.</p>
+            <div class="pain-grid">
+                <div class="pain-item">
+                    <div class="number">1</div>
+                    <p>Meeting small business goals</p>
+                </div>
+                <div class="pain-item">
+                    <div class="number">2</div>
+                    <p>Finding specialized capabilities</p>
+                </div>
+                <div class="pain-item">
+                    <div class="number">3</div>
+                    <p>Past performance verification</p>
+                </div>
+                <div class="pain-item">
+                    <div class="number">4</div>
+                    <p>Geographic coverage needs</p>
+                </div>
+                <div class="pain-item">
+                    <div class="number">5</div>
+                    <p>Security clearance gaps</p>
+                </div>
+                <div class="pain-item">
+                    <div class="number">6</div>
+                    <p>Quick-turn requirements</p>
+                </div>
+                <div class="pain-item">
+                    <div class="number">7</div>
+                    <p>Budget uncertainty</p>
+                </div>
+                <div class="pain-item">
+                    <div class="number">8</div>
+                    <p>Staffing turnover</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>Strategy 2: Position as the Solution</span>
+            <span>@GovConGiants</span>
+        </div>
+    </div>
+
+    <!-- Data Sources Slide -->
+    <div class="slide">
+        <div class="slide-header">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge">LIVE</div>
+        </div>
+        <div class="slide-content">
+            <h2>Where We <span class="highlight">Find</span> Pain Points</h2>
+            <p style="font-size: 1.1rem; color: var(--gray); margin-bottom: 20px;">The data sources we use to identify agency needs:</p>
+            <div class="two-col" style="gap: 25px;">
+                <div class="col">
+                    <div class="card green" style="padding: 18px; margin-bottom: 12px;">
+                        <h3 style="margin-bottom: 8px; font-size: 1.2rem;">Spending Data</h3>
+                        <ul class="simple" style="font-size: 0.95rem; margin-top: 8px;">
+                            <li><strong>USAspending.gov</strong></li>
+                            <li><strong>FPDS.gov</strong></li>
+                            <li><strong>SAM.gov</strong></li>
+                            <li><strong>SBA Dashboard</strong></li>
+                        </ul>
+                    </div>
+                    <div class="card purple" style="padding: 18px;">
+                        <h3 style="margin-bottom: 8px; font-size: 1.2rem;">Strategic Documents</h3>
+                        <ul class="simple" style="font-size: 0.95rem; margin-top: 8px;">
+                            <li><strong>Agency Strategic Plans</strong></li>
+                            <li><strong>Budget Justifications</strong></li>
+                            <li><strong>IG Reports</strong></li>
+                            <li><strong>GAO Audits</strong></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card orange" style="padding: 18px; margin-bottom: 12px;">
+                        <h3 style="margin-bottom: 8px; font-size: 1.2rem;">Regulatory & Policy</h3>
+                        <ul class="simple" style="font-size: 0.95rem; margin-top: 8px;">
+                            <li><strong>FY2026 NDAA</strong></li>
+                            <li><strong>OMB Circulars</strong></li>
+                            <li><strong>Executive Orders</strong></li>
+                            <li><strong>Agency Memos</strong></li>
+                        </ul>
+                    </div>
+                    <div style="background: linear-gradient(135deg, var(--blue) 0%, var(--purple) 100%); border-radius: 12px; padding: 18px; color: white;">
+                        <h3 style="margin-bottom: 8px; font-size: 1.2rem; color: white;">The Shortcut</h3>
+                        <p style="font-size: 0.95rem;">Market Assassin pulls from all these sources and generates your reports automatically.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>Strategy 2: Data Sources</span>
+            <span>@GovConGiants</span>
+        </div>
+    </div>
+
+    <!-- SLIDE 6: Pain Point Takeaway -->
+    <div class="slide">
+        <div class="slide-header">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge">LIVE</div>
+        </div>
+        <div class="slide-content" style="justify-content: center; align-items: center; text-align: center;">
+            <h2 style="font-size: 3.5rem; max-width: 900px;">Don't sell <span style="color: var(--red); text-decoration: line-through;">services</span><br><br>Solve <span class="highlight">problems</span></h2>
+            <p style="font-size: 1.5rem; color: var(--gray); margin-top: 40px; max-width: 700px;">Your capability statement should speak to THEIR challenges, not YOUR features.</p>
+        </div>
+        <div class="slide-footer">
+            <span>Strategy 2: Position as the Solution</span>
+            <span>@GovConGiants</span>
+        </div>
+    </div>
+
+    <!-- SLIDE 7: Strategy #3 - AI for Market Research -->
+    <div class="slide">
+        <div class="slide-header">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge">LIVE</div>
+        </div>
+        <div class="slide-content">
+            <h2>Strategy #3: <span class="highlight">AI for Market Research</span></h2>
+            <p style="font-size: 1.3rem; color: var(--gray); margin-bottom: 25px;">AI won't replace you. Contractors USING AI will.</p>
+            <div class="two-col">
+                <div class="col">
+                    <div class="card green" style="margin-bottom: 12px; padding: 20px;">
+                        <h3 style="font-size: 1.3rem; margin-bottom: 8px;">Find Agency Pain Points</h3>
+                        <p style="font-size: 1rem;">"Research [Agency] top pain points for FY2026"</p>
+                    </div>
+                    <div class="card purple" style="margin-bottom: 12px; padding: 20px;">
+                        <h3 style="font-size: 1.3rem; margin-bottom: 8px;">Match NAICS to Needs</h3>
+                        <p style="font-size: 1rem;">"What is [Agency] buying in NAICS [Code]?"</p>
+                    </div>
+                    <div class="card orange" style="padding: 20px;">
+                        <h3 style="font-size: 1.3rem; margin-bottom: 8px;">Analyze Spending</h3>
+                        <p style="font-size: 1rem;">"Show [Agency] spending trends + top contractors"</p>
+                    </div>
+                </div>
+                <div class="col" style="display: flex; justify-content: center; align-items: center;">
+                    <div style="text-align: center; padding: 20px;">
+                        <p style="font-size: 5rem; font-weight: 900; color: var(--green); line-height: 1;">10x</p>
+                        <p style="font-size: 1.5rem; font-weight: 700; color: var(--purple); margin-top: 10px;">Faster Research</p>
+                        <p style="font-size: 1.1rem; color: var(--gray); margin-top: 15px;">Full day → 5 minutes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>Strategy 3: AI for Market Research</span>
+            <span>@GovConGiants</span>
+        </div>
+    </div>
+
+    <!-- SLIDE 8: Strategy #4 - Hit List Method -->
+    <div class="slide">
+        <div class="slide-header">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge">LIVE</div>
+        </div>
+        <div class="slide-content">
+            <h2>Strategy #4: The <span class="highlight">Hit List</span> Method</h2>
+            <p style="font-size: 1.3rem; color: var(--gray); margin-bottom: 25px;">Find agencies that ALREADY BUY what you sell using <strong style="color: var(--green);">USAspending.gov</strong></p>
+            <ul class="numbered">
+                <li><strong>Go to USAspending.gov → Advanced Search</strong> - Search past contract awards</li>
+                <li><strong>Filter by your NAICS + Set-Aside type</strong> - Match YOUR certifications</li>
+                <li><strong>Set award amount: $25K - $250K</strong> - Less competition sweet spot</li>
+                <li><strong>Export results</strong> - These agencies BUY what you sell</li>
+            </ul>
+            <div class="takeaway">
+                <h4>The Key Insight</h4>
+                <p>USAspending shows PAST awards. Find who's buying → Then check SAM.gov for ACTIVE opportunities from those same agencies.</p>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>Strategy 4: USAspending.gov</span>
+            <span>@GovConGiants</span>
+        </div>
+    </div>
+
+    <!-- SLIDE 9: Sources Sought Secret -->
+    <div class="slide">
+        <div class="slide-header">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge">LIVE</div>
+        </div>
+        <div class="slide-content" style="justify-content: center; align-items: center; text-align: center;">
+            <p style="font-size: 1.5rem; color: var(--gray); margin-bottom: 20px;">The Sources Sought Secret</p>
+            <div class="big-number" style="font-size: 12rem;">&lt;5%</div>
+            <p style="font-size: 2rem; color: var(--black); margin-top: 20px; font-weight: 700;">of contractors respond to Sources Sought notices</p>
+            <p style="font-size: 1.4rem; color: var(--gray); margin-top: 30px; max-width: 800px;">If you respond, you're already in the top 5%.<br>AND you can influence how agencies write the requirement.</p>
+        </div>
+        <div class="slide-footer">
+            <span>Strategy 4: Sources Sought & RFI</span>
+            <span>@GovConGiants</span>
+        </div>
+    </div>
+
+    <!-- SLIDE 9b: TOOL DEMO - Hit List Generator -->
+    <div class="slide">
+        <div class="slide-header">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge">LIVE</div>
+        </div>
+        <div class="slide-content" style="justify-content: center; align-items: center; text-align: center;">
+            <p style="font-size: 1.2rem; color: var(--green); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 15px;">Live Demo</p>
+            <h2 style="font-size: 3.5rem; margin-bottom: 20px;"><span class="highlight">Hit List Generator</span></h2>
+            <p style="font-size: 1.4rem; color: var(--gray); max-width: 900px; margin-bottom: 30px;">Automates USAspending.gov searches for YOUR NAICS codes<br>Shows you which agencies are ALREADY buying what you sell</p>
+            <div style="display: flex; gap: 25px; justify-content: center; flex-wrap: wrap; margin-bottom: 25px;">
+                <div style="background: var(--light); padding: 18px 25px; border-radius: 12px;">
+                    <p style="font-size: 1rem; color: var(--purple); font-weight: 700;">Your NAICS Codes</p>
+                </div>
+                <div style="background: var(--light); padding: 18px 25px; border-radius: 12px;">
+                    <p style="font-size: 1rem; color: var(--purple); font-weight: 700;">Set-Aside Match</p>
+                </div>
+                <div style="background: var(--light); padding: 18px 25px; border-radius: 12px;">
+                    <p style="font-size: 1rem; color: var(--purple); font-weight: 700;">Award Size Filter</p>
+                </div>
+                <div style="background: var(--light); padding: 18px 25px; border-radius: 12px;">
+                    <p style="font-size: 1rem; color: var(--purple); font-weight: 700;">Export Hit List</p>
+                </div>
+            </div>
+            <div style="background: rgba(16, 185, 129, 0.1); border: 2px solid var(--green); border-radius: 12px; padding: 15px 30px; display: inline-block;">
+                <p style="font-size: 1.1rem; color: var(--green); font-weight: 600;">DIY: Go to USAspending.gov → Advanced Search → Award Search</p>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>Tool Demo: Hit List Generator</span>
+            <span>@GovConGiants</span>
+        </div>
+    </div>
+
+    <!-- SLIDE 10: Strategy #5 - Expiring Contracts -->
+    <div class="slide">
+        <div class="slide-header">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge">LIVE</div>
+        </div>
+        <div class="slide-content">
+            <h2>Strategy #5: <span class="highlight">Expiring Contracts</span></h2>
+            <p style="font-size: 1.4rem; color: var(--gray); margin-bottom: 30px;">The fastest path to contracts: Position on recompetes BEFORE they drop.</p>
+            <div class="two-col">
+                <div class="col">
+                    <div class="card green">
+                        <h3>Path A: Team WITH Incumbent</h3>
+                        <ul class="simple" style="font-size: 1.1rem;">
+                            <li>They need small business subs</li>
+                            <li>Lower risk for you</li>
+                            <li>Build past performance</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card purple">
+                        <h3>Path B: Compete AGAINST</h3>
+                        <ul class="simple" style="font-size: 1.1rem;">
+                            <li>Position as better option</li>
+                            <li>Higher risk, higher reward</li>
+                            <li>Need strong past performance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="takeaway">
+                <h4>Sweet Spot Timing</h4>
+                <p>12-18 months before expiration. That's when agencies start market research.</p>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>Strategy 5: Expiring Contracts</span>
+            <span>@GovConGiants</span>
+        </div>
+    </div>
+
+    <!-- SLIDE 10b: TOOL DEMO - Recompete Tracker -->
+    <div class="slide">
+        <div class="slide-header">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge">LIVE</div>
+        </div>
+        <div class="slide-content" style="justify-content: center; align-items: center; text-align: center;">
+            <p style="font-size: 1.2rem; color: var(--green); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 15px;">Live Demo</p>
+            <h2 style="font-size: 3.5rem; margin-bottom: 30px;"><span class="highlight">Recompete Tracker</span></h2>
+            <p style="font-size: 1.5rem; color: var(--gray); max-width: 800px; margin-bottom: 40px;">Find expiring contracts in YOUR NAICS codes<br>Position before the recompete drops</p>
+            <div style="display: flex; gap: 30px; justify-content: center; flex-wrap: wrap;">
+                <div style="background: var(--light); padding: 20px 30px; border-radius: 12px;">
+                    <p style="font-size: 1.1rem; color: var(--purple); font-weight: 700;">Filter by NAICS</p>
+                </div>
+                <div style="background: var(--light); padding: 20px 30px; border-radius: 12px;">
+                    <p style="font-size: 1.1rem; color: var(--purple); font-weight: 700;">Expiration Dates</p>
+                </div>
+                <div style="background: var(--light); padding: 20px 30px; border-radius: 12px;">
+                    <p style="font-size: 1.1rem; color: var(--purple); font-weight: 700;">Incumbent Details</p>
+                </div>
+                <div style="background: var(--light); padding: 20px 30px; border-radius: 12px;">
+                    <p style="font-size: 1.1rem; color: var(--purple); font-weight: 700;">Contract Values</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>Tool Demo: Recompete Tracker</span>
+            <span>@GovConGiants</span>
+        </div>
+    </div>
+
+    <!-- SLIDE 10c: TOOL DEMO - Federal Contractor Database -->
+    <div class="slide">
+        <div class="slide-header">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge">LIVE</div>
+        </div>
+        <div class="slide-content" style="justify-content: center; align-items: center; text-align: center;">
+            <p style="font-size: 1.2rem; color: var(--green); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 15px;">Live Demo</p>
+            <h2 style="font-size: 3.2rem; margin-bottom: 30px;"><span class="highlight">Federal Contractor Database</span></h2>
+            <p style="font-size: 1.5rem; color: var(--gray); max-width: 800px; margin-bottom: 40px;">200+ Small Business Liaison Officers with direct contact info<br>Find teaming partners at prime contractors</p>
+            <div style="display: flex; gap: 30px; justify-content: center; flex-wrap: wrap;">
+                <div style="background: var(--light); padding: 20px 30px; border-radius: 12px;">
+                    <p style="font-size: 1.1rem; color: var(--purple); font-weight: 700;">SBLO Contacts</p>
+                </div>
+                <div style="background: var(--light); padding: 20px 30px; border-radius: 12px;">
+                    <p style="font-size: 1.1rem; color: var(--purple); font-weight: 700;">Email + Phone</p>
+                </div>
+                <div style="background: var(--light); padding: 20px 30px; border-radius: 12px;">
+                    <p style="font-size: 1.1rem; color: var(--purple); font-weight: 700;">Filter by Agency</p>
+                </div>
+                <div style="background: var(--light); padding: 20px 30px; border-radius: 12px;">
+                    <p style="font-size: 1.1rem; color: var(--purple); font-weight: 700;">Filter by NAICS</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>Tool Demo: Federal Contractor Database</span>
+            <span>@GovConGiants</span>
+        </div>
+    </div>
+
+    <!-- SLIDE 11: Your Challenge -->
+    <div class="slide">
+        <div class="slide-header">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge">LIVE</div>
+        </div>
+        <div class="slide-content">
+            <h2>Your <span class="highlight">Challenge</span> This Week</h2>
+            <p style="font-size: 1.4rem; color: var(--gray); margin-bottom: 30px;">Pick ONE. Execute. Build momentum.</p>
+            <ul class="main-bullets">
+                <li><strong>Pick your 3 target agencies</strong> - Write them down tonight</li>
+                <li><strong>Respond to one Sources Sought</strong> - Get on an agency's radar</li>
+                <li><strong>Find 3 expiring contracts</strong> - Check USASpending.gov</li>
+                <li><strong>Research one agency with AI</strong> - Know them before outreach</li>
+            </ul>
+        </div>
+        <div class="slide-footer">
+            <span>Action Items</span>
+            <span>@GovConGiants</span>
+        </div>
+    </div>
+
+    <!-- SLIDE 12: Q&A -->
+    <div class="slide">
+        <div class="slide-header">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge">LIVE</div>
+        </div>
+        <div class="slide-content">
+            <h2><span class="highlight">Q&A</span> Time</h2>
+            <p style="font-size: 1.4rem; color: var(--gray); margin-bottom: 30px;">Drop your questions in the chat!</p>
+            <div class="qa-prompts">
+                <div class="qa-prompt">"How do I find contracting officers?"</div>
+                <div class="qa-prompt">"Do I need past performance to win?"</div>
+                <div class="qa-prompt">"How do I team with primes?"</div>
+                <div class="qa-prompt">"Is 8(a) certification worth it?"</div>
+            </div>
+            <div style="margin-top: 40px; text-align: center;">
+                <p style="font-size: 1.3rem; color: var(--gray);">Already registered on SAM.gov? Drop a checkmark in the chat!</p>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>Live Q&A</span>
+            <span>@GovConGiants</span>
+        </div>
+    </div>
+
+    <!-- SLIDE 13: Transition to Tools -->
+    <div class="slide">
+        <div class="slide-header">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge">LIVE</div>
+        </div>
+        <div class="slide-content" style="justify-content: center; align-items: center; text-align: center;">
+            <h2 style="font-size: 3rem; max-width: 900px;">Want to <span class="highlight">Shortcut</span> All of This?</h2>
+            <p style="font-size: 1.6rem; color: var(--gray); margin-top: 30px; max-width: 700px;">Everything I just taught you? There are tools that do the heavy lifting FOR you.</p>
+        </div>
+        <div class="slide-footer">
+            <span>The Shortcut</span>
+            <span>@GovConGiants</span>
+        </div>
+    </div>
+
+    <!-- SLIDE 14: The Tools -->
+    <div class="slide">
+        <div class="slide-header">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge">LIVE</div>
+        </div>
+        <div class="slide-content">
+            <h2>The <span class="highlight">Ultimate Giant</span> Bundle</h2>
+            <p style="font-size: 1.2rem; color: var(--gray); margin-bottom: 25px;">4 premium tools that do the work for you:</p>
+            <div class="bundle-stack">
+                <div class="bundle-item">
+                    <span class="name">Market Assassin Premium</span>
+                    <span class="value">8 reports from your 5 inputs</span>
+                </div>
+                <div class="bundle-item">
+                    <span class="name">Federal Contractor Database</span>
+                    <span class="value">200+ SBLO contacts with emails</span>
+                </div>
+                <div class="bundle-item">
+                    <span class="name">Recompete Contracts Tracker</span>
+                    <span class="value">Expiring contracts in your NAICS</span>
+                </div>
+                <div class="bundle-item">
+                    <span class="name">GovCon Content Generator</span>
+                    <span class="value">LinkedIn posts that attract gov buyers</span>
+                </div>
+            </div>
+            <div class="takeaway" style="margin-top: 25px;">
+                <h4>The Shortcut</h4>
+                <p>These tools turn weeks of work into minutes.</p>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>Ultimate Giant Bundle</span>
+            <span>@GovConGiants</span>
+        </div>
+    </div>
+
+    <!-- SLIDE 14b: BONUSES -->
+    <div class="slide">
+        <div class="slide-header">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge">LIVE</div>
+        </div>
+        <div class="slide-content">
+            <h2>PLUS: <span class="highlight">Bonuses</span> When You Purchase</h2>
+            <p style="font-size: 1.3rem; color: var(--gray); margin-bottom: 40px;">Included FREE with the Ultimate Giant Bundle:</p>
+            <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+                <div style="background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%); border-radius: 20px; padding: 40px; text-align: center; width: 300px; border: 2px solid var(--green);">
+                    <p style="font-size: 3rem; margin-bottom: 15px;">🎁</p>
+                    <p style="font-size: 1.4rem; font-weight: 700; color: var(--green);">VIP Priority Support</p>
+                    <p style="font-size: 1rem; color: var(--gray); margin-top: 10px;">Get your questions answered first</p>
+                </div>
+                <div style="background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%); border-radius: 20px; padding: 40px; text-align: center; width: 300px; border: 2px solid var(--purple);">
+                    <p style="font-size: 3rem; margin-bottom: 15px;">🎁</p>
+                    <p style="font-size: 1.4rem; font-weight: 700; color: var(--purple);">Early Access to New Features</p>
+                    <p style="font-size: 1rem; color: var(--gray); margin-top: 10px;">Be first to use new tools</p>
+                </div>
+                <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-radius: 20px; padding: 40px; text-align: center; width: 300px; border: 2px solid var(--orange);">
+                    <p style="font-size: 3rem; margin-bottom: 15px;">🎁</p>
+                    <p style="font-size: 1.4rem; font-weight: 700; color: var(--orange);">All Future Updates Included</p>
+                    <p style="font-size: 1rem; color: var(--gray); margin-top: 10px;">Lifetime access to improvements</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>Bonuses Included</span>
+            <span>@GovConGiants</span>
+        </div>
+    </div>
+
+    <!-- SLIDE 15: The Offer -->
+    <div class="slide slide-cta">
+        <div class="slide-header" style="background: transparent;">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge">LIVE</div>
+        </div>
+        <div class="slide-content">
+            <h2>Tonight Only</h2>
+            <p style="font-size: 1.2rem; opacity: 0.9;">4 Premium Tools. Everything You Need to Win.</p>
+            <div style="margin: 30px 0;">
+                <div class="old-price">$1,500</div>
+                <div class="price">$1,000</div>
+                <div class="savings">SAVE $500</div>
+            </div>
+            <div class="url">shop.govcongiants.org</div>
+            <div class="deadline">EXPIRES AT MIDNIGHT TONIGHT</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 16: Final Q&A + Offer -->
+    <div class="slide">
+        <div class="slide-header">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge">LIVE</div>
+        </div>
+        <div class="slide-content">
+            <div class="two-col" style="height: 100%;">
+                <div class="col" style="display: flex; flex-direction: column; justify-content: center;">
+                    <h2 style="font-size: 2.5rem;"><span class="highlight">Q&A</span> Time</h2>
+                    <p style="font-size: 1.2rem; color: var(--gray); margin: 20px 0;">Drop your questions in the chat!</p>
+                    <div class="qa-prompts" style="display: flex; flex-direction: column; gap: 12px;">
+                        <div class="qa-prompt" style="font-size: 1.1rem; padding: 15px 20px;">"How do I find contracting officers?"</div>
+                        <div class="qa-prompt" style="font-size: 1.1rem; padding: 15px 20px;">"Do I need past performance?"</div>
+                        <div class="qa-prompt" style="font-size: 1.1rem; padding: 15px 20px;">"How do I team with primes?"</div>
+                    </div>
+                </div>
+                <div class="col" style="display: flex; flex-direction: column; justify-content: center; align-items: center; background: linear-gradient(135deg, var(--blue) 0%, var(--purple) 100%); border-radius: 20px; padding: 30px; color: white; text-align: center;">
+                    <p style="font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; opacity: 0.9;">Tonight Only</p>
+                    <p style="font-size: 1.8rem; font-weight: 700; margin-top: 10px;">Ultimate Giant Bundle</p>
+                    <div style="margin: 20px 0;">
+                        <p style="font-size: 1.5rem; text-decoration: line-through; opacity: 0.6;">$1,500</p>
+                        <p style="font-size: 4rem; font-weight: 900; line-height: 1;">$1,000</p>
+                        <div style="background: var(--green); padding: 8px 20px; border-radius: 20px; display: inline-block; margin-top: 10px;">
+                            <p style="font-size: 1rem; font-weight: 700;">SAVE $500</p>
+                        </div>
+                    </div>
+                    <div style="background: white; color: var(--purple); padding: 12px 30px; border-radius: 30px; font-weight: 700; font-size: 1.2rem; margin-top: 10px;">
+                        shop.govcongiants.org
+                    </div>
+                    <div style="background: var(--red); padding: 12px 25px; border-radius: 8px; margin-top: 15px;">
+                        <p style="font-size: 1.1rem; font-weight: 700;">EXPIRES MIDNIGHT TONIGHT</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>Q&A + Final Offer</span>
+            <span>@GovConGiants</span>
+        </div>
+    </div>
+
+</body>
+</html>

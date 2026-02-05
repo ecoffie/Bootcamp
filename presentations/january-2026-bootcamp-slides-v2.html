@@ -1,0 +1,2450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>January 2026 GovCon Bootcamp Slides | GovCon Giants</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --green: #8BC34A;
+            --green-dark: #689F38;
+            --red: #E53935;
+            --black: #1a1a1a;
+            --gray: #666;
+            --light-gray: #f5f5f5;
+        }
+
+        @page {
+            size: 960px 540px landscape;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #e5e7eb;
+            line-height: 1.4;
+            color: var(--black);
+        }
+
+        .slide {
+            width: 960px;
+            height: 540px;
+            background: white;
+            margin: 20px auto;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: visible;
+            page-break-after: always;
+            page-break-inside: avoid;
+            padding: 40px 50px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media print {
+            body { background: white; }
+            .slide {
+                margin: 0;
+                box-shadow: none;
+                page-break-after: always;
+            }
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 25px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1.3rem;
+            line-height: 1.5;
+        }
+
+        .green { color: var(--green); }
+        .red { color: var(--red); }
+        .gray { color: var(--gray); }
+        .bold { font-weight: 700; }
+
+        /* Title Slide */
+        .slide-title {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .slide-title h1 {
+            font-size: 3rem;
+        }
+
+        .slide-title .subtitle {
+            font-size: 1.8rem;
+            color: var(--green);
+            margin-bottom: 30px;
+        }
+
+        /* Centered Content */
+        .slide-center {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .slide-center h2 {
+            font-size: 2.5rem;
+            max-width: 800px;
+        }
+
+        /* Standard Content */
+        .slide-content h2 {
+            border-bottom: 3px solid var(--green);
+            padding-bottom: 15px;
+        }
+
+        /* Bullet List */
+        ul.bullets {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        ul.bullets li {
+            font-size: 1.4rem;
+            padding: 12px 0 12px 45px;
+            position: relative;
+        }
+
+        ul.bullets li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--green);
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+
+        ul.bullets.numbered li::before {
+            content: counter(item);
+            counter-increment: item;
+            background: var(--green);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+
+        ul.bullets.numbered {
+            counter-reset: item;
+        }
+
+        /* Simple bullets */
+        ul.simple {
+            list-style: disc;
+            padding-left: 30px;
+            margin-top: 15px;
+        }
+
+        ul.simple li {
+            font-size: 1.25rem;
+            padding: 8px 0;
+        }
+
+        /* Two Column */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            flex: 1;
+            margin-top: 15px;
+        }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 1.1rem;
+        }
+
+        table th {
+            background: var(--black);
+            color: white;
+            padding: 15px 20px;
+            text-align: left;
+            font-weight: 700;
+        }
+
+        table td {
+            padding: 15px 20px;
+            border-bottom: 2px solid #eee;
+        }
+
+        table tr:nth-child(even) {
+            background: var(--light-gray);
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: #FFF9C4;
+            border-left: 5px solid #FBC02D;
+            padding: 20px 25px;
+            margin-top: 25px;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .highlight-box p {
+            font-size: 1.2rem;
+            margin: 0;
+        }
+
+        /* Green Box */
+        .green-box {
+            background: #E8F5E9;
+            border: 2px solid var(--green);
+            border-radius: 12px;
+            padding: 20px 25px;
+            margin-top: 25px;
+        }
+
+        .green-box h4 {
+            color: var(--green-dark);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        /* Red CTA Box */
+        .cta-box {
+            background: var(--red);
+            color: white;
+            padding: 20px 40px;
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-top: auto;
+        }
+
+        /* Worksheet Section */
+        .worksheet-prompt {
+            background: var(--light-gray);
+            border: 2px dashed #ccc;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+
+        .worksheet-prompt h4 {
+            color: var(--green-dark);
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .worksheet-prompt p {
+            font-size: 0.95rem;
+            color: var(--gray);
+            font-style: italic;
+        }
+
+        /* Icon with text */
+        .icon-text {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin: 18px 0;
+        }
+
+        .icon-text .icon {
+            font-size: 3rem;
+        }
+
+        .icon-text .text h3 {
+            margin-bottom: 5px;
+            font-size: 1.3rem;
+        }
+
+        .icon-text .text p {
+            font-size: 1.1rem;
+        }
+
+        /* Stats Row */
+        .stats-row {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat .value {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: var(--green);
+        }
+
+        .stat .label {
+            font-size: 1rem;
+            color: var(--gray);
+        }
+
+        /* Step Header */
+        .step-header {
+            background: var(--green);
+            color: white;
+            padding: 12px 25px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        /* Process Steps */
+        .process-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .process-step {
+            text-align: center;
+            flex: 1;
+        }
+
+        .process-step .num {
+            width: 55px;
+            height: 55px;
+            background: var(--green);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin: 0 auto 10px;
+        }
+
+        .process-step h4 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .process-step p {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        /* Screenshot placeholder */
+        .screenshot {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        /* Slide number */
+        .slide-num {
+            position: absolute;
+            bottom: 15px;
+            right: 25px;
+            font-size: 0.9rem;
+            color: #999;
+        }
+
+        /* Agenda item */
+        .agenda-item {
+            display: flex;
+            gap: 20px;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 1.15rem;
+        }
+
+        .agenda-item .time {
+            font-weight: 700;
+            color: var(--green);
+            min-width: 120px;
+        }
+
+        .agenda-item .title {
+            font-weight: 600;
+        }
+
+        /* Quote */
+        .quote {
+            font-size: 1.8rem;
+            font-style: italic;
+            text-align: center;
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.5;
+        }
+
+        .quote-author {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* Hand icon style */
+        .hand-icon {
+            font-size: 5rem;
+            margin-bottom: 20px;
+        }
+
+        /* Fill in blank */
+        .fill-blank {
+            border-bottom: 2px solid var(--black);
+            display: inline-block;
+            min-width: 200px;
+            margin: 0 10px;
+        }
+
+        /* Big number */
+        .big-number {
+            font-size: 6rem;
+            font-weight: 900;
+            color: var(--green);
+            line-height: 1;
+        }
+
+        /* Code block */
+        .code-block {
+            background: #1a1a1a;
+            color: #00ff00;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-family: monospace;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ==================== INTRO SECTION (1-12) ==================== -->
+
+<!-- SLIDE 1: Title -->
+<div class="slide slide-title">
+    <h1>WELCOME</h1>
+    <p class="subtitle">January 2026 GovCon Bootcamp</p>
+    <p style="font-size: 1.3rem; margin-top: 20px;">Pro Members Full-Day Strategy Session</p>
+    <div style="display: flex; justify-content: center; gap: 80px; margin-top: 50px;">
+        <div style="text-align: center;">
+            <div style="font-size: 2.5rem; font-weight: 900; color: var(--green);">Jan 31</div>
+            <div style="font-size: 1rem; color: var(--gray);">Date</div>
+        </div>
+        <div style="text-align: center;">
+            <div style="font-size: 2.5rem; font-weight: 900; color: var(--green);">9am-5pm</div>
+            <div style="font-size: 1rem; color: var(--gray);">Eastern</div>
+        </div>
+        <div style="text-align: center;">
+            <div style="font-size: 2.5rem; font-weight: 900; color: var(--green);">8 Hours</div>
+            <div style="font-size: 1rem; color: var(--gray);">Live Training</div>
+        </div>
+    </div>
+    <span class="slide-num">1</span>
+</div>
+
+<!-- SLIDE 2: What you have / will receive -->
+<div class="slide slide-content">
+    <h2>Your Pro Member Resources for Today</h2>
+    <ul class="bullets">
+        <li><strong>Market Assassin Report</strong> – Your personalized agency targeting intel</li>
+        <li><strong>Agency Pain Points Guide</strong> – 8 critical problems agencies struggle with</li>
+        <li><strong>AI Prompts for Pain Points & Priorities</strong> – Find agency needs yourself</li>
+        <li><strong>34-Opportunity Hit List</strong> – Curated low-competition contracts</li>
+        <li><strong>100 Recompete Contracts</strong> – High-value contracts expiring soon</li>
+        <li><strong>One-Page Execution Worksheet</strong> – Your action plan for today</li>
+    </ul>
+    <span class="slide-num">2</span>
+</div>
+
+<!-- SLIDE 3: What you're going to learn -->
+<div class="slide slide-content">
+    <h2>What you're going to learn ...</h2>
+    <ul class="bullets">
+        <li>How to use Market Assassin to target agencies</li>
+        <li>Identify agency pain points and position as the solution</li>
+        <li>Use AI to accelerate research, outreach, and proposals</li>
+        <li>Build a capability statement that actually works</li>
+        <li>Find opportunities (not just on SAM.gov)</li>
+        <li>Respond to Sources Sought and RFIs</li>
+        <li>Track expiring contracts for your next win</li>
+    </ul>
+    <span class="slide-num">3</span>
+</div>
+
+<!-- SLIDE 4: Goal for today -->
+<div class="slide slide-content">
+    <h2>Goal for today is to show you <span class="green">3 things</span> ..</h2>
+    <div class="icon-text">
+        <div class="icon">✌️</div>
+        <div class="text">
+            <h3>#1 Give you a strategy and execution plan</h3>
+            <p>So you can actually win government contracts in Q1 2026</p>
+        </div>
+    </div>
+    <div class="icon-text">
+        <div class="icon">✌️</div>
+        <div class="text">
+            <h3>#2 Show you how to use Market Assassin + tools</h3>
+            <p>To find opportunities with less competition</p>
+        </div>
+    </div>
+    <div class="icon-text">
+        <div class="icon">✌️</div>
+        <div class="text">
+            <h3>#3 Walk through LIVE deal teardowns</h3>
+            <p>Real opportunities, real responses, real strategies</p>
+        </div>
+    </div>
+    <span class="slide-num">4</span>
+</div>
+
+<!-- SLIDE 5: What we know -->
+<div class="slide slide-content">
+    <h2>What we know is this ....</h2>
+    <div class="icon-text">
+        <div class="icon">✌️</div>
+        <div class="text">
+            <h3>#1 There is only so much we can teach in a day ...</h3>
+            <p>That's why you get recordings + resources</p>
+        </div>
+    </div>
+    <div class="icon-text">
+        <div class="icon">✌️</div>
+        <div class="text">
+            <h3>#2 Everyone is nuanced in their product / service offerings</h3>
+            <p>We'll make it applicable to YOUR business</p>
+        </div>
+    </div>
+    <div class="icon-text">
+        <div class="icon">✌️</div>
+        <div class="text">
+            <h3>#3 Until you have mastered the process you will need ongoing support from a Community</h3>
+            <p>That's why Pro membership matters</p>
+        </div>
+    </div>
+    <span class="slide-num">5</span>
+</div>
+
+<!-- SLIDE 6: Opportunity to do more with less -->
+<div class="slide slide-center">
+    <h2>We will give you the opportunity<br>to do more with less</h2>
+    <p style="font-size: 1.4rem; color: var(--gray); margin-top: 30px;">One agency. One opportunity. One action.<br><strong>Repeat daily.</strong></p>
+    <span class="slide-num">6</span>
+</div>
+
+<!-- SLIDE 7: The One-Page Execution Sheet -->
+<div class="slide slide-content">
+    <h2>Your <span class="green">One-Page Execution Sheet</span></h2>
+    <p>This is your working document for today. By the end of the bootcamp, you'll have:</p>
+    <ul class="bullets" style="margin-top: 20px;">
+        <li>3 target agencies identified</li>
+        <li>Pain points matched to your solution</li>
+        <li>AI prompt selected and used</li>
+        <li>Capability statement core written</li>
+    </ul>
+    <span class="slide-num">7</span>
+</div>
+
+<!-- SLIDE 7b: The One-Page Execution Sheet cont'd -->
+<div class="slide slide-content">
+    <h2>Your <span class="green">One-Page Execution Sheet</span> (cont'd)</h2>
+    <ul class="bullets" style="margin-top: 20px;">
+        <li>3 real opportunities found</li>
+        <li>Response plan created</li>
+        <li>Expiring contracts to watch</li>
+    </ul>
+    <div class="highlight-box" style="margin-top: 30px;">
+        <p><strong>RULE:</strong> One agency. One opportunity. One action. Repeat daily.</p>
+    </div>
+    <span class="slide-num">7b</span>
+</div>
+
+<!-- SLIDE 8: Fill in THE ONLY GOAL -->
+<div class="slide slide-content">
+    <h2>THE ONLY GOAL</h2>
+    <p style="font-size: 1.8rem; margin-top: 30px;">By the end of today, I will...</p>
+    <div class="worksheet-prompt" style="margin-top: 30px; padding: 40px;">
+        <h4>📝 WORKSHEET: Write your goal now</h4>
+        <p>What ONE thing will you accomplish by 5pm today?</p>
+        <p style="margin-top: 15px; font-size: 1.1rem; color: var(--black);">Examples: "Submit my first Sources Sought response" / "Find 3 opportunities in my NAICS" / "Contact 1 OSDBU"</p>
+    </div>
+    <span class="slide-num">8</span>
+</div>
+
+<!-- SLIDE 9: Community -->
+<div class="slide slide-center">
+    <h2>Show you how our Community<br>can help ...</h2>
+    <p style="font-size: 1.3rem; color: var(--gray); margin-top: 30px;">You're not doing this alone.<br>Pro members support each other.</p>
+    <span class="slide-num">9</span>
+</div>
+
+<!-- SLIDE 10: Agenda Part 1 -->
+<div class="slide slide-content">
+    <h2>Today's Agenda</h2>
+    <div class="agenda-item">
+        <span class="time">9:00 - 10:00</span>
+        <span class="title">STEP 1: Agency Targeting with Market Assassin</span>
+    </div>
+    <div class="agenda-item">
+        <span class="time">10:00 - 10:45</span>
+        <span class="title">STEP 2: Agency Pain Points</span>
+    </div>
+    <div class="agenda-item">
+        <span class="time">10:45 - 11:00</span>
+        <span class="title">BREAK</span>
+    </div>
+    <div class="agenda-item">
+        <span class="time">11:00 - 11:45</span>
+        <span class="title">STEP 3: AI Prompts for GovCon</span>
+    </div>
+    <div class="agenda-item">
+        <span class="time">11:45 - 12:30</span>
+        <span class="title">STEP 4: Capability Statement</span>
+    </div>
+    <div class="agenda-item">
+        <span class="time">12:30 - 1:15</span>
+        <span class="title">LUNCH</span>
+    </div>
+    <span class="slide-num">10</span>
+</div>
+
+<!-- SLIDE 11: Agenda Part 2 -->
+<div class="slide slide-content">
+    <h2>Today's Agenda (cont'd)</h2>
+    <div class="agenda-item">
+        <span class="time">1:15 - 2:15</span>
+        <span class="title">STEP 5: Opportunity Research – The Hit List Method</span>
+    </div>
+    <div class="agenda-item">
+        <span class="time">2:15 - 2:30</span>
+        <span class="title">BREAK</span>
+    </div>
+    <div class="agenda-item">
+        <span class="time">2:30 - 3:30</span>
+        <span class="title">STEP 6: Sources Sought & RFI Response</span>
+    </div>
+    <div class="agenda-item">
+        <span class="time">3:30 - 4:30</span>
+        <span class="title">STEP 7: Expiring Contracts</span>
+    </div>
+    <div class="agenda-item">
+        <span class="time">4:30 - 5:00</span>
+        <span class="title">Q&A + 24-Hour Commitment + Next Steps</span>
+    </div>
+    <span class="slide-num">11</span>
+</div>
+
+<!-- SLIDE 12: 7 Steps Overview -->
+<div class="slide slide-content">
+    <h2>With the <span class="green">One-Page Execution Sheet</span><br>you will learn ...</h2>
+    <div class="process-row">
+        <div class="process-step">
+            <div class="num">1</div>
+            <h4>Agency Targeting</h4>
+        </div>
+        <div class="process-step">
+            <div class="num">2</div>
+            <h4>Pain Points</h4>
+        </div>
+        <div class="process-step">
+            <div class="num">3</div>
+            <h4>AI Prompts</h4>
+        </div>
+        <div class="process-step">
+            <div class="num">4</div>
+            <h4>Cap Statement</h4>
+        </div>
+        <div class="process-step">
+            <div class="num">5</div>
+            <h4>Opportunity</h4>
+        </div>
+        <div class="process-step">
+            <div class="num">6</div>
+            <h4>Response Plan</h4>
+        </div>
+        <div class="process-step">
+            <div class="num">7</div>
+            <h4>Expiring</h4>
+        </div>
+    </div>
+    <div class="green-box" style="margin-top: 30px;">
+        <p style="text-align: center; font-size: 1.2rem;"><strong>By 5pm today, your worksheet will be COMPLETE with real agencies, real opportunities, and a real action plan.</strong></p>
+    </div>
+    <span class="slide-num">12</span>
+</div>
+
+<!-- ==================== STEP 1: AGENCY TARGETING (13-25) ==================== -->
+
+<!-- SLIDE 13: Step 1 Title -->
+<div class="slide slide-center" style="background: var(--green); color: white;">
+    <p style="font-size: 1.2rem; letter-spacing: 3px;">STEP 1 OF 7</p>
+    <h1 style="font-size: 3rem; margin-top: 20px;">AGENCY TARGETING</h1>
+    <p style="font-size: 1.5rem; margin-top: 20px;">with Market Assassin</p>
+    <p style="margin-top: 40px; font-size: 1.2rem;">9:00 AM - 10:00 AM (60 min)</p>
+    <span class="slide-num" style="color: white;">13</span>
+</div>
+
+<!-- SLIDE 14: The Problem -->
+<div class="slide slide-center">
+    <h2>Most small businesses chase<br>every opportunity they see</h2>
+    <p style="font-size: 1.4rem; color: var(--gray); margin-top: 30px;">Without a targeting strategy, you waste time bidding<br>on contracts you'll never win.</p>
+    <span class="slide-num">14</span>
+</div>
+
+<!-- SLIDE 15: The Solution -->
+<div class="slide slide-center">
+    <h2>The solution?</h2>
+    <p class="big-number" style="margin-top: 20px;">FOCUS</p>
+    <p style="font-size: 1.4rem; color: var(--gray); margin-top: 20px;">Pick 1-3 agencies. Go deep, not wide.</p>
+    <span class="slide-num">15</span>
+</div>
+
+<!-- SLIDE 16: What is Market Assassin -->
+<div class="slide slide-content">
+    <h2>What is <span class="green">Market Assassin</span>?</h2>
+    <ul class="bullets">
+        <li>Our proprietary research tool that identifies YOUR target agencies</li>
+        <li>Analyzes billions in federal contract spending data</li>
+        <li>Generates 8 strategic reports from just 5 inputs</li>
+        <li>Shows you where agencies spend money in YOUR industry</li>
+        <li>Identifies government buyers and decision-makers</li>
+    </ul>
+    <div class="highlight-box">
+        <p><strong>Pro members:</strong> You have Market Assassin Standard (4 reports). Premium generates 8.</p>
+    </div>
+    <span class="slide-num">16</span>
+</div>
+
+<!-- SLIDE 17: The 5 Inputs -->
+<div class="slide slide-content">
+    <h2>The 5 Inputs You'll Enter</h2>
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Input</th>
+            <th>Example</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Certification</td>
+            <td>8(a), WOSB, SDVOSB, HUBZone, etc.</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>ZIP Code</td>
+            <td>Your business location</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>PSC (Product Service Code)</td>
+            <td>R425 (Engineering Services)</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>NAICS</td>
+            <td>541330 (Engineering)</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Target Agencies</td>
+            <td>Army, VA, DHS</td>
+        </tr>
+    </table>
+    <span class="slide-num">17</span>
+</div>
+
+<!-- SLIDE 18: Don't know your codes? -->
+<div class="slide slide-center">
+    <h2>Don't know your PSC or NAICS?</h2>
+    <p style="font-size: 1.5rem; margin-top: 30px;">We'll help you identify the right ones<br>during the workshop.</p>
+    <div class="green-box" style="margin-top: 30px; max-width: 600px;">
+        <p style="text-align: center;"><strong>Quick tip:</strong> Look at your SAM.gov registration or past contracts for clues.</p>
+    </div>
+    <span class="slide-num">18</span>
+</div>
+
+<!-- SLIDE 19: 7 Reports Generated -->
+<div class="slide slide-content">
+    <h2>7 Reports Generated Instantly</h2>
+    <div class="two-col">
+        <div>
+            <ul class="simple">
+                <li><strong>1. Analytics</strong> – spending patterns</li>
+                <li><strong>2. Government Buyers</strong> – COs and OSDBU</li>
+                <li><strong>3. OSBP Contacts</strong> – small business offices</li>
+                <li><strong>4. Subcontracting</strong> – prime partners</li>
+            </ul>
+        </div>
+        <div>
+            <ul class="simple">
+                <li><strong>5. IDV Contracts</strong> – vehicle opportunities</li>
+                <li><strong>6. Similar Awards</strong> – comparable contracts</li>
+                <li><strong>7. Tribal</strong> – teaming partners</li>
+            </ul>
+        </div>
+    </div>
+    <span class="slide-num">19</span>
+</div>
+
+<!-- SLIDE 20: Screenshot placeholder -->
+<div class="slide slide-content">
+    <h2>Market Assassin Demo</h2>
+    <div class="screenshot">
+        [LIVE DEMO: Market Assassin Dashboard]
+    </div>
+    <span class="slide-num">20</span>
+</div>
+
+<!-- SLIDE 21: How to pick target agencies -->
+<div class="slide slide-content">
+    <h2>How to Pick Your Target Agencies</h2>
+    <ul class="bullets">
+        <li>Look at where your NAICS gets the most spending</li>
+        <li>Check which agencies have small business set-asides</li>
+        <li>Consider geographic proximity (local offices)</li>
+        <li>Look for agencies with missions that match your services</li>
+        <li>Start with 1-3 agencies, not 10+</li>
+    </ul>
+    <div class="highlight-box">
+        <p><strong>Remember:</strong> It's better to be known by 3 agencies than unknown by 30.</p>
+    </div>
+    <span class="slide-num">21</span>
+</div>
+
+<!-- SLIDE 22: Agency hierarchy -->
+<div class="slide slide-content">
+    <h2>Understanding Agency Hierarchy</h2>
+    <p>When you search SAM.gov, use the parent agency code:</p>
+    <table style="margin-top: 20px;">
+        <tr>
+            <th>Agency</th>
+            <th>Code</th>
+        </tr>
+        <tr>
+            <td>Department of Defense</td>
+            <td>9700</td>
+        </tr>
+        <tr>
+            <td>Department of Army</td>
+            <td>2100</td>
+        </tr>
+        <tr>
+            <td>Department of Veterans Affairs</td>
+            <td>3600</td>
+        </tr>
+        <tr>
+            <td>Department of Homeland Security</td>
+            <td>7000</td>
+        </tr>
+        <tr>
+            <td>Health and Human Services</td>
+            <td>7500</td>
+        </tr>
+    </table>
+    <span class="slide-num">22</span>
+</div>
+
+<!-- SLIDE 23: 3 Things to Search for Your Agency -->
+<div class="slide slide-content">
+    <h2>3 Things to Search for Your Agency</h2>
+    <ul class="bullets" style="margin-top: 30px;">
+        <li><strong>Industry Days</strong> – networking events where agencies meet vendors</li>
+        <li><strong>Forecast Opportunities</strong> – upcoming contracts before they drop</li>
+        <li><strong>Recompete Contracts</strong> – expiring contracts coming back up for bid</li>
+    </ul>
+    <div class="highlight-box" style="margin-top: 30px;">
+        <p><strong>Use your agency code from Market Assassin to filter these searches.</strong></p>
+    </div>
+    <span class="slide-num">23</span>
+</div>
+
+<!-- SLIDE 24: WORKSHEET - Agency Targeting -->
+<div class="slide slide-content">
+    <div class="step-header">📝 WORKSHEET TIME</div>
+    <h2>Step 1: Agency Targeting (10 min)</h2>
+    <div class="worksheet-prompt">
+        <h4>Fill in your worksheet NOW:</h4>
+        <p><strong>Agency I will focus on:</strong> _______________________</p>
+        <p style="margin-top: 10px;"><strong>Why they buy what I sell:</strong> _______________________</p>
+        <p style="margin-top: 10px;"><strong>Buyer / OSDBU / CO Name (if known):</strong> _______________________</p>
+    </div>
+    <div class="green-box" style="margin-top: 20px;">
+        <p><strong>Do this for 3 agencies.</strong> If you don't know the buyer name yet, that's okay – we'll find them.</p>
+    </div>
+    <span class="slide-num">24</span>
+</div>
+
+<!-- SLIDE 25: Step 1 Complete -->
+<div class="slide slide-center">
+    <p style="font-size: 1.2rem; color: var(--green);">✓ STEP 1 COMPLETE</p>
+    <h2 style="margin-top: 20px;">You now have 3 target agencies</h2>
+    <p style="font-size: 1.3rem; color: var(--gray); margin-top: 20px;">Next: Understand their pain points<br>so you can position as the solution.</p>
+    <span class="slide-num">25</span>
+</div>
+
+<!-- ==================== STEP 2: PAIN POINTS (26-35) ==================== -->
+
+<!-- SLIDE 26: Step 2 Title -->
+<div class="slide slide-center" style="background: #E53935; color: white;">
+    <p style="font-size: 1.2rem; letter-spacing: 3px;">STEP 2 OF 7</p>
+    <h1 style="font-size: 3rem; margin-top: 20px;">AGENCY PAIN POINTS<br>& PRIORITIES</h1>
+    <p style="font-size: 1.5rem; margin-top: 20px;">Using Your Market Assassin Reports</p>
+    <p style="margin-top: 40px; font-size: 1.2rem;">10:00 AM - 10:45 AM (45 min)</p>
+    <span class="slide-num" style="color: white;">26</span>
+</div>
+
+<!-- SLIDE 27: Where to Find Pain Points -->
+<div class="slide slide-content">
+    <h2>Your Market Assassin Reports Show You:</h2>
+    <ul class="bullets">
+        <li><strong>Agency Spending Report</strong> – what they're buying</li>
+        <li><strong>Set-Aside Analysis</strong> – small business goals they must meet</li>
+        <li><strong>Competition Analysis</strong> – gaps in the vendor pool</li>
+        <li><strong>Government Buyers</strong> – who to contact about priorities</li>
+    </ul>
+    <div class="highlight-box">
+        <p><strong>Your reports tell you what agencies NEED. Now position yourself as the solution.</strong></p>
+    </div>
+    <span class="slide-num">27</span>
+</div>
+
+<!-- SLIDE 28: Pain Points vs Priorities -->
+<div class="slide slide-center">
+    <h2>Pain Points vs Priorities</h2>
+    <p style="font-size: 1.6rem; margin-top: 40px;">
+        <strong class="red">Pain Point:</strong> A problem they MUST solve<br><br>
+        <strong class="green">Priority:</strong> Where they're spending money NOW
+    </p>
+    <p style="font-size: 1.4rem; margin-top: 40px; color: var(--gray);">Your Market Assassin reports reveal both.</p>
+    <span class="slide-num">28</span>
+</div>
+
+<!-- SLIDE 29: Common Pain Points -->
+<div class="slide slide-content">
+    <h2>Common Agency Pain Points</h2>
+    <ul class="bullets">
+        <li><strong>Small Business Goals</strong> – must meet spending mandates</li>
+        <li><strong>Incumbent Fatigue</strong> – want to switch vendors</li>
+        <li><strong>Limited Vendor Pool</strong> – same vendors keep winning</li>
+        <li><strong>Capability Gaps</strong> – need specialized services</li>
+    </ul>
+    <div class="highlight-box">
+        <p><strong>Look at your Set-Aside Analysis report</strong> – are they meeting their SB goals?</p>
+    </div>
+    <span class="slide-num">29</span>
+</div>
+
+<!-- SLIDE 29b: Common Priorities -->
+<div class="slide slide-content">
+    <h2>Common Agency Priorities</h2>
+    <ul class="bullets">
+        <li><strong>Mission-Critical Services</strong> – what they're buying most</li>
+        <li><strong>Modernization</strong> – IT, cybersecurity, cloud</li>
+        <li><strong>Geographic Coverage</strong> – need contractors in specific regions</li>
+        <li><strong>Year-End Spending</strong> – use-it-or-lose-it budget pressure</li>
+    </ul>
+    <div class="highlight-box">
+        <p><strong>Look at your Agency Spending report</strong> – where is the money flowing?</p>
+    </div>
+    <span class="slide-num">29b</span>
+</div>
+
+<!-- SLIDE 30: We Solve This Problem -->
+<div class="slide slide-content">
+    <h2>Frame Everything Around <span class="green">Their Goals</span></h2>
+    <p style="margin-bottom: 25px;">You're not asking for a favor. You're offering to solve their problem.</p>
+    <div class="two-col">
+        <div>
+            <h3 class="red">DON'T Say:</h3>
+            <ul class="simple">
+                <li>"I'm looking for opportunities..."</li>
+                <li>"We'd love to work with you..."</li>
+                <li>"Can you keep us in mind..."</li>
+                <li>"We need contracts to grow..."</li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="green">DO Say:</h3>
+            <ul class="simple">
+                <li><strong>"We solve [specific problem]..."</strong></li>
+                <li>"Here's how we reduce your risk..."</li>
+                <li>"We've delivered [result] for [agency]..."</li>
+            </ul>
+        </div>
+    </div>
+    <div class="highlight-box" style="margin-top: 20px;">
+        <p><strong>Ask yourself: "What's in it for THEM?"</strong></p>
+    </div>
+    <span class="slide-num">30</span>
+</div>
+
+<!-- SLIDE 31: How to Position -->
+<div class="slide slide-content">
+    <h2>How to Position as the Solution</h2>
+    <ul class="bullets">
+        <li>Lead with how you solve THEIR problem, not what you sell</li>
+        <li>Speak to their pain in your capability statement</li>
+        <li>Make it easy for them to check the box</li>
+        <li>Show up where they're looking (industry days, SAM, APEX)</li>
+        <li>Be the obvious choice when they need a small business</li>
+    </ul>
+    <span class="slide-num">31</span>
+</div>
+
+<!-- SLIDE 33: The Mindset Shift -->
+<div class="slide slide-center">
+    <p style="font-size: 1.2rem; color: var(--gray);">THE MINDSET SHIFT</p>
+    <h2 style="margin-top: 20px;">Stop thinking:<br>"How do I win contracts?"</h2>
+    <h2 style="margin-top: 30px; color: var(--green);">Start thinking:<br>"How do I help this agency<br>meet their goals?"</h2>
+    <span class="slide-num">33</span>
+</div>
+
+<!-- SLIDE 34: WORKSHEET - Pain Points -->
+<div class="slide slide-content">
+    <div class="step-header">📝 WORKSHEET TIME</div>
+    <h2>Step 2: Pain Points & Priorities (10 min)</h2>
+    <div class="worksheet-prompt">
+        <h4>Using your Market Assassin reports, fill in:</h4>
+        <p><strong>Name of Agency:</strong> _______________________</p>
+        <p style="margin-top: 10px;"><strong>Top 1 pain point OR priority:</strong> _______________________</p>
+        <p style="margin-top: 10px;"><strong>How my business fixes it (plain English):</strong> _______________________</p>
+    </div>
+    <div class="green-box" style="margin-top: 20px;">
+        <p><strong>Do this for all 3 agencies from Step 1.</strong> Use your reports to find the data!</p>
+    </div>
+    <span class="slide-num">34</span>
+</div>
+
+<!-- SLIDE 35: Step 2 Complete -->
+<div class="slide slide-center">
+    <p style="font-size: 1.2rem; color: var(--green);">✓ STEP 2 COMPLETE</p>
+    <h2 style="margin-top: 20px;">You know their pain points & priorities.<br>You know how you solve them.</h2>
+    <p style="font-size: 1.3rem; color: var(--gray); margin-top: 20px;">Next: Use AI to accelerate everything.</p>
+    <span class="slide-num">35</span>
+</div>
+
+<!-- ==================== BREAK ==================== -->
+
+<!-- SLIDE 36: Break -->
+<div class="slide slide-center" style="background: var(--light-gray);">
+    <p style="font-size: 4rem;">☕</p>
+    <h2 style="margin-top: 20px;">15-Minute Break</h2>
+    <p style="font-size: 1.3rem; color: var(--gray); margin-top: 20px;">10:45 AM - 11:00 AM</p>
+    <p style="margin-top: 30px;">Stretch. Refill coffee. Check your worksheet.</p>
+    <span class="slide-num">36</span>
+</div>
+
+<!-- ==================== STEP 3: AI PROMPTS (37-55) ==================== -->
+
+<!-- SLIDE 37: Step 3 Title -->
+<div class="slide slide-center" style="background: #7C3AED; color: white;">
+    <p style="font-size: 1.2rem; letter-spacing: 3px;">STEP 3 OF 7</p>
+    <h1 style="font-size: 3rem; margin-top: 20px;">AI PROMPTS</h1>
+    <p style="font-size: 1.5rem; margin-top: 20px;">for Government Contracting</p>
+    <p style="margin-top: 40px; font-size: 1.2rem;">11:00 AM - 11:45 AM (45 min)</p>
+    <span class="slide-num" style="color: white;">37</span>
+</div>
+
+<!-- SLIDE 38: AI Won't Replace You -->
+<div class="slide slide-center">
+    <h2>AI won't replace you.</h2>
+    <h2 style="color: var(--green); margin-top: 20px;">Contractors using AI will.</h2>
+    <span class="slide-num">38</span>
+</div>
+
+<!-- SLIDE 38b: How Market Assassin Finds Pain Points -->
+<div class="slide slide-content">
+    <h2>How We Find Pain Points & Priorities</h2>
+    <p>Market Assassin uses AI + data to identify agency needs:</p>
+    <ul class="bullets" style="margin-top: 25px;">
+        <li>Analyze agency strategic plans and budget documents</li>
+        <li>Cross-reference with USAspending.gov spending data</li>
+        <li>Match NAICS codes to agency requirements</li>
+        <li>Track FY2026 NDAA mandates and compliance deadlines</li>
+    </ul>
+    <div class="highlight-box">
+        <p><strong>You can do this too!</strong> Here's where to look and what prompts to use.</p>
+    </div>
+    <span class="slide-num">38b</span>
+</div>
+
+<!-- SLIDE 38c: Data Sources Part 1 -->
+<div class="slide slide-content">
+    <h2>Where to Find Agency Pain Points</h2>
+    <p>These are the sources we use to build Market Assassin reports:</p>
+    <div class="two-col" style="margin-top: 25px;">
+        <div>
+            <h3 class="green">Spending Data</h3>
+            <ul class="simple">
+                <li><strong>USAspending.gov</strong> – all federal contracts</li>
+                <li><strong>FPDS.gov</strong> – procurement data</li>
+                <li><strong>SAM.gov</strong> – active opportunities</li>
+                <li><strong>GovWin/GovTribe</strong> – market intel</li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="green">Strategic Documents</h3>
+            <ul class="simple">
+                <li><strong>Agency Strategic Plans</strong></li>
+                <li><strong>Congressional Budget Justifications</strong></li>
+                <li><strong>IG Reports</strong> – what's broken</li>
+                <li><strong>GAO Reports</strong> – audit findings</li>
+            </ul>
+        </div>
+    </div>
+    <span class="slide-num">38c</span>
+</div>
+
+<!-- SLIDE 38d: Data Sources Part 2 -->
+<div class="slide slide-content">
+    <h2>More Sources for Pain Points</h2>
+    <div class="two-col">
+        <div>
+            <h3 class="green">Regulatory & Policy</h3>
+            <ul class="simple">
+                <li><strong>FY2026 NDAA</strong> – new mandates</li>
+                <li><strong>OMB Memos</strong> – directives</li>
+                <li><strong>Executive Orders</strong></li>
+                <li><strong>Agency forecasts</strong></li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="green">Industry Intel</h3>
+            <ul class="simple">
+                <li><strong>Industry Days</strong> – live priorities</li>
+                <li><strong>Sources Sought</strong> – what they need</li>
+                <li><strong>RFIs</strong> – market research</li>
+                <li><strong>Prime contractor websites</strong></li>
+            </ul>
+        </div>
+    </div>
+    <div class="green-box">
+        <h4>Pro Tip:</h4>
+        <p>Agency pain points are usually budget problems, compliance deadlines, or aging systems.</p>
+    </div>
+    <span class="slide-num">38d</span>
+</div>
+
+<!-- SLIDE 39: AI Prompt - Find Agency Pain Points -->
+<div class="slide slide-content">
+    <h2>AI Prompt: Find Agency Pain Points</h2>
+    <div class="code-block">
+        <p>"Research [AGENCY NAME] and identify their top pain points and priorities for FY2026. Look at:</p>
+        <p style="margin-top: 8px;">1. Their strategic plan and stated goals</p>
+        <p>2. Recent IG or GAO audit findings</p>
+        <p>3. Budget justification documents</p>
+        <p>4. Any FY2026 NDAA requirements affecting them</p>
+        <p style="margin-top: 8px;">List their top 5 pain points with a brief explanation of why each is urgent."</p>
+    </div>
+    <span class="slide-num">39</span>
+</div>
+
+<!-- SLIDE 39b: AI Prompt - NAICS to Agency Needs -->
+<div class="slide slide-content">
+    <h2>AI Prompt: Match Your NAICS to Needs</h2>
+    <div class="code-block">
+        <p>"I have NAICS code [YOUR NAICS] which covers [YOUR SERVICES].</p>
+        <p style="margin-top: 8px;">For [AGENCY NAME], identify:</p>
+        <p>1. Which offices or programs buy these services</p>
+        <p>2. What problems they're trying to solve with this NAICS</p>
+        <p>3. Recent contract awards in this NAICS at this agency</p>
+        <p>4. Upcoming recompetes or new requirements</p>
+        <p style="margin-top: 8px;">Focus on specific, actionable opportunities."</p>
+    </div>
+    <span class="slide-num">39b</span>
+</div>
+
+<!-- SLIDE 40: AI Prompt - Spending Analysis -->
+<div class="slide slide-content">
+    <h2>AI Prompt: Analyze Spending Data</h2>
+    <div class="code-block">
+        <p>"Using USAspending.gov data, analyze [AGENCY NAME] spending patterns:</p>
+        <p style="margin-top: 8px;">1. Top NAICS codes they spend on</p>
+        <p>2. Average contract sizes in my NAICS [CODE]</p>
+        <p>3. Which contracting offices award the most</p>
+        <p>4. Set-aside trends (8(a), SDVOSB, HUBZone, etc.)</p>
+        <p>5. Q4/September spending surge patterns</p>
+        <p style="margin-top: 8px;">Format as a market intelligence brief."</p>
+    </div>
+    <span class="slide-num">40</span>
+</div>
+
+<!-- SLIDE 40b: AI Prompt - NDAA Compliance Needs -->
+<div class="slide slide-content">
+    <h2>AI Prompt: FY2026 NDAA Opportunities</h2>
+    <div class="code-block">
+        <p>"What FY2026 NDAA requirements create contracting opportunities in [YOUR SERVICE AREA]?</p>
+        <p style="margin-top: 8px;">Look for:</p>
+        <p>1. New mandates with compliance deadlines</p>
+        <p>2. Required studies or assessments</p>
+        <p>3. Technology modernization requirements</p>
+        <p>4. Small business provisions</p>
+        <p style="margin-top: 8px;">Tell me which agencies must act and by when."</p>
+    </div>
+    <span class="slide-num">40b</span>
+</div>
+
+<!-- SLIDE 41: AI Prompt - If Not in Step 2 -->
+<div class="slide slide-content">
+    <h2>Didn't Find Your Agency in Step 2?</h2>
+    <p style="font-size: 1.3rem;">Use this prompt to research any agency:</p>
+    <div class="code-block">
+        <p>"I'm researching [AGENCY NAME] for government contracting opportunities in [YOUR SERVICE]. Give me:</p>
+        <p style="margin-top: 6px;">1. Their mission and organizational structure</p>
+        <p>2. Top 3-5 pain points they're facing in 2026</p>
+        <p>3. Their small business contracting goals</p>
+        <p>4. Key contracting offices and contacts</p>
+        <p>5. What they're buying in NAICS [CODE]</p>
+        <p style="margin-top: 6px;">Include links to their strategic plan and forecast."</p>
+    </div>
+    <span class="slide-num">41</span>
+</div>
+
+<!-- SLIDE 41b: Building Your Own Pain Points Database -->
+<div class="slide slide-content">
+    <h2>Build Your Own Pain Points Database</h2>
+    <div class="icon-text">
+        <span class="icon">📊</span>
+        <div class="text">
+            <h3>Track What You Learn</h3>
+            <p>Every conversation, industry day, and document reveals pain points</p>
+        </div>
+    </div>
+    <ul class="simple" style="margin-top: 15px;">
+        <li><strong>Create a spreadsheet:</strong> Agency | Pain Point | Source | Date</li>
+        <li><strong>Note urgency:</strong> Is it a compliance deadline? Budget issue?</li>
+        <li><strong>Connect to your services:</strong> How do you solve this?</li>
+        <li><strong>Update quarterly:</strong> Pain points change with budgets</li>
+    </ul>
+    <span class="slide-num">41b</span>
+</div>
+
+<!-- SLIDE 42: Sample Prompt - Agency Research -->
+<div class="slide slide-content">
+    <h2>Sample Prompt: Agency Research</h2>
+    <div class="code-block">
+        <p>"I'm a [YOUR CERTIFICATION] small business that provides [YOUR SERVICE]. Research [AGENCY NAME] and tell me:</p>
+        <p style="margin-top: 8px;">1. Their top 3 spending priorities this fiscal year</p>
+        <p>2. Recent contracts awarded in my NAICS [CODE]</p>
+        <p>3. Key program offices that might need my services</p>
+        <p>4. Any small business goals they're struggling to meet</p>
+        <p style="margin-top: 8px;">Format as a brief I can use to prepare for outreach."</p>
+    </div>
+    <span class="slide-num">43</span>
+</div>
+
+<!-- SLIDE 44: Sample Prompt - Outreach Email -->
+<div class="slide slide-content">
+    <h2>Sample Prompt: Outreach Email</h2>
+    <div class="code-block">
+        <p>"Write a brief introduction email to a Small Business Liaison Officer at [AGENCY]. I'm a [CERTIFICATION] business that provides [SERVICE]. I want to introduce my company and request an informational meeting.</p>
+        <p style="margin-top: 8px;">Keep it under 150 words. Professional but not stiff. Include a clear ask."</p>
+    </div>
+    <span class="slide-num">44</span>
+</div>
+
+<!-- SLIDE 45: Sample Prompt - Cap Statement -->
+<div class="slide slide-content">
+    <h2>Sample Prompt: Capability Statement</h2>
+    <div class="code-block">
+        <p>"Create a capability statement for my company:</p>
+        <p style="margin-top: 6px;">- Company: [NAME] | Services: [LIST] | Certifications: [LIST]</p>
+        <p>- NAICS: [CODES] | Past Performance: [BRIEF SUMMARY]</p>
+        <p style="margin-top: 6px;">Format with clear sections: Core Competencies, Differentiators, Past Performance, Company Data. Keep it to 1 page worth of content."</p>
+    </div>
+    <span class="slide-num">45</span>
+</div>
+
+<!-- SLIDE 46: Live Demo -->
+<div class="slide slide-content">
+    <h2>LIVE: Using AI with YOUR Info</h2>
+    <div class="screenshot">
+        [LIVE DEMO: ChatGPT / Claude with real prompts]
+    </div>
+    <span class="slide-num">46</span>
+</div>
+
+<!-- SLIDE 47: What to Create with AI -->
+<div class="slide slide-content">
+    <h2>What Can You Create with AI Today?</h2>
+    <table>
+        <tr>
+            <th>Document</th>
+            <th>Time with AI</th>
+            <th>Time without AI</th>
+        </tr>
+        <tr>
+            <td>Capability Statement Draft</td>
+            <td class="green">10 minutes</td>
+            <td>2-4 hours</td>
+        </tr>
+        <tr>
+            <td>RFI Response</td>
+            <td class="green">15 minutes</td>
+            <td>3-5 hours</td>
+        </tr>
+        <tr>
+            <td>Outreach Email</td>
+            <td class="green">2 minutes</td>
+            <td>30 minutes</td>
+        </tr>
+        <tr>
+            <td>Past Performance Write-up</td>
+            <td class="green">10 minutes</td>
+            <td>1-2 hours</td>
+        </tr>
+    </table>
+    <span class="slide-num">47</span>
+</div>
+
+<!-- SLIDE 48: AI Caution -->
+<div class="slide slide-center">
+    <h2>⚠️ AI Caution</h2>
+    <p style="font-size: 1.4rem; margin-top: 30px;">AI gives you a <strong>draft</strong>, not a final product.</p>
+    <p style="font-size: 1.4rem; margin-top: 20px;">Always review. Always fact-check.</p>
+    <p style="font-size: 1.4rem; margin-top: 20px;">Never submit AI output without editing.</p>
+    <span class="slide-num">48</span>
+</div>
+
+<!-- SLIDE 49: WORKSHEET - AI Prompt -->
+<div class="slide slide-content">
+    <div class="step-header">📝 WORKSHEET TIME</div>
+    <h2>Step 3: AI Prompt to Use (5 min)</h2>
+    <div class="worksheet-prompt">
+        <h4>Fill in your worksheet NOW:</h4>
+        <p><strong>Prompt I will use right now:</strong> _______________________</p>
+        <p style="margin-top: 15px;"><strong>What I'm creating with AI:</strong></p>
+        <p style="margin-top: 5px;">☐ Capability Statement  ☐ RFI  ☐ Quote  ☐ Email  ☐ Proposal Section</p>
+    </div>
+    <div class="green-box" style="margin-top: 20px;">
+        <p><strong>Pick ONE thing to create with AI during lunch.</strong> You have the 75 prompts document – use it!</p>
+    </div>
+    <span class="slide-num">49</span>
+</div>
+
+<!-- SLIDE 50: Step 3 Complete -->
+<div class="slide slide-center">
+    <p style="font-size: 1.2rem; color: var(--green);">✓ STEP 3 COMPLETE</p>
+    <h2 style="margin-top: 20px;">You have your AI prompt selected</h2>
+    <p style="font-size: 1.3rem; color: var(--gray); margin-top: 20px;">Next: Build your capability statement core.</p>
+    <span class="slide-num">50</span>
+</div>
+
+<!-- ==================== STEP 4: CAPABILITY STATEMENT (51-60) ==================== -->
+
+<!-- SLIDE 51: Step 4 Title -->
+<div class="slide slide-center" style="background: #0891B2; color: white;">
+    <p style="font-size: 1.2rem; letter-spacing: 3px;">STEP 4 OF 7</p>
+    <h1 style="font-size: 3rem; margin-top: 20px;">CAPABILITY STATEMENT</h1>
+    <p style="font-size: 1.5rem; margin-top: 20px;">That Actually Wins</p>
+    <p style="margin-top: 40px; font-size: 1.2rem;">11:45 AM - 12:30 PM (45 min)</p>
+    <span class="slide-num" style="color: white;">51</span>
+</div>
+
+<!-- SLIDE 52: What is a Cap Statement -->
+<div class="slide slide-content">
+    <h2>What is a Capability Statement?</h2>
+    <ul class="bullets">
+        <li>Your 1-2 page business resume for government buyers</li>
+        <li>First impression – often the ONLY thing they see</li>
+        <li>Must answer: Who are you? What do you do? Why you?</li>
+        <li>Should be tailored to each agency (not one-size-fits-all)</li>
+    </ul>
+    <div class="highlight-box">
+        <p><strong>Think of it like a dating profile for government buyers.</strong> Make it easy for them to say yes.</p>
+    </div>
+    <span class="slide-num">52</span>
+</div>
+
+<!-- SLIDE 53: Why Most Fail -->
+<div class="slide slide-content">
+    <h2>Why Most Cap Statements <span class="red">FAIL</span></h2>
+    <h3 class="red">❌ What They Do Wrong</h3>
+    <ul class="simple">
+        <li>Generic "we do everything" messaging</li>
+        <li>No specific agency focus</li>
+        <li>Missing key certifications</li>
+        <li>Cluttered, hard to read</li>
+        <li>No clear differentiator</li>
+    </ul>
+    <span class="slide-num">53</span>
+</div>
+
+<!-- SLIDE 54: What Winners Do -->
+<div class="slide slide-content">
+    <h2>What <span class="green">Winners</span> Do</h2>
+    <h3 class="green">✓ Cap Statements That Work</h3>
+    <ul class="simple">
+        <li>Tailored to specific agency</li>
+        <li>Clear, scannable format</li>
+        <li>Certifications prominent</li>
+        <li>Relevant past performance</li>
+        <li>Specific capabilities listed</li>
+        <li>Contact info that works</li>
+    </ul>
+    <span class="slide-num">54</span>
+</div>
+
+<!-- SLIDE 55: The 6 Sections -->
+<div class="slide slide-content">
+    <h2>The 6 Essential Sections</h2>
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Section</th>
+            <th>What to Include</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Company Snapshot</td>
+            <td>Name, DUNS/UEI, CAGE, certifications</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Core Capabilities</td>
+            <td>3-5 specific services you provide</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Differentiators</td>
+            <td>Why choose you over competitors?</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Past Performance</td>
+            <td>2-3 relevant contracts/projects</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>NAICS/PSC Codes</td>
+            <td>Your industry codes</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Contact Info</td>
+            <td>Name, email, phone</td>
+        </tr>
+    </table>
+    <span class="slide-num">55</span>
+</div>
+
+<!-- SLIDE 56: What I Do (1 sentence) -->
+<div class="slide slide-center">
+    <h2>Can you describe what you do<br>in ONE sentence?</h2>
+    <p style="font-size: 1.4rem; margin-top: 30px; color: var(--gray);">If you can't, neither can the buyer.</p>
+    <div class="green-box" style="margin-top: 30px; max-width: 700px;">
+        <p><strong>Example:</strong> "We provide IT help desk support for federal agencies with 24/7 coverage and cleared personnel."</p>
+    </div>
+    <span class="slide-num">56</span>
+</div>
+
+<!-- SLIDE 57: Differentiator -->
+<div class="slide slide-content">
+    <h2>What's Your Differentiator?</h2>
+    <p>A differentiator answers: <strong>"Why should I choose you over the other 50 companies that do this?"</strong></p>
+    <ul class="simple" style="margin-top: 20px;">
+        <li><strong>Certification:</strong> "Only 8(a) WOSB in the region with this capability"</li>
+        <li><strong>Experience:</strong> "10 years supporting VA medical centers"</li>
+        <li><strong>Location:</strong> "Local presence with response time under 2 hours"</li>
+        <li><strong>Specialization:</strong> "100% focused on cybersecurity for DoD"</li>
+        <li><strong>Proof:</strong> "99.8% uptime across all contracts"</li>
+    </ul>
+    <span class="slide-num">57</span>
+</div>
+
+<!-- SLIDE 58: Template Example -->
+<div class="slide slide-content">
+    <h2>Capability Statement Template</h2>
+    <div class="screenshot">
+        [SHOW: Capability Statement Template]
+    </div>
+    <span class="slide-num">58</span>
+</div>
+
+<!-- SLIDE 59: Pro Tip - Tailor It -->
+<div class="slide slide-center">
+    <h2>Pro Tip: Create a Base,<br>Then Tailor</h2>
+    <p style="font-size: 1.4rem; margin-top: 30px;">Make one master capability statement.</p>
+    <p style="font-size: 1.4rem; margin-top: 10px;">Then customize for each target agency.</p>
+    <p style="font-size: 1.4rem; margin-top: 10px;">Different agencies = different emphasis.</p>
+    <span class="slide-num">59</span>
+</div>
+
+<!-- SLIDE 60: WORKSHEET - Cap Statement -->
+<div class="slide slide-content">
+    <div class="step-header">📝 WORKSHEET TIME</div>
+    <h2>Step 4: Capability Statement Core (10 min)</h2>
+    <div class="worksheet-prompt">
+        <h4>Fill in your worksheet NOW:</h4>
+        <p><strong>What I do (1 sentence):</strong></p>
+        <p style="margin-top: 5px;">_____________________________________________</p>
+        <p style="margin-top: 15px;"><strong>Proof / Differentiator:</strong></p>
+        <p style="margin-top: 5px;">_____________________________________________</p>
+        <p style="margin-top: 15px;"><strong>Capability Statement Link:</strong> _____________</p>
+    </div>
+    <span class="slide-num">60</span>
+</div>
+
+<!-- SLIDE 61: Step 4 Complete -->
+<div class="slide slide-center">
+    <p style="font-size: 1.2rem; color: var(--green);">✓ STEP 4 COMPLETE</p>
+    <h2 style="margin-top: 20px;">You have your capability statement core</h2>
+    <p style="font-size: 1.3rem; color: var(--gray); margin-top: 20px;">Time for lunch. Use AI to build it out!</p>
+    <span class="slide-num">61</span>
+</div>
+
+<!-- ==================== LUNCH ==================== -->
+
+<!-- SLIDE 62: Lunch -->
+<div class="slide slide-center" style="background: var(--light-gray);">
+    <p style="font-size: 4rem;">🍽️</p>
+    <h2 style="margin-top: 20px;">Lunch Break</h2>
+    <p style="font-size: 1.3rem; color: var(--gray); margin-top: 20px;">12:30 PM - 1:15 PM (45 min)</p>
+    <div class="green-box" style="margin-top: 30px; max-width: 500px;">
+        <p><strong>Homework during lunch:</strong> Use your AI prompt to create one document (cap statement, email, etc.)</p>
+    </div>
+    <span class="slide-num">62</span>
+</div>
+
+<!-- ==================== STEP 5: OPPORTUNITY RESEARCH (63-72) ==================== -->
+
+<!-- SLIDE 63: Step 5 Title -->
+<div class="slide slide-center" style="background: #EA580C; color: white;">
+    <p style="font-size: 1.2rem; letter-spacing: 3px;">STEP 5 OF 7</p>
+    <h1 style="font-size: 3rem; margin-top: 20px;">OPPORTUNITY RESEARCH</h1>
+    <p style="font-size: 1.5rem; margin-top: 20px;">The Hit List Method</p>
+    <p style="margin-top: 40px; font-size: 1.2rem;">1:15 PM - 2:15 PM (60 min)</p>
+    <span class="slide-num" style="color: white;">63</span>
+</div>
+
+<!-- SLIDE 64: The Big Secret -->
+<div class="slide slide-center">
+    <h2>95% of opportunities<br><span class="red">aren't posted on SAM.gov</span></h2>
+    <p style="font-size: 1.4rem; color: var(--gray); margin-top: 30px;">Task orders and IDIQs are where the real money flows.</p>
+    <span class="slide-num">64</span>
+</div>
+
+<!-- SLIDE 65: Where Opportunities Live -->
+<div class="slide slide-content">
+    <h2>Where Opportunities Actually Live</h2>
+    <table>
+        <tr>
+            <th>Source</th>
+            <th>% of Spend</th>
+            <th>Competition</th>
+        </tr>
+        <tr>
+            <td>SAM.gov (open competition)</td>
+            <td>~5%</td>
+            <td>HIGH (everyone sees it)</td>
+        </tr>
+        <tr>
+            <td>IDIQ Task Orders</td>
+            <td>~70%</td>
+            <td>LOW (contract holders only)</td>
+        </tr>
+        <tr>
+            <td>GSA Schedule Orders</td>
+            <td>~15%</td>
+            <td>MEDIUM</td>
+        </tr>
+        <tr>
+            <td>Micro-purchases</td>
+            <td>~10%</td>
+            <td>VARIES</td>
+        </tr>
+    </table>
+    <div class="highlight-box">
+        <p><strong>This is why relationships matter.</strong> Most work goes to people they already know.</p>
+    </div>
+    <span class="slide-num">65</span>
+</div>
+
+<!-- SLIDE 65b: Your Hit List -->
+<div class="slide slide-content">
+    <h2>Your <span class="green">34-Opportunity Hit List</span></h2>
+    <div class="screenshot">
+        [SHOW: Hit List Spreadsheet / Document]
+    </div>
+    <span class="slide-num">65b</span>
+</div>
+
+<!-- SLIDE 66: How We Built Your Hit List -->
+<div class="slide slide-content">
+    <h2>How We Built Your 34-Opportunity Hit List</h2>
+    <p>We searched USAspending.gov with these filters:</p>
+    <ul class="bullets" style="margin-top: 15px;">
+        <li><strong>Contract size:</strong> $10K - $10M (sweet spot for small business)</li>
+        <li><strong>Time period:</strong> Awards from last 24 months</li>
+        <li><strong>Set-asides:</strong> 8(a), SDVOSB, WOSB, HUBZone, Small Business</li>
+        <li><strong>NAICS match:</strong> Codes in your industry sector</li>
+    </ul>
+    <div class="highlight-box" style="margin-top: 20px;">
+        <p><strong>Result:</strong> Low-competition contracts where similar work was already awarded to small businesses.</p>
+    </div>
+    <span class="slide-num">66</span>
+</div>
+
+<!-- SLIDE 66b: Do It Yourself -->
+<div class="slide slide-content">
+    <h2>Build Your Own Hit List (DIY)</h2>
+    <p><strong>Go to USAspending.gov → Advanced Search → Award Search</strong></p>
+    <ul class="bullets" style="margin-top: 15px;">
+        <li><strong>Step 1:</strong> Enter YOUR NAICS code</li>
+        <li><strong>Step 2:</strong> Filter by YOUR certification set-aside type</li>
+        <li><strong>Step 3:</strong> Set award amount: $25K - $1M (less competition)</li>
+        <li><strong>Step 4:</strong> Date range: Last 12 months</li>
+        <li><strong>Step 5:</strong> Export results → These agencies BUY what you sell</li>
+    </ul>
+    <div class="green-box" style="margin-top: 15px;">
+        <p><strong>Now search SAM.gov for ACTIVE opportunities from those same agencies.</strong></p>
+    </div>
+    <span class="slide-num">66b</span>
+</div>
+
+<!-- SLIDE 66c: SBA Data Hub - Find Set-Aside Spending -->
+<div class="slide slide-content">
+    <h2>SBA Data Hub: Find Who Spends on Your Set-Aside</h2>
+    <p style="margin-bottom: 15px;"><strong>datahub.certify.sba.gov</strong> → Top Funding Offices and Vendors</p>
+    <ul class="bullets">
+        <li>Select your certification: 8(a), WOSB, HUBZone, SDVOSB</li>
+        <li>Filter by Department and Agency</li>
+        <li>See which offices spend the MOST on your set-aside type</li>
+        <li>Find the top vendors winning those contracts</li>
+    </ul>
+    <div class="highlight-box" style="margin-top: 15px;">
+        <p><strong>This tells you exactly which offices to target for YOUR certification.</strong></p>
+    </div>
+    <span class="slide-num">66c</span>
+</div>
+
+<!-- SLIDE 67: Demo SBA Data Hub -->
+<div class="slide slide-content">
+    <h2>SBA Data Hub Demo</h2>
+    <div class="screenshot">
+        [LIVE DEMO: datahub.certify.sba.gov → Top Funding Offices and Vendors]
+    </div>
+    <span class="slide-num">67</span>
+</div>
+
+<!-- SLIDE 68: Low Competition Scoring -->
+<div class="slide slide-content">
+    <h2>How We Score <span class="green">Win Probability</span></h2>
+    <table>
+        <tr>
+            <th>Factor</th>
+            <th>HIGH Win Probability</th>
+        </tr>
+        <tr>
+            <td>Contract Size</td>
+            <td>Under $250K with set-aside = HIGH</td>
+        </tr>
+        <tr>
+            <td>Set-Aside Match</td>
+            <td>Your certification matches = HIGH</td>
+        </tr>
+        <tr>
+            <td>$250K - $1M + Set-Aside</td>
+            <td>Still HIGH probability</td>
+        </tr>
+        <tr>
+            <td>Over $1M or Unrestricted</td>
+            <td>MEDIUM to LOW - more competition</td>
+        </tr>
+    </table>
+    <div class="highlight-box" style="margin-top: 15px;">
+        <p><strong>Sweet spot:</strong> $25K - $250K set-aside contracts in your NAICS = highest win rate.</p>
+    </div>
+    <span class="slide-num">68</span>
+</div>
+
+<!-- SLIDE 70: WORKSHEET - Opportunity -->
+<div class="slide slide-content">
+    <div class="step-header">📝 WORKSHEET TIME</div>
+    <h2>Step 5: Opportunity (15 min)</h2>
+    <div class="worksheet-prompt">
+        <h4>Fill in your worksheet NOW – Find 3 opportunities:</h4>
+        <p><strong>Opportunity Number:</strong> _____________</p>
+        <p><strong>Due Date:</strong> _____________</p>
+        <p><strong>Is this LOW competition?</strong> ☐ Yes  ☐ No</p>
+    </div>
+    <div class="green-box" style="margin-top: 15px;">
+        <p><strong>Use your Hit List + SAM.gov.</strong> Find opportunities you can actually respond to.</p>
+    </div>
+    <span class="slide-num">70</span>
+</div>
+
+<!-- SLIDE 71: Step 5 Complete -->
+<div class="slide slide-center">
+    <p style="font-size: 1.2rem; color: var(--green);">✓ STEP 5 COMPLETE</p>
+    <h2 style="margin-top: 20px;">You have 3 real opportunities</h2>
+    <p style="font-size: 1.3rem; color: var(--gray); margin-top: 20px;">Next: Learn how to respond to Sources Sought & RFIs.</p>
+    <span class="slide-num">71</span>
+</div>
+
+<!-- ==================== BREAK ==================== -->
+
+<!-- SLIDE 72: Break -->
+<div class="slide slide-center" style="background: var(--light-gray);">
+    <p style="font-size: 4rem;">☕</p>
+    <h2 style="margin-top: 20px;">15-Minute Break</h2>
+    <p style="font-size: 1.3rem; color: var(--gray); margin-top: 20px;">2:15 PM - 2:30 PM</p>
+    <span class="slide-num">72</span>
+</div>
+
+<!-- ==================== STEP 6: RESPONSE PLAN (73-82) ==================== -->
+
+<!-- SLIDE 73: Step 6 Title -->
+<div class="slide slide-center" style="background: #0D9488; color: white;">
+    <p style="font-size: 1.2rem; letter-spacing: 3px;">STEP 6 OF 7</p>
+    <h1 style="font-size: 3rem; margin-top: 20px;">SOURCES SOUGHT & RFI</h1>
+    <p style="font-size: 1.5rem; margin-top: 20px;">Response Plan</p>
+    <p style="margin-top: 40px; font-size: 1.2rem;">2:30 PM - 3:30 PM (60 min)</p>
+    <span class="slide-num" style="color: white;">73</span>
+</div>
+
+<!-- SLIDE 74: Get on Radar -->
+<div class="slide slide-center">
+    <h2>Get on agencies' radar<br><span class="green">BEFORE</span> contracts drop</h2>
+    <p style="font-size: 1.4rem; color: var(--gray); margin-top: 30px;">Most small businesses skip this step.<br>That's exactly why you shouldn't.</p>
+    <span class="slide-num">74</span>
+</div>
+
+<!-- SLIDE 75: What is Sources Sought -->
+<div class="slide slide-content">
+    <h2>What is a Sources Sought?</h2>
+    <ul class="bullets">
+        <li>Agency is researching the market</li>
+        <li>"Who can do this work?"</li>
+        <li>Determines if set-aside is possible</li>
+        <li>LOW effort, HIGH impact</li>
+    </ul>
+    <div class="highlight-box">
+        <p><strong>Responding can influence how agencies structure contracts – potentially in YOUR favor.</strong></p>
+    </div>
+    <span class="slide-num">75</span>
+</div>
+
+<!-- SLIDE 76: What is RFI -->
+<div class="slide slide-content">
+    <h2>What is an RFI?</h2>
+    <h3 class="green">RFI = Request for Information</h3>
+    <ul class="bullets">
+        <li>Agency needs input on approach</li>
+        <li>"How should we structure this?"</li>
+        <li>Your response shapes the RFP</li>
+        <li>Builds relationship with buyer</li>
+    </ul>
+    <span class="slide-num">76</span>
+</div>
+
+<!-- SLIDE 77: Response Template -->
+<div class="slide slide-content">
+    <h2>Sources Sought Response Template</h2>
+    <table>
+        <tr>
+            <th>Section</th>
+            <th>What to Include</th>
+        </tr>
+        <tr>
+            <td>1. Company Info</td>
+            <td>Name, CAGE, UEI, certifications, size standard</td>
+        </tr>
+        <tr>
+            <td>2. Capability Summary</td>
+            <td>How you meet the stated requirements</td>
+        </tr>
+        <tr>
+            <td>3. Relevant Experience</td>
+            <td>Similar work you've completed</td>
+        </tr>
+        <tr>
+            <td>4. Teaming Interest</td>
+            <td>Open to prime or sub opportunities</td>
+        </tr>
+        <tr>
+            <td>5. Questions/Feedback</td>
+            <td>Your input on the approach</td>
+        </tr>
+        <tr>
+            <td>6. Contact Info</td>
+            <td>POC for follow-up</td>
+        </tr>
+    </table>
+    <span class="slide-num">77</span>
+</div>
+
+<!-- SLIDE 78: Sample Response -->
+<div class="slide slide-content">
+    <h2>Sample Sources Sought Response</h2>
+    <div class="screenshot">
+        [SHOW: Sample Sources Sought Response Template]
+    </div>
+    <span class="slide-num">78</span>
+</div>
+
+<!-- SLIDE 79: Common Question - Who to Contact -->
+<div class="slide slide-center">
+    <p style="font-size: 1.2rem; color: var(--gray);">COMMON QUESTION</p>
+    <h2 style="margin-top: 20px;">"For expired contracts, do I reach out to<br>the incumbent or the Program Office?"</h2>
+    <p style="font-size: 1.5rem; margin-top: 30px;"><span class="green"><strong>It depends on your strategy:</strong></span></p>
+    <p style="font-size: 1.3rem; margin-top: 15px;"><strong>Team with incumbent?</strong> → Contact the incumbent</p>
+    <p style="font-size: 1.3rem; margin-top: 10px;"><strong>Compete against them?</strong> → Contact the Program Manager</p>
+    <span class="slide-num">79</span>
+</div>
+
+<!-- SLIDE 80: Types of Submissions -->
+<div class="slide slide-content">
+    <h2>Types of Submissions</h2>
+    <table>
+        <tr>
+            <th>Type</th>
+            <th>What It Is</th>
+            <th>Complexity</th>
+        </tr>
+        <tr>
+            <td>RFI Response</td>
+            <td>Market research – show capability</td>
+            <td class="green">Low</td>
+        </tr>
+        <tr>
+            <td>RFQ (Quote)</td>
+            <td>Price quote for specific work</td>
+            <td>Medium</td>
+        </tr>
+        <tr>
+            <td>RFP (Proposal)</td>
+            <td>Full technical + price proposal</td>
+            <td class="red">High</td>
+        </tr>
+        <tr>
+            <td>Task Order</td>
+            <td>Work under existing contract</td>
+            <td>Medium</td>
+        </tr>
+    </table>
+    <span class="slide-num">80</span>
+</div>
+
+<!-- SLIDE 81: WORKSHEET - Response Plan -->
+<div class="slide slide-content">
+    <div class="step-header">📝 WORKSHEET TIME</div>
+    <h2>Step 6: Response Plan (15 min)</h2>
+    <div class="worksheet-prompt">
+        <h4>Fill in your worksheet NOW:</h4>
+        <p><strong>What I will submit:</strong> ☐ RFI  ☐ RFQ  ☐ RFP  ☐ Task Order</p>
+        <p style="margin-top: 15px;"><strong>Sections I will complete today:</strong></p>
+        <p>☐ Technical  ☐ Past Performance  ☐ Price  ☐ Email Response</p>
+    </div>
+    <div class="green-box" style="margin-top: 15px;">
+        <p><strong>Pick ONE opportunity from Step 5 and decide what you'll submit.</strong></p>
+    </div>
+    <span class="slide-num">81</span>
+</div>
+
+<!-- SLIDE 82: Step 6 Complete -->
+<div class="slide slide-center">
+    <p style="font-size: 1.2rem; color: var(--green);">✓ STEP 6 COMPLETE</p>
+    <h2 style="margin-top: 20px;">You have a response plan</h2>
+    <p style="font-size: 1.3rem; color: var(--gray); margin-top: 20px;">Next: Track expiring contracts for future wins.</p>
+    <span class="slide-num">82</span>
+</div>
+
+<!-- ==================== STEP 7: EXPIRING CONTRACTS (83-92) ==================== -->
+
+<!-- SLIDE 83: Step 7 Title -->
+<div class="slide slide-center" style="background: #B91C1C; color: white;">
+    <p style="font-size: 1.2rem; letter-spacing: 3px;">STEP 7 OF 7</p>
+    <h1 style="font-size: 3rem; margin-top: 20px;">EXPIRING CONTRACTS</h1>
+    <p style="font-size: 1.5rem; margin-top: 20px;">Find Your Next Win</p>
+    <p style="margin-top: 40px; font-size: 1.2rem;">3:30 PM - 4:30 PM (60 min)</p>
+    <span class="slide-num" style="color: white;">83</span>
+</div>
+
+<!-- SLIDE 84: Two Paths to Contracts -->
+<div class="slide slide-content">
+    <h2>Two Paths to Contracts</h2>
+    <div style="display: flex; gap: 40px; margin-top: 30px;">
+        <div style="flex: 1; text-align: center; padding: 30px; background: #e8f5e9; border-radius: 10px;">
+            <h3 style="color: var(--green);">FASTEST PATH</h3>
+            <p style="font-size: 1.8rem; font-weight: bold; margin: 20px 0;">Target Primes with IDVs</p>
+            <p style="font-size: 1.2rem;">Primes have existing contracts<br>with task orders flowing</p>
+            <p style="font-size: 1.1rem; margin-top: 15px; color: var(--gray);">They need subs NOW to perform work</p>
+        </div>
+        <div style="flex: 1; text-align: center; padding: 30px; background: #e3f2fd; border-radius: 10px;">
+            <h3 style="color: var(--primary);">MOST STABLE PATH</h3>
+            <p style="font-size: 1.8rem; font-weight: bold; margin: 20px 0;">Recompetes</p>
+            <p style="font-size: 1.2rem;">Expiring contracts that will<br>be re-solicited</p>
+            <p style="font-size: 1.1rem; margin-top: 15px; color: var(--gray);">Position before competition knows</p>
+        </div>
+    </div>
+    <p style="font-size: 1.2rem; margin-top: 30px; text-align: center;"><em>SAM.gov is just a small slice of the pie — don't limit yourself to it</em></p>
+    <span class="slide-num">84</span>
+</div>
+
+<!-- SLIDE 85: Path 1 - Team -->
+<div class="slide slide-content">
+    <h2>Path 1: <span class="green">Team with Incumbent (Tier 2 or 3)</span></h2>
+    <ul class="bullets">
+        <li>Research their program goals first</li>
+        <li>Find out what gaps they have before offering your certification</li>
+        <li>Reach out as potential subcontractor with a solution</li>
+        <li>Lower risk entry point for you</li>
+        <li>Build past performance for future primes</li>
+    </ul>
+    <span class="slide-num">85</span>
+</div>
+
+<!-- SLIDE 86: Path 2 - Compete -->
+<div class="slide slide-content">
+    <h2>Path 2: <span style="color: #1e40af;">Compete Against Them</span></h2>
+    <ul class="bullets">
+        <li>Research incumbent's performance history</li>
+        <li>Identify gaps or weaknesses</li>
+        <li>Position yourself as the better option</li>
+        <li>Contact the Program Manager directly</li>
+        <li>Prepare early for the recompete RFP</li>
+    </ul>
+    <span class="slide-num">86</span>
+</div>
+
+<!-- SLIDE 87: Timing -->
+<div class="slide slide-center">
+    <h2>You're Not Too Late</h2>
+    <p style="font-size: 1.5rem; margin-top: 30px;">These contracts haven't been re-solicited yet</p>
+    <p style="font-size: 1.5rem; margin-top: 20px;"><span class="green"><strong>You still have time to prepare and position</strong></span></p>
+    <p style="font-size: 1.3rem; margin-top: 30px; color: var(--gray);">Start reaching out now while you have the advantage</p>
+    <span class="slide-num">87</span>
+</div>
+
+<!-- SLIDE 88: Using the Expiring Contracts Sheet -->
+<div class="slide slide-content">
+    <h2>Using the Expiring Contracts Sheet</h2>
+    <ul class="bullets">
+        <li>Filter by your NAICS codes</li>
+        <li>Sort by expiration date (target 6-18 months out)</li>
+        <li>Identify incumbent contractor and contract value</li>
+        <li>Find the Program Manager contact</li>
+        <li>Research incumbent's performance history</li>
+    </ul>
+    <span class="slide-num">88</span>
+</div>
+
+<!-- SLIDE 89: Demo Expiring Contracts -->
+<div class="slide slide-content">
+    <h2>Expiring Contracts Demo</h2>
+    <div class="screenshot">
+        [SHOW: Expiring Contracts Spreadsheet]
+    </div>
+    <span class="slide-num">89</span>
+</div>
+
+<!-- SLIDE 90: WORKSHEET - Expiring Contracts -->
+<div class="slide slide-content">
+    <div class="step-header">📝 WORKSHEET TIME</div>
+    <h2>Step 7: Expiring / Recompete Tracking (5 min)</h2>
+    <div class="worksheet-prompt">
+        <h4>Fill in your worksheet NOW – Track 3 contracts:</h4>
+        <p><strong>Contract I'm watching next:</strong> _____________</p>
+        <p><strong>Prime or Sub?</strong> ☐ Prime  ☐ Sub</p>
+    </div>
+    <div class="green-box" style="margin-top: 15px;">
+        <p><strong>These are your future opportunities.</strong> Start tracking now.</p>
+    </div>
+    <span class="slide-num">90</span>
+</div>
+
+<!-- SLIDE 91: Step 7 Complete -->
+<div class="slide slide-center">
+    <p style="font-size: 1.2rem; color: var(--green);">✓ STEP 7 COMPLETE</p>
+    <h2 style="margin-top: 20px;">You have contracts to track</h2>
+    <p style="font-size: 1.3rem; color: var(--gray); margin-top: 20px;">Your worksheet is now COMPLETE!</p>
+    <span class="slide-num">91</span>
+</div>
+
+<!-- ==================== CLOSING (92-101) ==================== -->
+
+<!-- SLIDE 92: Q&A Title -->
+<div class="slide slide-center" style="background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%); color: white;">
+    <p style="font-size: 1.2rem; letter-spacing: 3px;">4:30 PM - 5:00 PM</p>
+    <h1 style="font-size: 3rem; margin-top: 20px;">Q&A + CLOSING</h1>
+    <span class="slide-num" style="color: white;">92</span>
+</div>
+
+<!-- SLIDE 93: Recap -->
+<div class="slide slide-content">
+    <h2>You just spent 8 hours learning...</h2>
+    <ul class="bullets">
+        <li>How to target agencies with Market Assassin</li>
+        <li>Agency pain points and how to position as the solution</li>
+        <li>75 AI prompts to accelerate everything</li>
+        <li>How to build a capability statement that wins</li>
+        <li>Where to find opportunities (beyond SAM.gov)</li>
+        <li>How to respond to Sources Sought and RFIs</li>
+        <li>How to track expiring contracts for future wins</li>
+    </ul>
+    <span class="slide-num">93</span>
+</div>
+
+<!-- SLIDE 94: What You Received Part 1 -->
+<div class="slide slide-content">
+    <h2>What You Received Today</h2>
+    <ul class="bullets">
+        <li>Market Assassin Report</li>
+        <li>Agency Pain Points Guide</li>
+        <li>AI Prompts for Pain Points & Priorities</li>
+        <li>Capability Statement Template</li>
+    </ul>
+    <span class="slide-num">94</span>
+</div>
+
+<!-- SLIDE 95: What You Received Part 2 -->
+<div class="slide slide-content">
+    <h2>What You Received Today (cont'd)</h2>
+    <ul class="bullets">
+        <li>34-Opportunity Hit List + Agency Buyers List</li>
+        <li>FY2026 NDAA Report</li>
+        <li>100 Recompete Contracts Sheet</li>
+        <li>Sources Sought Template + Full Recording Access</li>
+    </ul>
+    <div class="green-box" style="margin-top: 30px;">
+        <p style="text-align: center; font-size: 1.4rem;"><strong>Plus: Your completed One-Page Execution Worksheet!</strong></p>
+    </div>
+    <span class="slide-num">95</span>
+</div>
+
+<!-- SLIDE 96: Result Checklist -->
+<div class="slide slide-content">
+    <h2>Result Checklist (Non-Negotiable)</h2>
+    <div style="font-size: 1.5rem; margin-top: 30px;">
+        <p>☐ Found 1 real opportunity</p>
+        <p style="margin-top: 15px;">☐ Used AI to create response</p>
+        <p style="margin-top: 15px;">☐ Sent or scheduled submission</p>
+        <p style="margin-top: 15px;">☐ Booked or attempted meeting</p>
+    </div>
+    <div class="highlight-box" style="margin-top: 30px;">
+        <p><strong>If you didn't check all 4, you have homework.</strong></p>
+    </div>
+    <span class="slide-num">96</span>
+</div>
+
+<!-- SLIDE 97: 24-Hour Commitment -->
+<div class="slide slide-content">
+    <h2>24-HOUR COMMITMENT</h2>
+    <p style="font-size: 1.5rem; margin-top: 20px;">The one action I will complete within 24 hours:</p>
+    <div class="worksheet-prompt" style="margin-top: 30px; padding: 40px;">
+        <h4>📝 Write it down. Sign it. Own it.</h4>
+        <p style="font-size: 1.2rem;">_____________________________________________</p>
+        <p style="margin-top: 20px;">Signature: ________________  Date: ________</p>
+    </div>
+    <span class="slide-num">97</span>
+</div>
+
+<!-- SLIDE 98: The Rule -->
+<div class="slide slide-center">
+    <h2>RULE:</h2>
+    <p style="font-size: 2.5rem; margin-top: 30px; font-weight: 700;">One agency.<br>One opportunity.<br>One action.</p>
+    <p style="font-size: 2rem; margin-top: 30px; color: var(--green); font-weight: 700;">Repeat daily.</p>
+    <span class="slide-num">98</span>
+</div>
+
+<!-- SLIDE 99: Starter Bundle -->
+<div class="slide slide-content">
+    <h2>BUNDLE 1 – STARTER</h2>
+    <p style="font-size: 1.8rem; text-align: center; font-weight: bold;">$697 <span style="font-size: 1.2rem; color: var(--gray);">(one-time)</span></p>
+    <ul class="simple" style="margin-top: 20px; text-align: center; list-style: none;">
+        <li>• Opportunity Hunter Pro</li>
+        <li>• Recompete Contracts Tracker</li>
+        <li>• Federal Contractor Database</li>
+    </ul>
+    <p style="text-align: center; margin-top: 20px; color: var(--gray);">Value if purchased separately: $943</p>
+    <span class="slide-num">99</span>
+</div>
+
+<!-- SLIDE 100: Pro Giant Bundle -->
+<div class="slide slide-content">
+    <h2>BUNDLE 2 – PRO GIANT <span class="green">(MOST POPULAR)</span></h2>
+    <p style="font-size: 1.8rem; text-align: center; font-weight: bold;">$997 <span style="font-size: 1.2rem; color: var(--gray);">(one-time)</span></p>
+    <ul class="simple" style="margin-top: 20px; text-align: center; list-style: none;">
+        <li>• Federal Contractor Database</li>
+        <li>• Recompete Contracts Tracker</li>
+        <li>• Market Assassin Standard</li>
+        <li>• GovCon Content Generator</li>
+    </ul>
+    <p style="text-align: center; margin-top: 20px; color: var(--gray);">Value if purchased separately: $1,388</p>
+    <span class="slide-num">100</span>
+</div>
+
+<!-- SLIDE 101: Ultimate Giant Bundle -->
+<div class="slide slide-content">
+    <h2>BUNDLE 3 – ULTIMATE GIANT</h2>
+    <p style="font-size: 1.8rem; text-align: center; font-weight: bold;">$1,497 <span style="font-size: 1.2rem; color: var(--gray);">(one-time)</span></p>
+    <ul class="simple" style="margin-top: 20px; text-align: center; list-style: none;">
+        <li>• Market Assassin Premium</li>
+        <li>• Content Generator Full Fix</li>
+        <li>• Federal Contractor Database</li>
+        <li>• Recompete Contracts Tracker</li>
+    </ul>
+    <p style="text-align: center; margin-top: 20px; color: var(--gray);">Value if purchased separately: $1,788</p>
+    <span class="slide-num">101</span>
+</div>
+
+<!-- SLIDE 102: Thank You -->
+<div class="slide slide-center" style="background: var(--green); color: white;">
+    <h1>THANK YOU!</h1>
+    <p style="font-size: 1.5rem; margin-top: 30px;">Questions? Email hello@govconedu.com</p>
+    <div style="background: white; color: var(--black); padding: 25px 50px; border-radius: 10px; margin-top: 40px;">
+        <p style="font-size: 1.2rem;">Get your tools at</p>
+        <p style="font-size: 1.5rem; font-weight: 700; color: var(--green);">shop.govcongiants.org</p>
+    </div>
+    <span class="slide-num" style="color: white;">102</span>
+</div>
+
+<!-- ==================== PRODUCT DEMOS ==================== -->
+
+<!-- SLIDE 103: Demo Section Title -->
+<div class="slide slide-center" style="background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%); color: white;">
+    <p style="font-size: 1.2rem; letter-spacing: 3px;">BONUS SECTION</p>
+    <h1 style="font-size: 3rem; margin-top: 20px;">PRODUCT DEMOS</h1>
+    <p style="font-size: 1.5rem; margin-top: 20px;">See the tools in action</p>
+    <span class="slide-num" style="color: white;">103</span>
+</div>
+
+<!-- SLIDE 104: Market Assassin Demo Title -->
+<div class="slide slide-center" style="background: #8BC34A; color: white;">
+    <p style="font-size: 1.2rem; letter-spacing: 3px;">DEMO 1</p>
+    <h1 style="font-size: 3rem; margin-top: 20px;">MARKET ASSASSIN</h1>
+    <p style="font-size: 1.5rem; margin-top: 20px;">Your Agency Targeting Intelligence</p>
+    <p style="margin-top: 40px; font-size: 1.2rem;">Standard: 4 Reports | Premium: 8 Reports</p>
+    <span class="slide-num" style="color: white;">104</span>
+</div>
+
+<!-- SLIDE 105: Market Assassin - What It Does -->
+<div class="slide slide-content">
+    <h2>Market Assassin: <span class="green">What It Does</span></h2>
+    <ul class="bullets">
+        <li>Enter 5 inputs: Certification, ZIP, PSC, NAICS, Target Agencies</li>
+        <li>Instantly generates agency-specific intelligence reports</li>
+        <li>Shows spending patterns, buyers, and competition analysis</li>
+        <li>Identifies OSDBU contacts and subcontracting opportunities</li>
+        <li>Finds teaming partners (including Tribal 8(a) firms)</li>
+    </ul>
+    <div class="highlight-box">
+        <p><strong>Result:</strong> Know exactly which agencies to target and who to contact.</p>
+    </div>
+    <span class="slide-num">105</span>
+</div>
+
+<!-- SLIDE 106: Market Assassin - Live Demo -->
+<div class="slide slide-content">
+    <h2>Market Assassin: <span class="green">LIVE DEMO</span></h2>
+    <div class="screenshot">
+        [LIVE DEMO: Market Assassin Dashboard]<br><br>
+        Show: Input form → Generate Reports → Review Agency Analytics
+    </div>
+    <span class="slide-num">106</span>
+</div>
+
+<!-- SLIDE 107: Market Assassin - Sample Reports -->
+<div class="slide slide-content">
+    <h2>Market Assassin: <span class="green">Sample Reports</span></h2>
+    <div class="two-col">
+        <div>
+            <h3 style="color: var(--green);">Standard (4 Reports)</h3>
+            <ul class="simple">
+                <li>Agency Spending Analytics</li>
+                <li>Government Buyers List</li>
+                <li>OSBP Contacts</li>
+                <li>Subcontracting Opportunities</li>
+            </ul>
+        </div>
+        <div>
+            <h3 style="color: var(--green);">Premium (8 Reports)</h3>
+            <ul class="simple">
+                <li>All Standard reports PLUS:</li>
+                <li>IDV Contract Vehicles</li>
+                <li>Similar Awards Analysis</li>
+                <li>Tribal 8(a) Partners</li>
+                <li>Competition Deep Dive</li>
+            </ul>
+        </div>
+    </div>
+    <span class="slide-num">107</span>
+</div>
+
+<!-- SLIDE 108: Opportunity Hunter Pro Demo Title -->
+<div class="slide slide-center" style="background: #EA580C; color: white;">
+    <p style="font-size: 1.2rem; letter-spacing: 3px;">DEMO 2</p>
+    <h1 style="font-size: 3rem; margin-top: 20px;">OPPORTUNITY HUNTER PRO</h1>
+    <p style="font-size: 1.5rem; margin-top: 20px;">Find Low-Competition Contracts</p>
+    <span class="slide-num" style="color: white;">108</span>
+</div>
+
+<!-- SLIDE 109: Opportunity Hunter - What It Does -->
+<div class="slide slide-content">
+    <h2>Opportunity Hunter Pro: <span class="green">What It Does</span></h2>
+    <ul class="bullets">
+        <li>Searches USAspending.gov automatically for YOUR NAICS</li>
+        <li>Filters by set-aside type matching YOUR certification</li>
+        <li>Identifies contracts in the $25K-$250K sweet spot</li>
+        <li>Scores opportunities by win probability</li>
+        <li>Exports curated hit lists ready for action</li>
+    </ul>
+    <div class="highlight-box">
+        <p><strong>Result:</strong> Stop searching SAM.gov blindly. Get a targeted hit list.</p>
+    </div>
+    <span class="slide-num">109</span>
+</div>
+
+<!-- SLIDE 110: Opportunity Hunter - Live Demo -->
+<div class="slide slide-content">
+    <h2>Opportunity Hunter Pro: <span class="green">LIVE DEMO</span></h2>
+    <div class="screenshot">
+        [LIVE DEMO: Opportunity Hunter Pro]<br><br>
+        Show: Enter NAICS → Set filters → Generate Hit List → Export results
+    </div>
+    <span class="slide-num">110</span>
+</div>
+
+<!-- SLIDE 111: Recompete Tracker Demo Title -->
+<div class="slide slide-center" style="background: #B91C1C; color: white;">
+    <p style="font-size: 1.2rem; letter-spacing: 3px;">DEMO 3</p>
+    <h1 style="font-size: 3rem; margin-top: 20px;">RECOMPETE CONTRACTS TRACKER</h1>
+    <p style="font-size: 1.5rem; margin-top: 20px;">Know What's Expiring Before Anyone Else</p>
+    <span class="slide-num" style="color: white;">111</span>
+</div>
+
+<!-- SLIDE 112: Recompete Tracker - What It Does -->
+<div class="slide slide-content">
+    <h2>Recompete Tracker: <span class="green">What It Does</span></h2>
+    <ul class="bullets">
+        <li>Database of contracts expiring in 6-18 months</li>
+        <li>Filter by agency, NAICS, contract value, set-aside</li>
+        <li>Shows incumbent contractor and performance history</li>
+        <li>Identifies Program Manager contacts</li>
+        <li>Tracks re-solicitation status and forecast dates</li>
+    </ul>
+    <div class="highlight-box">
+        <p><strong>Result:</strong> Position yourself BEFORE the RFP drops.</p>
+    </div>
+    <span class="slide-num">112</span>
+</div>
+
+<!-- SLIDE 113: Recompete Tracker - Live Demo -->
+<div class="slide slide-content">
+    <h2>Recompete Tracker: <span class="green">LIVE DEMO</span></h2>
+    <div class="screenshot">
+        [LIVE DEMO: Recompete Contracts Tracker]<br><br>
+        Show: Filter by NAICS → Sort by expiration → View incumbent details
+    </div>
+    <span class="slide-num">113</span>
+</div>
+
+<!-- SLIDE 114: Federal Contractor Database Demo Title -->
+<div class="slide slide-center" style="background: #0891B2; color: white;">
+    <p style="font-size: 1.2rem; letter-spacing: 3px;">DEMO 4</p>
+    <h1 style="font-size: 3rem; margin-top: 20px;">FEDERAL CONTRACTOR DATABASE</h1>
+    <p style="font-size: 1.5rem; margin-top: 20px;">Find Primes, SBLOs, and Teaming Partners</p>
+    <span class="slide-num" style="color: white;">114</span>
+</div>
+
+<!-- SLIDE 115: Federal Contractor Database - What It Does -->
+<div class="slide slide-content">
+    <h2>Contractor Database: <span class="green">What It Does</span></h2>
+    <ul class="bullets">
+        <li>Searchable database of prime contractors and their SBLO contacts</li>
+        <li>Filter by agency, NAICS, certification type, location</li>
+        <li>Direct contact info for Small Business Liaison Officers</li>
+        <li>See which primes need YOUR certification for teaming</li>
+        <li>Includes Tier 2 subcontractor opportunities</li>
+    </ul>
+    <div class="highlight-box">
+        <p><strong>Result:</strong> Find teaming partners in minutes, not weeks.</p>
+    </div>
+    <span class="slide-num">115</span>
+</div>
+
+<!-- SLIDE 116: Federal Contractor Database - Live Demo -->
+<div class="slide slide-content">
+    <h2>Contractor Database: <span class="green">LIVE DEMO</span></h2>
+    <div class="screenshot">
+        [LIVE DEMO: Federal Contractor Database]<br><br>
+        Show: Search by NAICS → Filter by certification → View SBLO contacts
+    </div>
+    <span class="slide-num">116</span>
+</div>
+
+<!-- SLIDE 117: GovCon Content Generator Demo Title -->
+<div class="slide slide-center" style="background: #7C3AED; color: white;">
+    <p style="font-size: 1.2rem; letter-spacing: 3px;">DEMO 5</p>
+    <h1 style="font-size: 3rem; margin-top: 20px;">GOVCON CONTENT GENERATOR</h1>
+    <p style="font-size: 1.5rem; margin-top: 20px;">AI-Powered Proposal & Outreach Content</p>
+    <span class="slide-num" style="color: white;">117</span>
+</div>
+
+<!-- SLIDE 118: GovCon Content Generator - What It Does -->
+<div class="slide slide-content">
+    <h2>Content Generator: <span class="green">What It Does</span></h2>
+    <ul class="bullets">
+        <li>Generate capability statements tailored to specific agencies</li>
+        <li>Create RFI and Sources Sought responses in minutes</li>
+        <li>Write professional outreach emails to buyers/SBLOs</li>
+        <li>Draft past performance write-ups from your notes</li>
+        <li>Build proposal sections with proper government language</li>
+    </ul>
+    <div class="highlight-box">
+        <p><strong>Result:</strong> 10x faster content creation with AI assistance.</p>
+    </div>
+    <span class="slide-num">118</span>
+</div>
+
+<!-- SLIDE 119: GovCon Content Generator - Live Demo -->
+<div class="slide slide-content">
+    <h2>Content Generator: <span class="green">LIVE DEMO</span></h2>
+    <div class="screenshot">
+        [LIVE DEMO: GovCon Content Generator]<br><br>
+        Show: Select template → Enter company info → Generate content → Edit & export
+    </div>
+    <span class="slide-num">119</span>
+</div>
+
+<!-- SLIDE 120: All Products Together -->
+<div class="slide slide-content">
+    <h2>How They Work <span class="green">Together</span></h2>
+    <div class="process-row" style="margin-top: 20px;">
+        <div class="process-step">
+            <div class="num">1</div>
+            <h4>Market Assassin</h4>
+            <p>Target agencies</p>
+        </div>
+        <div class="process-step">
+            <div class="num">2</div>
+            <h4>Opportunity Hunter</h4>
+            <p>Find contracts</p>
+        </div>
+        <div class="process-step">
+            <div class="num">3</div>
+            <h4>Contractor DB</h4>
+            <p>Find partners</p>
+        </div>
+        <div class="process-step">
+            <div class="num">4</div>
+            <h4>Content Gen</h4>
+            <p>Create response</p>
+        </div>
+        <div class="process-step">
+            <div class="num">5</div>
+            <h4>Recompete</h4>
+            <p>Track futures</p>
+        </div>
+    </div>
+    <div class="green-box" style="margin-top: 30px;">
+        <p style="text-align: center; font-size: 1.3rem;"><strong>Complete ecosystem to find, win, and grow federal contracts.</strong></p>
+    </div>
+    <span class="slide-num">120</span>
+</div>
+
+<!-- SLIDE 121: Bundle Comparison -->
+<div class="slide slide-content">
+    <h2>Which Bundle is Right for You?</h2>
+    <table style="font-size: 1rem;">
+        <tr>
+            <th>Product</th>
+            <th>Starter<br>$697</th>
+            <th>Pro Giant<br>$997</th>
+            <th>Ultimate<br>$1,497</th>
+        </tr>
+        <tr>
+            <td>Opportunity Hunter Pro</td>
+            <td style="text-align: center; color: var(--green);">&#10003;</td>
+            <td style="text-align: center;">-</td>
+            <td style="text-align: center;">-</td>
+        </tr>
+        <tr>
+            <td>Recompete Tracker</td>
+            <td style="text-align: center; color: var(--green);">&#10003;</td>
+            <td style="text-align: center; color: var(--green);">&#10003;</td>
+            <td style="text-align: center; color: var(--green);">&#10003;</td>
+        </tr>
+        <tr>
+            <td>Federal Contractor Database</td>
+            <td style="text-align: center; color: var(--green);">&#10003;</td>
+            <td style="text-align: center; color: var(--green);">&#10003;</td>
+            <td style="text-align: center; color: var(--green);">&#10003;</td>
+        </tr>
+        <tr>
+            <td>Market Assassin Standard</td>
+            <td style="text-align: center;">-</td>
+            <td style="text-align: center; color: var(--green);">&#10003;</td>
+            <td style="text-align: center;">-</td>
+        </tr>
+        <tr>
+            <td>Market Assassin Premium</td>
+            <td style="text-align: center;">-</td>
+            <td style="text-align: center;">-</td>
+            <td style="text-align: center; color: var(--green);">&#10003;</td>
+        </tr>
+        <tr>
+            <td>GovCon Content Generator</td>
+            <td style="text-align: center;">-</td>
+            <td style="text-align: center; color: var(--green);">&#10003;</td>
+            <td style="text-align: center; color: var(--green);">Full</td>
+        </tr>
+    </table>
+    <span class="slide-num">121</span>
+</div>
+
+<!-- SLIDE 122: Get Started CTA -->
+<div class="slide slide-center" style="background: var(--green); color: white;">
+    <h1>Ready to Get Started?</h1>
+    <p style="font-size: 1.5rem; margin-top: 30px;">All bundles available at:</p>
+    <div style="background: white; color: var(--black); padding: 30px 60px; border-radius: 10px; margin-top: 30px;">
+        <p style="font-size: 2rem; font-weight: 700; color: var(--green);">shop.govcongiants.org</p>
+    </div>
+    <p style="font-size: 1.3rem; margin-top: 40px;">Questions? Email hello@govconedu.com</p>
+    <span class="slide-num" style="color: white;">122</span>
+</div>
+
+</body>
+</html>

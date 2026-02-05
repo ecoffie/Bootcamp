@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opportunity Hunter - Find Federal Contracts | GovCon Giants</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    .gradient-text { background: linear-gradient(135deg, #10b981 0%, #34d399 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  </style>
+</head>
+<body class="min-h-screen bg-slate-900">
+  <!-- Header -->
+  <header class="py-6 px-6 border-b border-slate-800">
+    <div class="max-w-4xl mx-auto flex items-center justify-center">
+      <a href="#" class="flex items-center gap-1">
+        <span class="text-2xl font-bold text-white">GovCon</span>
+        <span class="text-2xl font-bold text-emerald-400">Giants</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="py-16 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-2 bg-emerald-900/50 border border-emerald-700/50 text-emerald-300 px-4 py-2 rounded-full text-sm font-medium mb-8">
+        <span>🔍</span> FREE TOOL - No Credit Card Required
+      </div>
+
+      <!-- Headline -->
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+        Find Which Agencies <span class="gradient-text">Buy What You Sell</span>
+      </h1>
+
+      <!-- Subheadline -->
+      <p class="text-xl text-slate-300 mb-8 leading-relaxed">
+        Stop wasting time on the wrong opportunities. Opportunity Hunter analyzes federal spending
+        data to show you exactly which agencies are buying your products or services.
+      </p>
+
+      <!-- Stats Row -->
+      <div class="flex flex-wrap justify-center gap-6 mb-12">
+        <div class="bg-slate-800 border border-slate-700 rounded-xl px-6 py-4 text-center">
+          <div class="text-2xl font-bold text-emerald-400">$700B+</div>
+          <div class="text-slate-400 text-sm">Annual Spending</div>
+        </div>
+        <div class="bg-slate-800 border border-slate-700 rounded-xl px-6 py-4 text-center">
+          <div class="text-2xl font-bold text-emerald-400">100+</div>
+          <div class="text-slate-400 text-sm">Federal Agencies</div>
+        </div>
+        <div class="bg-slate-800 border border-slate-700 rounded-xl px-6 py-4 text-center">
+          <div class="text-2xl font-bold text-emerald-400">Free</div>
+          <div class="text-slate-400 text-sm">To Get Started</div>
+        </div>
+      </div>
+
+      <!-- Email Capture Form -->
+      <div class="bg-slate-800 border border-slate-700 rounded-2xl p-8 max-w-md mx-auto">
+        <h3 class="text-xl font-bold text-white mb-2">Get Free Access</h3>
+        <p class="text-slate-400 text-sm mb-6">Enter your email to start finding opportunities</p>
+
+        <form id="leadForm" class="space-y-4">
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            required
+            class="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition"
+          >
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            required
+            class="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition"
+          >
+          <button
+            type="submit"
+            class="w-full px-6 py-4 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg font-bold text-lg transition-all"
+          >
+            Get Free Access
+          </button>
+        </form>
+
+        <p class="text-slate-500 text-xs mt-4">
+          No credit card required. Start searching in 30 seconds.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="py-16 px-6 bg-slate-800/50">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-white text-center mb-12">How Opportunity Hunter Works</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-emerald-900/50 border border-emerald-700/50 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <span class="text-3xl">1️⃣</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Enter Your Info</h3>
+          <p class="text-slate-400 text-sm">Tell us your business type, NAICS code, location, and certifications.</p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-16 h-16 bg-emerald-900/50 border border-emerald-700/50 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <span class="text-3xl">2️⃣</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">We Analyze Spending</h3>
+          <p class="text-slate-400 text-sm">Our tool searches billions in federal spending data to find your buyers.</p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-16 h-16 bg-emerald-900/50 border border-emerald-700/50 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <span class="text-3xl">3️⃣</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Get Your Results</h3>
+          <p class="text-slate-400 text-sm">See which agencies spend money on what you offer, with pain points and contacts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="py-16 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-white text-center mb-12">What You'll Discover</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
+          <div class="text-3xl mb-4">🎯</div>
+          <h3 class="text-lg font-bold text-white mb-2">Target Agencies</h3>
+          <p class="text-slate-400 text-sm">Find the 3-5 agencies most likely to buy from you based on spending patterns.</p>
+        </div>
+
+        <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
+          <div class="text-3xl mb-4">💰</div>
+          <h3 class="text-lg font-bold text-white mb-2">Spending Data</h3>
+          <p class="text-slate-400 text-sm">See how much each agency spends in your NAICS code and product/service area.</p>
+        </div>
+
+        <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
+          <div class="text-3xl mb-4">😓</div>
+          <h3 class="text-lg font-bold text-white mb-2">Agency Pain Points</h3>
+          <p class="text-slate-400 text-sm">Understand what problems each agency faces so you can position your solution.</p>
+        </div>
+
+        <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
+          <div class="text-3xl mb-4">🏆</div>
+          <h3 class="text-lg font-bold text-white mb-2">Set-Aside Matching</h3>
+          <p class="text-slate-400 text-sm">See which set-asides (8(a), WOSB, SDVOSB, HUBZone) match your certifications.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 px-6 bg-gradient-to-r from-emerald-900 to-emerald-800">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-white mb-4">
+        Ready to Find Your Federal Buyers?
+      </h2>
+      <p class="text-emerald-200 text-lg mb-8">
+        Join thousands of contractors using Opportunity Hunter to target the right agencies.
+      </p>
+      <a
+        href="#"
+        onclick="document.getElementById('leadForm').scrollIntoView({behavior: 'smooth'}); return false;"
+        class="inline-block px-8 py-4 bg-white hover:bg-gray-100 text-emerald-800 rounded-full font-bold text-lg transition-all"
+      >
+        Get Free Access Now
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 px-6 border-t border-slate-800">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="flex items-center justify-center gap-1 mb-4">
+        <span class="text-xl font-bold text-white">GovCon</span>
+        <span class="text-xl font-bold text-emerald-400">Giants</span>
+      </div>
+      <p class="text-slate-500 text-sm">
+        © 2026 GovCon Giants. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('leadForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = this.querySelector('input[name="name"]').value;
+      const email = this.querySelector('input[name="email"]').value;
+
+      // Store in localStorage
+      localStorage.setItem('leadName', name);
+      localStorage.setItem('leadEmail', email);
+
+      // Redirect to upsell page
+      window.location.href = '2-upsell.html';
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Thumbnail - Live #1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: #1a1a1a;
+            padding: 40px;
+            gap: 40px;
+        }
+
+        h2 {
+            color: white;
+            font-family: Arial, sans-serif;
+            margin-bottom: 20px;
+        }
+
+        .info {
+            color: #888;
+            font-family: Arial, sans-serif;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        /* YouTube Thumbnail: 1280x720 */
+        .thumbnail {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            font-family: 'Arial Black', Impact, sans-serif;
+        }
+
+        /* Option 1: Money Focus */
+        .thumb-1 {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0f172a 100%);
+        }
+
+        .thumb-1 .bg-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2322c55e' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .thumb-1 .content {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px;
+        }
+
+        .thumb-1 .main-text {
+            font-size: 140px;
+            font-weight: 900;
+            color: #4ade80;
+            text-shadow: 0 8px 30px rgba(74, 222, 128, 0.5);
+            line-height: 1;
+        }
+
+        .thumb-1 .sub-text {
+            font-size: 72px;
+            font-weight: 900;
+            color: white;
+            margin-top: 20px;
+        }
+
+        .thumb-1 .sub-text .highlight {
+            color: #ef4444;
+        }
+
+        .thumb-1 .badge {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            background: #ef4444;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 32px;
+            font-weight: 900;
+            transform: rotate(3deg);
+        }
+
+        .thumb-1 .bottom-text {
+            position: absolute;
+            bottom: 40px;
+            left: 60px;
+            font-size: 36px;
+            color: rgba(255,255,255,0.9);
+        }
+
+        /* Option 2: NDAA Focus */
+        .thumb-2 {
+            background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
+        }
+
+        .thumb-2 .content {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px;
+        }
+
+        .thumb-2 .top-badge {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .thumb-2 .main-text {
+            font-size: 100px;
+            font-weight: 900;
+            color: white;
+            line-height: 1.1;
+        }
+
+        .thumb-2 .main-text .money {
+            color: #4ade80;
+            font-size: 130px;
+        }
+
+        .thumb-2 .arrow {
+            font-size: 80px;
+            color: #ef4444;
+            margin: 20px 0;
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(10px); }
+        }
+
+        .thumb-2 .sub-text {
+            font-size: 48px;
+            color: rgba(255,255,255,0.95);
+        }
+
+        /* Option 3: Urgency Focus */
+        .thumb-3 {
+            background: #0f172a;
+        }
+
+        .thumb-3 .left-section {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 60%;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .thumb-3 .main-text {
+            font-size: 90px;
+            font-weight: 900;
+            color: white;
+            line-height: 1.1;
+        }
+
+        .thumb-3 .main-text .money {
+            color: #4ade80;
+        }
+
+        .thumb-3 .main-text .days {
+            color: #ef4444;
+        }
+
+        .thumb-3 .sub-text {
+            font-size: 42px;
+            color: rgba(255,255,255,0.8);
+            margin-top: 30px;
+        }
+
+        .thumb-3 .right-section {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 40%;
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .thumb-3 .right-section .big-number {
+            font-size: 200px;
+            font-weight: 900;
+            color: white;
+            line-height: 1;
+        }
+
+        .thumb-3 .right-section .label {
+            font-size: 48px;
+            color: rgba(255,255,255,0.95);
+            text-transform: uppercase;
+        }
+
+        .label-box {
+            background: #333;
+            color: white;
+            padding: 10px 20px;
+            margin-top: 20px;
+            font-size: 14px;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h2>YouTube Live #1 - Thumbnail Options</h2>
+    <p class="info">Size: 1280x720px | Screenshot or export these for use</p>
+
+    <!-- Option 1 -->
+    <div class="label-box">OPTION 1: Money Focus - "$82 BILLION UNSPENT"</div>
+    <div class="thumbnail thumb-1">
+        <div class="bg-pattern"></div>
+        <div class="content">
+            <div class="main-text">$82 BILLION</div>
+            <div class="sub-text"><span class="highlight">UNSPENT</span> Federal Money</div>
+        </div>
+        <div class="badge">2026</div>
+        <div class="bottom-text">Here's How To Get It</div>
+    </div>
+
+    <!-- Option 2 -->
+    <div class="label-box">OPTION 2: NDAA Focus - Official Signing</div>
+    <div class="thumbnail thumb-2">
+        <div class="content">
+            <div class="top-badge">FY2026 NDAA JUST SIGNED</div>
+            <div class="main-text">
+                <span class="money">$848B</span><br>
+                Is Now Flowing
+            </div>
+            <div class="arrow">↓</div>
+            <div class="sub-text">What Contractors Need To Know</div>
+        </div>
+    </div>
+
+    <!-- Option 3 -->
+    <div class="label-box">OPTION 3: Urgency Focus - 90 Days</div>
+    <div class="thumbnail thumb-3">
+        <div class="left-section">
+            <div class="main-text">
+                <span class="money">$82B</span> Must Be<br>
+                Spent In <span class="days">90 DAYS</span>
+            </div>
+            <div class="sub-text">Or They Lose It. Your Opportunity.</div>
+        </div>
+        <div class="right-section">
+            <div class="big-number">90</div>
+            <div class="label">Days Left</div>
+        </div>
+    </div>
+
+    <div class="label-box" style="margin-top: 40px;">
+        RECOMMENDED TITLE: "$82 BILLION in Unspent Federal Money - Here's How to Get It (2026)"
+    </div>
+</body>
+</html>

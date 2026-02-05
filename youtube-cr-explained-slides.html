@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Continuing Resolution Explained: What Small Businesses NEED to Know</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial Black', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0a0a0a;
+            color: white;
+        }
+
+        .slide {
+            width: 1920px;
+            height: 1080px;
+            position: relative;
+            overflow: hidden;
+            page-break-after: always;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Slide 1: Title Slide */
+        .slide-title {
+            background: linear-gradient(135deg, #dc2626 0%, #7c3aed 50%, #1e3a8a 100%);
+        }
+
+        .slide-title .content {
+            text-align: center;
+            padding: 60px;
+        }
+
+        .slide-title .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 28px;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .slide-title .urgent-badge {
+            background: #ef4444;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .slide-title h1 {
+            font-size: 90px;
+            font-weight: 900;
+            margin-bottom: 30px;
+            text-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            line-height: 1.1;
+        }
+
+        .slide-title h1 .highlight {
+            color: #fef08a;
+        }
+
+        .slide-title .subtitle {
+            font-size: 48px;
+            opacity: 0.95;
+            font-weight: 400;
+        }
+
+        .slide-title .date {
+            position: absolute;
+            bottom: 60px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 32px;
+            opacity: 0.8;
+        }
+
+        /* Dark slide base */
+        .slide-dark {
+            background: #0f172a;
+        }
+
+        .slide-dark .content {
+            text-align: center;
+            padding: 80px;
+        }
+
+        .slide-dark h2 {
+            font-size: 80px;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 50px;
+        }
+
+        .slide-dark h2 .highlight {
+            color: #4ade80;
+        }
+
+        .slide-dark h2 .red {
+            color: #ef4444;
+        }
+
+        .slide-dark h2 .purple {
+            color: #a855f7;
+        }
+
+        .slide-dark h2 .yellow {
+            color: #fef08a;
+        }
+
+        .slide-dark p {
+            font-size: 42px;
+            opacity: 0.9;
+            max-width: 1400px;
+            line-height: 1.5;
+        }
+
+        /* Blue gradient slide */
+        .slide-blue {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        }
+
+        .slide-blue .content {
+            padding: 80px;
+            width: 100%;
+        }
+
+        .slide-blue h2 {
+            font-size: 72px;
+            font-weight: 900;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        /* Purple gradient slide */
+        .slide-purple {
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+        }
+
+        .slide-purple .content {
+            padding: 80px;
+            width: 100%;
+        }
+
+        .slide-purple h2 {
+            font-size: 72px;
+            font-weight: 900;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        /* Green gradient slide */
+        .slide-green {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        }
+
+        .slide-green .content {
+            text-align: center;
+            padding: 80px;
+        }
+
+        .slide-green h2 {
+            font-size: 72px;
+            font-weight: 900;
+            margin-bottom: 50px;
+        }
+
+        /* Red gradient slide */
+        .slide-red {
+            background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+        }
+
+        .slide-red .content {
+            text-align: center;
+            padding: 80px;
+        }
+
+        .slide-red h2 {
+            font-size: 72px;
+            font-weight: 900;
+            margin-bottom: 50px;
+        }
+
+        /* Orange gradient slide */
+        .slide-orange {
+            background: linear-gradient(135deg, #ea580c 0%, #f97316 100%);
+        }
+
+        .slide-orange .content {
+            padding: 80px;
+            width: 100%;
+        }
+
+        .slide-orange h2 {
+            font-size: 72px;
+            font-weight: 900;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        /* Stat grid */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .stat-grid-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .stat-box {
+            background: rgba(255,255,255,0.1);
+            border-radius: 30px;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .stat-box .number {
+            font-size: 80px;
+            font-weight: 900;
+            color: #4ade80;
+        }
+
+        .stat-box .number.red {
+            color: #ef4444;
+        }
+
+        .stat-box .number.yellow {
+            color: #fef08a;
+        }
+
+        .stat-box .label {
+            font-size: 28px;
+            opacity: 0.9;
+            margin-top: 15px;
+        }
+
+        /* Reason list */
+        .reason-list {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .reason-item {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 35px;
+            font-size: 38px;
+        }
+
+        .reason-item .icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            flex-shrink: 0;
+        }
+
+        .reason-item .icon.red {
+            background: rgba(239, 68, 68, 0.3);
+        }
+
+        .reason-item .icon.green {
+            background: rgba(16, 185, 129, 0.3);
+        }
+
+        /* Timeline */
+        .timeline {
+            max-width: 1500px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50px;
+            top: 0;
+            bottom: 0;
+            width: 6px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 3px;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .timeline-item .dot {
+            width: 100px;
+            height: 100px;
+            background: #7c3aed;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 900;
+            flex-shrink: 0;
+            z-index: 1;
+        }
+
+        .timeline-item .dot.current {
+            background: #ef4444;
+            animation: pulse 2s infinite;
+        }
+
+        .timeline-item .text h3 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .timeline-item .text p {
+            font-size: 28px;
+            opacity: 0.85;
+        }
+
+        /* Comparison boxes */
+        .compare-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .compare-box {
+            background: rgba(255,255,255,0.1);
+            border-radius: 30px;
+            padding: 50px;
+        }
+
+        .compare-box.bad {
+            border: 4px solid #ef4444;
+        }
+
+        .compare-box.good {
+            border: 4px solid #10b981;
+        }
+
+        .compare-box h3 {
+            font-size: 42px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .compare-box.bad h3 {
+            color: #ef4444;
+        }
+
+        .compare-box.good h3 {
+            color: #4ade80;
+        }
+
+        .compare-box ul {
+            list-style: none;
+            font-size: 30px;
+        }
+
+        .compare-box li {
+            padding: 15px 0;
+            padding-left: 40px;
+            position: relative;
+        }
+
+        .compare-box.bad li::before {
+            content: 'X';
+            position: absolute;
+            left: 0;
+            color: #ef4444;
+            font-weight: bold;
+        }
+
+        .compare-box.good li::before {
+            content: '>';
+            position: absolute;
+            left: 0;
+            color: #4ade80;
+            font-weight: bold;
+        }
+
+        /* Definition box */
+        .definition-box {
+            background: rgba(255,255,255,0.1);
+            border-radius: 30px;
+            padding: 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+            border-left: 8px solid #4ade80;
+        }
+
+        .definition-box .term {
+            font-size: 48px;
+            color: #4ade80;
+            margin-bottom: 30px;
+        }
+
+        .definition-box .meaning {
+            font-size: 36px;
+            line-height: 1.6;
+        }
+
+        /* Action list */
+        .action-list {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .action-item {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 35px;
+            font-size: 36px;
+        }
+
+        .action-item .number {
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 36px;
+            flex-shrink: 0;
+        }
+
+        /* Checklist */
+        .checklist {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 30px;
+            font-size: 36px;
+            background: rgba(255,255,255,0.05);
+            padding: 25px 35px;
+            border-radius: 15px;
+        }
+
+        .checklist-item .check {
+            width: 50px;
+            height: 50px;
+            background: #10b981;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            flex-shrink: 0;
+        }
+
+        /* Big text */
+        .big-text {
+            font-size: 100px;
+            font-weight: 900;
+            line-height: 1.2;
+        }
+
+        .medium-text {
+            font-size: 48px;
+            opacity: 0.95;
+            margin-top: 30px;
+        }
+
+        /* Alert box */
+        .alert-box {
+            background: rgba(239, 68, 68, 0.2);
+            border: 4px solid #ef4444;
+            border-radius: 30px;
+            padding: 50px;
+            max-width: 1400px;
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        .alert-box .icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+
+        .alert-box p {
+            font-size: 36px;
+        }
+
+        /* CTA Slide */
+        .slide-cta {
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #059669 100%);
+        }
+
+        .slide-cta .content {
+            text-align: center;
+            padding: 80px;
+        }
+
+        .slide-cta .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 28px;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .slide-cta h2 {
+            font-size: 80px;
+            font-weight: 900;
+            margin-bottom: 30px;
+        }
+
+        .slide-cta .features {
+            font-size: 36px;
+            opacity: 0.95;
+            line-height: 1.8;
+            margin-bottom: 50px;
+        }
+
+        .slide-cta .cta-box {
+            display: inline-block;
+            background: white;
+            color: #7c3aed;
+            padding: 30px 80px;
+            border-radius: 50px;
+            font-size: 42px;
+            font-weight: 900;
+        }
+
+        /* Download CTA slide */
+        .slide-download {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        }
+
+        .slide-download .content {
+            text-align: center;
+            padding: 80px;
+        }
+
+        .slide-download h2 {
+            font-size: 80px;
+            font-weight: 900;
+            margin-bottom: 30px;
+        }
+
+        .slide-download .url {
+            font-size: 56px;
+            font-weight: 700;
+            background: rgba(255,255,255,0.2);
+            padding: 30px 60px;
+            border-radius: 20px;
+            margin: 40px 0;
+            display: inline-block;
+        }
+
+        .slide-download p {
+            font-size: 36px;
+            opacity: 0.95;
+            margin-top: 30px;
+        }
+
+        /* Navigation */
+        .nav-hint {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-size: 16px;
+            z-index: 1000;
+            font-family: Arial, sans-serif;
+        }
+
+        .slide-counter {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-size: 18px;
+            z-index: 1000;
+            font-family: Arial, sans-serif;
+        }
+
+        @media print {
+            .slide {
+                page-break-after: always;
+            }
+            .nav-hint, .slide-counter {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-hint">Arrow keys to navigate | F11 for fullscreen</div>
+    <div class="slide-counter">Slide <span id="currentSlide">1</span> of <span id="totalSlides">19</span></div>
+
+    <!-- SLIDE 1: Title -->
+    <div class="slide slide-title">
+        <div class="content">
+            <div class="badge urgent-badge">Time Sensitive</div>
+            <h1><span class="highlight">Continuing Resolution</span><br>Explained</h1>
+            <p class="subtitle">What Small Businesses NEED to Know Right Now</p>
+            <div class="date">GovCon Giants | Federal Help Center</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 2: Why This Matters -->
+    <div class="slide slide-dark">
+        <div class="content">
+            <h2>Why Should You <span class="yellow">Care</span>?</h2>
+            <p style="margin-top: 40px; font-size: 48px;">If you're pursuing government contracts—or already have one—<br>a Continuing Resolution directly affects YOUR money.</p>
+        </div>
+    </div>
+
+    <!-- SLIDE 3: What is a CR -->
+    <div class="slide slide-blue">
+        <div class="content">
+            <h2>What Is A Continuing Resolution?</h2>
+            <div class="definition-box" style="margin-top: 40px;">
+                <div class="term">Continuing Resolution (CR)</div>
+                <div class="meaning">A temporary funding bill that keeps the government running at <strong>LAST YEAR'S</strong> spending levels when Congress can't agree on a new budget.</div>
+            </div>
+            <p style="font-size: 36px; margin-top: 50px; text-align: center; opacity: 0.9;">Think of it as the government hitting the "PAUSE" button on new spending.</p>
+        </div>
+    </div>
+
+    <!-- SLIDE 4: How It's Supposed to Work -->
+    <div class="slide slide-purple">
+        <div class="content">
+            <h2>How Budgets Are SUPPOSED to Work</h2>
+            <div class="timeline" style="margin-top: 50px;">
+                <div class="timeline-item">
+                    <div class="dot">FEB</div>
+                    <div class="text">
+                        <h3>President Submits Budget</h3>
+                        <p>The President proposes spending priorities for the next fiscal year</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="dot">APR-SEP</div>
+                    <div class="text">
+                        <h3>Congress Debates & Passes Bills</h3>
+                        <p>12 appropriations bills fund different parts of government</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="dot">OCT 1</div>
+                    <div class="text">
+                        <h3>New Fiscal Year Begins</h3>
+                        <p>Agencies have new budgets and can spend on new priorities</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 5: What Actually Happens -->
+    <div class="slide slide-red">
+        <div class="content">
+            <h2>What ACTUALLY Happens</h2>
+            <div class="stat-grid" style="margin-top: 50px;">
+                <div class="stat-box">
+                    <div class="number yellow">47</div>
+                    <div class="label">Years Since Congress Passed<br>All 12 Bills On Time</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number yellow">200+</div>
+                    <div class="label">Continuing Resolutions<br>Since 1977</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number yellow">22</div>
+                    <div class="label">Government Shutdowns<br>Since 1976</div>
+                </div>
+            </div>
+            <p style="font-size: 36px; margin-top: 50px;">Congress almost NEVER passes budgets on time. CRs are the norm, not the exception.</p>
+        </div>
+    </div>
+
+    <!-- SLIDE 6: Current Situation -->
+    <div class="slide slide-dark">
+        <div class="content">
+            <h2>The <span class="red">Current</span> Situation</h2>
+            <div class="alert-box">
+                <div class="icon">!</div>
+                <p>The current CR expires <strong style="color: #fef08a;">January 30, 2026</strong><br>Without a deal, the government SHUTS DOWN again.</p>
+            </div>
+            <div class="stat-grid stat-grid-2" style="margin-top: 40px; max-width: 1200px;">
+                <div class="stat-box">
+                    <div class="number red">43</div>
+                    <div class="label">Days of Shutdown<br>October-November 2025</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number yellow">$1.2T</div>
+                    <div class="label">In Spending Bills<br>Still Not Passed</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 7: Who Has The Money -->
+    <div class="slide slide-green">
+        <div class="content" style="padding: 60px;">
+            <h2>Who Has The Money <span style="color: #fef08a;">RIGHT NOW</span>?</h2>
+            <div class="compare-grid" style="margin-top: 40px;">
+                <div class="compare-box good">
+                    <h3>FULL-YEAR Funding (Spend Now!)</h3>
+                    <ul>
+                        <li>Veterans Affairs (VA)</li>
+                        <li>Agriculture / FDA</li>
+                        <li>Commerce / Justice / Science</li>
+                        <li>Interior / EPA</li>
+                        <li>Energy / Army Corps</li>
+                        <li>Legislative Branch</li>
+                    </ul>
+                </div>
+                <div class="compare-box bad">
+                    <h3>Still on CR (Cautious Spending)</h3>
+                    <ul>
+                        <li>Defense ($831B stuck)</li>
+                        <li>HHS / Education / Labor</li>
+                        <li>Transportation / HUD</li>
+                        <li>Homeland Security</li>
+                        <li>State Dept / Foreign Ops</li>
+                        <li>Financial Services</li>
+                    </ul>
+                </div>
+            </div>
+            <p style="font-size: 32px; margin-top: 40px; text-align: center;">Target agencies with FULL funding—they can award contracts NOW.</p>
+        </div>
+    </div>
+
+    <!-- SLIDE 8: What Happens During a CR -->
+    <div class="slide slide-orange">
+        <div class="content">
+            <h2>What Happens During a CR?</h2>
+            <div class="reason-list" style="margin-top: 40px;">
+                <div class="reason-item"><div class="icon">1</div><span>Agencies operate at LAST YEAR'S funding levels</span></div>
+                <div class="reason-item"><div class="icon">2</div><span>NO new programs or initiatives can start</span></div>
+                <div class="reason-item"><div class="icon">3</div><span>NO new multi-year contracts can be awarded</span></div>
+                <div class="reason-item"><div class="icon">4</div><span>Hiring freezes at many agencies</span></div>
+                <div class="reason-item"><div class="icon">5</div><span>Existing contracts continue—but cautiously</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 8: Impact on Contractors -->
+    <div class="slide slide-dark">
+        <div class="content">
+            <h2>How CRs Affect <span class="yellow">Government Contractors</span></h2>
+            <div class="compare-grid" style="margin-top: 40px;">
+                <div class="compare-box bad">
+                    <h3>The BAD News</h3>
+                    <ul>
+                        <li>New contract awards delayed</li>
+                        <li>Proposal evaluations slow down</li>
+                        <li>Agencies hesitant to spend</li>
+                        <li>Uncertainty kills planning</li>
+                        <li>Small businesses hit hardest</li>
+                    </ul>
+                </div>
+                <div class="compare-box good">
+                    <h3>The GOOD News</h3>
+                    <ul>
+                        <li>Existing contracts continue</li>
+                        <li>Task orders still flow</li>
+                        <li>IDIQ vehicles keep moving</li>
+                        <li>Agencies still NEED services</li>
+                        <li>End-of-CR spending surges</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 9: Shutdown vs CR -->
+    <div class="slide slide-blue">
+        <div class="content">
+            <h2>CR vs. Shutdown: Know The Difference</h2>
+            <div class="compare-grid" style="margin-top: 40px;">
+                <div class="compare-box" style="border: 4px solid #fef08a;">
+                    <h3 style="color: #fef08a;">Continuing Resolution</h3>
+                    <ul style="list-style: none;">
+                        <li style="padding-left: 0;">Government stays OPEN</li>
+                        <li style="padding-left: 0;">Employees get paid</li>
+                        <li style="padding-left: 0;">Contractors get paid</li>
+                        <li style="padding-left: 0;">Just limited to old budget</li>
+                        <li style="padding-left: 0;">Operations continue normally</li>
+                    </ul>
+                </div>
+                <div class="compare-box bad">
+                    <h3>Government Shutdown</h3>
+                    <ul>
+                        <li>Non-essential workers furloughed</li>
+                        <li>Contractors STOP getting paid</li>
+                        <li>Contract work may halt</li>
+                        <li>Invoices pile up unpaid</li>
+                        <li>Massive disruption</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 10: Impact on Small Business -->
+    <div class="slide slide-red">
+        <div class="content">
+            <h2>Why Small Businesses Get<br><span style="color: #fef08a;">Hit Hardest</span></h2>
+            <div class="reason-list" style="margin-top: 50px;">
+                <div class="reason-item"><div class="icon red">$</div><span>Less cash reserves to weather payment delays</span></div>
+                <div class="reason-item"><div class="icon red">!</div><span>Often depend on 1-2 government clients</span></div>
+                <div class="reason-item"><div class="icon red">X</div><span>Can't absorb stop-work orders</span></div>
+                <div class="reason-item"><div class="icon red">?</div><span>Uncertainty makes planning impossible</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 11: What To Do Now -->
+    <div class="slide slide-green">
+        <div class="content">
+            <h2>What You Should Do RIGHT NOW</h2>
+            <div class="action-list" style="margin-top: 50px;">
+                <div class="action-item"><div class="number">1</div><span>Review your contract type (fixed-price vs. cost-plus)</span></div>
+                <div class="action-item"><div class="number">2</div><span>Check your cash reserves (aim for 60-90 days)</span></div>
+                <div class="action-item"><div class="number">3</div><span>Document EVERYTHING—costs, delays, impacts</span></div>
+                <div class="action-item"><div class="number">4</div><span>Communicate proactively with your CO</span></div>
+                <div class="action-item"><div class="number">5</div><span>Diversify your client base if possible</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 12: The Opportunity -->
+    <div class="slide slide-purple">
+        <div class="content">
+            <h2>The <span style="color: #fef08a;">OPPORTUNITY</span> in the Chaos</h2>
+            <div class="checklist" style="margin-top: 40px;">
+                <div class="checklist-item"><div class="check">$</div>Agencies MUST spend remaining funds before CR expires</div>
+                <div class="checklist-item"><div class="check">!</div>Q1 and Q4 see MASSIVE spending surges</div>
+                <div class="checklist-item"><div class="check">></div>Small purchases under $250K move FAST</div>
+                <div class="checklist-item"><div class="check">></div>Task orders on existing vehicles keep flowing</div>
+                <div class="checklist-item"><div class="check">></div>Agencies still have goals to meet</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 13: Position Yourself -->
+    <div class="slide slide-dark">
+        <div class="content">
+            <h2>How To <span class="highlight">Position Yourself</span></h2>
+            <div class="action-list" style="margin-top: 50px;">
+                <div class="action-item"><div class="number">1</div><span>Get on GSA Schedule or other IDIQ vehicles</span></div>
+                <div class="action-item"><div class="number">2</div><span>Build relationships NOW (before money flows)</span></div>
+                <div class="action-item"><div class="number">3</div><span>Be ready to respond FAST to quick-turn RFQs</span></div>
+                <div class="action-item"><div class="number">4</div><span>Target agencies with "use it or lose it" pressure</span></div>
+                <div class="action-item"><div class="number">5</div><span>Focus on simplified acquisitions ($250K and under)</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 14: Key Takeaway -->
+    <div class="slide slide-dark">
+        <div class="content">
+            <h2 style="font-size: 60px; margin-bottom: 50px;">The Key Takeaway</h2>
+            <p class="big-text" style="color: #4ade80;">CRs Create Chaos<br><span style="color: #fef08a;">Chaos Creates Opportunity</span></p>
+            <p class="medium-text">The businesses that WIN during uncertainty are the ones<br>that are PREPARED and POSITIONED.</p>
+        </div>
+    </div>
+
+    <!-- SLIDE 15: Don't Panic -->
+    <div class="slide slide-blue">
+        <div class="content">
+            <h2>Don't Panic. <span style="color: #fef08a;">Prepare.</span></h2>
+            <div class="checklist" style="margin-top: 40px;">
+                <div class="checklist-item"><div class="check">✓</div>CRs are NORMAL—government keeps running</div>
+                <div class="checklist-item"><div class="check">✓</div>Even shutdowns are TEMPORARY</div>
+                <div class="checklist-item"><div class="check">✓</div>Contractors eventually get paid</div>
+                <div class="checklist-item"><div class="check">✓</div>Agencies still need what you provide</div>
+                <div class="checklist-item"><div class="check">✓</div>Long-term relationships survive short-term chaos</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 16: Free Resources -->
+    <div class="slide slide-download">
+        <div class="content">
+            <h2>Free Resources</h2>
+            <div class="reason-list" style="margin: 40px auto; text-align: left; max-width: 1000px;">
+                <div class="reason-item" style="font-size: 32px;"><div class="icon">1</div><span>Prime Contractor Directory</span></div>
+                <div class="reason-item" style="font-size: 32px;"><div class="icon">2</div><span>75 GovCon AI Prompts</span></div>
+                <div class="reason-item" style="font-size: 32px;"><div class="icon">3</div><span>2026 Action Plan</span></div>
+                <div class="reason-item" style="font-size: 32px;"><div class="icon">4</div><span>Low Competition Contracts List</span></div>
+            </div>
+            <div class="url">govcongiants.org/surge</div>
+            <p>Link In Description</p>
+        </div>
+    </div>
+
+    <!-- SLIDE 17: CTA -->
+    <div class="slide slide-cta">
+        <div class="content">
+            <div class="badge">Federal Help Center Pro Members</div>
+            <h2>January 2026 GovCon Bootcamp</h2>
+            <div class="features">
+                8 Hours Live Training | Personalized Target List<br>
+                90-Day Action Plan | Searchable Database Access<br>
+                Learn How to WIN During Budget Uncertainty
+            </div>
+            <div class="cta-box">Join Federal Help Center Pro</div>
+            <p style="margin-top: 30px; font-size: 32px;">$99/month or $799/year</p>
+        </div>
+    </div>
+
+    <!-- SLIDE 18: Final -->
+    <div class="slide slide-title">
+        <div class="content">
+            <h1 style="font-size: 80px;">Thanks For Watching!</h1>
+            <p class="subtitle" style="margin-top: 40px;">Like | Subscribe | Share</p>
+            <p style="font-size: 36px; margin-top: 60px; opacity: 0.9;">Download free resources: govcongiants.org/surge</p>
+            <div class="date">GovCon Giants | Federal Help Center</div>
+        </div>
+    </div>
+
+    <script>
+        // Keyboard navigation
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const currentSlideEl = document.getElementById('currentSlide');
+        const totalSlidesEl = document.getElementById('totalSlides');
+
+        totalSlidesEl.textContent = slides.length;
+
+        function updateCounter() {
+            currentSlideEl.textContent = currentSlide + 1;
+        }
+
+        function goToSlide(n) {
+            if (n >= 0 && n < slides.length) {
+                currentSlide = n;
+                slides[n].scrollIntoView({ behavior: 'smooth' });
+                updateCounter();
+            }
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') {
+                e.preventDefault();
+                goToSlide(currentSlide + 1);
+            } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                e.preventDefault();
+                goToSlide(currentSlide - 1);
+            } else if (e.key === 'Home') {
+                goToSlide(0);
+            } else if (e.key === 'End') {
+                goToSlide(slides.length - 1);
+            }
+        });
+
+        // Update counter on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    currentSlide = Array.from(slides).indexOf(entry.target);
+                    updateCounter();
+                }
+            });
+        }, { threshold: 0.5 });
+
+        slides.forEach(slide => observer.observe(slide));
+    </script>
+</body>
+</html>

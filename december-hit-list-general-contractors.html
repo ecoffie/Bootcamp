@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>December 2025 Hit List - General Contractors</title>
+    <style>
+        @page {
+            size: letter;
+            margin: 0.5in;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, #dc2626 0%, #ea580c 100%);
+            color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            font-weight: 300;
+            margin-bottom: 15px;
+        }
+
+        .header .badge {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 20px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .intro {
+            background: #fff7ed;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 35px;
+            border-left: 5px solid #ea580c;
+        }
+
+        .intro h2 {
+            color: #9a3412;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .intro p {
+            font-size: 1rem;
+            color: #7c2d12;
+            margin-bottom: 10px;
+        }
+
+        .naics-box {
+            background: #fef3c7;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .naics-box strong {
+            color: #92400e;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .naics-box ul {
+            margin-left: 20px;
+            color: #78350f;
+        }
+
+        .hit-list {
+            display: grid;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .opportunity-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .opportunity-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 5px;
+            background: linear-gradient(135deg, #dc2626 0%, #ea580c 100%);
+        }
+
+        .opportunity-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            border-color: #ea580c;
+        }
+
+        .opportunity-number {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(135deg, #dc2626 0%, #ea580c 100%);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            font-weight: 800;
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        .opportunity-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .opportunity-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #9a3412;
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .opportunity-id {
+            font-size: 0.85rem;
+            color: #64748b;
+            font-family: monospace;
+            margin-top: 5px;
+        }
+
+        .opportunity-meta {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: #4a5568;
+        }
+
+        .meta-item strong {
+            color: #9a3412;
+            font-weight: 600;
+        }
+
+        .badge-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        .badge-gc {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .badge-set-aside {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .badge-sb {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .badge-8a {
+            background: #e9d5ff;
+            color: #6b21a8;
+        }
+
+        .badge-hubzone {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .badge-wosb {
+            background: #fce7f3;
+            color: #9f1239;
+        }
+
+        .badge-veteran {
+            background: #fed7aa;
+            color: #9a3412;
+        }
+
+        .badge-urgent {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .opportunity-details {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .opportunity-details p {
+            margin-bottom: 10px;
+            color: #4a5568;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .opportunity-details strong {
+            color: #9a3412;
+        }
+
+        .action-box {
+            background: #fff7ed;
+            border-left: 4px solid #ea580c;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        .action-box strong {
+            color: #9a3412;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .key-point {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+
+        .key-point strong {
+            color: #92400e;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: #f8fafc;
+            border-radius: 12px;
+            margin-top: 40px;
+        }
+
+        .footer p {
+            color: #4a5568;
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+
+        @media print {
+            .opportunity-card {
+                page-break-inside: avoid;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .opportunity-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏗️ December 2025 Hit List</h1>
+            <p class="subtitle">Top 25 Construction Opportunities for General Contractors</p>
+            <p style="font-size: 1rem; margin-top: 10px; opacity: 0.9;">Real Construction Contracts from SAM.gov</p>
+            <span class="badge">Response Deadlines: Dec 2025 - Jan 2026</span>
+        </div>
+
+        <div class="intro">
+            <h2>Perfect for General Contractors</h2>
+            <p><strong>✅ Construction projects only</strong> - Building, renovation, electrical, plumbing, HVAC, and more</p>
+            <p><strong>✅ Real opportunities</strong> - These are active solicitations accepting bids RIGHT NOW</p>
+            <p><strong>✅ Set-asides included</strong> - Many reserved for SDVOSB, 8(a), HUBZone, WOSB, and Small Business</p>
+            <p><strong>✅ Response deadlines listed</strong> - Know exactly when to submit your bid</p>
+            <p><strong>✅ POC information included</strong> - Contact the right person immediately</p>
+            
+            <div class="naics-box">
+                <strong>📋 Key NAICS Codes for General Contractors:</strong>
+                <ul>
+                    <li><strong>236220</strong> - Commercial and Institutional Building Construction</li>
+                    <li><strong>238210</strong> - Electrical Contractors</li>
+                    <li><strong>238220</strong> - Plumbing, Heating, and Air-Conditioning Contractors</li>
+                    <li><strong>237110</strong> - Water and Sewer Line Construction</li>
+                    <li><strong>561210</strong> - Facilities Support Services</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="hit-list">
+
+            <!-- Opportunity 1 -->
+            <div class="opportunity-card">
+                <div class="opportunity-number">1</div>
+                <div class="opportunity-header">
+                    <div>
+                        <div class="opportunity-title">DRYDOCK: USCGC SEA HORSE DD FY2026</div>
+                        <div class="opportunity-id">Notice ID: 70Z08026QPBPL0008</div>
+                    </div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Response Deadline:</strong> Dec 15, 2025 01:00 PM EST</div>
+                    <div class="meta-item"><strong>Type:</strong> Combined Synopsis/Solicitation</div>
+                    <div class="meta-item"><strong>NAICS:</strong> Ship Building and Repairing</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-gc">GC Opportunity</span>
+                    <span class="badge-tag badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5</span>
+                    <span class="badge-tag badge-urgent">Urgent Deadline</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>Project Description:</strong> Amendment 0001 is hereby attached. U.S. COAST GUARD CUTTER (USCGC) SEA HORSE DRYDOCK REPAIRS FY26 Period of Performance: 4/15/2026 - 6/17/2026</p>
+                    <p><strong>Set-Aside:</strong> Total Small Business Set-Aside (FAR 19.5)</p>
+                    <div class="action-box">
+                        <strong>🏗️ Your Action Items:</strong>
+                        1. Review full solicitation on SAM.gov using Notice ID: <strong>70Z08026QPBPL0008</strong><br>
+                        2. Contact POC: <strong>Maggie Trader | LaToya Sorrell</strong><br>
+                        3. Check for site visit requirements (common in construction)<br>
+                        4. Verify bonding requirements (often needed for construction contracts)<br>
+                        5. Ensure you meet set-aside requirements (if applicable)<br>
+                        6. Submit bid by <strong>Dec 15, 2025 01:00 PM EST</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Opportunity 2 -->
+            <div class="opportunity-card">
+                <div class="opportunity-number">2</div>
+                <div class="opportunity-header">
+                    <div>
+                        <div class="opportunity-title">CENTRAL COAST RANGER DISTRICT SEPTIC/VAULT PUMPING</div>
+                        <div class="opportunity-id">Notice ID: 1240BE26Q0012</div>
+                    </div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Response Deadline:</strong> Dec 15, 2025 01:00 PM PST</div>
+                    <div class="meta-item"><strong>Type:</strong> Combined Synopsis/Solicitation</div>
+                    <div class="meta-item"><strong>NAICS:</strong> Septic Tank and Related Services</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-gc">GC Opportunity</span>
+                    <span class="badge-tag badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5</span>
+                    <span class="badge-tag badge-urgent">Urgent Deadline</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>Project Description:</strong> This is a combined synopsis/solicitation for commercial products or commercial services prepared in accordance with FAR part 12. This announcement constitutes the only solicitation. Offers are being...</p>
+                    <p><strong>Set-Aside:</strong> Total Small Business Set-Aside (FAR 19.5)</p>
+                    <div class="action-box">
+                        <strong>🏗️ Your Action Items:</strong>
+                        1. Review full solicitation on SAM.gov using Notice ID: <strong>1240BE26Q0012</strong><br>
+                        2. Contact POC: <strong>Jared D Machgan</strong><br>
+                        3. Check for site visit requirements (common in construction)<br>
+                        4. Verify bonding requirements (often needed for construction contracts)<br>
+                        5. Ensure you meet set-aside requirements (if applicable)<br>
+                        6. Submit bid by <strong>Dec 15, 2025 01:00 PM PST</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Opportunity 3 -->
+            <div class="opportunity-card">
+                <div class="opportunity-number">3</div>
+                <div class="opportunity-header">
+                    <div>
+                        <div class="opportunity-title">Li Ion Battery and Charging Station</div>
+                        <div class="opportunity-id">Notice ID: N6660426Q0008</div>
+                    </div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Response Deadline:</strong> Dec 15, 2025 02:00 PM EST</div>
+                    <div class="meta-item"><strong>Type:</strong> Combined Synopsis/Solicitation</div>
+                    <div class="meta-item"><strong>NAICS:</strong> Battery Manufacturing </div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-gc">GC Opportunity</span>
+                    <span class="badge-tag badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5</span>
+                    <span class="badge-tag badge-urgent">Urgent Deadline</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>Project Description:</strong> Amendment 0003 The purpose of this amendment is to revise the Combined Synopsis and Solicitation notice. As a result: 1. Combined Syn-Sol Rev 01 N6660426Q0008 is added. REV 01 revises CLIN 0001 from...</p>
+                    <p><strong>Set-Aside:</strong> Total Small Business Set-Aside (FAR 19.5)</p>
+                    <div class="action-box">
+                        <strong>🏗️ Your Action Items:</strong>
+                        1. Review full solicitation on SAM.gov using Notice ID: <strong>N6660426Q0008</strong><br>
+                        2. Contact POC: <strong>Teresa Michael</strong><br>
+                        3. Check for site visit requirements (common in construction)<br>
+                        4. Verify bonding requirements (often needed for construction contracts)<br>
+                        5. Ensure you meet set-aside requirements (if applicable)<br>
+                        6. Submit bid by <strong>Dec 15, 2025 02:00 PM EST</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Opportunity 4 -->
+            <div class="opportunity-card">
+                <div class="opportunity-number">4</div>
+                <div class="opportunity-header">
+                    <div>
+                        <div class="opportunity-title">HOSE ASSEMBLIES</div>
+                        <div class="opportunity-id">Notice ID: SPMYM4-26-Q-3104</div>
+                    </div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Response Deadline:</strong> Dec 15, 2025 02:00 PM HST</div>
+                    <div class="meta-item"><strong>Type:</strong> Combined Synopsis/Solicitation</div>
+                    <div class="meta-item"><strong>NAICS:</strong> All Other Miscellaneous Fabricated Metal Product Manufacturing</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-gc">GC Opportunity</span>
+                    <span class="badge-tag badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5</span>
+                    <span class="badge-tag badge-urgent">Urgent Deadline</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>Project Description:</strong> This is a COMBINED SYNOPSIS/SOLICITATION for commercial items prepared in accordance with the information in FAR part 12, using Simplified Acquisition Procedures found at (FAR 13), as supplemented...</p>
+                    <p><strong>Set-Aside:</strong> Total Small Business Set-Aside (FAR 19.5)</p>
+                    <div class="action-box">
+                        <strong>🏗️ Your Action Items:</strong>
+                        1. Review full solicitation on SAM.gov using Notice ID: <strong>SPMYM4-26-Q-3104</strong><br>
+                        2. Contact POC: <strong>Leo Li</strong><br>
+                        3. Check for site visit requirements (common in construction)<br>
+                        4. Verify bonding requirements (often needed for construction contracts)<br>
+                        5. Ensure you meet set-aside requirements (if applicable)<br>
+                        6. Submit bid by <strong>Dec 15, 2025 02:00 PM HST</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Opportunity 5 -->
+            <div class="opportunity-card">
+                <div class="opportunity-number">5</div>
+                <div class="opportunity-header">
+                    <div>
+                        <div class="opportunity-title">Replace Switch Gears FCI Herlong</div>
+                        <div class="opportunity-id">Notice ID: 15B61926Q00000005</div>
+                    </div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Response Deadline:</strong> Dec 15, 2025 02:00 PM PST</div>
+                    <div class="meta-item"><strong>Type:</strong> Combined Synopsis/Solicitation</div>
+                    <div class="meta-item"><strong>NAICS:</strong> All Other Miscellaneous Electrical Equipment and Component Manufacturing</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-gc">GC Opportunity</span>
+                    <span class="badge-tag badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5</span>
+                    <span class="badge-tag badge-urgent">Urgent Deadline</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>Project Description:</strong> Please submit all bids to tpolan@bop.gov only. The previous E-Mail address of her-quotes-s@bop.gov is no longer active. Any bids sent to her-quotes-s@bop.gov will not be received and will not be...</p>
+                    <p><strong>Set-Aside:</strong> Total Small Business Set-Aside (FAR 19.5)</p>
+                    <div class="action-box">
+                        <strong>🏗️ Your Action Items:</strong>
+                        1. Review full solicitation on SAM.gov using Notice ID: <strong>15B61926Q00000005</strong><br>
+                        2. Contact POC: <strong>Trevor Polan</strong><br>
+                        3. Check for site visit requirements (common in construction)<br>
+                        4. Verify bonding requirements (often needed for construction contracts)<br>
+                        5. Ensure you meet set-aside requirements (if applicable)<br>
+                        6. Submit bid by <strong>Dec 15, 2025 02:00 PM PST</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Opportunity 6 -->
+            <div class="opportunity-card">
+                <div class="opportunity-number">6</div>
+                <div class="opportunity-header">
+                    <div>
+                        <div class="opportunity-title">Yukon, OK CBOC</div>
+                        <div class="opportunity-id">Notice ID: 36C24W25R0116</div>
+                    </div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Response Deadline:</strong> Dec 15, 2025 03:00 PM CST</div>
+                    <div class="meta-item"><strong>Type:</strong> Solicitation</div>
+                    <div class="meta-item"><strong>NAICS:</strong> Lessors of Nonresidential Buildings (except Miniwarehouses)</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-gc">GC Opportunity</span>
+                    <span class="badge-tag badge-set-aside badge-veteran">Service-Disabled Veteran-Owned Small Bus</span>
+                    <span class="badge-tag badge-urgent">Urgent Deadline</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>Project Description:</strong> The Department of Veteran Affairs is seeking 22,155 ABOA SF of space for a medical clinic in the Yukon, OK area. Please see all attachments for additional information.</p>
+                    <p><strong>Set-Aside:</strong> Service-Disabled Veteran-Owned Small Business (SDVOSB) Set-Aside (FAR 19.14)</p>
+                    <div class="action-box">
+                        <strong>🏗️ Your Action Items:</strong>
+                        1. Review full solicitation on SAM.gov using Notice ID: <strong>36C24W25R0116</strong><br>
+                        2. Contact POC: <strong>Miranda Kloeppel | William Maddox</strong><br>
+                        3. Check for site visit requirements (common in construction)<br>
+                        4. Verify bonding requirements (often needed for construction contracts)<br>
+                        5. Ensure you meet set-aside requirements (if applicable)<br>
+                        6. Submit bid by <strong>Dec 15, 2025 03:00 PM CST</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Opportunity 7 -->
+            <div class="opportunity-card">
+                <div class="opportunity-number">7</div>
+                <div class="opportunity-header">
+                    <div>
+                        <div class="opportunity-title">Government-Owned, Contractor-Operated (GOCO) Fuel Services NAS Key West, FL</div>
+                        <div class="opportunity-id">Notice ID: SPE603-26-R-0504</div>
+                    </div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Response Deadline:</strong> Dec 15, 2025 05:00 PM EST</div>
+                    <div class="meta-item"><strong>Type:</strong> Solicitation</div>
+                    <div class="meta-item"><strong>NAICS:</strong> Other Warehousing and Storage</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-gc">GC Opportunity</span>
+                    <span class="badge-tag badge-set-aside badge-veteran">Service-Disabled Veteran-Owned Small Bus</span>
+                    <span class="badge-tag badge-urgent">Urgent Deadline</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>Project Description:</strong> This solicitation will be issued to provide fuel servies in support of Naval Air Station (NAS) Key West, FL: Boca Chica Field, Trumbo Point, and West- Truman Annex, a group of installations and...</p>
+                    <p><strong>Set-Aside:</strong> Service-Disabled Veteran-Owned Small Business (SDVOSB) Set-Aside (FAR 19.14)</p>
+                    <div class="action-box">
+                        <strong>🏗️ Your Action Items:</strong>
+                        1. Review full solicitation on SAM.gov using Notice ID: <strong>SPE603-26-R-0504</strong><br>
+                        2. Contact POC: <strong>Alontae Uptegrow | Thea Miller-Smith</strong><br>
+                        3. Check for site visit requirements (common in construction)<br>
+                        4. Verify bonding requirements (often needed for construction contracts)<br>
+                        5. Ensure you meet set-aside requirements (if applicable)<br>
+                        6. Submit bid by <strong>Dec 15, 2025 05:00 PM EST</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Opportunity 8 -->
+            <div class="opportunity-card">
+                <div class="opportunity-number">8</div>
+                <div class="opportunity-header">
+                    <div>
+                        <div class="opportunity-title">AMENDMENT 1 - Q&amp;A Janitorial services for FEMA Region 2 at Naval Weapons Station Earle (NWSE)</div>
+                        <div class="opportunity-id">Notice ID: 70FBR226Q00000002</div>
+                    </div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Response Deadline:</strong> Dec 15, 2025 05:00 PM EST</div>
+                    <div class="meta-item"><strong>Type:</strong> Combined Synopsis/Solicitation</div>
+                    <div class="meta-item"><strong>NAICS:</strong> Janitorial Services</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-gc">GC Opportunity</span>
+                    <span class="badge-tag badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5</span>
+                    <span class="badge-tag badge-urgent">Urgent Deadline</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>Project Description:</strong> The Federal Emergency Management Agency (FEMA) is seeking janitorial services needed to accommodate and maintain a safe FEMA workspace environment for staff of Building C-54. Please send all...</p>
+                    <p><strong>Set-Aside:</strong> Total Small Business Set-Aside (FAR 19.5)</p>
+                    <div class="action-box">
+                        <strong>🏗️ Your Action Items:</strong>
+                        1. Review full solicitation on SAM.gov using Notice ID: <strong>70FBR226Q00000002</strong><br>
+                        2. Contact POC: <strong>Kendall Feaster</strong><br>
+                        3. Check for site visit requirements (common in construction)<br>
+                        4. Verify bonding requirements (often needed for construction contracts)<br>
+                        5. Ensure you meet set-aside requirements (if applicable)<br>
+                        6. Submit bid by <strong>Dec 15, 2025 05:00 PM EST</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Opportunity 9 -->
+            <div class="opportunity-card">
+                <div class="opportunity-number">9</div>
+                <div class="opportunity-header">
+                    <div>
+                        <div class="opportunity-title">USCGC Sturgeon Bay MPCMS Grooming</div>
+                        <div class="opportunity-id">Notice ID: 52000PR260001518</div>
+                    </div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Response Deadline:</strong> Dec 15, 2025 08:00 AM PST</div>
+                    <div class="meta-item"><strong>Type:</strong> Combined Synopsis/Solicitation</div>
+                    <div class="meta-item"><strong>NAICS:</strong> Ship Building and Repairing</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-gc">GC Opportunity</span>
+                    <span class="badge-tag badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5</span>
+                    <span class="badge-tag badge-urgent">Urgent Deadline</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>Project Description:</strong> This is for informational purposes only. This has been awarded VIA JOTFOC UNITED STATES COAST GUARD CUTTER STURGEON BAY (WTGB-109) ENGINEERING DEPARTMENT Scope of Work MPCMS Grooming � 140-ft...</p>
+                    <p><strong>Set-Aside:</strong> Total Small Business Set-Aside (FAR 19.5)</p>
+                    <div class="action-box">
+                        <strong>🏗️ Your Action Items:</strong>
+                        1. Review full solicitation on SAM.gov using Notice ID: <strong>52000PR260001518</strong><br>
+                        2. Contact POC: <strong>Justin Wooldridge | Lindsay Mongiovi</strong><br>
+                        3. Check for site visit requirements (common in construction)<br>
+                        4. Verify bonding requirements (often needed for construction contracts)<br>
+                        5. Ensure you meet set-aside requirements (if applicable)<br>
+                        6. Submit bid by <strong>Dec 15, 2025 08:00 AM PST</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Opportunity 10 -->
+            <div class="opportunity-card">
+                <div class="opportunity-number">10</div>
+                <div class="opportunity-header">
+                    <div>
+                        <div class="opportunity-title">6515--Shelving System</div>
+                        <div class="opportunity-id">Notice ID: 36C24826Q0161</div>
+                    </div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Response Deadline:</strong> Dec 15, 2025 09:00 AM EST</div>
+                    <div class="meta-item"><strong>Type:</strong> Combined Synopsis/Solicitation</div>
+                    <div class="meta-item"><strong>NAICS:</strong> Showcase, Partition, Shelving, and Locker Manufacturing</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-gc">GC Opportunity</span>
+                    <span class="badge-tag badge-set-aside badge-veteran">Service-Disabled Veteran-Owned Small Bus</span>
+                    <span class="badge-tag badge-urgent">Urgent Deadline</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>Project Description:</strong> GENERAL: James A Haley VA Hospital, 13000 Bruce B Downs Blvd. FL. 33612, has a requirement for Storage system for Urology Storeroom at the James A Haley VA Hospital in Tampa FL. BACKGROUND: The...</p>
+                    <p><strong>Set-Aside:</strong> Service-Disabled Veteran-Owned Small Business (SDVOSB) Set-Aside (FAR 19.14)</p>
+                    <div class="action-box">
+                        <strong>🏗️ Your Action Items:</strong>
+                        1. Review full solicitation on SAM.gov using Notice ID: <strong>36C24826Q0161</strong><br>
+                        2. Contact POC: <strong>Marcus Lewis</strong><br>
+                        3. Check for site visit requirements (common in construction)<br>
+                        4. Verify bonding requirements (often needed for construction contracts)<br>
+                        5. Ensure you meet set-aside requirements (if applicable)<br>
+                        6. Submit bid by <strong>Dec 15, 2025 09:00 AM EST</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Opportunity 11 -->
+            <div class="opportunity-card">
+                <div class="opportunity-number">11</div>
+                <div class="opportunity-header">
+                    <div>
+                        <div class="opportunity-title">Vapor International LLC- Vessel Boiler Parts</div>
+                        <div class="opportunity-id">Notice ID: N0040626Q0006</div>
+                    </div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Response Deadline:</strong> Dec 15, 2025 10:00 AM EST</div>
+                    <div class="meta-item"><strong>Type:</strong> Combined Synopsis/Solicitation</div>
+                    <div class="meta-item"><strong>NAICS:</strong> Power Boiler and Heat Exchanger Manufacturing</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-gc">GC Opportunity</span>
+                    <span class="badge-tag badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5</span>
+                    <span class="badge-tag badge-urgent">Urgent Deadline</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>Project Description:</strong> 12/12/2025 AMENDMENT 0006 is to: -I. Update the Quantities for CLIN 00002: CLIN 0002 ABS CERTIFICATION; PN 77777777-01; QTY 1 EA (Updated) 12/12/2025 AMENDMENT 0005 is to: -I. Update the Quantities...</p>
+                    <p><strong>Set-Aside:</strong> Total Small Business Set-Aside (FAR 19.5)</p>
+                    <div class="action-box">
+                        <strong>🏗️ Your Action Items:</strong>
+                        1. Review full solicitation on SAM.gov using Notice ID: <strong>N0040626Q0006</strong><br>
+                        2. Contact POC: <strong>Brian Schuyler | Nicole Eygnor</strong><br>
+                        3. Check for site visit requirements (common in construction)<br>
+                        4. Verify bonding requirements (often needed for construction contracts)<br>
+                        5. Ensure you meet set-aside requirements (if applicable)<br>
+                        6. Submit bid by <strong>Dec 15, 2025 10:00 AM EST</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Opportunity 12 -->
+            <div class="opportunity-card">
+                <div class="opportunity-number">12</div>
+                <div class="opportunity-header">
+                    <div>
+                        <div class="opportunity-title">Amendment 1 of Snow Removal Equipment Rental for Fort Wainwright, Alaska</div>
+                        <div class="opportunity-id">Notice ID: W912D0-26-Q-0001-A0001</div>
+                    </div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Response Deadline:</strong> Dec 15, 2025 11:59 PM AKST</div>
+                    <div class="meta-item"><strong>Type:</strong> Combined Synopsis/Solicitation</div>
+                    <div class="meta-item"><strong>NAICS:</strong> Construction, Mining, and Forestry Machinery and Equipment Rental and Leasing</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-gc">GC Opportunity</span>
+                    <span class="badge-tag badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5</span>
+                    <span class="badge-tag badge-urgent">Urgent Deadline</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>Project Description:</strong> This is amendment 1 of Snow Removal Equipment Rental for Fort Wainwright, Alaska, W912D0-26-Q-0001. 1. to add Q&amp;A 2. to update PWS. See attachment for detail.</p>
+                    <p><strong>Set-Aside:</strong> Total Small Business Set-Aside (FAR 19.5)</p>
+                    <div class="action-box">
+                        <strong>🏗️ Your Action Items:</strong>
+                        1. Review full solicitation on SAM.gov using Notice ID: <strong>W912D0-26-Q-0001-A0001</strong><br>
+                        2. Contact POC: <strong>SSG Kim, Eric | MAJ Molly Libowski</strong><br>
+                        3. Check for site visit requirements (common in construction)<br>
+                        4. Verify bonding requirements (often needed for construction contracts)<br>
+                        5. Ensure you meet set-aside requirements (if applicable)<br>
+                        6. Submit bid by <strong>Dec 15, 2025 11:59 PM AKST</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Opportunity 13 -->
+            <div class="opportunity-card">
+                <div class="opportunity-number">13</div>
+                <div class="opportunity-header">
+                    <div>
+                        <div class="opportunity-title">PNQS 09-4491 Repair Dining Facility Bldg. 668, Maxwell AFB, AL (Solicitation Amendment 0002)</div>
+                        <div class="opportunity-id">Notice ID: FA330026R0001</div>
+                    </div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Response Deadline:</strong> Dec 15, 2025 12:00 PM CST</div>
+                    <div class="meta-item"><strong>Type:</strong> Solicitation</div>
+                    <div class="meta-item"><strong>NAICS:</strong> Commercial and Institutional Building Construction</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-gc">GC Opportunity</span>
+                    <span class="badge-tag badge-set-aside badge-veteran">Service-Disabled Veteran-Owned Small Bus</span>
+                    <span class="badge-tag badge-urgent">Urgent Deadline</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>Project Description:</strong> The work covered by these specifications consists of furnishing all plant, labor, equipment and materials and performing all operations in connection with the REPAIR DINING FACILITY, BUILDING 668 to...</p>
+                    <p><strong>Set-Aside:</strong> Service-Disabled Veteran-Owned Small Business (SDVOSB) Set-Aside (FAR 19.14)</p>
+                    <div class="action-box">
+                        <strong>🏗️ Your Action Items:</strong>
+                        1. Review full solicitation on SAM.gov using Notice ID: <strong>FA330026R0001</strong><br>
+                        2. Contact POC: <strong>SSgt Khadijah Jones | Marc Engel</strong><br>
+                        3. Check for site visit requirements (common in construction)<br>
+                        4. Verify bonding requirements (often needed for construction contracts)<br>
+                        5. Ensure you meet set-aside requirements (if applicable)<br>
+                        6. Submit bid by <strong>Dec 15, 2025 12:00 PM CST</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Opportunity 14 -->
+            <div class="opportunity-card">
+                <div class="opportunity-number">14</div>
+                <div class="opportunity-header">
+                    <div>
+                        <div class="opportunity-title">Demo B6119</div>
+                        <div class="opportunity-id">Notice ID: FA466126Q0005</div>
+                    </div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Response Deadline:</strong> Dec 15, 2025 12:00 PM CST</div>
+                    <div class="meta-item"><strong>Type:</strong> Solicitation</div>
+                    <div class="meta-item"><strong>NAICS:</strong> Site Preparation Contractors</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-gc">GC Opportunity</span>
+                    <span class="badge-tag badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5</span>
+                    <span class="badge-tag badge-urgent">Urgent Deadline</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>Project Description:</strong> Please Advise: The Site Visit for this requirement will take place before the Site Visit for Demo B6142 (FA466126Q0006). Bldg 6119 has an approximate total square footage of2,892. This project will...</p>
+                    <p><strong>Set-Aside:</strong> Total Small Business Set-Aside (FAR 19.5)</p>
+                    <div class="action-box">
+                        <strong>🏗️ Your Action Items:</strong>
+                        1. Review full solicitation on SAM.gov using Notice ID: <strong>FA466126Q0005</strong><br>
+                        2. Contact POC: <strong>Victor Oliveras Miranda | Danny L. Webb</strong><br>
+                        3. Check for site visit requirements (common in construction)<br>
+                        4. Verify bonding requirements (often needed for construction contracts)<br>
+                        5. Ensure you meet set-aside requirements (if applicable)<br>
+                        6. Submit bid by <strong>Dec 15, 2025 12:00 PM CST</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Opportunity 15 -->
+            <div class="opportunity-card">
+                <div class="opportunity-number">15</div>
+                <div class="opportunity-header">
+                    <div>
+                        <div class="opportunity-title">Lowell National Historical Park, Passenger Platforms Replacement and Track Repair Work</div>
+                        <div class="opportunity-id">Notice ID: 6913G626Q300004</div>
+                    </div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Response Deadline:</strong> Dec 15, 2025 12:00 PM EST</div>
+                    <div class="meta-item"><strong>Type:</strong> Solicitation</div>
+                    <div class="meta-item"><strong>NAICS:</strong> Other Heavy and Civil Engineering Construction</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-gc">GC Opportunity</span>
+                    <span class="badge-tag badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5</span>
+                    <span class="badge-tag badge-urgent">Urgent Deadline</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>Project Description:</strong> Lowell National Historical Park�s (LNHP�s) 2-mile trolley system has been in operation for 30 years in its current form. The trolley system is a small remnant of the historic trolley system from the...</p>
+                    <p><strong>Set-Aside:</strong> Total Small Business Set-Aside (FAR 19.5)</p>
+                    <div class="action-box">
+                        <strong>🏗️ Your Action Items:</strong>
+                        1. Review full solicitation on SAM.gov using Notice ID: <strong>6913G626Q300004</strong><br>
+                        2. Contact POC: <strong>Carl Chin</strong><br>
+                        3. Check for site visit requirements (common in construction)<br>
+                        4. Verify bonding requirements (often needed for construction contracts)<br>
+                        5. Ensure you meet set-aside requirements (if applicable)<br>
+                        6. Submit bid by <strong>Dec 15, 2025 12:00 PM EST</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Opportunity 16 -->
+            <div class="opportunity-card">
+                <div class="opportunity-number">16</div>
+                <div class="opportunity-header">
+                    <div>
+                        <div class="opportunity-title">Replace Chillers, B4335</div>
+                        <div class="opportunity-id">Notice ID: N400857390531</div>
+                    </div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Response Deadline:</strong> Dec 16, 2025 01:00 PM EST</div>
+                    <div class="meta-item"><strong>Type:</strong> Solicitation</div>
+                    <div class="meta-item"><strong>NAICS:</strong> Plumbing, Heating, and Air-Conditioning Contractors</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-gc">GC Opportunity</span>
+                    <span class="badge-tag badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5</span>
+                    <span class="badge-tag badge-urgent">Urgent Deadline</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>Project Description:</strong> This procurement is restricted to the Mechanical MACC contractors. Only the Mechanical MACC contractors listed on the RFP cover letter may submit a proposal. See attached documents for scope of work...</p>
+                    <p><strong>Set-Aside:</strong> Total Small Business Set-Aside (FAR 19.5)</p>
+                    <div class="action-box">
+                        <strong>🏗️ Your Action Items:</strong>
+                        1. Review full solicitation on SAM.gov using Notice ID: <strong>N400857390531</strong><br>
+                        2. Contact POC: <strong>Mason Sholar | Juan Barra</strong><br>
+                        3. Check for site visit requirements (common in construction)<br>
+                        4. Verify bonding requirements (often needed for construction contracts)<br>
+                        5. Ensure you meet set-aside requirements (if applicable)<br>
+                        6. Submit bid by <strong>Dec 16, 2025 01:00 PM EST</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Opportunity 17 -->
+            <div class="opportunity-card">
+                <div class="opportunity-number">17</div>
+                <div class="opportunity-header">
+                    <div>
+                        <div class="opportunity-title">ND OMAD 2024(1) MINUTEMAN MISSILE ACCESS ROAD</div>
+                        <div class="opportunity-id">Notice ID: 6982AF25B000015</div>
+                    </div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Response Deadline:</strong> Dec 16, 2025 01:00 PM MST</div>
+                    <div class="meta-item"><strong>Type:</strong> Solicitation</div>
+                    <div class="meta-item"><strong>NAICS:</strong> Highway, Street, and Bridge Construction</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-gc">GC Opportunity</span>
+                    <span class="badge-tag badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5</span>
+                    <span class="badge-tag badge-urgent">Urgent Deadline</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>Project Description:</strong> PROJECT NUMBER: ND OMAD 2024(1) PROJECT NAME: Minuteman Missile Access Roads PROJECT DESCRIPTION: ND OMAD 2024(1) - The Office of Missile Air Defense Program (OMAD) is a Defense Access Road (DAR)...</p>
+                    <p><strong>Set-Aside:</strong> Total Small Business Set-Aside (FAR 19.5)</p>
+                    <div class="action-box">
+                        <strong>🏗️ Your Action Items:</strong>
+                        1. Review full solicitation on SAM.gov using Notice ID: <strong>6982AF25B000015</strong><br>
+                        2. Contact POC: <strong>Douglas Whitcomb | Leslie Karsten</strong><br>
+                        3. Check for site visit requirements (common in construction)<br>
+                        4. Verify bonding requirements (often needed for construction contracts)<br>
+                        5. Ensure you meet set-aside requirements (if applicable)<br>
+                        6. Submit bid by <strong>Dec 16, 2025 01:00 PM MST</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Opportunity 18 -->
+            <div class="opportunity-card">
+                <div class="opportunity-number">18</div>
+                <div class="opportunity-header">
+                    <div>
+                        <div class="opportunity-title">VERTICAL TRANSPORTATION EQUIPMENT (VTE) MAINTENANCE SERVICES FOR NAVAL STATION GREAT LAKES, IL, CAPTAIN JAMES A LOVELL FEDERAL HEALTH CARE CENTER (FHCC) FACILITIES AND OTHER AREAS OF RESPONSIBILITY (AOR).</div>
+                        <div class="opportunity-id">Notice ID: N4008525R2576</div>
+                    </div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Response Deadline:</strong> Dec 16, 2025 02:00 PM EST</div>
+                    <div class="meta-item"><strong>Type:</strong> Solicitation</div>
+                    <div class="meta-item"><strong>NAICS:</strong> Other Building Equipment Contractors</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-gc">GC Opportunity</span>
+                    <span class="badge-tag badge-set-aside badge-veteran">Service-Disabled Veteran-Owned Small Bus</span>
+                    <span class="badge-tag badge-urgent">Urgent Deadline</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>Project Description:</strong> Amendment 0004 The contractor shall provide labor, management, supervision, tools, material, maintenance service, diagnostic, troubleshooting, repair, alteration, demolition and minor construction Of...</p>
+                    <p><strong>Set-Aside:</strong> Service-Disabled Veteran-Owned Small Business (SDVOSB) Set-Aside (FAR 19.14)</p>
+                    <div class="action-box">
+                        <strong>🏗️ Your Action Items:</strong>
+                        1. Review full solicitation on SAM.gov using Notice ID: <strong>N4008525R2576</strong><br>
+                        2. Contact POC: <strong>Asia BRACEY | Susan Roberts</strong><br>
+                        3. Check for site visit requirements (common in construction)<br>
+                        4. Verify bonding requirements (often needed for construction contracts)<br>
+                        5. Ensure you meet set-aside requirements (if applicable)<br>
+                        6. Submit bid by <strong>Dec 16, 2025 02:00 PM EST</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Opportunity 19 -->
+            <div class="opportunity-card">
+                <div class="opportunity-number">19</div>
+                <div class="opportunity-header">
+                    <div>
+                        <div class="opportunity-title">CO OMAD 300(70) MINUTEMAN MISSILE ACCESS ROAD</div>
+                        <div class="opportunity-id">Notice ID: 6982AF25B000008</div>
+                    </div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Response Deadline:</strong> Dec 16, 2025 02:00 PM MST</div>
+                    <div class="meta-item"><strong>Type:</strong> Solicitation</div>
+                    <div class="meta-item"><strong>NAICS:</strong> Highway, Street, and Bridge Construction</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-gc">GC Opportunity</span>
+                    <span class="badge-tag badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5</span>
+                    <span class="badge-tag badge-urgent">Urgent Deadline</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>Project Description:</strong> PROJECT NUMBER: CO OMAD 300(70) PROJECT NAME: Minuteman Missile Access Road PROJECT DESCRIPTION: CO OMAD 300(70) - The Office of Missile Air Defense Program (OMAD) is a Defense Access Road (DAR)...</p>
+                    <p><strong>Set-Aside:</strong> Total Small Business Set-Aside (FAR 19.5)</p>
+                    <div class="action-box">
+                        <strong>🏗️ Your Action Items:</strong>
+                        1. Review full solicitation on SAM.gov using Notice ID: <strong>6982AF25B000008</strong><br>
+                        2. Contact POC: <strong>Douglas Whitcomb | Leslie Karsten</strong><br>
+                        3. Check for site visit requirements (common in construction)<br>
+                        4. Verify bonding requirements (often needed for construction contracts)<br>
+                        5. Ensure you meet set-aside requirements (if applicable)<br>
+                        6. Submit bid by <strong>Dec 16, 2025 02:00 PM MST</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Opportunity 20 -->
+            <div class="opportunity-card">
+                <div class="opportunity-number">20</div>
+                <div class="opportunity-header">
+                    <div>
+                        <div class="opportunity-title">Cable Installation</div>
+                        <div class="opportunity-id">Notice ID: FA462626Q0001</div>
+                    </div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Response Deadline:</strong> Dec 16, 2025 02:00 PM MST</div>
+                    <div class="meta-item"><strong>Type:</strong> Solicitation</div>
+                    <div class="meta-item"><strong>NAICS:</strong> Electrical Contractors</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-gc">GC Opportunity</span>
+                    <span class="badge-tag badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5</span>
+                    <span class="badge-tag badge-urgent">Urgent Deadline</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>Project Description:</strong> Questions pertaining to this requirement shall be submitted no later than 2:00 PM MST, 12 December2025. Please email your quote to Contract Administrator SrA Jeffrey Krieger at...</p>
+                    <p><strong>Set-Aside:</strong> Total Small Business Set-Aside (FAR 19.5)</p>
+                    <div class="action-box">
+                        <strong>🏗️ Your Action Items:</strong>
+                        1. Review full solicitation on SAM.gov using Notice ID: <strong>FA462626Q0001</strong><br>
+                        2. Contact POC: <strong>Jeffrey Krieger | Joshua Crist</strong><br>
+                        3. Check for site visit requirements (common in construction)<br>
+                        4. Verify bonding requirements (often needed for construction contracts)<br>
+                        5. Ensure you meet set-aside requirements (if applicable)<br>
+                        6. Submit bid by <strong>Dec 16, 2025 02:00 PM MST</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Opportunity 21 -->
+            <div class="opportunity-card">
+                <div class="opportunity-number">21</div>
+                <div class="opportunity-header">
+                    <div>
+                        <div class="opportunity-title">Seattle VA Portable Fire Extinguisher Maintenance Service RFQ</div>
+                        <div class="opportunity-id">Notice ID: 36C26026Q0168</div>
+                    </div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Response Deadline:</strong> Dec 16, 2025 05:00 PM PST</div>
+                    <div class="meta-item"><strong>Type:</strong> Combined Synopsis/Solicitation</div>
+                    <div class="meta-item"><strong>NAICS:</strong> Commercial and Industrial Machinery and Equipment (except Automotive and Electronic) Repair and Maintenance</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-gc">GC Opportunity</span>
+                    <span class="badge-tag badge-set-aside badge-veteran">Service-Disabled Veteran-Owned Small Bus</span>
+                    <span class="badge-tag badge-urgent">Urgent Deadline</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>Project Description:</strong> VA PUGET SOUND HEALTH CARE SYSTEM PORTABLE FIRE EXTINGUISHER MAINTENANCE SERVICE This is a combined synopsis/solicitation for commercial products or commercial services prepared in accordance with...</p>
+                    <p><strong>Set-Aside:</strong> Service-Disabled Veteran-Owned Small Business (SDVOSB) Set-Aside (FAR 19.14)</p>
+                    <div class="action-box">
+                        <strong>🏗️ Your Action Items:</strong>
+                        1. Review full solicitation on SAM.gov using Notice ID: <strong>36C26026Q0168</strong><br>
+                        2. Contact POC: <strong>Michael J Borelli</strong><br>
+                        3. Check for site visit requirements (common in construction)<br>
+                        4. Verify bonding requirements (often needed for construction contracts)<br>
+                        5. Ensure you meet set-aside requirements (if applicable)<br>
+                        6. Submit bid by <strong>Dec 16, 2025 05:00 PM PST</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Opportunity 22 -->
+            <div class="opportunity-card">
+                <div class="opportunity-number">22</div>
+                <div class="opportunity-header">
+                    <div>
+                        <div class="opportunity-title">52000Q260001484 USCGC VIGILANT SANITIZER AND INSTALLATION</div>
+                        <div class="opportunity-id">Notice ID: 52000QR260001484</div>
+                    </div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Response Deadline:</strong> Dec 16, 2025 09:00 AM EST</div>
+                    <div class="meta-item"><strong>Type:</strong> Combined Synopsis/Solicitation</div>
+                    <div class="meta-item"><strong>NAICS:</strong> Commercial and Service Industry Machinery Manufacturing </div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-gc">GC Opportunity</span>
+                    <span class="badge-tag badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5</span>
+                    <span class="badge-tag badge-urgent">Urgent Deadline</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>Project Description:</strong> 52000Q260001484 USCGC VIGILANT SANITIZER AND INSTALLATION Intent. Cutter requires an operational sanitizer to maintain habitability and sanitary conditions. This is a combined synopsis/solicitation...</p>
+                    <p><strong>Set-Aside:</strong> Total Small Business Set-Aside (FAR 19.5)</p>
+                    <div class="action-box">
+                        <strong>🏗️ Your Action Items:</strong>
+                        1. Review full solicitation on SAM.gov using Notice ID: <strong>52000QR260001484</strong><br>
+                        2. Contact POC: <strong>Timothy ford | Sean Hoy</strong><br>
+                        3. Check for site visit requirements (common in construction)<br>
+                        4. Verify bonding requirements (often needed for construction contracts)<br>
+                        5. Ensure you meet set-aside requirements (if applicable)<br>
+                        6. Submit bid by <strong>Dec 16, 2025 09:00 AM EST</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Opportunity 23 -->
+            <div class="opportunity-card">
+                <div class="opportunity-number">23</div>
+                <div class="opportunity-header">
+                    <div>
+                        <div class="opportunity-title">IMCOM Pest Control</div>
+                        <div class="opportunity-id">Notice ID: W9124C-26-Q-A-001</div>
+                    </div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Response Deadline:</strong> Dec 16, 2025 10:00 AM EST</div>
+                    <div class="meta-item"><strong>Type:</strong> Solicitation</div>
+                    <div class="meta-item"><strong>NAICS:</strong> Exterminating and Pest Control Services</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-gc">GC Opportunity</span>
+                    <span class="badge-tag badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5</span>
+                    <span class="badge-tag badge-urgent">Urgent Deadline</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>Project Description:</strong> The Contractor shall perform scheduled and unscheduled Pest Management Services for public health pests for real property, facilities, and grounds on Fort Jackson and Weston Lake Recreational Park....</p>
+                    <p><strong>Set-Aside:</strong> Total Small Business Set-Aside (FAR 19.5)</p>
+                    <div class="action-box">
+                        <strong>🏗️ Your Action Items:</strong>
+                        1. Review full solicitation on SAM.gov using Notice ID: <strong>W9124C-26-Q-A-001</strong><br>
+                        2. Contact POC: <strong>Katharina Wagner | Tesia Polk</strong><br>
+                        3. Check for site visit requirements (common in construction)<br>
+                        4. Verify bonding requirements (often needed for construction contracts)<br>
+                        5. Ensure you meet set-aside requirements (if applicable)<br>
+                        6. Submit bid by <strong>Dec 16, 2025 10:00 AM EST</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Opportunity 24 -->
+            <div class="opportunity-card">
+                <div class="opportunity-number">24</div>
+                <div class="opportunity-header">
+                    <div>
+                        <div class="opportunity-title">East Lansing Data Cabling</div>
+                        <div class="opportunity-id">Notice ID: 205AE9-26-Q-00018</div>
+                    </div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Response Deadline:</strong> Dec 16, 2025 10:00 AM EST</div>
+                    <div class="meta-item"><strong>Type:</strong> Combined Synopsis/Solicitation</div>
+                    <div class="meta-item"><strong>NAICS:</strong> Electrical Contractors</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-gc">GC Opportunity</span>
+                    <span class="badge-tag badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5</span>
+                    <span class="badge-tag badge-urgent">Urgent Deadline</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>Project Description:</strong> **Amendment 0001 extends the due date to 10am EST 12/16/25. An additional amendment will be posted to answer questions and revise the PWS accordingly.** The purpose of this acquisition is to obtain...</p>
+                    <p><strong>Set-Aside:</strong> Total Small Business Set-Aside (FAR 19.5)</p>
+                    <div class="action-box">
+                        <strong>🏗️ Your Action Items:</strong>
+                        1. Review full solicitation on SAM.gov using Notice ID: <strong>205AE9-26-Q-00018</strong><br>
+                        2. Contact POC: <strong>Jillian Staskin</strong><br>
+                        3. Check for site visit requirements (common in construction)<br>
+                        4. Verify bonding requirements (often needed for construction contracts)<br>
+                        5. Ensure you meet set-aside requirements (if applicable)<br>
+                        6. Submit bid by <strong>Dec 16, 2025 10:00 AM EST</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Opportunity 25 -->
+            <div class="opportunity-card">
+                <div class="opportunity-number">25</div>
+                <div class="opportunity-header">
+                    <div>
+                        <div class="opportunity-title">2ND QTR Bread FY26</div>
+                        <div class="opportunity-id">Notice ID: 15B12026Q00000002</div>
+                    </div>
+                </div>
+                <div class="opportunity-meta">
+                    <div class="meta-item"><strong>Response Deadline:</strong> Dec 16, 2025 10:00 AM EST</div>
+                    <div class="meta-item"><strong>Type:</strong> Combined Synopsis/Solicitation</div>
+                    <div class="meta-item"><strong>NAICS:</strong> All Other Miscellaneous Food Manufacturing</div>
+                </div>
+                <div>
+                    <span class="badge-tag badge-gc">GC Opportunity</span>
+                    <span class="badge-tag badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5</span>
+                    <span class="badge-tag badge-urgent">Urgent Deadline</span>
+                </div>
+                <div class="opportunity-details">
+                    <p><strong>Project Description:</strong> U.S. Department of Justice Federal Bureau of Prisons Field Acquisition Office December 11, 2025 (i) This is a Combined Synopsis/Solicitation for commercial items prepared in accordance with the...</p>
+                    <p><strong>Set-Aside:</strong> Total Small Business Set-Aside (FAR 19.5)</p>
+                    <div class="action-box">
+                        <strong>🏗️ Your Action Items:</strong>
+                        1. Review full solicitation on SAM.gov using Notice ID: <strong>15B12026Q00000002</strong><br>
+                        2. Contact POC: <strong>John Brown</strong><br>
+                        3. Check for site visit requirements (common in construction)<br>
+                        4. Verify bonding requirements (often needed for construction contracts)<br>
+                        5. Ensure you meet set-aside requirements (if applicable)<br>
+                        6. Submit bid by <strong>Dec 16, 2025 10:00 AM EST</strong>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="key-point">
+            <p><strong>💡 Tips for General Contractors:</strong></p>
+            <p>1. <strong>Site visits are critical</strong> - Most construction projects require mandatory site visits. Plan ahead!</p>
+            <p>2. <strong>Bonding requirements</strong> - Many construction contracts require bid bonds, performance bonds, and payment bonds. Have your bonding capacity ready.</p>
+            <p>3. <strong>Check NAICS codes</strong> - Make sure your business is registered with the correct NAICS codes in SAM.gov</p>
+            <p>4. <strong>Licensing matters</strong> - Verify state/local licensing requirements for the project location</p>
+            <p>5. <strong>Set-asides advantage</strong> - If you're SDVOSB, 8(a), HUBZone, or WOSB certified, these opportunities have less competition</p>
+            <p>6. <strong>Read the full solicitation</strong> - Construction specs are detailed. Download all drawings, specs, and attachments from SAM.gov</p>
+            <p>7. <strong>Ask questions early</strong> - Use the RFI (Request for Information) process. Submit questions well before the deadline</p>
+            <p>8. <strong>Total opportunities available:</strong> This list shows the top 25 construction opportunities. Check SAM.gov for all 237 construction-related opportunities!</p>
+        </div>
+
+        <div class="footer">
+            <p><strong>December 2025 Construction Opportunities - General Contractors</strong> | GovCon Giants Bootcamp</p>
+            <p>All opportunities sourced from SAM.gov (sam.gov)</p>
+            <p>Filtered for construction-related projects only</p>
+            <p>Last updated: December 12, 2025</p>
+            <p style="margin-top: 15px; font-size: 0.85rem; color: #718096;">Screenshot and share this list! 📸</p>
+        </div>
+    </div>
+</body>
+</html>

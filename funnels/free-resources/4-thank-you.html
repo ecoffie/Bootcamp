@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You're In! | GovCon Giants</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, \'Segoe UI\', Roboto, sans-serif; }
+    .glow-green { box-shadow: 0 0 30px rgba(34, 197, 94, 0.4); }
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    .pulse { animation: pulse 2s infinite; }
+    @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+  </style>
+</head>
+<body class="min-h-screen bg-slate-950">
+  <!-- Header -->
+  <header class="py-6 px-6 border-b border-slate-800">
+    <div class="max-w-4xl mx-auto flex items-center justify-center">
+      <a href="#" class="flex items-center gap-1">
+        <span class="text-2xl font-bold text-white">GovCon</span>
+        <span class="text-2xl font-bold text-green-500">Giants</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Progress Bar - Complete -->
+  <div class="bg-slate-900 py-3 px-6">
+    <div class="max-w-2xl mx-auto">
+      <div class="flex items-center justify-between text-sm mb-2">
+        <span class="text-green-500 font-medium">Step 4 of 4</span>
+        <span class="text-green-500">Complete!</span>
+      </div>
+      <div class="h-2 bg-slate-700 rounded-full overflow-hidden">
+        <div class="h-full glow-green bg-green-600 rounded-full" style="width: 100%"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <section class="py-16 px-6">
+    <div class="max-w-2xl mx-auto text-center">
+      <!-- Success Icon -->
+      <div class="w-24 h-24 bg-slate-900/50 border-2 border-green-600 rounded-full flex items-center justify-center mx-auto mb-8">
+        <svg class="w-12 h-12 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+        </svg>
+      </div>
+
+      <!-- Welcome Message -->
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+        You're In, <span id="userName" class="text-green-500">Friend</span>!
+      </h1>
+
+      <p class="text-xl text-slate-500 mb-8">
+        Your free resource library is ready and waiting. Access 25+ tools, templates, videos, and guides to help you win federal contracts.
+      </p>
+
+      <!-- CTA Button -->
+      <a
+        href="resources.html"
+        class="pulse inline-block px-10 py-5 bg-rose-600 hover:bg-rose-500 text-white rounded-xl font-bold text-xl transition-all shadow-lg shadow-rose-900/50"
+      >
+        Access Your Resource Library →
+      </a>
+
+      <!-- What's Inside Preview -->
+      <div class="mt-16 grid grid-cols-2 md:grid-cols-5 gap-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 text-center">
+          <span class="text-2xl mb-2 block">📢</span>
+          <span class="text-slate-400 text-sm">Marketing</span>
+        </div>
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 text-center">
+          <span class="text-2xl mb-2 block">🎬</span>
+          <span class="text-slate-400 text-sm">Videos</span>
+        </div>
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 text-center">
+          <span class="text-2xl mb-2 block">📋</span>
+          <span class="text-slate-400 text-sm">Contacts</span>
+        </div>
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 text-center">
+          <span class="text-2xl mb-2 block">📚</span>
+          <span class="text-slate-400 text-sm">Knowledge</span>
+        </div>
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 text-center">
+          <span class="text-2xl mb-2 block">🛠️</span>
+          <span class="text-slate-400 text-sm">Tools</span>
+        </div>
+      </div>
+
+      <!-- Email Confirmation Note -->
+      <div class="mt-12 bg-slate-900/50 border border-slate-800 rounded-xl p-6">
+        <div class="flex items-center justify-center gap-3 text-slate-400">
+          <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+          <span>We've also sent you an email with your access link. Check your inbox!</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 px-6 border-t border-slate-800">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="flex items-center justify-center gap-1 mb-4">
+        <span class="text-xl font-bold text-white">GovCon</span>
+        <span class="text-xl font-bold text-green-500">Giants</span>
+      </div>
+      <p class="text-slate-600 text-sm">© 2026 GovCon Giants. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Get name from localStorage
+    const name = localStorage.getItem('leadName');
+    if (name) {
+      document.getElementById('userName').textContent = name.split(' ')[0];
+    }
+  </script>
+</body>
+</html>

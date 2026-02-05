@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>January 2026 Federal Spend Forecast | GovCon Giants</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            min-height: 100vh;
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            font-size: 14px;
+            font-weight: 700;
+            color: #fbbf24;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 24px;
+            color: #94a3b8;
+            font-weight: 500;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .highlight-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .highlight-box h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .big-number {
+            font-size: 72px;
+            font-weight: 800;
+            color: #fbbf24;
+            position: relative;
+        }
+
+        .highlight-box p {
+            font-size: 18px;
+            color: rgba(255,255,255,0.8);
+            margin-top: 15px;
+            position: relative;
+        }
+
+        .section {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            font-size: 24px;
+            color: #fbbf24;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section h2::before {
+            content: '';
+            width: 4px;
+            height: 28px;
+            background: #fbbf24;
+            border-radius: 2px;
+        }
+
+        .agency-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .agency-card {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            border-radius: 12px;
+            padding: 24px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .agency-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(251, 191, 36, 0.3);
+        }
+
+        .agency-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .agency-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .agency-amount {
+            font-size: 20px;
+            font-weight: 800;
+            color: #22c55e;
+        }
+
+        .agency-details {
+            font-size: 14px;
+            color: #94a3b8;
+        }
+
+        .agency-details p {
+            margin-bottom: 8px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: rgba(251, 191, 36, 0.2);
+            color: #fbbf24;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .tag.urgent {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+        }
+
+        .tag.q1 {
+            background: rgba(34, 197, 94, 0.2);
+            color: #22c55e;
+        }
+
+        .insight-list {
+            list-style: none;
+        }
+
+        .insight-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .insight-list li:last-child {
+            border-bottom: none;
+        }
+
+        .insight-icon {
+            width: 32px;
+            height: 32px;
+            background: rgba(251, 191, 36, 0.2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 16px;
+        }
+
+        .insight-content h4 {
+            font-size: 16px;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+
+        .insight-content p {
+            font-size: 14px;
+            color: #94a3b8;
+        }
+
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px 0;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: rgba(148, 163, 184, 0.2);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            text-align: center;
+            position: relative;
+            flex: 1;
+        }
+
+        .timeline-dot {
+            width: 40px;
+            height: 40px;
+            background: #1e3a8a;
+            border: 3px solid #fbbf24;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .timeline-item.active .timeline-dot {
+            background: #fbbf24;
+            color: #0f172a;
+        }
+
+        .timeline-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+
+        .timeline-date {
+            font-size: 12px;
+            color: #94a3b8;
+        }
+
+        .sblo-section {
+            margin-top: 20px;
+        }
+
+        .sblo-card {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+
+        .sblo-card h4 {
+            color: #fbbf24;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .sblo-contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 14px;
+        }
+
+        .sblo-contact span {
+            color: #94a3b8;
+        }
+
+        .sblo-contact a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+
+        .sblo-contact a:hover {
+            text-decoration: underline;
+        }
+
+        .script-box {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 20px;
+        }
+
+        .script-box h4 {
+            color: #fbbf24;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .script-box p {
+            font-style: italic;
+            color: #e2e8f0;
+            line-height: 1.8;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .cta-section h2 {
+            color: #0f172a;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .cta-section p {
+            color: rgba(15, 23, 42, 0.8);
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #0f172a;
+            color: #fbbf24;
+            padding: 16px 40px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 18px;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .stat-card .number {
+            font-size: 36px;
+            font-weight: 800;
+            color: #fbbf24;
+            margin-bottom: 5px;
+        }
+
+        .stat-card .label {
+            font-size: 14px;
+            color: #94a3b8;
+        }
+
+        .spending-bar {
+            height: 12px;
+            background: rgba(148, 163, 184, 0.2);
+            border-radius: 6px;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+
+        .spending-bar .fill {
+            height: 100%;
+            background: linear-gradient(90deg, #22c55e 0%, #16a34a 100%);
+            border-radius: 6px;
+            transition: width 0.5s ease;
+        }
+
+        .spending-bar .fill.warning {
+            background: linear-gradient(90deg, #f59e0b 0%, #d97706 100%);
+        }
+
+        .spending-bar .fill.urgent {
+            background: linear-gradient(90deg, #ef4444 0%, #dc2626 100%);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 32px;
+            }
+
+            .big-number {
+                font-size: 48px;
+            }
+
+            .stats-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .timeline {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .timeline::before {
+                display: none;
+            }
+
+            .agency-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .q1-alert {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            border-radius: 12px;
+            padding: 20px 30px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .q1-alert .icon {
+            font-size: 32px;
+        }
+
+        .q1-alert .text h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .q1-alert .text p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .print-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #fbbf24;
+            color: #0f172a;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(251, 191, 36, 0.3);
+            transition: transform 0.2s;
+        }
+
+        .print-button:hover {
+            transform: scale(1.05);
+        }
+
+        @media print {
+            .print-button { display: none; }
+            body {
+                background: white;
+                color: black;
+                padding: 0;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .container { box-shadow: none; max-width: 100%; }
+            .forecast-card, .agency-card, .stat-box, .stat-card,
+            .opportunity-card, .timeline-item, .key-insight,
+            .cta-banner, .metric-card, table, tr, h2, h3 {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+            h2, h3, h4 { page-break-after: avoid; }
+            thead { display: table-header-group; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">GOVCON GIANTS</div>
+            <h1>January 2026 Spend Forecast</h1>
+            <p class="subtitle">Federal Contract Spending Intelligence Report</p>
+        </header>
+
+        <div class="q1-alert">
+            <div class="icon">!</div>
+            <div class="text">
+                <h3>Q1 FY2026 Spending Window - Critical Period</h3>
+                <p>January is the halfway point of Q1. Agencies with year-end deadlines are accelerating procurement. Contracting officers are under pressure to obligate Q1 funds before they lose flexibility.</p>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h2>Unobligated Federal Funds</h2>
+            <div class="big-number">$138B+</div>
+            <p>Available across major agencies - with accelerated spending expected through Q2</p>
+        </div>
+
+        <div class="stats-row">
+            <div class="stat-card">
+                <div class="number">Q1</div>
+                <div class="label">FY2026 Midpoint</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">31</div>
+                <div class="label">Days This Month</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">$895B</div>
+                <div class="label">FY26 Defense Budget</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">3%</div>
+                <div class="label">Budget Increase YoY</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>January Spending Dynamics</h2>
+            <ul class="insight-list">
+                <li>
+                    <div class="insight-icon">$</div>
+                    <div class="insight-content">
+                        <h4>Post-Holiday Procurement Surge</h4>
+                        <p>Contracting offices return from holiday slowdown with Q1 deadlines looming. Expect increased solicitation activity as agencies play catch-up on December delays.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="insight-icon">!</div>
+                    <div class="insight-content">
+                        <h4>Q1 Fund Obligation Pressure</h4>
+                        <p>Many agencies must obligate a percentage of their annual budget by end of Q1 (December 31) but can issue modifications through January. This creates urgency for contract actions.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="insight-icon">*</div>
+                    <div class="insight-content">
+                        <h4>New Calendar Year Contracts</h4>
+                        <p>Calendar-year-based contracts often start in January. Primes are actively onboarding subcontractors for newly awarded work.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="insight-icon">+</div>
+                    <div class="insight-content">
+                        <h4>NDAA Implementation Begins</h4>
+                        <p>FY2026 NDAA programs start implementation. New initiatives in cyber, AI, and defense modernization mean new contract opportunities.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>FY2026 Spending Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot">Q1</div>
+                    <div class="timeline-label">Oct-Dec 2025</div>
+                    <div class="timeline-date">Initial Obligations</div>
+                </div>
+                <div class="timeline-item active">
+                    <div class="timeline-dot">Q2</div>
+                    <div class="timeline-label">Jan-Mar 2026</div>
+                    <div class="timeline-date">WE ARE HERE</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot">Q3</div>
+                    <div class="timeline-label">Apr-Jun 2026</div>
+                    <div class="timeline-date">Mid-Year Review</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot">Q4</div>
+                    <div class="timeline-label">Jul-Sep 2026</div>
+                    <div class="timeline-date">Year-End Rush</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Top 10 Agencies - January Spending Outlook</h2>
+            <div class="agency-grid">
+                <div class="agency-card">
+                    <div class="agency-header">
+                        <div class="agency-name">Department of Defense</div>
+                        <div class="agency-amount">$68.5B+</div>
+                    </div>
+                    <div class="spending-bar">
+                        <div class="fill" style="width: 35%"></div>
+                    </div>
+                    <div class="agency-details">
+                        <p>35% of annual budget remaining unobligated</p>
+                        <p>Major focus: Cyber, AI/ML, Logistics, Construction</p>
+                    </div>
+                    <span class="tag q1">Q2 Priority Spending</span>
+                </div>
+
+                <div class="agency-card">
+                    <div class="agency-header">
+                        <div class="agency-name">Department of Veterans Affairs</div>
+                        <div class="agency-amount">$18.2B+</div>
+                    </div>
+                    <div class="spending-bar">
+                        <div class="fill" style="width: 40%"></div>
+                    </div>
+                    <div class="agency-details">
+                        <p>Healthcare modernization continues</p>
+                        <p>Focus: IT systems, facilities, medical supplies</p>
+                    </div>
+                    <span class="tag">VOSB Priority</span>
+                </div>
+
+                <div class="agency-card">
+                    <div class="agency-header">
+                        <div class="agency-name">Health & Human Services</div>
+                        <div class="agency-amount">$14.8B+</div>
+                    </div>
+                    <div class="spending-bar">
+                        <div class="fill warning" style="width: 50%"></div>
+                    </div>
+                    <div class="agency-details">
+                        <p>Public health programs ramping up</p>
+                        <p>Focus: IT modernization, research support</p>
+                    </div>
+                    <span class="tag">8(a) Opportunities</span>
+                </div>
+
+                <div class="agency-card">
+                    <div class="agency-header">
+                        <div class="agency-name">Department of Homeland Security</div>
+                        <div class="agency-amount">$12.1B+</div>
+                    </div>
+                    <div class="spending-bar">
+                        <div class="fill" style="width: 38%"></div>
+                    </div>
+                    <div class="agency-details">
+                        <p>Border security and cybersecurity focus</p>
+                        <p>Focus: Technology, construction, services</p>
+                    </div>
+                    <span class="tag q1">Active Procurement</span>
+                </div>
+
+                <div class="agency-card">
+                    <div class="agency-header">
+                        <div class="agency-name">Department of Energy</div>
+                        <div class="agency-amount">$9.4B+</div>
+                    </div>
+                    <div class="spending-bar">
+                        <div class="fill" style="width: 42%"></div>
+                    </div>
+                    <div class="agency-details">
+                        <p>Clean energy and nuclear programs</p>
+                        <p>Focus: R&D, construction, technical services</p>
+                    </div>
+                    <span class="tag">HUBZone Priority</span>
+                </div>
+
+                <div class="agency-card">
+                    <div class="agency-header">
+                        <div class="agency-name">Department of State</div>
+                        <div class="agency-amount">$7.8B+</div>
+                    </div>
+                    <div class="spending-bar">
+                        <div class="fill warning" style="width: 55%"></div>
+                    </div>
+                    <div class="agency-details">
+                        <p>Embassy construction and operations</p>
+                        <p>Focus: Construction, security, IT</p>
+                    </div>
+                    <span class="tag">Global Opportunities</span>
+                </div>
+
+                <div class="agency-card">
+                    <div class="agency-header">
+                        <div class="agency-name">General Services Administration</div>
+                        <div class="agency-amount">$6.2B+</div>
+                    </div>
+                    <div class="spending-bar">
+                        <div class="fill" style="width: 45%"></div>
+                    </div>
+                    <div class="agency-details">
+                        <p>Government-wide acquisition vehicles</p>
+                        <p>Focus: IT Schedule 70, facilities, fleet</p>
+                    </div>
+                    <span class="tag q1">Schedule Holders</span>
+                </div>
+
+                <div class="agency-card">
+                    <div class="agency-header">
+                        <div class="agency-name">Department of Justice</div>
+                        <div class="agency-amount">$5.1B+</div>
+                    </div>
+                    <div class="spending-bar">
+                        <div class="fill" style="width: 40%"></div>
+                    </div>
+                    <div class="agency-details">
+                        <p>Law enforcement modernization</p>
+                        <p>Focus: IT, facilities, professional services</p>
+                    </div>
+                    <span class="tag">SB Set-Asides</span>
+                </div>
+
+                <div class="agency-card">
+                    <div class="agency-header">
+                        <div class="agency-name">Department of Transportation</div>
+                        <div class="agency-amount">$4.6B+</div>
+                    </div>
+                    <div class="spending-bar">
+                        <div class="fill warning" style="width: 52%"></div>
+                    </div>
+                    <div class="agency-details">
+                        <p>Infrastructure investment continues</p>
+                        <p>Focus: Engineering, construction, IT</p>
+                    </div>
+                    <span class="tag">DBE Priority</span>
+                </div>
+
+                <div class="agency-card">
+                    <div class="agency-header">
+                        <div class="agency-name">NASA</div>
+                        <div class="agency-amount">$4.2B+</div>
+                    </div>
+                    <div class="spending-bar">
+                        <div class="fill" style="width: 38%"></div>
+                    </div>
+                    <div class="agency-details">
+                        <p>Artemis and space exploration programs</p>
+                        <p>Focus: Aerospace, R&D, engineering</p>
+                    </div>
+                    <span class="tag q1">High-Tech Focus</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Key SBLO Contacts - Start Here</h2>
+            <p style="color: #94a3b8; margin-bottom: 20px;">These Small Business Liaison Officers are your gateway to prime contractors actively seeking subcontractors.</p>
+
+            <div class="sblo-section">
+                <div class="sblo-card">
+                    <h4>Leidos - IT Services & Defense</h4>
+                    <div class="sblo-contact">
+                        <span>Contact: Small Business Office</span>
+                        <a href="mailto:smallbusiness@leidos.com">smallbusiness@leidos.com</a>
+                        <span>Industries: IT, Engineering, Defense</span>
+                    </div>
+                </div>
+
+                <div class="sblo-card">
+                    <h4>General Dynamics IT - Technology & Services</h4>
+                    <div class="sblo-contact">
+                        <span>Contact: Supplier Diversity</span>
+                        <a href="mailto:supplierdiversity@gdit.com">supplierdiversity@gdit.com</a>
+                        <span>Industries: IT, Cybersecurity, Cloud</span>
+                    </div>
+                </div>
+
+                <div class="sblo-card">
+                    <h4>Booz Allen Hamilton - Consulting & Analytics</h4>
+                    <div class="sblo-contact">
+                        <span>Contact: Small Business Program</span>
+                        <a href="mailto:smallbusiness@bah.com">smallbusiness@bah.com</a>
+                        <span>Industries: Analytics, Consulting, Cyber</span>
+                    </div>
+                </div>
+
+                <div class="sblo-card">
+                    <h4>CACI International - Defense & Intel</h4>
+                    <div class="sblo-contact">
+                        <span>Contact: Small Business Liaison</span>
+                        <a href="mailto:smallbusiness@caci.com">smallbusiness@caci.com</a>
+                        <span>Industries: Intel, IT, Engineering</span>
+                    </div>
+                </div>
+
+                <div class="sblo-card">
+                    <h4>Parsons Corporation - Infrastructure & Defense</h4>
+                    <div class="sblo-contact">
+                        <span>Contact: Supplier Diversity</span>
+                        <a href="mailto:supplierdiversity@parsons.com">supplierdiversity@parsons.com</a>
+                        <span>Industries: Engineering, Construction, Defense</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="script-box">
+                <h4>Your Warm Intro Script</h4>
+                <p>"Hi [Name], I'm [Your Name] from [Company]. I noticed [Prime] has several contracts expiring in the first quarter of FY2026. I specialize in [your capability] and would love to explore how we might support your team on upcoming recompetes. Would you have 15 minutes this month to discuss potential teaming opportunities?"</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>January Action Items</h2>
+            <ul class="insight-list">
+                <li>
+                    <div class="insight-icon">1</div>
+                    <div class="insight-content">
+                        <h4>Update Your Capability Statement</h4>
+                        <p>Refresh for 2026 with latest past performance, certifications, and relevant NAICS codes.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="insight-icon">2</div>
+                    <div class="insight-content">
+                        <h4>Reach Out to 5 SBLOs This Week</h4>
+                        <p>Use the contacts above. January is perfect timing as they're planning Q2-Q4 teaming arrangements.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="insight-icon">3</div>
+                    <div class="insight-content">
+                        <h4>Monitor SAM.gov Daily</h4>
+                        <p>New solicitations drop constantly. Set up saved searches for your NAICS codes.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="insight-icon">4</div>
+                    <div class="insight-content">
+                        <h4>Review Your Expiring Contracts List</h4>
+                        <p>Identify primes with Q1/Q2 expirations - they're actively building teams NOW.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="insight-icon">5</div>
+                    <div class="insight-content">
+                        <h4>Attend Industry Days</h4>
+                        <p>Check agency OSDBU websites for upcoming events. January kicks off many FY26 procurement cycles.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="cta-section">
+            <h2>Ready to Win Federal Contracts?</h2>
+            <p>Get access to our full database of expiring contracts, prime contractor contacts, and teaming opportunities.</p>
+            <a href="#" class="cta-button">Join the Bootcamp</a>
+        </div>
+
+        <footer style="text-align: center; margin-top: 50px; color: #64748b; font-size: 14px;">
+            <p>GovCon Giants | January 2026 Spend Forecast</p>
+            <p style="margin-top: 10px;">Data sources: USASpending.gov, SAM.gov, Agency Budget Justifications</p>
+        </footer>
+    </div>
+
+    <button class="print-button" onclick="window.print()">Print / Save PDF</button>
+</body>
+</html>

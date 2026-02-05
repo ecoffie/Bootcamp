@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>January 2026 Hit List - Real Opportunities</title>
+    <style>
+        @page {
+            size: letter;
+            margin: 0.5in;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 30px;
+            background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
+            color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .header .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            font-weight: 300;
+            margin-bottom: 15px;
+        }
+
+        .header .badge {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 20px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .opportunity-card {
+            background: #ffffff;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .opportunity-card:hover {
+            border-color: #7c3aed;
+            box-shadow: 0 8px 20px rgba(124, 58, 237, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .opportunity-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .opportunity-number {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #7c3aed;
+            min-width: 50px;
+        }
+
+        .opportunity-title {
+            flex: 1;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+
+        .badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .badge-set-aside {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .badge-veteran {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .badge-8a {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .badge-hubzone {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .badge-wosb {
+            background: #fce7f3;
+            color: #9f1239;
+        }
+
+        .badge-sb {
+            background: #e0e7ff;
+            color: #3730a3;
+        }
+
+        .opportunity-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .detail-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .detail-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
+
+        .detail-value {
+            font-size: 1rem;
+            color: #1a1a1a;
+            font-weight: 500;
+        }
+
+        .description {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f9fafb;
+            border-radius: 8px;
+            border-left: 4px solid #7c3aed;
+        }
+
+        .description-text {
+            color: #4b5563;
+            line-height: 1.7;
+        }
+
+        .link-button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .link-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(124, 58, 237, 0.4);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px;
+            background: #f9fafb;
+            border-radius: 12px;
+            color: #6b7280;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .container { box-shadow: none; max-width: 100%; }
+            .opportunity-card, .stat-card, .agency-card,
+            .cta-banner, table, tr, h2, h3 {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+            h2, h3, h4 { page-break-after: avoid; }
+            thead { display: table-header-group; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>January 2026 Hit List</h1>
+            <div class="subtitle">Top active opportunities sorted by response date</div>
+            <div class="badge">30 Opportunities</div>
+        </div>
+
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <div class="opportunity-number">#1</div>
+                <div style="flex: 1;">
+                    <div class="opportunity-title">J065--Dexis Panos Imaging Systems Preventative Maintenance  Inspection (PMI) and Corrective Maintenance (CM) including  software support at the Greater Los Angeles VA Healthcare  System</div>
+                    <div class="badges">
+                        <span class="badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="opportunity-details">
+                <div class="detail-item">
+                    <div class="detail-label">Response Date</div>
+                    <div class="detail-value">2026-01-05T16:00:00-08:00</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Award Amount</div>
+                    <div class="detail-value">N/A</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">NAICS Code</div>
+                    <div class="detail-value">811210</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Agency</div>
+                    <div class="detail-value">OFFICE</div>
+                </div>
+            </div>
+            
+            <div class="description"><div class="description-text">https://api.sam.gov/prod/opportunities/v1/noticedesc?noticeid=f5bf18c80d6e48d2a96fe3ca982fa404</div></div>
+            
+            <a href="https://sam.gov/opp/f5bf18c80d6e48d2a96fe3ca982fa404" target="_blank" class="link-button">View on SAM.gov →</a>
+        </div>
+
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <div class="opportunity-number">#2</div>
+                <div style="flex: 1;">
+                    <div class="opportunity-title">16--PLATE,END,AIRCRAFT,</div>
+                    <div class="badges">
+                        <span class="badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="opportunity-details">
+                <div class="detail-item">
+                    <div class="detail-label">Response Date</div>
+                    <div class="detail-value">2026-01-13</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Award Amount</div>
+                    <div class="detail-value">N/A</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">NAICS Code</div>
+                    <div class="detail-value">314910</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Agency</div>
+                    <div class="detail-value">OFFICE</div>
+                </div>
+            </div>
+            
+            <div class="description"><div class="description-text">https://api.sam.gov/prod/opportunities/v1/noticedesc?noticeid=71cb4c3ebfec4a4d97284d822fa73ab0</div></div>
+            
+            <a href="https://sam.gov/opp/71cb4c3ebfec4a4d97284d822fa73ab0" target="_blank" class="link-button">View on SAM.gov →</a>
+        </div>
+
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <div class="opportunity-number">#3</div>
+                <div style="flex: 1;">
+                    <div class="opportunity-title">Small Business Set Aside for Carbon Monoxide Monitor Build Kits per attachments. Request Access to the drawings through SAM. Provide your Cage Code when requesting access in SAM.</div>
+                    <div class="badges">
+                        <span class="badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="opportunity-details">
+                <div class="detail-item">
+                    <div class="detail-label">Response Date</div>
+                    <div class="detail-value">2026-01-14T11:00:00-06:00</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Award Amount</div>
+                    <div class="detail-value">N/A</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">NAICS Code</div>
+                    <div class="detail-value">332710</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Agency</div>
+                    <div class="detail-value">OFFICE</div>
+                </div>
+            </div>
+            
+            <div class="description"><div class="description-text">https://api.sam.gov/prod/opportunities/v1/noticedesc?noticeid=c635a3713cc040538d8c6812ba54cb9f</div></div>
+            
+            <a href="https://sam.gov/opp/c635a3713cc040538d8c6812ba54cb9f" target="_blank" class="link-button">View on SAM.gov →</a>
+        </div>
+
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <div class="opportunity-number">#4</div>
+                <div style="flex: 1;">
+                    <div class="opportunity-title">Repair Roof AS4085</div>
+                    <div class="badges">
+                        <span class="badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="opportunity-details">
+                <div class="detail-item">
+                    <div class="detail-label">Response Date</div>
+                    <div class="detail-value">2026-01-15T14:00:00-05:00</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Award Amount</div>
+                    <div class="detail-value">N/A</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">NAICS Code</div>
+                    <div class="detail-value">238160</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Agency</div>
+                    <div class="detail-value">OFFICE</div>
+                </div>
+            </div>
+            
+            <div class="description"><div class="description-text">https://api.sam.gov/prod/opportunities/v1/noticedesc?noticeid=7b7ee905f56147a1b907eb3fcdc6bc9e</div></div>
+            
+            <a href="https://sam.gov/opp/7b7ee905f56147a1b907eb3fcdc6bc9e" target="_blank" class="link-button">View on SAM.gov →</a>
+        </div>
+
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <div class="opportunity-number">#5</div>
+                <div style="flex: 1;">
+                    <div class="opportunity-title">Chiller Replacement Bldgs. 128, 227, BB125, and RR135</div>
+                    <div class="badges">
+                        <span class="badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="opportunity-details">
+                <div class="detail-item">
+                    <div class="detail-label">Response Date</div>
+                    <div class="detail-value">2026-01-15T14:00:00-05:00</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Award Amount</div>
+                    <div class="detail-value">N/A</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">NAICS Code</div>
+                    <div class="detail-value">238220</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Agency</div>
+                    <div class="detail-value">OFFICE</div>
+                </div>
+            </div>
+            
+            <div class="description"><div class="description-text">https://api.sam.gov/prod/opportunities/v1/noticedesc?noticeid=4c77a16a3a1b4f4a8007be45d9a286eb</div></div>
+            
+            <a href="https://sam.gov/opp/4c77a16a3a1b4f4a8007be45d9a286eb" target="_blank" class="link-button">View on SAM.gov →</a>
+        </div>
+
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <div class="opportunity-number">#6</div>
+                <div style="flex: 1;">
+                    <div class="opportunity-title">USCGC ESCANABA Dockside Repairs FY2026</div>
+                    <div class="badges">
+                        <span class="badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="opportunity-details">
+                <div class="detail-item">
+                    <div class="detail-label">Response Date</div>
+                    <div class="detail-value">2026-01-16T10:00:00-05:00</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Award Amount</div>
+                    <div class="detail-value">N/A</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">NAICS Code</div>
+                    <div class="detail-value">336611</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Agency</div>
+                    <div class="detail-value">OFFICE</div>
+                </div>
+            </div>
+            
+            <div class="description"><div class="description-text">https://api.sam.gov/prod/opportunities/v1/noticedesc?noticeid=e11a50a026c24af599243eb6efbf3736</div></div>
+            
+            <a href="https://sam.gov/opp/e11a50a026c24af599243eb6efbf3736" target="_blank" class="link-button">View on SAM.gov →</a>
+        </div>
+
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <div class="opportunity-number">#7</div>
+                <div style="flex: 1;">
+                    <div class="opportunity-title">F-15 Cable and LOD Repair Services, Air Force Enhancement Program (AFREP) for Seymour Johnson AFB</div>
+                    <div class="badges">
+                        <span class="badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="opportunity-details">
+                <div class="detail-item">
+                    <div class="detail-label">Response Date</div>
+                    <div class="detail-value">2026-01-18T18:00:00-04:00</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Award Amount</div>
+                    <div class="detail-value">N/A</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">NAICS Code</div>
+                    <div class="detail-value">488190</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Agency</div>
+                    <div class="detail-value">OFFICE</div>
+                </div>
+            </div>
+            
+            <div class="description"><div class="description-text">https://api.sam.gov/prod/opportunities/v1/noticedesc?noticeid=c73c3453a6194439a16d186597a6783d</div></div>
+            
+            <a href="https://sam.gov/opp/c73c3453a6194439a16d186597a6783d" target="_blank" class="link-button">View on SAM.gov →</a>
+        </div>
+
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <div class="opportunity-number">#8</div>
+                <div style="flex: 1;">
+                    <div class="opportunity-title">NETBACKUP MAINTENANCE RENEWAL</div>
+                    <div class="badges">
+                        <span class="badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="opportunity-details">
+                <div class="detail-item">
+                    <div class="detail-label">Response Date</div>
+                    <div class="detail-value">2026-01-20T07:00:00-05:00</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Award Amount</div>
+                    <div class="detail-value">N/A</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">NAICS Code</div>
+                    <div class="detail-value">541519</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Agency</div>
+                    <div class="detail-value">OFFICE</div>
+                </div>
+            </div>
+            
+            <div class="description"><div class="description-text">https://api.sam.gov/prod/opportunities/v1/noticedesc?noticeid=627d2f0b089e48e1805fd2784a0e0e42</div></div>
+            
+            <a href="https://sam.gov/opp/627d2f0b089e48e1805fd2784a0e0e42" target="_blank" class="link-button">View on SAM.gov →</a>
+        </div>
+
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <div class="opportunity-number">#9</div>
+                <div style="flex: 1;">
+                    <div class="opportunity-title">J041--8th Floor Cook Exhaust Fan Replacement  (VA-26-00024303)</div>
+                    <div class="badges">
+                        <span class="badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="opportunity-details">
+                <div class="detail-item">
+                    <div class="detail-label">Response Date</div>
+                    <div class="detail-value">2026-01-20T12:00:00-06:00</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Award Amount</div>
+                    <div class="detail-value">N/A</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">NAICS Code</div>
+                    <div class="detail-value">238220</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Agency</div>
+                    <div class="detail-value">OFFICE</div>
+                </div>
+            </div>
+            
+            <div class="description"><div class="description-text">https://api.sam.gov/prod/opportunities/v1/noticedesc?noticeid=0c6723fc0350483fab69d18b84f02579</div></div>
+            
+            <a href="https://sam.gov/opp/0c6723fc0350483fab69d18b84f02579" target="_blank" class="link-button">View on SAM.gov →</a>
+        </div>
+
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <div class="opportunity-number">#10</div>
+                <div style="flex: 1;">
+                    <div class="opportunity-title">RFP - Construction Services for MI-8 Test Stand HVAC</div>
+                    <div class="badges">
+                        <span class="badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="opportunity-details">
+                <div class="detail-item">
+                    <div class="detail-label">Response Date</div>
+                    <div class="detail-value">2026-01-20T15:00:00-06:00</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Award Amount</div>
+                    <div class="detail-value">N/A</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">NAICS Code</div>
+                    <div class="detail-value">238220</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Agency</div>
+                    <div class="detail-value">OFFICE</div>
+                </div>
+            </div>
+            
+            <div class="description"><div class="description-text">https://api.sam.gov/prod/opportunities/v1/noticedesc?noticeid=dc2ec81733ee436b8c5902f64f383a8d</div></div>
+            
+            <a href="https://sam.gov/opp/dc2ec81733ee436b8c5902f64f383a8d" target="_blank" class="link-button">View on SAM.gov →</a>
+        </div>
+
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <div class="opportunity-number">#11</div>
+                <div style="flex: 1;">
+                    <div class="opportunity-title">ACU Maintenance</div>
+                    <div class="badges">
+                        <span class="badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="opportunity-details">
+                <div class="detail-item">
+                    <div class="detail-label">Response Date</div>
+                    <div class="detail-value">2026-01-20T16:30:00-09:00</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Award Amount</div>
+                    <div class="detail-value">N/A</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">NAICS Code</div>
+                    <div class="detail-value">811310</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Agency</div>
+                    <div class="detail-value">OFFICE</div>
+                </div>
+            </div>
+            
+            <div class="description"><div class="description-text">https://api.sam.gov/prod/opportunities/v1/noticedesc?noticeid=c0a16e286b2545a289bcd02fe135ad91</div></div>
+            
+            <a href="https://sam.gov/opp/c0a16e286b2545a289bcd02fe135ad91" target="_blank" class="link-button">View on SAM.gov →</a>
+        </div>
+
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <div class="opportunity-number">#12</div>
+                <div style="flex: 1;">
+                    <div class="opportunity-title">15--FAIRING,AIRCRAFT</div>
+                    <div class="badges">
+                        <span class="badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="opportunity-details">
+                <div class="detail-item">
+                    <div class="detail-label">Response Date</div>
+                    <div class="detail-value">2026-01-21</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Award Amount</div>
+                    <div class="detail-value">N/A</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">NAICS Code</div>
+                    <div class="detail-value">336413</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Agency</div>
+                    <div class="detail-value">OFFICE</div>
+                </div>
+            </div>
+            
+            <div class="description"><div class="description-text">https://api.sam.gov/prod/opportunities/v1/noticedesc?noticeid=b379e756e77743a6a3fef3ffc81e0480</div></div>
+            
+            <a href="https://sam.gov/opp/b379e756e77743a6a3fef3ffc81e0480" target="_blank" class="link-button">View on SAM.gov →</a>
+        </div>
+
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <div class="opportunity-number">#13</div>
+                <div style="flex: 1;">
+                    <div class="opportunity-title">15--SKIN,AIRCRAFT</div>
+                    <div class="badges">
+                        <span class="badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="opportunity-details">
+                <div class="detail-item">
+                    <div class="detail-label">Response Date</div>
+                    <div class="detail-value">2026-01-21</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Award Amount</div>
+                    <div class="detail-value">N/A</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">NAICS Code</div>
+                    <div class="detail-value">336413</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Agency</div>
+                    <div class="detail-value">OFFICE</div>
+                </div>
+            </div>
+            
+            <div class="description"><div class="description-text">https://api.sam.gov/prod/opportunities/v1/noticedesc?noticeid=4965db5f35ab4a48a832f5955f5f13b7</div></div>
+            
+            <a href="https://sam.gov/opp/4965db5f35ab4a48a832f5955f5f13b7" target="_blank" class="link-button">View on SAM.gov →</a>
+        </div>
+
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <div class="opportunity-number">#14</div>
+                <div style="flex: 1;">
+                    <div class="opportunity-title">Porta John Service-Norfolk Naval Shipyard</div>
+                    <div class="badges">
+                        <span class="badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="opportunity-details">
+                <div class="detail-item">
+                    <div class="detail-label">Response Date</div>
+                    <div class="detail-value">2026-01-21T06:00:00-05:00</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Award Amount</div>
+                    <div class="detail-value">N/A</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">NAICS Code</div>
+                    <div class="detail-value">562991</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Agency</div>
+                    <div class="detail-value">OFFICE</div>
+                </div>
+            </div>
+            
+            <div class="description"><div class="description-text">https://api.sam.gov/prod/opportunities/v1/noticedesc?noticeid=f490b0f5d1ab45e7a53840533b675c3d</div></div>
+            
+            <a href="https://sam.gov/opp/f490b0f5d1ab45e7a53840533b675c3d" target="_blank" class="link-button">View on SAM.gov →</a>
+        </div>
+
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <div class="opportunity-number">#15</div>
+                <div style="flex: 1;">
+                    <div class="opportunity-title">Maintenance, Repair, and Preservation YT-802</div>
+                    <div class="badges">
+                        <span class="badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="opportunity-details">
+                <div class="detail-item">
+                    <div class="detail-label">Response Date</div>
+                    <div class="detail-value">2026-01-21T12:00:00-08:00</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Award Amount</div>
+                    <div class="detail-value">N/A</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">NAICS Code</div>
+                    <div class="detail-value">336611</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Agency</div>
+                    <div class="detail-value">OFFICE</div>
+                </div>
+            </div>
+            
+            <div class="description"><div class="description-text">https://api.sam.gov/prod/opportunities/v1/noticedesc?noticeid=7061f4fa85734626b559e0dcf30ff9a0</div></div>
+            
+            <a href="https://sam.gov/opp/7061f4fa85734626b559e0dcf30ff9a0" target="_blank" class="link-button">View on SAM.gov →</a>
+        </div>
+
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <div class="opportunity-number">#16</div>
+                <div style="flex: 1;">
+                    <div class="opportunity-title">Matador Manor Streetlights</div>
+                    <div class="badges">
+                        <span class="badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="opportunity-details">
+                <div class="detail-item">
+                    <div class="detail-label">Response Date</div>
+                    <div class="detail-value">2026-01-21T14:00:00-07:00</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Award Amount</div>
+                    <div class="detail-value">N/A</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">NAICS Code</div>
+                    <div class="detail-value">237130</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Agency</div>
+                    <div class="detail-value">OFFICE</div>
+                </div>
+            </div>
+            
+            <div class="description"><div class="description-text">https://api.sam.gov/prod/opportunities/v1/noticedesc?noticeid=90038fb55f8e4952869e8256220d788b</div></div>
+            
+            <a href="https://sam.gov/opp/90038fb55f8e4952869e8256220d788b" target="_blank" class="link-button">View on SAM.gov →</a>
+        </div>
+
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <div class="opportunity-number">#17</div>
+                <div style="flex: 1;">
+                    <div class="opportunity-title">J095--Receiving Dock Gate Repair One Time Repair  Re-opening of Solicitation</div>
+                    <div class="badges">
+                        <span class="badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="opportunity-details">
+                <div class="detail-item">
+                    <div class="detail-label">Response Date</div>
+                    <div class="detail-value">2026-01-21T16:00:00-07:00</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Award Amount</div>
+                    <div class="detail-value">N/A</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">NAICS Code</div>
+                    <div class="detail-value">561210</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Agency</div>
+                    <div class="detail-value">OFFICE</div>
+                </div>
+            </div>
+            
+            <div class="description"><div class="description-text">https://api.sam.gov/prod/opportunities/v1/noticedesc?noticeid=0e2f14c1af70454fb59ae1e66d4ec0c1</div></div>
+            
+            <a href="https://sam.gov/opp/0e2f14c1af70454fb59ae1e66d4ec0c1" target="_blank" class="link-button">View on SAM.gov →</a>
+        </div>
+
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <div class="opportunity-number">#18</div>
+                <div style="flex: 1;">
+                    <div class="opportunity-title">J041--AMENDMENT#1 Replace 17H Blast Chiller Condenser  PERRY POINT MD VAMC</div>
+                    <div class="badges">
+                        <span class="badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="opportunity-details">
+                <div class="detail-item">
+                    <div class="detail-label">Response Date</div>
+                    <div class="detail-value">2026-01-22T10:00:00-05:00</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Award Amount</div>
+                    <div class="detail-value">N/A</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">NAICS Code</div>
+                    <div class="detail-value">561210</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Agency</div>
+                    <div class="detail-value">OFFICE</div>
+                </div>
+            </div>
+            
+            <div class="description"><div class="description-text">https://api.sam.gov/prod/opportunities/v1/noticedesc?noticeid=ba1dfca1d2794ca6af14499776568648</div></div>
+            
+            <a href="https://sam.gov/opp/ba1dfca1d2794ca6af14499776568648" target="_blank" class="link-button">View on SAM.gov →</a>
+        </div>
+
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <div class="opportunity-number">#19</div>
+                <div style="flex: 1;">
+                    <div class="opportunity-title">CHICAGO SANITARY AND SHIP CANAL (CSSC) FISH DISPERSAL BARRIER AHU1 CONDENSER COIL REPLACEMENT, LOCKPORT, WILL COUNTY, ILLINOIS</div>
+                    <div class="badges">
+                        <span class="badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="opportunity-details">
+                <div class="detail-item">
+                    <div class="detail-label">Response Date</div>
+                    <div class="detail-value">2026-01-22T11:00:00-06:00</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Award Amount</div>
+                    <div class="detail-value">N/A</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">NAICS Code</div>
+                    <div class="detail-value">238220</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Agency</div>
+                    <div class="detail-value">OFFICE</div>
+                </div>
+            </div>
+            
+            <div class="description"><div class="description-text">https://api.sam.gov/prod/opportunities/v1/noticedesc?noticeid=f1f007be891b4e4a96d61c82911335fd</div></div>
+            
+            <a href="https://sam.gov/opp/f1f007be891b4e4a96d61c82911335fd" target="_blank" class="link-button">View on SAM.gov →</a>
+        </div>
+
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <div class="opportunity-number">#20</div>
+                <div style="flex: 1;">
+                    <div class="opportunity-title">Repair and Abate Boat Maintenance Facility (BMF) at USCG Sector Southeastern New England, Woods Hole, Massachusetts</div>
+                    <div class="badges">
+                        <span class="badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="opportunity-details">
+                <div class="detail-item">
+                    <div class="detail-label">Response Date</div>
+                    <div class="detail-value">2026-01-22T14:00:00-05:00</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Award Amount</div>
+                    <div class="detail-value">N/A</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">NAICS Code</div>
+                    <div class="detail-value">236220</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Agency</div>
+                    <div class="detail-value">OFFICE</div>
+                </div>
+            </div>
+            
+            <div class="description"><div class="description-text">https://api.sam.gov/prod/opportunities/v1/noticedesc?noticeid=c8bb8aec42e6414694fe751948649f21</div></div>
+            
+            <a href="https://sam.gov/opp/c8bb8aec42e6414694fe751948649f21" target="_blank" class="link-button">View on SAM.gov →</a>
+        </div>
+
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <div class="opportunity-number">#21</div>
+                <div style="flex: 1;">
+                    <div class="opportunity-title">ARTB Drone Targetry</div>
+                    <div class="badges">
+                        <span class="badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="opportunity-details">
+                <div class="detail-item">
+                    <div class="detail-label">Response Date</div>
+                    <div class="detail-value">2026-01-23T10:00:00</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Award Amount</div>
+                    <div class="detail-value">N/A</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">NAICS Code</div>
+                    <div class="detail-value">336411</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Agency</div>
+                    <div class="detail-value">OFFICE</div>
+                </div>
+            </div>
+            
+            <div class="description"><div class="description-text">https://api.sam.gov/prod/opportunities/v1/noticedesc?noticeid=40ef4cc490164d29a21aea6a77a741c2</div></div>
+            
+            <a href="https://sam.gov/opp/40ef4cc490164d29a21aea6a77a741c2" target="_blank" class="link-button">View on SAM.gov →</a>
+        </div>
+
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <div class="opportunity-number">#22</div>
+                <div style="flex: 1;">
+                    <div class="opportunity-title">Forest Inventory and Analysis Knoxville Office Storage Space</div>
+                    <div class="badges">
+                        <span class="badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="opportunity-details">
+                <div class="detail-item">
+                    <div class="detail-label">Response Date</div>
+                    <div class="detail-value">2026-01-23T16:00:00-05:00</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Award Amount</div>
+                    <div class="detail-value">N/A</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">NAICS Code</div>
+                    <div class="detail-value">531130</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Agency</div>
+                    <div class="detail-value">OFFICE</div>
+                </div>
+            </div>
+            
+            <div class="description"><div class="description-text">https://api.sam.gov/prod/opportunities/v1/noticedesc?noticeid=3a0906ace9c14f998ade59069579011a</div></div>
+            
+            <a href="https://sam.gov/opp/3a0906ace9c14f998ade59069579011a" target="_blank" class="link-button">View on SAM.gov →</a>
+        </div>
+
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <div class="opportunity-number">#23</div>
+                <div style="flex: 1;">
+                    <div class="opportunity-title">17--SHIELD,AIRCRAFT GRO</div>
+                    <div class="badges">
+                        <span class="badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="opportunity-details">
+                <div class="detail-item">
+                    <div class="detail-label">Response Date</div>
+                    <div class="detail-value">2026-01-26</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Award Amount</div>
+                    <div class="detail-value">N/A</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">NAICS Code</div>
+                    <div class="detail-value">336413</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Agency</div>
+                    <div class="detail-value">OFFICE</div>
+                </div>
+            </div>
+            
+            <div class="description"><div class="description-text">https://api.sam.gov/prod/opportunities/v1/noticedesc?noticeid=9308c31719aa49088f23a466b37c3239</div></div>
+            
+            <a href="https://sam.gov/opp/9308c31719aa49088f23a466b37c3239" target="_blank" class="link-button">View on SAM.gov →</a>
+        </div>
+
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <div class="opportunity-number">#24</div>
+                <div style="flex: 1;">
+                    <div class="opportunity-title">45--HEATER,SPACE,ELECTR</div>
+                    <div class="badges">
+                        <span class="badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="opportunity-details">
+                <div class="detail-item">
+                    <div class="detail-label">Response Date</div>
+                    <div class="detail-value">2026-01-26</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Award Amount</div>
+                    <div class="detail-value">N/A</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">NAICS Code</div>
+                    <div class="detail-value">333414</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Agency</div>
+                    <div class="detail-value">OFFICE</div>
+                </div>
+            </div>
+            
+            <div class="description"><div class="description-text">https://api.sam.gov/prod/opportunities/v1/noticedesc?noticeid=83ed316541c848ef956867650b501628</div></div>
+            
+            <a href="https://sam.gov/opp/83ed316541c848ef956867650b501628" target="_blank" class="link-button">View on SAM.gov →</a>
+        </div>
+
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <div class="opportunity-number">#25</div>
+                <div style="flex: 1;">
+                    <div class="opportunity-title">Vehicle Barrier Maintenance Services</div>
+                    <div class="badges">
+                        <span class="badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="opportunity-details">
+                <div class="detail-item">
+                    <div class="detail-label">Response Date</div>
+                    <div class="detail-value">2026-01-26T09:00:00-05:00</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Award Amount</div>
+                    <div class="detail-value">N/A</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">NAICS Code</div>
+                    <div class="detail-value">811210</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Agency</div>
+                    <div class="detail-value">OFFICE</div>
+                </div>
+            </div>
+            
+            <div class="description"><div class="description-text">https://api.sam.gov/prod/opportunities/v1/noticedesc?noticeid=a164c4e357254f7aab19cfc10fac4cdd</div></div>
+            
+            <a href="https://sam.gov/opp/a164c4e357254f7aab19cfc10fac4cdd" target="_blank" class="link-button">View on SAM.gov →</a>
+        </div>
+
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <div class="opportunity-number">#26</div>
+                <div style="flex: 1;">
+                    <div class="opportunity-title">J045--Boiler Safety Device Testing/Inspection Services</div>
+                    <div class="badges">
+                        <span class="badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="opportunity-details">
+                <div class="detail-item">
+                    <div class="detail-label">Response Date</div>
+                    <div class="detail-value">2026-01-27T08:00:00-06:00</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Award Amount</div>
+                    <div class="detail-value">N/A</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">NAICS Code</div>
+                    <div class="detail-value">238220</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Agency</div>
+                    <div class="detail-value">OFFICE</div>
+                </div>
+            </div>
+            
+            <div class="description"><div class="description-text">https://api.sam.gov/prod/opportunities/v1/noticedesc?noticeid=8493563f5907460e9d1e45cecfa4fa40</div></div>
+            
+            <a href="https://sam.gov/opp/8493563f5907460e9d1e45cecfa4fa40" target="_blank" class="link-button">View on SAM.gov →</a>
+        </div>
+
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <div class="opportunity-number">#27</div>
+                <div style="flex: 1;">
+                    <div class="opportunity-title">Annual SAN Maintenance Renewal - Updated</div>
+                    <div class="badges">
+                        <span class="badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="opportunity-details">
+                <div class="detail-item">
+                    <div class="detail-label">Response Date</div>
+                    <div class="detail-value">2026-01-27T14:00:00-05:00</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Award Amount</div>
+                    <div class="detail-value">N/A</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">NAICS Code</div>
+                    <div class="detail-value">541519</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Agency</div>
+                    <div class="detail-value">OFFICE</div>
+                </div>
+            </div>
+            
+            <div class="description"><div class="description-text">https://api.sam.gov/prod/opportunities/v1/noticedesc?noticeid=70fa8f8702c1420b9e561e4e1923eda4</div></div>
+            
+            <a href="https://sam.gov/opp/70fa8f8702c1420b9e561e4e1923eda4" target="_blank" class="link-button">View on SAM.gov →</a>
+        </div>
+
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <div class="opportunity-number">#28</div>
+                <div style="flex: 1;">
+                    <div class="opportunity-title">Electrical maintenance services for the NOAA Disas</div>
+                    <div class="badges">
+                        <span class="badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="opportunity-details">
+                <div class="detail-item">
+                    <div class="detail-label">Response Date</div>
+                    <div class="detail-value">2026-01-27T16:00:00-05:00</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Award Amount</div>
+                    <div class="detail-value">N/A</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">NAICS Code</div>
+                    <div class="detail-value">238210</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Agency</div>
+                    <div class="detail-value">OFFICE</div>
+                </div>
+            </div>
+            
+            <div class="description"><div class="description-text">https://api.sam.gov/prod/opportunities/v1/noticedesc?noticeid=7516b00cc9fc4184aaa731e3c88e6dfa</div></div>
+            
+            <a href="https://sam.gov/opp/7516b00cc9fc4184aaa731e3c88e6dfa" target="_blank" class="link-button">View on SAM.gov →</a>
+        </div>
+
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <div class="opportunity-number">#29</div>
+                <div style="flex: 1;">
+                    <div class="opportunity-title">53--GASKET</div>
+                    <div class="badges">
+                        <span class="badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="opportunity-details">
+                <div class="detail-item">
+                    <div class="detail-label">Response Date</div>
+                    <div class="detail-value">2026-01-28</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Award Amount</div>
+                    <div class="detail-value">N/A</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">NAICS Code</div>
+                    <div class="detail-value">336411</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Agency</div>
+                    <div class="detail-value">OFFICE</div>
+                </div>
+            </div>
+            
+            <div class="description"><div class="description-text">https://api.sam.gov/prod/opportunities/v1/noticedesc?noticeid=da681bf8454847078b13c7726f6803be</div></div>
+            
+            <a href="https://sam.gov/opp/da681bf8454847078b13c7726f6803be" target="_blank" class="link-button">View on SAM.gov →</a>
+        </div>
+
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <div class="opportunity-number">#30</div>
+                <div style="flex: 1;">
+                    <div class="opportunity-title">53--GASKET</div>
+                    <div class="badges">
+                        <span class="badge-set-aside badge-sb">Total Small Business Set-Aside (FAR 19.5)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="opportunity-details">
+                <div class="detail-item">
+                    <div class="detail-label">Response Date</div>
+                    <div class="detail-value">2026-01-28</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Award Amount</div>
+                    <div class="detail-value">N/A</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">NAICS Code</div>
+                    <div class="detail-value">336411</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Agency</div>
+                    <div class="detail-value">OFFICE</div>
+                </div>
+            </div>
+            
+            <div class="description"><div class="description-text">https://api.sam.gov/prod/opportunities/v1/noticedesc?noticeid=276b37d318ea4d44a1472cecc49270a2</div></div>
+            
+            <a href="https://sam.gov/opp/276b37d318ea4d44a1472cecc49270a2" target="_blank" class="link-button">View on SAM.gov →</a>
+        </div>
+
+        <div class="footer">
+            <p>Generated on January 14, 2026</p>
+            <p>Total Opportunities: 30</p>
+        </div>
+    </div>
+</body>
+</html>

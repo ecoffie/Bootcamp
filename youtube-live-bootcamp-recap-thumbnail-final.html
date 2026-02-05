@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>January Bootcamp Recap - Final Thumbnail</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #1a1a2e;
+            padding: 40px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 1.8rem;
+        }
+
+        .subtitle {
+            color: #888;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        /* Thumbnail Standard Size: 1280x720 */
+        .thumbnail {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #0f172a 0%, #064e3b 50%, #0f172a 100%);
+        }
+
+        /* Money/value background effect */
+        .bg-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.3) 0%, transparent 40%),
+                radial-gradient(circle at 80% 20%, rgba(251, 191, 36, 0.2) 0%, transparent 40%);
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            height: 100%;
+        }
+
+        .left {
+            flex: 1.1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 50px 60px;
+        }
+
+        .dollar-amount {
+            font-size: 160px;
+            font-weight: 900;
+            color: #10b981;
+            line-height: 1;
+            text-shadow: 0 0 60px rgba(16, 185, 129, 0.6), 4px 4px 0 rgba(0,0,0,0.3);
+            letter-spacing: -5px;
+        }
+
+        .of-secrets {
+            font-size: 85px;
+            font-weight: 900;
+            color: white;
+            line-height: 1.1;
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+            margin-top: 5px;
+        }
+
+        .free-tonight {
+            display: inline-block;
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            color: #0f172a;
+            font-size: 48px;
+            font-weight: 900;
+            padding: 15px 40px;
+            border-radius: 12px;
+            margin-top: 25px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 10px 40px rgba(251, 191, 36, 0.4);
+        }
+
+        .sub-text {
+            font-size: 28px;
+            color: rgba(255,255,255,0.8);
+            margin-top: 25px;
+            font-weight: 500;
+        }
+
+        .right {
+            flex: 0.9;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            position: relative;
+        }
+
+        .face-placeholder {
+            width: 480px;
+            height: 580px;
+            background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.2) 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.4);
+            font-size: 22px;
+            text-align: center;
+            border: 3px dashed rgba(255,255,255,0.2);
+            padding: 20px;
+        }
+
+        .live-badge {
+            position: absolute;
+            top: 25px;
+            right: 30px;
+            background: #ef4444;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 26px;
+            font-weight: 800;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 20px rgba(239, 68, 68, 0.5);
+        }
+
+        .live-badge::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background: white;
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .logo-watermark {
+            position: absolute;
+            top: 30px;
+            left: 40px;
+            font-size: 24px;
+            font-weight: 800;
+            color: rgba(255,255,255,0.7);
+            letter-spacing: 1px;
+            z-index: 2;
+        }
+
+        /* Money icons scattered */
+        .money-icon {
+            position: absolute;
+            font-size: 40px;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .money-1 { top: 15%; left: 5%; transform: rotate(-15deg); }
+        .money-2 { top: 70%; left: 8%; transform: rotate(20deg); }
+        .money-3 { bottom: 10%; left: 35%; transform: rotate(-10deg); }
+
+        .instructions {
+            margin-top: 30px;
+            background: #2a2a3e;
+            padding: 25px 35px;
+            border-radius: 12px;
+            color: #ccc;
+            max-width: 1280px;
+            width: 100%;
+        }
+
+        .instructions h3 {
+            color: #10b981;
+            margin-bottom: 15px;
+        }
+
+        .instructions ul {
+            list-style: none;
+        }
+
+        .instructions li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .instructions li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #fbbf24;
+        }
+
+        .title-box {
+            margin-top: 20px;
+            background: linear-gradient(135deg, #064e3b 0%, #0f172a 100%);
+            padding: 25px 35px;
+            border-radius: 12px;
+            max-width: 1280px;
+            width: 100%;
+            border: 2px solid #10b981;
+        }
+
+        .title-box h3 {
+            color: #10b981;
+            margin-bottom: 10px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .title-box p {
+            color: white;
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .title-box .score {
+            color: #fbbf24;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Final Thumbnail - Option A (Modeled on $82B Success)</h1>
+    <p class="subtitle">1280x720px | Ready for export</p>
+
+    <div class="thumbnail">
+        <div class="bg-pattern"></div>
+        <div class="money-icon money-1">💰</div>
+        <div class="money-icon money-2">💵</div>
+        <div class="money-icon money-3">💰</div>
+        <div class="logo-watermark">GOVCON GIANTS</div>
+        <div class="live-badge">LIVE</div>
+        <div class="content">
+            <div class="left">
+                <div class="dollar-amount">$1,500</div>
+                <div class="of-secrets">OF SECRETS</div>
+                <div class="free-tonight">FREE TONIGHT</div>
+                <div class="sub-text">January Bootcamp Recap</div>
+            </div>
+            <div class="right">
+                <div class="face-placeholder">
+                    YOUR PHOTO HERE<br>(excited/giving pose, similar to $82B thumbnail)
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="title-box">
+        <h3>YouTube Title</h3>
+        <p>I'm Giving Away $1,500 Worth of GovCon Secrets TONIGHT (Bootcamp Recap LIVE)</p>
+        <div class="score">Matches $82B format: Dollar amount + Urgency + LIVE tag</div>
+    </div>
+
+    <div class="instructions">
+        <h3>Why This Works (Based on $82B Video)</h3>
+        <ul>
+            <li><strong>Big dollar amount</strong> — $1,500 grabs attention like $82 BILLION did</li>
+            <li><strong>Urgency</strong> — "FREE TONIGHT" creates FOMO</li>
+            <li><strong>LIVE badge</strong> — Red badge top right, same placement</li>
+            <li><strong>Green money colors</strong> — Same color psychology</li>
+            <li><strong>Your face on right</strong> — Same layout that got 30K views</li>
+            <li><strong>Clear value prop</strong> — "SECRETS" implies insider knowledge</li>
+        </ul>
+    </div>
+</body>
+</html>

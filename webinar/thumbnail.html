@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Thumbnail</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: #1a1a1a;
+            padding: 40px;
+            gap: 60px;
+        }
+
+        h2 {
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .thumbnail {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+
+        /* OPTION A - Big Money Shot */
+        .thumbnail-a {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0f172a 100%);
+        }
+
+        .thumbnail-a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .thumbnail-a .content {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px 80px;
+        }
+
+        .thumbnail-a .big-number {
+            font-size: 220px;
+            font-weight: 900;
+            color: #fbbf24;
+            line-height: 0.9;
+            text-shadow: 0 10px 40px rgba(251, 191, 36, 0.4);
+        }
+
+        .thumbnail-a .subtitle {
+            font-size: 72px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-top: 10px;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+        }
+
+        .thumbnail-a .tagline {
+            font-size: 42px;
+            font-weight: 600;
+            color: #94a3b8;
+            margin-top: 30px;
+        }
+
+        .thumbnail-a .live-badge {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            background: #dc2626;
+            color: white;
+            font-size: 32px;
+            font-weight: 800;
+            padding: 15px 35px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .thumbnail-a .live-badge::before {
+            content: '';
+            width: 16px;
+            height: 16px;
+            background: white;
+            border-radius: 50%;
+        }
+
+        .thumbnail-a .logo {
+            position: absolute;
+            bottom: 40px;
+            left: 80px;
+            font-size: 24px;
+            font-weight: 800;
+            color: rgba(255,255,255,0.6);
+            letter-spacing: 4px;
+        }
+
+        .thumbnail-a .photo-placeholder {
+            position: absolute;
+            right: 60px;
+            bottom: 0;
+            width: 400px;
+            height: 500px;
+            background: linear-gradient(180deg, transparent 0%, rgba(251, 191, 36, 0.2) 100%);
+            border-radius: 20px 20px 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.3);
+            font-size: 24px;
+            text-align: center;
+            border: 3px dashed rgba(255,255,255,0.2);
+            border-bottom: none;
+        }
+
+        /* OPTION B - Contract Stack */
+        .thumbnail-b {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        }
+
+        .thumbnail-b .bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.7) 100%);
+        }
+
+        .thumbnail-b .stamp {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-15deg);
+            border: 8px solid #dc2626;
+            color: #dc2626;
+            font-size: 120px;
+            font-weight: 900;
+            padding: 20px 60px;
+            border-radius: 20px;
+            opacity: 0.9;
+            text-transform: uppercase;
+        }
+
+        .thumbnail-b .content {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px 80px;
+        }
+
+        .thumbnail-b .question {
+            font-size: 80px;
+            font-weight: 900;
+            color: #ffffff;
+            line-height: 1.1;
+            max-width: 700px;
+        }
+
+        .thumbnail-b .question span {
+            color: #fbbf24;
+        }
+
+        .thumbnail-b .contracts-visual {
+            position: absolute;
+            right: 100px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: -20px;
+        }
+
+        .thumbnail-b .contract-paper {
+            width: 300px;
+            height: 100px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transform: rotate(-5deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1e293b;
+            font-weight: 700;
+            font-size: 24px;
+        }
+
+        .thumbnail-b .contract-paper:nth-child(2) {
+            transform: rotate(3deg) translateY(-20px);
+        }
+
+        .thumbnail-b .contract-paper:nth-child(3) {
+            transform: rotate(-2deg) translateY(-40px);
+        }
+
+        .thumbnail-b .live-badge {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            background: #dc2626;
+            color: white;
+            font-size: 32px;
+            font-weight: 800;
+            padding: 15px 35px;
+            border-radius: 12px;
+        }
+
+        /* OPTION C - Split Design */
+        .thumbnail-c {
+            display: flex;
+        }
+
+        .thumbnail-c .left {
+            flex: 1;
+            background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .thumbnail-c .left .amount {
+            font-size: 180px;
+            font-weight: 900;
+            color: #0f172a;
+            line-height: 1;
+        }
+
+        .thumbnail-c .left .billion {
+            font-size: 80px;
+            font-weight: 800;
+            color: #0f172a;
+            opacity: 0.8;
+        }
+
+        .thumbnail-c .right {
+            flex: 1;
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .thumbnail-c .right .expired {
+            font-size: 100px;
+            font-weight: 900;
+            color: #dc2626;
+            text-transform: uppercase;
+            letter-spacing: 10px;
+        }
+
+        .thumbnail-c .right .contracts {
+            font-size: 48px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-top: 20px;
+        }
+
+        .thumbnail-c .center-circle {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 250px;
+            height: 250px;
+            background: #1e293b;
+            border-radius: 50%;
+            border: 8px solid #fbbf24;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.4);
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .thumbnail-c .live-badge {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            background: #dc2626;
+            color: white;
+            font-size: 28px;
+            font-weight: 800;
+            padding: 12px 30px;
+            border-radius: 10px;
+        }
+
+        .thumbnail-c .logo {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 22px;
+            font-weight: 800;
+            color: rgba(255,255,255,0.6);
+            letter-spacing: 4px;
+            background: rgba(0,0,0,0.5);
+            padding: 10px 30px;
+            border-radius: 8px;
+        }
+
+        /* OPTION D - Dramatic Reveal */
+        .thumbnail-d {
+            background: #0f172a;
+        }
+
+        .thumbnail-d .glow {
+            position: absolute;
+            top: 50%;
+            left: 30%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(251, 191, 36, 0.3) 0%, transparent 70%);
+        }
+
+        .thumbnail-d .content {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding: 60px 80px;
+        }
+
+        .thumbnail-d .text-side {
+            flex: 1;
+        }
+
+        .thumbnail-d .federal {
+            font-size: 36px;
+            font-weight: 700;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            margin-bottom: 10px;
+        }
+
+        .thumbnail-d .main-text {
+            font-size: 110px;
+            font-weight: 900;
+            color: #ffffff;
+            line-height: 1;
+        }
+
+        .thumbnail-d .main-text .gold {
+            color: #fbbf24;
+        }
+
+        .thumbnail-d .sub-text {
+            font-size: 56px;
+            font-weight: 800;
+            color: #dc2626;
+            margin-top: 20px;
+            text-transform: uppercase;
+        }
+
+        .thumbnail-d .arrow {
+            font-size: 120px;
+            color: #fbbf24;
+            margin: 0 40px;
+        }
+
+        .thumbnail-d .photo-placeholder {
+            width: 350px;
+            height: 450px;
+            background: linear-gradient(180deg, rgba(251, 191, 36, 0.1) 0%, rgba(251, 191, 36, 0.3) 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.3);
+            font-size: 20px;
+            text-align: center;
+            border: 3px dashed rgba(255,255,255,0.2);
+        }
+
+        .thumbnail-d .live-badge {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            background: #dc2626;
+            color: white;
+            font-size: 32px;
+            font-weight: 800;
+            padding: 15px 35px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .thumbnail-d .live-badge::before {
+            content: '';
+            width: 16px;
+            height: 16px;
+            background: white;
+            border-radius: 50%;
+        }
+
+        .thumbnail-d .logo {
+            position: absolute;
+            bottom: 40px;
+            left: 80px;
+            font-size: 24px;
+            font-weight: 800;
+            color: rgba(255,255,255,0.5);
+            letter-spacing: 4px;
+        }
+
+        .label {
+            color: #94a3b8;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            margin-top: -10px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- OPTION A: Big Money Shot -->
+    <div>
+        <h2>Option A: Big Money Shot (Recommended)</h2>
+        <p class="label">1280x720 - Right-click → Save Image As</p>
+        <div class="thumbnail thumbnail-a">
+            <div class="content">
+                <div class="big-number">$221B</div>
+                <div class="subtitle">Just Expired</div>
+                <div class="tagline">Federal Contracts Up for Grabs</div>
+            </div>
+            <div class="live-badge">LIVE</div>
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="photo-placeholder">YOUR PHOTO<br>(pointing or excited)</div>
+        </div>
+    </div>
+
+    <!-- OPTION B: Contract Stack with Stamp -->
+    <div>
+        <h2>Option B: Expired Stamp</h2>
+        <p class="label">1280x720 - Right-click → Save Image As</p>
+        <div class="thumbnail thumbnail-b">
+            <div class="bg-image"></div>
+            <div class="content">
+                <div class="question">WHO'S GETTING <span>THESE CONTRACTS?</span></div>
+            </div>
+            <div class="stamp">EXPIRED</div>
+            <div class="live-badge">LIVE</div>
+        </div>
+    </div>
+
+    <!-- OPTION C: Split Design -->
+    <div>
+        <h2>Option C: Split Design</h2>
+        <p class="label">1280x720 - Right-click → Save Image As</p>
+        <div class="thumbnail thumbnail-c">
+            <div class="left">
+                <div class="amount">$221</div>
+                <div class="billion">BILLION</div>
+            </div>
+            <div class="right">
+                <div class="expired">EXPIRED</div>
+                <div class="contracts">1,242 Contracts</div>
+            </div>
+            <div class="center-circle">YOUR<br>PHOTO</div>
+            <div class="live-badge">LIVE</div>
+            <div class="logo">GOVCON GIANTS</div>
+        </div>
+    </div>
+
+    <!-- OPTION D: Dramatic Reveal -->
+    <div>
+        <h2>Option D: Dramatic Reveal</h2>
+        <p class="label">1280x720 - Right-click → Save Image As</p>
+        <div class="thumbnail thumbnail-d">
+            <div class="glow"></div>
+            <div class="content">
+                <div class="text-side">
+                    <div class="federal">Federal Contracts</div>
+                    <div class="main-text"><span class="gold">$221B</span><br>IN CONTRACTS</div>
+                    <div class="sub-text">Just Expired</div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="photo-placeholder">YOUR PHOTO<br>(looking at camera)</div>
+            </div>
+            <div class="live-badge">LIVE</div>
+            <div class="logo">GOVCON GIANTS</div>
+        </div>
+    </div>
+
+    <div style="color: #64748b; font-family: Inter; text-align: center; margin-top: 40px;">
+        <p>To save: Right-click on thumbnail → "Save Image As" or take a screenshot</p>
+        <p>Add your photo in Canva, Photoshop, or any image editor</p>
+        <p>Recommended: Use Option A or D with your photo cutout</p>
+    </div>
+
+</body>
+</html>

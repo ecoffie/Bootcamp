@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Live #2 - Thumbnail Options</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial Black', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #1a1a2e;
+            color: white;
+            padding: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 32px;
+        }
+
+        .thumbnail-container {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .thumbnail-wrapper {
+            text-align: center;
+        }
+
+        .thumbnail-wrapper h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #a855f7;
+        }
+
+        .thumbnail {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+
+        /* THUMBNAIL 1: Big Number Focus */
+        .thumb-1 {
+            background: linear-gradient(135deg, #dc2626 0%, #7c3aed 50%, #059669 100%);
+        }
+
+        .thumb-1 .content {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px;
+        }
+
+        .thumb-1 .left {
+            flex: 1;
+            text-align: left;
+        }
+
+        .thumb-1 .big-number {
+            font-size: 350px;
+            font-weight: 900;
+            color: white;
+            line-height: 0.8;
+            text-shadow: 0 10px 40px rgba(0,0,0,0.4);
+        }
+
+        .thumb-1 .right {
+            flex: 1.2;
+            text-align: left;
+            padding-left: 40px;
+        }
+
+        .thumb-1 .agency-badge {
+            display: inline-block;
+            background: rgba(0,0,0,0.3);
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .thumb-1 h1 {
+            font-size: 90px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 25px;
+        }
+
+        .thumb-1 h1 .highlight {
+            color: #fef08a;
+        }
+
+        .thumb-1 .subtitle {
+            font-size: 42px;
+            opacity: 0.95;
+            font-weight: 700;
+        }
+
+        .thumb-1 .subtitle .green {
+            color: #4ade80;
+        }
+
+        /* THUMBNAIL 2: Pain = Opportunity */
+        .thumb-2 {
+            background: #0f172a;
+        }
+
+        .thumb-2 .content {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 60px;
+        }
+
+        .thumb-2 .top-badge {
+            display: inline-block;
+            background: #dc2626;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-size: 32px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 900;
+        }
+
+        .thumb-2 .equation {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .thumb-2 .pain-box {
+            background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+            padding: 40px 50px;
+            border-radius: 25px;
+            text-align: center;
+        }
+
+        .thumb-2 .pain-box .label {
+            font-size: 28px;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+
+        .thumb-2 .pain-box .text {
+            font-size: 72px;
+            font-weight: 900;
+        }
+
+        .thumb-2 .equals {
+            font-size: 120px;
+            font-weight: 900;
+            color: #fef08a;
+        }
+
+        .thumb-2 .opportunity-box {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            padding: 40px 50px;
+            border-radius: 25px;
+            text-align: center;
+        }
+
+        .thumb-2 .opportunity-box .label {
+            font-size: 28px;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+
+        .thumb-2 .opportunity-box .text {
+            font-size: 72px;
+            font-weight: 900;
+        }
+
+        .thumb-2 .bottom-text {
+            font-size: 48px;
+            font-weight: 700;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .thumb-2 .bottom-text .highlight {
+            color: #4ade80;
+        }
+
+        /* THUMBNAIL 3: What Agencies Say */
+        .thumb-3 {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        }
+
+        .thumb-3 .content {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding: 60px;
+        }
+
+        .thumb-3 .left {
+            flex: 1;
+        }
+
+        .thumb-3 .quote-bubble {
+            background: white;
+            color: #1e3a8a;
+            padding: 40px;
+            border-radius: 30px;
+            position: relative;
+            margin-bottom: 30px;
+            max-width: 550px;
+        }
+
+        .thumb-3 .quote-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 40px;
+            border-width: 20px 20px 0 0;
+            border-style: solid;
+            border-color: white transparent transparent transparent;
+        }
+
+        .thumb-3 .quote-bubble p {
+            font-size: 32px;
+            font-weight: 700;
+            font-style: italic;
+        }
+
+        .thumb-3 .agency-label {
+            font-size: 24px;
+            opacity: 0.9;
+            margin-left: 20px;
+        }
+
+        .thumb-3 .right {
+            flex: 1;
+            text-align: center;
+            padding-left: 40px;
+        }
+
+        .thumb-3 .warning-badge {
+            display: inline-block;
+            background: #dc2626;
+            padding: 15px 35px;
+            border-radius: 30px;
+            font-size: 28px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 900;
+        }
+
+        .thumb-3 h1 {
+            font-size: 100px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 25px;
+        }
+
+        .thumb-3 h1 .number {
+            color: #fef08a;
+        }
+
+        .thumb-3 .subtitle {
+            font-size: 44px;
+            font-weight: 700;
+        }
+
+        .thumb-3 .subtitle .green {
+            color: #4ade80;
+        }
+    </style>
+</head>
+<body>
+    <h1>YouTube Live #2 - Thumbnail Options</h1>
+
+    <div class="thumbnail-container">
+        <!-- THUMBNAIL 1: Big Number Focus -->
+        <div class="thumbnail-wrapper">
+            <h2>Option 1: Big Number Focus</h2>
+            <div class="thumbnail thumb-1">
+                <div class="content">
+                    <div class="left">
+                        <div class="big-number">8</div>
+                    </div>
+                    <div class="right">
+                        <div class="agency-badge">Government Agencies</div>
+                        <h1>PAIN POINTS<br><span class="highlight">YOU CAN SOLVE</span></h1>
+                        <div class="subtitle">Position As <span class="green">THE Solution</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- THUMBNAIL 2: Pain = Opportunity -->
+        <div class="thumbnail-wrapper">
+            <h2>Option 2: Pain = Opportunity</h2>
+            <div class="thumbnail thumb-2">
+                <div class="content">
+                    <div class="top-badge">Government Contracting Secret</div>
+                    <div class="equation">
+                        <div class="pain-box">
+                            <div class="label">AGENCY</div>
+                            <div class="text">PAIN</div>
+                        </div>
+                        <div class="equals">=</div>
+                        <div class="opportunity-box">
+                            <div class="label">YOUR</div>
+                            <div class="text">$$$$</div>
+                        </div>
+                    </div>
+                    <div class="bottom-text">8 Pain Points That Get You <span class="highlight">CONTRACTS</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- THUMBNAIL 3: What Agencies Say -->
+        <div class="thumbnail-wrapper">
+            <h2>Option 3: What Agencies Actually Say</h2>
+            <div class="thumbnail thumb-3">
+                <div class="content">
+                    <div class="left">
+                        <div class="quote-bubble">
+                            <p>"We can't FIND qualified small businesses..."</p>
+                        </div>
+                        <div class="agency-label">- Federal Agency Buyer</div>
+                    </div>
+                    <div class="right">
+                        <div class="warning-badge">They Need YOU</div>
+                        <h1><span class="number">8</span> PAIN<br>POINTS</h1>
+                        <div class="subtitle">= <span class="green">Your Contracts</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

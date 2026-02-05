@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Thumbnail - January 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: #1a1a1a;
+            padding: 40px;
+        }
+
+        .instructions {
+            color: #94a3b8;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .thumbnail {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0f172a 100%);
+        }
+
+        .thumbnail::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px 80px;
+        }
+
+        .big-number {
+            font-size: 240px;
+            font-weight: 900;
+            color: #fbbf24;
+            line-height: 0.85;
+            text-shadow: 0 10px 60px rgba(251, 191, 36, 0.5);
+        }
+
+        .subtitle {
+            font-size: 85px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-top: 10px;
+            text-transform: uppercase;
+            letter-spacing: 12px;
+        }
+
+        .tagline {
+            font-size: 44px;
+            font-weight: 600;
+            color: #94a3b8;
+            margin-top: 25px;
+        }
+
+        .live-badge {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            background: #dc2626;
+            color: white;
+            font-size: 36px;
+            font-weight: 800;
+            padding: 18px 40px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            box-shadow: 0 8px 30px rgba(220, 38, 38, 0.5);
+            z-index: 10;
+        }
+
+        .live-badge::before {
+            content: '';
+            width: 18px;
+            height: 18px;
+            background: white;
+            border-radius: 50%;
+        }
+
+        .month-badge {
+            position: absolute;
+            top: 120px;
+            right: 40px;
+            background: #3b82f6;
+            color: white;
+            font-size: 24px;
+            font-weight: 800;
+            padding: 12px 30px;
+            border-radius: 10px;
+            z-index: 10;
+        }
+
+        .logo {
+            position: absolute;
+            bottom: 40px;
+            left: 80px;
+            font-size: 26px;
+            font-weight: 800;
+            color: rgba(255,255,255,0.6);
+            letter-spacing: 5px;
+            z-index: 10;
+        }
+
+        /* Space for photo on right side */
+        .photo-area {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 480px;
+            height: 600px;
+            background: linear-gradient(180deg, transparent 0%, rgba(251, 191, 36, 0.15) 100%);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 100%;
+            border: 3px dashed rgba(255,255,255,0.2);
+            border-bottom: none;
+            border-right: none;
+            border-radius: 20px 0 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.3);
+            font-size: 22px;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="instructions">
+        <strong>January 2026 Thumbnail (1280x720)</strong><br>
+        Screenshot and add your photo (cutout) on the right side in Canva - make yourself BIG!<br>
+        <em>Update the dollar amount once you have January data</em>
+    </div>
+
+    <div class="thumbnail">
+        <div class="content">
+            <div class="big-number">$[X]B</div>
+            <div class="subtitle">Expiring Now</div>
+            <div class="tagline">Federal Contracts Up for Grabs</div>
+        </div>
+        <div class="live-badge">LIVE</div>
+        <div class="month-badge">JANUARY 2026</div>
+        <div class="logo">GOVCON GIANTS</div>
+        <div class="photo-area">
+            <div class="photo-placeholder">YOUR PHOTO<br>(cutout, pointing or excited)<br><br>Make it BIG!</div>
+        </div>
+    </div>
+
+</body>
+</html>

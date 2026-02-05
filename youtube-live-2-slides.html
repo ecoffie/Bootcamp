@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Live #2 - 8 Agency Pain Points You Can Solve | January 17, 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial Black', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0a0a0a;
+            color: white;
+        }
+
+        .slide {
+            width: 1920px;
+            height: 1080px;
+            position: relative;
+            overflow: hidden;
+            page-break-after: always;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Slide 1: Title Slide */
+        .slide-title {
+            background: linear-gradient(135deg, #dc2626 0%, #7c3aed 50%, #059669 100%);
+        }
+
+        .slide-title .content {
+            text-align: center;
+            padding: 60px;
+        }
+
+        .slide-title .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 28px;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .slide-title h1 {
+            font-size: 100px;
+            font-weight: 900;
+            margin-bottom: 30px;
+            text-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            line-height: 1.1;
+        }
+
+        .slide-title h1 .highlight {
+            color: #4ade80;
+        }
+
+        .slide-title .subtitle {
+            font-size: 48px;
+            opacity: 0.95;
+            font-weight: 400;
+        }
+
+        .slide-title .date {
+            position: absolute;
+            bottom: 60px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 32px;
+            opacity: 0.8;
+        }
+
+        /* Dark slide base */
+        .slide-dark {
+            background: #0f172a;
+        }
+
+        .slide-dark .content {
+            text-align: center;
+            padding: 80px;
+        }
+
+        .slide-dark h2 {
+            font-size: 80px;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 50px;
+        }
+
+        .slide-dark h2 .highlight {
+            color: #4ade80;
+        }
+
+        .slide-dark h2 .red {
+            color: #ef4444;
+        }
+
+        .slide-dark h2 .purple {
+            color: #a855f7;
+        }
+
+        .slide-dark p {
+            font-size: 42px;
+            opacity: 0.9;
+            max-width: 1400px;
+            line-height: 1.5;
+        }
+
+        /* Blue gradient slide */
+        .slide-blue {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        }
+
+        .slide-blue .content {
+            padding: 80px;
+            width: 100%;
+        }
+
+        .slide-blue h2 {
+            font-size: 72px;
+            font-weight: 900;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        /* Purple gradient slide */
+        .slide-purple {
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+        }
+
+        .slide-purple .content {
+            padding: 80px;
+            width: 100%;
+        }
+
+        .slide-purple h2 {
+            font-size: 72px;
+            font-weight: 900;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        /* Green gradient slide */
+        .slide-green {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        }
+
+        .slide-green .content {
+            text-align: center;
+            padding: 80px;
+        }
+
+        .slide-green h2 {
+            font-size: 72px;
+            font-weight: 900;
+            margin-bottom: 50px;
+        }
+
+        /* Red gradient slide */
+        .slide-red {
+            background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+        }
+
+        .slide-red .content {
+            text-align: center;
+            padding: 80px;
+        }
+
+        .slide-red h2 {
+            font-size: 72px;
+            font-weight: 900;
+            margin-bottom: 50px;
+        }
+
+        /* Orange gradient slide */
+        .slide-orange {
+            background: linear-gradient(135deg, #ea580c 0%, #f97316 100%);
+        }
+
+        .slide-orange .content {
+            padding: 80px;
+            width: 100%;
+        }
+
+        .slide-orange h2 {
+            font-size: 72px;
+            font-weight: 900;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        /* Stat grid */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .stat-grid-4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .stat-box {
+            background: rgba(255,255,255,0.1);
+            border-radius: 30px;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .stat-box .number {
+            font-size: 80px;
+            font-weight: 900;
+            color: #4ade80;
+        }
+
+        .stat-box .label {
+            font-size: 28px;
+            opacity: 0.9;
+            margin-top: 15px;
+        }
+
+        /* Quote box */
+        .quote-box {
+            background: rgba(255,255,255,0.1);
+            border-left: 8px solid #ef4444;
+            padding: 40px 50px;
+            margin: 30px 0;
+            font-size: 36px;
+            font-style: italic;
+            max-width: 1400px;
+            text-align: left;
+        }
+
+        .quote-list {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Reason list */
+        .reason-list {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .reason-item {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 35px;
+            font-size: 38px;
+        }
+
+        .reason-item .icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            flex-shrink: 0;
+        }
+
+        /* Pain point slide */
+        .pain-point-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .pain-point-number {
+            width: 120px;
+            height: 120px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            font-weight: 900;
+        }
+
+        .pain-point-title {
+            font-size: 64px;
+            font-weight: 900;
+        }
+
+        .pain-point-content {
+            max-width: 1500px;
+            margin: 0 auto;
+        }
+
+        .pain-point-row {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 25px;
+            font-size: 32px;
+            align-items: flex-start;
+        }
+
+        .pain-point-label {
+            background: rgba(255,255,255,0.2);
+            padding: 10px 25px;
+            border-radius: 10px;
+            font-weight: 700;
+            min-width: 200px;
+            text-align: center;
+        }
+
+        .pain-point-value {
+            flex: 1;
+            opacity: 0.95;
+        }
+
+        /* Agency grid */
+        .agency-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 1500px;
+            margin: 0 auto;
+        }
+
+        .agency-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 35px;
+            border-left: 6px solid #4ade80;
+        }
+
+        .agency-card h3 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: #4ade80;
+        }
+
+        .agency-card p {
+            font-size: 26px;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+
+        .agency-card .competition {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 22px;
+            font-weight: 700;
+            margin-top: 10px;
+        }
+
+        .competition-low {
+            background: #10b981;
+        }
+
+        .competition-medium {
+            background: #f59e0b;
+        }
+
+        /* Decision matrix table */
+        .matrix-table {
+            width: 100%;
+            max-width: 1600px;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        .matrix-table th {
+            background: rgba(255,255,255,0.2);
+            padding: 25px 20px;
+            font-size: 28px;
+            text-align: left;
+        }
+
+        .matrix-table td {
+            padding: 25px 20px;
+            font-size: 26px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .matrix-table tr:nth-child(even) {
+            background: rgba(255,255,255,0.05);
+        }
+
+        /* Do Don't comparison */
+        .do-dont-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1500px;
+            margin: 0 auto;
+        }
+
+        .do-box {
+            background: rgba(16, 185, 129, 0.2);
+            border: 4px solid #10b981;
+            border-radius: 30px;
+            padding: 50px;
+        }
+
+        .dont-box {
+            background: rgba(239, 68, 68, 0.2);
+            border: 4px solid #ef4444;
+            border-radius: 30px;
+            padding: 50px;
+        }
+
+        .do-box h3, .dont-box h3 {
+            font-size: 48px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .do-box h3 {
+            color: #4ade80;
+        }
+
+        .dont-box h3 {
+            color: #ef4444;
+        }
+
+        .do-box p, .dont-box p {
+            font-size: 28px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(0,0,0,0.2);
+            border-radius: 10px;
+        }
+
+        /* Action list */
+        .action-list {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .action-item {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 30px;
+            font-size: 36px;
+        }
+
+        .action-item .number {
+            width: 70px;
+            height: 70px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            flex-shrink: 0;
+        }
+
+        /* Week grid */
+        .week-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            max-width: 1700px;
+            margin: 0 auto;
+        }
+
+        .week-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 35px;
+            border-top: 6px solid #7c3aed;
+        }
+
+        .week-card h3 {
+            font-size: 36px;
+            color: #a855f7;
+            margin-bottom: 25px;
+        }
+
+        .week-card ul {
+            list-style: none;
+            font-size: 24px;
+        }
+
+        .week-card li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .week-card li::before {
+            content: '>';
+            position: absolute;
+            left: 0;
+            color: #4ade80;
+        }
+
+        /* CTA Slide */
+        .slide-cta {
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #059669 100%);
+        }
+
+        .slide-cta .content {
+            text-align: center;
+            padding: 80px;
+        }
+
+        .slide-cta .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 28px;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .slide-cta h2 {
+            font-size: 80px;
+            font-weight: 900;
+            margin-bottom: 30px;
+        }
+
+        .slide-cta .date {
+            font-size: 60px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: #4ade80;
+        }
+
+        .slide-cta .features {
+            font-size: 36px;
+            opacity: 0.95;
+            line-height: 1.8;
+            margin-bottom: 50px;
+        }
+
+        .slide-cta .cta-box {
+            display: inline-block;
+            background: white;
+            color: #7c3aed;
+            padding: 30px 80px;
+            border-radius: 50px;
+            font-size: 42px;
+            font-weight: 900;
+        }
+
+        .slide-cta .price {
+            margin-top: 30px;
+            font-size: 36px;
+            opacity: 0.95;
+        }
+
+        /* Download CTA slide */
+        .slide-download {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        }
+
+        .slide-download .content {
+            text-align: center;
+            padding: 80px;
+        }
+
+        .slide-download h2 {
+            font-size: 80px;
+            font-weight: 900;
+            margin-bottom: 30px;
+        }
+
+        .slide-download .url {
+            font-size: 56px;
+            font-weight: 700;
+            background: rgba(255,255,255,0.2);
+            padding: 30px 60px;
+            border-radius: 20px;
+            margin: 40px 0;
+            display: inline-block;
+        }
+
+        .slide-download p {
+            font-size: 36px;
+            opacity: 0.95;
+            margin-top: 30px;
+        }
+
+        /* Big text */
+        .big-text {
+            font-size: 120px;
+            font-weight: 900;
+            line-height: 1.2;
+        }
+
+        .medium-text {
+            font-size: 56px;
+            opacity: 0.95;
+            margin-top: 30px;
+        }
+
+        /* Two column layout */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .two-col h3 {
+            font-size: 42px;
+            color: #4ade80;
+            margin-bottom: 30px;
+        }
+
+        .two-col ul {
+            list-style: none;
+            font-size: 30px;
+        }
+
+        .two-col li {
+            padding: 15px 0;
+            padding-left: 40px;
+            position: relative;
+        }
+
+        .two-col li::before {
+            content: '>';
+            position: absolute;
+            left: 0;
+            color: #4ade80;
+            font-weight: bold;
+        }
+
+        /* Navigation */
+        .nav-hint {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-size: 16px;
+            z-index: 1000;
+            font-family: Arial, sans-serif;
+        }
+
+        .slide-counter {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-size: 18px;
+            z-index: 1000;
+            font-family: Arial, sans-serif;
+        }
+
+        @media print {
+            .slide {
+                page-break-after: always;
+            }
+            .nav-hint, .slide-counter {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-hint">Arrow keys to navigate | F11 for fullscreen</div>
+    <div class="slide-counter">Slide <span id="currentSlide">1</span> of <span id="totalSlides">30</span></div>
+
+    <!-- SLIDE 1: Title -->
+    <div class="slide slide-title">
+        <div class="content">
+            <div class="badge">YouTube Live #2 - January 17, 2026</div>
+            <h1><span class="highlight">8 Agency Pain Points</span><br>You Can Solve</h1>
+            <p class="subtitle">Position Yourself As The Solution</p>
+            <div class="date">GovCon Giants | Federal Help Center</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 2: The Hook -->
+    <div class="slide slide-dark">
+        <div class="content">
+            <h2>Agencies Have <span class="red">2 Big Problems</span></h2>
+            <p style="margin-top: 40px;">They can't <strong>FIND</strong> small businesses...<br><br>And they can't <strong>MATCH</strong> capabilities to their needs.</p>
+        </div>
+    </div>
+
+    <!-- SLIDE 3: Your Opportunity -->
+    <div class="slide slide-green">
+        <div class="content">
+            <h2>This Creates YOUR Opportunity</h2>
+            <div class="stat-grid stat-grid-4" style="margin-top: 50px;">
+                <div class="stat-box">
+                    <div class="number">3x</div>
+                    <div class="label">Faster Responses</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">50%</div>
+                    <div class="label">Higher Win Rates</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">Less</div>
+                    <div class="label">Competition</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">3-6mo</div>
+                    <div class="label">First Contract</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 4: What Agencies Say -->
+    <div class="slide slide-dark">
+        <div class="content" style="padding: 60px;">
+            <h2 style="margin-bottom: 50px;">What Agencies <span class="red">Actually Say</span></h2>
+            <div class="quote-list">
+                <div class="quote-box">"We struggle to locate qualified small businesses with the right capabilities"</div>
+                <div class="quote-box">"Small businesses aren't registered where we can find them"</div>
+                <div class="quote-box">"Capability statements are too generic - they don't tell us how you help our mission"</div>
+                <div class="quote-box">"We can't easily identify which small businesses have the expertise we need"</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 5: Quick Recap -->
+    <div class="slide slide-blue">
+        <div class="content">
+            <h2>Quick Recap From Last Week</h2>
+            <div class="stat-grid" style="margin-top: 50px;">
+                <div class="stat-box">
+                    <div class="number">$82.8B</div>
+                    <div class="label">Unobligated Balances</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">Q1</div>
+                    <div class="label">Spending Pressure</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">$8-10M</div>
+                    <div class="label">Sole Source Thresholds</div>
+                </div>
+            </div>
+            <p style="font-size: 36px; margin-top: 50px; opacity: 0.9;">Free resources still available - link in description</p>
+        </div>
+    </div>
+
+    <!-- SLIDE 6: The 8 Pain Points Intro -->
+    <div class="slide slide-purple">
+        <div class="content">
+            <h2>The 8 Agency Pain Points</h2>
+            <div class="reason-list" style="margin-top: 40px;">
+                <div class="reason-item"><div class="icon">1</div><span>New Fiscal Year Opportunities</span></div>
+                <div class="reason-item"><div class="icon">2</div><span>Small Business Goals (23%)</span></div>
+                <div class="reason-item"><div class="icon">3</div><span>Specialized Technical Expertise Gaps</span></div>
+                <div class="reason-item"><div class="icon">4</div><span>Legacy System Modernization</span></div>
+                <div class="reason-item"><div class="icon">5</div><span>Construction & Facilities Management</span></div>
+                <div class="reason-item"><div class="icon">6</div><span>Rapid Response & Emergency Needs</span></div>
+                <div class="reason-item"><div class="icon">7</div><span>Supply Chain & Logistics</span></div>
+                <div class="reason-item"><div class="icon">8</div><span>R&D / Innovation</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 7: Pain Point #1 -->
+    <div class="slide slide-orange">
+        <div class="content">
+            <div class="pain-point-header">
+                <div class="pain-point-number">1</div>
+                <div class="pain-point-title">Q1 New Fiscal Year Opportunities</div>
+            </div>
+            <div class="pain-point-content">
+                <div class="pain-point-row">
+                    <div class="pain-point-label">THE PROBLEM</div>
+                    <div class="pain-point-value">Agencies have fresh FY2026 budgets and need to execute new contracts NOW</div>
+                </div>
+                <div class="pain-point-row">
+                    <div class="pain-point-label">OPPORTUNITY</div>
+                    <div class="pain-point-value">Q1 is when agencies release forecasts, plan procurements, and seek new vendors</div>
+                </div>
+                <div class="pain-point-row">
+                    <div class="pain-point-label">BEST FOR</div>
+                    <div class="pain-point-value">Businesses ready to build relationships BEFORE the rush - position early!</div>
+                </div>
+                <div class="pain-point-row">
+                    <div class="pain-point-label">TARGET</div>
+                    <div class="pain-point-value">All federal agencies - check agency forecast portals and SAM.gov</div>
+                </div>
+                <div class="pain-point-row">
+                    <div class="pain-point-label">ACTION</div>
+                    <div class="pain-point-value">Review FY2026 forecasts NOW, attend industry days, contact OSDBU early</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 7A: What is an Appropriations Bill -->
+    <div class="slide slide-blue">
+        <div class="content">
+            <h2 style="margin-bottom: 50px;">What Is An Appropriations Bill?</h2>
+            <div class="pain-point-content">
+                <div class="pain-point-row">
+                    <div class="pain-point-label">DEFINITION</div>
+                    <div class="pain-point-value">A law that gives federal agencies permission to SPEND money</div>
+                </div>
+                <div class="pain-point-row">
+                    <div class="pain-point-label">HOW MANY</div>
+                    <div class="pain-point-value">12 bills fund the entire federal government each fiscal year (Oct 1 - Sep 30)</div>
+                </div>
+                <div class="pain-point-row">
+                    <div class="pain-point-label">THE 12 BILLS</div>
+                    <div class="pain-point-value">Defense | Homeland Security | HHS/Labor | Agriculture | Commerce/Justice<br>Energy/Water | Interior | MilCon/VA | State/Foreign | Transportation/HUD<br>Financial Services | Legislative Branch</div>
+                </div>
+                <div class="pain-point-row">
+                    <div class="pain-point-label">WHY IT MATTERS</div>
+                    <div class="pain-point-value">No appropriations bill = no new contracts, no new programs, no spending</div>
+                </div>
+                <div class="pain-point-row">
+                    <div class="pain-point-label">FOR YOU</div>
+                    <div class="pain-point-value">Track which bills pass - that tells you which agencies can spend!</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 7B: Pain Point #1B - CR Impact -->
+    <div class="slide slide-red">
+        <div class="content">
+            <div class="pain-point-header">
+                <div class="pain-point-number">1B</div>
+                <div class="pain-point-title">CR Expires January 30, 2026</div>
+            </div>
+            <div class="pain-point-content">
+                <div class="pain-point-row">
+                    <div class="pain-point-label">CURRENT</div>
+                    <div class="pain-point-value">9 of 12 appropriations bills still unfunded - CR keeps gov't at FY2025 levels</div>
+                </div>
+                <div class="pain-point-row">
+                    <div class="pain-point-label">THE PROBLEM</div>
+                    <div class="pain-point-value">No NEW program starts under CR - agencies are holding back spending</div>
+                </div>
+                <div class="pain-point-row">
+                    <div class="pain-point-label">OPPORTUNITY</div>
+                    <div class="pain-point-value">DoD, HHS, Labor still waiting for full-year funding - MASSIVE pent-up demand</div>
+                </div>
+                <div class="pain-point-row">
+                    <div class="pain-point-label">WHAT TO WATCH</div>
+                    <div class="pain-point-value">3 bills passed Senate (CJS, Energy/Water, Interior) - 6 more to go by Jan 30</div>
+                </div>
+                <div class="pain-point-row">
+                    <div class="pain-point-label">ACTION</div>
+                    <div class="pain-point-value">Position NOW - when full funding passes, contracts will release FAST</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 8: Pain Point #2 -->
+    <div class="slide slide-green">
+        <div class="content">
+            <div class="pain-point-header">
+                <div class="pain-point-number">2</div>
+                <div class="pain-point-title">Small Business Goals (23%)</div>
+            </div>
+            <div class="pain-point-content">
+                <div class="pain-point-row">
+                    <div class="pain-point-label">THE PROBLEM</div>
+                    <div class="pain-point-value">Agencies MUST meet 23% small business contracting goal</div>
+                </div>
+                <div class="pain-point-row">
+                    <div class="pain-point-label">OPPORTUNITY</div>
+                    <div class="pain-point-value">Agencies actively seek certified small businesses to meet quotas</div>
+                </div>
+                <div class="pain-point-row">
+                    <div class="pain-point-label">BEST FOR</div>
+                    <div class="pain-point-value">8(a), WOSB, SDVOSB, HUBZone certified businesses</div>
+                </div>
+                <div class="pain-point-row">
+                    <div class="pain-point-label">TARGET</div>
+                    <div class="pain-point-value">DHS, DoD, DOE, DOT - Strong small business programs</div>
+                </div>
+                <div class="pain-point-row">
+                    <div class="pain-point-label">ACTION</div>
+                    <div class="pain-point-value">If you have certifications, these agencies are TOP PRIORITY</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 9: Pain Point #3 -->
+    <div class="slide slide-blue">
+        <div class="content">
+            <div class="pain-point-header">
+                <div class="pain-point-number">3</div>
+                <div class="pain-point-title">Specialized Technical Expertise Gaps</div>
+            </div>
+            <div class="pain-point-content">
+                <div class="pain-point-row">
+                    <div class="pain-point-label">THE PROBLEM</div>
+                    <div class="pain-point-value">Agencies need niche expertise but lack qualified contractors</div>
+                </div>
+                <div class="pain-point-row">
+                    <div class="pain-point-label">OPPORTUNITY</div>
+                    <div class="pain-point-value">LESS competition for specialized work - they're actively seeking YOU</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 10: Technical Expertise - Agency Breakdown -->
+    <div class="slide slide-dark">
+        <div class="content" style="padding: 60px; width: 100%;">
+            <h2 style="text-align: center; margin-bottom: 50px;">Where <span class="highlight">Technical Specialists</span> Win</h2>
+            <div class="agency-grid">
+                <div class="agency-card">
+                    <h3>Department of Homeland Security</h3>
+                    <p><strong>Needs:</strong> Cybersecurity, border tech, emergency response</p>
+                    <p><strong>Why:</strong> Evolving threats, need innovative solutions</p>
+                    <span class="competition competition-medium">Medium Competition</span>
+                </div>
+                <div class="agency-card">
+                    <h3>Space Force</h3>
+                    <p><strong>Needs:</strong> Space ops, satellite systems, launch services</p>
+                    <p><strong>Why:</strong> Newest agency, limited contractor pool</p>
+                    <span class="competition competition-low">LOW Competition</span>
+                </div>
+                <div class="agency-card">
+                    <h3>Department of Energy</h3>
+                    <p><strong>Needs:</strong> Nuclear, clean energy, national security</p>
+                    <p><strong>Why:</strong> Highly specialized, safety-critical</p>
+                    <span class="competition competition-low">Medium-Low Competition</span>
+                </div>
+                <div class="agency-card">
+                    <h3>Missile Defense Agency</h3>
+                    <p><strong>Needs:</strong> Advanced sensors, testing, integration</p>
+                    <p><strong>Why:</strong> Cutting-edge tech, need innovation</p>
+                    <span class="competition competition-medium">Medium Competition</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 11: Pain Point #4 -->
+    <div class="slide slide-purple">
+        <div class="content">
+            <div class="pain-point-header">
+                <div class="pain-point-number">4</div>
+                <div class="pain-point-title">Legacy System Modernization</div>
+            </div>
+            <div class="pain-point-content">
+                <div class="pain-point-row">
+                    <div class="pain-point-label">THE PROBLEM</div>
+                    <div class="pain-point-value">Aging systems need updates and replacements across government</div>
+                </div>
+                <div class="pain-point-row">
+                    <div class="pain-point-label">OPPORTUNITY</div>
+                    <div class="pain-point-value">EVERY agency is modernizing - massive opportunity</div>
+                </div>
+                <div class="pain-point-row">
+                    <div class="pain-point-label">BEST FOR</div>
+                    <div class="pain-point-value">IT services, cloud migration, software dev, systems integration, cybersecurity</div>
+                </div>
+                <div class="pain-point-row">
+                    <div class="pain-point-label">TARGET</div>
+                    <div class="pain-point-value">ALL federal agencies</div>
+                </div>
+                <div class="pain-point-row">
+                    <div class="pain-point-label">ACTION</div>
+                    <div class="pain-point-value">If you do IT modernization, you have opportunities EVERYWHERE</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 12: Pain Point #5 -->
+    <div class="slide slide-orange">
+        <div class="content">
+            <div class="pain-point-header">
+                <div class="pain-point-number">5</div>
+                <div class="pain-point-title">Construction & Facilities</div>
+            </div>
+            <div class="pain-point-content">
+                <div class="pain-point-row">
+                    <div class="pain-point-label">THE PROBLEM</div>
+                    <div class="pain-point-value">Aging infrastructure, maintenance backlogs, base operations needs</div>
+                </div>
+                <div class="pain-point-row">
+                    <div class="pain-point-label">OPPORTUNITY</div>
+                    <div class="pain-point-value">Military bases ALWAYS need maintenance and construction</div>
+                </div>
+                <div class="pain-point-row">
+                    <div class="pain-point-label">BEST FOR</div>
+                    <div class="pain-point-value">General contractors, facilities management, construction, maintenance</div>
+                </div>
+                <div class="pain-point-row">
+                    <div class="pain-point-label">TARGET</div>
+                    <div class="pain-point-value">Army, Navy, Air Force, GSA</div>
+                </div>
+                <div class="pain-point-row">
+                    <div class="pain-point-label">ACTION</div>
+                    <div class="pain-point-value">If you're in construction/facilities, military bases are always hiring</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 13: Pain Point #6 -->
+    <div class="slide slide-red">
+        <div class="content">
+            <div class="pain-point-header">
+                <div class="pain-point-number">6</div>
+                <div class="pain-point-title">Rapid Response & Emergency</div>
+            </div>
+            <div class="pain-point-content">
+                <div class="pain-point-row">
+                    <div class="pain-point-label">THE PROBLEM</div>
+                    <div class="pain-point-value">Agencies need fast response to unexpected requirements</div>
+                </div>
+                <div class="pain-point-row">
+                    <div class="pain-point-label">OPPORTUNITY</div>
+                    <div class="pain-point-value">Fast response capability = MAJOR competitive advantage</div>
+                </div>
+                <div class="pain-point-row">
+                    <div class="pain-point-label">BEST FOR</div>
+                    <div class="pain-point-value">Quick mobilization, flexible capacity, 24/7 availability, scalable ops</div>
+                </div>
+                <div class="pain-point-row">
+                    <div class="pain-point-label">TARGET</div>
+                    <div class="pain-point-value">FEMA, DHS, DoD</div>
+                </div>
+                <div class="pain-point-row">
+                    <div class="pain-point-label">ACTION</div>
+                    <div class="pain-point-value">Emphasize your speed and flexibility in every outreach</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 14: Pain Point #7 -->
+    <div class="slide slide-blue">
+        <div class="content">
+            <div class="pain-point-header">
+                <div class="pain-point-number">7</div>
+                <div class="pain-point-title">Supply Chain & Logistics</div>
+            </div>
+            <div class="pain-point-content">
+                <div class="pain-point-row">
+                    <div class="pain-point-label">THE PROBLEM</div>
+                    <div class="pain-point-value">Complex supply chains, need for reliable suppliers</div>
+                </div>
+                <div class="pain-point-row">
+                    <div class="pain-point-label">OPPORTUNITY</div>
+                    <div class="pain-point-value">Agencies need consistent, reliable vendors for supplies and materials</div>
+                </div>
+                <div class="pain-point-row">
+                    <div class="pain-point-label">BEST FOR</div>
+                    <div class="pain-point-value">Distributors, manufacturers, logistics, office supplies, equipment</div>
+                </div>
+                <div class="pain-point-row">
+                    <div class="pain-point-label">TARGET</div>
+                    <div class="pain-point-value">DLA, GSA, all agencies</div>
+                </div>
+                <div class="pain-point-row">
+                    <div class="pain-point-label">ACTION</div>
+                    <div class="pain-point-value">Get on GSA Schedule, register with DLA</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 15: Pain Point #8 -->
+    <div class="slide slide-purple">
+        <div class="content">
+            <div class="pain-point-header">
+                <div class="pain-point-number">8</div>
+                <div class="pain-point-title">R&D / Innovation</div>
+            </div>
+            <div class="pain-point-content">
+                <div class="pain-point-row">
+                    <div class="pain-point-label">THE PROBLEM</div>
+                    <div class="pain-point-value">Agencies need innovation but lack internal R&D capacity</div>
+                </div>
+                <div class="pain-point-row">
+                    <div class="pain-point-label">OPPORTUNITY</div>
+                    <div class="pain-point-value">Dedicated SBIR (Small Business Innovation Research) programs</div>
+                </div>
+                <div class="pain-point-row">
+                    <div class="pain-point-label">BEST FOR</div>
+                    <div class="pain-point-value">R&D companies, tech startups, engineering firms, researchers</div>
+                </div>
+                <div class="pain-point-row">
+                    <div class="pain-point-label">TARGET</div>
+                    <div class="pain-point-value">DARPA, Air Force RDT&E, Navy R&D, DOE</div>
+                </div>
+                <div class="pain-point-row">
+                    <div class="pain-point-label">ACTION</div>
+                    <div class="pain-point-value">Apply for SBIR/STTR grants - designed for small businesses</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 16: Decision Matrix Part 1 -->
+    <div class="slide slide-dark">
+        <div class="content" style="padding: 50px; width: 100%;">
+            <h2 style="text-align: center; margin-bottom: 40px;">Agency Decision Matrix <span style="color: #a855f7;">(1 of 2)</span></h2>
+            <table class="matrix-table">
+                <tr>
+                    <th>If You Are...</th>
+                    <th>Target These Agencies</th>
+                    <th>Why</th>
+                </tr>
+                <tr>
+                    <td><strong>Certified Small Business</strong></td>
+                    <td>DHS, DoD, DOE, DOT</td>
+                    <td>Active SB programs</td>
+                </tr>
+                <tr>
+                    <td><strong>IT / Cybersecurity</strong></td>
+                    <td>DHS, DoD, All Agencies</td>
+                    <td>Massive modernization</td>
+                </tr>
+                <tr>
+                    <td><strong>Construction / Facilities</strong></td>
+                    <td>Army, Navy, Air Force, GSA</td>
+                    <td>Always need maintenance</td>
+                </tr>
+                <tr>
+                    <td><strong>Technical Specialist</strong></td>
+                    <td>Space Force, DOE, MDA</td>
+                    <td>Less competition</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- SLIDE 16B: Decision Matrix Part 2 -->
+    <div class="slide slide-dark">
+        <div class="content" style="padding: 50px; width: 100%;">
+            <h2 style="text-align: center; margin-bottom: 40px;">Agency Decision Matrix <span style="color: #a855f7;">(2 of 2)</span></h2>
+            <table class="matrix-table">
+                <tr>
+                    <th>If You Are...</th>
+                    <th>Target These Agencies</th>
+                    <th>Why</th>
+                </tr>
+                <tr>
+                    <td><strong>Fast Response Provider</strong></td>
+                    <td>FEMA, DHS, Q4 Agencies</td>
+                    <td>Speed advantage</td>
+                </tr>
+                <tr>
+                    <td><strong>R&D / Innovation</strong></td>
+                    <td>DARPA, RDT&E, SBIR</td>
+                    <td>Dedicated programs</td>
+                </tr>
+                <tr>
+                    <td><strong>Manufacturer / Distributor</strong></td>
+                    <td>DLA, GSA, All Agencies</td>
+                    <td>Supply chain needs</td>
+                </tr>
+                <tr>
+                    <td><strong>NEW to GovCon</strong></td>
+                    <td>DHS, DOT, Tier 2 Primes</td>
+                    <td>Easier entry</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- SLIDE 17: How to Position -->
+    <div class="slide slide-green">
+        <div class="content">
+            <h2>How To Position Yourself</h2>
+            <div class="two-col" style="margin-top: 50px;">
+                <div>
+                    <h3>Make Yourself Easy to FIND</h3>
+                    <ul>
+                        <li>Complete SAM.gov registration</li>
+                        <li>Register in agency vendor systems</li>
+                        <li>Attend industry days & matchmaking</li>
+                        <li>Contact OSDBU proactively</li>
+                        <li>Submit capability statements BEFORE opportunities</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Make Capabilities Easy to MATCH</h3>
+                    <ul>
+                        <li>Research agency missions first</li>
+                        <li>Create agency-SPECIFIC cap statements</li>
+                        <li>Use THEIR terminology</li>
+                        <li>Reference THEIR strategic plans</li>
+                        <li>Present as solutions to THEIR pain points</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 18: What NOT to Do -->
+    <div class="slide slide-dark">
+        <div class="content" style="width: 100%;">
+            <h2 style="text-align: center; margin-bottom: 50px;">What <span class="red">NOT</span> To Do</h2>
+            <div class="do-dont-grid">
+                <div class="dont-box">
+                    <h3>DON'T SAY</h3>
+                    <p>"We provide IT services"</p>
+                    <p>"What contracts do you have?"</p>
+                    <p>"We can do anything"</p>
+                </div>
+                <div class="do-box">
+                    <h3>DO SAY</h3>
+                    <p>"We help agencies modernize legacy systems quickly, reducing security risks"</p>
+                    <p>"What are your biggest challenges in [area]? How can we help?"</p>
+                    <p>"We specialize in [specific capability] for [specific mission]"</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 19: 4-Week Action Plan Part 1 -->
+    <div class="slide slide-blue">
+        <div class="content" style="width: 100%;">
+            <h2 style="text-align: center; margin-bottom: 50px;">Your 4-Week Action Plan <span style="opacity: 0.8;">(Weeks 1-2)</span></h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 1500px; margin: 0 auto;">
+                <div class="week-card" style="padding: 50px;">
+                    <h3 style="font-size: 48px; margin-bottom: 35px;">Week 1</h3>
+                    <ul style="font-size: 32px;">
+                        <li style="padding: 15px 0;">Complete business profile assessment</li>
+                        <li style="padding: 15px 0;">Identify your top 3 strengths</li>
+                        <li style="padding: 15px 0;">List all certifications</li>
+                        <li style="padding: 15px 0;">Assess current capacity</li>
+                    </ul>
+                </div>
+                <div class="week-card" style="padding: 50px;">
+                    <h3 style="font-size: 48px; margin-bottom: 35px;">Week 2</h3>
+                    <ul style="font-size: 32px;">
+                        <li style="padding: 15px 0;">Research top 5 matching agencies</li>
+                        <li style="padding: 15px 0;">Identify their pain points</li>
+                        <li style="padding: 15px 0;">Match pain points to capabilities</li>
+                        <li style="padding: 15px 0;">Score each agency</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 19B: 4-Week Action Plan Part 2 -->
+    <div class="slide slide-blue">
+        <div class="content" style="width: 100%;">
+            <h2 style="text-align: center; margin-bottom: 50px;">Your 4-Week Action Plan <span style="opacity: 0.8;">(Weeks 3-4)</span></h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 1500px; margin: 0 auto;">
+                <div class="week-card" style="padding: 50px;">
+                    <h3 style="font-size: 48px; margin-bottom: 35px;">Week 3</h3>
+                    <ul style="font-size: 32px;">
+                        <li style="padding: 15px 0;">Create agency priority list</li>
+                        <li style="padding: 15px 0;">Research OSDBU contacts</li>
+                        <li style="padding: 15px 0;">Prepare agency-specific cap statements</li>
+                        <li style="padding: 15px 0;">Find opportunities in SAM.gov</li>
+                    </ul>
+                </div>
+                <div class="week-card" style="padding: 50px;">
+                    <h3 style="font-size: 48px; margin-bottom: 35px;">Week 4</h3>
+                    <ul style="font-size: 32px;">
+                        <li style="padding: 15px 0;">Contact OSDBU from top 5</li>
+                        <li style="padding: 15px 0;">Reference pain points in emails</li>
+                        <li style="padding: 15px 0;">Offer solutions, not services</li>
+                        <li style="padding: 15px 0;">Follow up with opportunities</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 20: Key Takeaway -->
+    <div class="slide slide-dark">
+        <div class="content">
+            <h2 style="font-size: 72px; margin-bottom: 60px;">The Key Takeaway</h2>
+            <p class="big-text" style="color: #4ade80;">Agency Pain Points<br>= Your Opportunities</p>
+            <p class="medium-text">The best agency for you is the one whose pain points match your strengths</p>
+        </div>
+    </div>
+
+    <!-- SLIDE 21: Sample From Pain Points Guide -->
+    <div class="slide slide-dark">
+        <div class="content" style="padding: 60px;">
+            <h2 style="margin-bottom: 30px;">Inside The <span class="highlight">Agency Pain Points Guide</span></h2>
+            <p style="font-size: 28px; opacity: 0.8; margin-bottom: 40px;">Sample content from your FREE download</p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 1600px; margin: 0 auto;">
+                <div style="background: rgba(255,255,255,0.1); border-left: 6px solid #f59e0b; padding: 30px; border-radius: 0 15px 15px 0;">
+                    <h3 style="color: #f59e0b; font-size: 28px; margin-bottom: 20px;">What Agencies Say:</h3>
+                    <p style="font-size: 26px; font-style: italic; margin-bottom: 20px;">"We struggle to locate qualified small businesses with the right capabilities"</p>
+                    <p style="font-size: 26px; font-style: italic; margin-bottom: 20px;">"Small businesses aren't registered where we can find them"</p>
+                    <p style="font-size: 26px; font-style: italic;">"Capability statements are too generic - they don't tell us how you help our mission"</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); border-left: 6px solid #4ade80; padding: 30px; border-radius: 0 15px 15px 0;">
+                    <h3 style="color: #4ade80; font-size: 28px; margin-bottom: 20px;">Success Metrics Included:</h3>
+                    <p style="font-size: 26px; margin-bottom: 15px;"><strong style="color: #4ade80;">60%+</strong> OSDBU response rate (vs 10-20% generic)</p>
+                    <p style="font-size: 26px; margin-bottom: 15px;"><strong style="color: #4ade80;">24-48hr</strong> response time (vs 1-2 weeks)</p>
+                    <p style="font-size: 26px; margin-bottom: 15px;"><strong style="color: #4ade80;">30-45%</strong> proposal win rate (vs 2-5%)</p>
+                    <p style="font-size: 26px;"><strong style="color: #4ade80;">3-6 months</strong> to first contract (vs 12-18)</p>
+                </div>
+            </div>
+            <p style="font-size: 32px; margin-top: 40px; color: #a855f7; font-weight: 700;">Plus: Decision Matrix, Sample Outreach Messages, 4-Week Action Plan</p>
+        </div>
+    </div>
+
+    <!-- SLIDE 22: Free Resources -->
+    <div class="slide slide-download">
+        <div class="content">
+            <h2>Free Resources Still Available</h2>
+            <div class="reason-list" style="margin: 40px auto; text-align: left; max-width: 900px;">
+                <div class="reason-item" style="font-size: 32px;"><div class="icon">1</div><span>Agency Buyers List</span></div>
+                <div class="reason-item" style="font-size: 32px;"><div class="icon">2</div><span>34-Opportunity Hit List</span></div>
+                <div class="reason-item" style="font-size: 32px;"><div class="icon">3</div><span>FY2026 NDAA Report</span></div>
+                <div class="reason-item" style="font-size: 32px;"><div class="icon">4</div><span>Agency Pain Points Guide</span></div>
+                <div class="reason-item" style="font-size: 32px;"><div class="icon">5</div><span>Recompete Contracts List</span></div>
+            </div>
+            <div class="url">bootcamp.govcongiants.org</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 22: Bootcamp CTA -->
+    <div class="slide slide-cta">
+        <div class="content">
+            <div class="badge">Federal Help Center Pro Members</div>
+            <h2>January 2026 GovCon Bootcamp</h2>
+            <div class="date">January 31, 2026</div>
+            <div class="features">
+                8 Hours Live Training | Capability Statement Review<br>
+                Personalized Target List Based On YOUR Pain Point Matches<br>
+                90-Day Action Plan | Searchable Database Access
+            </div>
+            <div class="cta-box">Join Federal Help Center Pro</div>
+            <div class="price">$99/month or $799/year</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 23: Next Week Teaser -->
+    <div class="slide slide-dark">
+        <div class="content">
+            <h2 style="margin-bottom: 40px;">Next Week</h2>
+            <p style="font-size: 72px; font-weight: 900; color: #7c3aed; margin-bottom: 40px;">How To Write Capability<br>Statements That Win</p>
+            <p style="font-size: 36px;">I'll show you exactly how to create agency-specific capability statements that get responses.</p>
+            <p style="font-size: 42px; color: #ef4444; font-weight: 700; margin-top: 60px;">Subscribe so you don't miss it!</p>
+        </div>
+    </div>
+
+    <!-- SLIDE 24: Data Sources -->
+    <div class="slide slide-dark">
+        <div class="content" style="text-align: left; padding: 60px 100px;">
+            <h2 style="text-align: center; margin-bottom: 50px; font-size: 60px;">Data Sources</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; font-size: 26px;">
+                <div>
+                    <h3 style="color: #4ade80; font-size: 32px; margin-bottom: 20px;">Federal Spending Data</h3>
+                    <ul style="list-style: none; line-height: 2;">
+                        <li>> USASpending.gov - Agency Spending</li>
+                        <li>> FPDS-NG - Contract Awards</li>
+                        <li>> SAM.gov - Opportunities Data</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: #4ade80; font-size: 32px; margin-bottom: 20px;">Small Business Programs</h3>
+                    <ul style="list-style: none; line-height: 2;">
+                        <li>> SBA.gov - 23% Goal Requirements</li>
+                        <li>> Agency OSDBU Offices</li>
+                        <li>> Subcontracting Plan Data</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: #4ade80; font-size: 32px; margin-bottom: 20px;">Agency Pain Points</h3>
+                    <ul style="list-style: none; line-height: 2;">
+                        <li>> GAO Reports - Acquisition Challenges</li>
+                        <li>> Agency Strategic Plans</li>
+                        <li>> IG Reports - Identified Gaps</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: #4ade80; font-size: 32px; margin-bottom: 20px;">Industry Research</h3>
+                    <ul style="list-style: none; line-height: 2;">
+                        <li>> SBIR.gov - Innovation Programs</li>
+                        <li>> Agency Forecast Data</li>
+                        <li>> Industry Day Presentations</li>
+                    </ul>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 40px; font-size: 24px; opacity: 0.7;">Data current as of January 2026</p>
+        </div>
+    </div>
+
+    <!-- SLIDE 25: Final -->
+    <div class="slide slide-title">
+        <div class="content">
+            <h1 style="font-size: 80px;">Thanks For Watching!</h1>
+            <p class="subtitle" style="margin-top: 40px;">Like | Subscribe | Share</p>
+            <p style="font-size: 36px; margin-top: 60px; opacity: 0.9;">Download free resources: bootcamp.govcongiants.org</p>
+            <div class="date">GovCon Giants | Federal Help Center</div>
+        </div>
+    </div>
+
+    <script>
+        // Keyboard navigation
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const currentSlideEl = document.getElementById('currentSlide');
+        const totalSlidesEl = document.getElementById('totalSlides');
+
+        totalSlidesEl.textContent = slides.length;
+
+        function updateCounter() {
+            currentSlideEl.textContent = currentSlide + 1;
+        }
+
+        function goToSlide(n) {
+            if (n >= 0 && n < slides.length) {
+                currentSlide = n;
+                slides[n].scrollIntoView({ behavior: 'smooth' });
+                updateCounter();
+            }
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') {
+                e.preventDefault();
+                goToSlide(currentSlide + 1);
+            } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                e.preventDefault();
+                goToSlide(currentSlide - 1);
+            } else if (e.key === 'Home') {
+                goToSlide(0);
+            } else if (e.key === 'End') {
+                goToSlide(slides.length - 1);
+            }
+        });
+
+        // Update counter on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    currentSlide = Array.from(slides).indexOf(entry.target);
+                    updateCounter();
+                }
+            });
+        }, { threshold: 0.5 });
+
+        slides.forEach(slide => observer.observe(slide));
+    </script>
+</body>
+</html>

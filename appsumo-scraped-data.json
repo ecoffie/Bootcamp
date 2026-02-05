@@ -1,0 +1,49 @@
+{
+  "homepage": {
+    "title": "AppSumo - Discover products. Stay weird. | AppSumo",
+    "meta_description": "Top software deals for entrepreneurs at incredible prices. Discover the latest productivity, marketing, and content tools for your business with no monthly fees.",
+    "header": {},
+    "navigation": [
+      {
+        "text": "AppSumo",
+        "href": "/"
+      },
+      {
+        "text": "Sellon AppSumoEarn money selling digital products",
+        "href": "https://sell.appsumo.com/"
+      },
+      {
+        "text": "Log in",
+        "href": "/accounts/login/"
+      },
+      {
+        "text": "Cart",
+        "href": "/cart/"
+      },
+      {
+        "text": "Software",
+        "href": "/software/"
+      },
+      {
+        "text": "Courses & more",
+        "href": "/courses-more/"
+      },
+      {
+        "text": "New arrivals",
+        "href": "/collections/new/"
+      },
+      {
+        "text": "Ending soon",
+        "href": "/collections/ending-soon/"
+      },
+      {
+        "text": "AskSumoand get 10% off",
+        "href": "/asksumo/?ref=asksumo-navitem"
+      }
+    ],
+    "hero_section": {},
+    "featured_products": [],
+    "categories": [],
+    "footer": {}
+  }
+}

@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free GovCon Course - Watch Now | GovCon Giants</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+    .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+    .video-card:hover { transform: translateY(-2px); }
+    .completed { opacity: 0.7; }
+    .completed .check-icon { display: flex; }
+  </style>
+</head>
+<body class="min-h-screen bg-slate-950">
+  <!-- Header -->
+  <header class="py-6 px-6 border-b border-slate-800 sticky top-0 bg-slate-950/95 backdrop-blur z-50">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <a href="https://govcongiants.com" class="flex items-center gap-1">
+        <span class="text-2xl font-bold text-white">GovCon</span>
+        <span class="text-2xl font-bold text-green-500">Giants</span>
+      </a>
+      <div class="flex items-center gap-4">
+        <span id="progressText" class="text-slate-400 text-sm hidden md:block">0 of 12 completed</span>
+        <div class="w-32 h-2 bg-slate-800 rounded-full overflow-hidden">
+          <div id="progressBar" class="h-full bg-green-500 transition-all duration-300" style="width: 0%"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Welcome Section -->
+  <section class="py-12 px-6 border-b border-slate-800">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 bg-green-900/30 border border-green-700/50 text-green-400 px-4 py-2 rounded-full text-sm font-medium mb-6">
+        <span>🎓</span> FREE COURSE
+      </div>
+      <h1 class="text-3xl md:text-4xl font-bold text-white mb-4">
+        Welcome to Your <span class="text-green-500">GovCon Journey</span>
+      </h1>
+      <p class="text-slate-400 text-lg max-w-2xl mx-auto" id="welcomeMessage">
+        Watch each video in order to build your foundation in government contracting.
+        Your progress is saved automatically.
+      </p>
+    </div>
+  </section>
+
+  <!-- Course Content -->
+  <section class="py-12 px-6">
+    <div class="max-w-6xl mx-auto">
+      <!-- Video Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Day 1 -->
+        <div class="video-card bg-slate-900 border border-slate-800 rounded-xl overflow-hidden transition-all cursor-pointer" data-video="1" onclick="openVideo(1)">
+          <div class="relative">
+            <img src="https://vumbnail.com/763400851.jpg" alt="Day 1" class="w-full aspect-video object-cover">
+            <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+              <div class="w-16 h-16 bg-green-600/90 rounded-full flex items-center justify-center">
+                <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
+            <div class="check-icon absolute top-3 right-3 w-8 h-8 bg-green-600 rounded-full items-center justify-center hidden">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            </div>
+          </div>
+          <div class="p-4">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-xs bg-green-900/50 text-green-400 px-2 py-1 rounded">Day 1</span>
+            </div>
+            <h3 class="text-white font-bold">What is a Government Contract?</h3>
+            <p class="text-slate-500 text-sm mt-1">Understand government contracts and what agencies are actually buying.</p>
+          </div>
+        </div>
+
+        <!-- Day 2 -->
+        <div class="video-card bg-slate-900 border border-slate-800 rounded-xl overflow-hidden transition-all cursor-pointer" data-video="2" onclick="openVideo(2)">
+          <div class="relative">
+            <img src="https://vumbnail.com/570786652.jpg" alt="Day 2" class="w-full aspect-video object-cover">
+            <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+              <div class="w-16 h-16 bg-green-600/90 rounded-full flex items-center justify-center">
+                <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
+            <div class="check-icon absolute top-3 right-3 w-8 h-8 bg-green-600 rounded-full items-center justify-center hidden">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            </div>
+          </div>
+          <div class="p-4">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-xs bg-green-900/50 text-green-400 px-2 py-1 rounded">Day 2</span>
+            </div>
+            <h3 class="text-white font-bold">What does it mean to have a Contract?</h3>
+            <p class="text-slate-500 text-sm mt-1">Learn why nearly anyone—even working from home—can succeed in this space.</p>
+          </div>
+        </div>
+
+        <!-- Day 3 -->
+        <div class="video-card bg-slate-900 border border-slate-800 rounded-xl overflow-hidden transition-all cursor-pointer" data-video="3" onclick="openVideo(3)">
+          <div class="relative">
+            <img src="https://vumbnail.com/763380522.jpg" alt="Day 3" class="w-full aspect-video object-cover">
+            <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+              <div class="w-16 h-16 bg-green-600/90 rounded-full flex items-center justify-center">
+                <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
+            <div class="check-icon absolute top-3 right-3 w-8 h-8 bg-green-600 rounded-full items-center justify-center hidden">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            </div>
+          </div>
+          <div class="p-4">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-xs bg-green-900/50 text-green-400 px-2 py-1 rounded">Day 3</span>
+            </div>
+            <h3 class="text-white font-bold">8 Reasons why YOU can do this</h3>
+            <p class="text-slate-500 text-sm mt-1">Find out if you need partners, employees, licenses or special programs to start.</p>
+          </div>
+        </div>
+
+        <!-- Day 4 -->
+        <div class="video-card bg-slate-900 border border-slate-800 rounded-xl overflow-hidden transition-all cursor-pointer" data-video="4" onclick="openVideo(4)">
+          <div class="relative">
+            <img src="https://vumbnail.com/763382045.jpg" alt="Day 4" class="w-full aspect-video object-cover">
+            <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+              <div class="w-16 h-16 bg-green-600/90 rounded-full flex items-center justify-center">
+                <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
+            <div class="check-icon absolute top-3 right-3 w-8 h-8 bg-green-600 rounded-full items-center justify-center hidden">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            </div>
+          </div>
+          <div class="p-4">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-xs bg-green-900/50 text-green-400 px-2 py-1 rounded">Day 4</span>
+            </div>
+            <h3 class="text-white font-bold">Can I do this working from home?</h3>
+            <p class="text-slate-500 text-sm mt-1">Learn why nearly anyone—even working from home—can succeed in this space.</p>
+          </div>
+        </div>
+
+        <!-- Day 5 -->
+        <div class="video-card bg-slate-900 border border-slate-800 rounded-xl overflow-hidden transition-all cursor-pointer" data-video="5" onclick="openVideo(5)">
+          <div class="relative">
+            <img src="https://vumbnail.com/763403543.jpg" alt="Day 5" class="w-full aspect-video object-cover">
+            <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+              <div class="w-16 h-16 bg-green-600/90 rounded-full flex items-center justify-center">
+                <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
+            <div class="check-icon absolute top-3 right-3 w-8 h-8 bg-green-600 rounded-full items-center justify-center hidden">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            </div>
+          </div>
+          <div class="p-4">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-xs bg-green-900/50 text-green-400 px-2 py-1 rounded">Day 5</span>
+            </div>
+            <h3 class="text-white font-bold">Does the government buy direct?</h3>
+            <p class="text-slate-500 text-sm mt-1">Understand why the government uses contractors and subcontractors instead of buying directly.</p>
+          </div>
+        </div>
+
+        <!-- Day 6 -->
+        <div class="video-card bg-slate-900 border border-slate-800 rounded-xl overflow-hidden transition-all cursor-pointer" data-video="6" onclick="openVideo(6)">
+          <div class="relative">
+            <img src="https://vumbnail.com/763404266.jpg" alt="Day 6" class="w-full aspect-video object-cover">
+            <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+              <div class="w-16 h-16 bg-green-600/90 rounded-full flex items-center justify-center">
+                <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
+            <div class="check-icon absolute top-3 right-3 w-8 h-8 bg-green-600 rounded-full items-center justify-center hidden">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            </div>
+          </div>
+          <div class="p-4">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-xs bg-green-900/50 text-green-400 px-2 py-1 rounded">Day 6</span>
+            </div>
+            <h3 class="text-white font-bold">What about the competition?</h3>
+            <p class="text-slate-500 text-sm mt-1">See how many small businesses are actually competing and where you can stand out.</p>
+          </div>
+        </div>
+
+        <!-- Day 7 -->
+        <div class="video-card bg-slate-900 border border-slate-800 rounded-xl overflow-hidden transition-all cursor-pointer" data-video="7" onclick="openVideo(7)">
+          <div class="relative">
+            <img src="https://vumbnail.com/763405254.jpg" alt="Day 7" class="w-full aspect-video object-cover">
+            <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+              <div class="w-16 h-16 bg-green-600/90 rounded-full flex items-center justify-center">
+                <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
+            <div class="check-icon absolute top-3 right-3 w-8 h-8 bg-green-600 rounded-full items-center justify-center hidden">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            </div>
+          </div>
+          <div class="p-4">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-xs bg-green-900/50 text-green-400 px-2 py-1 rounded">Day 7</span>
+            </div>
+            <h3 class="text-white font-bold">Do I need employees or partners?</h3>
+            <p class="text-slate-500 text-sm mt-1">Find out if you need partners, employees, or if you can succeed as a solopreneur.</p>
+          </div>
+        </div>
+
+        <!-- Day 8 -->
+        <div class="video-card bg-slate-900 border border-slate-800 rounded-xl overflow-hidden transition-all cursor-pointer" data-video="8" onclick="openVideo(8)">
+          <div class="relative">
+            <img src="https://vumbnail.com/763406574.jpg" alt="Day 8" class="w-full aspect-video object-cover">
+            <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+              <div class="w-16 h-16 bg-green-600/90 rounded-full flex items-center justify-center">
+                <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
+            <div class="check-icon absolute top-3 right-3 w-8 h-8 bg-green-600 rounded-full items-center justify-center hidden">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            </div>
+          </div>
+          <div class="p-4">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-xs bg-green-900/50 text-green-400 px-2 py-1 rounded">Day 8</span>
+            </div>
+            <h3 class="text-white font-bold">Do I need a license to get a contract?</h3>
+            <p class="text-slate-500 text-sm mt-1">Discover the minimum requirements to get started and whether you need special licenses.</p>
+          </div>
+        </div>
+
+        <!-- Day 9 -->
+        <div class="video-card bg-slate-900 border border-slate-800 rounded-xl overflow-hidden transition-all cursor-pointer" data-video="9" onclick="openVideo(9)">
+          <div class="relative">
+            <img src="https://vumbnail.com/763407589.jpg" alt="Day 9" class="w-full aspect-video object-cover">
+            <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+              <div class="w-16 h-16 bg-green-600/90 rounded-full flex items-center justify-center">
+                <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
+            <div class="check-icon absolute top-3 right-3 w-8 h-8 bg-green-600 rounded-full items-center justify-center hidden">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            </div>
+          </div>
+          <div class="p-4">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-xs bg-green-900/50 text-green-400 px-2 py-1 rounded">Day 9</span>
+            </div>
+            <h3 class="text-white font-bold">Small Business Programs</h3>
+            <p class="text-slate-500 text-sm mt-1">Learn which programs offer the most opportunity and make the most dollars and sense.</p>
+          </div>
+        </div>
+
+        <!-- Day 10 -->
+        <div class="video-card bg-slate-900 border border-slate-800 rounded-xl overflow-hidden transition-all cursor-pointer" data-video="10" onclick="openVideo(10)">
+          <div class="relative">
+            <img src="https://vumbnail.com/763408640.jpg" alt="Day 10" class="w-full aspect-video object-cover">
+            <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+              <div class="w-16 h-16 bg-green-600/90 rounded-full flex items-center justify-center">
+                <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
+            <div class="check-icon absolute top-3 right-3 w-8 h-8 bg-green-600 rounded-full items-center justify-center hidden">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            </div>
+          </div>
+          <div class="p-4">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-xs bg-green-900/50 text-green-400 px-2 py-1 rounded">Day 10</span>
+            </div>
+            <h3 class="text-white font-bold">I am brand new, how do I get started?</h3>
+            <p class="text-slate-500 text-sm mt-1">Find out exactly where to begin and what steps to take first.</p>
+          </div>
+        </div>
+
+        <!-- Day 11 -->
+        <div class="video-card bg-slate-900 border border-slate-800 rounded-xl overflow-hidden transition-all cursor-pointer" data-video="11" onclick="openVideo(11)">
+          <div class="relative">
+            <img src="https://vumbnail.com/763409248.jpg" alt="Day 11" class="w-full aspect-video object-cover">
+            <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+              <div class="w-16 h-16 bg-green-600/90 rounded-full flex items-center justify-center">
+                <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
+            <div class="check-icon absolute top-3 right-3 w-8 h-8 bg-green-600 rounded-full items-center justify-center hidden">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            </div>
+          </div>
+          <div class="p-4">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-xs bg-green-900/50 text-green-400 px-2 py-1 rounded">Day 11</span>
+            </div>
+            <h3 class="text-white font-bold">How do I setup my corporation?</h3>
+            <p class="text-slate-500 text-sm mt-1">Understand how to choose a name and set up your business the right way.</p>
+          </div>
+        </div>
+
+        <!-- Day 12 -->
+        <div class="video-card bg-slate-900 border border-slate-800 rounded-xl overflow-hidden transition-all cursor-pointer" data-video="12" onclick="openVideo(12)">
+          <div class="relative">
+            <img src="https://vumbnail.com/763409957.jpg" alt="Day 12" class="w-full aspect-video object-cover">
+            <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+              <div class="w-16 h-16 bg-green-600/90 rounded-full flex items-center justify-center">
+                <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
+            <div class="check-icon absolute top-3 right-3 w-8 h-8 bg-green-600 rounded-full items-center justify-center hidden">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            </div>
+          </div>
+          <div class="p-4">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-xs bg-green-900/50 text-green-400 px-2 py-1 rounded">Day 12</span>
+            </div>
+            <h3 class="text-white font-bold">Choosing the right NAICS code</h3>
+            <p class="text-slate-500 text-sm mt-1">Decide what your specialty is and pick the NAICS code that fits your business best.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 px-6 bg-gradient-to-b from-slate-900/50 to-slate-950 border-t border-slate-800">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-white mb-4">Next Steps?</h2>
+      <p class="text-slate-400 text-lg mb-8">
+        Ready to take your GovCon journey to the next level? Join our January Bootcamp for hands-on training and personalized guidance.
+      </p>
+      <a
+        href="/january-bootcamp/1-landing.html"
+        class="inline-block px-8 py-4 bg-green-600 hover:bg-green-500 text-white rounded-lg font-bold text-lg transition-all"
+      >
+        Learn About the Bootcamp
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 px-6 border-t border-slate-800">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="flex items-center justify-center gap-1 mb-4">
+        <span class="text-xl font-bold text-white">GovCon</span>
+        <span class="text-xl font-bold text-green-500">Giants</span>
+      </div>
+      <p class="text-slate-600 text-sm">© 2026 GovCon Giants. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Video Modal -->
+  <div id="videoModal" class="fixed inset-0 bg-black/90 z-50 hidden items-center justify-center p-4">
+    <div class="max-w-5xl w-full">
+      <div class="flex justify-between items-center mb-4">
+        <h3 id="modalTitle" class="text-white text-xl font-bold"></h3>
+        <button onclick="closeVideo()" class="text-white hover:text-green-500 transition">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="video-container bg-slate-900 rounded-xl overflow-hidden">
+        <iframe id="videoFrame" src="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="flex justify-between items-center mt-4">
+        <button id="prevBtn" onclick="prevVideo()" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white rounded-lg transition flex items-center gap-2">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          Previous
+        </button>
+        <button onclick="markComplete()" class="px-6 py-2 bg-green-600 hover:bg-green-500 text-white rounded-lg font-bold transition">
+          Mark as Complete
+        </button>
+        <button id="nextBtn" onclick="nextVideo()" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white rounded-lg transition flex items-center gap-2">
+          Next
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const videos = {
+      1: { id: '763400851', title: 'Day 1: What is a Government Contract?' },
+      2: { id: '570786652', title: 'Day 2: What does it mean to have a Contract?' },
+      3: { id: '763380522', title: 'Day 3: 8 Reasons why YOU can do this' },
+      4: { id: '763382045', title: 'Day 4: Can I do this working from home?' },
+      5: { id: '763403543', title: 'Day 5: Does the government buy direct?' },
+      6: { id: '763404266', title: 'Day 6: What about the competition?' },
+      7: { id: '763405254', title: 'Day 7: Do I need employees or partners?' },
+      8: { id: '763406574', title: 'Day 8: Do I need a license to get a contract?' },
+      9: { id: '763407589', title: 'Day 9: Small Business Programs' },
+      10: { id: '763408640', title: 'Day 10: I am brand new, how do I get started?' },
+      11: { id: '763409248', title: 'Day 11: How do I setup my corporation?' },
+      12: { id: '763409957', title: 'Day 12: Choosing the right NAICS code' }
+    };
+
+    let currentVideo = 1;
+    let completedVideos = JSON.parse(localStorage.getItem('completedVideos') || '[]');
+
+    // Initialize page
+    function init() {
+      updateProgress();
+      // Personalize welcome if we have their name
+      const name = localStorage.getItem('leadName');
+      if (name) {
+        const firstName = name.split(' ')[0];
+        document.getElementById('welcomeMessage').innerHTML =
+          `Hey ${firstName}! Watch each video in order to build your foundation in government contracting. Your progress is saved automatically.`;
+      }
+    }
+
+    function updateProgress() {
+      const total = Object.keys(videos).length;
+      const completed = completedVideos.length;
+      const percent = (completed / total) * 100;
+
+      document.getElementById('progressBar').style.width = percent + '%';
+      document.getElementById('progressText').textContent = `${completed} of ${total} completed`;
+
+      // Update video cards
+      document.querySelectorAll('.video-card').forEach(card => {
+        const videoNum = parseInt(card.dataset.video);
+        if (completedVideos.includes(videoNum)) {
+          card.classList.add('completed');
+        } else {
+          card.classList.remove('completed');
+        }
+      });
+    }
+
+    function openVideo(num) {
+      currentVideo = num;
+      const video = videos[num];
+      document.getElementById('modalTitle').textContent = video.title;
+      document.getElementById('videoFrame').src = `https://player.vimeo.com/video/${video.id}?autoplay=1&badge=0&autopause=0`;
+      document.getElementById('videoModal').classList.remove('hidden');
+      document.getElementById('videoModal').classList.add('flex');
+      document.body.style.overflow = 'hidden';
+
+      // Update prev/next buttons
+      document.getElementById('prevBtn').style.visibility = num === 1 ? 'hidden' : 'visible';
+      document.getElementById('nextBtn').style.visibility = num === 12 ? 'hidden' : 'visible';
+    }
+
+    function closeVideo() {
+      document.getElementById('videoFrame').src = '';
+      document.getElementById('videoModal').classList.add('hidden');
+      document.getElementById('videoModal').classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    function prevVideo() {
+      if (currentVideo > 1) {
+        openVideo(currentVideo - 1);
+      }
+    }
+
+    function nextVideo() {
+      if (currentVideo < 12) {
+        openVideo(currentVideo + 1);
+      }
+    }
+
+    function markComplete() {
+      if (!completedVideos.includes(currentVideo)) {
+        completedVideos.push(currentVideo);
+        localStorage.setItem('completedVideos', JSON.stringify(completedVideos));
+        updateProgress();
+      }
+
+      // Auto-advance to next video or close if done
+      if (currentVideo < 12) {
+        nextVideo();
+      } else {
+        closeVideo();
+        // Show completion message
+        alert('Congratulations! You\'ve completed the free course. Ready to take the next step?');
+      }
+    }
+
+    // Close modal on escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeVideo();
+    });
+
+    // Close modal on backdrop click
+    document.getElementById('videoModal').addEventListener('click', (e) => {
+      if (e.target.id === 'videoModal') closeVideo();
+    });
+
+    init();
+  </script>
+</body>
+</html>

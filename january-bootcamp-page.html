@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>January 2026 GovCon Bootcamp | GovCon Giants</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; line-height: 1.6; color: #1a1a2e; background: #ffffff; }
+
+        /* Hero Section */
+        .hero { background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 50%, #059669 100%); color: white; padding: 80px 20px; text-align: center; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); opacity: 0.5; }
+        .hero-content { max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
+        .hero-badge { display: inline-block; background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); padding: 10px 25px; border-radius: 30px; font-size: 0.9rem; font-weight: 600; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; }
+        .hero h1 { font-size: 3.5rem; font-weight: 900; margin-bottom: 20px; line-height: 1.1; }
+        .hero .subtitle { font-size: 1.4rem; opacity: 0.95; margin-bottom: 30px; font-weight: 400; }
+        .hero-stats { display: flex; justify-content: center; gap: 50px; margin: 40px 0; flex-wrap: wrap; }
+        .hero-stat { text-align: center; }
+        .hero-stat .value { font-size: 2.5rem; font-weight: 900; }
+        .hero-stat .label { font-size: 0.85rem; opacity: 0.9; text-transform: uppercase; letter-spacing: 1px; }
+        .hero-cta { display: inline-block; background: white; color: #7c3aed; padding: 18px 50px; border-radius: 50px; font-size: 1.2rem; font-weight: 700; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .hero-cta:hover { transform: translateY(-3px); box-shadow: 0 15px 50px rgba(0,0,0,0.3); }
+        .hero-subtext { margin-top: 15px; font-size: 0.95rem; opacity: 0.9; }
+
+        /* Container */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        /* Section */
+        .section { padding: 80px 0; }
+        .section-dark { background: #f8fafc; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 2.5rem; font-weight: 800; color: #1e3a8a; margin-bottom: 15px; }
+        .section-title p { font-size: 1.2rem; color: #666; max-width: 600px; margin: 0 auto; }
+
+        /* Opportunity Section */
+        .opportunity-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 40px; }
+        .opportunity-card { background: white; border-radius: 16px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); border: 2px solid transparent; transition: all 0.3s ease; }
+        .opportunity-card:hover { border-color: #7c3aed; transform: translateY(-5px); }
+        .opportunity-card .icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .opportunity-card h3 { font-size: 1.3rem; font-weight: 700; color: #1e3a8a; margin-bottom: 10px; }
+        .opportunity-card p { color: #666; font-size: 0.95rem; }
+        .opportunity-card .stat { font-size: 2rem; font-weight: 900; background: linear-gradient(135deg, #059669, #10b981); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-top: 15px; }
+
+        /* What You'll Learn */
+        .learn-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .learn-card { display: flex; gap: 20px; align-items: flex-start; }
+        .learn-number { width: 50px; height: 50px; background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.2rem; flex-shrink: 0; }
+        .learn-content h3 { font-size: 1.1rem; font-weight: 700; color: #1e3a8a; margin-bottom: 8px; }
+        .learn-content p { color: #666; font-size: 0.95rem; }
+
+        /* Agenda */
+        .agenda-timeline { max-width: 700px; margin: 0 auto; }
+        .agenda-item { display: flex; gap: 25px; padding: 25px 0; border-bottom: 2px solid #e5e7eb; }
+        .agenda-item:last-child { border-bottom: none; }
+        .agenda-time { min-width: 100px; text-align: right; }
+        .agenda-time .time { font-size: 1.1rem; font-weight: 700; color: #7c3aed; }
+        .agenda-time .duration { font-size: 0.85rem; color: #888; }
+        .agenda-content h3 { font-size: 1.15rem; font-weight: 700; color: #1e3a8a; margin-bottom: 5px; }
+        .agenda-content p { color: #666; font-size: 0.95rem; }
+        .agenda-tag { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; margin-bottom: 8px; }
+        .tag-strategy { background: #e0e7ff; color: #3730a3; }
+        .tag-tactical { background: #fef3c7; color: #92400e; }
+        .tag-workshop { background: #fce7f3; color: #9d174d; }
+        .agenda-break { background: #f8fafc; border-radius: 10px; padding: 15px 25px; text-align: center; color: #666; font-style: italic; margin: 15px 0; }
+
+        /* Deliverables */
+        .deliverables-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+        .deliverable-item { background: white; border-radius: 12px; padding: 25px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 2px solid #e5e7eb; transition: all 0.3s ease; }
+        .deliverable-item:hover { border-color: #10b981; background: #f0fdf4; }
+        .deliverable-item .icon { font-size: 2rem; margin-bottom: 10px; }
+        .deliverable-item h4 { font-size: 1rem; font-weight: 600; color: #1e3a8a; }
+
+        /* Pricing */
+        .pricing-section { background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%); color: white; padding: 80px 20px; text-align: center; }
+        .pricing-section h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 15px; }
+        .pricing-section .subtitle { font-size: 1.2rem; opacity: 0.95; margin-bottom: 40px; }
+        .pricing-cards { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; max-width: 700px; margin: 0 auto; }
+        .pricing-card { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 2px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 35px 45px; min-width: 280px; }
+        .pricing-card.featured { background: white; color: #1e3a8a; transform: scale(1.05); border-color: white; }
+        .pricing-card .price { font-size: 3.5rem; font-weight: 900; }
+        .pricing-card .period { font-size: 1rem; opacity: 0.8; }
+        .pricing-card.featured .period { color: #666; }
+        .pricing-card .save-badge { display: inline-block; background: #10b981; color: white; padding: 5px 15px; border-radius: 15px; font-size: 0.85rem; font-weight: 600; margin-top: 10px; }
+        .pricing-cta { display: inline-block; background: white; color: #7c3aed; padding: 20px 60px; border-radius: 50px; font-size: 1.3rem; font-weight: 700; text-decoration: none; margin-top: 40px; transition: all 0.3s ease; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .pricing-cta:hover { transform: translateY(-3px); box-shadow: 0 15px 50px rgba(0,0,0,0.3); }
+
+        /* Who This Is For */
+        .who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 900px; margin: 0 auto; }
+        .who-card { background: white; border-radius: 16px; padding: 35px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); }
+        .who-card.yes { border-top: 5px solid #10b981; }
+        .who-card.no { border-top: 5px solid #ef4444; }
+        .who-card h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .who-card.yes h3 { color: #059669; }
+        .who-card.no h3 { color: #dc2626; }
+        .who-card ul { list-style: none; }
+        .who-card li { padding: 10px 0; padding-left: 30px; position: relative; color: #555; }
+        .who-card.yes li::before { content: '✓'; position: absolute; left: 0; color: #10b981; font-weight: bold; }
+        .who-card.no li::before { content: '✗'; position: absolute; left: 0; color: #ef4444; font-weight: bold; }
+
+        /* FAQ */
+        .faq-list { max-width: 700px; margin: 0 auto; }
+        .faq-item { background: white; border-radius: 12px; margin-bottom: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); overflow: hidden; }
+        .faq-question { padding: 20px 25px; font-weight: 600; color: #1e3a8a; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .faq-question::after { content: '+'; font-size: 1.5rem; color: #7c3aed; }
+        .faq-item.active .faq-question::after { content: '−'; }
+        .faq-answer { padding: 0 25px 20px; color: #666; display: none; }
+        .faq-item.active .faq-answer { display: block; }
+
+        /* Final CTA */
+        .final-cta { background: linear-gradient(135deg, #059669 0%, #10b981 100%); color: white; padding: 80px 20px; text-align: center; }
+        .final-cta h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 15px; }
+        .final-cta p { font-size: 1.2rem; opacity: 0.95; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .final-cta-btn { display: inline-block; background: white; color: #059669; padding: 20px 60px; border-radius: 50px; font-size: 1.3rem; font-weight: 700; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .final-cta-btn:hover { transform: translateY(-3px); }
+
+        /* Footer */
+        .footer { background: #1a1a2e; color: rgba(255,255,255,0.7); padding: 40px 20px; text-align: center; }
+        .footer a { color: white; text-decoration: none; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hero-stats { gap: 25px; }
+            .hero-stat .value { font-size: 2rem; }
+            .section-title h2 { font-size: 2rem; }
+            .who-grid { grid-template-columns: 1fr; }
+            .pricing-card { min-width: 100%; }
+            .pricing-card.featured { transform: none; }
+            .agenda-item { flex-direction: column; gap: 10px; }
+            .agenda-time { text-align: left; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">Federal Help Center Pro Members</span>
+            <h1>January 2026 GovCon Bootcamp</h1>
+            <p class="subtitle">Full-Day Intensive: Win Federal Contracts in Q1 2026</p>
+
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="value">Jan 31</div>
+                    <div class="label">Date</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="value">9am-5pm</div>
+                    <div class="label">Eastern</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="value">8 Hours</div>
+                    <div class="label">Live Training</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="value">Virtual</div>
+                    <div class="label">Event</div>
+                </div>
+            </div>
+
+            <a href="https://federalhelpcenter.com/pro" class="hero-cta">Join Pro & Get Access</a>
+            <p class="hero-subtext">$99/month or $799/year</p>
+        </div>
+    </div>
+
+    <!-- Why January 2026 Section -->
+    <div class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why January 2026 Is Your Moment</h2>
+                <p>The FY2026 NDAA was signed. $848 billion is flowing. And agencies must spend or lose it.</p>
+            </div>
+
+            <div class="opportunity-grid">
+                <div class="opportunity-card">
+                    <div class="icon">💰</div>
+                    <h3>Unobligated Balances</h3>
+                    <p>Sitting in Top 10 defense agency accounts right now - and they MUST spend it this quarter.</p>
+                    <div class="stat">$82.8B+</div>
+                </div>
+
+                <div class="opportunity-card">
+                    <div class="icon">📋</div>
+                    <h3>FY2026 NDAA</h3>
+                    <p>Signed December 18, 2025. Full-year authorization means agencies are ready to award.</p>
+                    <div class="stat">$848B</div>
+                </div>
+
+                <div class="opportunity-card">
+                    <div class="icon">🎯</div>
+                    <h3>New Sole Source Thresholds</h3>
+                    <p>NDAA raised limits to $8M (non-manufacturing) and $10M (manufacturing) for small business.</p>
+                    <div class="stat">$8M-$10M</div>
+                </div>
+
+                <div class="opportunity-card">
+                    <div class="icon">📈</div>
+                    <h3>Small Business Goals</h3>
+                    <p>Agencies must hit 23% small business contracting targets. Primes need subs NOW.</p>
+                    <div class="stat">23%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Questions Section -->
+    <div class="section section-dark">
+        <div class="container">
+            <div class="section-title">
+                <h2>Questions You'll Get Answered</h2>
+                <p>Real questions from real contractors - this is what we'll cover:</p>
+            </div>
+
+            <div class="opportunity-grid">
+                <div class="opportunity-card">
+                    <div class="icon">🔍</div>
+                    <h3>Opportunity Scout → SAM.gov</h3>
+                    <p>"Based on my search results in Opportunity Scout, do I then search SAM.gov by parent agency code? What are the next steps?"</p>
+                </div>
+
+                <div class="opportunity-card">
+                    <div class="icon">🤝</div>
+                    <h3>Who To Contact</h3>
+                    <p>"For expired contracts, if I want teaming or subcontracting, do I reach out to the incumbent who won or the contracting officer?"</p>
+                </div>
+
+                <div class="opportunity-card">
+                    <div class="icon">🎯</div>
+                    <h3>Agency Filtering</h3>
+                    <p>"How do I filter by my NAICS and find opportunities at specific agencies like Department of Army (code 2100)?"</p>
+                </div>
+
+                <div class="opportunity-card">
+                    <div class="icon">📋</div>
+                    <h3>Positioning to Primes</h3>
+                    <p>"How do I position myself to incumbents who need small business subs to meet their goals?"</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- What You'll Walk Away With -->
+    <div class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>What You'll Walk Away With</h2>
+                <p>This isn't a webinar. It's a working session. You'll leave with real assets.</p>
+            </div>
+
+            <div class="learn-grid">
+                <div class="learn-card">
+                    <div class="learn-number">1</div>
+                    <div class="learn-content">
+                        <h3>🎯 Personalized Agency Target List</h3>
+                    </div>
+                </div>
+
+                <div class="learn-card">
+                    <div class="learn-number">2</div>
+                    <div class="learn-content">
+                        <h3>📋 3-5 Matched Opportunities</h3>
+                    </div>
+                </div>
+
+                <div class="learn-card">
+                    <div class="learn-number">3</div>
+                    <div class="learn-content">
+                        <h3>🔍 Opportunity Scout Training</h3>
+                    </div>
+                </div>
+
+                <div class="learn-card">
+                    <div class="learn-number">4</div>
+                    <div class="learn-content">
+                        <h3>📝 Handout Action Worksheets</h3>
+                    </div>
+                </div>
+
+                <div class="learn-card">
+                    <div class="learn-number">5</div>
+                    <div class="learn-content">
+                        <h3>📆 90-Day Action Plan</h3>
+                    </div>
+                </div>
+
+                <div class="learn-card">
+                    <div class="learn-number">6</div>
+                    <div class="learn-content">
+                        <h3>🔍 Searchable Database Access</h3>
+                    </div>
+                </div>
+
+                <div class="learn-card">
+                    <div class="learn-number">7</div>
+                    <div class="learn-content">
+                        <h3>📊 Recompete Contracts List</h3>
+                    </div>
+                </div>
+
+                <div class="learn-card">
+                    <div class="learn-number">8</div>
+                    <div class="learn-content">
+                        <h3>🎬 Full Recording Access</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Free Resources Section -->
+    <div class="section section-dark">
+        <div class="container">
+            <div class="section-title">
+                <h2>Free Resources - Download Now</h2>
+                <p>Get started today with these free handouts. No sign-up required.</p>
+            </div>
+
+            <div class="opportunity-grid">
+                <div class="opportunity-card">
+                    <div class="icon">📊</div>
+                    <h3>Agency Buyers List</h3>
+                    <p>Top 10 agencies with unobligated balances, SBLO contacts, and hot NAICS codes.</p>
+                    <a href="agency-buyers-list.html" style="color: #7c3aed; font-weight: 600;">View Resource →</a>
+                </div>
+
+                <div class="opportunity-card">
+                    <div class="icon">🎯</div>
+                    <h3>34-Opportunity Hit List</h3>
+                    <p>Curated low-competition contracts based on NDAA funding and unobligated balances.</p>
+                    <a href="hit-list.html" style="color: #7c3aed; font-weight: 600;">View Resource →</a>
+                </div>
+
+                <div class="opportunity-card">
+                    <div class="icon">📋</div>
+                    <h3>FY2026 NDAA Report</h3>
+                    <p>Key provisions affecting small businesses - sole source thresholds, CMMC 2.0, and more.</p>
+                    <a href="ndaa-report.html" style="color: #7c3aed; font-weight: 600;">View Resource →</a>
+                </div>
+
+                <div class="opportunity-card">
+                    <div class="icon">🔍</div>
+                    <h3>Agency Pain Points Guide</h3>
+                    <p>8 critical problems agencies struggle with and how to position as the solution.</p>
+                    <a href="pain-points-guide.html" style="color: #7c3aed; font-weight: 600;">View Resource →</a>
+                </div>
+
+                <div class="opportunity-card">
+                    <div class="icon">📅</div>
+                    <h3>Recompete Contracts List</h3>
+                    <p>100 high-value contracts expiring soon - find incumbents to team with or displace.</p>
+                    <a href="recompete-list.html" style="color: #7c3aed; font-weight: 600;">View Resource →</a>
+                </div>
+
+                <div class="opportunity-card">
+                    <div class="icon">📆</div>
+                    <h3>Full Bootcamp Agenda</h3>
+                    <p>Detailed breakdown of every session, workshop, and deliverable for January 31st.</p>
+                    <a href="agenda.html" style="color: #7c3aed; font-weight: 600;">View Agenda →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Agenda Section -->
+    <div class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>The Full-Day Agenda</h2>
+                <p>8 hours of intensive training, workshops, and live reviews. <a href="agenda.html" style="color: #7c3aed;">View detailed agenda →</a></p>
+            </div>
+
+            <div class="agenda-timeline">
+                <div class="agenda-item">
+                    <div class="agenda-time">
+                        <div class="time">9:00 AM</div>
+                        <div class="duration">45 min</div>
+                    </div>
+                    <div class="agenda-content">
+                        <span class="agenda-tag tag-strategy">Strategy</span>
+                        <h3>The January 2026 Opportunity</h3>
+                        <p>FY2026 NDAA breakdown, unobligated balances, Q1 obligation pressure, and new sole source thresholds.</p>
+                    </div>
+                </div>
+
+                <div class="agenda-item">
+                    <div class="agenda-time">
+                        <div class="time">9:45 AM</div>
+                        <div class="duration">60 min</div>
+                    </div>
+                    <div class="agenda-content">
+                        <span class="agenda-tag tag-tactical">Tactical</span>
+                        <h3>Agency Targeting: Finding YOUR Buyers</h3>
+                        <p>Agency pain points analysis, SBLO outreach strategy, and building your personalized agency target list.</p>
+                    </div>
+                </div>
+
+                <div class="agenda-break">15-Minute Break</div>
+
+                <div class="agenda-item">
+                    <div class="agenda-time">
+                        <div class="time">11:00 AM</div>
+                        <div class="duration">60 min</div>
+                    </div>
+                    <div class="agenda-content">
+                        <span class="agenda-tag tag-tactical">Tactical</span>
+                        <h3>Opportunity Research: The Hit List Method</h3>
+                        <p>SAM.gov advanced techniques, identifying wired vs. open opportunities, and finding 3-5 opportunities for YOUR business.</p>
+                    </div>
+                </div>
+
+                <div class="agenda-break">45-Minute Lunch Break</div>
+
+                <div class="agenda-item">
+                    <div class="agenda-time">
+                        <div class="time">12:45 PM</div>
+                        <div class="duration">60 min</div>
+                    </div>
+                    <div class="agenda-content">
+                        <span class="agenda-tag tag-workshop">Workshop</span>
+                        <h3>Opportunity Scout Mastery</h3>
+                        <p>The complete workflow: Opportunity Scout → SAM.gov → Action. Learn to search by parent agency codes (Army = 2100, Navy = 1700) and find 5+ opportunities.</p>
+                    </div>
+                </div>
+
+                <div class="agenda-break">15-Minute Break</div>
+
+                <div class="agenda-item">
+                    <div class="agenda-time">
+                        <div class="time">2:00 PM</div>
+                        <div class="duration">60 min</div>
+                    </div>
+                    <div class="agenda-content">
+                        <span class="agenda-tag tag-workshop">Workshop</span>
+                        <h3>Using Your Free Handouts for Results</h3>
+                        <p>Walk through each free resource - Agency Buyers List, Hit List, NDAA Report, Recompete List - and take action.</p>
+                    </div>
+                </div>
+
+                <div class="agenda-item">
+                    <div class="agenda-time">
+                        <div class="time">3:00 PM</div>
+                        <div class="duration">60 min</div>
+                    </div>
+                    <div class="agenda-content">
+                        <span class="agenda-tag tag-workshop">Workshop</span>
+                        <h3>Teaming & Subcontracting Strategy</h3>
+                        <p>Who to contact for teaming - incumbent vs. contracting officer. Research incumbents and identify 5 prime contractors using the Recompete List.</p>
+                    </div>
+                </div>
+
+                <div class="agenda-break">15-Minute Break</div>
+
+                <div class="agenda-item">
+                    <div class="agenda-time">
+                        <div class="time">4:15 PM</div>
+                        <div class="duration">45 min</div>
+                    </div>
+                    <div class="agenda-content">
+                        <span class="agenda-tag tag-strategy">Strategy</span>
+                        <h3>Your 90-Day Action Plan + Q&A</h3>
+                        <p>Week-by-week breakdown for Q1 success, accountability systems, and open Q&A with the team.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Who This Is For Section -->
+    <div class="section section-dark">
+        <div class="container">
+            <div class="section-title">
+                <h2>Is This Bootcamp Right For You?</h2>
+            </div>
+
+            <div class="who-grid">
+                <div class="who-card yes">
+                    <h3>✓ This IS For You If...</h3>
+                    <ul>
+                        <li>You're a small business owner serious about federal contracts</li>
+                        <li>You've tried before and struggled to break in</li>
+                        <li>You have real capabilities but don't know how to market them</li>
+                        <li>You're willing to put in the work to build relationships</li>
+                        <li>You want accountability and a clear action plan</li>
+                        <li>You're ready to invest in your business growth</li>
+                    </ul>
+                </div>
+
+                <div class="who-card no">
+                    <h3>✗ This Is NOT For You If...</h3>
+                    <ul>
+                        <li>You're looking for a magic bullet or get-rich-quick scheme</li>
+                        <li>You're not willing to do outreach and follow-up</li>
+                        <li>You just want another certificate to hang on the wall</li>
+                        <li>Your business doesn't have real capabilities to sell</li>
+                        <li>You're not ready to take action in the next 90 days</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pricing Section -->
+    <div class="pricing-section">
+        <div class="container">
+            <h2>Join Federal Help Center Pro</h2>
+            <p class="subtitle">Get instant access to the January 31st Bootcamp + all Pro resources</p>
+
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <div class="price">$99</div>
+                    <div class="period">per month</div>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="price">$799</div>
+                    <div class="period">per year</div>
+                    <div class="save-badge">SAVE $389</div>
+                </div>
+            </div>
+
+            <a href="https://federalhelpcenter.com/pro" class="pricing-cta">Join Pro Now</a>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">What if I can't attend live on January 31st?</div>
+                    <div class="faq-answer">You'll get full recording access as a Pro member. However, the live experience - especially the capability statement reviews and Q&A - is significantly more valuable. We recommend attending live if at all possible.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">I'm brand new to government contracting. Is this too advanced?</div>
+                    <div class="faq-answer">No! This bootcamp is designed for businesses at all stages. We start with the fundamentals and build up. If you have a real business with real capabilities, you're ready for this.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What do I need to prepare before the bootcamp?</div>
+                    <div class="faq-answer">Have your SAM.gov registration active, bring a draft capability statement if you have one, and come ready to work. We'll send detailed prep instructions after you join Pro.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Is my Pro membership just for the bootcamp?</div>
+                    <div class="faq-answer">No - Pro membership includes ongoing access to the searchable contract database, monthly training sessions, community support, and all future bootcamp recordings. The January 31st bootcamp is just the beginning.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Can I cancel my membership after the bootcamp?</div>
+                    <div class="faq-answer">Yes, you can cancel anytime. But most members stay because the ongoing resources and community support are worth far more than the monthly cost.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Final CTA Section -->
+    <div class="final-cta">
+        <div class="container">
+            <h2>The Q1 Window Is Open Now</h2>
+            <p>Agencies are spending. The NDAA money is flowing. You can keep watching from the sidelines, or you can get in the game.</p>
+
+            <a href="https://federalhelpcenter.com/pro" class="final-cta-btn">Join Pro & Get Bootcamp Access</a>
+            <p style="margin-top: 30px; font-size: 0.95rem;">
+                <strong>January 31, 2026 | 9:00 AM - 5:00 PM Eastern</strong><br>
+                Federal Help Center Pro Members Only
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; <a href="https://govcongiants.com">GovCon Giants</a></p>
+    </div>
+
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

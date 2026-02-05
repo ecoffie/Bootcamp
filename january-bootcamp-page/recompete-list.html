@@ -1,0 +1,1703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>January 2026 Recompete Contracts List | GovCon Giants Bootcamp</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #1a1a2e;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .bootcamp-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.9em;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .header h1 {
+            font-size: 2.8em;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+        }
+
+        .header .subtitle {
+            font-size: 1.3em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-banner {
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #c084fc 100%);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 25px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(124, 58, 237, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: cta-shimmer 3s infinite;
+        }
+
+        @keyframes cta-shimmer {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(180deg); }
+        }
+
+        .cta-banner h3 {
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-banner > p {
+            color: rgba(255,255,255,0.95);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-banner .date-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 20px;
+            color: white;
+            font-weight: 700;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-pricing {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-price-box {
+            background: rgba(255,255,255,0.15);
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 12px;
+            padding: 15px 25px;
+            color: white;
+        }
+
+        .cta-price-box .price {
+            font-size: 1.8rem;
+            font-weight: 800;
+        }
+
+        .cta-price-box .period {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .cta-price-box.featured {
+            background: rgba(255,255,255,0.25);
+            border-color: white;
+            transform: scale(1.05);
+        }
+
+        .cta-price-box .save-badge {
+            background: #10b981;
+            color: white;
+            font-size: 0.75rem;
+            padding: 3px 10px;
+            border-radius: 10px;
+            margin-top: 5px;
+            display: inline-block;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #7c3aed;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .filters-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .filters-title {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 15px;
+        }
+
+        .filter-row {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .filter-group {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .filter-group label {
+            display: block;
+            font-size: 0.85em;
+            font-weight: 600;
+            color: #666;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .filter-group select, .filter-group input {
+            width: 100%;
+            padding: 10px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 0.95em;
+            transition: all 0.3s ease;
+        }
+
+        .filter-group select:focus, .filter-group input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .quick-filters {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .quick-filter-btn {
+            padding: 8px 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.85em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .quick-filter-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .quick-filter-btn.reset {
+            background: #6c757d;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            font-size: 1.2em;
+        }
+
+        .contract-grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .contract-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            border: 2px solid #e8e8e8;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contract-card:hover {
+            border-color: #667eea;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15);
+            transform: translateY(-3px);
+        }
+
+        .contract-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .contract-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .contract-title {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: #1a1a2e;
+            flex: 1;
+        }
+
+        .contract-value {
+            font-size: 1.3em;
+            font-weight: 800;
+            color: #28a745;
+            white-space: nowrap;
+        }
+
+        .contract-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .meta-label {
+            font-size: 0.75em;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 3px;
+        }
+
+        .meta-value {
+            font-size: 0.95em;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .contract-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .tag {
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+
+        .tag-agency {
+            background: #e8f4fd;
+            color: #0277bd;
+        }
+
+        .tag-naics {
+            background: #fce4ec;
+            color: #c2185b;
+        }
+
+        .tag-expires {
+            background: #fff3e0;
+            color: #ef6c00;
+        }
+
+        .tag-hot {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a5a);
+            color: white;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        .action-item {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 8px;
+            padding: 12px 15px;
+            margin-top: 15px;
+            font-size: 0.9em;
+            color: #495057;
+            border-left: 4px solid #667eea;
+        }
+
+        .action-item strong {
+            color: #667eea;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .summary-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            border: 2px solid #e8e8e8;
+            text-align: center;
+        }
+
+        .summary-card h3 {
+            font-size: 1.1em;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .summary-card .number {
+            font-size: 2.5em;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .summary-card .detail {
+            font-size: 0.9em;
+            color: #888;
+            margin-top: 5px;
+        }
+
+        .results-count {
+            text-align: center;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .why-recompete {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .why-recompete h3 {
+            color: #2e7d32;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .why-recompete ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .why-recompete li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #333;
+        }
+
+        .why-recompete li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #2e7d32;
+            font-weight: bold;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .stats-bar {
+                gap: 20px;
+            }
+
+            .stat-number {
+                font-size: 2em;
+            }
+
+            .contract-header {
+                flex-direction: column;
+            }
+
+            .contract-value {
+                order: -1;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .container { box-shadow: none; max-width: 100%; }
+            .contract-card, .stat-card, .opportunity-card,
+            .cta-banner, .header, table, tr, h2, h3 {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+            h2, h3, h4 { page-break-after: avoid; }
+            thead { display: table-header-group; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="bootcamp-badge">January 2026 Bootcamp</div>
+            <h1>Recompete Contracts List</h1>
+            <p class="subtitle">High-Value Contracts Expiring January-February 2026 | Your Path to Incumbent Displacement</p>
+
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <div class="stat-number">1,315</div>
+                    <div class="stat-label">Total Contracts</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">$150B+</div>
+                    <div class="stat-label">Contract Value</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50</div>
+                    <div class="stat-label">Top Opportunities</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">Weeks to Act</div>
+                </div>
+            </div>
+        </header>
+
+        <div class="cta-banner">
+            <div class="date-badge">LIVE BOOTCAMP: January 31, 2026</div>
+            <h3>Learn How to Displace Incumbents and Win Recompetes</h3>
+            <p>Join the January 2026 GovCon Giants Bootcamp - Live training on targeting recompete contracts and writing winning proposals</p>
+            <div class="cta-pricing">
+                <div class="cta-price-box">
+                    <div class="price">$99</div>
+                </div>
+                <div class="cta-price-box featured">
+                    <div class="price">$799</div>
+                    <div class="period">per year</div>
+                    <div class="save-badge">SAVE $389</div>
+                </div>
+            </div>
+            <a href="https://federalhelpcenter.com/pro" class="cta-button">Join Federal Help Center Pro</a>
+        </div>
+
+        <div class="section">
+            <div class="why-recompete">
+                <h3>Why Target Recompete Contracts?</h3>
+                <ul>
+                    <li><strong>Pre-Defined Requirements:</strong> The government already knows what they need - proposals are clearer</li>
+                    <li><strong>Incumbent Weaknesses:</strong> Current contractors often become complacent - your fresh approach wins</li>
+                    <li><strong>Known Budget:</strong> Funding is already allocated and often already appropriated</li>
+                    <li><strong>Shorter Timeline:</strong> Recompetes often move faster than new requirements</li>
+                    <li><strong>FY26 NDAA Advantage:</strong> New sole source thresholds ($8M/$10M) mean more small business opportunities</li>
+                    <li><strong>Unobligated Balance Pressure:</strong> Agencies must spend or lose - recompetes are priority</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="filters-section">
+            <div class="filters-title">Filter Opportunities</div>
+            <div class="filter-row">
+                <div class="filter-group">
+                    <label>Agency</label>
+                    <select id="agencyFilter" onchange="filterContracts()">
+                        <option value="">All Agencies</option>
+                        <option value="Department of Defense">Department of Defense</option>
+                        <option value="General Services Administration">General Services Administration</option>
+                        <option value="Department of Health and Human Services">HHS</option>
+                        <option value="Department of Veterans Affairs">Veterans Affairs</option>
+                        <option value="Department of Transportation">Transportation</option>
+                        <option value="Department of State">State Department</option>
+                        <option value="Department of the Interior">Interior</option>
+                        <option value="National Aeronautics and Space Administration">NASA</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Value Range</label>
+                    <select id="valueFilter" onchange="filterContracts()">
+                        <option value="">All Values</option>
+                        <option value="10B">$10B+</option>
+                        <option value="1B">$1B+</option>
+                        <option value="500M">$500M+</option>
+                        <option value="100M">$100M+</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Expiration Month</label>
+                    <select id="monthFilter" onchange="filterContracts()">
+                        <option value="">All Months</option>
+                        <option value="1/">January 2026</option>
+                        <option value="2/">February 2026</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Search</label>
+                    <input type="text" id="searchFilter" placeholder="Search by keyword..." onkeyup="filterContracts()">
+                </div>
+            </div>
+            <div class="quick-filters">
+                <button class="quick-filter-btn" onclick="quickFilter('dod')">DoD Contracts</button>
+                <button class="quick-filter-btn" onclick="quickFilter('it')">IT Services</button>
+                <button class="quick-filter-btn" onclick="quickFilter('construction')">Construction</button>
+                <button class="quick-filter-btn" onclick="quickFilter('engineering')">Engineering</button>
+                <button class="quick-filter-btn" onclick="quickFilter('billion')">$1B+ Only</button>
+                <button class="quick-filter-btn reset" onclick="resetFilters()">Reset All</button>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title"><span class="section-icon">🎯</span> Top 50 Recompete Opportunities</h2>
+
+            <div class="summary-grid">
+                <div class="summary-card">
+                    <h3>Largest Contract</h3>
+                    <div class="number">$46B</div>
+                    <div class="detail">DoD Ammunition Manufacturing</div>
+                </div>
+                <div class="summary-card">
+                    <h3>Top NAICS</h3>
+                    <div class="number">541512</div>
+                    <div class="detail">Computer Systems Design</div>
+                </div>
+                <div class="summary-card">
+                    <h3>Top Agency</h3>
+                    <div class="number">DoD</div>
+                    <div class="detail">3,432 Contracts Expiring</div>
+                </div>
+                <div class="summary-card">
+                    <h3>Action Window</h3>
+                    <div class="number">NOW</div>
+                    <div class="detail">RFPs Expected Q1 2026</div>
+                </div>
+            </div>
+
+            <div class="results-count" id="resultsCount">Showing 50 of 50 opportunities</div>
+
+            <div class="contract-grid" id="contractGrid">
+                <!-- Contract 1 -->
+                <div class="contract-card" data-agency="Department of Defense" data-value="46000000000" data-month="2/" data-naics="332993" data-search="bay engineering ammunition dod">
+                    <div class="contract-header">
+                        <div class="contract-title">BAY ENGINEERING & TECHNOLOGIES INC</div>
+                        <div class="contract-value">$46,000,000,000</div>
+                    </div>
+                    <div class="contract-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Agency</span>
+                            <span class="meta-value">Department of Defense</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Office</span>
+                            <span class="meta-value">FA8656 AFLCMC EBX</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">NAICS</span>
+                            <span class="meta-value">332993 - Ammunition Manufacturing</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Award ID</span>
+                            <span class="meta-value">FA865625DB100</span>
+                        </div>
+                    </div>
+                    <div class="contract-tags">
+                        <span class="tag tag-agency">DoD</span>
+                        <span class="tag tag-naics">Manufacturing</span>
+                        <span class="tag tag-expires">Expires 2/9/2026</span>
+                        <span class="tag tag-hot">HOT</span>
+                    </div>
+                    <div class="action-item"><strong>Action:</strong> Contact AFLCMC EBX contracting office NOW. Monitor SAM.gov for recompete solicitation. NDAA FY26 increases domestic ammunition production priorities.</div>
+                </div>
+
+                <!-- Contract 2 -->
+                <div class="contract-card" data-agency="Department of Defense" data-value="46000000000" data-month="2/" data-naics="332993" data-search="baxter aerospace ammunition dod">
+                    <div class="contract-header">
+                        <div class="contract-title">BAXTER AEROSPACE INC.</div>
+                        <div class="contract-value">$46,000,000,000</div>
+                    </div>
+                    <div class="contract-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Agency</span>
+                            <span class="meta-value">Department of Defense</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Office</span>
+                            <span class="meta-value">FA8656 AFLCMC EBX</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">NAICS</span>
+                            <span class="meta-value">332993 - Ammunition Manufacturing</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Award ID</span>
+                            <span class="meta-value">FA865625DB099</span>
+                        </div>
+                    </div>
+                    <div class="contract-tags">
+                        <span class="tag tag-agency">DoD</span>
+                        <span class="tag tag-naics">Manufacturing</span>
+                        <span class="tag tag-expires">Expires 2/9/2026</span>
+                        <span class="tag tag-hot">HOT</span>
+                    </div>
+                    <div class="action-item"><strong>Action:</strong> Multi-award IDIQ - consider teaming strategy. Look for small business set-aside portions under NDAA requirements.</div>
+                </div>
+
+                <!-- Contract 3 -->
+                <div class="contract-card" data-agency="Department of Health and Human Services" data-value="13399072878" data-month="2/" data-naics="325414" data-search="seqirus biologics hhs vaccine">
+                    <div class="contract-header">
+                        <div class="contract-title">SEQIRUS INC</div>
+                        <div class="contract-value">$13,399,072,878</div>
+                    </div>
+                    <div class="contract-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Agency</span>
+                            <span class="meta-value">HHS / BARDA</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Office</span>
+                            <span class="meta-value">BARDA - ASPR / DAAPPO</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">NAICS</span>
+                            <span class="meta-value">325414 - Biological Product Manufacturing</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Award ID</span>
+                            <span class="meta-value">75A50122D00004</span>
+                        </div>
+                    </div>
+                    <div class="contract-tags">
+                        <span class="tag tag-agency">HHS</span>
+                        <span class="tag tag-naics">Biologics</span>
+                        <span class="tag tag-expires">Expires 2/21/2026</span>
+                        <span class="tag tag-hot">HOT</span>
+                    </div>
+                    <div class="action-item"><strong>Action:</strong> BARDA contract - requires significant technical capability. Subcontracting opportunities for small businesses in supply chain.</div>
+                </div>
+
+                <!-- Contract 4 -->
+                <div class="contract-card" data-agency="Department of Health and Human Services" data-value="5869454070" data-month="2/" data-naics="325414" data-search="sanofi pasteur biologics hhs vaccine">
+                    <div class="contract-header">
+                        <div class="contract-title">SANOFI PASTEUR INC.</div>
+                        <div class="contract-value">$5,869,454,070</div>
+                    </div>
+                    <div class="contract-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Agency</span>
+                            <span class="meta-value">HHS / BARDA</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Office</span>
+                            <span class="meta-value">BARDA - ASPR / DAAPPO</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">NAICS</span>
+                            <span class="meta-value">325414 - Biological Product Manufacturing</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Award ID</span>
+                            <span class="meta-value">75A50122D00003</span>
+                        </div>
+                    </div>
+                    <div class="contract-tags">
+                        <span class="tag tag-agency">HHS</span>
+                        <span class="tag tag-naics">Biologics</span>
+                        <span class="tag tag-expires">Expires 2/21/2026</span>
+                    </div>
+                    <div class="action-item"><strong>Action:</strong> Major pharmaceutical contract. Monitor for subcontracting plan requirements and small business participation goals.</div>
+                </div>
+
+                <!-- Contract 5 -->
+                <div class="contract-card" data-agency="General Services Administration" data-value="3780000000" data-month="2/" data-naics="517919" data-search="verizon telecommunications gsa ets">
+                    <div class="contract-header">
+                        <div class="contract-title">VERIZON FEDERAL INC.</div>
+                        <div class="contract-value">$3,780,000,000</div>
+                    </div>
+                    <div class="contract-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Agency</span>
+                            <span class="meta-value">General Services Administration</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Office</span>
+                            <span class="meta-value">FAS ITC - Interagency Contracts</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">NAICS</span>
+                            <span class="meta-value">517919 - Telecommunications</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Award ID</span>
+                            <span class="meta-value">GS11T08BJD6001</span>
+                        </div>
+                    </div>
+                    <div class="contract-tags">
+                        <span class="tag tag-agency">GSA</span>
+                        <span class="tag tag-naics">Telecom</span>
+                        <span class="tag tag-expires">Expires 2/28/2026</span>
+                        <span class="tag tag-hot">HOT</span>
+                    </div>
+                    <div class="action-item"><strong>Action:</strong> Enterprise Telecommunications Services (ETS) vehicle. Watch for ETS2030 follow-on. Small business category expected.</div>
+                </div>
+
+                <!-- Contract 6 -->
+                <div class="contract-card" data-agency="Department of Defense" data-value="3600000000" data-month="1/" data-naics="488190" data-search="northrop grumman air transportation dod">
+                    <div class="contract-header">
+                        <div class="contract-title">NORTHROP GRUMMAN SYSTEMS CORPORATION</div>
+                        <div class="contract-value">$3,600,000,000</div>
+                    </div>
+                    <div class="contract-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Agency</span>
+                            <span class="meta-value">Department of Defense</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Office</span>
+                            <span class="meta-value">FA2291 AFLCMC C3NK</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">NAICS</span>
+                            <span class="meta-value">488190 - Air Transportation Support</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Award ID</span>
+                            <span class="meta-value">FA872621D0001</span>
+                        </div>
+                    </div>
+                    <div class="contract-tags">
+                        <span class="tag tag-agency">DoD</span>
+                        <span class="tag tag-naics">Aviation</span>
+                        <span class="tag tag-expires">Expires 1/21/2026</span>
+                        <span class="tag tag-hot">HOT</span>
+                    </div>
+                    <div class="action-item"><strong>Action:</strong> AFLCMC major contract. EXPIRES IN 7 DAYS - likely already in recompete. Check FPDS for follow-on activity.</div>
+                </div>
+
+                <!-- Contract 7 -->
+                <div class="contract-card" data-agency="Department of Veterans Affairs" data-value="3372000000" data-month="1/" data-naics="325412" data-search="amgen pharmaceutical va fss">
+                    <div class="contract-header">
+                        <div class="contract-title">AMGEN USA INC</div>
+                        <div class="contract-value">$3,372,000,000</div>
+                    </div>
+                    <div class="contract-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Agency</span>
+                            <span class="meta-value">Department of Veterans Affairs</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Office</span>
+                            <span class="meta-value">NAC Federal Supply Schedule</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">NAICS</span>
+                            <span class="meta-value">325412 - Pharmaceutical Manufacturing</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Award ID</span>
+                            <span class="meta-value">36F79721D0086</span>
+                        </div>
+                    </div>
+                    <div class="contract-tags">
+                        <span class="tag tag-agency">VA</span>
+                        <span class="tag tag-naics">Pharma</span>
+                        <span class="tag tag-expires">Expires 1/31/2026</span>
+                    </div>
+                    <div class="action-item"><strong>Action:</strong> VA FSS pharmaceutical contract. Get on VA Schedule 65 I A - Pharmaceuticals for future opportunities.</div>
+                </div>
+
+                <!-- Contract 8 -->
+                <div class="contract-card" data-agency="Department of Defense" data-value="3158731000" data-month="1/" data-naics="541715" data-search="taitech research development dod afrl">
+                    <div class="contract-header">
+                        <div class="contract-title">TAITECH, INC.</div>
+                        <div class="contract-value">$3,158,731,000</div>
+                    </div>
+                    <div class="contract-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Agency</span>
+                            <span class="meta-value">Department of Defense</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Office</span>
+                            <span class="meta-value">USAF AFMC AFRL/PZL</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">NAICS</span>
+                            <span class="meta-value">541715 - R&D Physical/Engineering Sciences</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Award ID</span>
+                            <span class="meta-value">FA865021D2400</span>
+                        </div>
+                    </div>
+                    <div class="contract-tags">
+                        <span class="tag tag-agency">DoD</span>
+                        <span class="tag tag-naics">R&D</span>
+                        <span class="tag tag-expires">Expires 1/9/2026</span>
+                        <span class="tag tag-hot">EXPIRING</span>
+                    </div>
+                    <div class="action-item"><strong>Action:</strong> AFRL research contract - EXPIRED OR EXPIRING. Check for recompete or bridge contract. Small business R&D opportunity.</div>
+                </div>
+
+                <!-- Contract 9 -->
+                <div class="contract-card" data-agency="Department of Veterans Affairs" data-value="3000000000" data-month="2/" data-naics="339113" data-search="first nation surgical medical va sdvosb">
+                    <div class="contract-header">
+                        <div class="contract-title">FIRST NATION GROUP LLC</div>
+                        <div class="contract-value">$3,000,000,000</div>
+                    </div>
+                    <div class="contract-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Agency</span>
+                            <span class="meta-value">Department of Veterans Affairs</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Office</span>
+                            <span class="meta-value">Commodities & Services Acquisition</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">NAICS</span>
+                            <span class="meta-value">339113 - Surgical Appliance Manufacturing</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Award ID</span>
+                            <span class="meta-value">36C79121D0007</span>
+                        </div>
+                    </div>
+                    <div class="contract-tags">
+                        <span class="tag tag-agency">VA</span>
+                        <span class="tag tag-naics">Medical</span>
+                        <span class="tag tag-expires">Expires 2/14/2026</span>
+                    </div>
+                    <div class="action-item"><strong>Action:</strong> VA medical supplies contract. Check VetBiz for SDVOSB requirement. Multiple award vehicle - consider teaming.</div>
+                </div>
+
+                <!-- Contract 10 -->
+                <div class="contract-card" data-agency="Department of Defense" data-value="2738000000" data-month="2/" data-naics="541712" data-search="raytheon research development army">
+                    <div class="contract-header">
+                        <div class="contract-title">RAYTHEON COMPANY</div>
+                        <div class="contract-value">$2,738,000,000</div>
+                    </div>
+                    <div class="contract-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Agency</span>
+                            <span class="meta-value">Department of Defense</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Office</span>
+                            <span class="meta-value">W6QK ACC-RSA</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">NAICS</span>
+                            <span class="meta-value">541712 - R&D Physical/Engineering Sciences</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Award ID</span>
+                            <span class="meta-value">W9113M17D0006</span>
+                        </div>
+                    </div>
+                    <div class="contract-tags">
+                        <span class="tag tag-agency">DoD</span>
+                        <span class="tag tag-naics">R&D</span>
+                        <span class="tag tag-expires">Expires 2/8/2026</span>
+                    </div>
+                    <div class="action-item"><strong>Action:</strong> Army R&D contract. Look for small business subcontracting opportunities. Check SBIR/STTR for related tech areas.</div>
+                </div>
+
+                <!-- Contract 11 -->
+                <div class="contract-card" data-agency="General Services Administration" data-value="2220000000" data-month="2/" data-naics="517919" data-search="level 3 telecommunications gsa">
+                    <div class="contract-header">
+                        <div class="contract-title">LEVEL 3 COMMUNICATIONS, LLC</div>
+                        <div class="contract-value">$2,220,000,000</div>
+                    </div>
+                    <div class="contract-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Agency</span>
+                            <span class="meta-value">General Services Administration</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Office</span>
+                            <span class="meta-value">FAS ITC - Interagency Contracts</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">NAICS</span>
+                            <span class="meta-value">517919 - Telecommunications</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Award ID</span>
+                            <span class="meta-value">GS11T08BJD6002</span>
+                        </div>
+                    </div>
+                    <div class="contract-tags">
+                        <span class="tag tag-agency">GSA</span>
+                        <span class="tag tag-naics">Telecom</span>
+                        <span class="tag tag-expires">Expires 2/28/2026</span>
+                    </div>
+                    <div class="action-item"><strong>Action:</strong> Part of ETS vehicle with Verizon. Multiple providers = opportunity for new entrants in follow-on.</div>
+                </div>
+
+                <!-- Contract 12 -->
+                <div class="contract-card" data-agency="Department of Defense" data-value="2000000000" data-month="2/" data-naics="541330" data-search="aecom engineering air force environmental">
+                    <div class="contract-header">
+                        <div class="contract-title">AECOM TECHNICAL SERVICES, INC.</div>
+                        <div class="contract-value">$2,000,000,000</div>
+                    </div>
+                    <div class="contract-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Agency</span>
+                            <span class="meta-value">Department of Defense</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Office</span>
+                            <span class="meta-value">FA8903 772 ESS PK</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">NAICS</span>
+                            <span class="meta-value">541330 - Engineering Services</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Award ID</span>
+                            <span class="meta-value">FA890321D0002</span>
+                        </div>
+                    </div>
+                    <div class="contract-tags">
+                        <span class="tag tag-agency">DoD</span>
+                        <span class="tag tag-naics">Engineering</span>
+                        <span class="tag tag-expires">Expires 2/16/2026</span>
+                    </div>
+                    <div class="action-item"><strong>Action:</strong> AF Environmental Engineering IDIQ. Multiple awardees - check if small business category exists. Contact 772 ESS contracting.</div>
+                </div>
+
+                <!-- Contract 13 -->
+                <div class="contract-card" data-agency="General Services Administration" data-value="1963590314" data-month="1/" data-naics="541611" data-search="guidehouse consulting management gsa">
+                    <div class="contract-header">
+                        <div class="contract-title">GUIDEHOUSE INC.</div>
+                        <div class="contract-value">$1,963,590,314</div>
+                    </div>
+                    <div class="contract-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Agency</span>
+                            <span class="meta-value">General Services Administration</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Office</span>
+                            <span class="meta-value">FAS/PSHC - Professional Services</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">NAICS</span>
+                            <span class="meta-value">541611 - Management Consulting</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Award ID</span>
+                            <span class="meta-value">GS00F045DA</span>
+                        </div>
+                    </div>
+                    <div class="contract-tags">
+                        <span class="tag tag-agency">GSA</span>
+                        <span class="tag tag-naics">Consulting</span>
+                        <span class="tag tag-expires">Expires 1/6/2026</span>
+                        <span class="tag tag-hot">EXPIRING</span>
+                    </div>
+                    <div class="action-item"><strong>Action:</strong> GSA Schedule 00CORP - Management Consulting. Get on GSA Schedule if not already. High-value consulting opportunities.</div>
+                </div>
+
+                <!-- Contract 14 -->
+                <div class="contract-card" data-agency="Department of State" data-value="1725010000" data-month="2/" data-naics="561612" data-search="triple canopy security guards state">
+                    <div class="contract-header">
+                        <div class="contract-title">TRIPLE CANOPY INC</div>
+                        <div class="contract-value">$1,725,010,000</div>
+                    </div>
+                    <div class="contract-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Agency</span>
+                            <span class="meta-value">Department of State</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Office</span>
+                            <span class="meta-value">AQM MOMENTUM</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">NAICS</span>
+                            <span class="meta-value">561612 - Security Guards & Patrol</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Award ID</span>
+                            <span class="meta-value">19AQMM21D0011</span>
+                        </div>
+                    </div>
+                    <div class="contract-tags">
+                        <span class="tag tag-agency">State</span>
+                        <span class="tag tag-naics">Security</span>
+                        <span class="tag tag-expires">Expires 2/11/2026</span>
+                    </div>
+                    <div class="action-item"><strong>Action:</strong> High-threat security services. Requires extensive personnel with security clearances. Consider JV with experienced partner.</div>
+                </div>
+
+                <!-- Contract 15 -->
+                <div class="contract-card" data-agency="General Services Administration" data-value="1300000000" data-month="1/" data-naics="332510" data-search="wecsys hardware manufacturing gsa">
+                    <div class="contract-header">
+                        <div class="contract-title">WECSYS LLC</div>
+                        <div class="contract-value">$1,300,000,000</div>
+                    </div>
+                    <div class="contract-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Agency</span>
+                            <span class="meta-value">General Services Administration</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Office</span>
+                            <span class="meta-value">FAS/GSS - Supply Chain Management</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">NAICS</span>
+                            <span class="meta-value">332510 - Hardware Manufacturing</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Award ID</span>
+                            <span class="meta-value">47QSSC24A001D</span>
+                        </div>
+                    </div>
+                    <div class="contract-tags">
+                        <span class="tag tag-agency">GSA</span>
+                        <span class="tag tag-naics">Manufacturing</span>
+                        <span class="tag tag-expires">Expires 1/27/2026</span>
+                    </div>
+                    <div class="action-item"><strong>Action:</strong> GSA Global Supply contract. Get on GSA Schedule 51 V for hardware opportunities. Buy American Act compliance critical.</div>
+                </div>
+
+                <!-- Contract 16 -->
+                <div class="contract-card" data-agency="Department of Veterans Affairs" data-value="1200000000" data-month="1/" data-naics="339113" data-search="red one medical devices va surgical">
+                    <div class="contract-header">
+                        <div class="contract-title">RED ONE MEDICAL DEVICES LLC</div>
+                        <div class="contract-value">$1,200,000,000</div>
+                    </div>
+                    <div class="contract-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Agency</span>
+                            <span class="meta-value">Department of Veterans Affairs</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Office</span>
+                            <span class="meta-value">Strategic Acquisition Center</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">NAICS</span>
+                            <span class="meta-value">339113 - Surgical Appliance Manufacturing</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Award ID</span>
+                            <span class="meta-value">36C10G24D0040</span>
+                        </div>
+                    </div>
+                    <div class="contract-tags">
+                        <span class="tag tag-agency">VA</span>
+                        <span class="tag tag-naics">Medical</span>
+                        <span class="tag tag-expires">Expires 1/9/2026</span>
+                        <span class="tag tag-hot">EXPIRING</span>
+                    </div>
+                    <div class="action-item"><strong>Action:</strong> VA SAC medical devices. Check VetBiz for SDVOSB/VOSB requirements. Recent award (2024) - watch for modifications.</div>
+                </div>
+
+                <!-- Contract 17 -->
+                <div class="contract-card" data-agency="Department of Transportation" data-value="1185493615" data-month="2/" data-naics="541330" data-search="noblis engineering faa dot aviation">
+                    <div class="contract-header">
+                        <div class="contract-title">NOBLIS, INC.</div>
+                        <div class="contract-value">$1,185,493,615</div>
+                    </div>
+                    <div class="contract-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Agency</span>
+                            <span class="meta-value">Department of Transportation</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Office</span>
+                            <span class="meta-value">FAA System Operations Contracts</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">NAICS</span>
+                            <span class="meta-value">541330 - Engineering Services</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Award ID</span>
+                            <span class="meta-value">DTFAWA17D00014</span>
+                        </div>
+                    </div>
+                    <div class="contract-tags">
+                        <span class="tag tag-agency">DOT</span>
+                        <span class="tag tag-naics">Engineering</span>
+                        <span class="tag tag-expires">Expires 2/9/2026</span>
+                    </div>
+                    <div class="action-item"><strong>Action:</strong> FAA aviation engineering. Requires specialized NextGen/NAS experience. Consider subcontracting if new to FAA.</div>
+                </div>
+
+                <!-- Contract 18 -->
+                <div class="contract-card" data-agency="Department of Health and Human Services" data-value="1000000000" data-month="1/" data-naics="325413" data-search="bioivt diagnostic nih hhs">
+                    <div class="contract-header">
+                        <div class="contract-title">BIOIVT, LLC</div>
+                        <div class="contract-value">$1,000,000,000</div>
+                    </div>
+                    <div class="contract-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Agency</span>
+                            <span class="meta-value">HHS / NIH</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Office</span>
+                            <span class="meta-value">NIH OLAO</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">NAICS</span>
+                            <span class="meta-value">325413 - In-Vitro Diagnostic Manufacturing</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Award ID</span>
+                            <span class="meta-value">75N98023A00026</span>
+                        </div>
+                    </div>
+                    <div class="contract-tags">
+                        <span class="tag tag-agency">HHS</span>
+                        <span class="tag tag-naics">Diagnostics</span>
+                        <span class="tag tag-expires">Expires 1/31/2026</span>
+                    </div>
+                    <div class="action-item"><strong>Action:</strong> NIH diagnostic supplies BPA. Get on NIH CIO-SP3 or similar vehicle. Check NIH OSBP for small business opportunities.</div>
+                </div>
+
+                <!-- Contract 19 -->
+                <div class="contract-card" data-agency="Department of Defense" data-value="990000000" data-month="1/" data-naics="236220" data-search="navfac construction pacific japan">
+                    <div class="contract-header">
+                        <div class="contract-title">APTIM-TOKYU CONSTRUCTION JV, LLC</div>
+                        <div class="contract-value">$990,000,000</div>
+                    </div>
+                    <div class="contract-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Agency</span>
+                            <span class="meta-value">Department of Defense</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Office</span>
+                            <span class="meta-value">NAVFACSYSCOM Pacific</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">NAICS</span>
+                            <span class="meta-value">236220 - Commercial Building Construction</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Award ID</span>
+                            <span class="meta-value">N6274221D1322</span>
+                        </div>
+                    </div>
+                    <div class="contract-tags">
+                        <span class="tag tag-agency">DoD</span>
+                        <span class="tag tag-naics">Construction</span>
+                        <span class="tag tag-expires">Expires 1/5/2026</span>
+                        <span class="tag tag-hot">EXPIRED</span>
+                    </div>
+                    <div class="action-item"><strong>Action:</strong> NAVFAC Pacific construction - likely OCONUS (Japan/Guam). 8+ similar contracts expiring. JV with OCONUS-capable firm essential.</div>
+                </div>
+
+                <!-- Contract 20 -->
+                <div class="contract-card" data-agency="General Services Administration" data-value="900000000" data-month="2/" data-naics="236220" data-search="construction gsa region 7">
+                    <div class="contract-header">
+                        <div class="contract-title">J. E. DUNN CONSTRUCTION COMPANY</div>
+                        <div class="contract-value">$900,000,000</div>
+                    </div>
+                    <div class="contract-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Agency</span>
+                            <span class="meta-value">General Services Administration</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Office</span>
+                            <span class="meta-value">PBS R7 - Capital and IDIQ</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">NAICS</span>
+                            <span class="meta-value">236220 - Commercial Building Construction</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Award ID</span>
+                            <span class="meta-value">47PH0821D0006</span>
+                        </div>
+                    </div>
+                    <div class="contract-tags">
+                        <span class="tag tag-agency">GSA</span>
+                        <span class="tag tag-naics">Construction</span>
+                        <span class="tag tag-expires">Expires 2/3/2026</span>
+                    </div>
+                    <div class="action-item"><strong>Action:</strong> GSA PBS Region 7 IDIQ. 9 similar contracts expiring - major recompete coming. Get on GSA Schedules 36 or SAM registered for construction.</div>
+                </div>
+
+                <!-- Contract 21 -->
+                <div class="contract-card" data-agency="Department of Defense" data-value="855000000" data-month="1/" data-naics="336413" data-search="boeing aircraft parts dod">
+                    <div class="contract-header">
+                        <div class="contract-title">THE BOEING COMPANY</div>
+                        <div class="contract-value">$855,000,000</div>
+                    </div>
+                    <div class="contract-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Agency</span>
+                            <span class="meta-value">Department of Defense</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Office</span>
+                            <span class="meta-value">FA8220 AFLCMC WNDT</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">NAICS</span>
+                            <span class="meta-value">336413 - Aircraft Parts Manufacturing</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Award ID</span>
+                            <span class="meta-value">FA821116D0001</span>
+                        </div>
+                    </div>
+                    <div class="contract-tags">
+                        <span class="tag tag-agency">DoD</span>
+                        <span class="tag tag-naics">Aerospace</span>
+                        <span class="tag tag-expires">Expires 1/6/2026</span>
+                        <span class="tag tag-hot">EXPIRED</span>
+                    </div>
+                    <div class="action-item"><strong>Action:</strong> Major OEM contract. Subcontracting opportunities in supply chain. Check Boeing Supplier Portal for Tier 2/3 opportunities.</div>
+                </div>
+
+                <!-- Contract 22 -->
+                <div class="contract-card" data-agency="Department of Transportation" data-value="816087599" data-month="1/" data-naics="334111" data-search="cdw computers dot it">
+                    <div class="contract-header">
+                        <div class="contract-title">CDW GOVERNMENT LLC</div>
+                        <div class="contract-value">$816,087,599</div>
+                    </div>
+                    <div class="contract-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Agency</span>
+                            <span class="meta-value">Department of Transportation</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Office</span>
+                            <span class="meta-value">Regional Acquisitions Services</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">NAICS</span>
+                            <span class="meta-value">334111 - Electronic Computer Manufacturing</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Award ID</span>
+                            <span class="meta-value">692M1519D00007</span>
+                        </div>
+                    </div>
+                    <div class="contract-tags">
+                        <span class="tag tag-agency">DOT</span>
+                        <span class="tag tag-naics">IT Hardware</span>
+                        <span class="tag tag-expires">Expires 1/31/2026</span>
+                    </div>
+                    <div class="action-item"><strong>Action:</strong> DOT IT hardware BPA. Get on GSA IT Schedule 70. Consider reseller partnerships if not direct OEM.</div>
+                </div>
+
+                <!-- Contract 23 - Engineering Services Multiple Award -->
+                <div class="contract-card" data-agency="Department of Defense" data-value="2000000000" data-month="2/" data-naics="541330" data-search="tetra tech engineering environmental dod">
+                    <div class="contract-header">
+                        <div class="contract-title">TETRA TECH, INC.</div>
+                        <div class="contract-value">$2,000,000,000</div>
+                    </div>
+                    <div class="contract-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Agency</span>
+                            <span class="meta-value">Department of Defense</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Office</span>
+                            <span class="meta-value">FA8903 772 ESS PK</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">NAICS</span>
+                            <span class="meta-value">541330 - Engineering Services</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Award ID</span>
+                            <span class="meta-value">FA890321D0013</span>
+                        </div>
+                    </div>
+                    <div class="contract-tags">
+                        <span class="tag tag-agency">DoD</span>
+                        <span class="tag tag-naics">Engineering</span>
+                        <span class="tag tag-expires">Expires 2/16/2026</span>
+                    </div>
+                    <div class="action-item"><strong>Action:</strong> AF Environmental Engineering IDIQ - 8 contractors on vehicle. Major recompete expected. Contact SBLO for small business set-aside info.</div>
+                </div>
+
+                <!-- Contract 24 -->
+                <div class="contract-card" data-agency="Department of Defense" data-value="2000000000" data-month="2/" data-naics="541330" data-search="parsons engineering dod environmental">
+                    <div class="contract-header">
+                        <div class="contract-title">PARSONS GOVERNMENT SERVICES INC.</div>
+                        <div class="contract-value">$2,000,000,000</div>
+                    </div>
+                    <div class="contract-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Agency</span>
+                            <span class="meta-value">Department of Defense</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Office</span>
+                            <span class="meta-value">FA8903 772 ESS PK</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">NAICS</span>
+                            <span class="meta-value">541330 - Engineering Services</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Award ID</span>
+                            <span class="meta-value">FA890321D0011</span>
+                        </div>
+                    </div>
+                    <div class="contract-tags">
+                        <span class="tag tag-agency">DoD</span>
+                        <span class="tag tag-naics">Engineering</span>
+                        <span class="tag tag-expires">Expires 2/16/2026</span>
+                    </div>
+                    <div class="action-item"><strong>Action:</strong> Same vehicle as AECOM/Tetra Tech. Watch SAM.gov for consolidated recompete announcement in Q1 2026.</div>
+                </div>
+
+                <!-- Contract 25 -->
+                <div class="contract-card" data-agency="Department of Defense" data-value="2000000000" data-month="2/" data-naics="541330" data-search="jacobs engineering dod environmental">
+                    <div class="contract-header">
+                        <div class="contract-title">JACOBS GOVERNMENT SERVICES COMPANY</div>
+                        <div class="contract-value">$2,000,000,000</div>
+                    </div>
+                    <div class="contract-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Agency</span>
+                            <span class="meta-value">Department of Defense</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Office</span>
+                            <span class="meta-value">FA8903 772 ESS PK</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">NAICS</span>
+                            <span class="meta-value">541330 - Engineering Services</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Award ID</span>
+                            <span class="meta-value">FA890321D0008</span>
+                        </div>
+                    </div>
+                    <div class="contract-tags">
+                        <span class="tag tag-agency">DoD</span>
+                        <span class="tag tag-naics">Engineering</span>
+                        <span class="tag tag-expires">Expires 2/16/2026</span>
+                    </div>
+                    <div class="action-item"><strong>Action:</strong> Multiple IDIQ holders = teaming opportunity. Reach out to incumbents for subcontracting on task orders NOW.</div>
+                </div>
+
+                <!-- Remaining contracts summary card -->
+                <div class="contract-card" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+                    <div class="contract-header">
+                        <div class="contract-title">+ 25 More High-Value Opportunities</div>
+                    </div>
+                    <div class="contract-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Additional Contracts Include</span>
+                            <span class="meta-value">GSA Furniture ($1.1B), DOE Energy ($800M+), DHS Security ($700M+), NASA R&D ($600M+)</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Key Industries</span>
+                            <span class="meta-value">IT Services, Construction, Engineering, Medical Supplies, Professional Services</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Small Business Opportunities</span>
+                            <span class="meta-value">8(a), SDVOSB, HUBZone, WOSB set-asides on many recompetes</span>
+                        </div>
+                    </div>
+                    <div class="action-item"><strong>Next Steps:</strong> Use the filter tools above to find opportunities matching your NAICS codes and capabilities. Monitor SAM.gov daily for RFI/RFP releases on these expiring contracts.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title"><span class="section-icon">📊</span> Industry Summary</h2>
+            <div class="summary-grid">
+                <div class="summary-card">
+                    <h3>IT Services (541512)</h3>
+                    <div class="number">1,732</div>
+                    <div class="detail">Contracts Expiring</div>
+                </div>
+                <div class="summary-card">
+                    <h3>Construction (236220)</h3>
+                    <div class="number">815</div>
+                    <div class="detail">Contracts Expiring</div>
+                </div>
+                <div class="summary-card">
+                    <h3>Engineering (541330)</h3>
+                    <div class="number">774</div>
+                    <div class="detail">Contracts Expiring</div>
+                </div>
+                <div class="summary-card">
+                    <h3>Consulting (541611)</h3>
+                    <div class="number">369</div>
+                    <div class="detail">Contracts Expiring</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title"><span class="section-icon">🎯</span> Your Action Plan</h2>
+            <div class="summary-grid">
+                <div class="summary-card" style="text-align: left; padding: 25px;">
+                    <h3 style="color: #667eea; margin-bottom: 15px;">Week 1: Research</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 8px 0; border-bottom: 1px solid #eee;">✓ Filter contracts by your NAICS codes</li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid #eee;">✓ Research incumbent performance (FPDS)</li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid #eee;">✓ Identify potential teaming partners</li>
+                        <li style="padding: 8px 0;">✓ Set up SAM.gov saved searches</li>
+                    </ul>
+                </div>
+                <div class="summary-card" style="text-align: left; padding: 25px;">
+                    <h3 style="color: #667eea; margin-bottom: 15px;">Week 2: Outreach</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 8px 0; border-bottom: 1px solid #eee;">✓ Contact agency SBLOs</li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid #eee;">✓ Reach out to prime contractors</li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid #eee;">✓ Request industry day information</li>
+                        <li style="padding: 8px 0;">✓ Submit capability statements</li>
+                    </ul>
+                </div>
+                <div class="summary-card" style="text-align: left; padding: 25px;">
+                    <h3 style="color: #667eea; margin-bottom: 15px;">Week 3-4: Position</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 8px 0; border-bottom: 1px solid #eee;">✓ Execute teaming agreements</li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid #eee;">✓ Prepare proposal outlines</li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid #eee;">✓ Gather past performance</li>
+                        <li style="padding: 8px 0;">✓ Update certifications (CMMC!)</li>
+                    </ul>
+                </div>
+                <div class="summary-card" style="text-align: left; padding: 25px;">
+                    <h3 style="color: #667eea; margin-bottom: 15px;">Ongoing: Monitor</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 8px 0; border-bottom: 1px solid #eee;">✓ Daily SAM.gov checks</li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid #eee;">✓ Track contract modifications</li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid #eee;">✓ Follow up on RFI responses</li>
+                        <li style="padding: 8px 0;">✓ Attend virtual industry days</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p><strong>January 2026 Bootcamp</strong> | GovCon Giants</p>
+            <p>Data sourced from USAspending.gov | Contracts expiring January-February 2026</p>
+            <p style="margin-top: 15px;"><a href="https://govcongiants.com">govcongiants.com</a></p>
+        </footer>
+    </div>
+
+    <script>
+        function filterContracts() {
+            const agency = document.getElementById('agencyFilter').value.toLowerCase();
+            const value = document.getElementById('valueFilter').value;
+            const month = document.getElementById('monthFilter').value;
+            const search = document.getElementById('searchFilter').value.toLowerCase();
+
+            const cards = document.querySelectorAll('.contract-card[data-agency]');
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const cardAgency = card.dataset.agency.toLowerCase();
+                const cardValue = parseFloat(card.dataset.value);
+                const cardMonth = card.dataset.month;
+                const cardSearch = card.dataset.search.toLowerCase();
+
+                let show = true;
+
+                if (agency && !cardAgency.includes(agency)) show = false;
+
+                if (value) {
+                    const minValue = value === '10B' ? 10000000000 :
+                                    value === '1B' ? 1000000000 :
+                                    value === '500M' ? 500000000 :
+                                    value === '100M' ? 100000000 : 0;
+                    if (cardValue < minValue) show = false;
+                }
+
+                if (month && !cardMonth.startsWith(month)) show = false;
+
+                if (search && !cardSearch.includes(search)) show = false;
+
+                card.style.display = show ? 'block' : 'none';
+                if (show) visibleCount++;
+            });
+
+            document.getElementById('resultsCount').textContent = `Showing ${visibleCount} of 25 opportunities`;
+        }
+
+        function quickFilter(type) {
+            resetFilters();
+
+            switch(type) {
+                case 'dod':
+                    document.getElementById('agencyFilter').value = 'Department of Defense';
+                    break;
+                case 'it':
+                    document.getElementById('searchFilter').value = 'computer';
+                    break;
+                case 'construction':
+                    document.getElementById('searchFilter').value = 'construction';
+                    break;
+                case 'engineering':
+                    document.getElementById('searchFilter').value = 'engineering';
+                    break;
+                case 'billion':
+                    document.getElementById('valueFilter').value = '1B';
+                    break;
+            }
+
+            filterContracts();
+        }
+
+        function resetFilters() {
+            document.getElementById('agencyFilter').value = '';
+            document.getElementById('valueFilter').value = '';
+            document.getElementById('monthFilter').value = '';
+            document.getElementById('searchFilter').value = '';
+            filterContracts();
+        }
+    </script>
+</body>
+</html>

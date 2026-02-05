@@ -1,0 +1,12 @@
+{
+  "name": "govcon-giants-funnels",
+  "version": "1.0.0",
+  "description": "GovCon Giants Marketing Funnels with Lead Capture",
+  "private": true,
+  "scripts": {
+    "dev": "vercel dev"
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.8"
+  }
+}

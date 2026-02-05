@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One-Page Execution Sheet | January 2026 GovCon Bootcamp</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .save-indicator { transition: all 0.3s ease; }
+        .save-indicator.saving { color: #f59e0b; }
+        .save-indicator.saved { color: #22c55e; }
+        input[type="text"], textarea {
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        input[type="text"]:focus, textarea:focus {
+            border-color: #8BC34A;
+            box-shadow: 0 0 0 3px rgba(139, 195, 74, 0.2);
+        }
+        .step-card {
+            transition: all 0.2s;
+        }
+        .step-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        .step-card.completed {
+            border-color: #22c55e;
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.05) 0%, transparent 100%);
+        }
+        .progress-ring {
+            transform: rotate(-90deg);
+        }
+        @media print {
+            .no-print { display: none !important; }
+            .print-break { page-break-after: always; }
+            body { background: white !important; font-size: 14pt !important; }
+            .step-card { box-shadow: none !important; border: 2px solid #333 !important; }
+            input, textarea, select { border: 2px solid #333 !important; font-size: 14pt !important; }
+            h1 { font-size: 24pt !important; }
+            h2 { font-size: 18pt !important; }
+            h3, h4 { font-size: 14pt !important; }
+            p, label, span { font-size: 12pt !important; }
+        }
+
+        /* Print-optimized version styles */
+        .print-mode {
+            font-size: 16px !important;
+        }
+        .print-mode h1 { font-size: 28px !important; font-weight: 800 !important; }
+        .print-mode h2 { font-size: 22px !important; font-weight: 700 !important; }
+        .print-mode h3, .print-mode h4 { font-size: 18px !important; font-weight: 600 !important; }
+        .print-mode p, .print-mode label, .print-mode span, .print-mode li { font-size: 16px !important; line-height: 1.6 !important; }
+        .print-mode input, .print-mode textarea, .print-mode select {
+            font-size: 16px !important;
+            border: 2px solid #333 !important;
+            background: #f9f9f9 !important;
+            padding: 12px !important;
+        }
+        .print-mode .step-card {
+            border: 2px solid #333 !important;
+            margin-bottom: 24px !important;
+            page-break-inside: avoid !important;
+        }
+        .print-mode .text-slate-400, .print-mode .text-slate-500 {
+            color: #333 !important;
+        }
+        .print-mode .text-xs {
+            font-size: 14px !important;
+        }
+        .print-mode .text-sm {
+            font-size: 15px !important;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
+    <!-- Header -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50 no-print">
+        <div class="max-w-5xl mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="flex items-center gap-1">
+                        <span class="text-xl font-bold text-slate-900">GovCon</span>
+                        <span class="text-xl font-bold text-green-600">Giants</span>
+                    </div>
+                    <span class="text-slate-300">|</span>
+                    <span class="text-slate-600 text-sm">January 2026 Bootcamp</span>
+                </div>
+                <div class="flex items-center gap-4">
+                    <span id="saveStatus" class="save-indicator text-sm text-slate-400">
+                        All changes saved
+                    </span>
+                    <button onclick="emailWorksheet()" class="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-medium text-sm transition flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                        Email to Myself
+                    </button>
+                    <button onclick="exportToPDF()" class="px-4 py-2 bg-green-600 hover:bg-green-500 text-white rounded-lg font-medium text-sm transition flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                        </svg>
+                        Export PDF
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Progress Bar -->
+    <div class="bg-white border-b border-slate-200 no-print">
+        <div class="max-w-5xl mx-auto px-4 py-3">
+            <div class="flex items-center justify-between mb-2">
+                <span class="text-sm font-medium text-slate-700">Your Progress</span>
+                <span id="progressText" class="text-sm font-bold text-green-600">0% Complete</span>
+            </div>
+            <div class="h-3 bg-slate-200 rounded-full overflow-hidden">
+                <div id="progressBar" class="h-full bg-gradient-to-r from-green-500 to-green-400 rounded-full transition-all duration-500" style="width: 0%"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="worksheetContent" class="max-w-5xl mx-auto px-4 py-8">
+        <!-- Title Section -->
+        <div class="text-center mb-10">
+            <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-3">One-Page Execution Sheet</h1>
+            <p class="text-lg text-slate-600">January 31, 2026 GovCon Bootcamp</p>
+            <p class="text-slate-500 mt-2">Complete each section during the bootcamp. Your answers auto-save.</p>
+        </div>
+
+        <!-- Your Info -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 mb-6 shadow-sm">
+            <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Your Name</label>
+                    <input type="text" id="userName" data-field="userName" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none" placeholder="Enter your name">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Company Name</label>
+                    <input type="text" id="companyName" data-field="companyName" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none" placeholder="Enter your company name">
+                </div>
+            </div>
+        </div>
+
+        <!-- The Only Goal -->
+        <div class="bg-gradient-to-r from-green-600 to-green-500 rounded-2xl p-6 mb-6 text-white shadow-lg">
+            <h2 class="text-xl font-bold mb-3">THE ONLY GOAL</h2>
+            <p class="text-green-100 mb-4">By the end of today, I will...</p>
+            <textarea id="mainGoal" data-field="mainGoal" rows="2" class="w-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg text-white placeholder-green-200 focus:outline-none focus:bg-white/20" placeholder="Write your ONE goal for today (e.g., 'Submit my first Sources Sought response')"></textarea>
+        </div>
+
+        <!-- Step 1: Agency Targeting -->
+        <div class="step-card bg-white rounded-2xl border border-slate-200 p-6 mb-6 shadow-sm" data-step="1">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center text-white font-bold">1</div>
+                <div>
+                    <h2 class="text-xl font-bold text-slate-900">Agency Targeting</h2>
+                    <p class="text-sm text-slate-500">9:00 AM - 10:00 AM</p>
+                </div>
+                <div class="ml-auto">
+                    <span class="step-status text-sm font-medium text-slate-400" data-step-status="1">Not started</span>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <p class="text-slate-600 text-sm">Identify 3 target agencies using Market Assassin:</p>
+
+                <!-- Agency 1 -->
+                <div class="bg-slate-50 rounded-xl p-4">
+                    <h4 class="font-semibold text-slate-700 mb-3">Agency #1</h4>
+                    <div class="grid md:grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 mb-1">Agency Name</label>
+                            <input type="text" data-field="agency1Name" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none" placeholder="e.g., Department of Veterans Affairs">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 mb-1">Why They Buy What I Sell</label>
+                            <input type="text" data-field="agency1Why" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none" placeholder="e.g., Need IT support for medical centers">
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <label class="block text-xs font-medium text-slate-500 mb-1">Buyer / OSDBU / CO Name (if known)</label>
+                        <input type="text" data-field="agency1Contact" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none" placeholder="Contact name or 'To research'">
+                    </div>
+                </div>
+
+                <!-- Agency 2 -->
+                <div class="bg-slate-50 rounded-xl p-4">
+                    <h4 class="font-semibold text-slate-700 mb-3">Agency #2</h4>
+                    <div class="grid md:grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 mb-1">Agency Name</label>
+                            <input type="text" data-field="agency2Name" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none" placeholder="e.g., Department of Homeland Security">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 mb-1">Why They Buy What I Sell</label>
+                            <input type="text" data-field="agency2Why" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none" placeholder="e.g., Cybersecurity modernization">
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <label class="block text-xs font-medium text-slate-500 mb-1">Buyer / OSDBU / CO Name (if known)</label>
+                        <input type="text" data-field="agency2Contact" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none" placeholder="Contact name or 'To research'">
+                    </div>
+                </div>
+
+                <!-- Agency 3 -->
+                <div class="bg-slate-50 rounded-xl p-4">
+                    <h4 class="font-semibold text-slate-700 mb-3">Agency #3</h4>
+                    <div class="grid md:grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 mb-1">Agency Name</label>
+                            <input type="text" data-field="agency3Name" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none" placeholder="e.g., Department of the Army">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 mb-1">Why They Buy What I Sell</label>
+                            <input type="text" data-field="agency3Why" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none" placeholder="e.g., Training and simulation services">
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <label class="block text-xs font-medium text-slate-500 mb-1">Buyer / OSDBU / CO Name (if known)</label>
+                        <input type="text" data-field="agency3Contact" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none" placeholder="Contact name or 'To research'">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 2: Pain Points & Priorities -->
+        <div class="step-card bg-white rounded-2xl border border-slate-200 p-6 mb-6 shadow-sm" data-step="2">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center text-white font-bold">2</div>
+                <div>
+                    <h2 class="text-xl font-bold text-slate-900">Pain Points & Priorities</h2>
+                    <p class="text-sm text-slate-500">10:00 AM - 10:45 AM</p>
+                </div>
+                <div class="ml-auto">
+                    <span class="step-status text-sm font-medium text-slate-400" data-step-status="2">Not started</span>
+                </div>
+            </div>
+
+            <p class="text-slate-600 text-sm mb-4">For each agency, identify their top pain point and how you solve it:</p>
+
+            <div class="space-y-4">
+                <div class="bg-red-50 rounded-xl p-4">
+                    <h4 class="font-semibold text-slate-700 mb-3">Agency #1 Pain Point</h4>
+                    <div class="space-y-3">
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 mb-1">Top Pain Point or Priority</label>
+                            <input type="text" data-field="pain1Point" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none" placeholder="e.g., Must meet 23% small business goal by Sept">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 mb-1">How My Business Fixes It (Plain English)</label>
+                            <input type="text" data-field="pain1Solution" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none" placeholder="e.g., We're 8(a) certified and can help them meet their goal">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-red-50 rounded-xl p-4">
+                    <h4 class="font-semibold text-slate-700 mb-3">Agency #2 Pain Point</h4>
+                    <div class="space-y-3">
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 mb-1">Top Pain Point or Priority</label>
+                            <input type="text" data-field="pain2Point" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none" placeholder="e.g., Cybersecurity compliance deadline in Q2">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 mb-1">How My Business Fixes It (Plain English)</label>
+                            <input type="text" data-field="pain2Solution" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none" placeholder="e.g., We specialize in CMMC compliance assessments">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-red-50 rounded-xl p-4">
+                    <h4 class="font-semibold text-slate-700 mb-3">Agency #3 Pain Point</h4>
+                    <div class="space-y-3">
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 mb-1">Top Pain Point or Priority</label>
+                            <input type="text" data-field="pain3Point" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none" placeholder="e.g., Modernizing legacy training systems">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 mb-1">How My Business Fixes It (Plain English)</label>
+                            <input type="text" data-field="pain3Solution" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none" placeholder="e.g., We build modern LMS platforms with AR/VR">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 3: AI Prompts -->
+        <div class="step-card bg-white rounded-2xl border border-slate-200 p-6 mb-6 shadow-sm" data-step="3">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold">3</div>
+                <div>
+                    <h2 class="text-xl font-bold text-slate-900">AI Prompts</h2>
+                    <p class="text-sm text-slate-500">11:00 AM - 11:45 AM</p>
+                </div>
+                <div class="ml-auto">
+                    <span class="step-status text-sm font-medium text-slate-400" data-step-status="3">Not started</span>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-2">Prompt I Will Use Right Now</label>
+                    <textarea data-field="aiPrompt" rows="3" class="w-full px-4 py-3 border border-slate-300 rounded-lg text-sm focus:outline-none" placeholder="Paste or write the AI prompt you'll use..."></textarea>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-2">What I'm Creating with AI</label>
+                    <div class="flex flex-wrap gap-3">
+                        <label class="flex items-center gap-2 bg-slate-50 px-4 py-2 rounded-lg cursor-pointer hover:bg-slate-100">
+                            <input type="checkbox" data-field="aiCapStatement" class="w-4 h-4 text-purple-600 rounded">
+                            <span class="text-sm text-slate-700">Capability Statement</span>
+                        </label>
+                        <label class="flex items-center gap-2 bg-slate-50 px-4 py-2 rounded-lg cursor-pointer hover:bg-slate-100">
+                            <input type="checkbox" data-field="aiRFI" class="w-4 h-4 text-purple-600 rounded">
+                            <span class="text-sm text-slate-700">RFI Response</span>
+                        </label>
+                        <label class="flex items-center gap-2 bg-slate-50 px-4 py-2 rounded-lg cursor-pointer hover:bg-slate-100">
+                            <input type="checkbox" data-field="aiQuote" class="w-4 h-4 text-purple-600 rounded">
+                            <span class="text-sm text-slate-700">Quote</span>
+                        </label>
+                        <label class="flex items-center gap-2 bg-slate-50 px-4 py-2 rounded-lg cursor-pointer hover:bg-slate-100">
+                            <input type="checkbox" data-field="aiEmail" class="w-4 h-4 text-purple-600 rounded">
+                            <span class="text-sm text-slate-700">Outreach Email</span>
+                        </label>
+                        <label class="flex items-center gap-2 bg-slate-50 px-4 py-2 rounded-lg cursor-pointer hover:bg-slate-100">
+                            <input type="checkbox" data-field="aiProposal" class="w-4 h-4 text-purple-600 rounded">
+                            <span class="text-sm text-slate-700">Proposal Section</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 4: Capability Statement -->
+        <div class="step-card bg-white rounded-2xl border border-slate-200 p-6 mb-6 shadow-sm" data-step="4">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 bg-cyan-600 rounded-full flex items-center justify-center text-white font-bold">4</div>
+                <div>
+                    <h2 class="text-xl font-bold text-slate-900">Capability Statement Core</h2>
+                    <p class="text-sm text-slate-500">11:45 AM - 12:30 PM</p>
+                </div>
+                <div class="ml-auto">
+                    <span class="step-status text-sm font-medium text-slate-400" data-step-status="4">Not started</span>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-2">What I Do (1 Sentence)</label>
+                    <textarea data-field="whatIDo" rows="2" class="w-full px-4 py-3 border border-slate-300 rounded-lg text-sm focus:outline-none" placeholder="e.g., 'We provide IT help desk support for federal agencies with 24/7 coverage and cleared personnel.'"></textarea>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-2">My Differentiator / Proof</label>
+                    <textarea data-field="differentiator" rows="2" class="w-full px-4 py-3 border border-slate-300 rounded-lg text-sm focus:outline-none" placeholder="e.g., 'Only 8(a) WOSB in the region with 99.8% uptime across all contracts'"></textarea>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-2">Capability Statement Link (if you have one)</label>
+                    <input type="text" data-field="capStatementLink" class="w-full px-4 py-3 border border-slate-300 rounded-lg text-sm focus:outline-none" placeholder="https://...">
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 5: Opportunity Research -->
+        <div class="step-card bg-white rounded-2xl border border-slate-200 p-6 mb-6 shadow-sm" data-step="5">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold">5</div>
+                <div>
+                    <h2 class="text-xl font-bold text-slate-900">Opportunity Research</h2>
+                    <p class="text-sm text-slate-500">1:15 PM - 2:15 PM</p>
+                </div>
+                <div class="ml-auto">
+                    <span class="step-status text-sm font-medium text-slate-400" data-step-status="5">Not started</span>
+                </div>
+            </div>
+
+            <p class="text-slate-600 text-sm mb-4">Find 3 opportunities from the Hit List or SAM.gov:</p>
+
+            <div class="space-y-4">
+                <div class="bg-orange-50 rounded-xl p-4">
+                    <h4 class="font-semibold text-slate-700 mb-3">Opportunity #1</h4>
+                    <div class="grid md:grid-cols-3 gap-3">
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 mb-1">Opportunity Number</label>
+                            <input type="text" data-field="opp1Number" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none" placeholder="e.g., 36C26225Q0001">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 mb-1">Due Date</label>
+                            <input type="text" data-field="opp1DueDate" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none" placeholder="e.g., Feb 15, 2026">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 mb-1">Low Competition?</label>
+                            <select data-field="opp1LowComp" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none bg-white">
+                                <option value="">Select...</option>
+                                <option value="yes">Yes - Set-aside match</option>
+                                <option value="maybe">Maybe - Need to research</option>
+                                <option value="no">No - Full & open</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-orange-50 rounded-xl p-4">
+                    <h4 class="font-semibold text-slate-700 mb-3">Opportunity #2</h4>
+                    <div class="grid md:grid-cols-3 gap-3">
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 mb-1">Opportunity Number</label>
+                            <input type="text" data-field="opp2Number" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none" placeholder="e.g., W912DY26Q0045">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 mb-1">Due Date</label>
+                            <input type="text" data-field="opp2DueDate" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none" placeholder="e.g., Mar 1, 2026">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 mb-1">Low Competition?</label>
+                            <select data-field="opp2LowComp" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none bg-white">
+                                <option value="">Select...</option>
+                                <option value="yes">Yes - Set-aside match</option>
+                                <option value="maybe">Maybe - Need to research</option>
+                                <option value="no">No - Full & open</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-orange-50 rounded-xl p-4">
+                    <h4 class="font-semibold text-slate-700 mb-3">Opportunity #3</h4>
+                    <div class="grid md:grid-cols-3 gap-3">
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 mb-1">Opportunity Number</label>
+                            <input type="text" data-field="opp3Number" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none" placeholder="e.g., 70CMSC26Q0012">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 mb-1">Due Date</label>
+                            <input type="text" data-field="opp3DueDate" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none" placeholder="e.g., Feb 28, 2026">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 mb-1">Low Competition?</label>
+                            <select data-field="opp3LowComp" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none bg-white">
+                                <option value="">Select...</option>
+                                <option value="yes">Yes - Set-aside match</option>
+                                <option value="maybe">Maybe - Need to research</option>
+                                <option value="no">No - Full & open</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 6: Response Plan -->
+        <div class="step-card bg-white rounded-2xl border border-slate-200 p-6 mb-6 shadow-sm" data-step="6">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 bg-teal-600 rounded-full flex items-center justify-center text-white font-bold">6</div>
+                <div>
+                    <h2 class="text-xl font-bold text-slate-900">Response Plan</h2>
+                    <p class="text-sm text-slate-500">2:30 PM - 3:30 PM</p>
+                </div>
+                <div class="ml-auto">
+                    <span class="step-status text-sm font-medium text-slate-400" data-step-status="6">Not started</span>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-2">What I Will Submit</label>
+                    <div class="flex flex-wrap gap-3">
+                        <label class="flex items-center gap-2 bg-slate-50 px-4 py-2 rounded-lg cursor-pointer hover:bg-slate-100">
+                            <input type="radio" name="submitType" data-field="submitRFI" value="RFI" class="w-4 h-4 text-teal-600">
+                            <span class="text-sm text-slate-700">RFI Response</span>
+                        </label>
+                        <label class="flex items-center gap-2 bg-slate-50 px-4 py-2 rounded-lg cursor-pointer hover:bg-slate-100">
+                            <input type="radio" name="submitType" data-field="submitRFQ" value="RFQ" class="w-4 h-4 text-teal-600">
+                            <span class="text-sm text-slate-700">RFQ (Quote)</span>
+                        </label>
+                        <label class="flex items-center gap-2 bg-slate-50 px-4 py-2 rounded-lg cursor-pointer hover:bg-slate-100">
+                            <input type="radio" name="submitType" data-field="submitRFP" value="RFP" class="w-4 h-4 text-teal-600">
+                            <span class="text-sm text-slate-700">RFP (Proposal)</span>
+                        </label>
+                        <label class="flex items-center gap-2 bg-slate-50 px-4 py-2 rounded-lg cursor-pointer hover:bg-slate-100">
+                            <input type="radio" name="submitType" data-field="submitTaskOrder" value="TaskOrder" class="w-4 h-4 text-teal-600">
+                            <span class="text-sm text-slate-700">Task Order</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-2">Sections I Will Complete Today</label>
+                    <div class="flex flex-wrap gap-3">
+                        <label class="flex items-center gap-2 bg-slate-50 px-4 py-2 rounded-lg cursor-pointer hover:bg-slate-100">
+                            <input type="checkbox" data-field="sectionTechnical" class="w-4 h-4 text-teal-600 rounded">
+                            <span class="text-sm text-slate-700">Technical</span>
+                        </label>
+                        <label class="flex items-center gap-2 bg-slate-50 px-4 py-2 rounded-lg cursor-pointer hover:bg-slate-100">
+                            <input type="checkbox" data-field="sectionPastPerf" class="w-4 h-4 text-teal-600 rounded">
+                            <span class="text-sm text-slate-700">Past Performance</span>
+                        </label>
+                        <label class="flex items-center gap-2 bg-slate-50 px-4 py-2 rounded-lg cursor-pointer hover:bg-slate-100">
+                            <input type="checkbox" data-field="sectionPrice" class="w-4 h-4 text-teal-600 rounded">
+                            <span class="text-sm text-slate-700">Price</span>
+                        </label>
+                        <label class="flex items-center gap-2 bg-slate-50 px-4 py-2 rounded-lg cursor-pointer hover:bg-slate-100">
+                            <input type="checkbox" data-field="sectionEmail" class="w-4 h-4 text-teal-600 rounded">
+                            <span class="text-sm text-slate-700">Email Response</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 7: Expiring Contracts -->
+        <div class="step-card bg-white rounded-2xl border border-slate-200 p-6 mb-6 shadow-sm" data-step="7">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 bg-red-700 rounded-full flex items-center justify-center text-white font-bold">7</div>
+                <div>
+                    <h2 class="text-xl font-bold text-slate-900">Expiring Contracts to Track</h2>
+                    <p class="text-sm text-slate-500">3:30 PM - 4:30 PM</p>
+                </div>
+                <div class="ml-auto">
+                    <span class="step-status text-sm font-medium text-slate-400" data-step-status="7">Not started</span>
+                </div>
+            </div>
+
+            <p class="text-slate-600 text-sm mb-4">Track 3 expiring contracts for future opportunities:</p>
+
+            <div class="space-y-4">
+                <div class="bg-red-50 rounded-xl p-4">
+                    <div class="grid md:grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 mb-1">Contract I'm Watching</label>
+                            <input type="text" data-field="recompete1" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none" placeholder="Contract name or number">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 mb-1">Strategy</label>
+                            <select data-field="recompete1Strategy" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none bg-white">
+                                <option value="">Select...</option>
+                                <option value="prime">Pursue as Prime</option>
+                                <option value="sub">Team as Subcontractor</option>
+                                <option value="research">Need more research</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-red-50 rounded-xl p-4">
+                    <div class="grid md:grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 mb-1">Contract I'm Watching</label>
+                            <input type="text" data-field="recompete2" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none" placeholder="Contract name or number">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 mb-1">Strategy</label>
+                            <select data-field="recompete2Strategy" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none bg-white">
+                                <option value="">Select...</option>
+                                <option value="prime">Pursue as Prime</option>
+                                <option value="sub">Team as Subcontractor</option>
+                                <option value="research">Need more research</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-red-50 rounded-xl p-4">
+                    <div class="grid md:grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 mb-1">Contract I'm Watching</label>
+                            <input type="text" data-field="recompete3" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none" placeholder="Contract name or number">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 mb-1">Strategy</label>
+                            <select data-field="recompete3Strategy" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none bg-white">
+                                <option value="">Select...</option>
+                                <option value="prime">Pursue as Prime</option>
+                                <option value="sub">Team as Subcontractor</option>
+                                <option value="research">Need more research</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 24-Hour Commitment -->
+        <div class="bg-gradient-to-r from-slate-800 to-slate-900 rounded-2xl p-6 mb-6 text-white shadow-lg">
+            <h2 class="text-xl font-bold mb-3">24-HOUR COMMITMENT</h2>
+            <p class="text-slate-300 mb-4">The ONE action I will complete within 24 hours:</p>
+            <textarea data-field="commitment24hr" rows="2" class="w-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:bg-white/20" placeholder="Write your specific commitment..."></textarea>
+
+            <div class="mt-6 pt-6 border-t border-white/20">
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-medium text-slate-400 mb-1">Your Signature (Type Name)</label>
+                        <input type="text" data-field="signature" class="w-full px-3 py-2 bg-white/10 border border-white/30 rounded-lg text-white placeholder-slate-400 focus:outline-none" placeholder="Type your name">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium text-slate-400 mb-1">Date</label>
+                        <input type="text" data-field="signatureDate" class="w-full px-3 py-2 bg-white/10 border border-white/30 rounded-lg text-white placeholder-slate-400 focus:outline-none" placeholder="January 31, 2026">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Rule -->
+        <div class="text-center py-8 mb-6">
+            <p class="text-2xl font-bold text-slate-900 mb-2">RULE:</p>
+            <p class="text-3xl font-bold text-green-600">One agency. One opportunity. One action.</p>
+            <p class="text-2xl font-bold text-slate-900 mt-2">Repeat daily.</p>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center text-slate-500 text-sm py-6 border-t border-slate-200">
+            <p>GovCon Giants | January 2026 Bootcamp | shop.govcongiants.org</p>
+        </div>
+    </main>
+
+    <!-- Email Modal -->
+    <div id="emailModal" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden no-print">
+        <div class="bg-white rounded-2xl p-6 max-w-md w-full mx-4 shadow-2xl">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-xl font-bold text-slate-900">Email Your Worksheet</h3>
+                <button onclick="closeEmailModal()" class="text-slate-400 hover:text-slate-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <p class="text-slate-600 mb-4">We'll send a summary of your worksheet to your email as a backup.</p>
+            <div class="mb-4">
+                <label class="block text-sm font-medium text-slate-700 mb-1">Your Email</label>
+                <input type="email" id="emailAddress" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:border-green-500" placeholder="you@example.com">
+            </div>
+            <div class="flex gap-3">
+                <button onclick="closeEmailModal()" class="flex-1 px-4 py-3 border border-slate-300 text-slate-700 rounded-lg font-medium hover:bg-slate-50 transition">
+                    Cancel
+                </button>
+                <button onclick="sendEmail()" id="sendEmailBtn" class="flex-1 px-4 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-medium transition flex items-center justify-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+                    </svg>
+                    Send Email
+                </button>
+            </div>
+            <p id="emailStatus" class="text-center text-sm mt-3 hidden"></p>
+        </div>
+    </div>
+
+    <!-- Floating Action Button (Mobile) -->
+    <div class="fixed bottom-6 right-6 no-print md:hidden flex flex-col gap-3">
+        <button onclick="emailWorksheet()" class="w-14 h-14 bg-blue-600 hover:bg-blue-500 text-white rounded-full shadow-lg flex items-center justify-center">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+        </button>
+        <button onclick="exportToPDF()" class="w-14 h-14 bg-green-600 hover:bg-green-500 text-white rounded-full shadow-lg flex items-center justify-center">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>
+        </button>
+    </div>
+
+    <script>
+        // All form fields with their data-field attributes
+        const STORAGE_KEY = 'govcon_execution_sheet_jan2026';
+        let saveTimeout;
+
+        // Load saved data on page load
+        function loadData() {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            if (saved) {
+                const data = JSON.parse(saved);
+                document.querySelectorAll('[data-field]').forEach(field => {
+                    const key = field.dataset.field;
+                    if (data[key] !== undefined) {
+                        if (field.type === 'checkbox') {
+                            field.checked = data[key];
+                        } else if (field.type === 'radio') {
+                            field.checked = field.value === data[key];
+                        } else {
+                            field.value = data[key];
+                        }
+                    }
+                });
+                updateProgress();
+            }
+        }
+
+        // Save data to localStorage
+        function saveData() {
+            const data = {};
+            document.querySelectorAll('[data-field]').forEach(field => {
+                const key = field.dataset.field;
+                if (field.type === 'checkbox') {
+                    data[key] = field.checked;
+                } else if (field.type === 'radio') {
+                    if (field.checked) {
+                        data[key] = field.value;
+                    }
+                } else {
+                    data[key] = field.value;
+                }
+            });
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+        }
+
+        // Show saving indicator
+        function showSaving() {
+            const status = document.getElementById('saveStatus');
+            status.textContent = 'Saving...';
+            status.classList.add('saving');
+            status.classList.remove('saved');
+        }
+
+        // Show saved indicator
+        function showSaved() {
+            const status = document.getElementById('saveStatus');
+            status.textContent = 'All changes saved';
+            status.classList.remove('saving');
+            status.classList.add('saved');
+            setTimeout(() => {
+                status.classList.remove('saved');
+            }, 2000);
+        }
+
+        // Calculate and update progress
+        function updateProgress() {
+            const fields = document.querySelectorAll('[data-field]');
+            let filled = 0;
+            let total = 0;
+
+            fields.forEach(field => {
+                // Skip certain fields from progress calculation
+                if (field.type === 'radio') {
+                    // Only count radio groups once
+                    if (!field.dataset.counted) {
+                        const group = document.querySelectorAll(`[name="${field.name}"]`);
+                        group.forEach(r => r.dataset.counted = 'true');
+                        total++;
+                        if ([...group].some(r => r.checked)) filled++;
+                    }
+                } else if (field.type === 'checkbox') {
+                    // Checkboxes are optional, don't count toward total
+                } else {
+                    total++;
+                    if (field.value.trim()) filled++;
+                }
+            });
+
+            // Reset counted flags
+            document.querySelectorAll('[data-counted]').forEach(f => delete f.dataset.counted);
+
+            const percentage = Math.round((filled / total) * 100);
+            document.getElementById('progressBar').style.width = `${percentage}%`;
+            document.getElementById('progressText').textContent = `${percentage}% Complete`;
+
+            // Update step statuses
+            updateStepStatuses();
+        }
+
+        // Update individual step completion status
+        function updateStepStatuses() {
+            const steps = {
+                1: ['agency1Name', 'agency2Name', 'agency3Name'],
+                2: ['pain1Point', 'pain1Solution', 'pain2Point', 'pain2Solution'],
+                3: ['aiPrompt'],
+                4: ['whatIDo', 'differentiator'],
+                5: ['opp1Number', 'opp2Number'],
+                6: [], // Radio buttons
+                7: ['recompete1', 'recompete2']
+            };
+
+            Object.keys(steps).forEach(stepNum => {
+                const fields = steps[stepNum];
+                const statusEl = document.querySelector(`[data-step-status="${stepNum}"]`);
+                const cardEl = document.querySelector(`[data-step="${stepNum}"]`);
+
+                if (fields.length === 0) {
+                    // Check radio buttons for step 6
+                    const hasSelection = document.querySelector('input[name="submitType"]:checked');
+                    if (hasSelection) {
+                        statusEl.textContent = 'Complete';
+                        statusEl.classList.remove('text-slate-400', 'text-yellow-500');
+                        statusEl.classList.add('text-green-500');
+                        cardEl.classList.add('completed');
+                    }
+                    return;
+                }
+
+                const filledCount = fields.filter(f => {
+                    const el = document.querySelector(`[data-field="${f}"]`);
+                    return el && el.value.trim();
+                }).length;
+
+                if (filledCount === 0) {
+                    statusEl.textContent = 'Not started';
+                    statusEl.classList.remove('text-green-500', 'text-yellow-500');
+                    statusEl.classList.add('text-slate-400');
+                    cardEl.classList.remove('completed');
+                } else if (filledCount < fields.length) {
+                    statusEl.textContent = 'In progress';
+                    statusEl.classList.remove('text-green-500', 'text-slate-400');
+                    statusEl.classList.add('text-yellow-500');
+                    cardEl.classList.remove('completed');
+                } else {
+                    statusEl.textContent = 'Complete';
+                    statusEl.classList.remove('text-slate-400', 'text-yellow-500');
+                    statusEl.classList.add('text-green-500');
+                    cardEl.classList.add('completed');
+                }
+            });
+        }
+
+        // Debounced save on input
+        function handleInput() {
+            showSaving();
+            clearTimeout(saveTimeout);
+            saveTimeout = setTimeout(() => {
+                saveData();
+                showSaved();
+                updateProgress();
+            }, 500);
+        }
+
+        // Export to PDF - Print-friendly version for older users
+        function exportToPDF() {
+            const element = document.getElementById('worksheetContent');
+            const userName = document.querySelector('[data-field="userName"]').value || 'Attendee';
+
+            // Add print-mode class for larger, clearer text
+            element.classList.add('print-mode');
+
+            const opt = {
+                margin: [15, 15, 15, 15],
+                filename: `Execution-Sheet-${userName.replace(/\s+/g, '-')}-Jan2026.pdf`,
+                image: { type: 'jpeg', quality: 1 },
+                html2canvas: {
+                    scale: 3,  // Higher resolution for print
+                    useCORS: true,
+                    letterRendering: true,
+                    logging: false
+                },
+                jsPDF: {
+                    unit: 'mm',
+                    format: 'letter',  // US Letter size for easier printing
+                    orientation: 'portrait'
+                },
+                pagebreak: {
+                    mode: ['avoid-all', 'css', 'legacy'],
+                    before: '.print-break-before',
+                    after: '.print-break-after',
+                    avoid: '.step-card'
+                }
+            };
+
+            // Show loading state
+            const btn = event.target.closest('button');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<svg class="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Creating PDF...';
+            btn.disabled = true;
+
+            html2pdf().set(opt).from(element).save().then(() => {
+                // Remove print-mode class after PDF is generated
+                element.classList.remove('print-mode');
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }).catch(() => {
+                element.classList.remove('print-mode');
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            });
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            loadData();
+
+            // Add event listeners to all form fields
+            document.querySelectorAll('[data-field]').forEach(field => {
+                field.addEventListener('input', handleInput);
+                field.addEventListener('change', handleInput);
+            });
+
+            // Set default date
+            const dateField = document.querySelector('[data-field="signatureDate"]');
+            if (dateField && !dateField.value) {
+                dateField.value = 'January 31, 2026';
+            }
+        });
+
+        // Clear all data (for testing)
+        function clearAllData() {
+            if (confirm('Are you sure you want to clear all your progress? This cannot be undone.')) {
+                localStorage.removeItem(STORAGE_KEY);
+                location.reload();
+            }
+        }
+
+        // Email worksheet functions
+        function emailWorksheet() {
+            document.getElementById('emailModal').classList.remove('hidden');
+            document.getElementById('emailAddress').focus();
+        }
+
+        function closeEmailModal() {
+            document.getElementById('emailModal').classList.add('hidden');
+            document.getElementById('emailStatus').classList.add('hidden');
+        }
+
+        function generateEmailBody() {
+            const getValue = (field) => {
+                const el = document.querySelector(`[data-field="${field}"]`);
+                return el ? (el.type === 'checkbox' ? (el.checked ? 'Yes' : 'No') : el.value || '(not filled)') : '(not filled)';
+            };
+
+            const getRadioValue = (name) => {
+                const checked = document.querySelector(`input[name="${name}"]:checked`);
+                return checked ? checked.value : '(not selected)';
+            };
+
+            let body = `ONE-PAGE EXECUTION SHEET - January 2026 GovCon Bootcamp
+================================================================
+
+YOUR INFO
+---------
+Name: ${getValue('userName')}
+Company: ${getValue('companyName')}
+
+THE ONLY GOAL
+-------------
+${getValue('mainGoal')}
+
+STEP 1: AGENCY TARGETING
+------------------------
+Agency #1: ${getValue('agency1Name')}
+  Why they buy: ${getValue('agency1Why')}
+  Contact: ${getValue('agency1Contact')}
+
+Agency #2: ${getValue('agency2Name')}
+  Why they buy: ${getValue('agency2Why')}
+  Contact: ${getValue('agency2Contact')}
+
+Agency #3: ${getValue('agency3Name')}
+  Why they buy: ${getValue('agency3Why')}
+  Contact: ${getValue('agency3Contact')}
+
+STEP 2: PAIN POINTS & PRIORITIES
+---------------------------------
+Agency #1:
+  Pain Point: ${getValue('pain1Point')}
+  How I Solve It: ${getValue('pain1Solution')}
+
+Agency #2:
+  Pain Point: ${getValue('pain2Point')}
+  How I Solve It: ${getValue('pain2Solution')}
+
+Agency #3:
+  Pain Point: ${getValue('pain3Point')}
+  How I Solve It: ${getValue('pain3Solution')}
+
+STEP 3: AI PROMPTS
+------------------
+Prompt I Will Use: ${getValue('aiPrompt')}
+
+STEP 4: CAPABILITY STATEMENT
+----------------------------
+What I Do (1 Sentence): ${getValue('whatIDo')}
+My Differentiator: ${getValue('differentiator')}
+Cap Statement Link: ${getValue('capStatementLink')}
+
+STEP 5: OPPORTUNITY RESEARCH
+----------------------------
+Opportunity #1: ${getValue('opp1Number')} | Due: ${getValue('opp1DueDate')} | Low Comp: ${getValue('opp1LowComp')}
+Opportunity #2: ${getValue('opp2Number')} | Due: ${getValue('opp2DueDate')} | Low Comp: ${getValue('opp2LowComp')}
+Opportunity #3: ${getValue('opp3Number')} | Due: ${getValue('opp3DueDate')} | Low Comp: ${getValue('opp3LowComp')}
+
+STEP 6: RESPONSE PLAN
+---------------------
+What I Will Submit: ${getRadioValue('submitType')}
+
+STEP 7: EXPIRING CONTRACTS
+--------------------------
+Contract #1: ${getValue('recompete1')} | Strategy: ${getValue('recompete1Strategy')}
+Contract #2: ${getValue('recompete2')} | Strategy: ${getValue('recompete2Strategy')}
+Contract #3: ${getValue('recompete3')} | Strategy: ${getValue('recompete3Strategy')}
+
+24-HOUR COMMITMENT
+------------------
+${getValue('commitment24hr')}
+
+Signed: ${getValue('signature')}
+Date: ${getValue('signatureDate')}
+
+================================================================
+RULE: One agency. One opportunity. One action. Repeat daily.
+================================================================
+
+GovCon Giants | shop.govcongiants.org
+`;
+            return body;
+        }
+
+        function sendEmail() {
+            const email = document.getElementById('emailAddress').value;
+            const statusEl = document.getElementById('emailStatus');
+
+            if (!email || !email.includes('@')) {
+                statusEl.textContent = 'Please enter a valid email address';
+                statusEl.classList.remove('hidden', 'text-green-600');
+                statusEl.classList.add('text-red-500');
+                return;
+            }
+
+            const userName = document.querySelector('[data-field="userName"]').value || 'Attendee';
+            const subject = encodeURIComponent(`My Execution Sheet - ${userName} - January 2026 Bootcamp`);
+            const body = encodeURIComponent(generateEmailBody());
+
+            // Open mailto link
+            window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+
+            statusEl.textContent = 'Opening your email client...';
+            statusEl.classList.remove('hidden', 'text-red-500');
+            statusEl.classList.add('text-green-600');
+
+            setTimeout(() => {
+                closeEmailModal();
+            }, 2000);
+        }
+
+        // Close modal on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeEmailModal();
+        });
+
+        // Close modal on backdrop click
+        document.getElementById('emailModal').addEventListener('click', (e) => {
+            if (e.target.id === 'emailModal') closeEmailModal();
+        });
+    </script>
+</body>
+</html>
