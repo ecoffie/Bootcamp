@@ -1,6 +1,6 @@
 # GovCon Giants - Bootcamp Project
 
-**Last Updated:** February 4, 2026
+**Last Updated:** February 7, 2026
 **Owner:** Eric Coffie
 **Purpose:** Federal contracting bootcamp materials, marketing assets, and business tools
 
@@ -329,6 +329,19 @@ This repository contains all GovCon Giants resources for helping small businesse
 | `presentations/January-2026-GovCon-Bootcamp-Slides.pdf` | PDF export |
 | `presentations/january-bootcamp-slides-images/` | 132 slide images |
 | `presentations/one-page-execution-sheet.html` | Execution worksheet |
+
+### February 2026 Veteran War Room
+**Date:** February 7, 2026
+
+| File/Directory | Description |
+|----------------|-------------|
+| `presentations/veteran-vosb-sdvosb-presentation.html` | Veteran VOSB/SDVOSB presentation (v1) |
+| `presentations/veteran-vosb-sdvosb-presentation-v2.html` | Veteran presentation v2 (Bootcamp format, 34 slides) |
+| `presentations/Veteran-War-Room-Presentation.pdf` | PDF export of veteran presentation |
+| `presentations/export-pdf-veteran.js` | Puppeteer PDF export script |
+| `presentations/veteran-v2-assets/` | Data visualization images (SBA Data HUB charts) |
+| `presentations/VETERAN-PRESENTATION-CONSULTING-FORMAT.md` | Consulting format notes |
+| `Veterans-VA-Will-Pay-You-Start-Business-VRE-Self-Employment-Transcript.md` | VR&E self-employment transcript |
 
 ### December 2025 Bootcamp
 **Date:** December 13, 2025

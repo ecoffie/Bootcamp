@@ -1,5 +1,8 @@
 {
+  "scripts": {
+    "export-veteran-pdf": "node presentations/export-pdf-veteran.js"
+  },
   "dependencies": {
-    "puppeteer": "^24.35.0"
+    "puppeteer": "^24.37.2"
   }
 }
