@@ -1,6 +1,6 @@
 # GovCon Giants - Bootcamp Project
 
-**Last Updated:** February 7, 2026
+**Last Updated:** February 9, 2026
 **Owner:** Eric Coffie
 **Purpose:** Federal contracting bootcamp materials, marketing assets, and business tools
 
@@ -342,6 +342,22 @@ This repository contains all GovCon Giants resources for helping small businesse
 | `presentations/veteran-v2-assets/` | Data visualization images (SBA Data HUB charts) |
 | `presentations/VETERAN-PRESENTATION-CONSULTING-FORMAT.md` | Consulting format notes |
 | `Veterans-VA-Will-Pay-You-Start-Business-VRE-Self-Employment-Transcript.md` | VR&E self-employment transcript |
+
+### TempNet Staffing GovCon Starter Guide
+**Date:** February 2026
+
+| File/Directory | Description |
+|----------------|-------------|
+| `presentations/tempnet-staffing-presentation-v1.html` | TempNet slide deck (staffing companies → GovCon starter guide) |
+| `presentations/export-pdf-tempnet.js` | Puppeteer PDF export script for TempNet deck |
+| `package.json` | Adds npm script: `export-tempnet-pdf` |
+
+**Deck highlights (beginner foundation):**
+- **NAICS focus**: 561320 (Temporary Help Services) + related support-service NAICS for research
+- **SBA size standard slide**: “Am I small?” for staffing NAICS
+- **GSA path**: MAS + eBuy, plus a dedicated “GSA.gov” free-website slide
+- **SAM.gov clarity**: expanded “notice types” slide (pre-award + post-award notice types)
+- **DSBS/SBS**: dedicated slide and checklist item for getting found by buyers/primes
 
 ### December 2025 Bootcamp
 **Date:** December 13, 2025

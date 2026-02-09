@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TempNet: How Staffing Companies Win Federal Contracts (NAICS 561320) | GovCon Giants</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --green: #8BC34A;
+      --green-dark: #689F38;
+      --red: #E53935;
+      --black: #1a1a1a;
+      --gray: #666;
+      --light-gray: #f5f5f5;
+      --nav: #111827;
+      --purple: #7C3AED;
+      --blue: #1e3a8a;
+    }
+
+    @page { size: 960px 540px landscape; margin: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #e5e7eb;
+      line-height: 1.4;
+      color: var(--black);
+    }
+
+    .slide {
+      width: 960px;
+      min-height: 540px;
+      background: white;
+      margin: 20px auto;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+      position: relative;
+      overflow: visible;
+      page-break-after: always;
+      page-break-inside: avoid;
+      padding: 40px 50px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media print {
+      body { background: white; }
+      .slide { margin: 0; box-shadow: none; page-break-after: always; }
+      #nav-bar { display: none !important; }
+      #slide-viewer { height: auto !important; overflow: visible !important; scroll-snap-type: none !important; }
+      #slide-viewer .slide { scroll-snap-align: unset !important; }
+    }
+
+    h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.2; margin-bottom: 20px; }
+    h2 { font-size: 2.2rem; font-weight: 700; line-height: 1.2; margin-bottom: 25px; }
+    h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 15px; }
+    p { font-size: 1.3rem; line-height: 1.5; }
+
+    .green { color: var(--green); }
+    .red { color: var(--red); }
+    .gray { color: var(--gray); }
+    .bold { font-weight: 700; }
+
+    .slide-title { justify-content: center; align-items: center; text-align: center; }
+    .slide-title h1 { font-size: 3rem; }
+    .slide-title .subtitle { font-size: 1.8rem; color: var(--green); margin-bottom: 30px; }
+
+    .slide-center { justify-content: center; align-items: center; text-align: center; }
+    .slide-center h2 { font-size: 2.5rem; max-width: 820px; }
+
+    .slide-content h2 { border-bottom: 3px solid var(--green); padding-bottom: 15px; }
+
+    ul.bullets { list-style: none; padding: 0; margin-top: 20px; }
+    ul.bullets li {
+      font-size: 1.3rem;
+      padding: 10px 0 10px 45px;
+      position: relative;
+    }
+    ul.bullets li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
+
+    ul.simple { list-style: disc; padding-left: 30px; margin-top: 15px; }
+    ul.simple li { font-size: 1.2rem; padding: 8px 0; }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      flex: 1;
+      margin-top: 15px;
+    }
+
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 1.05rem; }
+    table th { background: var(--black); color: white; padding: 14px 18px; text-align: left; font-weight: 700; }
+    table td { padding: 14px 18px; border-bottom: 2px solid #eee; vertical-align: top; }
+    table tr:nth-child(even) { background: var(--light-gray); }
+
+    .highlight-box {
+      background: #FFF9C4;
+      border-left: 5px solid #FBC02D;
+      padding: 20px 25px;
+      margin-top: 25px;
+      border-radius: 0 10px 10px 0;
+    }
+    .highlight-box p { font-size: 1.2rem; margin: 0; }
+
+    .green-box {
+      background: #E8F5E9;
+      border: 2px solid var(--green);
+      border-radius: 12px;
+      padding: 20px 25px;
+      margin-top: 25px;
+    }
+    .green-box h4 { color: var(--green-dark); font-size: 1.2rem; margin-bottom: 10px; }
+
+    .code-block {
+      background: #0b1220;
+      color: #9ef01a;
+      padding: 22px 26px;
+      border-radius: 10px;
+      margin-top: 18px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 1.02rem;
+      line-height: 1.6;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .code-block p { margin: 0 0 6px 0; color: #9ef01a; font-size: inherit; }
+    .code-block p:last-child { margin-bottom: 0; }
+
+    .icon-text { display: flex; align-items: center; gap: 18px; margin: 16px 0; }
+    .icon-text .icon { font-size: 2.6rem; }
+    .icon-text .text h3 { margin-bottom: 6px; font-size: 1.25rem; }
+    .icon-text .text p { font-size: 1.1rem; }
+
+    .stats-row { display: flex; justify-content: space-around; margin-top: 26px; gap: 30px; }
+    .stat { text-align: center; min-width: 190px; }
+    .stat .value { font-size: 2.7rem; font-weight: 900; color: var(--green); }
+    .stat .label { font-size: 1rem; color: var(--gray); }
+
+    .badge {
+      display: inline-block;
+      background: rgba(124,58,237,0.12);
+      color: var(--purple);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+
+    .slide-footer {
+      position: absolute;
+      bottom: 15px;
+      left: 50px;
+      font-size: 0.95rem;
+      color: var(--gray);
+      font-weight: 500;
+    }
+    .slide-footer a { color: var(--green-dark); text-decoration: none; }
+    .slide-footer a:hover { text-decoration: underline; }
+    .slide-num {
+      position: absolute;
+      bottom: 15px;
+      right: 25px;
+      font-size: 0.9rem;
+      color: #999;
+    }
+
+    /* Slide viewer */
+    #slide-viewer {
+      height: 100vh;
+      overflow-y: auto;
+      overflow-x: hidden;
+      scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
+      padding-bottom: 64px; /* keep last slide above nav */
+    }
+    #slide-viewer .slide { scroll-snap-align: start; scroll-snap-stop: always; }
+
+    #nav-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--nav);
+      color: white;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 22px;
+      z-index: 100;
+      font-size: 1rem;
+    }
+    #nav-bar button {
+      background: var(--green);
+      color: var(--black);
+      border: none;
+      padding: 8px 18px;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    #nav-bar button:hover { background: var(--green-dark); color: white; }
+    #nav-bar button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    .screenshot-box {
+      background: var(--light-gray);
+      border: 2px dashed #cbd5e1;
+      border-radius: 12px;
+      padding: 18px 22px;
+      color: var(--gray);
+      text-align: center;
+      margin-top: 18px;
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+<div id="slide-viewer">
+
+  <!-- SLIDE 1 -->
+  <div class="slide slide-title">
+    <div class="badge">TempNet Conference</div>
+    <h1>How Staffing Companies Win Federal Contracts</h1>
+    <p class="subtitle">Temporary Help • Support Services • Light Industrial Roles</p>
+    <p style="font-size: 1.2rem; margin-top: 10px;">Primary NAICS: <strong>561320</strong> (Temporary Help Services)</p>
+    <p style="font-size: 1.05rem; margin-top: 10px; color: var(--gray); font-weight: 700;">Session: <span class="green">GovCon Starter Guide</span></p>
+    <p style="font-size: 1.15rem; margin-top: 30px; font-weight: 600;">GovCon Giants</p>
+    <div class="slide-footer"><a href="https://govcongiants.org">GovconGiants.org</a></div>
+    <span class="slide-num">1</span>
+  </div>
+
+  <!-- SLIDE 2 -->
+  <div class="slide slide-content">
+    <h2>What we’ll cover</h2>
+    <ul class="bullets">
+      <li><strong>The market</strong> — where staffing shows up in federal buying</li>
+      <li><strong>How agencies buy staffing</strong> — GSA MAS Temporary Staffing + other paths</li>
+      <li><strong>Your codes</strong> — NAICS 561320 + related NAICS for support services</li>
+      <li><strong>Compliance basics</strong> — Service Contract Labor Standards (SCLS/SCA) and expectations</li>
+      <li><strong>How to start</strong> — SAM.gov, targeting, capability statement, and first opportunities</li>
+      <li><strong>Teaming</strong> — subcontracting/prime pathways for faster wins</li>
+    </ul>
+    <div class="green-box">
+      <h4>Goal</h4>
+      <p>Leave with a clear “first 30 days” plan to start selling staffing to federal agencies.</p>
+    </div>
+    <div class="slide-footer"><a href="https://govcongiants.org">GovconGiants.org</a></div>
+    <span class="slide-num">2</span>
+  </div>
+
+  <!-- SLIDE 3 -->
+  <div class="slide slide-center">
+    <h2>Federal agencies buy staffing because <span class="green">missions can’t pause</span></h2>
+    <p style="font-size: 1.35rem; color: var(--gray); margin-top: 26px; max-width: 860px;">
+      Surges, vacancies, backlogs, and new mandates create immediate labor needs — especially for admin, customer support, logistics, and program operations.
+    </p>
+    <span class="slide-num">3</span>
+  </div>
+
+  <!-- SLIDE 4 -->
+  <div class="slide slide-content">
+    <h2>Where staffing demand shows up</h2>
+    <div class="two-col">
+      <div>
+        <h3>Common roles</h3>
+        <ul class="simple">
+          <li>Administrative assistants, clerks, data entry</li>
+          <li>Call center / customer support</li>
+          <li>HR support, recruiters, coordinators</li>
+          <li>Program analysts / general support</li>
+          <li>IT service desk (in some buys)</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Light industrial examples</h3>
+        <ul class="simple">
+          <li>Warehouse associates, material handlers</li>
+          <li>Forklift operators (if required by scope)</li>
+          <li>Pack-out, assembly support</li>
+          <li>Drivers / couriers (scope-dependent)</li>
+          <li>Facilities support roles (varies by NAICS)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="highlight-box">
+      <p><strong>Rule:</strong> Don’t sell “we do staffing.” Sell a <strong>specific labor solution</strong> to a specific agency problem.</p>
+    </div>
+    <div class="slide-footer"><a href="https://govcongiants.org">GovconGiants.org</a></div>
+    <span class="slide-num">4</span>
+  </div>
+
+  <!-- SLIDE 5 -->
+  <div class="slide slide-content">
+    <h2>Your NAICS strategy</h2>
+    <table>
+      <thead>
+        <tr><th>NAICS</th><th>What it’s used for (examples)</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>561320</strong><br><span class="gray">Temporary Help Services</span></td>
+          <td>Temp administrative + professional staffing; surge staffing; backfills; short-term projects.</td>
+        </tr>
+        <tr>
+          <td><strong>561110</strong><br><span class="gray">Office Administrative Services</span></td>
+          <td>Back-office support as a managed service (not always “temp staffing”).</td>
+        </tr>
+        <tr>
+          <td><strong>561210</strong><br><span class="gray">Facilities Support Services</span></td>
+          <td>Bundled facilities support (admin + operations) when staffing is part of a bigger scope.</td>
+        </tr>
+        <tr>
+          <td><strong>561311 / 561312</strong><br><span class="gray">Placement / Executive Search</span></td>
+          <td>Recruiting/search services (distinct from temp help).</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="green-box">
+      <h4>Keep it simple</h4>
+      <p>Lead with <strong>561320</strong>. Add related NAICS only if you can deliver and price them confidently.</p>
+    </div>
+    <span class="slide-num">5</span>
+  </div>
+
+  <!-- SLIDE 6 -->
+  <div class="slide slide-content">
+    <h2>Additional NAICS codes for research</h2>
+    <p style="margin-bottom: 10px;">These aren’t “required” — they’re here so you can explore where agencies buy services like yours.</p>
+    <table>
+      <thead>
+        <tr><th>NAICS</th><th>Common use</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>621610</strong><br><span class="gray">Home Health Care Services</span></td>
+          <td>Medical/home health staffing and support services (scope-dependent).</td>
+        </tr>
+        <tr>
+          <td><strong>621399</strong><br><span class="gray">All Other Misc. Health Practitioners</span></td>
+          <td>Specialty practitioners and clinical support roles (varies widely by requirement).</td>
+        </tr>
+        <tr>
+          <td><strong>623110</strong><br><span class="gray">Nursing Care Facilities (Skilled Nursing)</span></td>
+          <td>Skilled nursing / facility-based care support (often tied to care delivery requirements).</td>
+        </tr>
+        <tr>
+          <td><strong>541219</strong><br><span class="gray">Other Accounting Services</span></td>
+          <td>Bookkeeping support / accounting support services (not staffing-only; often managed support).</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="highlight-box">
+      <p><strong>Tip:</strong> Pick one code and search it in <strong>USAspending.gov</strong> to see who buys and who wins.</p>
+    </div>
+    <span class="slide-num">6</span>
+  </div>
+
+  <!-- SLIDE 7 -->
+  <div class="slide slide-content">
+    <h2>Am I a “small business” for staffing?</h2>
+    <p style="margin-bottom: 10px;">For federal contracting, “small” depends on your <strong>NAICS code</strong> size standard.</p>
+    <table>
+      <thead><tr><th>NAICS</th><th>Industry</th><th>SBA size standard</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>561320</strong></td>
+          <td>Temporary Help Services</td>
+          <td><strong>$34.0M</strong> average annual receipts</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="green-box">
+      <h4>What this means</h4>
+      <p>If your average annual receipts are at or below the size standard (and your affiliates don’t push you over), you can qualify as a small business for this NAICS.</p>
+    </div>
+    <p style="margin-top: 14px; font-size: 1rem; color: var(--gray);">
+      Source: SBA Table of Size Standards (effective March 17, 2023).
+    </p>
+    <span class="slide-num">7</span>
+  </div>
+
+  <!-- SLIDE 7 -->
+  <div class="slide slide-content">
+    <h2>Path for staffing: GSA “Schedule”</h2>
+    <ul class="bullets">
+      <li><strong>GSA</strong> is a federal “buyer support” agency that runs popular contract catalogs agencies can purchase from</li>
+      <li><strong>MAS (Multiple Award Schedule)</strong> is one of those catalogs (often called “the GSA Schedule”)</li>
+      <li><strong>SIN</strong> is a category code inside MAS (like an aisle in a store)</li>
+      <li>For temporary staffing, the key category is <strong>MAS SIN 561320</strong> (Temporary Staffing)</li>
+      <li>Some buys may be set aside for small business under <strong>561320SBSA</strong> (small business set-aside)</li>
+    </ul>
+    <div class="highlight-box">
+      <p><strong>Why this matters:</strong> Agencies already use this lane — it can be faster than “open market” buys.</p>
+    </div>
+    <p style="margin-top: 16px; font-size: 1rem; color: var(--gray);">
+      Source: GSA MAS Temporary Staffing Services slipsheet (SIN 561320SBSA), July 2020.
+    </p>
+    <span class="slide-num">7</span>
+  </div>
+
+  <!-- SLIDE 8 -->
+  <div class="slide slide-content">
+    <h2>Quick glossary: the terms you’ll hear</h2>
+    <table>
+      <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td><strong>GSA</strong></td><td>General Services Administration — helps agencies buy common products/services faster.</td></tr>
+        <tr><td><strong>MAS / “Schedule”</strong></td><td>A pre-vetted set of contractors and pricing frameworks agencies can order from.</td></tr>
+        <tr><td><strong>SIN</strong></td><td>Special Item Number — a category inside MAS (e.g., temp staffing = <strong>561320</strong>).</td></tr>
+        <tr><td><strong>eBuy</strong></td><td>GSA’s RFQ tool where agencies request quotes from Schedule holders.</td></tr>
+        <tr><td><strong>BPA</strong></td><td>Blanket Purchase Agreement — a “pre-arranged ordering agreement” for repeat buys over time.</td></tr>
+      </tbody>
+    </table>
+    <div class="green-box">
+      <h4>In one sentence</h4>
+      <p>MAS is the store, SIN is the aisle, eBuy is the request-for-quote tool, and a BPA is the repeat-order agreement.</p>
+    </div>
+    <span class="slide-num">8</span>
+  </div>
+
+  <!-- SLIDE 9 -->
+  <div class="slide slide-content">
+    <h2>How a staffing buy works on GSA MAS (simple)</h2>
+    <ul class="bullets">
+      <li><strong>Agency need</strong>: “We need 10 admin staff in [location] for 90–120 days.”</li>
+      <li><strong>RFQ</strong>: agency posts a request for quotes (often in <strong>eBuy</strong>) under SIN <strong>561320</strong></li>
+      <li><strong>Quotes</strong>: eligible Schedule contractors submit rates and staffing plans</li>
+      <li><strong>Award</strong>: agency issues an order (sometimes sets up a <strong>BPA</strong> for repeated staffing needs)</li>
+      <li><strong>Performance</strong>: you recruit, onboard, fill shifts, and invoice per contract terms</li>
+    </ul>
+    <div class="highlight-box">
+      <p><strong>Key idea:</strong> You win by being fast, compliant, and reliable — and by having a clear staffing process.</p>
+    </div>
+    <span class="slide-num">9</span>
+  </div>
+
+  <!-- SLIDE 10 -->
+  <div class="slide slide-content">
+    <h2>How to get on GSA MAS and access eBuy</h2>
+    <ul class="bullets">
+      <li><strong>Step 1 — Register</strong>: complete your <strong>SAM.gov</strong> registration (UEI) and keep it active</li>
+      <li><strong>Step 2 — Training</strong>: complete GSA’s mandatory <strong>Pathways to Success</strong> training (required for new MAS offerors)</li>
+      <li><strong>Step 3 — Submit an offer</strong>: use <strong>eOffer</strong> (with a FAS ID) to submit your MAS offer under the right SIN(s)</li>
+      <li><strong>Step 4 — After award</strong>: ensure you’re an <strong>Authorized Negotiator</strong>, then register your contract on the <strong>Vendor Support Center (VSC)</strong></li>
+      <li><strong>Step 5 — eBuy access</strong>: to participate in <strong>eBuy</strong>, you must (1) register on VSC and (2) post your MAS catalog on <strong>GSA Advantage!</strong></li>
+    </ul>
+    <div class="highlight-box">
+      <p><strong>Expectation:</strong> Getting a Schedule is a process (not a weekend task). Start now while you build pipeline through SAM.gov and teaming.</p>
+    </div>
+    <p style="margin-top: 14px; font-size: 1rem; color: var(--gray);">
+      Sources: GSA “Roadmap to get a MAS contract” (updated Nov 25, 2025) and GSA VSC guidance on eBuy access.
+    </p>
+    <span class="slide-num">10</span>
+  </div>
+
+  <!-- SLIDE 11 -->
+  <div class="slide slide-content">
+    <h2>Compliance basics: Service Contract Labor Standards (SCLS/SCA)</h2>
+    <ul class="bullets">
+      <li><strong>SCA</strong> is the Service Contract Act (the law behind many wage/fringe requirements). In the FAR you’ll often see <strong>SCLS</strong> (Service Contract Labor Standards).</li>
+      <li>Many staffing/service contracts include FAR <strong>52.222-41</strong> (Service Contract Labor Standards)</li>
+      <li>You must pay required minimum wages + fringe benefits per the contract’s wage determination</li>
+      <li>If a labor category isn’t listed, you may need an added classification request (commonly via <strong>SF 1444</strong>)</li>
+      <li>Flow-down applies to subcontractors too</li>
+    </ul>
+    <div class="highlight-box">
+      <p><strong>Bottom line:</strong> A staffing GovCon win is often won on <strong>recruiting + compliance + reliability</strong>, not fancy marketing.</p>
+    </div>
+    <span class="slide-num">11</span>
+  </div>
+
+  <!-- SLIDE 12 -->
+  <div class="slide slide-content">
+    <h2>What agencies care about (staffing)</h2>
+    <div class="icon-text">
+      <div class="icon">⏱️</div>
+      <div class="text">
+        <h3>Speed</h3>
+        <p>How fast can you provide cleared/qualified staff?</p>
+      </div>
+    </div>
+    <div class="icon-text">
+      <div class="icon">✅</div>
+      <div class="text">
+        <h3>Compliance</h3>
+        <p>SCLS wages/fringes, onboarding, I-9/E-Verify (as required), training, timekeeping.</p>
+      </div>
+    </div>
+    <div class="icon-text">
+      <div class="icon">📉</div>
+      <div class="text">
+        <h3>Low turnover</h3>
+        <p>Retention plan, bench strength, replacement SLA, quality controls.</p>
+      </div>
+    </div>
+    <span class="slide-num">12</span>
+  </div>
+
+  <!-- SLIDE 13 -->
+  <div class="slide slide-content">
+    <h2>Two free websites you must know</h2>
+    <div class="two-col">
+      <div>
+        <h3>SAM.gov</h3>
+        <p style="font-size: 1.15rem; color: var(--gray);">Where many <strong>active</strong> federal opportunities are posted.</p>
+        <ul class="simple">
+          <li>Go to “Contract Opportunities”</li>
+          <li>Filter by NAICS (start with <strong>561320</strong>)</li>
+          <li>Save searches + turn on alerts</li>
+        </ul>
+      </div>
+      <div>
+        <h3>USAspending.gov</h3>
+        <p style="font-size: 1.15rem; color: var(--gray);">A public database of <strong>past awards</strong> (who bought what, from who, for how much).</p>
+        <ul class="simple">
+          <li>Filter by NAICS (561320)</li>
+          <li>See top agencies + incumbents</li>
+          <li>Build your target list from real spend</li>
+        </ul>
+      </div>
+    </div>
+    <div class="green-box">
+      <h4>Simple use</h4>
+      <p>Use <strong>USAspending</strong> to target buyers and incumbents, then use <strong>SAM</strong> to find active opportunities.</p>
+    </div>
+    <span class="slide-num">13</span>
+  </div>
+
+  <!-- SLIDE 14 -->
+  <div class="slide slide-content">
+    <h2>Another free website you must know: GSA.gov</h2>
+    <p style="margin-bottom: 10px;">GSA is where you’ll find the official guidance for getting on the GSA Schedule (MAS) and participating in eBuy.</p>
+    <ul class="bullets">
+      <li><strong>MAS roadmap (how to become a Schedule holder)</strong>: start with the “Roadmap to get a MAS contract”</li>
+      <li><strong>Vendor Support Center (VSC)</strong>: how contractors register their contract and get access to eBuy</li>
+      <li><strong>eBuy</strong>: where agencies request quotes from Schedule holders</li>
+    </ul>
+    <div class="green-box">
+      <h4>Use it like this</h4>
+      <p>Read the MAS roadmap → decide if MAS is right → then follow the VSC/eBuy steps after award.</p>
+    </div>
+    <p style="margin-top: 14px; font-size: 1rem; color: var(--gray);">
+      References: GSA MAS roadmap (gsa.gov) and Vendor Support Center (vsc.gsa.gov).
+    </p>
+    <span class="slide-num">14</span>
+  </div>
+
+  <!-- SLIDE 14 -->
+  <div class="slide slide-content">
+    <h2>SAM.gov notice types (what they mean)</h2>
+    <table>
+      <thead><tr><th>Notice type</th><th>What it usually means</th><th>What you should do</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Sources Sought</strong></td>
+          <td>Agency market research: “Who can do this work?”</td>
+          <td>Respond with capability + staffing plan; it can influence set-asides and requirements.</td>
+        </tr>
+        <tr>
+          <td><strong>Special Notice</strong></td>
+          <td>Announcements, draft solicitations, industry days, Q&A—and often RFIs</td>
+          <td>Read carefully; reply if it requests input (RFI/draft feedback) or invites attendance.</td>
+        </tr>
+        <tr>
+          <td><strong>RFI</strong> (Request for Information)</td>
+          <td>Agency wants input on approach, pricing factors, staffing models, or labor categories</td>
+          <td>Respond if relevant—this is a low-friction way to get on the radar early.</td>
+        </tr>
+        <tr>
+          <td><strong>Presolicitation</strong></td>
+          <td>Heads-up that a solicitation is coming</td>
+          <td>Get ready: build your team, pricing assumptions, and questions early.</td>
+        </tr>
+        <tr>
+          <td><strong>Combined Synopsis/Solicitation</strong></td>
+          <td>The “live” opportunity + instructions + due date in one posting</td>
+          <td>Bid/quote if you can perform. This is where many first wins happen.</td>
+        </tr>
+        <tr>
+          <td><strong>Solicitation</strong></td>
+          <td>Formal request for proposals/quotes (RFP/RFQ/IFB)</td>
+          <td>Bid/quote and follow instructions exactly.</td>
+        </tr>
+        <tr>
+          <td><strong>Award Notice</strong></td>
+          <td>Contract was awarded (winner + value)</td>
+          <td>Use it for market intel: target the incumbent, primes, and similar buyers.</td>
+        </tr>
+        <tr>
+          <td><strong>Justification</strong></td>
+          <td>Explains why the agency awarded without full competition</td>
+          <td>Use it to learn buying behavior and identify future opportunities.</td>
+        </tr>
+        <tr>
+          <td><strong>Intent to Bundle Requirements</strong></td>
+          <td>Agency intends to combine requirements into a bundled buy (common in DoD)</td>
+          <td>Good teaming signal—watch for the solicitation and prime partners.</td>
+        </tr>
+        <tr>
+          <td><strong>Sale of Surplus Property</strong></td>
+          <td>Real estate/property disposal notices (not staffing)</td>
+          <td>Usually ignore for staffing.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="highlight-box">
+      <p><strong>Key point:</strong> Many beginners focus only on solicitations. Don’t skip <strong>Sources Sought</strong> and <strong>Special Notices/RFIs</strong>.</p>
+    </div>
+    <span class="slide-num">14</span>
+  </div>
+
+  <!-- SLIDE 15 -->
+  <div class="slide slide-content">
+    <h2>Who buys staffing? (Start here)</h2>
+    <p style="margin-bottom: 10px;">Use USAspending + SAM.gov to confirm, but common starting targets include:</p>
+    <table>
+      <thead><tr><th>Agency</th><th>Why staffing shows up</th></tr></thead>
+      <tbody>
+        <tr><td><strong>VA</strong></td><td>Medical + admin backfills; facilities operations; program support.</td></tr>
+        <tr><td><strong>DoD</strong> (DOW)</td><td>Logistics/admin support; surge needs; base operations ecosystems (often via primes).</td></tr>
+        <tr><td><strong>DHS</strong></td><td>Operations support, call centers, mission surges.</td></tr>
+        <tr><td><strong>HHS</strong></td><td>Program ops support, public-facing services (varies by component).</td></tr>
+        <tr><td><strong>Treasury / IRS</strong></td><td>Seasonal and program support needs (often as support-service buys).</td></tr>
+      </tbody>
+    </table>
+    <div class="green-box">
+      <h4>TempNet approach</h4>
+      <p>Pick <strong>2–3 agencies</strong> and go deep: one role family, one geography, one ordering method.</p>
+    </div>
+    <span class="slide-num">15</span>
+  </div>
+
+  <!-- SLIDE 16 -->
+  <div class="slide slide-center">
+    <h2>Most staffing companies lose because they’re <span class="red">too broad</span></h2>
+    <p style="font-size: 1.4rem; color: var(--gray); margin-top: 26px;">
+      “We staff anything anywhere” sounds like “we have no lane.”
+    </p>
+    <div class="green-box" style="max-width: 820px;">
+      <p style="text-align: center;"><strong>Win by narrowing:</strong> 1–2 role families + 1–2 agency targets + a repeatable delivery process.</p>
+    </div>
+    <span class="slide-num">16</span>
+  </div>
+
+  <!-- SLIDE 17 -->
+  <div class="slide slide-content">
+    <h2>How to find the right opportunities (the workflow)</h2>
+    <div class="stats-row" style="justify-content: space-between;">
+      <div class="stat">
+        <div class="value">1</div>
+        <div class="label">Choose agencies</div>
+      </div>
+      <div class="stat">
+        <div class="value">2</div>
+        <div class="label">Confirm buys</div>
+      </div>
+      <div class="stat">
+        <div class="value">3</div>
+        <div class="label">Watch channels</div>
+      </div>
+      <div class="stat">
+        <div class="value">4</div>
+        <div class="label">Respond early</div>
+      </div>
+    </div>
+    <ul class="bullets" style="margin-top: 25px;">
+      <li><strong>USAspending.gov</strong>: (past awards) filter by NAICS 561320 to see who buys and who wins</li>
+      <li><strong>SAM.gov</strong>: (active opportunities) filter by NAICS + set-aside + place of performance</li>
+      <li><strong>GSA eBuy</strong>: (quotes for Schedule holders) staffing RFQs can move fast</li>
+      <li><strong>Sources Sought / RFI</strong>: (market research notices) respond early to shape requirements</li>
+    </ul>
+    <span class="slide-num">17</span>
+  </div>
+
+  <!-- SLIDE 18 -->
+  <div class="slide slide-content">
+    <h2>AI Prompt: Identify staffing buyers by NAICS</h2>
+    <div class="code-block">
+      <p>"I run a staffing company under NAICS 561320 (Temporary Help Services).</p>
+      <p>List the top federal agencies and components that buy temporary staffing and support services.</p>
+      <p>For each, give me: (1) typical roles/labor categories, (2) common locations,</p>
+      <p>(3) how they buy (SAM open market, GSA MAS 561320, BPAs, primes),</p>
+      <p>(4) how to find the next 10 opportunities, with search terms."</p>
+    </div>
+    <p style="margin-top: 18px; font-size: 1.05rem; color: var(--gray);">Use this to generate your “target list,” then verify in USAspending and SAM.</p>
+    <span class="slide-num">18</span>
+  </div>
+
+  <!-- SLIDE 19 -->
+  <div class="slide slide-content">
+    <h2>AI Prompt: Turn a labor need into an offer</h2>
+    <div class="code-block">
+      <p>"Create a 1-page service offering for federal staffing buyers.</p>
+      <p>Role family: [ADMIN SUPPORT / CALL CENTER / WAREHOUSE].</p>
+      <p>Include: time-to-fill SLA, replacement policy, screening process, onboarding steps,</p>
+      <p>timekeeping/reporting, and compliance notes for Service Contract Labor Standards.</p>
+      <p>Write it like a buyer-facing capability brief."</p>
+    </div>
+    <span class="slide-num">19</span>
+  </div>
+
+  <!-- SLIDE 20 -->
+  <div class="slide slide-content">
+    <h2>What is a capability statement?</h2>
+    <p style="margin-bottom: 12px;">A <strong>capability statement</strong> is a 1–2 page “business resume” used in government contracting to introduce your company quickly.</p>
+    <ul class="bullets">
+      <li><strong>Who uses it</strong>: agency small business offices (OSDBU/SBLO), buyers, and prime contractors</li>
+      <li><strong>When you use it</strong>: outreach emails, networking events, Sources Sought/RFI responses, and early pipeline conversations</li>
+      <li><strong>What it does</strong>: helps a buyer answer “Can this company do the work?” in under 60 seconds</li>
+    </ul>
+    <div class="green-box">
+      <h4>Staffing-specific point</h4>
+      <p>Your cap statement should prove you can <strong>recruit fast</strong>, <strong>stay compliant</strong>, and <strong>keep seats filled</strong> with a clear process.</p>
+    </div>
+    <span class="slide-num">20</span>
+  </div>
+
+  <!-- SLIDE 21 -->
+  <div class="slide slide-content">
+    <h2>Dynamic Small Business Search (DSBS / SBS)</h2>
+    <p style="margin-bottom: 12px;">This SBA directory helps buyers and prime contractors find small businesses by NAICS, keywords, certifications, and capabilities.</p>
+    <ul class="bullets">
+      <li><strong>Why it matters</strong>: agencies use it for market research and set-aside decisions</li>
+      <li><strong>What to do</strong>: make sure your profile is accurate, keyword-rich, and aligned to your staffing lane</li>
+      <li><strong>How to use it</strong>: search competitors/incumbents, find teaming partners, and see how buyers describe roles</li>
+    </ul>
+    <div class="screenshot-box">Optional: insert DSBS/SBS screenshot here.</div>
+    <p style="margin-top: 12px; font-size: 1rem; color: var(--gray);">Common URL: <strong>dsbs.sba.gov</strong> (SBA “Small Business Search”).</p>
+    <span class="slide-num">21</span>
+  </div>
+
+  <!-- SLIDE 21 -->
+  <div class="slide slide-content">
+    <h2>Your staffing capability statement (what must be on it)</h2>
+    <ul class="bullets">
+      <li><strong>Lane</strong>: role families (groups of related roles) + locations + shift coverage</li>
+      <li><strong>Speed</strong>: time-to-fill + surge capacity</li>
+      <li><strong>Quality</strong>: screening, background checks, training, certifications</li>
+      <li><strong>Compliance</strong>: SCLS/SCA readiness, classification approach, onboarding controls</li>
+      <li><strong>Past performance</strong>: commercial + any government-adjacent (state/local) work</li>
+    </ul>
+    <div class="green-box">
+      <h4>What’s a “role family”?</h4>
+      <p>A <strong>role family</strong> is a bundle of similar jobs you can fill repeatedly — like “Admin Support,” “Call Center,” or “Warehouse/Light Industrial.”</p>
+    </div>
+    <div class="highlight-box">
+      <p><strong>Pro tip:</strong> Include a “replacement SLA” (e.g., 48–72 hours) and a “turnover plan.” Buyers notice.</p>
+    </div>
+    <span class="slide-num">22</span>
+  </div>
+
+  <!-- SLIDE 21 -->
+  <div class="slide slide-content">
+    <h2>Pricing reality check (staffing)</h2>
+    <div class="two-col">
+      <div>
+        <h3>What drives price</h3>
+        <ul class="simple">
+          <li>Wage determination + fringes</li>
+          <li>Overtime and shift differentials</li>
+          <li>Recruiting cost + time-to-fill</li>
+          <li>Turnover and replacement risk</li>
+          <li>Background checks/clearances</li>
+        </ul>
+      </div>
+      <div>
+        <h3>What buyers want</h3>
+        <ul class="simple">
+          <li>Transparent rate build-up</li>
+          <li>Predictable invoicing</li>
+          <li>Strong attendance coverage</li>
+          <li>Low risk, low drama</li>
+          <li>Fast replacements</li>
+        </ul>
+      </div>
+    </div>
+    <span class="slide-num">21</span>
+  </div>
+
+  <!-- SLIDE 22 -->
+  <div class="slide slide-content">
+    <h2>The first 30 days (simple plan)</h2>
+    <table>
+      <thead><tr><th>Week</th><th>What you do</th><th>Output</th></tr></thead>
+      <tbody>
+        <tr><td><strong>1</strong></td><td>Confirm NAICS + lane; pick 2–3 agencies; build USAspending target list</td><td>Target list + top 20 awardees</td></tr>
+        <tr><td><strong>2</strong></td><td>Draft capability statement + 1-page offer; set pricing model; create compliance checklist</td><td>Cap statement + offer sheet</td></tr>
+        <tr><td><strong>3</strong></td><td>Set SAM.gov saved searches; start responding to Sources Sought/RFIs</td><td>3 responses submitted</td></tr>
+        <tr><td><strong>4</strong></td><td>Outreach to OSDBU/SBLO + primes in your lane; request intro calls</td><td>5 meetings requested</td></tr>
+      </tbody>
+    </table>
+    <div class="green-box">
+      <h4>Winning behavior</h4>
+      <p>One agency. One role family. One action. Repeat daily.</p>
+    </div>
+    <span class="slide-num">22</span>
+  </div>
+
+  <!-- SLIDE 23 -->
+  <div class="slide slide-content">
+    <h2>Where to get help (free)</h2>
+    <ul class="bullets">
+      <li><strong>APEX Accelerators</strong> — free counseling for SAM registration, strategy, and bids</li>
+      <li><strong>SBA</strong> — certifications + size standards</li>
+      <li><strong>GSA guidance</strong> — MAS onboarding resources (if you pursue MAS)</li>
+      <li><strong>Agency OSDBU / Small Business Office</strong> — vendor engagement and forecasts</li>
+    </ul>
+    <div class="highlight-box">
+      <p>Get a counselor. Staffing is execution-heavy — you win by building a repeatable process.</p>
+    </div>
+    <span class="slide-num">23</span>
+  </div>
+
+  <!-- SLIDE 24 -->
+  <div class="slide slide-content">
+    <h2>AI Prompt: Draft an intro email to a small business office</h2>
+    <div class="code-block">
+      <p>"Write a 140-word intro email to the small business office at [AGENCY/COMPONENT].</p>
+      <p>My company provides [ROLE FAMILY] staffing under NAICS 561320.</p>
+      <p>Include: 1 sentence on our lane, 1 sentence on our time-to-fill SLA,</p>
+      <p>1 sentence on SCLS/SCA readiness, and a clear ask for a 15-minute intro call.</p>
+      <p>Tone: confident, helpful, not salesy."</p>
+    </div>
+    <span class="slide-num">24</span>
+  </div>
+
+  <!-- SLIDE 25 -->
+  <div class="slide slide-content">
+    <h2>Teaming strategy (fast entry)</h2>
+    <ul class="bullets">
+      <li>Many staffing needs flow through <strong>prime contractors</strong> (especially large support-service vehicles)</li>
+      <li>Use USAspending to identify incumbents in your lane — then offer staffing capacity as a <strong>risk-reducer</strong></li>
+      <li>Ask for: subcontractor onboarding steps, required systems, and labor categories needed this quarter</li>
+      <li>Start with one micro-lane: one location + one role family</li>
+    </ul>
+    <div class="green-box">
+      <h4>Simple pitch</h4>
+      <p>“We can fill [role] in [location] within [X days], and maintain SCLS compliance with clean reporting.”</p>
+    </div>
+    <span class="slide-num">25</span>
+  </div>
+
+  <!-- SLIDE 26 -->
+  <div class="slide slide-content">
+    <h2>Common mistakes staffing companies make in GovCon</h2>
+    <div class="two-col">
+      <div>
+        <h3 class="red">Don’t do this</h3>
+        <ul class="simple">
+          <li>Bid without understanding wage determinations</li>
+          <li>Overpromise time-to-fill</li>
+          <li>Use generic capability statements</li>
+          <li>Ignore Sources Sought and RFIs</li>
+          <li>Chase every agency at once</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="green">Do this</h3>
+        <ul class="simple">
+          <li>Pick a lane and build a repeatable delivery process</li>
+          <li>Lead with SLAs + compliance + reliability</li>
+          <li>Respond early and build relationships</li>
+          <li>Use USAspending to target incumbents</li>
+          <li>Start as a sub if it accelerates wins</li>
+        </ul>
+      </div>
+    </div>
+    <span class="slide-num">26</span>
+  </div>
+
+  <!-- SLIDE 27 -->
+  <div class="slide slide-content">
+    <h2>Beginner foundation checklist (copy/paste)</h2>
+    <div class="code-block">
+      <p>"My GovCon beginner checklist:</p>
+      <p>1) SAM.gov entity registration active + renew date</p>
+      <p>2) NAICS selected (start with 561320)</p>
+      <p>3) Small-business size standard checked (am I “small” for this NAICS?)</p>
+      <p>4) DSBS/SBS (Dynamic Small Business Search) profile complete + keyword-rich</p>
+      <p>5) Capability statement (staffing-focused) finished (PDF)</p>
+      <p>6) Saved searches in SAM.gov + alert cadence</p>
+      <p>7) USAspending target list: 20 awards + top incumbents</p>
+      <p>8) 3 market-research responses (Sources Sought / Special Notice / RFI)</p>
+      <p>9) 10 outreach emails sent (OSDBU/SBLO + primes)</p>
+      <p>10) Weekly pipeline review scheduled"</p>
+    </div>
+    <span class="slide-num">27</span>
+  </div>
+
+  <!-- SLIDE 28 -->
+  <div class="slide slide-center">
+    <h2>GovCon is a <span class="green">process</span>, not a one-time event</h2>
+    <p style="font-size: 1.35rem; color: var(--gray); margin-top: 26px; max-width: 820px;">
+      Staffing wins come from consistency: targeting + outreach + fast execution + compliance.
+    </p>
+    <span class="slide-num">28</span>
+  </div>
+
+  <!-- SLIDE 29 -->
+  <div class="slide slide-content">
+    <h2>Your next steps (today)</h2>
+    <ul class="bullets">
+      <li>Choose your lane: <strong>role family + location + agency</strong></li>
+      <li>Pull 20 awards in NAICS 561320 on USAspending and list the top incumbents</li>
+      <li>Build your 1-page staffing offer + capability statement</li>
+      <li>Set 2 SAM.gov saved searches and turn on alerts</li>
+      <li>Submit 1 Sources Sought/RFI response this week</li>
+    </ul>
+    <div class="highlight-box">
+      <p><strong>One at a time.</strong> Execute daily and the pipeline will compound.</p>
+    </div>
+    <span class="slide-num">29</span>
+  </div>
+
+  <!-- SLIDE 30 -->
+  <div class="slide slide-title">
+    <h1>Thank You</h1>
+    <p class="subtitle">TempNet: Staffing Companies → Federal Contracts</p>
+    <p style="font-size: 1.2rem; margin-top: 22px;">Focus lane. Build process. Execute daily.</p>
+    <div class="slide-footer"><a href="https://govcongiants.org">GovconGiants.org</a></div>
+    <span class="slide-num">30</span>
+  </div>
+
+</div><!-- /#slide-viewer -->
+
+<div id="nav-bar">
+  <button type="button" id="btn-prev" aria-label="Previous slide">← Prev</button>
+  <span id="slide-counter">Slide 1 of 1</span>
+  <button type="button" id="btn-next" aria-label="Next slide">Next →</button>
+</div>
+
+<script>
+  (function () {
+    var viewer = document.getElementById('slide-viewer');
+    var slides = viewer.querySelectorAll('.slide');
+    var total = slides.length;
+    var counterEl = document.getElementById('slide-counter');
+    var btnPrev = document.getElementById('btn-prev');
+    var btnNext = document.getElementById('btn-next');
+
+    // Auto-number slides so we don't manage numbers manually
+    for (var n = 0; n < slides.length; n++) {
+      var numEl = slides[n].querySelector('.slide-num');
+      if (numEl) numEl.textContent = String(n + 1);
+    }
+    if (counterEl) counterEl.textContent = 'Slide 1 of ' + total;
+
+    function getCurrentIndex() {
+      var scrollTop = viewer.scrollTop;
+      var best = 0;
+      for (var i = 0; i < slides.length; i++) {
+        if (slides[i].offsetTop <= scrollTop + 50) best = i;
+      }
+      return best;
+    }
+
+    function updateNav() {
+      var current = getCurrentIndex() + 1;
+      counterEl.textContent = 'Slide ' + current + ' of ' + total;
+      btnPrev.disabled = current <= 1;
+      btnNext.disabled = current >= total;
+    }
+
+    function goToSlide(index) {
+      var i = Math.max(0, Math.min(index, total - 1));
+      slides[i].scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    viewer.addEventListener('scroll', function () { requestAnimationFrame(updateNav); });
+    btnPrev.addEventListener('click', function () { goToSlide(getCurrentIndex() - 1); });
+    btnNext.addEventListener('click', function () { goToSlide(getCurrentIndex() + 1); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); goToSlide(getCurrentIndex() + 1); }
+      else if (e.key === 'ArrowLeft') { e.preventDefault(); goToSlide(getCurrentIndex() - 1); }
+    });
+    updateNav();
+  })();
+</script>
+
+</body>
+</html>
+

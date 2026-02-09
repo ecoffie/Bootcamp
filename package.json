@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "export-veteran-pdf": "node presentations/export-pdf-veteran.js"
+    "export-veteran-pdf": "node presentations/export-pdf-veteran.js",
+    "export-tempnet-pdf": "node presentations/export-pdf-tempnet.js"
   },
   "dependencies": {
     "puppeteer": "^24.37.2"
