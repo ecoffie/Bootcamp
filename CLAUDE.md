@@ -330,6 +330,14 @@ This repository contains all GovCon Giants resources for helping small businesse
 | `presentations/january-bootcamp-slides-images/` | 132 slide images |
 | `presentations/one-page-execution-sheet.html` | Execution worksheet |
 
+### TempNet Staffing Presentation
+**Event:** TempNet staffing event (recent)
+
+| File/Directory | Description |
+|----------------|-------------|
+| `presentations/tempnet-staffing-presentation-v1.html` | TempNet Staffing Presentations, version one (full deck; SAM notice types split; acronyms spelled out; uniform 960×540 slides) |
+| `presentations/tempnet-staffing-presentation-v2.html` | TempNet Staffing Presentations, version two (10–15 min, 17 slides; acronyms spelled out; uniform 960×540 slides) |
+
 ### February 2026 Veteran War Room
 **Date:** February 7, 2026
 
