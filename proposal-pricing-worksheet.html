@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposal Pricing Worksheet | GovCon Giants</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #1a1a2e; background: #f8fafc; }
+
+        .container { max-width: 950px; margin: 0 auto; padding: 20px; }
+
+        .header { background: linear-gradient(135deg, #059669 0%, #10b981 100%); color: white; padding: 40px; border-radius: 16px; margin-bottom: 30px; }
+        .header h1 { font-size: 2rem; font-weight: 800; margin-bottom: 10px; }
+        .header p { opacity: 0.9; }
+
+        .section { background: white; border-radius: 12px; padding: 30px; margin-bottom: 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .section h2 { font-size: 1.4rem; color: #059669; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #e5e7eb; }
+        .section h3 { font-size: 1.1rem; color: #1e3a8a; margin: 25px 0 15px; }
+
+        .info-box { background: #ecfdf5; border-left: 4px solid #10b981; padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+        .info-box h4 { color: #047857; margin-bottom: 10px; }
+        .info-box p, .info-box li { color: #059669; }
+
+        .warning-box { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+        .warning-box h4 { color: #b45309; margin-bottom: 10px; }
+        .warning-box p, .warning-box li { color: #92400e; }
+
+        .template-section { background: #f8fafc; border: 2px solid #e5e7eb; border-radius: 12px; padding: 25px; margin: 20px 0; }
+        .template-section h4 { color: #059669; margin-bottom: 15px; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+
+        .field-label { font-weight: 600; color: #4b5563; margin-bottom: 5px; display: block; }
+        .field-input { background: #fffbeb; border: 1px dashed #fbbf24; padding: 15px; border-radius: 8px; margin-bottom: 15px; min-height: 40px; }
+        .field-input.large { min-height: 80px; }
+
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th { background: #059669; color: white; padding: 12px; text-align: left; font-weight: 600; font-size: 0.9rem; }
+        td { padding: 12px; border-bottom: 1px solid #e5e7eb; }
+        tr:nth-child(even) { background: #f8fafc; }
+
+        .contract-type { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 20px 0; }
+        .type-card { background: white; border: 2px solid #e5e7eb; border-radius: 12px; padding: 20px; text-align: center; }
+        .type-card.selected { border-color: #059669; background: #ecfdf5; }
+        .type-card h5 { color: #059669; margin-bottom: 10px; font-size: 1.1rem; }
+        .type-card p { font-size: 0.9rem; color: #6b7280; }
+
+        .rate-table { margin: 20px 0; }
+        .rate-table input { width: 100%; padding: 8px; border: 1px solid #d1d5db; border-radius: 4px; }
+        .rate-table .total { background: #ecfdf5; font-weight: 600; }
+
+        .checklist { list-style: none; }
+        .checklist li { padding: 10px 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: flex-start; gap: 10px; }
+        .checklist li:last-child { border-bottom: none; }
+        .checkbox { width: 20px; height: 20px; border: 2px solid #059669; border-radius: 4px; flex-shrink: 0; margin-top: 2px; }
+
+        .formula-box { background: #1e3a8a; color: white; padding: 20px; border-radius: 12px; margin: 20px 0; font-family: monospace; }
+        .formula-box h4 { color: #93c5fd; margin-bottom: 10px; }
+
+        .step-number { background: #059669; color: white; width: 30px; height: 30px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; margin-right: 10px; }
+
+        @media print {
+            body { background: white; }
+            .section { box-shadow: none; border: 1px solid #e5e7eb; page-break-inside: avoid; }
+            .header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Proposal Pricing Worksheet</h1>
+            <p>Build compliant, competitive pricing for federal proposals</p>
+        </div>
+
+        <!-- Contract Type Selection -->
+        <div class="section">
+            <h2>Step 1: Identify Contract Type</h2>
+            <p style="margin-bottom: 20px;">The contract type determines how you structure your pricing. Check the RFP Section L (Instructions) for the required format.</p>
+
+            <div class="contract-type">
+                <div class="type-card">
+                    <h5>Firm Fixed Price (FFP)</h5>
+                    <p>You quote a total price. You absorb cost overruns but keep savings. Most common for well-defined requirements.</p>
+                    <div style="margin-top: 15px; padding: 10px; background: #f3f4f6; border-radius: 8px;">
+                        <strong>Best for:</strong> Clear scope, low risk
+                    </div>
+                </div>
+                <div class="type-card">
+                    <h5>Time & Materials (T&M)</h5>
+                    <p>You quote hourly rates + materials markup. Government pays actual hours worked. Used when scope is uncertain.</p>
+                    <div style="margin-top: 15px; padding: 10px; background: #f3f4f6; border-radius: 8px;">
+                        <strong>Best for:</strong> Uncertain scope, variable work
+                    </div>
+                </div>
+                <div class="type-card">
+                    <h5>Cost-Plus (CPFF/CPAF)</h5>
+                    <p>Government reimburses all allowable costs plus a fee. Requires certified accounting system. Used for R&D and complex work.</p>
+                    <div style="margin-top: 15px; padding: 10px; background: #f3f4f6; border-radius: 8px;">
+                        <strong>Best for:</strong> Complex, high-risk work
+                    </div>
+                </div>
+            </div>
+
+            <div class="template-section">
+                <h4>This Opportunity</h4>
+                <table>
+                    <tr>
+                        <td style="width: 200px; font-weight: 600;">Contract Type Required:</td>
+                        <td><div class="field-input" style="margin: 0; min-height: 30px;">[FFP / T&M / Cost-Plus / Hybrid]</div></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 600;">Pricing Instructions Location:</td>
+                        <td><div class="field-input" style="margin: 0; min-height: 30px;">[Section L.X.X]</div></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 600;">Pricing Evaluation Criteria:</td>
+                        <td><div class="field-input" style="margin: 0; min-height: 30px;">[Section M.X - e.g., "LPTA" or "Best Value"]</div></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 600;">Period of Performance:</td>
+                        <td><div class="field-input" style="margin: 0; min-height: 30px;">[Base Year + X Option Years]</div></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="warning-box">
+                <h4>LPTA vs. Best Value</h4>
+                <ul style="margin-left: 20px;">
+                    <li><strong>LPTA (Lowest Price Technically Acceptable):</strong> Price is king. Meet minimum requirements at lowest cost.</li>
+                    <li><strong>Best Value:</strong> Balance of price and technical. You can win with higher price if technical approach is superior.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Labor Rate Development -->
+        <div class="section">
+            <h2>Step 2: Develop Labor Rates</h2>
+
+            <div class="info-box">
+                <h4>The Fully Burdened Rate Formula</h4>
+                <p>Government contracts require you to show how you calculated your rates. Here's the standard buildup:</p>
+            </div>
+
+            <div class="formula-box">
+                <h4>Fully Burdened Labor Rate =</h4>
+                <p style="font-size: 1.1rem; margin-top: 10px;">
+                    Base Salary/Hour + Fringe Benefits + Overhead + G&A + Profit = Billed Rate
+                </p>
+            </div>
+
+            <div class="template-section">
+                <h4>Labor Category Rate Buildup</h4>
+                <table>
+                    <tr>
+                        <th>Component</th>
+                        <th>Description</th>
+                        <th>Rate/Percentage</th>
+                        <th>Amount</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Base Hourly Rate</strong></td>
+                        <td>Annual salary / 2,080 hours</td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">$____/hr</div></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">$_______</div></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Fringe Benefits</strong></td>
+                        <td>Health, PTO, 401k, FICA, etc.</td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">_____%</div></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">$_______</div></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Overhead</strong></td>
+                        <td>Indirect costs (rent, utilities, etc.)</td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">_____%</div></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">$_______</div></td>
+                    </tr>
+                    <tr>
+                        <td><strong>G&A (General & Admin)</strong></td>
+                        <td>Corporate expenses, management</td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">_____%</div></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">$_______</div></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Profit/Fee</strong></td>
+                        <td>Your margin (typically 8-15%)</td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">_____%</div></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">$_______</div></td>
+                    </tr>
+                    <tr class="total" style="background: #ecfdf5;">
+                        <td colspan="3"><strong>FULLY BURDENED RATE</strong></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px; background: white;"><strong>$_______/hr</strong></div></td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3>Typical Rate Ranges (Reference Only)</h3>
+            <table>
+                <tr>
+                    <th>Component</th>
+                    <th>Small Business Range</th>
+                    <th>Notes</th>
+                </tr>
+                <tr>
+                    <td>Fringe Benefits</td>
+                    <td>25% - 40%</td>
+                    <td>Higher with better benefits packages</td>
+                </tr>
+                <tr>
+                    <td>Overhead</td>
+                    <td>30% - 80%</td>
+                    <td>Lower for home-based, higher for office space</td>
+                </tr>
+                <tr>
+                    <td>G&A</td>
+                    <td>8% - 20%</td>
+                    <td>Depends on corporate structure</td>
+                </tr>
+                <tr>
+                    <td>Profit</td>
+                    <td>8% - 15%</td>
+                    <td>10% is common starting point</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Labor Mix -->
+        <div class="section">
+            <h2>Step 3: Build Your Labor Mix</h2>
+            <p style="margin-bottom: 20px;">Map the RFP requirements to labor categories and estimate hours needed.</p>
+
+            <div class="template-section">
+                <h4>Labor Categories & Hours Estimate</h4>
+                <table>
+                    <tr>
+                        <th>Labor Category</th>
+                        <th>Hourly Rate</th>
+                        <th>Year 1 Hours</th>
+                        <th>Year 1 Cost</th>
+                    </tr>
+                    <tr>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">[e.g., Project Manager]</div></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">$_______</div></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">_______</div></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">$_______</div></td>
+                    </tr>
+                    <tr>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">[e.g., Senior Analyst]</div></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">$_______</div></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">_______</div></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">$_______</div></td>
+                    </tr>
+                    <tr>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">[e.g., Junior Analyst]</div></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">$_______</div></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">_______</div></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">$_______</div></td>
+                    </tr>
+                    <tr>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">[e.g., Administrative]</div></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">$_______</div></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">_______</div></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">$_______</div></td>
+                    </tr>
+                    <tr>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">[Add more as needed]</div></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">$_______</div></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">_______</div></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">$_______</div></td>
+                    </tr>
+                    <tr class="total" style="background: #ecfdf5;">
+                        <td colspan="2"><strong>TOTAL LABOR</strong></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">_______</div></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;"><strong>$_______</strong></div></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="info-box">
+                <h4>Tip: Check GSA Pricing</h4>
+                <p>Search GSA Advantage (gsaadvantage.gov) for similar services to see what rates other contractors are charging. This helps ensure your pricing is competitive.</p>
+            </div>
+        </div>
+
+        <!-- Other Direct Costs -->
+        <div class="section">
+            <h2>Step 4: Other Direct Costs (ODCs)</h2>
+            <p style="margin-bottom: 20px;">Identify non-labor costs required to perform the work.</p>
+
+            <div class="template-section">
+                <h4>ODC Categories</h4>
+                <table>
+                    <tr>
+                        <th>Cost Category</th>
+                        <th>Description</th>
+                        <th>Estimated Cost</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Travel</strong></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">[# trips x cost per trip]</div></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">$_______</div></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Equipment</strong></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">[Computers, tools, etc.]</div></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">$_______</div></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Materials/Supplies</strong></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">[Office supplies, etc.]</div></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">$_______</div></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Software/Licenses</strong></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">[Required software]</div></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">$_______</div></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Subcontractor Costs</strong></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">[If applicable]</div></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">$_______</div></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Other</strong></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">[Specify]</div></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">$_______</div></td>
+                    </tr>
+                    <tr class="total" style="background: #ecfdf5;">
+                        <td colspan="2"><strong>TOTAL ODCs</strong></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;"><strong>$_______</strong></div></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="warning-box">
+                <h4>Travel Pricing Tips</h4>
+                <ul style="margin-left: 20px;">
+                    <li>Use GSA per diem rates (gsa.gov/perdiem) for lodging and meals</li>
+                    <li>Use government airfare rates or actual costs</li>
+                    <li>Check if RFP specifies "travel at cost" or allows markup</li>
+                    <li>Some contracts require pre-approval for all travel</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Total Price Summary -->
+        <div class="section">
+            <h2>Step 5: Total Price Summary</h2>
+
+            <div class="template-section">
+                <h4>Multi-Year Pricing Summary</h4>
+                <table>
+                    <tr>
+                        <th>Period</th>
+                        <th>Labor</th>
+                        <th>ODCs</th>
+                        <th>Total</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Base Year</strong></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">$_______</div></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">$_______</div></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">$_______</div></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Option Year 1</strong></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">$_______</div></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">$_______</div></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">$_______</div></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Option Year 2</strong></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">$_______</div></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">$_______</div></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">$_______</div></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Option Year 3</strong></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">$_______</div></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">$_______</div></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">$_______</div></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Option Year 4</strong></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">$_______</div></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">$_______</div></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;">$_______</div></td>
+                    </tr>
+                    <tr class="total" style="background: #ecfdf5;">
+                        <td><strong>TOTAL CONTRACT VALUE</strong></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;"><strong>$_______</strong></div></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px;"><strong>$_______</strong></div></td>
+                        <td><div class="field-input" style="margin: 0; min-height: 25px; padding: 8px; background: #d1fae5;"><strong>$_______</strong></div></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="info-box">
+                <h4>Escalation Rates</h4>
+                <p>Option years typically include escalation (2-4% annually) to account for inflation and wage increases. Check if the RFP specifies a maximum escalation rate.</p>
+            </div>
+        </div>
+
+        <!-- Competitive Analysis -->
+        <div class="section">
+            <h2>Step 6: Competitive Price Check</h2>
+
+            <div class="template-section">
+                <h4>Price Intelligence Sources</h4>
+                <table>
+                    <tr>
+                        <th>Source</th>
+                        <th>What to Look For</th>
+                        <th>Your Findings</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Previous Contract Award</strong></td>
+                        <td>Check SAM.gov/FPDS for incumbent's price</td>
+                        <td><div class="field-input" style="margin: 0; min-height: 40px; padding: 8px;">[Incumbent: $_______]</div></td>
+                    </tr>
+                    <tr>
+                        <td><strong>GSA Schedule Prices</strong></td>
+                        <td>Search GSA Advantage for similar services</td>
+                        <td><div class="field-input" style="margin: 0; min-height: 40px; padding: 8px;">[Range: $___-$___/hr]</div></td>
+                    </tr>
+                    <tr>
+                        <td><strong>IGCE (If Available)</strong></td>
+                        <td>Independent Government Cost Estimate</td>
+                        <td><div class="field-input" style="margin: 0; min-height: 40px; padding: 8px;">[IGCE: $_______]</div></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Similar Awards</strong></td>
+                        <td>USAspending.gov for comparable contracts</td>
+                        <td><div class="field-input" style="margin: 0; min-height: 40px; padding: 8px;">[Comparable: $_______]</div></td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3>Price Position Analysis</h3>
+            <table>
+                <tr>
+                    <td style="width: 200px; font-weight: 600;">Your Total Price:</td>
+                    <td><div class="field-input" style="margin: 0; min-height: 30px;">$_____________</div></td>
+                </tr>
+                <tr>
+                    <td style="font-weight: 600;">Market Average:</td>
+                    <td><div class="field-input" style="margin: 0; min-height: 30px;">$_____________</div></td>
+                </tr>
+                <tr>
+                    <td style="font-weight: 600;">Your Position:</td>
+                    <td><div class="field-input" style="margin: 0; min-height: 30px;">[___% above/below market]</div></td>
+                </tr>
+                <tr>
+                    <td style="font-weight: 600;">Price Strategy:</td>
+                    <td><div class="field-input" style="margin: 0; min-height: 30px;">[Aggressive / Competitive / Premium]</div></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Pricing Compliance Checklist -->
+        <div class="section">
+            <h2>Pricing Compliance Checklist</h2>
+            <p style="margin-bottom: 20px;">Before submitting, verify your pricing meets all requirements.</p>
+
+            <ul class="checklist">
+                <li>
+                    <div class="checkbox"></div>
+                    <div><strong>Format matches RFP instructions</strong> - Pricing spreadsheet/format matches Section L exactly</div>
+                </li>
+                <li>
+                    <div class="checkbox"></div>
+                    <div><strong>All CLINs priced</strong> - Every Contract Line Item Number has a price (no blanks)</div>
+                </li>
+                <li>
+                    <div class="checkbox"></div>
+                    <div><strong>Math is correct</strong> - All calculations verified, totals match</div>
+                </li>
+                <li>
+                    <div class="checkbox"></div>
+                    <div><strong>All years included</strong> - Base year AND all option years priced</div>
+                </li>
+                <li>
+                    <div class="checkbox"></div>
+                    <div><strong>Labor categories match PWS</strong> - Categories align with Performance Work Statement requirements</div>
+                </li>
+                <li>
+                    <div class="checkbox"></div>
+                    <div><strong>Rates are supportable</strong> - You can justify every rate if asked</div>
+                </li>
+                <li>
+                    <div class="checkbox"></div>
+                    <div><strong>No unallowable costs</strong> - No entertainment, alcohol, lobbying, or other FAR-prohibited costs</div>
+                </li>
+                <li>
+                    <div class="checkbox"></div>
+                    <div><strong>Travel follows regulations</strong> - Per diem rates match GSA, lodging within limits</div>
+                </li>
+                <li>
+                    <div class="checkbox"></div>
+                    <div><strong>Subcontractor pricing included</strong> - If teaming, sub costs are incorporated</div>
+                </li>
+                <li>
+                    <div class="checkbox"></div>
+                    <div><strong>Price is realistic</strong> - Not so low it raises red flags about ability to perform</div>
+                </li>
+                <li>
+                    <div class="checkbox"></div>
+                    <div><strong>Certifications complete</strong> - All required pricing certifications signed</div>
+                </li>
+                <li>
+                    <div class="checkbox"></div>
+                    <div><strong>Electronic file works</strong> - Excel formulas function, PDF is readable</div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Common Pricing Mistakes -->
+        <div class="section">
+            <h2>Common Pricing Mistakes to Avoid</h2>
+
+            <div class="warning-box" style="background: #fef2f2; border-color: #ef4444;">
+                <h4 style="color: #dc2626;">Mistakes That Lose Contracts</h4>
+                <ul style="margin-left: 20px; color: #b91c1c;">
+                    <li><strong>Pricing too low:</strong> Government may reject as "unrealistic" or question your ability to perform</li>
+                    <li><strong>Missing line items:</strong> Leaving any CLIN blank = non-responsive = rejection</li>
+                    <li><strong>Wrong format:</strong> Not using the exact format requested in Section L</li>
+                    <li><strong>Math errors:</strong> Rates x Hours doesn't equal total = automatic concern</li>
+                    <li><strong>Forgetting escalation:</strong> Option years at same price as base year looks suspicious</li>
+                    <li><strong>Underestimating hours:</strong> Technical approach requires 5 people but you priced 2</li>
+                    <li><strong>Missing ODCs:</strong> Technical says "travel required" but no travel in pricing</li>
+                    <li><strong>Ignoring the PWS:</strong> Pricing doesn't reflect the actual work required</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Quick Reference -->
+        <div class="section">
+            <h2>Quick Reference: FAR Profit Guidelines</h2>
+            <p style="margin-bottom: 20px;">While profit isn't capped, these are typical ranges the government considers reasonable:</p>
+
+            <table>
+                <tr>
+                    <th>Contract Type</th>
+                    <th>Typical Profit Range</th>
+                    <th>Notes</th>
+                </tr>
+                <tr>
+                    <td>Firm Fixed Price</td>
+                    <td>10% - 15%</td>
+                    <td>Higher risk = higher acceptable profit</td>
+                </tr>
+                <tr>
+                    <td>Time & Materials</td>
+                    <td>8% - 12%</td>
+                    <td>Lower risk = lower profit expectation</td>
+                </tr>
+                <tr>
+                    <td>Cost Plus Fixed Fee</td>
+                    <td>6% - 10%</td>
+                    <td>Fee is negotiated, not based on cost</td>
+                </tr>
+                <tr>
+                    <td>Cost Plus Award Fee</td>
+                    <td>3% base + up to 10% award</td>
+                    <td>Award fee based on performance</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Footer -->
+        <div style="text-align: center; padding: 30px; color: #888; font-size: 0.9rem;">
+            <p><strong>GovCon Giants</strong> | February Proposal Writing Surge</p>
+            <p>Download the editable Excel version from your Surge dashboard</p>
+        </div>
+    </div>
+</body>
+</html>

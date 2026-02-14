@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>February 2026 Proposal Writing Surge | GovCon Giants</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; line-height: 1.6; color: #1a1a2e; background: #ffffff; }
+
+        /* Hero Section */
+        .hero { background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 50%, #0891b2 100%); color: white; padding: 80px 20px; text-align: center; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); opacity: 0.5; }
+        .hero-content { max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
+        .hero-badge { display: inline-block; background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); padding: 10px 25px; border-radius: 30px; font-size: 0.9rem; font-weight: 600; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; }
+        .hero h1 { font-size: 3.5rem; font-weight: 900; margin-bottom: 20px; line-height: 1.1; }
+        .hero .subtitle { font-size: 1.4rem; opacity: 0.95; margin-bottom: 30px; font-weight: 400; }
+        .hero-stats { display: flex; justify-content: center; gap: 50px; margin: 40px 0; flex-wrap: wrap; }
+        .hero-stat { text-align: center; }
+        .hero-stat .value { font-size: 2.5rem; font-weight: 900; }
+        .hero-stat .label { font-size: 0.85rem; opacity: 0.9; text-transform: uppercase; letter-spacing: 1px; }
+        .hero-cta { display: inline-block; background: white; color: #7c3aed; padding: 18px 50px; border-radius: 50px; font-size: 1.2rem; font-weight: 700; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .hero-cta:hover { transform: translateY(-3px); box-shadow: 0 15px 50px rgba(0,0,0,0.3); }
+        .hero-subtext { margin-top: 15px; font-size: 0.95rem; opacity: 0.9; }
+
+        /* Container */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        /* Section */
+        .section { padding: 80px 0; }
+        .section-dark { background: #f8fafc; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 2.5rem; font-weight: 800; color: #1e3a8a; margin-bottom: 15px; }
+        .section-title p { font-size: 1.2rem; color: #666; max-width: 600px; margin: 0 auto; }
+
+        /* Card Grid */
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 40px; }
+        .card { background: white; border-radius: 16px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); border: 2px solid transparent; transition: all 0.3s ease; }
+        .card:hover { border-color: #7c3aed; transform: translateY(-5px); }
+        .card .icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .card h3 { font-size: 1.3rem; font-weight: 700; color: #1e3a8a; margin-bottom: 10px; }
+        .card p { color: #666; font-size: 0.95rem; }
+        .card .stat { font-size: 2rem; font-weight: 900; background: linear-gradient(135deg, #7c3aed, #4f46e5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-top: 15px; }
+
+        /* What You'll Learn */
+        .learn-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .learn-card { display: flex; gap: 20px; align-items: flex-start; }
+        .learn-number { width: 50px; height: 50px; background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.2rem; flex-shrink: 0; }
+        .learn-content h3 { font-size: 1.1rem; font-weight: 700; color: #1e3a8a; margin-bottom: 8px; }
+        .learn-content p { color: #666; font-size: 0.95rem; }
+
+        /* Proposal Types */
+        .proposal-types { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; }
+        .proposal-type { background: linear-gradient(135deg, #f8fafc, #f1f5f9); border-radius: 16px; padding: 35px; text-align: center; border: 2px solid #e2e8f0; transition: all 0.3s ease; }
+        .proposal-type:hover { border-color: #7c3aed; background: white; }
+        .proposal-type .badge { display: inline-block; padding: 6px 16px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 15px; }
+        .proposal-type.beginner .badge { background: #dcfce7; color: #166534; }
+        .proposal-type.intermediate .badge { background: #fef3c7; color: #92400e; }
+        .proposal-type.advanced .badge { background: #fee2e2; color: #991b1b; }
+        .proposal-type h3 { font-size: 1.4rem; font-weight: 800; color: #1e3a8a; margin-bottom: 15px; }
+        .proposal-type p { color: #555; font-size: 0.95rem; margin-bottom: 15px; }
+        .proposal-type .value-range { font-size: 1.2rem; font-weight: 700; color: #7c3aed; }
+
+        /* Agenda */
+        .agenda-timeline { max-width: 700px; margin: 0 auto; }
+        .agenda-item { display: flex; gap: 25px; padding: 25px 0; border-bottom: 2px solid #e5e7eb; }
+        .agenda-item:last-child { border-bottom: none; }
+        .agenda-time { min-width: 100px; text-align: right; }
+        .agenda-time .time { font-size: 1.1rem; font-weight: 700; color: #7c3aed; }
+        .agenda-time .duration { font-size: 0.85rem; color: #888; }
+        .agenda-content h3 { font-size: 1.15rem; font-weight: 700; color: #1e3a8a; margin-bottom: 5px; }
+        .agenda-content p { color: #666; font-size: 0.95rem; }
+        .agenda-tag { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; margin-bottom: 8px; }
+        .tag-fundamentals { background: #e0e7ff; color: #3730a3; }
+        .tag-simplified { background: #dcfce7; color: #166534; }
+        .tag-full-open { background: #fef3c7; color: #92400e; }
+        .tag-task-order { background: #fee2e2; color: #991b1b; }
+        .tag-workshop { background: #fce7f3; color: #9d174d; }
+        .agenda-break { background: #f8fafc; border-radius: 10px; padding: 15px 25px; text-align: center; color: #666; font-style: italic; margin: 15px 0; }
+
+        /* Deliverables */
+        .deliverables-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+        .deliverable-item { background: white; border-radius: 12px; padding: 25px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 2px solid #e5e7eb; transition: all 0.3s ease; }
+        .deliverable-item:hover { border-color: #10b981; background: #f0fdf4; }
+        .deliverable-item .icon { font-size: 2rem; margin-bottom: 10px; }
+        .deliverable-item h4 { font-size: 1rem; font-weight: 600; color: #1e3a8a; }
+
+        /* Pricing */
+        .pricing-section { background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%); color: white; padding: 80px 20px; text-align: center; }
+        .pricing-section h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 15px; }
+        .pricing-section .subtitle { font-size: 1.2rem; opacity: 0.95; margin-bottom: 40px; }
+        .pricing-cards { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; max-width: 700px; margin: 0 auto; }
+        .pricing-card { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 2px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 35px 45px; min-width: 280px; }
+        .pricing-card.featured { background: white; color: #1e3a8a; transform: scale(1.05); border-color: white; }
+        .pricing-card .price { font-size: 3.5rem; font-weight: 900; }
+        .pricing-card .period { font-size: 1rem; opacity: 0.8; }
+        .pricing-card.featured .period { color: #666; }
+        .pricing-card .save-badge { display: inline-block; background: #10b981; color: white; padding: 5px 15px; border-radius: 15px; font-size: 0.85rem; font-weight: 600; margin-top: 10px; }
+        .pricing-cta { display: inline-block; background: white; color: #7c3aed; padding: 20px 60px; border-radius: 50px; font-size: 1.3rem; font-weight: 700; text-decoration: none; margin-top: 40px; transition: all 0.3s ease; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .pricing-cta:hover { transform: translateY(-3px); box-shadow: 0 15px 50px rgba(0,0,0,0.3); }
+
+        /* Who This Is For */
+        .who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 900px; margin: 0 auto; }
+        .who-card { background: white; border-radius: 16px; padding: 35px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); }
+        .who-card.yes { border-top: 5px solid #10b981; }
+        .who-card.no { border-top: 5px solid #ef4444; }
+        .who-card h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .who-card.yes h3 { color: #059669; }
+        .who-card.no h3 { color: #dc2626; }
+        .who-card ul { list-style: none; }
+        .who-card li { padding: 10px 0; padding-left: 30px; position: relative; color: #555; }
+        .who-card.yes li::before { content: '>'; position: absolute; left: 0; color: #10b981; font-weight: bold; }
+        .who-card.no li::before { content: 'x'; position: absolute; left: 0; color: #ef4444; font-weight: bold; }
+
+        /* FAQ */
+        .faq-list { max-width: 700px; margin: 0 auto; }
+        .faq-item { background: white; border-radius: 12px; margin-bottom: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); overflow: hidden; }
+        .faq-question { padding: 20px 25px; font-weight: 600; color: #1e3a8a; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .faq-question::after { content: '+'; font-size: 1.5rem; color: #7c3aed; }
+        .faq-item.active .faq-question::after { content: '-'; }
+        .faq-answer { padding: 0 25px 20px; color: #666; display: none; }
+        .faq-item.active .faq-answer { display: block; }
+
+        /* Final CTA */
+        .final-cta { background: linear-gradient(135deg, #059669 0%, #10b981 100%); color: white; padding: 80px 20px; text-align: center; }
+        .final-cta h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 15px; }
+        .final-cta p { font-size: 1.2rem; opacity: 0.95; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .final-cta-btn { display: inline-block; background: white; color: #059669; padding: 20px 60px; border-radius: 50px; font-size: 1.3rem; font-weight: 700; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .final-cta-btn:hover { transform: translateY(-3px); }
+
+        /* Footer */
+        .footer { background: #1a1a2e; color: rgba(255,255,255,0.7); padding: 40px 20px; text-align: center; }
+        .footer a { color: white; text-decoration: none; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hero-stats { gap: 25px; }
+            .hero-stat .value { font-size: 2rem; }
+            .section-title h2 { font-size: 2rem; }
+            .who-grid { grid-template-columns: 1fr; }
+            .proposal-types { grid-template-columns: 1fr; }
+            .pricing-card { min-width: 100%; }
+            .pricing-card.featured { transform: none; }
+            .agenda-item { flex-direction: column; gap: 10px; }
+            .agenda-time { text-align: left; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">Federal Help Center Pro Members</span>
+            <h1>Proposal Writing Surge</h1>
+            <p class="subtitle">Master the Art of Winning Government Proposals</p>
+
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="value">Feb 28</div>
+                    <div class="label">Date</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="value">9am-5pm</div>
+                    <div class="label">Eastern</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="value">8 Hours</div>
+                    <div class="label">Live Training</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="value">Virtual</div>
+                    <div class="label">Event</div>
+                </div>
+            </div>
+
+            <a href="https://federalhelpcenter.com/pro" class="hero-cta">Join Pro & Get Access</a>
+            <p class="hero-subtext">$99/month or $799/year</p>
+        </div>
+    </div>
+
+    <!-- The Problem Section -->
+    <div class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Most Proposals Lose</h2>
+                <p>You find opportunities. You have the capabilities. But your proposals aren't winning. Here's why.</p>
+            </div>
+
+            <div class="card-grid">
+                <div class="card">
+                    <div class="icon">X</div>
+                    <h3>Generic Responses</h3>
+                    <p>Copy-paste proposals that don't address the specific requirements or evaluation criteria.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">X</div>
+                    <h3>Missing Compliance</h3>
+                    <p>Failing to answer every single requirement in the RFP - even one miss can disqualify you.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">X</div>
+                    <h3>Weak Discriminators</h3>
+                    <p>Not clearly explaining why the government should choose YOU over the competition.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">X</div>
+                    <h3>Poor Past Performance</h3>
+                    <p>Not presenting your experience in a way that proves you can deliver on THIS contract.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Proposal Types Section -->
+    <div class="section section-dark">
+        <div class="container">
+            <div class="section-title">
+                <h2>All Proposal Types Covered</h2>
+                <p>From your first simplified acquisition to complex full & open competitions</p>
+            </div>
+
+            <div class="proposal-types">
+                <div class="proposal-type beginner">
+                    <span class="badge">Beginner</span>
+                    <h3>Simplified Acquisitions</h3>
+                    <p>Under the micro-purchase and simplified acquisition thresholds. Shorter responses, faster decisions.</p>
+                    <div class="value-range">Under $250K</div>
+                </div>
+
+                <div class="proposal-type intermediate">
+                    <span class="badge">Intermediate</span>
+                    <h3>Full & Open RFPs</h3>
+                    <p>Competitive proposals with technical approach, past performance, and pricing volumes.</p>
+                    <div class="value-range">$250K - $10M+</div>
+                </div>
+
+                <div class="proposal-type advanced">
+                    <span class="badge">Advanced</span>
+                    <h3>Task Order Responses</h3>
+                    <p>GSA Schedule and GWAC task orders. Faster turnarounds, specific compliance requirements.</p>
+                    <div class="value-range">GSA MAS / GWACs</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- What You'll Learn Section -->
+    <div class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>What You'll Walk Away With</h2>
+                <p>This isn't theory. It's a working session. You'll leave with real, usable assets.</p>
+            </div>
+
+            <div class="learn-grid">
+                <div class="learn-card">
+                    <div class="learn-number">1</div>
+                    <div class="learn-content">
+                        <h3>Proposal Compliance Matrix Template</h3>
+                        <p>Never miss a requirement again with our proven tracking system.</p>
+                    </div>
+                </div>
+
+                <div class="learn-card">
+                    <div class="learn-number">2</div>
+                    <div class="learn-content">
+                        <h3>Technical Approach Framework</h3>
+                        <p>Structure your response to score maximum evaluation points.</p>
+                    </div>
+                </div>
+
+                <div class="learn-card">
+                    <div class="learn-number">3</div>
+                    <div class="learn-content">
+                        <h3>Past Performance Write-Up Templates</h3>
+                        <p>Present your experience in the format evaluators want to see.</p>
+                    </div>
+                </div>
+
+                <div class="learn-card">
+                    <div class="learn-number">4</div>
+                    <div class="learn-content">
+                        <h3>Pricing Strategy Guide</h3>
+                        <p>Build competitive pricing that doesn't leave money on the table.</p>
+                    </div>
+                </div>
+
+                <div class="learn-card">
+                    <div class="learn-number">5</div>
+                    <div class="learn-content">
+                        <h3>Win Theme Development Worksheet</h3>
+                        <p>Create compelling discriminators that separate you from competitors.</p>
+                    </div>
+                </div>
+
+                <div class="learn-card">
+                    <div class="learn-number">6</div>
+                    <div class="learn-content">
+                        <h3>Bid/No-Bid Decision Tool</h3>
+                        <p>Stop wasting time on opportunities you can't win.</p>
+                    </div>
+                </div>
+
+                <div class="learn-card">
+                    <div class="learn-number">7</div>
+                    <div class="learn-content">
+                        <h3>Sample Winning Proposals</h3>
+                        <p>Real examples of proposals that won federal contracts.</p>
+                    </div>
+                </div>
+
+                <div class="learn-card">
+                    <div class="learn-number">8</div>
+                    <div class="learn-content">
+                        <h3>Full Recording Access</h3>
+                        <p>Review the training anytime as a Pro member.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Agenda Section -->
+    <div class="section section-dark">
+        <div class="container">
+            <div class="section-title">
+                <h2>The Full-Day Agenda</h2>
+                <p>8 hours of intensive training, workshops, and live proposal reviews. <a href="february-28-surge-agenda.html" style="color: #7c3aed;">View detailed agenda</a></p>
+            </div>
+
+            <div class="agenda-timeline">
+                <div class="agenda-item">
+                    <div class="agenda-time">
+                        <div class="time">9:00 AM</div>
+                        <div class="duration">60 min</div>
+                    </div>
+                    <div class="agenda-content">
+                        <span class="agenda-tag tag-fundamentals">Fundamentals</span>
+                        <h3>Proposal Fundamentals & The Evaluation Mindset</h3>
+                        <p>How evaluators score proposals, the compliance checklist, and what makes proposals win or lose.</p>
+                    </div>
+                </div>
+
+                <div class="agenda-item">
+                    <div class="agenda-time">
+                        <div class="time">10:00 AM</div>
+                        <div class="duration">60 min</div>
+                    </div>
+                    <div class="agenda-content">
+                        <span class="agenda-tag tag-simplified">Simplified</span>
+                        <h3>Simplified Acquisition Proposals</h3>
+                        <p>Winning under-$250K contracts with shorter, focused responses. Quote formats and evaluation factors.</p>
+                    </div>
+                </div>
+
+                <div class="agenda-break">15-Minute Break</div>
+
+                <div class="agenda-item">
+                    <div class="agenda-time">
+                        <div class="time">11:15 AM</div>
+                        <div class="duration">75 min</div>
+                    </div>
+                    <div class="agenda-content">
+                        <span class="agenda-tag tag-full-open">Full & Open</span>
+                        <h3>Technical Approach & Past Performance</h3>
+                        <p>Building compelling technical volumes. Structuring past performance to prove capability.</p>
+                    </div>
+                </div>
+
+                <div class="agenda-break">45-Minute Lunch Break</div>
+
+                <div class="agenda-item">
+                    <div class="agenda-time">
+                        <div class="time">1:15 PM</div>
+                        <div class="duration">60 min</div>
+                    </div>
+                    <div class="agenda-content">
+                        <span class="agenda-tag tag-workshop">Workshop</span>
+                        <h3>WORKSHOP: Build Your Compliance Matrix</h3>
+                        <p>Hands-on session building a compliance matrix for a real RFP. Track every requirement.</p>
+                    </div>
+                </div>
+
+                <div class="agenda-break">15-Minute Break</div>
+
+                <div class="agenda-item">
+                    <div class="agenda-time">
+                        <div class="time">2:30 PM</div>
+                        <div class="duration">60 min</div>
+                    </div>
+                    <div class="agenda-content">
+                        <span class="agenda-tag tag-task-order">Task Orders</span>
+                        <h3>GSA Schedule & GWAC Task Order Proposals</h3>
+                        <p>eBuy responses, GWAC task orders, and the unique requirements of contract vehicle proposals.</p>
+                    </div>
+                </div>
+
+                <div class="agenda-item">
+                    <div class="agenda-time">
+                        <div class="time">3:30 PM</div>
+                        <div class="duration">60 min</div>
+                    </div>
+                    <div class="agenda-content">
+                        <span class="agenda-tag tag-workshop">Workshop</span>
+                        <h3>WORKSHOP: Draft Your Technical Approach</h3>
+                        <p>Write your technical approach outline using the framework. Live feedback and coaching.</p>
+                    </div>
+                </div>
+
+                <div class="agenda-break">15-Minute Break</div>
+
+                <div class="agenda-item">
+                    <div class="agenda-time">
+                        <div class="time">4:45 PM</div>
+                        <div class="duration">15 min</div>
+                    </div>
+                    <div class="agenda-content">
+                        <span class="agenda-tag tag-fundamentals">Closing</span>
+                        <h3>Q&A + Next Steps</h3>
+                        <p>Open Q&A, 30-day proposal action plan, and community support resources.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Deliverables Section -->
+    <div class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Everything You'll Receive</h2>
+                <p>Templates, guides, and tools to write winning proposals</p>
+            </div>
+
+            <div class="deliverables-grid">
+                <div class="deliverable-item">
+                    <div class="icon">1</div>
+                    <h4>Compliance Matrix Template</h4>
+                </div>
+                <div class="deliverable-item">
+                    <div class="icon">2</div>
+                    <h4>Technical Approach Framework</h4>
+                </div>
+                <div class="deliverable-item">
+                    <div class="icon">3</div>
+                    <h4>Past Performance Template</h4>
+                </div>
+                <div class="deliverable-item">
+                    <div class="icon">4</div>
+                    <h4>Pricing Worksheet</h4>
+                </div>
+                <div class="deliverable-item">
+                    <div class="icon">5</div>
+                    <h4>Win Theme Worksheet</h4>
+                </div>
+                <div class="deliverable-item">
+                    <div class="icon">6</div>
+                    <h4>Bid/No-Bid Tool</h4>
+                </div>
+                <div class="deliverable-item">
+                    <div class="icon">7</div>
+                    <h4>Sample Winning Proposals</h4>
+                </div>
+                <div class="deliverable-item">
+                    <div class="icon">8</div>
+                    <h4>Full Recording Access</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Who This Is For Section -->
+    <div class="section section-dark">
+        <div class="container">
+            <div class="section-title">
+                <h2>Is This Surge Right For You?</h2>
+            </div>
+
+            <div class="who-grid">
+                <div class="who-card yes">
+                    <h3>> This IS For You If...</h3>
+                    <ul>
+                        <li>You've submitted proposals but haven't won yet</li>
+                        <li>You've won small contracts and want to go bigger</li>
+                        <li>You find opportunities but don't know how to respond</li>
+                        <li>You want to improve your proposal win rate</li>
+                        <li>You're ready to dedicate time to learning the craft</li>
+                        <li>You have a GSA Schedule and want to win task orders</li>
+                    </ul>
+                </div>
+
+                <div class="who-card no">
+                    <h3>x This Is NOT For You If...</h3>
+                    <ul>
+                        <li>You're not SAM.gov registered yet</li>
+                        <li>You don't have any past performance to write about</li>
+                        <li>You're looking for a "proposal writing service"</li>
+                        <li>You're not willing to put in the work</li>
+                        <li>You expect to win contracts without proposals</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pricing Section -->
+    <div class="pricing-section">
+        <div class="container">
+            <h2>Join Federal Help Center Pro</h2>
+            <p class="subtitle">Get instant access to the February 28th Proposal Writing Surge + all Pro resources</p>
+
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <div class="price">$99</div>
+                    <div class="period">per month</div>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="price">$799</div>
+                    <div class="period">per year</div>
+                    <div class="save-badge">SAVE $389</div>
+                </div>
+            </div>
+
+            <a href="https://federalhelpcenter.com/pro" class="pricing-cta">Join Pro Now</a>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">What if I can't attend live on February 28th?</div>
+                    <div class="faq-answer">You'll get full recording access as a Pro member. However, the live workshops and feedback sessions are significantly more valuable. We recommend attending live if at all possible.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">I've never written a proposal before. Is this too advanced?</div>
+                    <div class="faq-answer">No! We start with fundamentals and build up. Session 1 covers the basics, and we dedicate time to simplified acquisitions (easier proposals) before moving to more complex RFPs. You'll learn the right way from the start.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What do I need to prepare before the Surge?</div>
+                    <div class="faq-answer">Bring a draft capability statement if you have one, your NAICS codes, and ideally 2-3 past projects you could use as past performance. We'll send detailed prep instructions after you join Pro.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Will you review my actual proposal during the Surge?</div>
+                    <div class="faq-answer">We'll do live reviews and provide feedback during the workshops. You'll build components of a real proposal during the session and get coaching on your work.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Is my Pro membership just for the Surge?</div>
+                    <div class="faq-answer">No - Pro membership includes ongoing access to the searchable contract database, monthly training sessions, community support, and all future Surge recordings. The February 28th Surge is just the beginning.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Final CTA Section -->
+    <div class="final-cta">
+        <div class="container">
+            <h2>Stop Losing Proposals You Should Win</h2>
+            <p>You have the capabilities. You find the opportunities. Now learn the proposal skills that turn opportunities into contracts.</p>
+
+            <a href="https://federalhelpcenter.com/pro" class="final-cta-btn">Join Pro & Get Surge Access</a>
+            <p style="margin-top: 30px; font-size: 0.95rem;">
+                <strong>February 28, 2026 | 9:00 AM - 5:00 PM Eastern</strong><br>
+                Federal Help Center Pro Members Only
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; <a href="https://govcongiants.com">GovCon Giants</a></p>
+    </div>
+
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

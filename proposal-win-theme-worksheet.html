@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Win Theme Development Worksheet | GovCon Giants</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #1a1a2e; background: #f8fafc; }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+
+        .header { background: linear-gradient(135deg, #059669 0%, #10b981 100%); color: white; padding: 40px; border-radius: 16px; margin-bottom: 30px; }
+        .header h1 { font-size: 2rem; font-weight: 800; margin-bottom: 10px; }
+        .header p { opacity: 0.9; }
+
+        .section { background: white; border-radius: 12px; padding: 30px; margin-bottom: 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .section h2 { font-size: 1.4rem; color: #059669; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #e5e7eb; }
+        .section h3 { font-size: 1.1rem; color: #1e3a8a; margin: 25px 0 15px; }
+
+        .info-box { background: #f0fdf4; border-left: 4px solid #10b981; padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+        .info-box h4 { color: #166534; margin-bottom: 10px; }
+        .info-box p, .info-box li { color: #15803d; }
+
+        .warning-box { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+        .warning-box h4 { color: #92400e; margin-bottom: 10px; }
+        .warning-box p { color: #b45309; }
+
+        .field-label { font-weight: 600; color: #4b5563; margin-bottom: 8px; display: block; font-size: 0.95rem; }
+        .field-input { background: #fffbeb; border: 1px dashed #fbbf24; padding: 15px; border-radius: 8px; margin-bottom: 20px; min-height: 60px; }
+        .field-input.large { min-height: 100px; }
+        .field-input.small { min-height: 40px; }
+
+        .theme-card { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border: 2px solid #86efac; border-radius: 12px; padding: 25px; margin: 20px 0; }
+        .theme-card h4 { color: #166534; margin-bottom: 15px; font-size: 1.1rem; display: flex; align-items: center; gap: 10px; }
+        .theme-number { background: #10b981; color: white; width: 30px; height: 30px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; }
+
+        .question-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0; }
+        .question-box { background: #f8fafc; border-radius: 8px; padding: 20px; }
+        .question-box h5 { color: #7c3aed; margin-bottom: 10px; font-size: 0.9rem; }
+
+        .example-box { background: #eff6ff; border: 2px solid #93c5fd; border-radius: 12px; padding: 20px; margin: 20px 0; }
+        .example-box h4 { color: #1e40af; margin-bottom: 15px; }
+        .example-box .example { background: white; padding: 15px; border-radius: 8px; margin: 10px 0; border-left: 4px solid #3b82f6; }
+        .example-box .example strong { color: #1e40af; }
+        .example-box .example p { color: #1d4ed8; margin-top: 5px; font-style: italic; }
+
+        .checklist { list-style: none; padding: 0; margin: 15px 0; }
+        .checklist li { padding: 10px 0 10px 35px; position: relative; border-bottom: 1px solid #f0f0f0; }
+        .checklist li::before { content: '[ ]'; position: absolute; left: 0; color: #10b981; font-family: monospace; font-weight: bold; }
+
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th { background: #059669; color: white; padding: 12px; text-align: left; font-weight: 600; }
+        td { padding: 12px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+        tr:nth-child(even) { background: #f8fafc; }
+
+        @media print {
+            body { background: white; }
+            .section { box-shadow: none; border: 1px solid #e5e7eb; page-break-inside: avoid; }
+            .header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Win Theme Development Worksheet</h1>
+            <p>Create compelling discriminators that set you apart from competitors</p>
+        </div>
+
+        <!-- What Are Win Themes -->
+        <div class="section">
+            <h2>What Are Win Themes?</h2>
+
+            <div class="info-box">
+                <h4>Definition</h4>
+                <p>Win themes are the compelling reasons the government should select YOUR company over all other bidders. They are the key messages that run throughout your proposal, supported by evidence.</p>
+            </div>
+
+            <h3>Characteristics of Strong Win Themes</h3>
+            <ul class="checklist">
+                <li>Directly tied to evaluation criteria in Section M</li>
+                <li>Specific to THIS opportunity, not generic capabilities</li>
+                <li>Supported by evidence (past performance, data, certifications)</li>
+                <li>Focused on benefits to the government, not just features</li>
+                <li>Differentiate you from likely competitors</li>
+                <li>Repeated throughout the proposal in different sections</li>
+            </ul>
+
+            <div class="warning-box">
+                <h4>Common Mistake</h4>
+                <p>Win themes are NOT "We have great customer service" or "We deliver quality work." Every bidder says that. Win themes must be SPECIFIC and PROVABLE.</p>
+            </div>
+        </div>
+
+        <!-- Opportunity Context -->
+        <div class="section">
+            <h2>Step 1: Opportunity Context</h2>
+
+            <span class="field-label">Solicitation Number & Title</span>
+            <div class="field-input small">[Enter RFP/RFQ number and title]</div>
+
+            <span class="field-label">Agency</span>
+            <div class="field-input small">[Enter contracting agency]</div>
+
+            <span class="field-label">Key Evaluation Factors (from Section M)</span>
+            <div class="field-input large">[List the evaluation factors in order of importance. What will the evaluators be scoring?]</div>
+
+            <span class="field-label">What Does the Agency Really Need? (Beyond the SOW)</span>
+            <div class="field-input large">[What problems are they trying to solve? What keeps them up at night? What would success look like to them?]</div>
+        </div>
+
+        <!-- Discovery Questions -->
+        <div class="section">
+            <h2>Step 2: Discovery Questions</h2>
+            <p style="color: #666; margin-bottom: 20px;">Answer these questions to identify potential win themes:</p>
+
+            <div class="question-grid">
+                <div class="question-box">
+                    <h5>1. Unique Capabilities</h5>
+                    <span class="field-label">What can you do that competitors can't?</span>
+                    <div class="field-input">[Your unique technical capabilities, tools, methodologies, certifications]</div>
+                </div>
+
+                <div class="question-box">
+                    <h5>2. Relevant Experience</h5>
+                    <span class="field-label">What directly relevant experience do you have?</span>
+                    <div class="field-input">[Similar contracts, same agency, same technology, same scope]</div>
+                </div>
+
+                <div class="question-box">
+                    <h5>3. Risk Reduction</h5>
+                    <span class="field-label">How do you reduce risk for the government?</span>
+                    <div class="field-input">[Proven track record, existing clearances, local presence, etc.]</div>
+                </div>
+
+                <div class="question-box">
+                    <h5>4. Value Advantages</h5>
+                    <span class="field-label">How do you provide better value?</span>
+                    <div class="field-input">[Cost savings, efficiency, faster delivery, better outcomes]</div>
+                </div>
+
+                <div class="question-box">
+                    <h5>5. Key Personnel</h5>
+                    <span class="field-label">What makes your team exceptional?</span>
+                    <div class="field-input">[Credentials, experience, availability, agency relationships]</div>
+                </div>
+
+                <div class="question-box">
+                    <h5>6. Innovation</h5>
+                    <span class="field-label">What innovative approaches do you bring?</span>
+                    <div class="field-input">[New methods, technology solutions, process improvements]</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Win Theme Development -->
+        <div class="section">
+            <h2>Step 3: Develop Your Win Themes</h2>
+            <p style="color: #666; margin-bottom: 20px;">Develop 3-5 win themes based on your discovery. Each theme should follow this structure:</p>
+
+            <div class="example-box">
+                <h4>Win Theme Formula</h4>
+                <div class="example">
+                    <strong>Theme Statement:</strong> One sentence stating what makes you the best choice
+                    <p>"Our [specific capability] enables [specific benefit to government], as demonstrated by [evidence]."</p>
+                </div>
+            </div>
+
+            <div class="theme-card">
+                <h4><span class="theme-number">1</span> Win Theme #1</h4>
+
+                <span class="field-label">Theme Statement (One compelling sentence)</span>
+                <div class="field-input">[Your theme statement - what makes you the best choice?]</div>
+
+                <span class="field-label">Supporting Evidence (How do you prove this?)</span>
+                <div class="field-input">[Specific past performance, metrics, certifications, testimonials]</div>
+
+                <span class="field-label">Benefit to Government (So what? Why does this matter?)</span>
+                <div class="field-input">[Reduced risk, cost savings, faster delivery, better outcomes]</div>
+
+                <span class="field-label">Where to Include in Proposal</span>
+                <div class="field-input small">[Executive summary, technical approach section X, past performance, etc.]</div>
+            </div>
+
+            <div class="theme-card">
+                <h4><span class="theme-number">2</span> Win Theme #2</h4>
+
+                <span class="field-label">Theme Statement</span>
+                <div class="field-input">[Your theme statement]</div>
+
+                <span class="field-label">Supporting Evidence</span>
+                <div class="field-input">[Specific proof]</div>
+
+                <span class="field-label">Benefit to Government</span>
+                <div class="field-input">[Why this matters]</div>
+
+                <span class="field-label">Where to Include in Proposal</span>
+                <div class="field-input small">[Sections where this theme should appear]</div>
+            </div>
+
+            <div class="theme-card">
+                <h4><span class="theme-number">3</span> Win Theme #3</h4>
+
+                <span class="field-label">Theme Statement</span>
+                <div class="field-input">[Your theme statement]</div>
+
+                <span class="field-label">Supporting Evidence</span>
+                <div class="field-input">[Specific proof]</div>
+
+                <span class="field-label">Benefit to Government</span>
+                <div class="field-input">[Why this matters]</div>
+
+                <span class="field-label">Where to Include in Proposal</span>
+                <div class="field-input small">[Sections where this theme should appear]</div>
+            </div>
+
+            <div class="theme-card">
+                <h4><span class="theme-number">4</span> Win Theme #4 (Optional)</h4>
+
+                <span class="field-label">Theme Statement</span>
+                <div class="field-input">[Your theme statement]</div>
+
+                <span class="field-label">Supporting Evidence</span>
+                <div class="field-input">[Specific proof]</div>
+
+                <span class="field-label">Benefit to Government</span>
+                <div class="field-input">[Why this matters]</div>
+
+                <span class="field-label">Where to Include in Proposal</span>
+                <div class="field-input small">[Sections where this theme should appear]</div>
+            </div>
+        </div>
+
+        <!-- Examples -->
+        <div class="section">
+            <h2>Win Theme Examples</h2>
+
+            <div class="example-box">
+                <h4>Example: IT Services Contract</h4>
+                <div class="example">
+                    <strong>Weak Theme:</strong> "We provide excellent IT support."
+                    <p>Generic. Every bidder claims this. No proof.</p>
+                </div>
+                <div class="example" style="border-color: #10b981;">
+                    <strong style="color: #166534;">Strong Theme:</strong> "Our 98.7% first-call resolution rate, achieved across 15 federal help desk contracts, reduces escalation costs and gets users back to work faster."
+                    <p style="color: #15803d;">Specific, measurable, tied to cost savings, supported by evidence.</p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h4>Example: Facilities Maintenance</h4>
+                <div class="example">
+                    <strong>Weak Theme:</strong> "We have experienced maintenance technicians."
+                    <p>Generic. No differentiation.</p>
+                </div>
+                <div class="example" style="border-color: #10b981;">
+                    <strong style="color: #166534;">Strong Theme:</strong> "Our predictive maintenance program, which reduced emergency repairs by 67% at VA Medical Centers, minimizes facility downtime and extends equipment life."
+                    <p style="color: #15803d;">Specific methodology, quantified results, relevant agency experience.</p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h4>Example: Consulting Services</h4>
+                <div class="example">
+                    <strong>Weak Theme:</strong> "We deliver projects on time and on budget."
+                    <p>Expected. Not a differentiator.</p>
+                </div>
+                <div class="example" style="border-color: #10b981;">
+                    <strong style="color: #166534;">Strong Theme:</strong> "Our three key personnel have collectively supported this program for 12 years, eliminating ramp-up time and ensuring continuity of institutional knowledge on Day 1."
+                    <p style="color: #15803d;">Specific to this opportunity, addresses transition risk, focuses on key personnel strength.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Theme Integration Matrix -->
+        <div class="section">
+            <h2>Step 4: Theme Integration Matrix</h2>
+            <p style="color: #666; margin-bottom: 20px;">Map where each theme will appear in your proposal:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Proposal Section</th>
+                        <th>Theme #1</th>
+                        <th>Theme #2</th>
+                        <th>Theme #3</th>
+                        <th>Theme #4</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Executive Summary</td>
+                        <td style="text-align: center;">[ ]</td>
+                        <td style="text-align: center;">[ ]</td>
+                        <td style="text-align: center;">[ ]</td>
+                        <td style="text-align: center;">[ ]</td>
+                    </tr>
+                    <tr>
+                        <td>Understanding of Requirements</td>
+                        <td style="text-align: center;">[ ]</td>
+                        <td style="text-align: center;">[ ]</td>
+                        <td style="text-align: center;">[ ]</td>
+                        <td style="text-align: center;">[ ]</td>
+                    </tr>
+                    <tr>
+                        <td>Technical Approach</td>
+                        <td style="text-align: center;">[ ]</td>
+                        <td style="text-align: center;">[ ]</td>
+                        <td style="text-align: center;">[ ]</td>
+                        <td style="text-align: center;">[ ]</td>
+                    </tr>
+                    <tr>
+                        <td>Management Approach</td>
+                        <td style="text-align: center;">[ ]</td>
+                        <td style="text-align: center;">[ ]</td>
+                        <td style="text-align: center;">[ ]</td>
+                        <td style="text-align: center;">[ ]</td>
+                    </tr>
+                    <tr>
+                        <td>Key Personnel</td>
+                        <td style="text-align: center;">[ ]</td>
+                        <td style="text-align: center;">[ ]</td>
+                        <td style="text-align: center;">[ ]</td>
+                        <td style="text-align: center;">[ ]</td>
+                    </tr>
+                    <tr>
+                        <td>Past Performance</td>
+                        <td style="text-align: center;">[ ]</td>
+                        <td style="text-align: center;">[ ]</td>
+                        <td style="text-align: center;">[ ]</td>
+                        <td style="text-align: center;">[ ]</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <h4>Integration Tip</h4>
+                <p>Each major theme should appear at least 3-4 times throughout your proposal. Use different wording each time, but the core message should be consistent. Themes create a "red thread" that evaluators remember.</p>
+            </div>
+        </div>
+
+        <!-- Final Checklist -->
+        <div class="section">
+            <h2>Win Theme Quality Checklist</h2>
+
+            <p style="color: #666; margin-bottom: 15px;">Before finalizing your themes, verify each one passes these tests:</p>
+
+            <ul class="checklist">
+                <li>Is it specific to THIS opportunity, not generic?</li>
+                <li>Is it tied to evaluation criteria in Section M?</li>
+                <li>Do you have concrete evidence to support it?</li>
+                <li>Does it focus on benefits to the government?</li>
+                <li>Would a competitor struggle to make the same claim?</li>
+                <li>Can you weave it throughout multiple proposal sections?</li>
+                <li>Is it memorable and easy to understand?</li>
+            </ul>
+        </div>
+
+        <!-- Footer -->
+        <div style="text-align: center; padding: 30px; color: #888; font-size: 0.9rem;">
+            <p><strong>GovCon Giants</strong> | Federal Help Center Pro</p>
+            <p>Download the editable Word version from your Pro dashboard</p>
+        </div>
+    </div>
+</body>
+</html>

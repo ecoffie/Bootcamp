@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bid/No-Bid Decision Tool | GovCon Giants</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #1a1a2e; background: #f8fafc; }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+
+        .header { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: white; padding: 40px; border-radius: 16px; margin-bottom: 30px; }
+        .header h1 { font-size: 2rem; font-weight: 800; margin-bottom: 10px; }
+        .header p { opacity: 0.9; }
+
+        .section { background: white; border-radius: 12px; padding: 30px; margin-bottom: 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .section h2 { font-size: 1.4rem; color: #1e3a8a; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #e5e7eb; }
+
+        .info-box { background: #eff6ff; border-left: 4px solid #3b82f6; padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+        .info-box h4 { color: #1e40af; margin-bottom: 10px; }
+        .info-box p { color: #1d4ed8; }
+
+        .opportunity-info { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 25px; }
+        .opportunity-info .field { background: #f8fafc; padding: 15px; border-radius: 8px; }
+        .opportunity-info .label { font-weight: 600; color: #4b5563; font-size: 0.85rem; margin-bottom: 5px; }
+        .opportunity-info .value { background: white; border: 1px dashed #d1d5db; padding: 10px; border-radius: 6px; min-height: 40px; }
+
+        .criteria-group { margin-bottom: 30px; }
+        .criteria-group h3 { color: #7c3aed; margin-bottom: 15px; font-size: 1.1rem; }
+
+        .criterion { display: flex; align-items: center; padding: 15px; background: #f8fafc; border-radius: 8px; margin-bottom: 10px; }
+        .criterion:hover { background: #f0f9ff; }
+        .criterion .text { flex: 1; margin-right: 20px; }
+        .criterion .weight { color: #6b7280; font-size: 0.85rem; margin-left: 10px; }
+
+        .score-buttons { display: flex; gap: 8px; }
+        .score-btn { width: 45px; height: 45px; border: 2px solid #e5e7eb; border-radius: 8px; background: white; cursor: pointer; font-weight: 700; font-size: 1rem; transition: all 0.2s; }
+        .score-btn:hover { border-color: #7c3aed; }
+        .score-btn.selected { background: #7c3aed; color: white; border-color: #7c3aed; }
+        .score-btn.selected-0 { background: #ef4444; border-color: #ef4444; }
+        .score-btn.selected-1 { background: #f59e0b; border-color: #f59e0b; }
+        .score-btn.selected-2 { background: #10b981; border-color: #10b981; }
+
+        .results { background: linear-gradient(135deg, #f8fafc, #f1f5f9); border-radius: 12px; padding: 30px; text-align: center; }
+        .results h3 { color: #1e3a8a; margin-bottom: 20px; }
+        .score-display { font-size: 4rem; font-weight: 900; margin: 20px 0; }
+        .score-display.go { color: #10b981; }
+        .score-display.caution { color: #f59e0b; }
+        .score-display.no-go { color: #ef4444; }
+
+        .recommendation { padding: 25px; border-radius: 12px; margin-top: 20px; }
+        .recommendation.go { background: #dcfce7; border: 2px solid #86efac; }
+        .recommendation.caution { background: #fef3c7; border: 2px solid #fcd34d; }
+        .recommendation.no-go { background: #fee2e2; border: 2px solid #fca5a5; }
+        .recommendation h4 { margin-bottom: 10px; font-size: 1.3rem; }
+        .recommendation.go h4 { color: #166534; }
+        .recommendation.caution h4 { color: #92400e; }
+        .recommendation.no-go h4 { color: #991b1b; }
+        .recommendation p { font-size: 1rem; }
+        .recommendation.go p { color: #15803d; }
+        .recommendation.caution p { color: #b45309; }
+        .recommendation.no-go p { color: #b91c1c; }
+
+        .legend { display: flex; justify-content: center; gap: 30px; margin: 25px 0; flex-wrap: wrap; }
+        .legend-item { display: flex; align-items: center; gap: 8px; }
+        .legend-color { width: 20px; height: 20px; border-radius: 4px; }
+        .legend-0 { background: #ef4444; }
+        .legend-1 { background: #f59e0b; }
+        .legend-2 { background: #10b981; }
+
+        .notes-section { margin-top: 30px; }
+        .notes-section textarea { width: 100%; height: 100px; padding: 15px; border: 2px solid #e5e7eb; border-radius: 8px; font-family: inherit; resize: vertical; }
+        .notes-section textarea:focus { outline: none; border-color: #7c3aed; }
+
+        @media print {
+            body { background: white; }
+            .section { box-shadow: none; border: 1px solid #e5e7eb; }
+            .score-btn { border: 1px solid #333; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Bid/No-Bid Decision Tool</h1>
+            <p>Score each criterion to determine if this opportunity is worth pursuing</p>
+        </div>
+
+        <!-- Instructions -->
+        <div class="section">
+            <h2>How to Use This Tool</h2>
+
+            <div class="info-box">
+                <h4>Scoring Instructions</h4>
+                <p>Rate each criterion from 0-2 based on how well it applies to your opportunity:</p>
+            </div>
+
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-color legend-0"></div>
+                    <span><strong>0 = No/Poor</strong> - Does not meet criterion</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color legend-1"></div>
+                    <span><strong>1 = Partial</strong> - Partially meets criterion</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color legend-2"></div>
+                    <span><strong>2 = Yes/Strong</strong> - Fully meets criterion</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Opportunity Info -->
+        <div class="section">
+            <h2>Opportunity Information</h2>
+            <div class="opportunity-info">
+                <div class="field">
+                    <div class="label">Solicitation Number</div>
+                    <div class="value" contenteditable="true"></div>
+                </div>
+                <div class="field">
+                    <div class="label">Title</div>
+                    <div class="value" contenteditable="true"></div>
+                </div>
+                <div class="field">
+                    <div class="label">Agency</div>
+                    <div class="value" contenteditable="true"></div>
+                </div>
+                <div class="field">
+                    <div class="label">Estimated Value</div>
+                    <div class="value" contenteditable="true"></div>
+                </div>
+                <div class="field">
+                    <div class="label">Due Date</div>
+                    <div class="value" contenteditable="true"></div>
+                </div>
+                <div class="field">
+                    <div class="label">Set-Aside</div>
+                    <div class="value" contenteditable="true"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scoring Criteria -->
+        <div class="section">
+            <h2>Scoring Criteria</h2>
+
+            <div class="criteria-group">
+                <h3>1. Technical Capability (Weight: High)</h3>
+
+                <div class="criterion" data-weight="3">
+                    <div class="text">
+                        <strong>Core Competency Match</strong><br>
+                        <span style="color: #6b7280; font-size: 0.9rem;">Does this work align with your core capabilities?</span>
+                    </div>
+                    <div class="score-buttons">
+                        <button class="score-btn" data-score="0">0</button>
+                        <button class="score-btn" data-score="1">1</button>
+                        <button class="score-btn" data-score="2">2</button>
+                    </div>
+                </div>
+
+                <div class="criterion" data-weight="3">
+                    <div class="text">
+                        <strong>Technical Requirements</strong><br>
+                        <span style="color: #6b7280; font-size: 0.9rem;">Can you meet ALL technical requirements without significant gaps?</span>
+                    </div>
+                    <div class="score-buttons">
+                        <button class="score-btn" data-score="0">0</button>
+                        <button class="score-btn" data-score="1">1</button>
+                        <button class="score-btn" data-score="2">2</button>
+                    </div>
+                </div>
+
+                <div class="criterion" data-weight="2">
+                    <div class="text">
+                        <strong>Key Personnel</strong><br>
+                        <span style="color: #6b7280; font-size: 0.9rem;">Do you have or can you quickly recruit required key personnel?</span>
+                    </div>
+                    <div class="score-buttons">
+                        <button class="score-btn" data-score="0">0</button>
+                        <button class="score-btn" data-score="1">1</button>
+                        <button class="score-btn" data-score="2">2</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="criteria-group">
+                <h3>2. Past Performance (Weight: High)</h3>
+
+                <div class="criterion" data-weight="3">
+                    <div class="text">
+                        <strong>Relevant Experience</strong><br>
+                        <span style="color: #6b7280; font-size: 0.9rem;">Do you have 2-3 similar contracts you can reference?</span>
+                    </div>
+                    <div class="score-buttons">
+                        <button class="score-btn" data-score="0">0</button>
+                        <button class="score-btn" data-score="1">1</button>
+                        <button class="score-btn" data-score="2">2</button>
+                    </div>
+                </div>
+
+                <div class="criterion" data-weight="2">
+                    <div class="text">
+                        <strong>Similar Scope & Size</strong><br>
+                        <span style="color: #6b7280; font-size: 0.9rem;">Is your past performance similar in scope and dollar value?</span>
+                    </div>
+                    <div class="score-buttons">
+                        <button class="score-btn" data-score="0">0</button>
+                        <button class="score-btn" data-score="1">1</button>
+                        <button class="score-btn" data-score="2">2</button>
+                    </div>
+                </div>
+
+                <div class="criterion" data-weight="2">
+                    <div class="text">
+                        <strong>Agency Experience</strong><br>
+                        <span style="color: #6b7280; font-size: 0.9rem;">Have you worked with this agency or similar agencies before?</span>
+                    </div>
+                    <div class="score-buttons">
+                        <button class="score-btn" data-score="0">0</button>
+                        <button class="score-btn" data-score="1">1</button>
+                        <button class="score-btn" data-score="2">2</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="criteria-group">
+                <h3>3. Competitive Position (Weight: Medium)</h3>
+
+                <div class="criterion" data-weight="2">
+                    <div class="text">
+                        <strong>Incumbent Status</strong><br>
+                        <span style="color: #6b7280; font-size: 0.9rem;">Are you the incumbent or do you have relationship with evaluators?</span>
+                    </div>
+                    <div class="score-buttons">
+                        <button class="score-btn" data-score="0">0</button>
+                        <button class="score-btn" data-score="1">1</button>
+                        <button class="score-btn" data-score="2">2</button>
+                    </div>
+                </div>
+
+                <div class="criterion" data-weight="2">
+                    <div class="text">
+                        <strong>Competitive Landscape</strong><br>
+                        <span style="color: #6b7280; font-size: 0.9rem;">Is this a fair competition or is there a likely preferred vendor?</span>
+                    </div>
+                    <div class="score-buttons">
+                        <button class="score-btn" data-score="0">0</button>
+                        <button class="score-btn" data-score="1">1</button>
+                        <button class="score-btn" data-score="2">2</button>
+                    </div>
+                </div>
+
+                <div class="criterion" data-weight="2">
+                    <div class="text">
+                        <strong>Certifications/Set-Aside</strong><br>
+                        <span style="color: #6b7280; font-size: 0.9rem;">Do you have the required certifications for set-asides?</span>
+                    </div>
+                    <div class="score-buttons">
+                        <button class="score-btn" data-score="0">0</button>
+                        <button class="score-btn" data-score="1">1</button>
+                        <button class="score-btn" data-score="2">2</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="criteria-group">
+                <h3>4. Strategic Fit (Weight: Medium)</h3>
+
+                <div class="criterion" data-weight="2">
+                    <div class="text">
+                        <strong>Strategic Value</strong><br>
+                        <span style="color: #6b7280; font-size: 0.9rem;">Does this align with your business development strategy?</span>
+                    </div>
+                    <div class="score-buttons">
+                        <button class="score-btn" data-score="0">0</button>
+                        <button class="score-btn" data-score="1">1</button>
+                        <button class="score-btn" data-score="2">2</button>
+                    </div>
+                </div>
+
+                <div class="criterion" data-weight="1">
+                    <div class="text">
+                        <strong>Profitability</strong><br>
+                        <span style="color: #6b7280; font-size: 0.9rem;">Can you achieve acceptable margins at competitive pricing?</span>
+                    </div>
+                    <div class="score-buttons">
+                        <button class="score-btn" data-score="0">0</button>
+                        <button class="score-btn" data-score="1">1</button>
+                        <button class="score-btn" data-score="2">2</button>
+                    </div>
+                </div>
+
+                <div class="criterion" data-weight="1">
+                    <div class="text">
+                        <strong>Growth Potential</strong><br>
+                        <span style="color: #6b7280; font-size: 0.9rem;">Does this open doors for future opportunities?</span>
+                    </div>
+                    <div class="score-buttons">
+                        <button class="score-btn" data-score="0">0</button>
+                        <button class="score-btn" data-score="1">1</button>
+                        <button class="score-btn" data-score="2">2</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="criteria-group">
+                <h3>5. Proposal Resources (Weight: Medium)</h3>
+
+                <div class="criterion" data-weight="2">
+                    <div class="text">
+                        <strong>Response Time</strong><br>
+                        <span style="color: #6b7280; font-size: 0.9rem;">Do you have enough time to prepare a quality proposal?</span>
+                    </div>
+                    <div class="score-buttons">
+                        <button class="score-btn" data-score="0">0</button>
+                        <button class="score-btn" data-score="1">1</button>
+                        <button class="score-btn" data-score="2">2</button>
+                    </div>
+                </div>
+
+                <div class="criterion" data-weight="2">
+                    <div class="text">
+                        <strong>Proposal Team</strong><br>
+                        <span style="color: #6b7280; font-size: 0.9rem;">Do you have the team/resources to write a competitive proposal?</span>
+                    </div>
+                    <div class="score-buttons">
+                        <button class="score-btn" data-score="0">0</button>
+                        <button class="score-btn" data-score="1">1</button>
+                        <button class="score-btn" data-score="2">2</button>
+                    </div>
+                </div>
+
+                <div class="criterion" data-weight="1">
+                    <div class="text">
+                        <strong>Opportunity Cost</strong><br>
+                        <span style="color: #6b7280; font-size: 0.9rem;">Will pursuing this prevent you from better opportunities?</span>
+                    </div>
+                    <div class="score-buttons">
+                        <button class="score-btn" data-score="0">0</button>
+                        <button class="score-btn" data-score="1">1</button>
+                        <button class="score-btn" data-score="2">2</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results -->
+        <div class="section">
+            <h2>Decision Result</h2>
+
+            <div class="results">
+                <h3>Your Score</h3>
+                <div class="score-display" id="totalScore">--</div>
+                <p id="scoreText">Complete the scoring above to see your result</p>
+
+                <div class="recommendation" id="recommendation" style="display: none;">
+                    <h4 id="recommendationTitle"></h4>
+                    <p id="recommendationText"></p>
+                </div>
+            </div>
+
+            <div class="notes-section">
+                <h3 style="margin-bottom: 15px;">Decision Notes</h3>
+                <textarea placeholder="Document your rationale, concerns, mitigations, or conditions for pursuing this opportunity..."></textarea>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div style="text-align: center; padding: 30px; color: #888; font-size: 0.9rem;">
+            <p><strong>GovCon Giants</strong> | Federal Help Center Pro</p>
+            <p>Download the interactive Excel version from your Pro dashboard</p>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.score-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove selected from siblings
+                this.parentElement.querySelectorAll('.score-btn').forEach(b => {
+                    b.classList.remove('selected', 'selected-0', 'selected-1', 'selected-2');
+                });
+
+                // Add selected to this button
+                const score = this.dataset.score;
+                this.classList.add('selected', `selected-${score}`);
+
+                // Calculate total
+                calculateScore();
+            });
+        });
+
+        function calculateScore() {
+            let totalScore = 0;
+            let maxScore = 0;
+            let answeredCount = 0;
+            const criteria = document.querySelectorAll('.criterion');
+
+            criteria.forEach(c => {
+                const weight = parseInt(c.dataset.weight);
+                maxScore += weight * 2;
+
+                const selected = c.querySelector('.score-btn.selected');
+                if (selected) {
+                    totalScore += parseInt(selected.dataset.score) * weight;
+                    answeredCount++;
+                }
+            });
+
+            const scoreDisplay = document.getElementById('totalScore');
+            const scoreText = document.getElementById('scoreText');
+            const recommendation = document.getElementById('recommendation');
+            const recTitle = document.getElementById('recommendationTitle');
+            const recText = document.getElementById('recommendationText');
+
+            if (answeredCount === criteria.length) {
+                const percentage = Math.round((totalScore / maxScore) * 100);
+                scoreDisplay.textContent = `${percentage}%`;
+
+                recommendation.style.display = 'block';
+
+                if (percentage >= 70) {
+                    scoreDisplay.className = 'score-display go';
+                    recommendation.className = 'recommendation go';
+                    recTitle.textContent = 'BID - Strong Opportunity';
+                    recText.textContent = 'This opportunity aligns well with your capabilities and strategy. Proceed with proposal development.';
+                } else if (percentage >= 50) {
+                    scoreDisplay.className = 'score-display caution';
+                    recommendation.className = 'recommendation caution';
+                    recTitle.textContent = 'CAUTION - Consider Carefully';
+                    recText.textContent = 'This opportunity has some gaps. Consider whether you can mitigate weaknesses through teaming or if there are better opportunities to pursue.';
+                } else {
+                    scoreDisplay.className = 'score-display no-go';
+                    recommendation.className = 'recommendation no-go';
+                    recTitle.textContent = 'NO BID - Not Recommended';
+                    recText.textContent = 'This opportunity does not align well with your capabilities or position. Save your resources for better-matched opportunities.';
+                }
+
+                scoreText.textContent = `${totalScore} out of ${maxScore} points`;
+            } else {
+                scoreDisplay.textContent = '--';
+                scoreDisplay.className = 'score-display';
+                scoreText.textContent = `${answeredCount} of ${criteria.length} criteria scored`;
+                recommendation.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
