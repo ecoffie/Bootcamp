@@ -1,6 +1,6 @@
 # GovCon Giants - Bootcamp Project
 
-**Last Updated:** February 9, 2026
+**Last Updated:** February 15, 2026
 **Owner:** Eric Coffie
 **Purpose:** Federal contracting bootcamp materials, marketing assets, and business tools
 
@@ -16,6 +16,7 @@ This repository contains all GovCon Giants resources for helping small businesse
 - Marketing funnels and email sequences
 - YouTube content and presentations
 - AI/automation tools and scripts
+- **The Vault** — premium document library web app (see dedicated section below)
 
 ---
 
@@ -298,6 +299,45 @@ This repository contains all GovCon Giants resources for helping small businesse
 | `youtube-live-bootcamp-recap-thumbnail-final.html` | Final thumbnail |
 | `youtube-live-data-sources.md` | Data sources documentation |
 | `youtube-cr-explained-slides.html` | Contract research explained |
+| `youtube-live-expiring-contracts-slides.html` | Content Strategy Live 1: "$221B Expiring Contracts" (18 slides, March 2026) |
+| `youtube-live-q1-recap-slides.html` | Content Strategy Live 2: "Q1 Recap — 5 Strategies That Worked" (16 slides, March 2026) |
+| `youtube-live-prime-contractors-slides.html` | Content Strategy Live 3: "3,500 Prime Contractors Need Partners" (18 slides, April 2026) |
+| `youtube-live-834k-case-study-slides.html` | Content Strategy Live 4: "$834K in 7 Months Case Study" (20 slides, April 2026) |
+| `youtube-live-q2-spending-slides.html` | Content Strategy Live 5: "Q2 Spending Window" (18 slides, May 2026) |
+| `youtube-live-zero-to-first-contract-slides.html` | Content Strategy Live 6: "Zero to First Contract Playbook" (22 slides, May 2026) |
+
+### February 2026 Proposal Bootcamp Promo (`youtube live proposal bootcamp promo/`)
+| File | Description |
+|------|-------------|
+| `youtube-live-proposal-bootcamp-slides.html` | 18-slide promo deck: "50% Never Hit SAM.gov" task order/IDIQ theme |
+| `youtube-live-proposal-bootcamp-script.md` | Full 500-line script with slide-by-slide talking points |
+| `youtube-live-proposal-bootcamp-thumbnail.html` | 3 thumbnail options (The Stat, The Split, Dollar Amount) |
+
+### Proposal Bootcamp Handouts (`files/`)
+| File | Description |
+|------|-------------|
+| `files/proposal-landing-page.html` | Dark navy email capture page with 5 download cards, bootcamp CTA, tools upsell |
+| `files/10_IDIQ_Vehicles_Guide.docx` | Guide to GSA MAS, OASIS+, CIO-SP4, Alliant 3, SEWP, etc. |
+| `files/Active_IDIQ_Vehicles_List.xlsx` | 59 rows of active IDIQ contracts with agency, NAICS, ceiling values |
+| `files/Sources_Sought_Response_Template.docx` | Fill-in-the-blank template for Sources Sought responses |
+| `files/IDIQ_Task_Order_Response_Template.docx` | Full proposal framework: technical, management, past performance, pricing |
+| `files/Task_Order_Proposal_Checklist.docx` | Pre-submission checklist (sections A through F) |
+
+### Content Strategy — March–May 2026 YouTube Lives
+**Source:** `GovCon_Giants_Revised_Content_Strategy.docx` (60-day action plan)
+
+6 biweekly YouTube Lives planned for the content strategy calendar:
+
+| # | Target Date | Title | Slides | Product Tie-In |
+|---|-------------|-------|--------|----------------|
+| 1 | Early March | "$221 Billion in Federal Contracts Are Expiring" | 18 | Recompete Tracker |
+| 2 | Mid-March | "Bootcamp Recap: 5 Strategies That Worked in Q1" | 16 | All tools |
+| 3 | Early April | "3,500 Prime Contractors Need Small Business Partners" | 18 | Contractor Database |
+| 4 | Mid-April | "I Helped a Contractor Win $834K in 7 Months" | 20 | Market Assassin |
+| 5 | Early May | "The Q2 Federal Spending Window Is Open" | 18 | Market Assassin |
+| 6 | Mid-May | "From Zero to First Contract: The Complete Playbook" | 22 | All tools |
+
+Each deck includes: free download CTA, $1,000 live offer (Ultimate Giant Bundle), FHC Pro CTA ($99/mo or $799/yr), weekly challenge, data sources slide, and WHAT→WHEN→WHO→HOW tool stack connection.
 
 ### Slide Image Exports
 | Directory | Contents |
@@ -470,6 +510,109 @@ This repository contains all GovCon Giants resources for helping small businesse
 | Space Force | Aerospace, satellites (new agency, low competition) |
 | FEMA | Emergency response |
 | DARPA/MDA | R&D, advanced technology |
+
+---
+
+## The Vault — Premium Document Library
+
+**Live URL:** `guides.govcongiants.org`
+**Project Path:** `/Users/ericcoffie/Projects/vault`
+**Vercel Project:** `govcon-resources` (account: `evankoffdev-3209`)
+**Framework:** Next.js 15 (App Router) + Tailwind CSS
+
+### What It Is
+
+A web app that hosts 125+ premium GovCon templates (proposals, contracts, bid forms, safety plans, etc.) behind a monthly password shared with paid members. Free visitors see all documents but with locked previews; after entering the password, everything unlocks.
+
+### Architecture
+
+- **Next.js Middleware** (`src/middleware.ts`) — intercepts requests to `/vault/premium/*` and checks for a valid `vault_access` cookie. Without it, direct PDF/DOCX links redirect to `/login`.
+- **Cookie-based auth** — password validated against `VAULT_PASSWORD` env var; cookie includes SHA-256 hash of password+secret so it auto-expires when the password rotates.
+- **Edge Runtime** — middleware uses Web Crypto API (`crypto.subtle`), not Node.js `crypto` (not available in Edge).
+- **Build-time thumbnails** — `scripts/generate-thumbs.js` uses LibreOffice (headless) to convert Office docs to PDF, then pdf.js + Puppeteer to screenshot the first page of every document. Thumbnails stored in `public/vault/thumbs/`.
+- **Client-side PDF fallback** — `PdfThumbnail.tsx` uses `pdfjs-dist` with IntersectionObserver to render PDF first pages if no pre-generated thumbnail exists.
+
+### Key Files
+
+| File | Purpose |
+|------|---------|
+| `src/app/layout.tsx` | Root layout (header, nav, AuthProvider, footer) |
+| `src/app/page.tsx` | Homepage — all docs in category grid (uses DocumentThumbCard) |
+| `src/app/category/[slug]/page.tsx` | Category view (uses DocumentList) |
+| `src/app/search/page.tsx` | Search results |
+| `src/app/login/page.tsx` | Password entry page |
+| `src/app/api/validate/route.ts` | POST — validate password, set cookie |
+| `src/app/api/check-session/route.ts` | GET — check auth status |
+| `src/app/api/logout/route.ts` | POST — clear cookie |
+| `src/middleware.ts` | Protects `/vault/premium/*` paths |
+| `src/lib/auth-context.tsx` | React context: `hasPremiumAccess`, `refresh()`, `logout()` |
+| `src/lib/types.ts` | `VaultDocument` interface (includes `tier`, `thumbnail` fields) |
+| `src/components/DocumentThumbCard.tsx` | Grid card with thumbnail preview |
+| `src/components/DocumentCard.tsx` | List-style card |
+| `src/components/PdfThumbnail.tsx` | Client-side pdf.js thumbnail renderer |
+| `src/components/HeaderAuthButton.tsx` | Unlock/Lock button in header |
+| `src/components/HeaderSearch.tsx` | Search bar (Cmd+K shortcut) |
+| `scripts/build-index.js` | Scans source folders → `public/search-index.json` |
+| `scripts/generate-thumbs.js` | Generates thumbnail JPEGs for all documents |
+
+### Data Flow
+
+1. **Source documents** live in `/Users/ericcoffie/Projects/Action Plan/The Vault ` (note trailing space)
+2. `npm run build:index` scans that folder, copies files to `public/vault/premium/`, writes `public/search-index.json` with `tier: "premium"` on each document
+3. `npm run build:thumbs` generates `public/vault/thumbs/*.jpg` for every document and adds `thumbnail` paths to the search index
+4. `npm run build` (Next.js) builds the app
+5. `npx vercel --prod` deploys to Vercel
+
+### Environment Variables (Vercel)
+
+| Variable | Purpose |
+|----------|---------|
+| `VAULT_PASSWORD` | Monthly password shared with paid members (current: `govcon-feb-2026`) |
+| `VAULT_COOKIE_SECRET` | Random string for hashing cookies (set once) |
+
+### Monthly Password Rotation
+
+1. Vercel → vault project → Settings → Environment Variables
+2. Change `VAULT_PASSWORD` (use `printf`, NOT `echo`, to avoid trailing newline)
+3. Redeploy or push a commit
+4. Share new password in paid members group
+5. Old sessions auto-expire (cookie hash includes password)
+
+### Common Commands
+
+```bash
+# From /Users/ericcoffie/Projects/vault
+
+# Rebuild search index (after adding/removing documents)
+VAULT_PATH="/Users/ericcoffie/Projects/Action Plan/The Vault " npm run build:index
+
+# Regenerate all document thumbnails (requires LibreOffice installed)
+npm run build:thumbs
+
+# Dev server
+npm run dev
+
+# Production build
+npm run build
+
+# Deploy to Vercel
+npx vercel --prod --yes
+```
+
+### Dependencies
+
+- **Runtime:** next, react, react-dom, lucide-react, pdfjs-dist
+- **Dev:** puppeteer (thumbnail generation), tailwindcss, typescript
+- **System:** LibreOffice (`/Applications/LibreOffice.app`) — required for Office doc → PDF conversion during thumbnail generation
+
+### Known Gotchas
+
+- The Vault source folder has a **trailing space**: `"The Vault "` — must quote the path
+- No "Free Resources" folder exists yet — all 125 documents are tagged `tier: "premium"`
+- `useSearchParams()` requires `<Suspense>` boundary in Next.js App Router
+- All React hooks must be called before early returns (React Error #310)
+- Vercel env vars set via `echo` add trailing newlines — use `printf` instead
+- Edge Runtime middleware cannot use Node.js `crypto` — use `crypto.subtle`
 
 ---
 

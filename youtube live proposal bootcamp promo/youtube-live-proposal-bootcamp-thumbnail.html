@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Thumbnail - Proposal Bootcamp Live</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: #1a1a1a;
+            padding: 40px;
+            gap: 40px;
+        }
+
+        h2 {
+            color: white;
+            font-family: Arial, sans-serif;
+            margin-bottom: 20px;
+        }
+
+        .info {
+            color: #888;
+            font-family: Arial, sans-serif;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .thumbnail {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            font-family: 'Arial Black', Impact, sans-serif;
+        }
+
+        .label-box {
+            background: #333;
+            color: white;
+            padding: 10px 20px;
+            margin-top: 20px;
+            font-size: 14px;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Option 1: The Stat — matches $82B winner format */
+        .thumb-1 {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0f172a 100%);
+        }
+
+        .thumb-1 .bg-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2322c55e' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .thumb-1 .content {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px;
+        }
+
+        .thumb-1 .main-number {
+            font-size: 200px;
+            font-weight: 900;
+            color: #4ade80;
+            text-shadow: 0 8px 30px rgba(74, 222, 128, 0.5);
+            line-height: 1;
+        }
+
+        .thumb-1 .main-number .percent {
+            font-size: 140px;
+        }
+
+        .thumb-1 .sub-text {
+            font-size: 68px;
+            font-weight: 900;
+            color: white;
+            margin-top: 10px;
+        }
+
+        .thumb-1 .sub-text .red {
+            color: #ef4444;
+        }
+
+        .thumb-1 .bottom-text {
+            position: absolute;
+            bottom: 40px;
+            left: 60px;
+            font-size: 36px;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .thumb-1 .badge {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            background: #ef4444;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 32px;
+            font-weight: 900;
+            transform: rotate(3deg);
+        }
+
+        /* Option 2: The Split — SAM.gov vs Hidden */
+        .thumb-2 {
+            background: #0f172a;
+            display: flex;
+        }
+
+        .thumb-2 .left-half {
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            position: relative;
+        }
+
+        .thumb-2 .left-half::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 4px;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .thumb-2 .left-half .sam-text {
+            font-size: 52px;
+            font-weight: 900;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 20px;
+        }
+
+        .thumb-2 .left-half .pct {
+            font-size: 140px;
+            font-weight: 900;
+            color: #ef4444;
+            line-height: 1;
+        }
+
+        .thumb-2 .left-half .pct-label {
+            font-size: 36px;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .thumb-2 .right-half {
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .thumb-2 .right-half .hidden-text {
+            font-size: 52px;
+            font-weight: 900;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 20px;
+        }
+
+        .thumb-2 .right-half .pct {
+            font-size: 140px;
+            font-weight: 900;
+            color: white;
+            line-height: 1;
+        }
+
+        .thumb-2 .right-half .pct-label {
+            font-size: 36px;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .thumb-2 .center-vs {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 90px;
+            height: 90px;
+            background: #fbbf24;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            font-weight: 900;
+            color: #0f172a;
+            z-index: 2;
+        }
+
+        .thumb-2 .top-banner {
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.7);
+            padding: 12px 40px;
+            border-radius: 50px;
+            font-size: 28px;
+            font-weight: 700;
+            z-index: 3;
+            white-space: nowrap;
+        }
+
+        .thumb-2 .bottom-banner {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 38px;
+            font-weight: 900;
+            color: white;
+            z-index: 3;
+            white-space: nowrap;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+
+        /* Option 3: Dollar Amount Focus */
+        .thumb-3 {
+            background: #0f172a;
+        }
+
+        .thumb-3 .left-section {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 60%;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .thumb-3 .main-text {
+            font-size: 82px;
+            font-weight: 900;
+            color: white;
+            line-height: 1.1;
+        }
+
+        .thumb-3 .main-text .money {
+            color: #4ade80;
+            font-size: 100px;
+        }
+
+        .thumb-3 .main-text .emphasis {
+            color: #ef4444;
+        }
+
+        .thumb-3 .sub-text {
+            font-size: 38px;
+            color: rgba(255,255,255,0.8);
+            margin-top: 30px;
+        }
+
+        .thumb-3 .right-section {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 40%;
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .thumb-3 .right-section .big-text {
+            font-size: 72px;
+            font-weight: 900;
+            color: white;
+            line-height: 1.2;
+            text-align: center;
+        }
+
+        .thumb-3 .right-section .sub-label {
+            font-size: 36px;
+            color: rgba(255,255,255,0.9);
+            text-align: center;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h2>YouTube Live — Proposal Bootcamp Promo — Thumbnail Options</h2>
+    <p class="info">Size: 1280x720px | Screenshot or export for use<br>RECOMMENDED: Option 1 (matches the $82B winner format — text-only, no face, big stat)</p>
+
+    <!-- Option 1: The Stat -->
+    <div class="label-box">OPTION 1 (RECOMMENDED): "50% NEVER HIT SAM.GOV" — Matches $82B winner format</div>
+    <div class="thumbnail thumb-1">
+        <div class="bg-pattern"></div>
+        <div class="content">
+            <div class="main-number">50<span class="percent">%</span></div>
+            <div class="sub-text"><span class="red">NEVER</span> Hit SAM.gov</div>
+        </div>
+        <div class="badge">2026</div>
+        <div class="bottom-text">Here's Where The Real Contracts Are</div>
+    </div>
+
+    <!-- Option 2: The Split -->
+    <div class="label-box">OPTION 2: Split View — SAM.gov vs Hidden Contracts</div>
+    <div class="thumbnail thumb-2">
+        <div class="top-banner">Federal Contracts</div>
+        <div class="left-half">
+            <div class="sam-text">SAM.GOV</div>
+            <div class="pct">50%</div>
+            <div class="pct-label">What You See</div>
+        </div>
+        <div class="center-vs">VS</div>
+        <div class="right-half">
+            <div class="hidden-text">TASK ORDERS</div>
+            <div class="pct">50%</div>
+            <div class="pct-label">What You're Missing</div>
+        </div>
+        <div class="bottom-banner">Here's How to Win the Other Half</div>
+    </div>
+
+    <!-- Option 3: Dollar Amount -->
+    <div class="label-box">OPTION 3: Dollar Amount Focus — "$350B+ Through Task Orders"</div>
+    <div class="thumbnail thumb-3">
+        <div class="left-section">
+            <div class="main-text">
+                <span class="money">$350B+</span><br>
+                Flows Through<br>
+                <span class="emphasis">Task Orders</span>
+            </div>
+            <div class="sub-text">And You're Not Bidding on Them.</div>
+        </div>
+        <div class="right-section">
+            <div class="big-text">HOW TO<br>WIN<br>THEM</div>
+            <div class="sub-label">IDIQs Explained</div>
+        </div>
+    </div>
+
+    <div class="label-box" style="margin-top: 40px; max-width: 900px; line-height: 1.6;">
+        <strong>RECOMMENDED TITLE:</strong> "50% of Federal Contracts NEVER Hit SAM.gov — Here's How to Win Them (2026)"<br>
+        <strong>ALT TITLE:</strong> "$350 BILLION in Task Orders — And Nobody Taught You How to Win Them"<br>
+        <strong>ALT TITLE:</strong> "The Proposal Nobody Taught You: How to Win IDIQ Task Orders (2026)"
+    </div>
+</body>
+</html>

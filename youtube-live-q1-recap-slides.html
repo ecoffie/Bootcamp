@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Live: 5 Strategies That Worked in Q1 2026 | GovCon Giants</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Arial Black', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0a0a0a;
+            color: white;
+            overflow: hidden;
+        }
+
+        .slide-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide {
+            width: 1920px;
+            height: 1080px;
+            display: none;
+            position: relative;
+            transform-origin: center center;
+            flex-direction: column;
+        }
+
+        .slide.active { display: flex; }
+
+        /* Backgrounds */
+        .bg-gradient-green { background: linear-gradient(135deg, #0B2E1B 0%, #1F7A4D 50%, #26C281 100%); }
+        .bg-gradient-dark { background: linear-gradient(180deg, #0B2E1B 0%, #041209 100%); }
+        .bg-gradient-orange { background: linear-gradient(135deg, #0B2E1B 0%, #1F7A4D 40%, #F97316 100%); }
+        .bg-gradient-red { background: linear-gradient(135deg, #7f1d1d 0%, #dc2626 100%); }
+        .bg-gradient-blue { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); }
+        .bg-gradient-purple { background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%); }
+        .bg-solid-dark { background: #0B2E1B; }
+
+        /* Header Bar */
+        .header-bar {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo { font-size: 24px; font-weight: 900; letter-spacing: 2px; }
+
+        .live-badge {
+            background: #ef4444;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .live-dot {
+            width: 10px; height: 10px;
+            background: white;
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Content */
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px;
+            text-align: center;
+        }
+
+        .content-left { align-items: flex-start; text-align: left; }
+
+        /* Typography */
+        .episode-tag {
+            background: rgba(38, 194, 129, 0.2);
+            border: 2px solid #26C281;
+            color: #26C281;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+        }
+
+        .title-main {
+            font-size: 84px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            max-width: 1400px;
+        }
+
+        .title-large {
+            font-size: 72px;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 30px;
+        }
+
+        .title-medium {
+            font-size: 56px;
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 30px;
+        }
+
+        .subtitle {
+            font-size: 32px;
+            color: #E9FFF4;
+            opacity: 0.9;
+            max-width: 1000px;
+            line-height: 1.5;
+        }
+
+        .highlight-green { color: #26C281; }
+        .highlight-orange { color: #F97316; }
+        .highlight-red { color: #ef4444; }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin: 50px 0;
+            width: 100%;
+            max-width: 1400px;
+        }
+
+        .stats-grid-4 { grid-template-columns: repeat(4, 1fr); }
+        .stats-grid-2 { grid-template-columns: repeat(2, 1fr); }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(38, 194, 129, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 64px;
+            font-weight: 900;
+            color: #26C281;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 22px;
+            color: #E9FFF4;
+            opacity: 0.9;
+        }
+
+        /* List Styles */
+        .list-container { text-align: left; width: 100%; max-width: 1400px; }
+
+        .list-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+            margin-bottom: 28px;
+            font-size: 28px;
+            line-height: 1.5;
+        }
+
+        .list-icon {
+            width: 44px; height: 44px;
+            background: #26C281;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
+
+        .list-icon.orange { background: #F97316; }
+        .list-icon.red { background: #ef4444; }
+
+        /* Two Column */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            width: 100%;
+            max-width: 1600px;
+            margin: 40px 0;
+        }
+
+        .column { text-align: left; }
+
+        .column-title {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #26C281;
+        }
+
+        .column-title.red { border-color: #ef4444; }
+
+        /* Mistake / Success boxes */
+        .mistake-list {
+            background: rgba(239, 68, 68, 0.15);
+            border: 2px solid #ef4444;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: left;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .success-list {
+            background: rgba(38, 194, 129, 0.15);
+            border: 2px solid #26C281;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: left;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .mistake-item, .success-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 25px;
+            font-size: 24px;
+            color: #E9FFF4;
+        }
+
+        .mistake-item:last-child, .success-item:last-child { margin-bottom: 0; }
+        .x-icon { color: #ef4444; font-size: 28px; font-weight: 900; }
+        .check-icon { color: #26C281; font-size: 28px; font-weight: 900; }
+
+        /* Process Steps */
+        .process-steps {
+            display: flex;
+            gap: 30px;
+            margin: 40px 0;
+            width: 100%;
+            max-width: 1600px;
+        }
+
+        .process-step {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.08);
+            border: 2px solid rgba(38, 194, 129, 0.4);
+            border-radius: 20px;
+            padding: 35px;
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px; height: 50px;
+            background: #26C281;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 900;
+        }
+
+        .step-title {
+            font-size: 24px;
+            font-weight: 800;
+            color: #26C281;
+            margin: 15px 0;
+        }
+
+        .step-desc {
+            font-size: 18px;
+            color: #E9FFF4;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        /* Contract Cards */
+        .contract-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            width: 100%;
+            max-width: 1600px;
+            margin: 30px 0;
+        }
+
+        .contract-card {
+            background: rgba(255, 255, 255, 0.08);
+            border: 2px solid rgba(38, 194, 129, 0.4);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: left;
+        }
+
+        .contract-card .agency {
+            font-size: 18px;
+            color: #26C281;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .contract-card .value {
+            font-size: 36px;
+            font-weight: 900;
+            color: #F97316;
+            margin-bottom: 8px;
+        }
+
+        .contract-card .naics {
+            font-size: 18px;
+            color: #E9FFF4;
+            opacity: 0.8;
+        }
+
+        .contract-card .expires {
+            font-size: 16px;
+            color: #ef4444;
+            font-weight: 700;
+            margin-top: 8px;
+        }
+
+        /* CTA Box */
+        .cta-box {
+            background: linear-gradient(135deg, #F97316 0%, #ea580c 100%);
+            border-radius: 20px;
+            padding: 50px 80px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .cta-title { font-size: 36px; font-weight: 900; margin-bottom: 15px; }
+        .cta-url { font-size: 28px; font-weight: 700; opacity: 0.95; }
+
+        /* Footer */
+        .footer {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 25px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-left, .footer-right { font-size: 18px; opacity: 0.8; }
+
+        /* Nav */
+        .nav-hint {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-size: 14px;
+            color: #ffffff;
+            opacity: 0.7;
+            z-index: 1000;
+        }
+
+        .slide-counter {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-size: 18px;
+            color: #26C281;
+            font-weight: 700;
+            z-index: 1000;
+        }
+
+        /* Source Grid */
+        .source-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 40px 0;
+            width: 100%;
+            max-width: 1500px;
+        }
+
+        .source-card {
+            background: rgba(255, 255, 255, 0.08);
+            border: 2px solid rgba(38, 194, 129, 0.4);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .source-name { font-size: 24px; font-weight: 800; color: #26C281; margin-bottom: 12px; }
+        .source-desc { font-size: 18px; color: #E9FFF4; opacity: 0.9; margin-top: 10px; }
+
+        /* Offer Box */
+        .offer-box {
+            background: rgba(255, 255, 255, 0.1);
+            border: 3px solid #26C281;
+            border-radius: 20px;
+            padding: 40px 60px;
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .offer-old {
+            font-size: 48px;
+            font-weight: 900;
+            opacity: 0.4;
+            text-decoration: line-through;
+        }
+
+        .offer-new {
+            font-size: 96px;
+            font-weight: 900;
+            color: #26C281;
+            text-shadow: 0 0 40px rgba(38, 194, 129, 0.3);
+        }
+
+        .offer-save {
+            font-size: 36px;
+            color: #F97316;
+            font-weight: 700;
+            margin: 15px 0;
+        }
+
+        /* NAICS Tag */
+        .naics-tag {
+            display: inline-block;
+            background: rgba(38, 194, 129, 0.2);
+            border: 1px solid rgba(38, 194, 129, 0.4);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 16px;
+            color: #26C281;
+            margin: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+
+    <!-- SLIDE 1: Title -->
+    <div class="slide active bg-gradient-green" id="slide-1">
+        <div class="header-bar">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge"><div class="live-dot"></div> LIVE</div>
+        </div>
+        <div class="content">
+            <div class="episode-tag">YOUTUBE LIVE — MARCH 2026</div>
+            <h1 class="title-main"><span class="highlight-orange">5 Strategies</span> That Worked in Q1 2026</h1>
+            <p class="subtitle">Real results from January & February bootcamp attendees</p>
+        </div>
+        <div class="footer">
+            <div class="footer-left">GovConGiants.com</div>
+            <div class="footer-right">Weekly Live Training Series</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 2: The Journey So Far -->
+    <div class="slide bg-gradient-dark" id="slide-2">
+        <div class="header-bar">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge"><div class="live-dot"></div> LIVE</div>
+        </div>
+        <div class="content">
+            <h2 class="title-large">The Journey <span class="highlight-green">So Far</span></h2>
+            <div class="process-steps" style="margin-top: 50px;">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-title">January: FIND</div>
+                    <div class="step-desc">Targeting agencies. Building hit lists. Identifying pain points. Learning where the money flows.</div>
+                </div>
+                <div class="process-step" style="border-color: #F97316;">
+                    <div class="step-number" style="background: #F97316;">2</div>
+                    <div class="step-title" style="color: #F97316;">February: WIN</div>
+                    <div class="step-desc">Writing proposals. Understanding task orders. Navigating IDIQs. Building teaming agreements.</div>
+                </div>
+                <div class="process-step" style="border-color: #fbbf24;">
+                    <div class="step-number" style="background: #fbbf24; color: #0B2E1B;">3</div>
+                    <div class="step-title" style="color: #fbbf24;">March: RESULTS</div>
+                    <div class="step-desc">What actually worked. Real stories. Real numbers. The strategies that moved the needle.</div>
+                </div>
+            </div>
+            <p class="subtitle" style="margin-top: 40px; font-size: 28px;">Tonight we break down the <strong style="color: #26C281;">5 strategies</strong> that produced real results in Q1.</p>
+        </div>
+        <div class="footer">
+            <div class="footer-left">GovConGiants.com</div>
+            <div class="footer-right">FIND → WIN → RESULTS</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 3: Strategy 1 — Sources Sought Responses -->
+    <div class="slide bg-solid-dark" id="slide-3">
+        <div class="header-bar">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge"><div class="live-dot"></div> LIVE</div>
+        </div>
+        <div class="content">
+            <div class="episode-tag">STRATEGY 1</div>
+            <h2 class="title-large"><span class="highlight-green">Sources Sought</span> Responses</h2>
+            <p class="subtitle" style="font-size: 36px; margin-bottom: 50px;">Less than 5% respond. <strong style="color: #F97316;">Our attendees ARE the 5%.</strong></p>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">5%</div>
+                    <div class="stat-label">Of Contractors Respond to Sources Sought</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" style="color: #F97316;">12+</div>
+                    <div class="stat-label">Agencies Responded to Our Attendees</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">Meetings</div>
+                    <div class="stat-label">Scheduled With Contracting Officers</div>
+                </div>
+            </div>
+            <p class="subtitle" style="margin-top: 40px; font-size: 28px;">When you respond to a Sources Sought, the agency <strong style="color: #26C281;">knows you exist</strong>. That's half the battle.</p>
+        </div>
+        <div class="footer">
+            <div class="footer-left">GovConGiants.com</div>
+            <div class="footer-right">Strategy 1: Show up where others don't</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 4: Strategy 2 — SBLO Outreach -->
+    <div class="slide bg-gradient-dark" id="slide-4">
+        <div class="header-bar">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge"><div class="live-dot"></div> LIVE</div>
+        </div>
+        <div class="content">
+            <div class="episode-tag">STRATEGY 2</div>
+            <h2 class="title-large"><span class="highlight-orange">SBLO Outreach</span></h2>
+            <p class="subtitle" style="font-size: 36px; margin-bottom: 50px;">Contact the buyer <strong style="color: #26C281;">BEFORE</strong> the RFP drops.</p>
+            <div class="list-container" style="max-width: 1200px;">
+                <div class="list-item"><div class="list-icon">1</div><span><strong>Used the Contractor Database</strong> to find SBLO contacts at target agencies</span></div>
+                <div class="list-item"><div class="list-icon">2</div><span><strong>Sent template introduction emails</strong> from the bootcamp email toolkit</span></div>
+                <div class="list-item"><div class="list-icon">3</div><span><strong>Got on the radar</strong> of Small Business Liaison Officers who match buyers with small businesses</span></div>
+                <div class="list-item"><div class="list-icon">4</div><span><strong>Received invites</strong> to industry days, vendor outreach sessions, and pre-solicitation conferences</span></div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-left">GovConGiants.com</div>
+            <div class="footer-right">Strategy 2: Build the relationship first</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 5: Strategy 3 — Teaming With Primes -->
+    <div class="slide bg-solid-dark" id="slide-5">
+        <div class="header-bar">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge"><div class="live-dot"></div> LIVE</div>
+        </div>
+        <div class="content">
+            <div class="episode-tag">STRATEGY 3</div>
+            <h2 class="title-large">Teaming With <span class="highlight-green">Primes</span></h2>
+            <p class="subtitle" style="font-size: 36px; margin-bottom: 50px;">You don't need to win it alone.</p>
+            <div class="two-column" style="margin-top: 20px;">
+                <div style="background: rgba(255,255,255,0.08); border: 2px solid rgba(38,194,129,0.4); border-radius: 20px; padding: 40px;">
+                    <h3 style="font-size: 32px; color: #26C281; margin-bottom: 25px; text-align: center;">Path B From January Bootcamp</h3>
+                    <div style="font-size: 24px; line-height: 1.8; color: #E9FFF4;">
+                        <p style="margin-bottom: 15px;">Identify expiring contracts in your NAICS</p>
+                        <p style="margin-bottom: 15px;">Research the current incumbent</p>
+                        <p style="margin-bottom: 15px;">Reach out to offer subcontracting support</p>
+                        <p style="margin-bottom: 15px;">Build past performance for future bids</p>
+                        <p style="font-weight: 700; color: #26C281;">Result: Revenue + past performance + relationship</p>
+                    </div>
+                </div>
+                <div style="background: rgba(255,255,255,0.08); border: 2px solid rgba(247,147,22,0.4); border-radius: 20px; padding: 40px;">
+                    <h3 style="font-size: 32px; color: #F97316; margin-bottom: 25px; text-align: center;">Approaching Incumbents</h3>
+                    <div style="font-size: 24px; line-height: 1.8; color: #E9FFF4;">
+                        <p style="margin-bottom: 15px;">Primes NEED small business subs (23% goals)</p>
+                        <p style="margin-bottom: 15px;">They're looking for reliable partners</p>
+                        <p style="margin-bottom: 15px;">Your certification is their compliance tool</p>
+                        <p style="margin-bottom: 15px;">Expiring contracts = primes building new teams</p>
+                        <p style="font-weight: 700; color: #F97316;">Best for: New firms with certifications</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-left">GovConGiants.com</div>
+            <div class="footer-right">Strategy 3: Partner your way in</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 6: Strategy 4 — Simplified Acquisitions -->
+    <div class="slide bg-gradient-dark" id="slide-6">
+        <div class="header-bar">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge"><div class="live-dot"></div> LIVE</div>
+        </div>
+        <div class="content">
+            <div class="episode-tag">STRATEGY 4</div>
+            <h2 class="title-large"><span class="highlight-orange">Simplified Acquisitions</span></h2>
+            <p class="subtitle" style="font-size: 36px; margin-bottom: 50px;">Under $250K. Less competition. Faster awards.</p>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number" style="font-size: 52px;">&lt;$250K</div>
+                    <div class="stat-label">Simplified Acquisition Threshold</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" style="color: #F97316;">Fewer</div>
+                    <div class="stat-label">Bidders Per Opportunity</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">Faster</div>
+                    <div class="stat-label">Award Timelines</div>
+                </div>
+            </div>
+            <p class="subtitle" style="margin-top: 40px; font-size: 28px;">Beginner-friendly contracts from the hit lists. <strong style="color: #26C281;">Multiple attendees won their first contracts</strong> using this approach.</p>
+        </div>
+        <div class="footer">
+            <div class="footer-left">GovConGiants.com</div>
+            <div class="footer-right">Strategy 4: Start small, win fast</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 7: Strategy 5 — Task Order Positioning -->
+    <div class="slide bg-solid-dark" id="slide-7">
+        <div class="header-bar">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge"><div class="live-dot"></div> LIVE</div>
+        </div>
+        <div class="content">
+            <div class="episode-tag">STRATEGY 5</div>
+            <h2 class="title-large"><span class="highlight-green">Task Order Positioning</span></h2>
+            <p class="subtitle" style="font-size: 36px; margin-bottom: 50px;">IDIQs are the fast lane.</p>
+            <div class="list-container" style="max-width: 1200px;">
+                <div class="list-item"><div class="list-icon">1</div><span><strong>Used the IDIQ vehicles list</strong> from the February bootcamp to identify active contract vehicles</span></div>
+                <div class="list-item"><div class="list-icon">2</div><span><strong>Applied for GSA MAS</strong> — the largest government-wide contract vehicle for goods and services</span></div>
+                <div class="list-item"><div class="list-icon">3</div><span><strong>Teamed on OASIS+</strong> — positioned as subcontractors on the next generation of professional services IDIQs</span></div>
+                <div class="list-item"><div class="list-icon">4</div><span><strong>Monitored eBuy</strong> for task order RFQs flowing through GSA schedules</span></div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-left">GovConGiants.com</div>
+            <div class="footer-right">Strategy 5: Get on the vehicle, ride the task orders</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 8: What's Working — Stat Grid -->
+    <div class="slide bg-gradient-green" id="slide-8">
+        <div class="header-bar">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge"><div class="live-dot"></div> LIVE</div>
+        </div>
+        <div class="content">
+            <h2 class="title-large">What's <span style="color: #fbbf24;">Working</span></h2>
+            <div class="stats-grid" style="margin-top: 50px;">
+                <div class="stat-card" style="background: rgba(0,0,0,0.3);">
+                    <div class="stat-number">73%</div>
+                    <div class="stat-label">Of Federal Contracts Go to Known Vendors</div>
+                </div>
+                <div class="stat-card" style="background: rgba(0,0,0,0.3);">
+                    <div class="stat-number" style="color: #F97316;">6–18</div>
+                    <div class="stat-label">Months to Build Agency Relationships</div>
+                </div>
+                <div class="stat-card" style="background: rgba(0,0,0,0.3);">
+                    <div class="stat-number" style="color: #fbbf24;">Top 5%</div>
+                    <div class="stat-label">By Just Responding to Sources Sought</div>
+                </div>
+            </div>
+            <p class="subtitle" style="margin-top: 50px; font-size: 30px;">The attendees who took action in January and February are now <strong style="color: #fbbf24;">known vendors</strong>. That's the whole game.</p>
+        </div>
+        <div class="footer">
+            <div class="footer-left">GovConGiants.com</div>
+            <div class="footer-right">Relationships win contracts</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 9: Do vs Don't -->
+    <div class="slide bg-solid-dark" id="slide-9">
+        <div class="header-bar">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge"><div class="live-dot"></div> LIVE</div>
+        </div>
+        <div class="content">
+            <h2 class="title-large"><span class="highlight-green">DO</span> vs <span class="highlight-red">DON'T</span></h2>
+            <div class="two-column" style="margin-top: 30px;">
+                <div>
+                    <div class="success-list" style="max-width: 100%;">
+                        <h3 style="font-size: 28px; color: #26C281; margin-bottom: 25px; text-align: center;">DO THIS</h3>
+                        <div class="success-item">
+                            <span class="check-icon">&#10003;</span>
+                            <span><strong>Start with Sources Sought</strong> — respond to every one in your NAICS</span>
+                        </div>
+                        <div class="success-item">
+                            <span class="check-icon">&#10003;</span>
+                            <span><strong>Contact SBLOs</strong> — build relationships before opportunities post</span>
+                        </div>
+                        <div class="success-item">
+                            <span class="check-icon">&#10003;</span>
+                            <span><strong>Team with primes</strong> — leverage their past performance and vehicles</span>
+                        </div>
+                        <div class="success-item">
+                            <span class="check-icon">&#10003;</span>
+                            <span><strong>Use data</strong> — target agencies based on spending patterns and pain points</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="mistake-list" style="max-width: 100%;">
+                        <h3 style="font-size: 28px; color: #ef4444; margin-bottom: 25px; text-align: center;">DON'T DO THIS</h3>
+                        <div class="mistake-item">
+                            <span class="x-icon">&#10007;</span>
+                            <span><strong>Spray and pray on SAM</strong> — bidding everything without research</span>
+                        </div>
+                        <div class="mistake-item">
+                            <span class="x-icon">&#10007;</span>
+                            <span><strong>Skip market research</strong> — guessing instead of using real spending data</span>
+                        </div>
+                        <div class="mistake-item">
+                            <span class="x-icon">&#10007;</span>
+                            <span><strong>Bid without teaming</strong> — going solo when you lack past performance</span>
+                        </div>
+                        <div class="mistake-item">
+                            <span class="x-icon">&#10007;</span>
+                            <span><strong>Wait for the perfect opportunity</strong> — analysis paralysis kills momentum</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-left">GovConGiants.com</div>
+            <div class="footer-right">Action beats perfection</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 10: The Tool Stack in Action -->
+    <div class="slide bg-gradient-dark" id="slide-10">
+        <div class="header-bar">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge"><div class="live-dot"></div> LIVE</div>
+        </div>
+        <div class="content" style="padding: 50px 60px;">
+            <h2 class="title-medium" style="margin-bottom: 30px;">The Tool Stack <span class="highlight-green">in Action</span></h2>
+            <div class="process-steps" style="max-width: 1700px;">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-title">Market Assassin</div>
+                    <div class="step-desc"><strong style="color: #F97316;">WHAT</strong> — Identify which agencies spend in your NAICS. Pain points. Budget trends. Target list.</div>
+                </div>
+                <div class="process-step" style="border-color: #F97316;">
+                    <div class="step-number" style="background: #F97316;">2</div>
+                    <div class="step-title" style="color: #F97316;">Recompete Tracker</div>
+                    <div class="step-desc"><strong style="color: #F97316;">WHEN</strong> — Find when contracts expire. Position 12–18 months early. Track recompete timelines.</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-title">Contractor Database</div>
+                    <div class="step-desc"><strong style="color: #F97316;">WHO</strong> — Find incumbents, SBLOs, and primes. 3,500+ contacts for teaming and outreach.</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-title">Content Generator</div>
+                    <div class="step-desc"><strong style="color: #F97316;">HOW</strong> — Write capability statements, teaming emails, Sources Sought responses, proposals.</div>
+                </div>
+            </div>
+            <p class="subtitle" style="margin-top: 40px; font-size: 28px;">Each tool maps directly to a strategy: <span class="highlight-green">WHAT → WHEN → WHO → HOW</span></p>
+        </div>
+        <div class="footer">
+            <div class="footer-left">GovConGiants.com</div>
+            <div class="footer-right">shop.govcongiants.org</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 11: Free Resources Reminder -->
+    <div class="slide bg-gradient-green" id="slide-11">
+        <div class="header-bar">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge"><div class="live-dot"></div> LIVE</div>
+        </div>
+        <div class="content">
+            <h2 class="title-large">Free <span style="color: #fbbf24;">Resources</span></h2>
+            <p class="subtitle" style="font-size: 28px; margin-bottom: 40px;">Everything you need to start — available right now</p>
+            <div class="list-container" style="max-width: 1100px;">
+                <div class="list-item"><div class="list-icon" style="background: #fbbf24; color: #0B2E1B;">1</div><span><strong>Expiring Contracts List</strong> — sample from the Recompete Tracker with agency, NAICS, and value</span></div>
+                <div class="list-item"><div class="list-icon" style="background: #fbbf24; color: #0B2E1B;">2</div><span><strong>SBLO Directory Sample</strong> — Small Business Liaison Officer contacts at top agencies</span></div>
+                <div class="list-item"><div class="list-icon" style="background: #fbbf24; color: #0B2E1B;">3</div><span><strong>Proposal Templates</strong> — capability statement and Sources Sought response templates</span></div>
+                <div class="list-item"><div class="list-icon" style="background: #fbbf24; color: #0B2E1B;">4</div><span><strong>IDIQ Vehicles List</strong> — active contract vehicles accepting task order bids</span></div>
+            </div>
+            <div class="cta-box" style="margin-top: 40px; background: rgba(255,255,255,0.2); border: none;">
+                <div class="cta-title">govcongiants.org/bootcamp</div>
+                <div class="cta-url">Link in the description — download now</div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-left">GovConGiants.com</div>
+            <div class="footer-right">Free download — link in description</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 12: Live Offer -->
+    <div class="slide bg-gradient-dark" id="slide-12">
+        <div class="header-bar">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge"><div class="live-dot"></div> LIVE</div>
+        </div>
+        <div class="content">
+            <h2 class="title-medium">Tonight Only — <span class="highlight-orange">Live Viewers</span></h2>
+            <p class="subtitle" style="margin-bottom: 30px;">Ultimate Giant Bundle — All 4 Premium Tools</p>
+            <div class="offer-box">
+                <div class="offer-old">$1,497</div>
+                <div style="font-size: 48px; color: #26C281; margin: 10px 0;">→</div>
+                <div class="offer-new">$1,000</div>
+                <div class="offer-save">SAVE $497</div>
+            </div>
+            <p class="subtitle" style="margin-top: 30px; font-size: 26px;">Market Assassin + Recompete Tracker + Contractor Database + Content Generator — the same stack our Q1 winners used</p>
+            <p style="font-size: 36px; font-weight: 700; color: #F97316; margin-top: 20px;">shop.govcongiants.org</p>
+            <p style="font-size: 24px; opacity: 0.8; margin-top: 10px;">Expires midnight tonight</p>
+        </div>
+        <div class="footer">
+            <div class="footer-left">GovConGiants.com</div>
+            <div class="footer-right">Tonight only — live viewers</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 13: Next Bootcamp CTA -->
+    <div class="slide bg-gradient-orange" id="slide-13">
+        <div class="header-bar">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge"><div class="live-dot"></div> LIVE</div>
+        </div>
+        <div class="content">
+            <div class="episode-tag" style="background: rgba(255,255,255,0.2); border-color: rgba(255,255,255,0.5); color: white;">FEDERAL HELP CENTER PRO</div>
+            <h2 class="title-large">Next Bootcamp Coming Soon</h2>
+            <p class="subtitle" style="font-size: 36px; margin-bottom: 40px;">8 Hours Live Training | Tools | Templates | Community</p>
+            <div class="stats-grid">
+                <div class="stat-card" style="border-color: rgba(255,255,255,0.3);">
+                    <div class="stat-number" style="font-size: 48px;">$99/mo</div>
+                    <div class="stat-label">Monthly Access</div>
+                </div>
+                <div class="stat-card" style="border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.15);">
+                    <div class="stat-number" style="font-size: 48px;">$799/yr</div>
+                    <div class="stat-label">Annual — Save $389</div>
+                </div>
+                <div class="stat-card" style="border-color: rgba(255,255,255,0.3);">
+                    <div class="stat-number" style="font-size: 48px;">Cancel</div>
+                    <div class="stat-label">Anytime</div>
+                </div>
+            </div>
+            <p style="font-size: 36px; font-weight: 700; margin-top: 40px;">federalhelpcenter.com/pro</p>
+        </div>
+        <div class="footer">
+            <div class="footer-left">GovConGiants.com</div>
+            <div class="footer-right">Join Pro for bootcamp access</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 14: Your Challenge This Week -->
+    <div class="slide bg-solid-dark" id="slide-14">
+        <div class="header-bar">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge"><div class="live-dot"></div> LIVE</div>
+        </div>
+        <div class="content">
+            <h2 class="title-large">Your Challenge <span class="highlight-orange">This Week</span></h2>
+            <p class="subtitle" style="font-size: 28px; margin-bottom: 30px;">Pick ONE and do it before next week's live:</p>
+            <div class="list-container" style="margin-top: 20px; max-width: 1200px;">
+                <div class="list-item" style="background: rgba(255,255,255,0.08); padding: 25px 30px; border-radius: 15px;">
+                    <div class="list-icon" style="font-size: 28px; font-weight: 900;">1</div>
+                    <span><strong>Respond to a Sources Sought</strong> — find one in your NAICS on SAM.gov and submit a response</span>
+                </div>
+                <div class="list-item" style="background: rgba(255,255,255,0.08); padding: 25px 30px; border-radius: 15px;">
+                    <div class="list-icon orange" style="font-size: 28px; font-weight: 900;">2</div>
+                    <span><strong>Contact an SBLO</strong> — send an introduction email to a Small Business Liaison Officer at your target agency</span>
+                </div>
+                <div class="list-item" style="background: rgba(255,255,255,0.08); padding: 25px 30px; border-radius: 15px;">
+                    <div class="list-icon" style="font-size: 28px; font-weight: 900;">3</div>
+                    <span><strong>Approach a prime for teaming</strong> — identify an incumbent on an expiring contract and reach out</span>
+                </div>
+                <div class="list-item" style="background: rgba(255,255,255,0.08); padding: 25px 30px; border-radius: 15px;">
+                    <div class="list-icon orange" style="font-size: 28px; font-weight: 900;">4</div>
+                    <span><strong>Apply for GSA MAS</strong> — start your GSA Schedule application to access task order opportunities</span>
+                </div>
+            </div>
+            <p class="subtitle" style="margin-top: 30px; font-size: 30px;">Pick ONE. Drop it in the chat. <strong style="color: #26C281;">Go.</strong></p>
+        </div>
+        <div class="footer">
+            <div class="footer-left">GovConGiants.com</div>
+            <div class="footer-right">Action beats knowledge every time</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 15: Data Sources -->
+    <div class="slide bg-solid-dark" id="slide-15">
+        <div class="header-bar">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge"><div class="live-dot"></div> LIVE</div>
+        </div>
+        <div class="content">
+            <h2 class="title-large"><span class="highlight-green">Data Sources</span></h2>
+            <div class="source-grid">
+                <div class="source-card">
+                    <div class="source-name">SAM.gov</div>
+                    <div class="source-desc">Active solicitations, Sources Sought notices, and contract opportunities</div>
+                </div>
+                <div class="source-card">
+                    <div class="source-name">USASpending.gov</div>
+                    <div class="source-desc">Federal contract award data, spending trends, and expiration dates</div>
+                </div>
+                <div class="source-card">
+                    <div class="source-name">SBA.gov</div>
+                    <div class="source-desc">Small business goals, certifications, and subcontracting data</div>
+                </div>
+                <div class="source-card">
+                    <div class="source-name">FPDS</div>
+                    <div class="source-desc">Federal Procurement Data System — contract award history and modifications</div>
+                </div>
+                <div class="source-card">
+                    <div class="source-name">Agency Forecasts</div>
+                    <div class="source-desc">Agency-published procurement forecasts and acquisition plans</div>
+                </div>
+                <div class="source-card">
+                    <div class="source-name">GSA.gov</div>
+                    <div class="source-desc">GSA Schedule information, eBuy task orders, and OASIS+ data</div>
+                </div>
+            </div>
+            <p class="subtitle" style="margin-top: 30px; font-size: 24px;">All data is publicly available from official government sources.</p>
+        </div>
+        <div class="footer">
+            <div class="footer-left">GovConGiants.com</div>
+            <div class="footer-right">Transparency builds trust</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 16: Closing -->
+    <div class="slide bg-gradient-green" id="slide-16">
+        <div class="header-bar">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge"><div class="live-dot"></div> LIVE</div>
+        </div>
+        <div class="content">
+            <h2 class="title-main">Thanks for Watching!</h2>
+            <p class="subtitle" style="font-size: 32px; margin-top: 20px; margin-bottom: 50px;">Q1 results are just the beginning. See you next week.</p>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label" style="font-size: 26px; color: #26C281; font-weight: 800; margin-bottom: 10px;">Free Resources</div>
+                    <div style="font-size: 24px;">govcongiants.org/bootcamp</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label" style="font-size: 26px; color: #26C281; font-weight: 800; margin-bottom: 10px;">Subscribe</div>
+                    <div style="font-size: 24px;">YouTube.com/@GovConGiants</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label" style="font-size: 26px; color: #F97316; font-weight: 800; margin-bottom: 10px;">Get the Tools</div>
+                    <div style="font-size: 24px;">shop.govcongiants.org</div>
+                </div>
+            </div>
+            <p class="subtitle" style="margin-top: 60px; font-size: 36px; font-weight: 700;">5 strategies. Real results. Now it's your turn.</p>
+        </div>
+        <div class="footer">
+            <div class="footer-left">GovConGiants.com</div>
+            <div class="footer-right">Federal Contracting Made Simple</div>
+        </div>
+    </div>
+
+    </div>
+
+    <div class="slide-counter">Slide <span id="current-slide">1</span> / <span id="total-slides">16</span></div>
+    <div class="nav-hint">Arrow keys to navigate</div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 16;
+
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.slide');
+            if (n > totalSlides) currentSlide = 1;
+            if (n < 1) currentSlide = totalSlides;
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[currentSlide - 1].classList.add('active');
+            document.getElementById('current-slide').textContent = currentSlide;
+            scaleSlide();
+        }
+
+        function scaleSlide() {
+            const container = document.querySelector('.slide-container');
+            const scaleX = container.clientWidth / 1920;
+            const scaleY = container.clientHeight / 1080;
+            const scale = Math.min(scaleX, scaleY, 1);
+            document.querySelectorAll('.slide').forEach(s => {
+                s.style.transform = `scale(${scale})`;
+            });
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') { currentSlide++; showSlide(currentSlide); }
+            else if (e.key === 'ArrowLeft') { currentSlide--; showSlide(currentSlide); }
+        });
+
+        document.addEventListener('click', (e) => {
+            if (e.clientX > window.innerWidth / 2) { currentSlide++; } else { currentSlide--; }
+            showSlide(currentSlide);
+        });
+
+        window.addEventListener('resize', scaleSlide);
+        showSlide(currentSlide);
+        document.getElementById('total-slides').textContent = totalSlides;
+    </script>
+</body>
+</html>
