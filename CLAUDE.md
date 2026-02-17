@@ -1,6 +1,6 @@
 # GovCon Giants - Bootcamp Project
 
-**Last Updated:** February 16, 2026
+**Last Updated:** February 17, 2026
 **Owner:** Eric Coffie
 **Purpose:** Federal contracting bootcamp materials, marketing assets, and business tools
 
@@ -355,8 +355,9 @@ Each deck includes: free download CTA, $1,000 live offer (Ultimate Giant Bundle)
 
 ## Bootcamps
 
-### January 2026 Bootcamp
+### January 2026 Bootcamp (Completed)
 **Date:** January 31, 2026
+**Status:** Completed — replay available at `/jan-31-bootcamp-paid`
 
 | File/Directory | Description |
 |----------------|-------------|
@@ -369,6 +370,20 @@ Each deck includes: free download CTA, $1,000 live offer (Ultimate Giant Bundle)
 | `presentations/January-2026-GovCon-Bootcamp-Slides.pdf` | PDF export |
 | `presentations/january-bootcamp-slides-images/` | 132 slide images |
 | `presentations/one-page-execution-sheet.html` | Execution worksheet |
+
+### February 2026 Bootcamp (Upcoming)
+**Date:** February 28, 2026
+**Topic:** Specifics and Proposals
+**Status:** Active — promoting at `/bootcamp` and `/feb-28-bootcamp`
+
+| Funnel Path | Description |
+|-------------|-------------|
+| `/bootcamp` | Main bootcamp landing (free handouts) |
+| `/bootcamp/upsell` | Upsell page |
+| `/bootcamp/thank-you` | Thank you page |
+| `/feb-28-bootcamp` | Bid forms landing page |
+| `/feb-28-bootcamp/upsell` | Upsell page |
+| `/feb-28-bootcamp/thank-you` | Thank you page |
 
 ### TempNet Staffing Presentation
 **Event:** TempNet staffing event (recent)
@@ -839,7 +854,8 @@ npx vercel --prod --yes
 
 ## Key Dates
 
-- **Bootcamp Date:** January 31, 2026
+- **Next Bootcamp:** February 28, 2026 (Specifics & Proposals)
+- **Past Bootcamp:** January 31, 2026 (replay available)
 - **FY2026 NDAA Signed:** December 18, 2025
 - **Fiscal Year End:** September 30
 
