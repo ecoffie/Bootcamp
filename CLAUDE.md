@@ -1,6 +1,6 @@
 # GovCon Giants - Bootcamp Project
 
-**Last Updated:** February 15, 2026
+**Last Updated:** February 16, 2026
 **Owner:** Eric Coffie
 **Purpose:** Federal contracting bootcamp materials, marketing assets, and business tools
 
@@ -613,6 +613,227 @@ npx vercel --prod --yes
 - All React hooks must be called before early returns (React Error #310)
 - Vercel env vars set via `echo` add trailing newlines — use `printf` instead
 - Edge Runtime middleware cannot use Node.js `crypto` — use `crypto.subtle`
+
+---
+
+## Domains & Deployments
+
+### Vercel Team: `eric-coffies-projects`
+
+| Domain | Vercel Project | Purpose |
+|--------|----------------|---------|
+| `govcongiants.org` | govcon-funnels | Main homepage (was Framer, now Vercel) |
+| `www.govcongiants.org` | govcon-funnels | Main homepage (www redirect) |
+| `funnels.govcongiants.org` | govcon-funnels | Funnels subdomain |
+| `freegovconcourse.com` | govcon-funnels | Free course landing |
+| `tools.govcongiants.org` | market-assassin | Market Assassin tool |
+| `shop.govcongiants.org` | govcon-shop | E-commerce/products |
+| `guides.govcongiants.org` | govcon-resources | The Vault (premium docs) |
+| `vault.govcongiants.org` | vault | Vault alternate URL |
+| `database.govcongiants.org` | federal-contractor-database | Contractor database |
+| `bootcamp.govcongiants.org` | january-bootcamp-page | Bootcamp landing page |
+
+### DNS Configuration
+
+**Registrar:** GoDaddy
+**Nameservers:** `ns1.vercel-dns.com`, `ns2.vercel-dns.com`
+
+All DNS is managed through Vercel after nameserver delegation (February 2026).
+
+### Framer Project (Legacy Homepage)
+
+**Project:** GCG
+**URL:** `https://framer.com/projects/GCG--v9UQvXswg7VBTLQFdr1X-8i9uz`
+**Status:** Deprecated (domain moved to Vercel February 2026)
+
+#### Framer API Automation
+
+| File | Purpose |
+|------|---------|
+| `/Users/ericcoffie/govcon-funnels/update-framer.mjs` | Framer API automation script |
+| `/Users/ericcoffie/govcon-funnels/update-framer.js` | Framer connection test script |
+
+**Node IDs:**
+- Page: `Xe878dnHC` (path: `/page`)
+- Desktop: `MlCI5JDag`
+- Embed: `qe2Z5r3kb`
+
+**API Key:** `3a7ef1ce-8e56-440d-b05f-016e295357b0`
+
+```bash
+# Test Framer connection
+node /Users/ericcoffie/govcon-funnels/update-framer.js
+
+# Update Framer embed with HTML
+node /Users/ericcoffie/govcon-funnels/update-framer.mjs [html-path] [--dry-run] [--publish]
+```
+
+---
+
+## GovCon Funnels — Lead Capture & Email System
+
+**Project Path:** `/Users/ericcoffie/govcon-funnels`
+**Framework:** Next.js 16 (App Router) + Tailwind CSS
+**Live URL:** `funnels.govcongiants.org`
+
+### Lead API (`/api/lead`)
+
+All funnel forms POST to `/api/lead` which:
+1. Creates/updates contact in GoHighLevel (GHL) with custom tags
+2. Sends Slack notification to `#leads` channel
+3. Sends confirmation email based on funnel source
+
+### Key Files
+
+| File | Purpose |
+|------|---------|
+| `src/app/api/lead/route.ts` | Lead capture API endpoint |
+| `src/lib/crm.ts` | GHL + Slack + webhook integrations |
+| `src/lib/email.ts` | Email templates for all funnels |
+
+### Funnel Sources & Email Templates
+
+| Source | Funnel | Email Template |
+|--------|--------|----------------|
+| `opp` | Opportunity Hunter | Opportunity Hunter access email (with logo) |
+| `surge` | 10 Free Resources | 10 resources download email |
+| `free-course` | Free 12-Day Course | Course welcome email |
+| `bootcamp` | General bootcamp | Bootcamp registration email |
+| `feb28-bootcamp` | Feb 28 bootcamp | Bootcamp registration email |
+| `proposal-bootcamp` | Proposal templates | 5 download links email |
+| *(other)* | Any unknown source | Generic welcome email |
+
+### Funnel Logo Images
+
+| File | URL |
+|------|-----|
+| `public/images/opportunity-hunter-logo.png` | `https://funnels.govcongiants.org/images/opportunity-hunter-logo.png` |
+
+### Environment Variables (Vercel Production)
+
+| Variable | Purpose |
+|----------|---------|
+| `GHL_API_KEY` | GoHighLevel API key (PIT token) |
+| `GHL_LOCATION_ID` | GHL location/sub-account ID |
+| `SLACK_LEAD_WEBHOOK_URL` | Slack incoming webhook for lead notifications |
+| `SMTP_USER` | Gmail address for sending emails |
+| `SMTP_PASSWORD` | Gmail app password |
+| `CRM_WEBHOOK_URL` | Optional: Zapier/Make webhook |
+
+### Testing Lead Capture
+
+```bash
+# Test a funnel email (replace source and email)
+curl -X POST https://funnels.govcongiants.org/api/lead \
+  -H "Content-Type: application/json" \
+  -d '{"name":"Test User","email":"test@example.com","source":"opp","tags":["test"]}'
+```
+
+### Active Funnels
+
+| Path | Pages | Description |
+|------|-------|-------------|
+| `/opp` | landing, upsell, downsell, thank-you | Opportunity Hunter tool |
+| `/surge` | landing, upsell, downsell, thank-you | 10 free resources |
+| `/free-course` | landing, upsell, downsell, thank-you, course | 12-day email course |
+| `/bootcamp` | landing, upsell, downsell, thank-you | General bootcamp registration |
+| `/feb-28-bootcamp` | landing, upsell, downsell, thank-you | February bootcamp |
+| `/proposal-bootcamp` | (in `/Bootcamp/funnels/`) | Proposal writing templates |
+
+---
+
+## GovCon Shop — E-commerce & Product Emails
+
+**Project Path:** `/Users/ericcoffie/govcon-shop`
+**Framework:** Next.js 16 (App Router) + Tailwind CSS
+**Live URL:** `shop.govcongiants.org`
+
+### Free Resources Email Flow
+
+1. User submits email at `/free-resources` or `/all-free-resources`
+2. `POST /api/request-verification` → creates lead in Supabase, sends verification email
+3. User clicks verification link → `POST /api/verify-email-token`
+4. After verification: welcome email sent, lead synced to GHL + Slack
+
+### CRM Integration
+
+**File:** `src/lib/crm.ts`
+
+| Function | Purpose |
+|----------|---------|
+| `sendToGoHighLevel()` | Create/update contact in GHL v2 API |
+| `sendToSlack()` | Send lead notification to Slack webhook |
+| `sendLeadToCrm()` | Calls both GHL + Slack in parallel |
+
+### Stripe Webhook (`/api/stripe-webhook`)
+
+Handles `checkout.session.completed` events and sends product-specific confirmation emails.
+
+**Product IDs & Emails:**
+
+| Product | Stripe Product ID | Email Function |
+|---------|-------------------|----------------|
+| Ultimate Giant Bundle | `prod_RqZdWzZyPM3jlQ` | `sendUltimateBundleEmail()` |
+| Opportunity Hunter Pro | `prod_RqZSrMmcvPwzSN` | `sendOpportunityHunterProEmail()` |
+| Federal Contractor Database | `prod_RpMU88VU0DlnGa` | `sendDatabaseAccessEmail()` |
+| Market Assassin Legacy | `prod_RpMQJlzqKcfaFL` | `sendAccessCodeEmail()` |
+| Market Assassin Standard | `prod_SB3FnPexrDxCVJ`, `prod_SBPN0rBnAPXWPf` | `sendMarketAssassinEmail('standard')` |
+| Market Assassin Premium | `prod_SB3GvDp5VHuIXi`, `prod_SBPN6bqlFGZjsH` | `sendMarketAssassinEmail('premium')` |
+| Recompete Tracker | `prod_TmMbpcfofGpDZd` | `sendRecompeteTrackerEmail()` |
+| Content Reaper | `prod_TqrkVq4DfRrrPY` | `sendContentReaperEmail()` |
+
+### Email Functions (`src/lib/send-email.ts`)
+
+| Function | Purpose | Logo |
+|----------|---------|------|
+| `sendFreeResourceVerificationEmail()` | Verification link for free resources | — |
+| `sendFreeResourcesWelcomeEmail()` | Welcome after email verification | — |
+| `sendDatabaseAccessEmail()` | Federal Contractor Database access | — |
+| `sendOpportunityHunterProEmail()` | Opportunity Hunter Pro access | — |
+| `sendUltimateBundleEmail()` | Ultimate Giant Bundle welcome | — |
+| `sendAccessCodeEmail()` | Market Assassin Legacy (one-time code) | — |
+| `sendMarketAssassinEmail()` | Market Assassin Standard/Premium | ✓ `market-assassin-logo.png` |
+| `sendRecompeteTrackerEmail()` | Recompete Tracker access | — |
+| `sendContentReaperEmail()` | Content Reaper access | ✓ `content-reaper-logo.png` |
+
+### Product Logo Images
+
+| File | URL |
+|------|-----|
+| `public/images/market-assassin-logo.png` | `https://shop.govcongiants.org/images/market-assassin-logo.png` |
+| `public/images/content-reaper-logo.png` | `https://shop.govcongiants.org/images/content-reaper-logo.png` |
+
+### Environment Variables (Vercel Production)
+
+| Variable | Purpose |
+|----------|---------|
+| `GHL_API_KEY` | GoHighLevel API key (PIT token) |
+| `GHL_LOCATION_ID` | GHL location/sub-account ID |
+| `SLACK_LEAD_WEBHOOK_URL` | Slack incoming webhook for lead notifications |
+| `SMTP_USER` | Gmail address for sending emails |
+| `SMTP_PASSWORD` | Gmail app password |
+| `STRIPE_SECRET_KEY` | Stripe API secret key |
+| `STRIPE_WEBHOOK_SECRET` | Stripe webhook signing secret |
+| `SUPABASE_URL` | Supabase project URL |
+| `SUPABASE_SERVICE_ROLE_KEY` | Supabase service role key |
+
+### Key Files
+
+| File | Purpose |
+|------|---------|
+| `src/app/api/request-verification/route.ts` | Free resource email verification request |
+| `src/app/api/verify-email-token/route.ts` | Verify email token, send welcome email |
+| `src/app/api/stripe-webhook/route.ts` | Handle Stripe checkout completions |
+| `src/lib/send-email.ts` | All email templates (nodemailer) |
+| `src/lib/crm.ts` | GHL + Slack integrations |
+| `src/lib/rate-limit.ts` | Rate limiting for verification requests |
+
+### Deploy
+
+```bash
+cd /Users/ericcoffie/govcon-shop
+npx vercel --prod --yes
+```
 
 ---
 
