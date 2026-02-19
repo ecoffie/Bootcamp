@@ -705,6 +705,8 @@ All funnel forms POST to `/api/lead` which:
 
 | File | Purpose |
 |------|---------|
+| `src/app/page.tsx` | Main homepage (hero, resources, urgency, videos, premium, CTA) |
+| `src/components/SiteNav.tsx` | Navigation bar — hides "Back to Home" on `/`, shows on all other pages (uses `usePathname()`) |
 | `src/app/api/lead/route.ts` | Lead capture API endpoint |
 | `src/lib/crm.ts` | GHL + Slack + webhook integrations |
 | `src/lib/email.ts` | Email templates for all funnels |
