@@ -280,17 +280,30 @@ This repository contains all GovCon Giants resources for helping small businesse
 
 ## YouTube Lives
 
-### Live Stream Files (Root)
+### Slide Decks (14 decks / 308 total slides)
+
+| # | File | Title | Slides |
+|---|------|-------|--------|
+| 1 | `youtube-live-1-slides.html` | $221B in Federal Contracts Are Up for Grabs | 21 |
+| 2 | `youtube-live-fy2025-vs-fy2026-slides.html` | FY2025 vs FY2026: Who's Getting Money & Who's Cut | 29 |
+| 3 | `youtube-live-3-slides.html` | 71% of Federal Contracts Had ZERO Competition | 27 |
+| 4 | `youtube-live-4-slides.html` | How to Find and Contact the Right Buyers | 38 |
+| 5 | `youtube-live-final-call-slides.html` | Final Call | 18 |
+| 6 | `youtube-live-hidden-agencies-slides.html` | The Federal Agencies You Never Heard Of | 23 |
+| 7 | `youtube-live-bootcamp-recap-slides.html` | Bootcamp Recap | 22 |
+| 8 | `youtube-live-proposal-bootcamp-slides.html` | Proposal Bootcamp Promo | 18 |
+| 9 | `youtube-live-expiring-contracts-slides.html` | $221B Expiring Contracts | 18 |
+| 10 | `youtube-live-q1-recap-slides.html` | Q1 Recap: 5 Strategies That Worked | 16 |
+| 11 | `youtube-live-prime-contractors-slides.html` | 3,500 Prime Contractors Need Partners | 18 |
+| 12 | `youtube-live-834k-case-study-slides.html` | $834K in 7 Months Case Study | 20 |
+| 13 | `youtube-live-q2-spending-slides.html` | Q2 Spending Window | 18 |
+| 14 | `youtube-live-zero-to-first-contract-slides.html` | Zero to First Contract Playbook | 22 |
+
+### Supporting Files (Root)
 | File | Description |
 |------|-------------|
-| `youtube-live-1-slides.html` | YT Live #1 slides |
 | `youtube-live-1-thumbnail.html` | YT Live #1 thumbnail |
 | `youtube-live-1-82b-opportunity-virality-kit.md` | Virality kit for Live #1 |
-| `youtube-live-fy2025-vs-fy2026-slides.html` | YT Live #2: "FY2025 vs FY2026: Who's Getting Money & Who's Getting Cut" (replaces old #2 pain points) |
-| `youtube-live-3-slides.html` | YT Live #3: "71% of Federal Contracts Had ZERO Competition" (27 slides, March 2026 — what 71% means (2 slides), programs that drive it (2 slides: OTA/BAA/SBIR + GSA/IDIQ/Rapid Tech), "isn't this for large firms?", OTA dedicated slide, BAA dedicated slide, veterans built-in advantage, GSA Schedule (2 slides: how it works + eBuy/BPAs), red ocean, competition spectrum, defense vs civilian, WOSB gap, $350K SAT, 13% 1-offer stat, where to turn (2 slides: certs/JVs + programs/paths), how to find low-competition contracts, green zone (2 slides), data sources, weekly challenge) |
-| `youtube-live-4-slides.html` | YT Live #4 slides |
-| `youtube-live-final-call-slides.html` | Final call slides |
-| `youtube-live-hidden-agencies-slides.html` | YT Live #6: "The Federal Agencies You Never Heard Of" (23 slides — 250+ hidden agencies, Space Force/emerging commands, Navy/Defense/Army/AF commands, civilian gold mines, micro agencies, agency forecasts, SBLO scripts; 5 industry-by-NAICS slides with real MA data: IT/Cyber, Construction, Janitorial, Staffing, Healthcare; weekly challenge; replaces old #6 bootcamp recap) |
 | `youtube-live-bootcamp-recap-script.md` | Recap script (short) |
 | `youtube-live-bootcamp-recap-full-script.md` | Recap full script |
 | `youtube-live-bootcamp-recap-virality-kit.md` | Recap virality kit |
@@ -298,12 +311,6 @@ This repository contains all GovCon Giants resources for helping small businesse
 | `youtube-live-bootcamp-recap-thumbnail-final.html` | Final thumbnail |
 | `youtube-live-data-sources.md` | Data sources documentation |
 | `youtube-cr-explained-slides.html` | Contract research explained |
-| `youtube-live-expiring-contracts-slides.html` | Content Strategy Live 1: "$221B Expiring Contracts" (18 slides, March 2026) |
-| `youtube-live-q1-recap-slides.html` | Content Strategy Live 2: "Q1 Recap — 5 Strategies That Worked" (16 slides, March 2026) |
-| `youtube-live-prime-contractors-slides.html` | Content Strategy Live 3: "3,500 Prime Contractors Need Partners" (18 slides, April 2026) |
-| `youtube-live-834k-case-study-slides.html` | Content Strategy Live 4: "$834K in 7 Months Case Study" (20 slides, April 2026) |
-| `youtube-live-q2-spending-slides.html` | Content Strategy Live 5: "Q2 Spending Window" (18 slides, May 2026) |
-| `youtube-live-zero-to-first-contract-slides.html` | Content Strategy Live 6: "Zero to First Contract Playbook" (22 slides, May 2026) |
 
 ### February 2026 Proposal Bootcamp Promo (`youtube live proposal bootcamp promo/`)
 | File | Description |
@@ -343,9 +350,6 @@ Each deck includes: free download CTA, $1,000 live offer (Ultimate Giant Bundle)
 |-----------|----------|
 | `youtube-live-1-slides-images/` | Live #1 slide PNGs |
 | `youtube-live-1-thumbnails-images/` | Live #1 thumbnail options |
-| `youtube-live-2-slides-images/` | Live #2 slide PNGs |
-| `youtube-live-2-slides/` | Live #2 slide files |
-| `youtube-live-2-thumbnails-images/` | Live #2 thumbnails |
 | `youtube-live-3-slides-images/` | Live #3 slide PNGs |
 | `youtube-live-4-slides/` | Live #4 slide files |
 | `bootcamp-recap-slides-png/` | Recap slides as PNGs |
