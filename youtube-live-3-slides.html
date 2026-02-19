@@ -3,1261 +3,1434 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouTube Live #3 - How To Write Capability Statements That Win | January 24, 2026</title>
+    <title>YouTube Live: 71% of Federal Contracts Had ZERO Competition | GovCon Giants</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Arial Black', -apple-system, BlinkMacSystemFont, sans-serif;
             background: #0a0a0a;
             color: white;
+            overflow: hidden;
+        }
+
+        .slide-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .slide {
             width: 1920px;
             height: 1080px;
+            display: none;
             position: relative;
-            overflow: hidden;
-            page-break-after: always;
+            transform-origin: center center;
+            flex-direction: column;
+        }
+
+        .slide.active { display: flex; }
+
+        /* Backgrounds */
+        .bg-gradient-green { background: linear-gradient(135deg, #0B2E1B 0%, #1F7A4D 50%, #26C281 100%); }
+        .bg-gradient-dark { background: linear-gradient(180deg, #0B2E1B 0%, #041209 100%); }
+        .bg-gradient-orange { background: linear-gradient(135deg, #0B2E1B 0%, #1F7A4D 40%, #F97316 100%); }
+        .bg-gradient-red { background: linear-gradient(135deg, #7f1d1d 0%, #dc2626 100%); }
+        .bg-gradient-blue { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); }
+        .bg-gradient-purple { background: linear-gradient(135deg, #4c1d95 0%, #7c3aed 50%, #a855f7 100%); }
+        .bg-solid-dark { background: #0B2E1B; }
+
+        /* Header Bar */
+        .header-bar {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo { font-size: 24px; font-weight: 900; letter-spacing: 2px; }
+
+        .live-badge {
+            background: #ef4444;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 14px;
             display: flex;
             align-items: center;
+            gap: 8px;
+        }
+
+        .live-dot {
+            width: 10px; height: 10px;
+            background: white;
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Content */
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
             justify-content: center;
-        }
-
-        /* Slide 1: Title Slide */
-        .slide-title {
-            background: linear-gradient(135deg, #059669 0%, #7c3aed 50%, #1e3a8a 100%);
-        }
-
-        .slide-title .content {
-            text-align: center;
+            align-items: center;
             padding: 60px;
+            text-align: center;
         }
 
-        .slide-title .badge {
-            display: inline-block;
-            background: rgba(255,255,255,0.2);
-            padding: 15px 40px;
+        .content-left { align-items: flex-start; text-align: left; }
+
+        /* Typography */
+        .episode-tag {
+            background: rgba(38, 194, 129, 0.2);
+            border: 2px solid #26C281;
+            color: #26C281;
+            padding: 12px 30px;
             border-radius: 50px;
-            font-size: 28px;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 2px;
             margin-bottom: 40px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
         }
 
-        .slide-title h1 {
-            font-size: 95px;
+        .title-main {
+            font-size: 84px;
             font-weight: 900;
-            margin-bottom: 30px;
-            text-shadow: 0 10px 40px rgba(0,0,0,0.3);
             line-height: 1.1;
+            margin-bottom: 30px;
+            max-width: 1400px;
         }
 
-        .slide-title h1 .highlight {
-            color: #fef08a;
-        }
-
-        .slide-title .subtitle {
-            font-size: 48px;
-            opacity: 0.95;
-            font-weight: 400;
-        }
-
-        .slide-title .date {
-            position: absolute;
-            bottom: 60px;
-            left: 0;
-            right: 0;
-            text-align: center;
-            font-size: 32px;
-            opacity: 0.8;
-        }
-
-        /* Dark slide base */
-        .slide-dark {
-            background: #0f172a;
-        }
-
-        .slide-dark .content {
-            text-align: center;
-            padding: 80px;
-        }
-
-        .slide-dark h2 {
-            font-size: 80px;
+        .title-large {
+            font-size: 72px;
             font-weight: 900;
             line-height: 1.2;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
         }
 
-        .slide-dark h2 .highlight {
-            color: #4ade80;
+        .title-medium {
+            font-size: 56px;
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 30px;
         }
 
-        .slide-dark h2 .red {
-            color: #ef4444;
-        }
-
-        .slide-dark h2 .purple {
-            color: #a855f7;
-        }
-
-        .slide-dark h2 .yellow {
-            color: #fef08a;
-        }
-
-        .slide-dark p {
-            font-size: 42px;
+        .subtitle {
+            font-size: 32px;
+            color: #E9FFF4;
             opacity: 0.9;
-            max-width: 1400px;
+            max-width: 1000px;
             line-height: 1.5;
         }
 
-        /* Blue gradient slide */
-        .slide-blue {
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-        }
+        .highlight-green { color: #26C281; }
+        .highlight-orange { color: #F97316; }
+        .highlight-red { color: #ef4444; }
 
-        .slide-blue .content {
-            padding: 80px;
-            width: 100%;
-        }
-
-        .slide-blue h2 {
-            font-size: 72px;
-            font-weight: 900;
-            margin-bottom: 60px;
-            text-align: center;
-        }
-
-        /* Purple gradient slide */
-        .slide-purple {
-            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
-        }
-
-        .slide-purple .content {
-            padding: 80px;
-            width: 100%;
-        }
-
-        .slide-purple h2 {
-            font-size: 72px;
-            font-weight: 900;
-            margin-bottom: 50px;
-            text-align: center;
-        }
-
-        /* Green gradient slide */
-        .slide-green {
-            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
-        }
-
-        .slide-green .content {
-            text-align: center;
-            padding: 80px;
-        }
-
-        .slide-green h2 {
-            font-size: 72px;
-            font-weight: 900;
-            margin-bottom: 50px;
-        }
-
-        /* Red gradient slide */
-        .slide-red {
-            background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
-        }
-
-        .slide-red .content {
-            text-align: center;
-            padding: 80px;
-        }
-
-        .slide-red h2 {
-            font-size: 72px;
-            font-weight: 900;
-            margin-bottom: 50px;
-        }
-
-        /* Orange gradient slide */
-        .slide-orange {
-            background: linear-gradient(135deg, #ea580c 0%, #f97316 100%);
-        }
-
-        .slide-orange .content {
-            padding: 80px;
-            width: 100%;
-        }
-
-        .slide-orange h2 {
-            font-size: 72px;
-            font-weight: 900;
-            margin-bottom: 50px;
-            text-align: center;
-        }
-
-        /* Stat grid */
-        .stat-grid {
+        /* Stats Grid */
+        .stats-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 40px;
-            max-width: 1600px;
-            margin: 0 auto;
+            margin: 50px 0;
+            width: 100%;
+            max-width: 1400px;
         }
 
-        .stat-box {
-            background: rgba(255,255,255,0.1);
-            border-radius: 30px;
-            padding: 50px;
+        .stats-grid-4 { grid-template-columns: repeat(4, 1fr); }
+        .stats-grid-2 { grid-template-columns: repeat(2, 1fr); }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(38, 194, 129, 0.3);
+            border-radius: 20px;
+            padding: 40px;
             text-align: center;
         }
 
-        .stat-box .number {
-            font-size: 80px;
+        .stat-number {
+            font-size: 64px;
             font-weight: 900;
-            color: #4ade80;
+            color: #26C281;
+            margin-bottom: 10px;
         }
 
-        .stat-box .label {
-            font-size: 28px;
+        .stat-label {
+            font-size: 22px;
+            color: #E9FFF4;
             opacity: 0.9;
-            margin-top: 15px;
         }
 
-        /* Reason list */
-        .reason-list {
-            max-width: 1400px;
-            margin: 0 auto;
+        .stat-source {
+            font-size: 14px;
+            color: #26C281;
+            opacity: 0.7;
+            margin-top: 8px;
+            font-weight: 400;
         }
 
-        .reason-item {
+        /* List Styles */
+        .list-container { text-align: left; width: 100%; max-width: 1400px; }
+
+        .list-item {
             display: flex;
-            align-items: center;
-            gap: 40px;
-            margin-bottom: 35px;
-            font-size: 38px;
+            align-items: flex-start;
+            gap: 24px;
+            margin-bottom: 28px;
+            font-size: 28px;
+            line-height: 1.5;
         }
 
-        .reason-item .icon {
-            width: 80px;
-            height: 80px;
-            background: rgba(255,255,255,0.2);
+        .list-icon {
+            width: 44px; height: 44px;
+            background: #26C281;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 36px;
+            font-size: 22px;
             flex-shrink: 0;
+            margin-top: 4px;
         }
 
-        /* Section boxes */
-        .section-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-            max-width: 1600px;
-            margin: 0 auto;
-        }
+        .list-icon.orange { background: #F97316; }
+        .list-icon.red { background: #ef4444; }
 
-        .section-box {
-            background: rgba(255,255,255,0.1);
-            border-radius: 25px;
-            padding: 40px;
-            border-left: 6px solid #4ade80;
-        }
-
-        .section-box h3 {
-            font-size: 36px;
-            color: #4ade80;
-            margin-bottom: 20px;
-        }
-
-        .section-box p {
-            font-size: 28px;
-            opacity: 0.9;
-            line-height: 1.5;
-        }
-
-        /* Do Don't comparison */
-        .do-dont-grid {
+        /* Two Column */
+        .two-column {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
+            width: 100%;
             max-width: 1600px;
-            margin: 0 auto;
-        }
-
-        .dont-box {
-            background: rgba(239, 68, 68, 0.2);
-            border: 4px solid #ef4444;
-            border-radius: 30px;
-            padding: 50px;
-        }
-
-        .do-box {
-            background: rgba(16, 185, 129, 0.2);
-            border: 4px solid #10b981;
-            border-radius: 30px;
-            padding: 50px;
-        }
-
-        .do-box h3, .dont-box h3 {
-            font-size: 48px;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
-        .do-box h3 {
-            color: #4ade80;
-        }
-
-        .dont-box h3 {
-            color: #ef4444;
-        }
-
-        .do-box p, .dont-box p {
-            font-size: 28px;
-            margin-bottom: 20px;
-            padding: 15px;
-            background: rgba(0,0,0,0.2);
-            border-radius: 10px;
-        }
-
-        /* Capability Statement Layout */
-        .cap-statement-preview {
-            background: white;
-            color: #1e293b;
-            border-radius: 20px;
-            padding: 50px;
-            max-width: 1400px;
-            margin: 0 auto;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-        }
-
-        .cap-statement-preview .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 3px solid #3b82f6;
-        }
-
-        .cap-statement-preview .logo-area {
-            width: 150px;
-            height: 80px;
-            background: #e2e8f0;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            color: #64748b;
-        }
-
-        .cap-statement-preview .company-info {
-            text-align: right;
-        }
-
-        .cap-statement-preview .company-name {
-            font-size: 32px;
-            font-weight: 900;
-            color: #1e3a8a;
-        }
-
-        .cap-statement-preview .tagline {
-            font-size: 18px;
-            color: #64748b;
-        }
-
-        .cap-statement-preview .sections {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-
-        .cap-statement-preview .section {
-            padding: 20px;
-            background: #f8fafc;
-            border-radius: 10px;
-        }
-
-        .cap-statement-preview .section h4 {
-            font-size: 20px;
-            color: #3b82f6;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .cap-statement-preview .section p,
-        .cap-statement-preview .section li {
-            font-size: 16px;
-            color: #475569;
-            line-height: 1.6;
-        }
-
-        .cap-statement-preview .section ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .cap-statement-preview .section li::before {
-            content: ">";
-            color: #3b82f6;
-            margin-right: 10px;
-            font-weight: bold;
-        }
-
-        /* Numbered sections */
-        .numbered-section {
-            display: flex;
-            align-items: flex-start;
-            gap: 30px;
-            margin-bottom: 40px;
-            max-width: 1400px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .numbered-section .num {
-            width: 80px;
-            height: 80px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 40px;
-            font-weight: 900;
-            flex-shrink: 0;
-        }
-
-        .numbered-section .text h3 {
-            font-size: 42px;
-            margin-bottom: 15px;
-        }
-
-        .numbered-section .text p {
-            font-size: 30px;
-            opacity: 0.9;
-        }
-
-        /* Checklist */
-        .checklist {
-            max-width: 1400px;
-            margin: 0 auto;
-            text-align: left;
-        }
-
-        .checklist-item {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-            margin-bottom: 30px;
-            font-size: 36px;
-            background: rgba(255,255,255,0.05);
-            padding: 25px 35px;
-            border-radius: 15px;
-        }
-
-        .checklist-item .check {
-            width: 50px;
-            height: 50px;
-            background: #10b981;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            flex-shrink: 0;
-        }
-
-        /* Action list */
-        .action-list {
-            max-width: 1300px;
-            margin: 0 auto;
-        }
-
-        .action-item {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            margin-bottom: 30px;
-            font-size: 36px;
-        }
-
-        .action-item .number {
-            width: 70px;
-            height: 70px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 900;
-            flex-shrink: 0;
-        }
-
-        /* Formula box */
-        .formula-box {
-            background: rgba(255,255,255,0.1);
-            border-radius: 30px;
-            padding: 60px;
-            max-width: 1400px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .formula-box .formula {
-            font-size: 48px;
-            font-weight: 900;
-            margin-bottom: 30px;
-        }
-
-        .formula-box .formula .plus {
-            color: #fef08a;
-            margin: 0 20px;
-        }
-
-        .formula-box .formula .equals {
-            color: #4ade80;
-            margin: 0 20px;
-        }
-
-        .formula-box .explanation {
-            font-size: 32px;
-            opacity: 0.9;
-        }
-
-        /* Example box */
-        .example-box {
-            background: rgba(255,255,255,0.1);
-            border-radius: 20px;
-            padding: 40px;
-            max-width: 1400px;
-            margin: 30px auto;
-            text-align: left;
-        }
-
-        .example-box .label {
-            display: inline-block;
-            background: #7c3aed;
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-size: 20px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .example-box p {
-            font-size: 32px;
-            line-height: 1.5;
-        }
-
-        .example-box .highlight {
-            color: #4ade80;
-            font-weight: 700;
-        }
-
-        /* CTA Slide */
-        .slide-cta {
-            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #059669 100%);
-        }
-
-        .slide-cta .content {
-            text-align: center;
-            padding: 80px;
-        }
-
-        .slide-cta .badge {
-            display: inline-block;
-            background: rgba(255,255,255,0.2);
-            padding: 15px 40px;
-            border-radius: 50px;
-            font-size: 28px;
-            margin-bottom: 40px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .slide-cta h2 {
-            font-size: 80px;
-            font-weight: 900;
-            margin-bottom: 30px;
-        }
-
-        .slide-cta .date {
-            font-size: 60px;
-            font-weight: 700;
-            margin-bottom: 40px;
-            color: #4ade80;
-        }
-
-        .slide-cta .features {
-            font-size: 36px;
-            opacity: 0.95;
-            line-height: 1.8;
-            margin-bottom: 50px;
-        }
-
-        .slide-cta .cta-box {
-            display: inline-block;
-            background: white;
-            color: #7c3aed;
-            padding: 30px 80px;
-            border-radius: 50px;
-            font-size: 42px;
-            font-weight: 900;
-        }
-
-        .slide-cta .price {
-            margin-top: 30px;
-            font-size: 36px;
-            opacity: 0.95;
-        }
-
-        /* Download CTA slide */
-        .slide-download {
-            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
-        }
-
-        .slide-download .content {
-            text-align: center;
-            padding: 80px;
-        }
-
-        .slide-download h2 {
-            font-size: 80px;
-            font-weight: 900;
-            margin-bottom: 30px;
-        }
-
-        .slide-download .url {
-            font-size: 56px;
-            font-weight: 700;
-            background: rgba(255,255,255,0.2);
-            padding: 30px 60px;
-            border-radius: 20px;
             margin: 40px 0;
-            display: inline-block;
         }
 
-        .slide-download p {
-            font-size: 36px;
-            opacity: 0.95;
-            margin-top: 30px;
-        }
+        .column { text-align: left; }
 
-        /* Big text */
-        .big-text {
-            font-size: 100px;
-            font-weight: 900;
-            line-height: 1.2;
-        }
-
-        .medium-text {
-            font-size: 48px;
-            opacity: 0.95;
-            margin-top: 30px;
-        }
-
-        /* Two column layout */
-        .two-col {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            max-width: 1600px;
-            margin: 0 auto;
-            text-align: left;
-        }
-
-        .two-col h3 {
-            font-size: 42px;
-            color: #4ade80;
+        .column-title {
+            font-size: 32px;
+            font-weight: 800;
             margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #26C281;
         }
 
-        .two-col ul {
-            list-style: none;
-            font-size: 30px;
+        .column-title.red { border-color: #ef4444; }
+        .column-title.orange { border-color: #F97316; }
+
+        /* Process Steps */
+        .process-steps {
+            display: flex;
+            gap: 30px;
+            margin: 40px 0;
+            width: 100%;
+            max-width: 1600px;
         }
 
-        .two-col li {
-            padding: 15px 0;
-            padding-left: 40px;
+        .process-step {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.08);
+            border: 2px solid rgba(38, 194, 129, 0.4);
+            border-radius: 20px;
+            padding: 35px;
+            text-align: center;
             position: relative;
         }
 
-        .two-col li::before {
-            content: '>';
+        .step-number {
             position: absolute;
-            left: 0;
-            color: #4ade80;
-            font-weight: bold;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px; height: 50px;
+            background: #26C281;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 900;
         }
 
-        /* Navigation */
+        .step-title {
+            font-size: 24px;
+            font-weight: 800;
+            color: #26C281;
+            margin: 15px 0;
+        }
+
+        .step-desc {
+            font-size: 18px;
+            color: #E9FFF4;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        /* CTA Box */
+        .cta-box {
+            background: linear-gradient(135deg, #F97316 0%, #ea580c 100%);
+            border-radius: 20px;
+            padding: 50px 80px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .cta-title { font-size: 36px; font-weight: 900; margin-bottom: 15px; }
+        .cta-url { font-size: 28px; font-weight: 700; opacity: 0.95; }
+
+        /* Footer */
+        .footer {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 25px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-left, .footer-right { font-size: 18px; opacity: 0.8; }
+
+        /* Nav */
         .nav-hint {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background: rgba(0,0,0,0.8);
-            color: white;
+            background: rgba(0, 0, 0, 0.7);
             padding: 15px 25px;
             border-radius: 10px;
-            font-size: 16px;
+            font-size: 14px;
+            color: #ffffff;
+            opacity: 0.7;
             z-index: 1000;
-            font-family: Arial, sans-serif;
         }
 
         .slide-counter {
             position: fixed;
             bottom: 20px;
             left: 20px;
-            background: rgba(0,0,0,0.8);
-            color: white;
+            background: rgba(0, 0, 0, 0.7);
             padding: 15px 25px;
             border-radius: 10px;
             font-size: 18px;
+            color: #26C281;
+            font-weight: 700;
             z-index: 1000;
-            font-family: Arial, sans-serif;
         }
 
-        @media print {
-            .slide {
-                page-break-after: always;
-            }
-            .nav-hint, .slide-counter {
-                display: none;
-            }
+        /* Source Grid */
+        .source-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 40px 0;
+            width: 100%;
+            max-width: 1500px;
+        }
+
+        .source-card {
+            background: rgba(255, 255, 255, 0.08);
+            border: 2px solid rgba(38, 194, 129, 0.4);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .source-name { font-size: 24px; font-weight: 800; color: #26C281; margin-bottom: 12px; }
+        .source-desc { font-size: 18px; color: #E9FFF4; opacity: 0.9; margin-top: 10px; }
+
+        /* Offer Box */
+        .offer-box {
+            background: rgba(255, 255, 255, 0.1);
+            border: 3px solid #26C281;
+            border-radius: 20px;
+            padding: 40px 60px;
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .offer-old {
+            font-size: 48px;
+            font-weight: 900;
+            opacity: 0.4;
+            text-decoration: line-through;
+        }
+
+        .offer-new {
+            font-size: 96px;
+            font-weight: 900;
+            color: #26C281;
+            text-shadow: 0 0 40px rgba(38, 194, 129, 0.3);
+        }
+
+        .offer-save {
+            font-size: 36px;
+            color: #F97316;
+            font-weight: 700;
+            margin: 15px 0;
+        }
+
+        /* Spectrum Bar */
+        .spectrum-bar {
+            display: flex;
+            width: 100%;
+            max-width: 1600px;
+            margin: 40px 0;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .spectrum-segment {
+            padding: 30px 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .spectrum-segment .seg-label {
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .spectrum-segment .seg-detail {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* Screenshot gallery */
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            width: 100%;
+            max-width: 1500px;
+            margin: 30px 0;
+        }
+
+        .screenshot-card {
+            background: rgba(255, 255, 255, 0.08);
+            border: 2px solid rgba(38, 194, 129, 0.4);
+            border-radius: 16px;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .screenshot-card img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        .screenshot-card .caption {
+            padding: 18px;
+            font-size: 20px;
+            font-weight: 700;
+            color: #26C281;
         }
     </style>
 </head>
 <body>
-    <div class="nav-hint">Arrow keys to navigate | F11 for fullscreen</div>
-    <div class="slide-counter">Slide <span id="currentSlide">1</span> of <span id="totalSlides">24</span></div>
+    <div class="slide-container">
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- ACT 1: THE HOOK (Slides 1-3) -->
+    <!-- ═══════════════════════════════════════════════════════ -->
 
     <!-- SLIDE 1: Title -->
-    <div class="slide slide-title">
+    <div class="slide active bg-gradient-green" id="slide-1">
+        <div class="header-bar">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge"><div class="live-dot"></div> LIVE</div>
+        </div>
         <div class="content">
-            <div class="badge">YouTube Live #3 - January 24, 2026</div>
-            <h1>How To Write<br><span class="highlight">Capability Statements</span><br>That WIN</h1>
-            <p class="subtitle">Stop Getting Ignored. Start Getting Contracts.</p>
-            <div class="date">GovCon Giants | Federal Help Center</div>
+            <div class="episode-tag">YOUTUBE LIVE &mdash; MARCH 2026</div>
+            <h1 class="title-main"><span class="highlight-orange">71%</span> of Federal Contracts Had <span class="highlight-orange">ZERO</span> Competition</h1>
+            <p class="subtitle">Stop Competing Where Everyone Else Is</p>
+        </div>
+        <div class="footer">
+            <div class="footer-left">GovConGiants.com</div>
+            <div class="footer-right">Weekly Live Training Series</div>
         </div>
     </div>
 
-    <!-- SLIDE 2: The Problem -->
-    <div class="slide slide-dark">
+    <!-- SLIDE 2: The Myth -->
+    <div class="slide bg-gradient-dark" id="slide-2">
+        <div class="header-bar">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge"><div class="live-dot"></div> LIVE</div>
+        </div>
         <div class="content">
-            <h2>Your Capability Statement Is<br><span class="red">Getting Thrown Away</span></h2>
-            <p style="margin-top: 40px;">Most capability statements look the same, say the same things,<br>and end up in the same place: the trash.</p>
+            <h2 class="title-large">Everyone thinks federal contracting is a <span class="highlight-red">bloodbath</span>...</h2>
+            <p class="subtitle" style="font-size: 36px; margin-top: 30px;">
+                Hundreds of competitors. Lowest price wins.<br><br>
+                <strong style="color: #F97316;">That's a myth. The data proves it.</strong>
+            </p>
+        </div>
+        <div class="footer">
+            <div class="footer-left">GovConGiants.com</div>
+            <div class="footer-right">The competition myth</div>
         </div>
     </div>
 
-    <!-- SLIDE 3: The Stats -->
-    <div class="slide slide-red">
+    <!-- SLIDE 3: The Numbers Nobody Talks About -->
+    <div class="slide bg-solid-dark" id="slide-3">
+        <div class="header-bar">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge"><div class="live-dot"></div> LIVE</div>
+        </div>
         <div class="content">
-            <h2>The Hard Truth</h2>
-            <div class="stat-grid" style="margin-top: 50px;">
-                <div class="stat-box">
-                    <div class="number">7 sec</div>
-                    <div class="label">Average Review Time</div>
+            <h2 class="title-large">The Numbers <span class="highlight-green">Nobody Talks About</span></h2>
+            <div class="stats-grid stats-grid-4" style="margin-top: 50px;">
+                <div class="stat-card">
+                    <div class="stat-number" style="color: #ef4444;">71%</div>
+                    <div class="stat-label">Zero Competition</div>
+                    <div class="stat-source">SAMradar FY2024</div>
                 </div>
-                <div class="stat-box">
-                    <div class="number">90%</div>
-                    <div class="label">Look Identical</div>
+                <div class="stat-card">
+                    <div class="stat-number">$755B</div>
+                    <div class="stat-label">Total Federal Contracts</div>
+                    <div class="stat-source">GAO FY2024</div>
                 </div>
-                <div class="stat-box">
-                    <div class="number">0</div>
-                    <div class="label">Responses You Get</div>
+                <div class="stat-card">
+                    <div class="stat-number" style="color: #F97316;">$183B</div>
+                    <div class="stat-label">Went to Small Business</div>
+                    <div class="stat-source">GovSpend (28.8%)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">34%</div>
+                    <div class="stat-label">Non-Competitive</div>
+                    <div class="stat-source">GAO FY2024 Dashboard</div>
                 </div>
             </div>
         </div>
+        <div class="footer">
+            <div class="footer-left">GovConGiants.com</div>
+            <div class="footer-right">Sources: SAMradar, GAO, GovSpend</div>
+        </div>
     </div>
 
-    <!-- SLIDE 4: What We're Covering -->
-    <div class="slide slide-purple">
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- ACT 2: WHAT THE DATA ACTUALLY SAYS (Slides 4-7) -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+
+    <!-- SLIDE 4: What the 71% Actually Means (Part 1) -->
+    <div class="slide bg-gradient-dark" id="slide-4">
+        <div class="header-bar">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge"><div class="live-dot"></div> LIVE</div>
+        </div>
+        <div class="content" style="padding: 40px 60px;">
+            <h2 class="title-medium">What the 71% <span class="highlight-orange">Actually Means</span></h2>
+            <p class="subtitle" style="font-size: 26px; margin-bottom: 35px; max-width: 1400px;">The 71% breaks down into specific contract actions where no new competition occurred:</p>
+            <div class="source-grid" style="grid-template-columns: repeat(3, 1fr); gap: 30px;">
+                <div class="source-card" style="padding: 30px; text-align: left;">
+                    <div class="source-name" style="font-size: 22px;">Contract Modifications &amp; Options</div>
+                    <div style="font-size: 18px; color: #E9FFF4; margin-top: 12px; line-height: 1.7;">Existing contracts renewed, extended, or modified. The incumbent keeps working. No new RFP issued. <strong style="color: #26C281;">This is the largest chunk.</strong></div>
+                </div>
+                <div class="source-card" style="padding: 30px; text-align: left;">
+                    <div class="source-name" style="font-size: 22px;">Task Orders on IDIQs</div>
+                    <div style="font-size: 18px; color: #E9FFF4; margin-top: 12px; line-height: 1.7;">Work awarded under existing IDIQ vehicles (OASIS+, Alliant, SEWP, agency-level). Competition happened at the vehicle level &mdash; task orders flow to winners.</div>
+                </div>
+                <div class="source-card" style="padding: 30px; text-align: left;">
+                    <div class="source-name" style="font-size: 22px;">Sole Source Awards</div>
+                    <div style="font-size: 18px; color: #E9FFF4; margin-top: 12px; line-height: 1.7;">Agency selects ONE vendor without competition. Justified by urgency, unique capability, or small business set-aside authority. <strong style="color: #F97316;">34% of all awards (GAO).</strong></div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-left">GovConGiants.com</div>
+            <div class="footer-right">Source: SAMradar, GAO, FPDS</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 5: What the 71% Actually Means (Part 2) -->
+    <div class="slide bg-gradient-dark" id="slide-5">
+        <div class="header-bar">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge"><div class="live-dot"></div> LIVE</div>
+        </div>
+        <div class="content" style="padding: 40px 60px;">
+            <h2 class="title-medium">What the 71% <span class="highlight-orange">Actually Means</span> <span style="font-size: 28px; color: rgba(255,255,255,0.5);">(continued)</span></h2>
+            <p class="subtitle" style="font-size: 26px; margin-bottom: 35px; max-width: 1400px;">These paths bypass traditional full &amp; open competition entirely:</p>
+            <div class="source-grid" style="grid-template-columns: repeat(3, 1fr); gap: 30px;">
+                <div class="source-card" style="padding: 30px; text-align: left;">
+                    <div class="source-name" style="font-size: 22px;">OTAs (Other Transactions)</div>
+                    <div style="font-size: 18px; color: #E9FFF4; margin-top: 12px; line-height: 1.7;">Bypass FAR entirely. Used for R&amp;D, prototyping, and rapid tech. <strong style="color: #F97316;">$40B+ in DoD OTAs.</strong> Not on SAM.gov.</div>
+                </div>
+                <div class="source-card" style="padding: 30px; text-align: left;">
+                    <div class="source-name" style="font-size: 22px;">BPAs &amp; GSA Orders</div>
+                    <div style="font-size: 18px; color: #E9FFF4; margin-top: 12px; line-height: 1.7;">Blanket Purchase Agreements and GSA Schedule orders. Agencies buy from pre-approved lists. 3 quotes = award. No full &amp; open.</div>
+                </div>
+                <div class="source-card" style="padding: 30px; text-align: left;">
+                    <div class="source-name" style="font-size: 22px;">BAAs &amp; SBIR/STTR</div>
+                    <div style="font-size: 18px; color: #E9FFF4; margin-top: 12px; line-height: 1.7;">Broad Agency Announcements for R&amp;D. You submit a white paper, not an RFP response. SBIR/STTR reserved for small businesses.</div>
+                </div>
+            </div>
+            <div style="margin-top: 40px; background: rgba(249,115,22,0.15); border: 2px solid rgba(249,115,22,0.4); border-radius: 16px; padding: 25px 35px; max-width: 1200px;">
+                <p style="font-size: 26px;"><strong style="color: #F97316;">Key insight:</strong> These aren't loopholes. They're <strong>built into the system</strong> to move faster than traditional procurement.</p>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-left">GovConGiants.com</div>
+            <div class="footer-right">Source: SAMradar, GAO, FPDS</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 6: Programs That Drive This (Part 1) -->
+    <div class="slide bg-solid-dark" id="slide-6">
+        <div class="header-bar">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge"><div class="live-dot"></div> LIVE</div>
+        </div>
+        <div class="content" style="padding: 40px 60px;">
+            <h2 class="title-medium">The Programs That <span class="highlight-green">Drive This</span></h2>
+            <p class="subtitle" style="font-size: 26px; margin-bottom: 30px;">These 3 programs bypass traditional FAR-based competition:</p>
+            <div class="list-container" style="margin-top: 25px; max-width: 1500px;">
+                <div class="list-item" style="background: rgba(255,255,255,0.08); padding: 28px 35px; border-radius: 15px; font-size: 26px;">
+                    <div class="list-icon" style="font-size: 24px; font-weight: 900; background: #F97316;">1</div>
+                    <span><strong style="color: #F97316;">OTAs (Other Transaction Authority)</strong> &mdash; $40B+ in DoD. Bypasses FAR. Used for prototyping &amp; production. Enter through consortia like NSTXL, SOSSEC, NGA ATS.</span>
+                </div>
+                <div class="list-item" style="background: rgba(255,255,255,0.08); padding: 28px 35px; border-radius: 15px; font-size: 26px;">
+                    <div class="list-icon" style="font-size: 24px; font-weight: 900; background: #3b82f6;">2</div>
+                    <span><strong style="color: #3b82f6;">BAAs (Broad Agency Announcements)</strong> &mdash; R&amp;D funding. Submit a white paper, not a proposal. DoD, DARPA, IARPA, DOE all use them. Always open.</span>
+                </div>
+                <div class="list-item" style="background: rgba(255,255,255,0.08); padding: 28px 35px; border-radius: 15px; font-size: 26px;">
+                    <div class="list-icon" style="font-size: 24px; font-weight: 900; background: #a855f7;">3</div>
+                    <span><strong style="color: #a855f7;">SBIR/STTR</strong> &mdash; $4B+/yr reserved for small businesses. Phase I ($50-250K), Phase II ($500K-1.5M), Phase III (unlimited, sole source).</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-left">GovConGiants.com</div>
+            <div class="footer-right">These programs = why 71% had zero competition</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 7: Programs That Drive This (Part 2) -->
+    <div class="slide bg-solid-dark" id="slide-7">
+        <div class="header-bar">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge"><div class="live-dot"></div> LIVE</div>
+        </div>
+        <div class="content" style="padding: 40px 60px;">
+            <h2 class="title-medium">The Programs That <span class="highlight-green">Drive This</span> <span style="font-size: 28px; color: rgba(255,255,255,0.5);">(continued)</span></h2>
+            <p class="subtitle" style="font-size: 26px; margin-bottom: 30px;">These 3 reduce competition through pre-approved vendor pools:</p>
+            <div class="list-container" style="margin-top: 25px; max-width: 1500px;">
+                <div class="list-item" style="background: rgba(255,255,255,0.08); padding: 28px 35px; border-radius: 15px; font-size: 26px;">
+                    <div class="list-icon" style="font-size: 24px; font-weight: 900;">4</div>
+                    <span><strong style="color: #26C281;">GSA Schedule / MAS</strong> &mdash; Once on Schedule, agencies order direct. 3 quotes from Schedule holders = award. No full &amp; open RFP needed.</span>
+                </div>
+                <div class="list-item" style="background: rgba(255,255,255,0.08); padding: 28px 35px; border-radius: 15px; font-size: 26px;">
+                    <div class="list-icon" style="font-size: 24px; font-weight: 900; background: #ef4444;">5</div>
+                    <span><strong style="color: #ef4444;">IDIQ Task Orders</strong> &mdash; Win the vehicle once (OASIS+, Alliant 3, SEWP VI, CIO-SP4). Then receive task orders for years with limited re-competition.</span>
+                </div>
+                <div class="list-item" style="background: rgba(255,255,255,0.08); padding: 28px 35px; border-radius: 15px; font-size: 26px;">
+                    <div class="list-icon" style="font-size: 24px; font-weight: 900; background: #fbbf24; color: #0B2E1B;">6</div>
+                    <span><strong style="color: #fbbf24;">Rapid Tech Programs</strong> &mdash; AFWERX, DIU, NavalX, Army xTech. Pitch days, challenges, accelerators. Designed for startups &amp; small firms.</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-left">GovConGiants.com</div>
+            <div class="footer-right">Get on the list BEFORE the work drops</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 8: "But Isn't This for Large Firms?" -->
+    <div class="slide bg-gradient-dark" id="slide-8">
+        <div class="header-bar">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge"><div class="live-dot"></div> LIVE</div>
+        </div>
+        <div class="content" style="padding: 40px 60px;">
+            <h2 class="title-medium" style="color: #ef4444;">"But Isn't This for <span style="color: #fbbf24;">Large Firms</span>?"</h2>
+            <div class="two-column" style="margin-top: 30px;">
+                <div style="background: rgba(239,68,68,0.1); border: 2px solid rgba(239,68,68,0.4); border-radius: 20px; padding: 35px;">
+                    <h3 style="font-size: 28px; color: #ef4444; margin-bottom: 20px; text-align: center;">THE MISCONCEPTION</h3>
+                    <div style="font-size: 22px; line-height: 1.8; color: #E9FFF4;">
+                        <p>"Non-competitive contracts go to Boeing and Lockheed"</p>
+                        <p style="margin-top: 10px;">"Small businesses can't get sole source"</p>
+                        <p style="margin-top: 10px;">"OTAs and IDIQs are for primes only"</p>
+                        <p style="margin-top: 10px;">"You need $10M in past performance"</p>
+                    </div>
+                </div>
+                <div style="background: rgba(38,194,129,0.1); border: 2px solid rgba(38,194,129,0.4); border-radius: 20px; padding: 35px;">
+                    <h3 style="font-size: 28px; color: #26C281; margin-bottom: 20px; text-align: center;">THE REALITY</h3>
+                    <div style="font-size: 22px; line-height: 1.8; color: #E9FFF4;">
+                        <p><strong style="color: #26C281;">$183B (28.8%)</strong> went to small businesses</p>
+                        <p style="margin-top: 10px;"><strong style="color: #26C281;">$350K SAT</strong> = reserved for SBs by law</p>
+                        <p style="margin-top: 10px;"><strong style="color: #26C281;">SBIR/STTR</strong> = $4B+/yr ONLY for small biz</p>
+                        <p style="margin-top: 10px;"><strong style="color: #26C281;">SDVOSB/WOSB/HUBZone</strong> = sole source authority</p>
+                        <p style="margin-top: 10px;"><strong style="color: #F97316;">OTA consortia</strong> actively recruit small firms</p>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 25px; background: rgba(38,194,129,0.15); border: 2px solid #26C281; border-radius: 16px; padding: 20px 30px; max-width: 1200px;">
+                <p style="font-size: 24px;">The system was <strong style="color: #26C281;">designed</strong> to funnel work to small businesses. The problem isn't access &mdash; it's that most SBs don't know these paths exist.</p>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-left">GovConGiants.com</div>
+            <div class="footer-right">Source: GovSpend, SBA, FAR Part 13</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 9: OTA — Other Transaction Authority -->
+    <div class="slide bg-gradient-purple" id="slide-9">
+        <div class="header-bar">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge"><div class="live-dot"></div> LIVE</div>
+        </div>
+        <div class="content content-left" style="padding: 50px 80px;">
+            <h2 class="title-medium">OTA: <span style="color: #fbbf24;">Other Transaction Authority</span></h2>
+            <p class="subtitle" style="font-size: 30px; margin-bottom: 40px;">Bypasses FAR entirely. <strong style="color: #fbbf24;">$40B+</strong> in DoD spending. Zero traditional competition.</p>
+            <div class="list-container" style="margin-top: 20px; max-width: 1400px;">
+                <div class="list-item" style="background: rgba(255,255,255,0.08); padding: 28px 35px; border-radius: 15px; font-size: 28px;">
+                    <div class="list-icon" style="font-size: 24px; font-weight: 900; background: #a855f7;">1</div>
+                    <span>Agency posts a <strong style="color: #a855f7;">problem</strong> &mdash; not an RFP</span>
+                </div>
+                <div class="list-item" style="background: rgba(255,255,255,0.08); padding: 28px 35px; border-radius: 15px; font-size: 28px;">
+                    <div class="list-icon" style="font-size: 24px; font-weight: 900; background: #a855f7;">2</div>
+                    <span>You join a <strong style="color: #a855f7;">consortium</strong> (NSTXL, SOSSEC, NGA ATS)</span>
+                </div>
+                <div class="list-item" style="background: rgba(255,255,255,0.08); padding: 28px 35px; border-radius: 15px; font-size: 28px;">
+                    <div class="list-icon" style="font-size: 24px; font-weight: 900; background: #a855f7;">3</div>
+                    <span>Submit a <strong style="color: #a855f7;">solution brief</strong> &mdash; not a 100-page proposal</span>
+                </div>
+                <div class="list-item" style="background: rgba(255,255,255,0.08); padding: 28px 35px; border-radius: 15px; font-size: 28px;">
+                    <div class="list-icon" style="font-size: 24px; font-weight: 900; background: #fbbf24; color: #0B2E1B;">4</div>
+                    <span>Win prototype &rarr; <strong style="color: #fbbf24;">sole-source production contract</strong></span>
+                </div>
+            </div>
+            <div style="margin-top: 35px; background: rgba(251,191,36,0.15); border: 2px solid rgba(251,191,36,0.4); border-radius: 16px; padding: 22px 35px; max-width: 1200px;">
+                <p style="font-size: 26px;"><strong style="color: #fbbf24;">Rapid Tech programs:</strong> AFWERX, DIU, NavalX, Army xTech &mdash; pitch competitions designed for startups &amp; small businesses</p>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-left">GovConGiants.com</div>
+            <div class="footer-right">Source: FPDS, DoD OTA Guide</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 10: BAA — Broad Agency Announcements -->
+    <div class="slide bg-gradient-purple" id="slide-10">
+        <div class="header-bar">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge"><div class="live-dot"></div> LIVE</div>
+        </div>
+        <div class="content content-left" style="padding: 50px 80px;">
+            <h2 class="title-medium">BAA: <span style="color: #fbbf24;">Broad Agency Announcements</span></h2>
+            <p class="subtitle" style="font-size: 30px; margin-bottom: 40px;">R&amp;D funding through white papers, not proposals. <strong style="color: #fbbf24;">$4B+</strong> in SBIR/STTR alone.</p>
+            <div class="list-container" style="margin-top: 20px; max-width: 1400px;">
+                <div class="list-item" style="background: rgba(255,255,255,0.08); padding: 28px 35px; border-radius: 15px; font-size: 28px;">
+                    <div class="list-icon" style="font-size: 24px; font-weight: 900; background: #a855f7;">1</div>
+                    <span>Agency publishes a <strong style="color: #a855f7;">research interest area</strong></span>
+                </div>
+                <div class="list-item" style="background: rgba(255,255,255,0.08); padding: 28px 35px; border-radius: 15px; font-size: 28px;">
+                    <div class="list-icon" style="font-size: 24px; font-weight: 900; background: #a855f7;">2</div>
+                    <span>You submit a <strong style="color: #a855f7;">white paper</strong> (5-10 pages)</span>
+                </div>
+                <div class="list-item" style="background: rgba(255,255,255,0.08); padding: 28px 35px; border-radius: 15px; font-size: 28px;">
+                    <div class="list-icon" style="font-size: 24px; font-weight: 900; background: #a855f7;">3</div>
+                    <span>If they like it &rarr; invited for <strong style="color: #a855f7;">full proposal</strong></span>
+                </div>
+                <div class="list-item" style="background: rgba(255,255,255,0.08); padding: 28px 35px; border-radius: 15px; font-size: 28px;">
+                    <div class="list-icon" style="font-size: 24px; font-weight: 900; background: #a855f7;">4</div>
+                    <span>BAAs stay open <strong style="color: #fbbf24;">months or years</strong> &mdash; no deadline pressure</span>
+                </div>
+            </div>
+            <div style="margin-top: 35px; background: rgba(168,85,247,0.15); border: 2px solid rgba(168,85,247,0.4); border-radius: 16px; padding: 22px 35px; max-width: 1200px;">
+                <p style="font-size: 26px;"><strong style="color: #a855f7;">Who uses BAAs:</strong> DARPA, IARPA, AFRL, ARL, DOE, DTRA &mdash; always accepting white papers</p>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-left">GovConGiants.com</div>
+            <div class="footer-right">Source: SAM.gov, SBIR.gov</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 11: Veterans — The Built-In Advantage -->
+    <div class="slide bg-gradient-dark" id="slide-11">
+        <div class="header-bar">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge"><div class="live-dot"></div> LIVE</div>
+        </div>
+        <div class="content" style="padding: 40px 60px;">
+            <h2 class="title-medium">Veterans: The <span style="color: #fbbf24;">Built-In Advantage</span></h2>
+            <p class="subtitle" style="font-size: 28px; margin-bottom: 35px;">If you served, the federal government created an entire lane for you.</p>
+            <div class="stats-grid" style="grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 20px;">
+                <div class="stat-card" style="padding: 30px;">
+                    <div class="stat-number" style="font-size: 52px; color: #26C281;">$5M</div>
+                    <div class="stat-label" style="font-size: 22px;">SDVOSB Sole Source Ceiling</div>
+                    <div class="stat-source">No competition needed</div>
+                </div>
+                <div class="stat-card" style="padding: 30px;">
+                    <div class="stat-number" style="font-size: 52px; color: #26C281;">3%</div>
+                    <div class="stat-label" style="font-size: 22px;">Gov-Wide SDVOSB Goal</div>
+                    <div class="stat-source">Every agency must hit this</div>
+                </div>
+                <div class="stat-card" style="padding: 30px;">
+                    <div class="stat-number" style="font-size: 52px; color: #F97316;">VA</div>
+                    <div class="stat-label" style="font-size: 22px;">Mandatory SDVOSB Set-Asides</div>
+                    <div class="stat-source">"Veterans First" contracting</div>
+                </div>
+            </div>
+            <div class="list-container" style="margin-top: 30px; max-width: 1500px;">
+                <div class="list-item" style="background: rgba(255,255,255,0.08); padding: 22px 30px; border-radius: 15px; font-size: 24px;">
+                    <div class="list-icon" style="font-size: 22px; font-weight: 900; background: #26C281;">&#10003;</div>
+                    <span><strong style="color: #26C281;">SDVOSB certification</strong> through SBA &mdash; sole source up to $5M, set-asides at every agency</span>
+                </div>
+                <div class="list-item" style="background: rgba(255,255,255,0.08); padding: 22px 30px; border-radius: 15px; font-size: 24px;">
+                    <div class="list-icon" style="font-size: 22px; font-weight: 900; background: #26C281;">&#10003;</div>
+                    <span><strong style="color: #26C281;">VA "Veterans First"</strong> &mdash; VA MUST set aside contracts for SDVOSBs/VOSBs before going to open competition</span>
+                </div>
+                <div class="list-item" style="background: rgba(255,255,255,0.08); padding: 22px 30px; border-radius: 15px; font-size: 24px;">
+                    <div class="list-icon" style="font-size: 22px; font-weight: 900; background: #F97316;">&#10003;</div>
+                    <span><strong style="color: #F97316;">Mentor-Prot&eacute;g&eacute; + JV</strong> &mdash; partner with a prime, use THEIR past performance, bid on contracts you couldn't alone</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-left">GovConGiants.com</div>
+            <div class="footer-right">Source: SBA, VA OSDBU, Veterans First Act</div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- ACT 3: THE PATHS IN -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+
+    <!-- SLIDE 12: GSA Schedule — How It Works -->
+    <div class="slide bg-solid-dark" id="slide-12">
+        <div class="header-bar">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge"><div class="live-dot"></div> LIVE</div>
+        </div>
+        <div class="content content-left" style="padding: 50px 80px;">
+            <h2 class="title-medium">GSA Schedule: The <span class="highlight-green">Quiet Competition Killer</span></h2>
+            <p class="subtitle" style="font-size: 26px; margin-bottom: 30px;">Get on the list once. Receive orders for 20 years.</p>
+            <div class="list-container" style="margin-top: 25px; max-width: 1500px;">
+                <div class="list-item" style="background: rgba(255,255,255,0.08); padding: 28px 35px; border-radius: 15px; font-size: 26px;">
+                    <div class="list-icon" style="font-size: 24px; font-weight: 900;">1</div>
+                    <span><strong style="color: #26C281;">Get on GSA MAS once</strong> &mdash; 20-year contract. Application takes effort, but you only do it once.</span>
+                </div>
+                <div class="list-item" style="background: rgba(255,255,255,0.08); padding: 28px 35px; border-radius: 15px; font-size: 26px;">
+                    <div class="list-icon" style="font-size: 24px; font-weight: 900;">2</div>
+                    <span><strong style="color: #26C281;">Agencies buy from you directly</strong> &mdash; for orders under $25K, agencies can buy from a single Schedule holder. No competition.</span>
+                </div>
+                <div class="list-item" style="background: rgba(255,255,255,0.08); padding: 28px 35px; border-radius: 15px; font-size: 26px;">
+                    <div class="list-icon" style="font-size: 24px; font-weight: 900;">3</div>
+                    <span><strong style="color: #26C281;">$25K-$250K = 3 quotes</strong> &mdash; agency gets 3 quotes from Schedule holders. Not 50. Not 200. <strong style="color: #fbbf24;">Three.</strong></span>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-left">GovConGiants.com</div>
+            <div class="footer-right">Source: GSA.gov, FAR Part 8</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 13: GSA Schedule — eBuy & BPAs -->
+    <div class="slide bg-solid-dark" id="slide-13">
+        <div class="header-bar">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge"><div class="live-dot"></div> LIVE</div>
+        </div>
+        <div class="content content-left" style="padding: 50px 80px;">
+            <h2 class="title-medium">GSA Schedule: <span class="highlight-green">eBuy &amp; BPAs</span></h2>
+            <p class="subtitle" style="font-size: 26px; margin-bottom: 30px;">Once you're on Schedule, work comes to you:</p>
+            <div class="list-container" style="margin-top: 25px; max-width: 1500px;">
+                <div class="list-item" style="background: rgba(255,255,255,0.08); padding: 28px 35px; border-radius: 15px; font-size: 26px;">
+                    <div class="list-icon" style="font-size: 24px; font-weight: 900;">4</div>
+                    <span><strong style="color: #26C281;">GSA eBuy</strong> &mdash; agencies post RFQs to Schedule holders. You get notified. Respond in days, not weeks.</span>
+                </div>
+                <div class="list-item" style="background: rgba(255,255,255,0.08); padding: 28px 35px; border-radius: 15px; font-size: 26px;">
+                    <div class="list-icon" style="font-size: 24px; font-weight: 900;">5</div>
+                    <span><strong style="color: #26C281;">BPAs (Blanket Purchase Agreements)</strong> &mdash; agencies set up BPAs with Schedule holders. Repeat orders flow automatically.</span>
+                </div>
+            </div>
+            <div style="margin-top: 50px; background: rgba(38,194,129,0.15); border: 2px solid #26C281; border-radius: 16px; padding: 25px 35px; max-width: 1200px;">
+                <p style="font-size: 26px;">This is why Schedule holders appear in the 71%. They already won their spot &mdash; <strong style="color: #26C281;">orders flow without re-competing</strong>.</p>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-left">GovConGiants.com</div>
+            <div class="footer-right">Source: GSA.gov, FAR Part 8</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 14: The Red Ocean -->
+    <div class="slide bg-gradient-red" id="slide-14">
+        <div class="header-bar">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge"><div class="live-dot"></div> LIVE</div>
+        </div>
+        <div class="content" style="padding: 40px 60px;">
+            <h2 class="title-large">The <span style="color: #fbbf24;">Red Ocean</span></h2>
+            <div class="two-column" style="margin-top: 30px;">
+                <div style="background: rgba(0,0,0,0.3); border: 2px solid rgba(239,68,68,0.6); border-radius: 20px; padding: 40px;">
+                    <h3 style="font-size: 36px; color: #ef4444; margin-bottom: 25px; text-align: center;">WHERE EVERYONE FIGHTS</h3>
+                    <div style="font-size: 24px; line-height: 2; color: #E9FFF4;">
+                        <p style="margin-bottom: 10px;">Civilian agencies: <strong style="color: #fbbf24;">84% competition rate</strong></p>
+                        <p style="margin-bottom: 10px;">Hundreds of bidders per solicitation</p>
+                        <p style="margin-bottom: 10px;">$5K &ndash; $50K in proposal costs</p>
+                        <p style="margin-bottom: 10px;">2 &ndash; 5% win rate</p>
+                    </div>
+                </div>
+                <div style="background: rgba(0,0,0,0.3); border: 2px solid rgba(239,68,68,0.3); border-radius: 20px; padding: 40px;">
+                    <h3 style="font-size: 36px; color: #fbbf24; margin-bottom: 25px; text-align: center;">THE RESULT</h3>
+                    <div style="font-size: 24px; line-height: 2; color: #E9FFF4;">
+                        <p style="margin-bottom: 10px;">Thousands in wasted proposal costs</p>
+                        <p style="margin-bottom: 10px;">No agency relationships built</p>
+                        <p style="margin-bottom: 10px;">Burnout after 6 &ndash; 12 months</p>
+                        <p style="margin-bottom: 10px;"><strong style="color: #ef4444;">"Government contracting doesn't work"</strong></p>
+                    </div>
+                </div>
+            </div>
+            <p class="subtitle" style="margin-top: 30px; font-size: 28px;">Source: GAO FY2024 &mdash; Civilian agency competition rate: 84%</p>
+        </div>
+        <div class="footer">
+            <div class="footer-left">GovConGiants.com</div>
+            <div class="footer-right">Stop fighting in the red ocean</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 15: Competition Spectrum -->
+    <div class="slide bg-gradient-dark" id="slide-15">
+        <div class="header-bar">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge"><div class="live-dot"></div> LIVE</div>
+        </div>
+        <div class="content" style="padding: 40px 60px;">
+            <h2 class="title-medium" style="margin-bottom: 20px;">The Competition <span class="highlight-green">Spectrum</span></h2>
+            <div class="spectrum-bar">
+                <div class="spectrum-segment" style="flex: 2; background: linear-gradient(135deg, #991b1b, #dc2626);">
+                    <div class="seg-label">Full &amp; Open</div>
+                    <div class="seg-detail">20&ndash;50+ bidders</div>
+                </div>
+                <div class="spectrum-segment" style="flex: 1.5; background: linear-gradient(135deg, #dc2626, #ea580c);">
+                    <div class="seg-label">Multi-Offer</div>
+                    <div class="seg-detail">3&ndash;10 bidders</div>
+                </div>
+                <div class="spectrum-segment" style="flex: 1.5; background: linear-gradient(135deg, #ea580c, #f59e0b);">
+                    <div class="seg-label">1-Offer "Competed"</div>
+                    <div class="seg-detail">13% of awards</div>
+                </div>
+                <div class="spectrum-segment" style="flex: 1.5; background: linear-gradient(135deg, #f59e0b, #22c55e);">
+                    <div class="seg-label">Set-Aside / GSA</div>
+                    <div class="seg-detail">SAT &amp; Schedule</div>
+                </div>
+                <div class="spectrum-segment" style="flex: 2; background: linear-gradient(135deg, #22c55e, #15803d);">
+                    <div class="seg-label">Sole Source / OTA</div>
+                    <div class="seg-detail">34%+ of all awards</div>
+                </div>
+            </div>
+            <div class="two-column" style="margin-top: 30px; gap: 40px;">
+                <div style="background: rgba(239,68,68,0.15); border: 2px solid #ef4444; border-radius: 16px; padding: 30px; text-align: center;">
+                    <p style="font-size: 28px; font-weight: 800; color: #ef4444; margin-bottom: 10px;">RED ZONE</p>
+                    <p style="font-size: 22px; color: #E9FFF4;">Most contractors fight here.<br>Highest cost. Lowest win rate.</p>
+                </div>
+                <div style="background: rgba(38,194,129,0.15); border: 2px solid #26C281; border-radius: 16px; padding: 30px; text-align: center;">
+                    <p style="font-size: 28px; font-weight: 800; color: #26C281; margin-bottom: 10px;">GREEN ZONE</p>
+                    <p style="font-size: 22px; color: #E9FFF4;">GSA, OTA, SBIR, set-asides, BPAs.<br>Position yourself BEFORE the RFP.</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-left">GovConGiants.com</div>
+            <div class="footer-right">Source: GAO, FAR, FPDS</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 16: Defense vs. Civilian -->
+    <div class="slide bg-solid-dark" id="slide-16">
+        <div class="header-bar">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge"><div class="live-dot"></div> LIVE</div>
+        </div>
+        <div class="content" style="padding: 40px 60px;">
+            <h2 class="title-medium">Defense vs. Civilian: <span class="highlight-orange">The Data</span></h2>
+            <div class="two-column" style="margin-top: 30px;">
+                <div style="background: rgba(255,255,255,0.08); border: 2px solid rgba(59,130,246,0.5); border-radius: 20px; padding: 40px;">
+                    <h3 style="font-size: 36px; color: #3b82f6; margin-bottom: 25px; text-align: center;">CIVILIAN AGENCIES</h3>
+                    <div style="font-size: 24px; line-height: 2; color: #E9FFF4;">
+                        <p><strong style="color: #ef4444;">84%</strong> competition rate</p>
+                        <p><strong>$25M</strong> sole source ceiling</p>
+                        <p>More bidders per solicitation</p>
+                        <p>Longer evaluation timelines</p>
+                        <p style="color: #ef4444; font-weight: 700; margin-top: 15px;">Harder to break in</p>
+                    </div>
+                </div>
+                <div style="background: rgba(255,255,255,0.08); border: 2px solid rgba(38,194,129,0.5); border-radius: 20px; padding: 40px;">
+                    <h3 style="font-size: 36px; color: #26C281; margin-bottom: 25px; text-align: center;">DEFENSE AGENCIES</h3>
+                    <div style="font-size: 24px; line-height: 2; color: #E9FFF4;">
+                        <p><strong style="color: #26C281;">56%</strong> competition rate</p>
+                        <p><strong style="color: #F97316;">$100M</strong> sole source ceiling (NDAA)</p>
+                        <p>R&amp;D: <strong style="color: #26C281;">44.1%</strong> non-competitive</p>
+                        <p>Products: only <strong>43%</strong> competed</p>
+                        <p style="color: #26C281; font-weight: 700; margin-top: 15px;">OTAs + BAAs = massive SB opportunity</p>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 25px; background: rgba(239,68,68,0.15); border: 2px solid #ef4444; border-radius: 16px; padding: 20px 30px; max-width: 900px;">
+                <p style="font-size: 24px; font-weight: 700;">Competition is trending <span style="color: #ef4444;">DOWN</span>: 68% &rarr; 66% <span style="font-weight: 400; font-size: 20px; opacity: 0.8;">(FY2022 &rarr; FY2024, GAO)</span></p>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-left">GovConGiants.com</div>
+            <div class="footer-right">Source: GAO FY2024, NDAA</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 17: WOSB Gap -->
+    <div class="slide bg-gradient-orange" id="slide-17">
+        <div class="header-bar">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge"><div class="live-dot"></div> LIVE</div>
+        </div>
         <div class="content">
-            <h2>What We're Covering Today</h2>
-            <div class="reason-list" style="margin-top: 40px;">
-                <div class="reason-item"><div class="icon">1</div><span>Why most capability statements fail</span></div>
-                <div class="reason-item"><div class="icon">2</div><span>The 6 sections every cap statement needs</span></div>
-                <div class="reason-item"><div class="icon">3</div><span>How to make yours agency-SPECIFIC</span></div>
-                <div class="reason-item"><div class="icon">4</div><span>Real examples that work</span></div>
-                <div class="reason-item"><div class="icon">5</div><span>FREE template you can use TODAY</span></div>
+            <h2 class="title-large">The <span style="color: #fbbf24;">WOSB Gap</span></h2>
+            <div class="stats-grid" style="margin-top: 50px;">
+                <div class="stat-card" style="border-color: rgba(255,255,255,0.3);">
+                    <div class="stat-number" style="color: #fbbf24;">5%</div>
+                    <div class="stat-label">Federal WOSB Goal</div>
+                    <div class="stat-source" style="color: rgba(255,255,255,0.6);">FAR / SBA</div>
+                </div>
+                <div class="stat-card" style="border-color: rgba(239,68,68,0.5);">
+                    <div class="stat-number" style="color: #ef4444;">3.44%</div>
+                    <div class="stat-label">Actual Achievement</div>
+                    <div class="stat-source" style="color: rgba(255,255,255,0.6);">SBA Scorecard FY2024</div>
+                </div>
+                <div class="stat-card" style="border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.15);">
+                    <div class="stat-number" style="color: #fbbf24;">$8B+</div>
+                    <div class="stat-label">Unmet WOSB Spending</div>
+                    <div class="stat-source" style="color: rgba(255,255,255,0.6);">Gap to 5% goal</div>
+                </div>
             </div>
+            <p class="subtitle" style="margin-top: 40px; font-size: 32px; font-weight: 700;">Agencies are <span style="color: #fbbf24;">FAILING</span> their WOSB goals &mdash; they're looking for you</p>
+        </div>
+        <div class="footer">
+            <div class="footer-left">GovConGiants.com</div>
+            <div class="footer-right">Source: SBA Small Business Scorecard FY2024</div>
         </div>
     </div>
 
-    <!-- SLIDE 5: Quick Recap -->
-    <div class="slide slide-blue">
-        <div class="content">
-            <h2>Quick Recap: The Series So Far</h2>
-            <div class="stat-grid" style="margin-top: 50px;">
-                <div class="stat-box">
-                    <div class="number">Week 1</div>
-                    <div class="label">$82.8B Opportunity</div>
+    <!-- SLIDE 18: $350K Sweet Spot -->
+    <div class="slide bg-gradient-dark" id="slide-18">
+        <div class="header-bar">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge"><div class="live-dot"></div> LIVE</div>
+        </div>
+        <div class="content content-left" style="padding: 50px 80px;">
+            <h2 class="title-medium">The <span class="highlight-orange">$350K</span> Sweet Spot</h2>
+            <p class="subtitle" style="font-size: 24px; margin-bottom: 40px; max-width: 1200px;">The Simplified Acquisition Threshold (SAT) &mdash; FAR Part 13</p>
+            <div class="list-container" style="max-width: 1400px;">
+                <div class="list-item" style="background: rgba(255,255,255,0.08); padding: 25px 30px; border-radius: 15px;">
+                    <div class="list-icon" style="font-size: 28px; font-weight: 900;">1</div>
+                    <span><strong style="color: #26C281;">Must be set aside for small businesses</strong> &mdash; by law, contracts under $350K are reserved for SBs</span>
                 </div>
-                <div class="stat-box">
-                    <div class="number">Week 2</div>
-                    <div class="label">8 Agency Pain Points</div>
+                <div class="list-item" style="background: rgba(255,255,255,0.08); padding: 25px 30px; border-radius: 15px;">
+                    <div class="list-icon" style="font-size: 28px; font-weight: 900;">2</div>
+                    <span><strong style="color: #26C281;">Shorter proposals</strong> &mdash; simplified procedures mean less paperwork, faster turnaround</span>
                 </div>
-                <div class="stat-box">
-                    <div class="number">Today</div>
-                    <div class="label">Cap Statements That Win</div>
+                <div class="list-item" style="background: rgba(255,255,255,0.08); padding: 25px 30px; border-radius: 15px;">
+                    <div class="list-icon" style="font-size: 28px; font-weight: 900;">3</div>
+                    <span><strong style="color: #26C281;">Fewer competitors</strong> &mdash; large businesses are excluded from competing</span>
+                </div>
+                <div class="list-item" style="background: rgba(255,255,255,0.08); padding: 25px 30px; border-radius: 15px;">
+                    <div class="list-icon" style="font-size: 28px; font-weight: 900;">4</div>
+                    <span><strong style="color: #26C281;">Faster award timelines</strong> &mdash; agencies can award in weeks, not months</span>
+                </div>
+                <div class="list-item" style="background: rgba(255,255,255,0.08); padding: 25px 30px; border-radius: 15px;">
+                    <div class="list-icon" style="font-size: 28px; font-weight: 900;">5</div>
+                    <span><strong style="color: #26C281;">Build past performance</strong> &mdash; stack wins to qualify for larger contracts</span>
                 </div>
             </div>
-            <p style="font-size: 36px; margin-top: 50px; opacity: 0.9;">Free resources from Week 1 & 2 still available - link in description</p>
+        </div>
+        <div class="footer">
+            <div class="footer-left">GovConGiants.com</div>
+            <div class="footer-right">Source: FAR Part 13 &mdash; Simplified Acquisition Procedures</div>
         </div>
     </div>
 
-    <!-- SLIDE 6: Why They Fail -->
-    <div class="slide slide-dark">
-        <div class="content">
-            <h2>Why Most Cap Statements <span class="red">FAIL</span></h2>
-            <div class="reason-list" style="margin-top: 50px;">
-                <div class="reason-item"><div class="icon">X</div><span>Too generic - "We provide quality services"</span></div>
-                <div class="reason-item"><div class="icon">X</div><span>No clear differentiator - What makes you unique?</span></div>
-                <div class="reason-item"><div class="icon">X</div><span>Not agency-specific - Same doc sent to everyone</span></div>
-                <div class="reason-item"><div class="icon">X</div><span>Missing key information - No CAGE, no NAICS</span></div>
-                <div class="reason-item"><div class="icon">X</div><span>Poor design - Hard to scan in 7 seconds</span></div>
+    <!-- SLIDE 19: The 13% Nobody Counts -->
+    <div class="slide bg-solid-dark" id="slide-19">
+        <div class="header-bar">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge"><div class="live-dot"></div> LIVE</div>
+        </div>
+        <div class="content" style="padding: 40px 60px;">
+            <h2 class="title-medium">The <span class="highlight-orange">13%</span> Nobody Counts</h2>
+            <div class="two-column" style="margin-top: 30px;">
+                <div style="background: rgba(247,147,22,0.15); border: 2px solid #F97316; border-radius: 20px; padding: 40px;">
+                    <h3 style="font-size: 32px; color: #F97316; margin-bottom: 20px; text-align: center;">THE "COMPETED" LIE</h3>
+                    <div style="font-size: 24px; line-height: 1.8; color: #E9FFF4;">
+                        <p><strong style="color: #fbbf24;">13&ndash;14%</strong> of "competed" contracts received only <strong>1 offer</strong></p>
+                        <p style="margin-top: 15px;">The agency posted it. Nobody else showed up.</p>
+                        <p style="margin-top: 15px;">That contractor won by <strong>default</strong>.</p>
+                        <p style="margin-top: 15px; color: #F97316; font-weight: 700;">That could have been you.</p>
+                    </div>
+                </div>
+                <div style="background: rgba(38,194,129,0.15); border: 2px solid #26C281; border-radius: 20px; padding: 40px;">
+                    <h3 style="font-size: 32px; color: #26C281; margin-bottom: 20px; text-align: center;">WHAT THIS MEANS</h3>
+                    <div style="font-size: 24px; line-height: 1.8; color: #E9FFF4;">
+                        <p>Add 13% to the 34% non-competitive...</p>
+                        <p style="margin-top: 15px;"><strong style="color: #26C281; font-size: 36px;">47%</strong> of contracts had <strong>1 or fewer</strong> real competitors</p>
+                        <p style="margin-top: 15px;">Nearly half of all federal spending.</p>
+                        <p style="margin-top: 15px; color: #26C281; font-weight: 700;">Just. Show. Up.</p>
+                    </div>
+                </div>
             </div>
+            <p class="subtitle" style="margin-top: 25px; font-size: 22px; opacity: 0.7;">Source: GAO-10-833, GAO FY2024 Dashboard</p>
+        </div>
+        <div class="footer">
+            <div class="footer-left">GovConGiants.com</div>
+            <div class="footer-right">47% had 1 or fewer competitors</div>
         </div>
     </div>
 
-    <!-- SLIDE 7: The Goal -->
-    <div class="slide slide-green">
-        <div class="content">
-            <h2>The Goal of Your Cap Statement</h2>
-            <p class="big-text" style="margin-top: 40px;">Get a <span style="color: #fef08a;">MEETING</span></p>
-            <p class="medium-text">Not a contract. Not an award. Just a conversation.<br>That's it. Everything else comes after.</p>
+    <!-- SLIDE 20: Where to Turn — Certifications & JVs -->
+    <div class="slide bg-gradient-dark" id="slide-20">
+        <div class="header-bar">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge"><div class="live-dot"></div> LIVE</div>
+        </div>
+        <div class="content" style="padding: 40px 60px;">
+            <h2 class="title-medium">Where Small Businesses <span class="highlight-green">Should Focus</span></h2>
+            <p class="subtitle" style="font-size: 26px; margin-bottom: 35px;">Certifications &amp; partnerships that unlock sole-source authority:</p>
+            <div class="source-grid" style="grid-template-columns: repeat(4, 1fr); gap: 25px;">
+                <div class="source-card" style="padding: 25px;">
+                    <div class="source-name" style="font-size: 20px;">SDVOSB Sole Source</div>
+                    <div style="font-size: 36px; font-weight: 900; color: #26C281; margin: 12px 0;">$5M</div>
+                    <div class="source-desc" style="font-size: 16px;">Ceiling per award. VA has mandatory set-asides. No competition needed.</div>
+                </div>
+                <div class="source-card" style="padding: 25px;">
+                    <div class="source-name" style="font-size: 20px;">WOSB Sole Source</div>
+                    <div style="font-size: 36px; font-weight: 900; color: #26C281; margin: 12px 0;">$5M</div>
+                    <div class="source-desc" style="font-size: 16px;">Agencies failing at 3.44% vs 5% goal. $8B+ gap. They NEED you.</div>
+                </div>
+                <div class="source-card" style="padding: 25px;">
+                    <div class="source-name" style="font-size: 20px;">HUBZone Sole Source</div>
+                    <div style="font-size: 36px; font-weight: 900; color: #26C281; margin: 12px 0;">$7M</div>
+                    <div class="source-desc" style="font-size: 16px;">10% price evaluation preference on full &amp; open. Plus sole-source authority.</div>
+                </div>
+                <div class="source-card" style="padding: 25px;">
+                    <div class="source-name" style="font-size: 20px;">Mentor-Prot&eacute;g&eacute;</div>
+                    <div style="font-size: 36px; font-weight: 900; color: #F97316; margin: 12px 0;">JV</div>
+                    <div class="source-desc" style="font-size: 16px;">Joint venture with a large firm. Use THEIR past performance. Bid on THEIR contracts.</div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-left">GovConGiants.com</div>
+            <div class="footer-right">These give you sole-source authority</div>
         </div>
     </div>
 
-    <!-- SLIDE 8: The 6 Sections -->
-    <div class="slide slide-purple">
-        <div class="content">
-            <h2>The 6 Essential Sections</h2>
-            <div class="section-grid" style="margin-top: 40px;">
-                <div class="section-box">
-                    <h3>1. Company Header</h3>
-                    <p>Logo, name, tagline, contact info, CAGE/UEI</p>
+    <!-- SLIDE 21: Where to Turn — Programs & Paths -->
+    <div class="slide bg-gradient-dark" id="slide-21">
+        <div class="header-bar">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge"><div class="live-dot"></div> LIVE</div>
+        </div>
+        <div class="content" style="padding: 40px 60px;">
+            <h2 class="title-medium">Where Small Businesses <span class="highlight-green">Should Focus</span> <span style="font-size: 28px; color: rgba(255,255,255,0.5);">(continued)</span></h2>
+            <p class="subtitle" style="font-size: 26px; margin-bottom: 35px;">Programs &amp; paths that reduce or eliminate competition:</p>
+            <div class="source-grid" style="grid-template-columns: repeat(4, 1fr); gap: 25px;">
+                <div class="source-card" style="padding: 25px;">
+                    <div class="source-name" style="font-size: 20px;">GSA Schedule</div>
+                    <div style="font-size: 36px; font-weight: 900; color: #F97316; margin: 12px 0;">MAS</div>
+                    <div class="source-desc" style="font-size: 16px;">20-year contract. Agencies buy with 3 quotes. eBuy RFQs flow to you.</div>
                 </div>
-                <div class="section-box">
-                    <h3>2. Core Competencies</h3>
-                    <p>3-5 specific things you do BEST</p>
+                <div class="source-card" style="padding: 25px;">
+                    <div class="source-name" style="font-size: 20px;">SBIR/STTR</div>
+                    <div style="font-size: 36px; font-weight: 900; color: #a855f7; margin: 12px 0;">$4B+</div>
+                    <div class="source-desc" style="font-size: 16px;">Reserved for SBs. Phase III = unlimited sole-source. No further competition.</div>
                 </div>
-                <div class="section-box">
-                    <h3>3. Differentiators</h3>
-                    <p>What makes you DIFFERENT from competitors</p>
+                <div class="source-card" style="padding: 25px;">
+                    <div class="source-name" style="font-size: 20px;">OTA Consortia</div>
+                    <div style="font-size: 36px; font-weight: 900; color: #a855f7; margin: 12px 0;">$40B+</div>
+                    <div class="source-desc" style="font-size: 16px;">NSTXL, SOSSEC, NGA ATS. Join a consortium. Submit solution briefs. Win prototypes.</div>
                 </div>
-                <div class="section-box">
-                    <h3>4. Past Performance</h3>
-                    <p>2-3 relevant contracts with results</p>
-                </div>
-                <div class="section-box">
-                    <h3>5. Company Data</h3>
-                    <p>NAICS, certifications, clearances, size</p>
-                </div>
-                <div class="section-box">
-                    <h3>6. Call to Action</h3>
-                    <p>What do you want them to DO next?</p>
+                <div class="source-card" style="padding: 25px;">
+                    <div class="source-name" style="font-size: 20px;">Sources Sought</div>
+                    <div style="font-size: 36px; font-weight: 900; color: #fbbf24; margin: 12px 0;">&lt;5%</div>
+                    <div class="source-desc" style="font-size: 16px;">Less than 5% of contractors respond. Your response can shape the RFP in your favor.</div>
                 </div>
             </div>
+        </div>
+        <div class="footer">
+            <div class="footer-left">GovConGiants.com</div>
+            <div class="footer-right">Multiple paths. Pick the one that fits you.</div>
         </div>
     </div>
 
-    <!-- SLIDE 9: Section 1 - Header -->
-    <div class="slide slide-blue">
-        <div class="content">
-            <div class="numbered-section">
-                <div class="num">1</div>
-                <div class="text">
-                    <h3>Company Header</h3>
-                    <p>First impression. Make it count.</p>
-                </div>
-            </div>
-            <div class="checklist">
-                <div class="checklist-item"><div class="check">✓</div>Professional logo (high resolution)</div>
-                <div class="checklist-item"><div class="check">✓</div>Company name prominently displayed</div>
-                <div class="checklist-item"><div class="check">✓</div>Tagline that explains what you DO</div>
-                <div class="checklist-item"><div class="check">✓</div>Contact: Name, phone, email, website</div>
-                <div class="checklist-item"><div class="check">✓</div>CAGE Code and UEI number</div>
-            </div>
+    <!-- SLIDE 22: How to Find Low-Competition Contracts -->
+    <div class="slide bg-solid-dark" id="slide-22">
+        <div class="header-bar">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge"><div class="live-dot"></div> LIVE</div>
         </div>
-    </div>
-
-    <!-- SLIDE 10: Section 2 - Core Competencies -->
-    <div class="slide slide-dark">
-        <div class="content" style="width: 100%;">
-            <div class="numbered-section">
-                <div class="num">2</div>
-                <div class="text">
-                    <h3>Core Competencies</h3>
-                    <p>What you do BEST. Be specific.</p>
+        <div class="content content-left" style="padding: 50px 80px;">
+            <h2 class="title-medium">How to <span class="highlight-green">Find</span> Low-Competition Contracts</h2>
+            <div class="list-container" style="margin-top: 25px; max-width: 1500px;">
+                <div class="list-item" style="background: rgba(255,255,255,0.08); padding: 22px 30px; border-radius: 15px;">
+                    <div class="list-icon" style="font-size: 28px; font-weight: 900;">1</div>
+                    <span><strong style="color: #26C281;">SAM.gov &rarr; filter "Sources Sought"</strong> &mdash; these are pre-RFP. Respond to shape the solicitation. Less than 5% do this.</span>
                 </div>
-            </div>
-            <div class="do-dont-grid">
-                <div class="dont-box">
-                    <h3>DON'T</h3>
-                    <p>"IT Services"</p>
-                    <p>"Professional Services"</p>
-                    <p>"Quality Solutions"</p>
+                <div class="list-item" style="background: rgba(255,255,255,0.08); padding: 22px 30px; border-radius: 15px;">
+                    <div class="list-icon" style="font-size: 28px; font-weight: 900;">2</div>
+                    <span><strong style="color: #26C281;">SAM.gov &rarr; filter "Sole Source"</strong> &mdash; see what's being awarded non-competitively. Research who got it and why.</span>
                 </div>
-                <div class="do-box">
-                    <h3>DO</h3>
-                    <p>"Cloud Migration for Legacy DoD Systems"</p>
-                    <p>"CMMC Level 2 Compliance Consulting"</p>
-                    <p>"24/7 Cybersecurity Monitoring & Response"</p>
+                <div class="list-item" style="background: rgba(255,255,255,0.08); padding: 22px 30px; border-radius: 15px;">
+                    <div class="list-icon" style="font-size: 28px; font-weight: 900;">3</div>
+                    <span><strong style="color: #26C281;">GSA eBuy</strong> &mdash; RFQs posted to Schedule holders. Quick-turn responses. If you're on Schedule, check eBuy weekly.</span>
+                </div>
+                <div class="list-item" style="background: rgba(255,255,255,0.08); padding: 22px 30px; border-radius: 15px;">
+                    <div class="list-icon" style="font-size: 28px; font-weight: 900;">4</div>
+                    <span><strong style="color: #26C281;">SBIR.gov</strong> &mdash; all open SBIR/STTR topics across every agency. Phase I = $50-250K. Submit a proposal, not an RFP response.</span>
+                </div>
+                <div class="list-item" style="background: rgba(255,255,255,0.08); padding: 22px 30px; border-radius: 15px;">
+                    <div class="list-icon" style="font-size: 28px; font-weight: 900;">5</div>
+                    <span><strong style="color: #26C281;">USASpending.gov &rarr; sub-agency search</strong> &mdash; find who's spending in your NAICS at the command level. Then call their SBLO.</span>
+                </div>
+                <div class="list-item" style="background: rgba(255,255,255,0.08); padding: 22px 30px; border-radius: 15px;">
+                    <div class="list-icon" style="font-size: 28px; font-weight: 900;">6</div>
+                    <span><strong style="color: #26C281;">Agency forecast pages</strong> &mdash; Google "[agency] procurement forecast." Most publish what they're buying next year. Get there 6-12 months early.</span>
                 </div>
             </div>
         </div>
-    </div>
-
-    <!-- SLIDE 11: Section 3 - Differentiators -->
-    <div class="slide slide-orange">
-        <div class="content">
-            <div class="numbered-section">
-                <div class="num">3</div>
-                <div class="text">
-                    <h3>Differentiators</h3>
-                    <p>Why should they choose YOU over 1,000 other companies?</p>
-                </div>
-            </div>
-            <div class="checklist">
-                <div class="checklist-item"><div class="check">✓</div>Unique methodology or approach</div>
-                <div class="checklist-item"><div class="check">✓</div>Specialized certifications or clearances</div>
-                <div class="checklist-item"><div class="check">✓</div>Geographic advantage or local presence</div>
-                <div class="checklist-item"><div class="check">✓</div>Speed, flexibility, or capacity</div>
-                <div class="checklist-item"><div class="check">✓</div>Specific mission experience</div>
-            </div>
+        <div class="footer">
+            <div class="footer-left">GovConGiants.com</div>
+            <div class="footer-right">All free. All public. All underused.</div>
         </div>
     </div>
 
-    <!-- SLIDE 12: Section 4 - Past Performance -->
-    <div class="slide slide-green">
-        <div class="content">
-            <div class="numbered-section">
-                <div class="num">4</div>
-                <div class="text">
-                    <h3>Past Performance</h3>
-                    <p>Proof that you can deliver. Results matter.</p>
-                </div>
-            </div>
-            <div class="formula-box">
-                <div class="formula">
-                    CLIENT <span class="plus">+</span> PROBLEM <span class="plus">+</span> SOLUTION <span class="equals">=</span> RESULT
-                </div>
-                <div class="explanation">"Helped [CLIENT] solve [PROBLEM] by [SOLUTION], resulting in [MEASURABLE RESULT]"</div>
-            </div>
-            <div class="example-box">
-                <div class="label">Example</div>
-                <p>"Migrated Department of Army's legacy HR system to AWS cloud, <span class="highlight">reducing downtime by 94%</span> and <span class="highlight">saving $2.3M annually</span> in maintenance costs."</p>
-            </div>
+    <!-- SLIDE 23: Green Zone — Part 1 -->
+    <div class="slide bg-gradient-green" id="slide-23">
+        <div class="header-bar">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge"><div class="live-dot"></div> LIVE</div>
         </div>
-    </div>
-
-    <!-- SLIDE 13: Section 5 - Company Data -->
-    <div class="slide slide-purple">
-        <div class="content">
-            <div class="numbered-section">
-                <div class="num">5</div>
-                <div class="text">
-                    <h3>Company Data</h3>
-                    <p>The info they NEED to verify and contact you.</p>
+        <div class="content content-left" style="padding: 50px 80px;">
+            <h2 class="title-medium">How to Get Into the <span style="color: #fbbf24;">Green Zone</span></h2>
+            <p class="subtitle" style="font-size: 26px; margin-bottom: 30px;">Position yourself where competition is lowest:</p>
+            <div class="list-container" style="margin-top: 30px; max-width: 1400px;">
+                <div class="list-item" style="background: rgba(255,255,255,0.15); padding: 30px 35px; border-radius: 15px; font-size: 26px;">
+                    <div class="list-icon" style="font-size: 28px; font-weight: 900; background: #fbbf24; color: #0B2E1B;">1</div>
+                    <span><strong>Get your certifications</strong> &mdash; SDVOSB, WOSB, HUBZone unlock sole-source authority up to $5-7M</span>
                 </div>
-            </div>
-            <div class="two-col" style="margin-top: 30px;">
-                <div>
-                    <h3>Required</h3>
-                    <ul>
-                        <li>CAGE Code</li>
-                        <li>UEI Number</li>
-                        <li>Primary NAICS codes (top 3-5)</li>
-                        <li>Business size (small, 8(a), etc.)</li>
-                        <li>Certifications (WOSB, SDVOSB, HUBZone)</li>
-                    </ul>
+                <div class="list-item" style="background: rgba(255,255,255,0.15); padding: 30px 35px; border-radius: 15px; font-size: 26px;">
+                    <div class="list-icon" style="font-size: 28px; font-weight: 900; background: #fbbf24; color: #0B2E1B;">2</div>
+                    <span><strong>Target defense over civilian</strong> &mdash; 56% vs 84% competition rate. More OTAs. More BAAs. More opportunity.</span>
                 </div>
-                <div>
-                    <h3>If Applicable</h3>
-                    <ul>
-                        <li>Security clearances held</li>
-                        <li>GSA Schedule number</li>
-                        <li>Contract vehicles</li>
-                        <li>Bonding capacity</li>
-                        <li>Insurance limits</li>
-                    </ul>
+                <div class="list-item" style="background: rgba(255,255,255,0.15); padding: 30px 35px; border-radius: 15px; font-size: 26px;">
+                    <div class="list-icon" style="font-size: 28px; font-weight: 900; background: #fbbf24; color: #0B2E1B;">3</div>
+                    <span><strong>Start under $350K or get on GSA</strong> &mdash; SAT = set aside for SBs. GSA = 3-quote awards. Both reduce competition.</span>
                 </div>
             </div>
         </div>
+        <div class="footer">
+            <div class="footer-left">GovConGiants.com</div>
+            <div class="footer-right">Position &gt; proposal quality</div>
+        </div>
     </div>
 
-    <!-- SLIDE 14: Section 6 - Call to Action -->
-    <div class="slide slide-dark">
-        <div class="content">
-            <div class="numbered-section">
-                <div class="num">6</div>
-                <div class="text">
-                    <h3>Call to Action</h3>
-                    <p>Tell them EXACTLY what to do next.</p>
+    <!-- SLIDE 24: Green Zone — Part 2 -->
+    <div class="slide bg-gradient-green" id="slide-24">
+        <div class="header-bar">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge"><div class="live-dot"></div> LIVE</div>
+        </div>
+        <div class="content content-left" style="padding: 50px 80px;">
+            <h2 class="title-medium">How to Get Into the <span style="color: #fbbf24;">Green Zone</span> <span style="font-size: 28px; color: rgba(255,255,255,0.5);">(continued)</span></h2>
+            <p class="subtitle" style="font-size: 26px; margin-bottom: 30px;">Get in front of the buyer BEFORE the RFP drops:</p>
+            <div class="list-container" style="margin-top: 30px; max-width: 1400px;">
+                <div class="list-item" style="background: rgba(255,255,255,0.15); padding: 30px 35px; border-radius: 15px; font-size: 26px;">
+                    <div class="list-icon" style="font-size: 28px; font-weight: 900; background: #fbbf24; color: #0B2E1B;">4</div>
+                    <span><strong>Respond to Sources Sought</strong> &mdash; less than 5% respond. Your response shapes the RFP. You become the known vendor.</span>
+                </div>
+                <div class="list-item" style="background: rgba(255,255,255,0.15); padding: 30px 35px; border-radius: 15px; font-size: 26px;">
+                    <div class="list-icon" style="font-size: 28px; font-weight: 900; background: #fbbf24; color: #0B2E1B;">5</div>
+                    <span><strong>Build Small Business Office relationships</strong> &mdash; they connect you to the contracting officers and program managers who can issue sole-source awards. They're your door opener.</span>
                 </div>
             </div>
-            <div class="do-dont-grid">
-                <div class="dont-box">
-                    <h3>WEAK</h3>
-                    <p>"Contact us for more information"</p>
-                    <p>"We look forward to working with you"</p>
-                </div>
-                <div class="do-box">
-                    <h3>STRONG</h3>
-                    <p>"Schedule a 15-minute call to discuss your cloud migration challenges: calendly.com/yourcompany"</p>
-                    <p>"Email john@company.com with your current IT modernization priorities"</p>
-                </div>
+            <div style="margin-top: 50px; background: rgba(251,191,36,0.15); border: 2px solid rgba(251,191,36,0.4); border-radius: 16px; padding: 30px 40px; max-width: 1200px;">
+                <p style="font-size: 28px;"><strong style="color: #fbbf24;">The green zone isn't about proposals.</strong> It's about being the known vendor before the opportunity goes public.</p>
             </div>
         </div>
-    </div>
-
-    <!-- SLIDE 15: The Secret -->
-    <div class="slide slide-red">
-        <div class="content">
-            <h2 style="margin-bottom: 60px;">The #1 Secret to Winning</h2>
-            <p class="big-text" style="color: #fef08a;">Agency-Specific<br>Customization</p>
-            <p class="medium-text">One generic cap statement = zero responses.<br>Tailored cap statements = meetings.</p>
+        <div class="footer">
+            <div class="footer-left">GovConGiants.com</div>
+            <div class="footer-right">Relationships beat proposals</div>
         </div>
     </div>
 
-    <!-- SLIDE 16: How to Customize -->
-    <div class="slide slide-blue">
-        <div class="content">
-            <h2>How To Customize For Each Agency</h2>
-            <div class="action-list" style="margin-top: 50px;">
-                <div class="action-item"><div class="number">1</div><span>Research the agency's strategic plan and priorities</span></div>
-                <div class="action-item"><div class="number">2</div><span>Identify their specific pain points (Week 2!)</span></div>
-                <div class="action-item"><div class="number">3</div><span>Use THEIR terminology and acronyms</span></div>
-                <div class="action-item"><div class="number">4</div><span>Reference THEIR mission in your core competencies</span></div>
-                <div class="action-item"><div class="number">5</div><span>Show relevant past performance (similar agencies)</span></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- SLIDE 17: Before/After Example -->
-    <div class="slide slide-dark">
-        <div class="content" style="width: 100%;">
-            <h2 style="text-align: center; margin-bottom: 40px;">Before & After: Core Competencies</h2>
-            <div class="do-dont-grid">
-                <div class="dont-box">
-                    <h3>GENERIC</h3>
-                    <p>"IT Services and Solutions"</p>
-                    <p>"Cybersecurity Services"</p>
-                    <p>"Cloud Computing"</p>
-                </div>
-                <div class="do-box">
-                    <h3>FOR DHS</h3>
-                    <p>"Border Security Technology Integration"</p>
-                    <p>"EINSTEIN 3A Cybersecurity Implementation"</p>
-                    <p>"FedRAMP High Cloud Migration for Sensitive Systems"</p>
-                </div>
-            </div>
-            <p style="text-align: center; font-size: 32px; margin-top: 40px; opacity: 0.9;">Same company. Same capabilities. DIFFERENT positioning.</p>
-        </div>
-    </div>
-
-    <!-- SLIDE 18: Design Matters -->
-    <div class="slide slide-orange">
-        <div class="content">
-            <h2>Design Matters: The 7-Second Test</h2>
-            <div class="checklist" style="margin-top: 40px;">
-                <div class="checklist-item"><div class="check">✓</div>ONE page only - no exceptions</div>
-                <div class="checklist-item"><div class="check">✓</div>Clear visual hierarchy - most important info first</div>
-                <div class="checklist-item"><div class="check">✓</div>Plenty of white space - don't crowd it</div>
-                <div class="checklist-item"><div class="check">✓</div>Consistent colors and fonts - look professional</div>
-                <div class="checklist-item"><div class="check">✓</div>Scannable - bullets, not paragraphs</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- SLIDE 19: Common Mistakes -->
-    <div class="slide slide-dark">
-        <div class="content">
-            <h2><span class="red">5 Mistakes</span> That Kill Your Chances</h2>
-            <div class="reason-list" style="margin-top: 50px;">
-                <div class="reason-item"><div class="icon">1</div><span>Multiple pages - they won't read past page 1</span></div>
-                <div class="reason-item"><div class="icon">2</div><span>No CAGE/UEI - looks unprofessional</span></div>
-                <div class="reason-item"><div class="icon">3</div><span>Outdated information - check dates on past performance</span></div>
-                <div class="reason-item"><div class="icon">4</div><span>Buzzwords without proof - "world-class" means nothing</span></div>
-                <div class="reason-item"><div class="icon">5</div><span>Poor quality PDF - fuzzy logos, broken formatting</span></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- SLIDE 20: Your Action Plan -->
-    <div class="slide slide-green">
-        <div class="content">
-            <h2>Your Action Plan This Week</h2>
-            <div class="action-list" style="margin-top: 50px;">
-                <div class="action-item"><div class="number">1</div><span>Download our free template (link in description)</span></div>
-                <div class="action-item"><div class="number">2</div><span>Audit your current cap statement against the 6 sections</span></div>
-                <div class="action-item"><div class="number">3</div><span>Pick ONE target agency from your list</span></div>
-                <div class="action-item"><div class="number">4</div><span>Research their strategic plan and pain points</span></div>
-                <div class="action-item"><div class="number">5</div><span>Create an agency-specific version</span></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- SLIDE 21: Key Takeaway -->
-    <div class="slide slide-dark">
-        <div class="content">
-            <h2 style="font-size: 60px; margin-bottom: 50px;">The Key Takeaway</h2>
-            <p class="big-text" style="color: #4ade80;">Generic = Ignored<br>Specific = Meetings</p>
-            <p class="medium-text">Every agency should get a customized cap statement.<br>Yes, it's more work. Yes, it's worth it.</p>
-        </div>
-    </div>
-
-    <!-- SLIDE 22: Free Resources -->
-    <div class="slide slide-download">
-        <div class="content">
-            <h2>Free Resources</h2>
-            <div class="reason-list" style="margin: 40px auto; text-align: left; max-width: 1000px;">
-                <div class="reason-item" style="font-size: 32px;"><div class="icon">NEW</div><span>Capability Statement Template (Editable)</span></div>
-                <div class="reason-item" style="font-size: 32px;"><div class="icon">NEW</div><span>Agency Customization Checklist</span></div>
-                <div class="reason-item" style="font-size: 32px;"><div class="icon">+</div><span>All resources from Week 1 & 2</span></div>
-            </div>
-            <div class="url">govcongiants.org/surge</div>
-            <p>Link In Description</p>
-        </div>
-    </div>
-
-    <!-- SLIDE 23: Bootcamp CTA -->
-    <div class="slide slide-cta">
-        <div class="content">
-            <div class="badge">Federal Help Center Pro Members</div>
-            <h2>January 2026 GovCon Bootcamp</h2>
-            <div class="date">January 31, 2026</div>
-            <div class="features">
-                8 Hours Live Training | <strong>Capability Statement Review</strong><br>
-                Personalized Target List | 90-Day Action Plan<br>
-                Searchable Database Access | Full Recording
-            </div>
-            <div class="cta-box">Join Federal Help Center Pro</div>
-            <div class="price">$99/month or $799/year</div>
-        </div>
-    </div>
-
-    <!-- SLIDE 24: Next Week Teaser -->
-    <div class="slide slide-dark">
-        <div class="content">
-            <h2 style="margin-bottom: 40px;">Next Week</h2>
-            <p style="font-size: 72px; font-weight: 900; color: #7c3aed; margin-bottom: 40px;">How To Find & Contact<br>The Right Buyers</p>
-            <p style="font-size: 36px;">I'll show you exactly how to find SBLOs, contracting officers, and decision makers - and what to say when you reach out.</p>
-            <p style="font-size: 42px; color: #ef4444; font-weight: 700; margin-top: 60px;">Subscribe so you don't miss it!</p>
-        </div>
-    </div>
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- CLOSING (Slides 18-20) -->
+    <!-- ═══════════════════════════════════════════════════════ -->
 
     <!-- SLIDE 25: Data Sources -->
-    <div class="slide slide-dark">
-        <div class="content" style="text-align: left; padding: 60px 100px;">
-            <h2 style="text-align: center; margin-bottom: 50px; font-size: 60px;">Data Sources</h2>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; font-size: 26px;">
-                <div>
-                    <h3 style="color: #4ade80; font-size: 32px; margin-bottom: 20px;">Capability Statement Best Practices</h3>
-                    <ul style="list-style: none; line-height: 2;">
-                        <li>> SBA.gov - Marketing to Government</li>
-                        <li>> GSA - Vendor Engagement Guide</li>
-                        <li>> Agency OSDBU Requirements</li>
-                    </ul>
+    <div class="slide bg-solid-dark" id="slide-25">
+        <div class="header-bar">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge"><div class="live-dot"></div> LIVE</div>
+        </div>
+        <div class="content">
+            <h2 class="title-large"><span class="highlight-green">Data Sources</span></h2>
+            <div class="source-grid">
+                <div class="source-card">
+                    <div class="source-name">SAMradar</div>
+                    <div class="source-desc">71% zero-competition stat, SAM.gov contract analytics</div>
                 </div>
-                <div>
-                    <h3 style="color: #4ade80; font-size: 32px; margin-bottom: 20px;">Registration Requirements</h3>
-                    <ul style="list-style: none; line-height: 2;">
-                        <li>> SAM.gov - Entity Registration</li>
-                        <li>> CAGE Code - DLA CAGE Program</li>
-                        <li>> NAICS - Census Bureau</li>
-                    </ul>
+                <div class="source-card">
+                    <div class="source-name">GAO</div>
+                    <div class="source-desc">Competition rates, non-competitive trends, FY2024 dashboard</div>
                 </div>
-                <div>
-                    <h3 style="color: #4ade80; font-size: 32px; margin-bottom: 20px;">Agency Research</h3>
-                    <ul style="list-style: none; line-height: 2;">
-                        <li>> Agency Strategic Plans</li>
-                        <li>> Budget Justification Documents</li>
-                        <li>> Acquisition Forecast Data</li>
-                    </ul>
+                <div class="source-card">
+                    <div class="source-name">USASpending.gov</div>
+                    <div class="source-desc">Agency spending data, contract award values</div>
                 </div>
-                <div>
-                    <h3 style="color: #4ade80; font-size: 32px; margin-bottom: 20px;">Contract Data</h3>
-                    <ul style="list-style: none; line-height: 2;">
-                        <li>> FPDS-NG - Past Awards</li>
-                        <li>> USASpending.gov - Contract History</li>
-                        <li>> GovWin / Bloomberg Gov</li>
-                    </ul>
+                <div class="source-card">
+                    <div class="source-name">FPDS.gov</div>
+                    <div class="source-desc">Contract competition data, award history</div>
+                </div>
+                <div class="source-card">
+                    <div class="source-name">SBA Scorecard</div>
+                    <div class="source-desc">WOSB achievement rates, 8(a) sole-source data</div>
+                </div>
+                <div class="source-card">
+                    <div class="source-name">GAO-10-833</div>
+                    <div class="source-desc">13% one-offer competition analysis</div>
                 </div>
             </div>
-            <p style="text-align: center; margin-top: 40px; font-size: 24px; opacity: 0.7;">Data current as of January 2026</p>
+            <p class="subtitle" style="margin-top: 30px; font-size: 24px;">All data is from official government sources and publicly available databases.</p>
+        </div>
+        <div class="footer">
+            <div class="footer-left">GovConGiants.com</div>
+            <div class="footer-right">Transparency builds trust</div>
         </div>
     </div>
 
-    <!-- SLIDE 26: Final -->
-    <div class="slide slide-title">
+    <!-- SLIDE 26: Your Challenge This Week -->
+    <div class="slide bg-solid-dark" id="slide-26">
+        <div class="header-bar">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge"><div class="live-dot"></div> LIVE</div>
+        </div>
         <div class="content">
-            <h1 style="font-size: 80px;">Thanks For Watching!</h1>
-            <p class="subtitle" style="margin-top: 40px;">Like | Subscribe | Share</p>
-            <p style="font-size: 36px; margin-top: 60px; opacity: 0.9;">Download free resources: govcongiants.org/surge</p>
-            <div class="date">GovCon Giants | Federal Help Center</div>
+            <h2 class="title-large">Your Challenge <span class="highlight-orange">This Week</span></h2>
+            <div class="list-container" style="margin-top: 40px; max-width: 1200px;">
+                <div class="list-item" style="background: rgba(255,255,255,0.08); padding: 25px 30px; border-radius: 15px;">
+                    <div class="list-icon" style="font-size: 28px; font-weight: 900;">1</div>
+                    <span>Search SAM.gov for contracts <strong style="color: #26C281;">under $350K</strong> in YOUR NAICS code</span>
+                </div>
+                <div class="list-item" style="background: rgba(255,255,255,0.08); padding: 25px 30px; border-radius: 15px;">
+                    <div class="list-icon" style="font-size: 28px; font-weight: 900;">2</div>
+                    <span>Find ONE <strong style="color: #26C281;">Sources Sought</strong> notice and respond to it this week</span>
+                </div>
+                <div class="list-item" style="background: rgba(255,255,255,0.08); padding: 25px 30px; border-radius: 15px;">
+                    <div class="list-icon" style="font-size: 28px; font-weight: 900;">3</div>
+                    <span>Look up a <strong style="color: #26C281;">defense sub-agency SBLO</strong> and send them an intro email</span>
+                </div>
+                <div class="list-item" style="background: rgba(255,255,255,0.08); padding: 25px 30px; border-radius: 15px;">
+                    <div class="list-icon" style="font-size: 28px; font-weight: 900;">4</div>
+                    <span>Check USASpending.gov &mdash; look up <strong style="color: #26C281;">who's spending in your NAICS</strong> at a sub-agency level</span>
+                </div>
+            </div>
+            <p class="subtitle" style="margin-top: 40px; font-size: 30px;">Pick ONE. Drop it in the comments. <strong style="color: #26C281;">Go.</strong></p>
+        </div>
+        <div class="footer">
+            <div class="footer-left">GovConGiants.com</div>
+            <div class="footer-right">Action beats knowledge every time</div>
         </div>
     </div>
+
+    <!-- SLIDE 27: Thanks for Watching -->
+    <div class="slide bg-gradient-green" id="slide-27">
+        <div class="header-bar">
+            <div class="logo">GOVCON GIANTS</div>
+            <div class="live-badge"><div class="live-dot"></div> LIVE</div>
+        </div>
+        <div class="content">
+            <h2 class="title-main">Thanks for Watching!</h2>
+            <p class="subtitle" style="font-size: 28px; margin-top: 10px; margin-bottom: 50px;">71% of contracts had zero competition. <strong style="color: #fbbf24;">Go find yours.</strong></p>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label" style="font-size: 26px; color: #26C281; font-weight: 800; margin-bottom: 10px;">Subscribe</div>
+                    <div style="font-size: 24px;">YouTube.com/@GovConGiants</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label" style="font-size: 26px; color: #26C281; font-weight: 800; margin-bottom: 10px;">Next Week</div>
+                    <div style="font-size: 24px;">More data, more agencies, more strategies</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label" style="font-size: 26px; color: #F97316; font-weight: 800; margin-bottom: 10px;">Share This</div>
+                    <div style="font-size: 24px;">Tag a contractor who needs to see this</div>
+                </div>
+            </div>
+            <p class="subtitle" style="margin-top: 60px; font-size: 36px; font-weight: 700;">Stop competing where everyone else is. <span style="color: #fbbf24;">Go where they aren't.</span></p>
+        </div>
+        <div class="footer">
+            <div class="footer-left">GovConGiants.com</div>
+            <div class="footer-right">Federal Contracting Made Simple</div>
+        </div>
+    </div>
+
+    </div>
+
+    <div class="slide-counter">Slide <span id="current-slide">1</span> / <span id="total-slides">15</span></div>
+    <div class="nav-hint">Arrow keys to navigate</div>
 
     <script>
-        // Keyboard navigation
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        const currentSlideEl = document.getElementById('currentSlide');
-        const totalSlidesEl = document.getElementById('totalSlides');
+        let currentSlide = 1;
+        const totalSlides = 27;
 
-        totalSlidesEl.textContent = slides.length;
-
-        function updateCounter() {
-            currentSlideEl.textContent = currentSlide + 1;
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.slide');
+            if (n > totalSlides) currentSlide = 1;
+            if (n < 1) currentSlide = totalSlides;
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[currentSlide - 1].classList.add('active');
+            document.getElementById('current-slide').textContent = currentSlide;
+            scaleSlide();
         }
 
-        function goToSlide(n) {
-            if (n >= 0 && n < slides.length) {
-                currentSlide = n;
-                slides[n].scrollIntoView({ behavior: 'smooth' });
-                updateCounter();
-            }
+        function scaleSlide() {
+            const container = document.querySelector('.slide-container');
+            const scaleX = container.clientWidth / 1920;
+            const scaleY = container.clientHeight / 1080;
+            const scale = Math.min(scaleX, scaleY, 1);
+            document.querySelectorAll('.slide').forEach(s => {
+                s.style.transform = `scale(${scale})`;
+            });
         }
 
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') {
-                e.preventDefault();
-                goToSlide(currentSlide + 1);
-            } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-                e.preventDefault();
-                goToSlide(currentSlide - 1);
-            } else if (e.key === 'Home') {
-                goToSlide(0);
-            } else if (e.key === 'End') {
-                goToSlide(slides.length - 1);
-            }
+            if (e.key === 'ArrowRight' || e.key === ' ') { currentSlide++; showSlide(currentSlide); }
+            else if (e.key === 'ArrowLeft') { currentSlide--; showSlide(currentSlide); }
         });
 
-        // Update counter on scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    currentSlide = Array.from(slides).indexOf(entry.target);
-                    updateCounter();
-                }
-            });
-        }, { threshold: 0.5 });
+        document.addEventListener('click', (e) => {
+            if (e.clientX > window.innerWidth / 2) { currentSlide++; } else { currentSlide--; }
+            showSlide(currentSlide);
+        });
 
-        slides.forEach(slide => observer.observe(slide));
+        window.addEventListener('resize', scaleSlide);
+        showSlide(currentSlide);
+        document.getElementById('total-slides').textContent = totalSlides;
     </script>
 </body>
 </html>

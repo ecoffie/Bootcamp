@@ -286,12 +286,11 @@ This repository contains all GovCon Giants resources for helping small businesse
 | `youtube-live-1-slides.html` | YT Live #1 slides |
 | `youtube-live-1-thumbnail.html` | YT Live #1 thumbnail |
 | `youtube-live-1-82b-opportunity-virality-kit.md` | Virality kit for Live #1 |
-| `youtube-live-2-slides.html` | YT Live #2 slides |
-| `youtube-live-2-thumbnail.html` | YT Live #2 thumbnail |
-| `youtube-live-3-slides.html` | YT Live #3 slides |
+| `youtube-live-fy2025-vs-fy2026-slides.html` | YT Live #2: "FY2025 vs FY2026: Who's Getting Money & Who's Getting Cut" (replaces old #2 pain points) |
+| `youtube-live-3-slides.html` | YT Live #3: "71% of Federal Contracts Had ZERO Competition" (27 slides, March 2026 — what 71% means (2 slides), programs that drive it (2 slides: OTA/BAA/SBIR + GSA/IDIQ/Rapid Tech), "isn't this for large firms?", OTA dedicated slide, BAA dedicated slide, veterans built-in advantage, GSA Schedule (2 slides: how it works + eBuy/BPAs), red ocean, competition spectrum, defense vs civilian, WOSB gap, $350K SAT, 13% 1-offer stat, where to turn (2 slides: certs/JVs + programs/paths), how to find low-competition contracts, green zone (2 slides), data sources, weekly challenge) |
 | `youtube-live-4-slides.html` | YT Live #4 slides |
 | `youtube-live-final-call-slides.html` | Final call slides |
-| `youtube-live-bootcamp-recap-slides.html` | Bootcamp recap presentation |
+| `youtube-live-hidden-agencies-slides.html` | YT Live #6: "The Federal Agencies You Never Heard Of" (23 slides — 250+ hidden agencies, Space Force/emerging commands, Navy/Defense/Army/AF commands, civilian gold mines, micro agencies, agency forecasts, SBLO scripts; 5 industry-by-NAICS slides with real MA data: IT/Cyber, Construction, Janitorial, Staffing, Healthcare; weekly challenge; replaces old #6 bootcamp recap) |
 | `youtube-live-bootcamp-recap-script.md` | Recap script (short) |
 | `youtube-live-bootcamp-recap-full-script.md` | Recap full script |
 | `youtube-live-bootcamp-recap-virality-kit.md` | Recap virality kit |
