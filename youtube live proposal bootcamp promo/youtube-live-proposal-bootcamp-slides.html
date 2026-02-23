@@ -244,18 +244,6 @@
             margin-top: 15px;
         }
 
-        /* Quote box */
-        .quote-box {
-            background: rgba(255,255,255,0.1);
-            border-left: 8px solid #ef4444;
-            padding: 40px 50px;
-            margin: 30px 0;
-            font-size: 36px;
-            font-style: italic;
-            max-width: 1400px;
-            text-align: left;
-        }
-
         /* Reason list */
         .reason-list {
             max-width: 1400px;
@@ -282,7 +270,7 @@
             flex-shrink: 0;
         }
 
-        /* Pain point slide */
+        /* Pain point header */
         .pain-point-header {
             display: flex;
             align-items: center;
@@ -333,46 +321,6 @@
         .pain-point-value {
             flex: 1;
             opacity: 0.95;
-        }
-
-        /* Do Don't comparison */
-        .do-dont-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            max-width: 1500px;
-            margin: 0 auto;
-        }
-
-        .do-box {
-            background: rgba(16, 185, 129, 0.2);
-            border: 4px solid #10b981;
-            border-radius: 30px;
-            padding: 50px;
-        }
-
-        .dont-box {
-            background: rgba(239, 68, 68, 0.2);
-            border: 4px solid #ef4444;
-            border-radius: 30px;
-            padding: 50px;
-        }
-
-        .do-box h3, .dont-box h3 {
-            font-size: 48px;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
-        .do-box h3 { color: #4ade80; }
-        .dont-box h3 { color: #ef4444; }
-
-        .do-box p, .dont-box p {
-            font-size: 28px;
-            margin-bottom: 20px;
-            padding: 15px;
-            background: rgba(0,0,0,0.2);
-            border-radius: 10px;
         }
 
         /* Two worlds comparison */
@@ -465,6 +413,46 @@
             line-height: 1.5;
         }
 
+        /* Do Don't comparison */
+        .do-dont-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1500px;
+            margin: 0 auto;
+        }
+
+        .do-box {
+            background: rgba(16, 185, 129, 0.2);
+            border: 4px solid #10b981;
+            border-radius: 30px;
+            padding: 50px;
+        }
+
+        .dont-box {
+            background: rgba(239, 68, 68, 0.2);
+            border: 4px solid #ef4444;
+            border-radius: 30px;
+            padding: 50px;
+        }
+
+        .do-box h3, .dont-box h3 {
+            font-size: 48px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .do-box h3 { color: #4ade80; }
+        .dont-box h3 { color: #ef4444; }
+
+        .do-box p, .dont-box p {
+            font-size: 28px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(0,0,0,0.2);
+            border-radius: 10px;
+        }
+
         /* Action list */
         .action-list {
             max-width: 1300px;
@@ -496,39 +484,60 @@
             flex-shrink: 0;
         }
 
-        /* Two column layout */
-        .two-col {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            max-width: 1600px;
+        /* Timeline */
+        .timeline {
+            max-width: 1500px;
             margin: 0 auto;
-            text-align: left;
-        }
-
-        .two-col h3 {
-            font-size: 42px;
-            color: #4ade80;
-            margin-bottom: 30px;
-        }
-
-        .two-col ul {
-            list-style: none;
-            font-size: 30px;
-        }
-
-        .two-col li {
-            padding: 15px 0;
-            padding-left: 40px;
             position: relative;
         }
 
-        .two-col li::before {
-            content: '>';
+        .timeline::before {
+            content: '';
             position: absolute;
-            left: 0;
-            color: #4ade80;
-            font-weight: bold;
+            left: 40px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: rgba(255,255,255,0.2);
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 30px;
+            align-items: center;
+        }
+
+        .timeline-dot {
+            width: 80px;
+            height: 80px;
+            background: #4ade80;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 900;
+            color: #0f172a;
+            flex-shrink: 0;
+            z-index: 1;
+        }
+
+        .timeline-content {
+            background: rgba(255,255,255,0.08);
+            padding: 25px 35px;
+            border-radius: 15px;
+            flex: 1;
+        }
+
+        .timeline-content h4 {
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .timeline-content p {
+            font-size: 24px;
+            opacity: 0.8;
         }
 
         /* Tool connection cards */
@@ -659,73 +668,6 @@
             margin-top: 30px;
         }
 
-        /* Offer slide */
-        .slide-offer {
-            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0f172a 100%);
-        }
-
-        .slide-offer .content {
-            text-align: center;
-            padding: 80px;
-        }
-
-        .slide-offer h2 {
-            font-size: 72px;
-            font-weight: 900;
-            margin-bottom: 40px;
-        }
-
-        .slide-offer .price-compare {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 60px;
-            margin: 40px 0;
-        }
-
-        .slide-offer .old-price {
-            font-size: 72px;
-            font-weight: 900;
-            opacity: 0.4;
-            text-decoration: line-through;
-        }
-
-        .slide-offer .arrow {
-            font-size: 60px;
-            color: #4ade80;
-        }
-
-        .slide-offer .new-price {
-            font-size: 100px;
-            font-weight: 900;
-            color: #4ade80;
-            text-shadow: 0 0 40px rgba(74, 222, 128, 0.3);
-        }
-
-        .slide-offer .savings {
-            font-size: 42px;
-            color: #ef4444;
-            font-weight: 700;
-            margin: 20px 0;
-        }
-
-        .slide-offer .deadline {
-            font-size: 36px;
-            opacity: 0.9;
-            margin-top: 30px;
-        }
-
-        .slide-offer .url {
-            font-size: 48px;
-            font-weight: 700;
-            background: rgba(74, 222, 128, 0.2);
-            padding: 25px 50px;
-            border-radius: 15px;
-            margin-top: 30px;
-            display: inline-block;
-            color: #4ade80;
-        }
-
         /* Big text */
         .big-text {
             font-size: 120px;
@@ -739,60 +681,178 @@
             margin-top: 30px;
         }
 
-        /* Timeline */
-        .timeline {
-            max-width: 1500px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 40px;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: rgba(255,255,255,0.2);
-        }
-
-        .timeline-item {
+        /* Channel card */
+        .channel-header {
             display: flex;
-            gap: 40px;
-            margin-bottom: 30px;
             align-items: center;
+            gap: 30px;
+            margin-bottom: 40px;
         }
 
-        .timeline-dot {
-            width: 80px;
-            height: 80px;
-            background: #4ade80;
+        .channel-number {
+            width: 100px;
+            height: 100px;
+            background: rgba(255,255,255,0.2);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
+            font-size: 48px;
             font-weight: 900;
-            color: #0f172a;
             flex-shrink: 0;
-            z-index: 1;
         }
 
-        .timeline-content {
-            background: rgba(255,255,255,0.08);
-            padding: 25px 35px;
-            border-radius: 15px;
+        .channel-title {
+            font-size: 56px;
+            font-weight: 900;
+        }
+
+        .channel-examples {
+            max-width: 1500px;
+            margin: 0 auto;
+        }
+
+        .channel-example {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 20px;
+            font-size: 32px;
+            align-items: center;
+        }
+
+        .channel-example .ex-name {
+            background: rgba(255,255,255,0.15);
+            padding: 12px 25px;
+            border-radius: 12px;
+            font-weight: 700;
+            min-width: 280px;
+            text-align: center;
+        }
+
+        .channel-example .ex-desc {
+            flex: 1;
+            opacity: 0.9;
+        }
+
+        .channel-stat {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 36px;
+            font-weight: 700;
+        }
+
+        /* Speaker card */
+        .speaker-layout {
+            display: flex;
+            align-items: center;
+            gap: 80px;
+            max-width: 1600px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .speaker-left {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .speaker-photo {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 100px;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 25px;
+        }
+
+        .speaker-photo.green { background: linear-gradient(135deg, #059669, #10b981); }
+        .speaker-photo.orange { background: linear-gradient(135deg, #ea580c, #f97316); }
+        .speaker-photo.purple { background: linear-gradient(135deg, #7c3aed, #a855f7); }
+
+        .speaker-name {
+            font-size: 36px;
+            font-weight: 900;
+            text-align: center;
+        }
+
+        .speaker-cred {
+            font-size: 24px;
+            opacity: 0.8;
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        .speaker-right {
             flex: 1;
         }
 
-        .timeline-content h4 {
+        .speaker-stat {
+            font-size: 72px;
+            font-weight: 900;
+            margin-bottom: 30px;
+        }
+
+        .speaker-stat.green { color: #4ade80; }
+        .speaker-stat.orange { color: #f97316; }
+        .speaker-stat.purple { color: #a855f7; }
+
+        .speaker-bullets {
+            list-style: none;
+            margin-bottom: 35px;
+        }
+
+        .speaker-bullets li {
             font-size: 30px;
+            padding: 10px 0;
+            padding-left: 40px;
+            position: relative;
+        }
+
+        .speaker-bullets li::before {
+            content: '\2713';
+            position: absolute;
+            left: 0;
+            font-weight: 900;
+        }
+
+        .speaker-bullets li.green::before { color: #4ade80; }
+        .speaker-bullets li.orange::before { color: #f97316; }
+        .speaker-bullets li.purple::before { color: #a855f7; }
+
+        .session-box {
+            padding: 25px 35px;
+            border-radius: 15px;
+            background: rgba(255,255,255,0.08);
+            border-left: 6px solid;
+        }
+
+        .session-box.green { border-color: #4ade80; }
+        .session-box.orange { border-color: #f97316; }
+        .session-box.purple { border-color: #a855f7; }
+
+        .session-box .session-label {
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.7;
             margin-bottom: 8px;
         }
 
-        .timeline-content p {
+        .session-box .session-title {
+            font-size: 30px;
+            font-weight: 900;
+            margin-bottom: 8px;
+        }
+
+        .session-box .session-desc {
             font-size: 24px;
-            opacity: 0.8;
+            opacity: 0.85;
         }
 
         /* Navigation */
@@ -830,14 +890,14 @@
 </head>
 <body>
     <div class="nav-hint">Arrow keys to navigate | F11 for fullscreen</div>
-    <div class="slide-counter">Slide <span id="currentSlide">1</span> of <span id="totalSlides">18</span></div>
+    <div class="slide-counter">Slide <span id="currentSlide">1</span> of <span id="totalSlides">22</span></div>
 
     <!-- SLIDE 1: Title -->
     <div class="slide slide-title">
         <div class="content">
             <div class="badge">YouTube Live — February 2026</div>
             <h1><span class="highlight">50%</span> of Federal Contracts<br><span class="red">Never Hit SAM.gov</span></h1>
-            <p class="subtitle">Here's How to Find and WIN Them</p>
+            <p class="subtitle">Here's Where They Are</p>
             <div class="date">GovCon Giants | Federal Help Center</div>
         </div>
     </div>
@@ -850,142 +910,58 @@
         </div>
     </div>
 
-    <!-- SLIDE 3: Two Worlds -->
-    <div class="slide slide-dark">
-        <div class="content" style="width: 100%;">
-            <h2 style="margin-bottom: 40px;">The Two Worlds of Federal Contracting</h2>
-            <div class="worlds-grid">
-                <div class="world-box" style="border: 3px solid #ef4444;">
-                    <h3 style="color: #ef4444;">World 1: Full & Open</h3>
-                    <div class="stat-row"><span class="stat-label">Where</span><span class="stat-value">SAM.gov</span></div>
-                    <div class="stat-row"><span class="stat-label">Competitors</span><span class="stat-value" style="color: #ef4444;">20–100+</span></div>
-                    <div class="stat-row"><span class="stat-label">Win Rate</span><span class="stat-value" style="color: #ef4444;">2–5%</span></div>
-                    <div class="stat-row"><span class="stat-label">Timeline</span><span class="stat-value">6–18 months</span></div>
-                    <div class="stat-row"><span class="stat-label">Proposal Length</span><span class="stat-value">50–200 pages</span></div>
-                </div>
-                <div class="vs-circle">VS</div>
-                <div class="world-box" style="border: 3px solid #4ade80;">
-                    <h3 style="color: #4ade80;">World 2: Task Orders</h3>
-                    <div class="stat-row"><span class="stat-label">Where</span><span class="stat-value">IDIQ Vehicles</span></div>
-                    <div class="stat-row"><span class="stat-label">Competitors</span><span class="stat-value" style="color: #4ade80;">5–10</span></div>
-                    <div class="stat-row"><span class="stat-label">Win Rate</span><span class="stat-value" style="color: #4ade80;">15–30%</span></div>
-                    <div class="stat-row"><span class="stat-label">Timeline</span><span class="stat-value">30–60 days</span></div>
-                    <div class="stat-row"><span class="stat-label">Proposal Length</span><span class="stat-value">10–30 pages</span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- SLIDE 4: The Numbers -->
+    <!-- SLIDE 3: The Numbers -->
     <div class="slide slide-green">
         <div class="content">
             <h2>The Numbers Don't Lie</h2>
             <div class="stat-grid stat-grid-4" style="margin-top: 50px;">
                 <div class="stat-box">
-                    <div class="number">50%</div>
-                    <div class="label">Of Contract $$ Flow Through Task Orders</div>
-                </div>
-                <div class="stat-box">
                     <div class="number">$350B+</div>
-                    <div class="label">Annually Through IDIQ Vehicles</div>
+                    <div class="label">Annually Through Task Orders</div>
                 </div>
                 <div class="stat-box">
-                    <div class="number">5–10</div>
-                    <div class="label">Average Competitors Per Task Order</div>
+                    <div class="number">50%</div>
+                    <div class="label">Of Contract $$ Never on SAM.gov</div>
                 </div>
                 <div class="stat-box">
-                    <div class="number">15–30%</div>
+                    <div class="number">5-10</div>
+                    <div class="label">Competitors Per Task Order</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">15-30%</div>
                     <div class="label">Win Rate on Task Orders</div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- SLIDE 5: Two Paths -->
-    <div class="slide slide-blue">
-        <div class="content" style="width: 100%;">
-            <h2 style="text-align: center; margin-bottom: 50px;">Two Paths Into the IDIQ World</h2>
-            <div class="do-dont-grid">
-                <div class="do-box" style="border-color: #3b82f6; background: rgba(59, 130, 246, 0.15);">
-                    <h3 style="color: #93c5fd;">PATH A: Get ON an IDIQ</h3>
-                    <p>Respond to IDIQ solicitation</p>
-                    <p>Win a spot on the vehicle</p>
-                    <p>Compete for task orders directly</p>
-                    <p>GSA MAS, OASIS+, CIO-SP4, SEWP</p>
-                    <p style="color: #93c5fd; font-weight: 700; background: rgba(59, 130, 246, 0.2);">⏱ Timeline: 3–12 months</p>
-                </div>
-                <div class="do-box" style="border-color: #4ade80;">
-                    <h3 style="color: #4ade80;">PATH B: Team With a Prime</h3>
-                    <p>Find primes who hold IDIQ vehicles</p>
-                    <p>Become their sub on task orders</p>
-                    <p>Build past performance + revenue</p>
-                    <p>Use Contractor Database for contacts</p>
-                    <p style="color: #4ade80; font-weight: 700; background: rgba(16, 185, 129, 0.2);">⏱ Timeline: Start immediately</p>
-                </div>
-            </div>
-            <p style="text-align: center; font-size: 36px; margin-top: 40px; opacity: 0.9;">Most small businesses should <strong>START</strong> with Path B → graduate to Path A</p>
-        </div>
-    </div>
-
-    <!-- SLIDE 6: 5 Proposal Mistakes -->
-    <div class="slide slide-red">
-        <div class="content" style="padding: 60px;">
-            <h2 style="margin-bottom: 40px;">Why Most Task Order Proposals <span style="color: #fbbf24;">FAIL</span></h2>
-            <div class="reason-list">
-                <div class="reason-item"><div class="icon">1</div><span>Copy-paste from full & open proposals (different format)</span></div>
-                <div class="reason-item"><div class="icon">2</div><span>Ignore evaluation criteria (miss what agencies score)</span></div>
-                <div class="reason-item"><div class="icon">3</div><span>Write about THEMSELVES instead of the MISSION</span></div>
-                <div class="reason-item"><div class="icon">4</div><span>Wrong pricing structure (T&M vs FFP vs Cost-Plus)</span></div>
-                <div class="reason-item"><div class="icon">5</div><span>Submit late — task orders move FAST (7–14 day windows)</span></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- SLIDE 7: Anatomy of a Winner -->
+    <!-- SLIDE 4: Full & Open vs Task Orders -->
     <div class="slide slide-dark">
         <div class="content" style="width: 100%;">
-            <h2 style="margin-bottom: 40px;">Anatomy of a <span class="highlight">Winning</span> Task Order Proposal</h2>
-            <div class="section-grid">
-                <div class="section-card">
-                    <div class="section-num">Section 1</div>
-                    <h3>Technical Approach</h3>
-                    <p>Your PLAN to execute THIS specific task. Methodology, deliverables, milestones. Specific to the SOW. This is where you win or lose.</p>
+            <h2 style="margin-bottom: 40px;">The Two Worlds of Federal Contracting</h2>
+            <div class="worlds-grid">
+                <div class="world-box" style="border: 3px solid #ef4444;">
+                    <h3 style="color: #ef4444;">Full & Open</h3>
+                    <div class="stat-row"><span class="stat-label">Where</span><span class="stat-value">SAM.gov</span></div>
+                    <div class="stat-row"><span class="stat-label">Competitors</span><span class="stat-value" style="color: #ef4444;">20-100+</span></div>
+                    <div class="stat-row"><span class="stat-label">Win Rate</span><span class="stat-value" style="color: #ef4444;">2-5%</span></div>
+                    <div class="stat-row"><span class="stat-label">Timeline</span><span class="stat-value">6-18 months</span></div>
+                    <div class="stat-row"><span class="stat-label">Proposal</span><span class="stat-value">50-200 pages</span></div>
                 </div>
-                <div class="section-card">
-                    <div class="section-num">Section 2</div>
-                    <h3>Staffing & Management</h3>
-                    <p>WHO does the work. Qualifications, org chart, PM identified. Real people — not "TBD." Agencies want to know you're ready NOW.</p>
+                <div class="vs-circle">VS</div>
+                <div class="world-box" style="border: 3px solid #4ade80;">
+                    <h3 style="color: #4ade80;">Task Orders</h3>
+                    <div class="stat-row"><span class="stat-label">Where</span><span class="stat-value">IDIQ Vehicles</span></div>
+                    <div class="stat-row"><span class="stat-label">Competitors</span><span class="stat-value" style="color: #4ade80;">5-10</span></div>
+                    <div class="stat-row"><span class="stat-label">Win Rate</span><span class="stat-value" style="color: #4ade80;">15-30%</span></div>
+                    <div class="stat-row"><span class="stat-label">Timeline</span><span class="stat-value">30-60 days</span></div>
+                    <div class="stat-row"><span class="stat-label">Proposal</span><span class="stat-value">10-30 pages</span></div>
                 </div>
-                <div class="section-card" style="border-top-color: #a855f7;">
-                    <div class="section-num" style="color: #a855f7;">Section 3</div>
-                    <h3>Past Performance</h3>
-                    <p>Similar work. Same size, scope, complexity. Federal preferred — but commercial counts if framed correctly. Quality over quantity.</p>
-                </div>
-                <div class="section-card" style="border-top-color: #f59e0b;">
-                    <div class="section-num" style="color: #f59e0b;">Section 4</div>
-                    <h3>Price / Cost Volume</h3>
-                    <p>Match the contract type. T&M = loaded rates + hours. FFP = firm number + breakdown. Realistic. Competitive. Profitable.</p>
-                </div>
-            </div>
-            <p style="text-align: center; font-size: 32px; margin-top: 40px; color: #a855f7; font-weight: 700;">At the Feb 28 Bootcamp → We build EACH section together, live, with templates.</p>
-        </div>
-    </div>
-
-    <!-- SLIDE 8: Where to Find Task Orders -->
-    <div class="slide slide-purple">
-        <div class="content" style="padding: 60px;">
-            <h2 style="margin-bottom: 40px;">Where to Find Task Orders</h2>
-            <div class="reason-list">
-                <div class="reason-item"><div class="icon" style="background: rgba(255,255,255,0.3);">1</div><span><strong>Agency procurement portals</strong> — NASA SEWP, DLA DIBBS, GSA eBuy</span></div>
-                <div class="reason-item"><div class="icon" style="background: rgba(255,255,255,0.3);">2</div><span><strong>GovWin / Deltek</strong> — Tracks upcoming task orders under major IDIQs</span></div>
-                <div class="reason-item"><div class="icon" style="background: rgba(255,255,255,0.3);">3</div><span><strong>Recompete Tracker</strong> — $77B in expiring IDIQs = new vehicles to compete for</span></div>
-                <div class="reason-item"><div class="icon" style="background: rgba(255,255,255,0.3);">4</div><span><strong>Prime contractor websites</strong> — Sub opportunities under their IDIQs</span></div>
-                <div class="reason-item"><div class="icon" style="background: rgba(255,255,255,0.3);">5</div><span><strong>Sources Sought & RFIs</strong> — Less than <span style="color: #fbbf24; font-weight: 900;">5%</span> of contractors respond</span></div>
             </div>
         </div>
     </div>
 
-    <!-- SLIDE 9: How an IDIQ Actually Works -->
+    <!-- SLIDE 5: How an IDIQ Actually Works -->
     <div class="slide slide-dark">
         <div class="content" style="width: 100%; padding: 60px;">
             <h2 style="margin-bottom: 30px;">How an IDIQ <span class="highlight">Actually Works</span></h2>
@@ -1015,11 +991,11 @@
                     <div class="timeline-dot">4</div>
                     <div class="timeline-content">
                         <h4>Only Those 8 Companies Compete</h4>
-                        <p>Short proposals. 7–14 day turnaround. Award in 30–60 days.</p>
+                        <p>Short proposals. 7-14 day turnaround. Award in 30-60 days.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-dot" style="background: #fbbf24;">★</div>
+                    <div class="timeline-dot" style="background: #fbbf24;">&#9733;</div>
                     <div class="timeline-content" style="border-left: 4px solid #4ade80;">
                         <h4 style="color: #4ade80;">YOUR Entry Point</h4>
                         <p>Be one of the 8 (Path A) — OR team with one of the 8 as a sub (Path B).</p>
@@ -1029,140 +1005,397 @@
         </div>
     </div>
 
-    <!-- SLIDE 10: January → February -->
-    <div class="slide slide-dark">
-        <div class="content">
-            <h2 style="font-size: 60px; margin-bottom: 60px;">From <span class="red">FINDING</span> to <span class="highlight">WINNING</span></h2>
-            <div class="stat-grid stat-grid-2" style="max-width: 1200px;">
-                <div class="stat-box" style="border: 3px solid rgba(239,68,68,0.5);">
-                    <div class="number" style="color: #ef4444; font-size: 48px;">January Bootcamp</div>
-                    <div class="label" style="font-size: 36px; margin-top: 25px;">
-                        Target Agencies<br>
-                        Identify Pain Points<br>
-                        Build Hit List<br>
-                        Find Primes<br>
-                        <strong style="font-size: 42px; color: #ef4444;">FIND</strong>
-                    </div>
-                </div>
-                <div class="stat-box" style="border: 3px solid rgba(74,222,128,0.5);">
-                    <div class="number" style="font-size: 48px;">February Bootcamp</div>
-                    <div class="label" style="font-size: 36px; margin-top: 25px;">
-                        Write Proposals<br>
-                        Respond to Task Orders<br>
-                        Price Competitively<br>
-                        Submit & Win<br>
-                        <strong style="font-size: 42px; color: #4ade80;">WIN</strong>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- SLIDE 11: Bootcamp Agenda -->
+    <!-- SLIDE 6: Channel 1 — IDIQ Task Order Portals -->
     <div class="slide slide-blue">
-        <div class="content" style="padding: 50px;">
-            <h2 style="margin-bottom: 30px; font-size: 60px;">February 28 Bootcamp Agenda</h2>
-            <div class="reason-list" style="max-width: 1500px;">
-                <div class="reason-item" style="font-size: 32px;"><div class="icon">1</div><span><strong>IDIQ & Task Order Fundamentals</strong> — What they are, how they work, where to find them</span></div>
-                <div class="reason-item" style="font-size: 32px;"><div class="icon">2</div><span><strong>Reading an RFP</strong> — Break down evaluation criteria, SOW, Section L & M</span></div>
-                <div class="reason-item" style="font-size: 32px;"><div class="icon">3</div><span><strong>Writing the Technical Approach</strong> — Templates + live writing workshop</span></div>
-                <div class="reason-item" style="font-size: 32px;"><div class="icon">4</div><span><strong>Past Performance & Staffing</strong> — Write it right even with limited experience</span></div>
-                <div class="reason-item" style="font-size: 32px;"><div class="icon">5</div><span><strong>Pricing Strategy</strong> — T&M vs FFP vs Cost-Plus — build a real pricing volume</span></div>
-                <div class="reason-item" style="font-size: 32px;"><div class="icon">6</div><span><strong>Live Proposal Workshop</strong> — Bring a real opportunity. Leave with a draft.</span></div>
+        <div class="content" style="padding: 60px;">
+            <div class="channel-header">
+                <div class="channel-number">1</div>
+                <div class="channel-title">IDIQ Task Order Portals</div>
+            </div>
+            <div class="channel-examples">
+                <div class="channel-example">
+                    <div class="ex-name">GSA eBuy</div>
+                    <div class="ex-desc">Task orders for GSA Schedule holders — IT, professional services, facilities</div>
+                </div>
+                <div class="channel-example">
+                    <div class="ex-name">NASA SEWP</div>
+                    <div class="ex-desc">$15B+ IT hardware & solutions — one of the fastest award vehicles</div>
+                </div>
+                <div class="channel-example">
+                    <div class="ex-name">DLA DIBBS</div>
+                    <div class="ex-desc">Defense logistics — parts, supplies, equipment for every branch</div>
+                </div>
+                <div class="channel-example">
+                    <div class="ex-name">Army ITES</div>
+                    <div class="ex-desc">$12B IT enterprise solutions — end-user, network, cybersecurity</div>
+                </div>
+            </div>
+            <div class="channel-stat" style="color: #93c5fd;">These portals post task orders that NEVER appear on SAM.gov</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 7: Channel 2 — Agency-Specific Procurement Sites -->
+    <div class="slide slide-purple">
+        <div class="content" style="padding: 60px;">
+            <div class="channel-header">
+                <div class="channel-number">2</div>
+                <div class="channel-title">Agency-Specific Procurement Sites</div>
+            </div>
+            <div class="channel-examples">
+                <div class="channel-example">
+                    <div class="ex-name">DHS EAGLE II</div>
+                    <div class="ex-desc">$22B functional & IT services across all DHS components</div>
+                </div>
+                <div class="channel-example">
+                    <div class="ex-name">VA T4NG</div>
+                    <div class="ex-desc">$22.3B next-gen IT services — 20+ SDVOSB primes on the vehicle</div>
+                </div>
+                <div class="channel-example">
+                    <div class="ex-name">OASIS+</div>
+                    <div class="ex-desc">GSA's $100B+ professional services vehicle — replaces multiple legacy contracts</div>
+                </div>
+                <div class="channel-example">
+                    <div class="ex-name">CIO-SP4</div>
+                    <div class="ex-desc">NIH's $50B IT services GWAC — health IT, cybersecurity, cloud</div>
+                </div>
+            </div>
+            <div class="channel-stat" style="color: #d8b4fe;">Each agency runs its OWN procurement ecosystem</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 8: Channel 3 — Sources Sought & RFIs -->
+    <div class="slide slide-dark">
+        <div class="content" style="width: 100%; padding: 60px;">
+            <div class="channel-header" style="justify-content: center;">
+                <div class="channel-number" style="background: rgba(251,191,36,0.3); color: #fbbf24;">3</div>
+                <div class="channel-title">Sources Sought & RFIs</div>
+            </div>
+            <div style="max-width: 1400px; margin: 0 auto;">
+                <div style="text-align: center; margin-bottom: 50px;">
+                    <span style="font-size: 120px; font-weight: 900; color: #fbbf24;">< 5%</span>
+                    <p style="font-size: 42px; margin-top: 15px;">of contractors respond to Sources Sought notices</p>
+                </div>
+                <div class="stat-grid stat-grid-2" style="max-width: 1200px;">
+                    <div class="stat-box">
+                        <div class="number" style="font-size: 48px; color: #fbbf24;">What They Are</div>
+                        <div class="label" style="font-size: 28px; margin-top: 20px;">Agencies asking "Who can do this?" BEFORE they write the RFP. Your chance to shape the requirement.</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="number" style="font-size: 48px; color: #4ade80;">Why It Works</div>
+                        <div class="label" style="font-size: 28px; margin-top: 20px;">Get known. Get on the radar. Get invited when the real RFP drops. Almost zero competition.</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- SLIDE 12: Free Resources -->
+    <!-- SLIDE 9: Channel 4 — Prime Contractor Subcontracting -->
+    <div class="slide slide-green">
+        <div class="content" style="padding: 60px;">
+            <div class="channel-header" style="justify-content: center;">
+                <div class="channel-number">4</div>
+                <div class="channel-title">Prime Contractor Subcontracting</div>
+            </div>
+            <div style="text-align: center; margin-bottom: 40px;">
+                <span style="font-size: 100px; font-weight: 900;">$100B+</span>
+                <p style="font-size: 36px; margin-top: 10px;">in annual subcontracting to small businesses</p>
+            </div>
+            <div class="stat-grid stat-grid-2" style="max-width: 1300px;">
+                <div class="stat-box">
+                    <div class="label" style="font-size: 30px; text-align: left;">
+                        <strong style="font-size: 36px; color: #fff;">Primes MUST Meet SB Goals</strong><br><br>
+                        Large primes submit subcontracting plans<br>
+                        They NEED qualified small businesses<br>
+                        You bring the expertise, they bring the vehicle
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <div class="label" style="font-size: 30px; text-align: left;">
+                        <strong style="font-size: 36px; color: #fff;">How to Get Started</strong><br><br>
+                        Check prime vendor portals for openings<br>
+                        Attend industry days & matchmaking events<br>
+                        Use Contractor Database for contacts
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 10: Channel 5 — GSA Schedule / BPAs -->
+    <div class="slide slide-blue">
+        <div class="content" style="padding: 60px;">
+            <div class="channel-header">
+                <div class="channel-number">5</div>
+                <div class="channel-title">GSA Schedule & BPAs</div>
+            </div>
+            <div class="channel-examples">
+                <div class="channel-example">
+                    <div class="ex-name">GSA Advantage</div>
+                    <div class="ex-desc">Online marketplace — agencies buy directly from your catalog, no RFP needed</div>
+                </div>
+                <div class="channel-example">
+                    <div class="ex-name">Micro-Purchases</div>
+                    <div class="ex-desc">Under $10K — single-source, no competition, contracting officers buy directly</div>
+                </div>
+                <div class="channel-example">
+                    <div class="ex-name">BPAs</div>
+                    <div class="ex-desc">Blanket Purchase Agreements — repeat orders, streamlined process, steady revenue</div>
+                </div>
+                <div class="channel-example">
+                    <div class="ex-name">Reverse Auctions</div>
+                    <div class="ex-desc">Compete on price in real time — fast awards for commodity services & products</div>
+                </div>
+            </div>
+            <div class="channel-stat" style="color: #93c5fd;">GSA Schedule holders access a SEPARATE procurement universe</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 11: Task Order Proposals Are Different -->
+    <div class="slide slide-dark">
+        <div class="content" style="width: 100%;">
+            <h2 style="margin-bottom: 40px;">Task Order Proposals Are <span class="highlight">Different</span></h2>
+            <div class="worlds-grid">
+                <div class="world-box" style="border: 3px solid #ef4444;">
+                    <h3 style="color: #ef4444;">Full & Open</h3>
+                    <div class="stat-row"><span class="stat-label">Length</span><span class="stat-value">50-200 pages</span></div>
+                    <div class="stat-row"><span class="stat-label">Timeline</span><span class="stat-value">6-18 months</span></div>
+                    <div class="stat-row"><span class="stat-label">Tone</span><span class="stat-value">Generic, prove yourself</span></div>
+                    <div class="stat-row"><span class="stat-label">Focus</span><span class="stat-value">Company capabilities</span></div>
+                    <div class="stat-row"><span class="stat-label">Effort</span><span class="stat-value" style="color: #ef4444;">$20K-$100K to write</span></div>
+                </div>
+                <div class="vs-circle">VS</div>
+                <div class="world-box" style="border: 3px solid #4ade80;">
+                    <h3 style="color: #4ade80;">Task Orders</h3>
+                    <div class="stat-row"><span class="stat-label">Length</span><span class="stat-value">10-30 pages</span></div>
+                    <div class="stat-row"><span class="stat-label">Timeline</span><span class="stat-value">7-14 days</span></div>
+                    <div class="stat-row"><span class="stat-label">Tone</span><span class="stat-value">Mission-specific</span></div>
+                    <div class="stat-row"><span class="stat-label">Focus</span><span class="stat-value">THIS task, THIS team</span></div>
+                    <div class="stat-row"><span class="stat-label">Effort</span><span class="stat-value" style="color: #4ade80;">Lean, fast, targeted</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 12: Anatomy of a Winning Task Order Proposal -->
+    <div class="slide slide-dark">
+        <div class="content" style="width: 100%;">
+            <h2 style="margin-bottom: 40px;">Anatomy of a <span class="highlight">Winning</span> Task Order Proposal</h2>
+            <div class="section-grid">
+                <div class="section-card">
+                    <div class="section-num">Section 1</div>
+                    <h3>Technical Approach</h3>
+                    <p>Your PLAN to execute THIS specific task. Methodology, deliverables, milestones. Specific to the SOW. This is where you win or lose.</p>
+                </div>
+                <div class="section-card">
+                    <div class="section-num">Section 2</div>
+                    <h3>Staffing & Management</h3>
+                    <p>WHO does the work. Qualifications, org chart, PM identified. Real people — not "TBD." Agencies want to know you're ready NOW.</p>
+                </div>
+                <div class="section-card" style="border-top-color: #a855f7;">
+                    <div class="section-num" style="color: #a855f7;">Section 3</div>
+                    <h3>Past Performance</h3>
+                    <p>Similar work. Same size, scope, complexity. Federal preferred — but commercial counts if framed correctly. Quality over quantity.</p>
+                </div>
+                <div class="section-card" style="border-top-color: #f59e0b;">
+                    <div class="section-num" style="color: #f59e0b;">Section 4</div>
+                    <h3>Price / Cost Volume</h3>
+                    <p>Match the contract type. T&M = loaded rates + hours. FFP = firm number + breakdown. Realistic. Competitive. Profitable.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 13: Why Most Task Order Proposals Fail -->
+    <div class="slide slide-red">
+        <div class="content" style="padding: 60px;">
+            <h2 style="margin-bottom: 40px;">Why Most Task Order Proposals <span style="color: #fbbf24;">FAIL</span></h2>
+            <div class="reason-list">
+                <div class="reason-item"><div class="icon">1</div><span>Copy-paste from full & open proposals (different format entirely)</span></div>
+                <div class="reason-item"><div class="icon">2</div><span>Ignore Section M evaluation criteria (miss what evaluators score)</span></div>
+                <div class="reason-item"><div class="icon">3</div><span>Write about THEMSELVES instead of the MISSION</span></div>
+                <div class="reason-item"><div class="icon">4</div><span>Wrong pricing structure (T&M vs FFP vs Cost-Plus mismatch)</span></div>
+                <div class="reason-item"><div class="icon">5</div><span>Submit late — task orders move FAST (7-14 day windows)</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 14: Two Paths In -->
+    <div class="slide slide-dark">
+        <div class="content" style="width: 100%;">
+            <h2 style="text-align: center; margin-bottom: 50px;">Two Paths Into the IDIQ World</h2>
+            <div class="do-dont-grid">
+                <div class="do-box" style="border-color: #3b82f6; background: rgba(59, 130, 246, 0.15);">
+                    <h3 style="color: #93c5fd;">PATH A: Get ON an IDIQ</h3>
+                    <p>Respond to IDIQ solicitation</p>
+                    <p>Win a spot on the vehicle</p>
+                    <p>Compete for task orders directly</p>
+                    <p>GSA MAS, OASIS+, CIO-SP4, SEWP</p>
+                    <p style="color: #93c5fd; font-weight: 700; background: rgba(59, 130, 246, 0.2);">Timeline: 3-12 months</p>
+                </div>
+                <div class="do-box" style="border-color: #4ade80;">
+                    <h3 style="color: #4ade80;">PATH B: Team With a Prime</h3>
+                    <p>Find primes who hold IDIQ vehicles</p>
+                    <p>Become their sub on task orders</p>
+                    <p>Build past performance + revenue</p>
+                    <p>Use Contractor Database for contacts</p>
+                    <p style="color: #4ade80; font-weight: 700; background: rgba(16, 185, 129, 0.2);">Timeline: Start immediately</p>
+                </div>
+            </div>
+            <p style="text-align: center; font-size: 36px; margin-top: 40px; opacity: 0.9;">Most small businesses should <strong>START</strong> with Path B, then graduate to Path A</p>
+        </div>
+    </div>
+
+    <!-- SLIDE 15: Speaker — Melissa Palmer -->
+    <div class="slide slide-dark">
+        <div class="content" style="width: 100%; padding: 60px 100px;">
+            <div class="speaker-layout">
+                <div class="speaker-left">
+                    <div class="speaker-photo green">MP</div>
+                    <div class="speaker-name">Melissa Palmer</div>
+                    <div class="speaker-cred">CF APMP | Proposal Expert</div>
+                </div>
+                <div class="speaker-right">
+                    <div class="speaker-stat green">$1.7B+ Won</div>
+                    <ul class="speaker-bullets">
+                        <li class="green">20+ years federal proposal management</li>
+                        <li class="green">Trained 500+ contractors to write winning proposals</li>
+                        <li class="green">Repeatable proposal systems that scale with your business</li>
+                    </ul>
+                    <div class="session-box green">
+                        <div class="session-label">Session</div>
+                        <div class="session-title">"Take the Stress Out of Proposals"</div>
+                        <div class="session-desc">Build a repeatable proposal process that wins</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 16: Speaker — Carrie Ann Williams -->
+    <div class="slide slide-dark">
+        <div class="content" style="width: 100%; padding: 60px 100px;">
+            <div class="speaker-layout">
+                <div class="speaker-left">
+                    <div class="speaker-photo orange">CW</div>
+                    <div class="speaker-name">Carrie Ann Williams</div>
+                    <div class="speaker-cred">CPSM | Content Strategist</div>
+                </div>
+                <div class="speaker-right">
+                    <div class="speaker-stat orange">20+ Years</div>
+                    <ul class="speaker-bullets">
+                        <li class="orange">Federal proposal content strategy & capture management</li>
+                        <li class="orange">Competitive positioning that differentiates your offer</li>
+                        <li class="orange">Writes content evaluators actually WANT to score high</li>
+                    </ul>
+                    <div class="session-box orange">
+                        <div class="session-label">Session</div>
+                        <div class="session-title">"Tailor to Win: Content That Scores"</div>
+                        <div class="session-desc">Write proposals evaluators want to score high</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 17: Speaker — Michele Atkinson -->
+    <div class="slide slide-dark">
+        <div class="content" style="width: 100%; padding: 60px 100px;">
+            <div class="speaker-layout">
+                <div class="speaker-left">
+                    <div class="speaker-photo purple">MA</div>
+                    <div class="speaker-name">Michele Atkinson</div>
+                    <div class="speaker-cred">Enterprise GovCon Expert</div>
+                </div>
+                <div class="speaker-right">
+                    <div class="speaker-stat purple">$45B+ Won</div>
+                    <ul class="speaker-bullets">
+                        <li class="purple">90%+ win rate across enterprise proposals</li>
+                        <li class="purple">Former evaluator — knows exactly how proposals are scored</li>
+                        <li class="purple">Section M expert: decodes what agencies really want</li>
+                    </ul>
+                    <div class="session-box purple">
+                        <div class="session-label">Session</div>
+                        <div class="session-title">"Writing to Win: Section M Evaluations"</div>
+                        <div class="session-desc">Understand how proposals are scored, then win</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 18: Free Proposal Resources -->
     <div class="slide slide-download">
         <div class="content">
             <h2>Free Proposal Resources</h2>
             <div class="reason-list" style="margin: 30px auto; text-align: left; max-width: 1000px;">
-                <div class="reason-item" style="font-size: 32px;"><div class="icon">📄</div><span>IDIQ Task Order Response Template</span></div>
-                <div class="reason-item" style="font-size: 32px;"><div class="icon">📊</div><span>50 Active IDIQ Vehicles List</span></div>
-                <div class="reason-item" style="font-size: 32px;"><div class="icon">📋</div><span>Sources Sought Response Template</span></div>
-                <div class="reason-item" style="font-size: 32px;"><div class="icon">✅</div><span>Task Order Proposal Checklist</span></div>
-                <div class="reason-item" style="font-size: 32px;"><div class="icon">🎯</div><span>10 IDIQ Vehicles Every Small Business Should Know</span></div>
+                <div class="reason-item" style="font-size: 32px;"><div class="icon">1</div><span>IDIQ Task Order Response Template</span></div>
+                <div class="reason-item" style="font-size: 32px;"><div class="icon">2</div><span>50 Active IDIQ Vehicles List</span></div>
+                <div class="reason-item" style="font-size: 32px;"><div class="icon">3</div><span>Sources Sought Response Template</span></div>
+                <div class="reason-item" style="font-size: 32px;"><div class="icon">4</div><span>Task Order Proposal Checklist</span></div>
+                <div class="reason-item" style="font-size: 32px;"><div class="icon">5</div><span>10 IDIQ Vehicles Every Small Business Should Know</span></div>
             </div>
-            <div class="url">govcongiants.org/proposals</div>
+            <div class="url">govcongiants.org/pb</div>
         </div>
     </div>
 
-    <!-- SLIDE 13: Tools Connection -->
+    <!-- SLIDE 19: Tool Stack -->
     <div class="slide slide-dark">
         <div class="content" style="width: 100%; padding: 60px;">
             <h2 style="margin-bottom: 40px;">The Tools That <span class="highlight">Automate</span> This</h2>
             <div class="tool-grid">
                 <div class="tool-card">
-                    <div class="tool-emoji">🎯</div>
+                    <div class="tool-emoji">&#127919;</div>
                     <h3>Market Assassin</h3>
                     <div class="tool-connects">Intelligence for your technical approach</div>
                     <div class="tool-action">WHAT agencies need</div>
                 </div>
                 <div class="tool-card">
-                    <div class="tool-emoji">📅</div>
+                    <div class="tool-emoji">&#128197;</div>
                     <h3>Recompete Tracker</h3>
                     <div class="tool-connects">Expiring IDIQs = new vehicles to compete for</div>
                     <div class="tool-action">WHEN to position</div>
                 </div>
                 <div class="tool-card">
-                    <div class="tool-emoji">🤝</div>
+                    <div class="tool-emoji">&#129309;</div>
                     <h3>Contractor Database</h3>
                     <div class="tool-connects">Find primes holding IDIQs + SBLO contacts</div>
                     <div class="tool-action">WHO to team with</div>
                 </div>
                 <div class="tool-card">
-                    <div class="tool-emoji">✍️</div>
+                    <div class="tool-emoji">&#9997;&#65039;</div>
                     <h3>Content Generator</h3>
                     <div class="tool-connects">Write proposals, outreach, cap statements</div>
                     <div class="tool-action">HOW to say it</div>
                 </div>
             </div>
-            <p style="text-align: center; font-size: 36px; margin-top: 40px;">Separately: $1,788 → <strong style="color: #4ade80;">Ultimate Giant Bundle: $1,497</strong></p>
+            <p style="text-align: center; font-size: 32px; margin-top: 40px; opacity: 0.8;">shop.govcongiants.org</p>
         </div>
     </div>
 
-    <!-- SLIDE 14: Live Offer -->
-    <div class="slide slide-offer">
-        <div class="content">
-            <h2>Tonight Only — Live Viewers</h2>
-            <p style="font-size: 36px; opacity: 0.8; margin-bottom: 20px;">Ultimate Giant Bundle — All 4 Premium Tools</p>
-            <div class="price-compare">
-                <div class="old-price">$1,497</div>
-                <div class="arrow">→</div>
-                <div class="new-price">$1,000</div>
-            </div>
-            <div class="savings">SAVE $497</div>
-            <p style="font-size: 32px; opacity: 0.9; max-width: 1000px; margin: 20px auto;">Get set up BEFORE the Feb 28 bootcamp — walk in with your intelligence already done</p>
-            <div class="url">shop.govcongiants.org</div>
-            <div class="deadline">⏰ Expires Midnight Tonight</div>
-        </div>
-    </div>
-
-    <!-- SLIDE 15: Bootcamp CTA -->
+    <!-- SLIDE 20: Bootcamp CTA -->
     <div class="slide slide-cta">
         <div class="content">
             <div class="badge">Federal Help Center Pro Members</div>
             <h2>February Proposal Bootcamp</h2>
             <div class="date">February 28, 2026</div>
             <div class="features">
-                8 Hours Live Training | IDIQ & Task Order Proposals<br>
-                Live Proposal Writing Workshop | Pricing Templates<br>
-                Past Performance Frameworks | Real Opportunity Teardown
+                8 Hours Live Training | 3 Expert Speakers<br>
+                IDIQ & Task Order Proposals | Live Writing Workshop<br>
+                Pricing Templates | Past Performance Frameworks
             </div>
-            <div class="cta-box">Join Federal Help Center Pro</div>
-            <div class="price">$99/month or $799/year</div>
+            <div class="cta-box">govcongiants.org/pb</div>
+            <div class="price" style="font-size: 42px; font-weight: 700;">Free for Federal Help Center Pro Members</div>
         </div>
     </div>
 
-    <!-- SLIDE 16: Challenge -->
+    <!-- SLIDE 21: Your Challenge This Week -->
     <div class="slide slide-orange">
         <div class="content" style="padding: 60px;">
             <h2 style="margin-bottom: 40px;">Your Challenge This Week</h2>
             <div class="action-list">
                 <div class="action-item">
                     <div class="action-num">1</div>
-                    <span>Find ONE active IDIQ vehicle in your NAICS</span>
+                    <span>Find ONE active IDIQ vehicle in your NAICS code</span>
                 </div>
                 <div class="action-item">
                     <div class="action-num">2</div>
@@ -1172,42 +1405,17 @@
                     <div class="action-num">3</div>
                     <span>Contact ONE prime contractor about teaming on task orders</span>
                 </div>
-                <div class="action-item">
-                    <div class="action-num">4</div>
-                    <span>Read the free Task Order Response Template</span>
-                </div>
             </div>
-            <p style="text-align: center; font-size: 36px; margin-top: 40px;">Pick ONE. Drop it in the chat. 👇</p>
+            <p style="text-align: center; font-size: 36px; margin-top: 50px;">Pick ONE. Drop it in the chat.</p>
         </div>
     </div>
 
-    <!-- SLIDE 17: Next Steps -->
-    <div class="slide slide-dark">
-        <div class="content">
-            <h2 style="margin-bottom: 40px;">Next Steps</h2>
-            <div class="action-list" style="max-width: 1200px;">
-                <div class="action-item" style="border-left: 5px solid #4ade80;">
-                    <div class="action-num" style="background: #4ade80;">📥</div>
-                    <span>Grab free proposal resources → <strong>govcongiants.org/proposals</strong></span>
-                </div>
-                <div class="action-item" style="border-left: 5px solid #a855f7;">
-                    <div class="action-num" style="background: #a855f7;">🎓</div>
-                    <span>Join Pro for Feb 28 Bootcamp → <strong>federalhelpcenter.com/pro</strong></span>
-                </div>
-                <div class="action-item" style="border-left: 5px solid #f59e0b;">
-                    <div class="action-num" style="background: #f59e0b;">🛠️</div>
-                    <span>Get the tools (tonight only $1,000) → <strong>shop.govcongiants.org</strong></span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- SLIDE 18: Final -->
+    <!-- SLIDE 22: Closing -->
     <div class="slide slide-title">
         <div class="content">
-            <h1 style="font-size: 80px;">Let's Get These Contracts!</h1>
+            <h1 style="font-size: 80px;">Stop Fishing in Half the Ocean</h1>
             <p class="subtitle" style="margin-top: 40px;">Like | Subscribe | Share</p>
-            <p style="font-size: 36px; margin-top: 60px; opacity: 0.9;">Free proposal resources: govcongiants.org/proposals</p>
+            <p style="font-size: 36px; margin-top: 60px; opacity: 0.9;">Free proposal resources: govcongiants.org/pb</p>
             <div class="date">GovCon Giants | Federal Help Center</div>
         </div>
     </div>
