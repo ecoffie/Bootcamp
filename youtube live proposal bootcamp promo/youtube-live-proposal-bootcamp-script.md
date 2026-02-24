@@ -4,7 +4,7 @@
 **Streaming Date:** Week of February 16–21 (10–12 days before bootcamp)
 **Duration:** 50–65 minutes
 **Bootcamp Date:** February 28, 2026
-**Offer:** FHC Pro membership ($99/mo) for bootcamp access + Ultimate Giant Bundle ($1,000 live-only)
+**Offer:** FHC Pro membership ($99/mo) for bootcamp access
 **Lead Magnet:** Free IDIQ proposal resources at govcongiants.org/proposals (or /bootcamp with updated downloads)
 
 ---
@@ -285,26 +285,26 @@ Since this bootcamp is proposal-focused, the lead magnet should be proposal-focu
 ---
 
 ## SLIDE 11: February 28th Bootcamp Agenda
-**Full Day Breakdown**
+**Full Day Breakdown — With 4 Expert Speakers | $47B+ Combined Contract Wins**
 
 ### Talking Points:
-> "February 28th. All day. Here's what we're covering:
+> "February 28th. All day. The Proposal Writing Surge. And I've got FOUR incredible speakers joining me — proposal professionals who've collectively won over $47 BILLION in federal contracts. Let me tell you who's coming:
 >
-> **Session 1: IDIQ and Task Order Fundamentals.** What they are, how they work, where to find them. If you're fuzzy on any of this, you'll be crystal clear by the end of this session.
+> **Session 1: Take the Stress Out of Proposals — Melissa Palmer, CF APMP.** Melissa is VP of Proposals at Strategic Growth Advisors. She's won over $1.7 billion in the last 3 years alone. She sits on the APMP International Board. She's going to show you how to write proposals without the chaos — structured workflow, milestones, and keeping your team aligned from RFP release to submission.
 >
-> **Session 2: Reading an RFP / Task Order Solicitation.** I'll pull up a real one. We'll break down the evaluation criteria, the Statement of Work, the Section L and Section M. You'll know exactly what the agency is scoring and how to maximize your points.
+> **Session 2: Tailor to Win — Carrie Ann Williams, CPSM.** Carrie Ann is CEO of Andana Consulting and SAME National Vice President. 20+ years in federal proposals. Generic proposals lose. She's going to show you how to organize and tailor content so every section aligns with the RFP, strengthens compliance, and improves your score.
 >
-> **Session 3: Writing the Technical Approach.** This is where contracts are won or lost. We'll use templates and write a technical approach together, live. You'll have a reusable framework.
+> **Session 3: Writing to Win — Michele Atkinson.** Michele is the founder of Cavalry Consulting. She's helped clients win over $45 BILLION. Ninety percent win rate. Over 1,000 proposals. APMP 40 Under 40. She's going to break down Section M so you understand how evaluators actually score — not what you think they want.
 >
-> **Session 4: Past Performance and Staffing.** How to write past performance when you have limited experience. How to structure your team. How to present key personnel.
+> **Session 4: Build a Proposal Outline in Minutes with AI — Eric Coffie.** I'm going to show you how I use AI to quickly break down an RFP, extract key requirements, and build a compliant proposal outline in minutes. This is how I've helped contractors win over $100 million in federal contracts.
 >
-> **Session 5: Pricing Strategy.** T&M vs. FFP vs. cost-plus. How to build a pricing volume that's competitive AND profitable. Common pricing mistakes.
+> **Session 5: Pricing Strategy.** T&M vs. FFP vs. cost-plus. How to build a pricing volume that's competitive AND profitable.
 >
-> **Session 6: Live Proposal Workshop.** Bring a real opportunity. We'll work through it together. You'll leave with a draft proposal framework — not theory, an actual draft.
+> **Session 6: Live Proposal Workshop.** Bring a real opportunity. We'll work through it together. You'll leave with a draft.
 >
-> This is 8 hours. It's intense. And by the end of it, you'll know how to write a proposal that can actually win.
+> Four experts. $47 billion in wins. One bootcamp. This is going to change how you approach proposals.
 >
-> Drop 'PROPOSAL' in the chat if this is what you need right now."
+> Drop 'PROPOSAL' in the chat if this is what you need."
 
 **Transition:** "Before the bootcamp, I want to give you something for free..."
 
@@ -332,71 +332,49 @@ Since this bootcamp is proposal-focused, the lead magnet should be proposal-focu
 
 *[Drop link in chat]*
 
-**Transition:** "Now, let me show you the tools that automate this entire process..."
+**Transition:** "Now let me introduce the speakers who are going to make this bootcamp incredible..."
 
 ---
 
-## SLIDE 13: The Tools That Make This Faster
-**Ultimate Giant Bundle — How Each Tool Connects to Proposals**
+## SLIDE 13: Meet Your Expert Speakers
+**Combined: $47B+ in Contract Wins**
 
 ### Talking Points:
-> "Everything I taught you tonight — there are tools that do the heavy lifting for you. Let me connect the dots.
+> "Let me tell you about the four expert speakers joining me at the Proposal Writing Surge. Combined, they've helped win over $47 BILLION in federal contracts.
 >
-> **Market Assassin** finds your target agencies and tells you their spending patterns, their pain points, who's buying what. This is your INTELLIGENCE — it tells you which task orders to pursue and what the agency cares about. That goes directly into your technical approach.
+> **Melissa Palmer, CF APMP** — VP of Proposals at Strategic Growth Advisors. She has the highest APMP certification. $1.7 billion in wins in just the last 3 years. She sits on the APMP International Board. She leads a 30-person proposal team. 'Take the Stress Out of Proposals' — that's her session.
 >
-> **Recompete Tracker** shows you which IDIQs are expiring. If a $100M IDIQ is ending next year, that agency needs to rebid it. You can position NOW — either to get on the new vehicle or to team with an incumbent. 6,000+ contracts. $77 billion.
+> **Carrie Ann Williams, CPSM** — CEO of Andana Consulting. Fellow of SAME. She's the current SAME National Vice President. 20+ years in federal proposals. MBA. AEC and IT specialist. 'Tailor to Win' — that's her session on making your content score.
 >
-> **Federal Contractor Database** gives you 3,500+ prime contractors with SBLO contacts. These are the companies ON the IDIQs. If you want to team on task orders, this is your phonebook.
+> **Michele Atkinson** — Founder of Cavalry Consulting. $45 billion in contract wins. Let that sink in. Ninety percent win rate over 10 years. Over 1,000 proposals for 100+ clients. APMP 40 Under 40. Featured in 'Gamechangers for Government Contractors.' 'Writing to Win' — she's going to teach you how to write to Section M.
 >
-> **Content Generator** writes your outreach, your capability statements, your proposal sections. The stuff that takes you hours? 3 minutes.
+> **Eric Coffie** — That's me. Founder of GovCon Giants. I've helped contractors win over $100 million in federal contracts. Host of the GovCon Giants podcast. 'Build a Proposal Outline in Minutes with AI' — I'm going to show you how I use AI to quickly break down RFPs and build compliant outlines in minutes instead of hours.
 >
-> Separately these are $1,788. The Ultimate Giant Bundle gets you all four Premium versions for $1,497.
->
-> But if you're watching this live right now..."
+> Four experts. Four critical skills. $47 billion in combined wins. This lineup is INSANE."
 
-**Transition:** "Tonight's offer..."
+**Transition:** "Here's how to join us..."
 
 ---
 
-## SLIDE 14: Live-Only Offer
-**Ultimate Giant Bundle: $1,497 → $1,000 | Save $497**
+## SLIDE 14: Bootcamp CTA
+**February 28, 2026 — Proposal Writing Surge**
 
 ### Talking Points:
-> "Tonight only. Live viewers only.
->
-> The Ultimate Giant Bundle — all four Premium tools — $1,000. That's $497 off.
->
-> And here's what I'll add: if you get the bundle tonight, I'll make sure you have everything set up BEFORE the February 28th bootcamp. That means you'll walk into the bootcamp with your Market Assassin reports already run, your target agencies identified, and your primes listed. You'll be ready to WRITE, not still figuring out who to write TO.
->
-> Go to shop.govcongiants.org right now. Ultimate Giant Bundle. $1,000. I'm dropping the link.
->
-> This price is gone at midnight. I don't extend it."
-
-*[Drop link: shop.govcongiants.org]*
-
----
-
-## SLIDE 15: Bootcamp CTA
-**February 28, 2026 — Join FHC Pro**
-
-### Talking Points:
-> "The February 28th Proposal Bootcamp is for Federal Help Center Pro members.
+> "The Proposal Writing Surge on February 28th is for Federal Help Center Pro members.
 >
 > $99 a month. Cancel anytime. You get the bootcamp, the recording, the searchable contract database, monthly training, and community support.
 >
-> If you've been watching these Lives and you're ready to stop learning and start DOING — this is the bootcamp. This is where you learn to actually win contracts, not just find them.
+> FOUR expert speakers who've won $47 billion combined. Eight hours of training. AI proposal workflows. Live workshop where you build a real proposal. Templates you can use immediately.
+>
+> If you've been watching these Lives and you're ready to stop learning and start WINNING — this is it. These speakers don't come together like this often.
 >
 > Link to join Pro is in the description. Or go to federalhelpcenter.com/pro."
 
 ---
 
-## SLIDE 16: Q&A
+## Q&A SECTION (During the Live)
 
-### Talking Points:
-> "Alright, Q&A time. Drop your questions about task orders, IDIQs, proposals — anything.
->
-> While questions come in, let me hit common ones:
->
+### Common Questions to Address:
 > **'I don't have past performance. Can I still win?'** Yes. Start with commercial past performance. Frame it to match the task. Or team as a sub to BUILD past performance. That's Path B.
 >
 > **'How long does it take to get on a GSA Schedule?'** 3 to 6 months typically. But you can start teaming on task orders with primes who already have one immediately.
@@ -404,14 +382,12 @@ Since this bootcamp is proposal-focused, the lead magnet should be proposal-focu
 > **'Can I bid on task orders as a sub?'** You don't bid independently as a sub — the prime includes you in their proposal. Your job is to make it easy for them to include you. That means having your rates, your resumes, and your past performance ready to hand over.
 >
 > **'What's the difference between an IDIQ and a BPA?'** IDIQs are contracts with a ceiling value and a set number of awardees. BPAs are simplified purchasing vehicles, usually for smaller recurring needs. Both use task/delivery orders. The proposal process is similar but BPAs are simpler.
->
-> What else? Drop your questions."
 
 *[Answer live questions for 5–10 minutes]*
 
 ---
 
-## SLIDE 17: Your Challenge This Week
+## SLIDE 15: Your Challenge This Week
 
 ### Talking Points:
 > "Here's your challenge for this week. Pick ONE:
@@ -420,7 +396,7 @@ Since this bootcamp is proposal-focused, the lead magnet should be proposal-focu
 >
 > **Option 2:** Respond to one Sources Sought notice. Use the template. Be in the top 5%.
 >
-> **Option 3:** Contact one prime contractor from the Contractor Database and ask about teaming on upcoming task orders.
+> **Option 3:** Contact one prime contractor and ask about teaming on upcoming task orders.
 >
 > **Option 4:** Download the free proposal resources from tonight and read the task order response template. Familiarize yourself with the structure.
 >
@@ -428,16 +404,25 @@ Since this bootcamp is proposal-focused, the lead magnet should be proposal-focu
 
 ---
 
-## SLIDE 18: Closing
+## SLIDE 16: Next Steps
+
+### Talking Points:
+> "Two things to do right now:
+>
+> **#1: Grab the free proposal resources.** Link in the description. Task order templates, Sources Sought templates, IDIQ vehicle guides. Free. Go get them.
+>
+> **#2: Join Pro for the February 28th bootcamp.** Me plus three expert speakers — Melissa Palmer, Carrie Ann, and Michele Atkinson. Eight hours of training. federalhelpcenter.com/pro."
+
+---
+
+## SLIDE 17: Closing
 
 ### Talking Points:
 > "Appreciate everyone who pulled up tonight.
 >
-> To recap: 50% of federal contracts flow through task orders and IDIQs. If you're only fishing on SAM.gov, you're missing half the market. The February 28th bootcamp teaches you how to write proposals that actually win these task orders.
+> To recap: 50% of federal contracts flow through task orders and IDIQs. If you're only fishing on SAM.gov, you're missing half the market. The February 28th bootcamp — with three expert speakers — teaches you how to write proposals that actually win these task orders.
 >
 > Free resources — link in the description. Go get them.
->
-> Ultimate Giant Bundle — $1,000 tonight only at shop.govcongiants.org.
 >
 > February 28th bootcamp — join Pro at federalhelpcenter.com/pro.
 >
@@ -448,11 +433,9 @@ Since this bootcamp is proposal-focused, the lead magnet should be proposal-focu
 ---
 
 ## POST-SHOW CHECKLIST
-- [ ] Pin shop.govcongiants.org link in comments
 - [ ] Pin free resources download link in comments
 - [ ] Pin FHC Pro join link in comments
-- [ ] Respond to questions about the bundle / bootcamp
-- [ ] Post midnight deadline reminder to email list
+- [ ] Respond to questions about the bootcamp
 - [ ] Save the stream for replay
 - [ ] Create clips for social (see clip extraction list below)
 
@@ -483,17 +466,35 @@ Since this bootcamp is proposal-focused, the lead magnet should be proposal-focu
 - Task order response windows: typically 7–14 days
 - GSA Schedule timeline: 3–6 months
 
-## BUNDLE PRICING
-- Market Assassin Premium: $497
-- Federal Contractor Database: $497
-- Recompete Contracts Tracker: $397
-- GovCon Content Generator: $397
-- **Total Separate: $1,788**
-- **Bundle Regular: $1,497**
-- **Tonight Only: $1,000**
-- **Savings: $497**
-- **Deadline: Midnight Tonight**
-
 ## PRO MEMBERSHIP
 - $99/month or $799/year
 - Includes: February 28 bootcamp access, recording, database, monthly training
+
+## BOOTCAMP SPEAKERS ($47B+ Combined Contract Wins)
+
+**Melissa Palmer, CF APMP**
+- VP of Proposals, Strategic Growth Advisors
+- $1.7B+ in wins (last 3 years)
+- APMP International Board Member
+- Leads 30-person proposal team
+- Session: "Take the Stress Out of Proposals"
+
+**Carrie Ann Williams, CPSM, F. SAME**
+- CEO/President, Andana Consulting
+- SAME National Vice President
+- 20+ years federal proposals, MBA
+- Session: "Tailor to Win: Proposal Content That Scores"
+
+**Michele Atkinson**
+- Founder & Managing Partner, Cavalry Consulting
+- $45B+ in contract wins
+- 90%+ win rate over 10 years
+- 1,000+ proposals, APMP "40 Under 40"
+- Session: "Writing to Win: Understanding the Government's Evaluation Criteria"
+
+**Eric Coffie**
+- Founder, GovCon Giants
+- Host, GovCon Giants Podcast
+- Helped contractors win $100M+ in federal contracts
+- AI proposal workflow pioneer
+- Session: "Build a Proposal Outline in Minutes with AI"
