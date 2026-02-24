@@ -70,9 +70,9 @@ For specifics, see these docs:
 
 | Project | Path | URL | Framework |
 |---------|------|-----|-----------|
-| GovCon Funnels | `/Users/ericcoffie/govcon-funnels` | `funnels.govcongiants.org` | Next.js 16 |
+| GovCon Funnels | `/Users/ericcoffie/Projects/govcon-funnels` | `govcongiants.org` | Next.js 16 |
 | GovCon Shop | `/Users/ericcoffie/govcon-shop` | `shop.govcongiants.org` | Next.js 16 |
-| The Vault | `/Users/ericcoffie/Projects/vault` | `guides.govcongiants.org` | Next.js 15 |
+| The Vault | `/Users/ericcoffie/Projects/vault` | `govcongiants.org/vault` | Next.js 15 |
 
 ---
 
