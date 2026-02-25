@@ -112,6 +112,18 @@
         .who-card.yes li::before { content: '>'; position: absolute; left: 0; color: #10b981; font-weight: bold; }
         .who-card.no li::before { content: 'x'; position: absolute; left: 0; color: #ef4444; font-weight: bold; }
 
+        /* Speakers */
+        .speakers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .speaker-card { background: white; border-radius: 16px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); border-top: 4px solid #7c3aed; text-align: center; }
+        .speaker-card .speaker-img { width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%); margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; font-weight: 800; color: white; }
+        .speaker-card h3 { font-size: 1.2rem; font-weight: 700; color: #1e3a8a; margin-bottom: 5px; }
+        .speaker-card .speaker-title { font-size: 0.85rem; color: #7c3aed; font-weight: 600; margin-bottom: 10px; }
+        .speaker-card .speaker-topic { font-size: 0.95rem; font-weight: 600; color: #059669; margin-bottom: 10px; }
+        .speaker-card .speaker-description { font-size: 0.9rem; color: #555; margin-bottom: 12px; text-align: left; }
+        .speaker-card .speaker-bio { font-size: 0.85rem; color: #666; text-align: left; font-style: italic; }
+        .speaker-card .speaker-link { display: inline-block; color: #7c3aed; font-size: 0.85rem; font-weight: 600; text-decoration: none; margin-top: 10px; }
+        .speaker-card .speaker-link:hover { text-decoration: underline; }
+
         /* FAQ */
         .faq-list { max-width: 700px; margin: 0 auto; }
         .faq-item { background: white; border-radius: 12px; margin-bottom: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); overflow: hidden; }
@@ -324,8 +336,54 @@
         </div>
     </div>
 
-    <!-- Agenda Section -->
+    <!-- Speakers Section -->
     <div class="section section-dark">
+        <div class="container">
+            <div class="section-title">
+                <h2>Meet Your Guest Speakers</h2>
+                <p>Learn from experienced proposal professionals who have helped win billions in federal contracts</p>
+            </div>
+
+            <div class="speakers-grid">
+                <div class="speaker-card">
+                    <div class="speaker-img">MP</div>
+                    <h3>Melissa Palmer</h3>
+                    <div class="speaker-topic">Take the Stress out of Proposals</div>
+                    <p class="speaker-description">Writing a proposal doesn't have to feel chaotic or last-minute. In this session, you'll learn a structured workflow that keeps you and/or your team aligned, reduces stress, and ensures every milestone is met from RFP release to submission.</p>
+                    <a href="https://www.linkedin.com/in/melissapalmer-cfapmp/" target="_blank" class="speaker-link">View LinkedIn Profile</a>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-img">CA</div>
+                    <h3>Carrie Ann Williams</h3>
+                    <div class="speaker-topic">Tailor to Win: Proposal Content That Scores</div>
+                    <p class="speaker-description">Generic proposals lose because they don't directly answer the requirement. This training shows you how to organize and tailor your content so every section aligns with the RFP, strengthens compliance, and improves your scoring potential.</p>
+                    <a href="https://www.linkedin.com/in/carrieannwilliamscpsm/" target="_blank" class="speaker-link">View LinkedIn Profile</a>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-img">MA</div>
+                    <h3>Michele Atkinson</h3>
+                    <div class="speaker-title">Founder & Managing Partner, Cavalry Consulting LLC</div>
+                    <div class="speaker-topic">Writing to Win: Understanding the Government's Evaluation Criteria</div>
+                    <p class="speaker-description">If you don't understand how your proposal will be evaluated, you're writing blind. This session breaks down Section M so you can structure your responses around what evaluators are actually scoring - not what you think they want to see.</p>
+                    <p class="speaker-bio">Michele is the Founder and Managing Partner of Cavalry Consulting LLC, a Woman Owned Small Business specializing in proposal development, capture management, and strategic marketing for government contractors. With nearly two decades of experience, Michele and her team have helped clients win more than $55 billion in contract capacity, maintaining a win rate consistently above 90% over Cavalry's 10-year history. A 2019 APMP "40 Under 40" honoree, she speaks nationally on proposal strategy and what it takes to compete and win across federal, state, and local agencies.</p>
+                    <a href="https://www.linkedin.com/in/michele-atkinson-45700936/" target="_blank" class="speaker-link">View LinkedIn Profile</a>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-img">RA</div>
+                    <h3>Ryan Atencio</h3>
+                    <div class="speaker-topic">Build a Proposal Outline in Minutes with AI</div>
+                    <p class="speaker-description">Most contractors waste hours trying to interpret requirements before they even start writing. In this session, you'll learn how to use AI to quickly break down an RFP, extract key requirements, and build a structured, compliant proposal outline in minutes - so you start organized, focused, and aligned with the evaluation criteria from the very beginning.</p>
+                    <a href="https://www.linkedin.com/in/ryan-a-75b1a3172/" target="_blank" class="speaker-link">View LinkedIn Profile</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Agenda Section -->
+    <div class="section">
         <div class="container">
             <div class="section-title">
                 <h2>The Full-Day Agenda</h2>
@@ -339,9 +397,9 @@
                         <div class="duration">60 min</div>
                     </div>
                     <div class="agenda-content">
-                        <span class="agenda-tag tag-fundamentals">Fundamentals</span>
+                        <span class="agenda-tag tag-fundamentals">Opening</span>
                         <h3>Proposal Fundamentals & The Evaluation Mindset</h3>
-                        <p>How evaluators score proposals, the compliance checklist, and what makes proposals win or lose.</p>
+                        <p><strong>Eric Coffie</strong> - How evaluators score proposals, the compliance checklist, and what makes proposals win or lose.</p>
                     </div>
                 </div>
 
@@ -351,9 +409,9 @@
                         <div class="duration">60 min</div>
                     </div>
                     <div class="agenda-content">
-                        <span class="agenda-tag tag-simplified">Simplified</span>
-                        <h3>Simplified Acquisition Proposals</h3>
-                        <p>Winning under-$250K contracts with shorter, focused responses. Quote formats and evaluation factors.</p>
+                        <span class="agenda-tag tag-simplified">Speaker</span>
+                        <h3>Take the Stress out of Proposals</h3>
+                        <p><strong>Melissa Palmer</strong></p>
                     </div>
                 </div>
 
@@ -362,12 +420,12 @@
                 <div class="agenda-item">
                     <div class="agenda-time">
                         <div class="time">11:15 AM</div>
-                        <div class="duration">75 min</div>
+                        <div class="duration">60 min</div>
                     </div>
                     <div class="agenda-content">
-                        <span class="agenda-tag tag-full-open">Full & Open</span>
-                        <h3>Technical Approach & Past Performance</h3>
-                        <p>Building compelling technical volumes. Structuring past performance to prove capability.</p>
+                        <span class="agenda-tag tag-full-open">Speaker</span>
+                        <h3>Tailor to Win: Proposal Content That Scores</h3>
+                        <p><strong>Carrie Ann</strong></p>
                     </div>
                 </div>
 
@@ -375,13 +433,25 @@
 
                 <div class="agenda-item">
                     <div class="agenda-time">
-                        <div class="time">1:15 PM</div>
+                        <div class="time">1:00 PM</div>
                         <div class="duration">60 min</div>
                     </div>
                     <div class="agenda-content">
-                        <span class="agenda-tag tag-workshop">Workshop</span>
-                        <h3>WORKSHOP: Build Your Compliance Matrix</h3>
-                        <p>Hands-on session building a compliance matrix for a real RFP. Track every requirement.</p>
+                        <span class="agenda-tag tag-task-order">Speaker</span>
+                        <h3>Writing to Win: Understanding the Government's Evaluation Criteria</h3>
+                        <p><strong>Michele Atkinson</strong></p>
+                    </div>
+                </div>
+
+                <div class="agenda-item">
+                    <div class="agenda-time">
+                        <div class="time">2:00 PM</div>
+                        <div class="duration">60 min</div>
+                    </div>
+                    <div class="agenda-content">
+                        <span class="agenda-tag tag-workshop">Speaker</span>
+                        <h3>Build a Proposal Outline in Minutes with AI</h3>
+                        <p><strong>Ryan Atencio</strong></p>
                     </div>
                 </div>
 
@@ -389,39 +459,25 @@
 
                 <div class="agenda-item">
                     <div class="agenda-time">
-                        <div class="time">2:30 PM</div>
-                        <div class="duration">60 min</div>
-                    </div>
-                    <div class="agenda-content">
-                        <span class="agenda-tag tag-task-order">Task Orders</span>
-                        <h3>GSA Schedule & GWAC Task Order Proposals</h3>
-                        <p>eBuy responses, GWAC task orders, and the unique requirements of contract vehicle proposals.</p>
-                    </div>
-                </div>
-
-                <div class="agenda-item">
-                    <div class="agenda-time">
-                        <div class="time">3:30 PM</div>
-                        <div class="duration">60 min</div>
+                        <div class="time">3:15 PM</div>
+                        <div class="duration">45 min</div>
                     </div>
                     <div class="agenda-content">
                         <span class="agenda-tag tag-workshop">Workshop</span>
-                        <h3>WORKSHOP: Draft Your Technical Approach</h3>
-                        <p>Write your technical approach outline using the framework. Live feedback and coaching.</p>
+                        <h3>Open Workshop &amp; Hands-On Session</h3>
+                        <p>Apply what you've learned. Build your compliance matrix, draft your technical approach, and get live feedback.</p>
                     </div>
                 </div>
 
-                <div class="agenda-break">15-Minute Break</div>
-
                 <div class="agenda-item">
                     <div class="agenda-time">
-                        <div class="time">4:45 PM</div>
-                        <div class="duration">15 min</div>
+                        <div class="time">4:00 PM</div>
+                        <div class="duration">60 min</div>
                     </div>
                     <div class="agenda-content">
                         <span class="agenda-tag tag-fundamentals">Closing</span>
                         <h3>Q&A + Next Steps</h3>
-                        <p>Open Q&A, 30-day proposal action plan, and community support resources.</p>
+                        <p><strong>Eric Coffie</strong> - Open Q&A, 30-day proposal action plan, and community support resources.</p>
                     </div>
                 </div>
             </div>
