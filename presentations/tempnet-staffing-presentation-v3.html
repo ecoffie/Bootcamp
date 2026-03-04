@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Encore Funding Presents: Facts vs Faction | GovCon Giants</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --green: #8BC34A;
+      --green-dark: #689F38;
+      --red: #E53935;
+      --black: #1a1a1a;
+      --gray: #666;
+      --light-gray: #f5f5f5;
+      --nav: #111827;
+      --purple: #7C3AED;
+      --blue: #1e3a8a;
+      --orange: #F57C00;
+    }
+
+    @page { size: 960px 540px landscape; margin: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #e5e7eb;
+      line-height: 1.4;
+      color: var(--black);
+    }
+
+    .slide {
+      width: 960px !important;
+      height: 540px !important;
+      min-height: 540px !important;
+      max-height: 540px !important;
+      flex-shrink: 0;
+      background: white;
+      margin: 20px auto;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+      position: relative;
+      overflow: hidden;
+      page-break-after: always;
+      page-break-inside: avoid;
+      padding: 40px 50px 55px;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+    .slide > *:not(.slide-footer):not(.slide-num) {
+      flex-shrink: 1;
+      min-height: 0;
+    }
+
+    @media print {
+      body { background: white; }
+      .slide { margin: 0; box-shadow: none; page-break-after: always; }
+      #nav-bar { display: none !important; }
+      #slide-viewer { height: auto !important; overflow: visible !important; scroll-snap-type: none !important; }
+      #slide-viewer .slide { scroll-snap-align: unset !important; }
+    }
+
+    h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.2; margin-bottom: 20px; }
+    h2 { font-size: 2.3rem; font-weight: 700; line-height: 1.2; margin-bottom: 18px; }
+    h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 10px; }
+    p { font-size: 1.25rem; line-height: 1.4; }
+
+    .green { color: var(--green); }
+    .red { color: var(--red); }
+    .gray { color: var(--gray); }
+    .orange { color: var(--orange); }
+    .bold { font-weight: 700; }
+
+    .slide-title { justify-content: center; align-items: center; text-align: center; }
+    .slide-title h1 { font-size: 3.2rem; }
+    .slide-title .subtitle { font-size: 2rem; color: var(--green); margin-bottom: 30px; }
+
+    .slide-center { justify-content: center; align-items: center; text-align: center; }
+    .slide-center h2 { font-size: 2.6rem; max-width: 820px; }
+
+    .slide-content h2 { border-bottom: 3px solid var(--green); padding-bottom: 8px; }
+
+    ul.bullets { list-style: none; padding: 0; margin-top: 14px; }
+    ul.bullets li {
+      font-size: 1.35rem;
+      padding: 10px 0 10px 40px;
+      position: relative;
+      line-height: 1.35;
+    }
+    ul.bullets li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-weight: bold;
+      font-size: 1.35rem;
+    }
+
+    ul.simple { list-style: disc; padding-left: 25px; margin-top: 14px; }
+    ul.simple li { font-size: 1.25rem; padding: 8px 0; }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      flex: 0 1 auto;
+      margin-top: 14px;
+    }
+
+    .three-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+      flex: 0 1 auto;
+      margin-top: 14px;
+    }
+
+    table { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: 1.1rem; }
+    table th { background: var(--black); color: white; padding: 12px 16px; text-align: left; font-weight: 700; }
+    table td { padding: 12px 16px; border-bottom: 1px solid #eee; vertical-align: top; }
+    table tr:nth-child(even) { background: var(--light-gray); }
+
+    .highlight-box {
+      background: #FFF9C4;
+      border-left: 4px solid #FBC02D;
+      padding: 14px 20px;
+      margin-top: 16px;
+      border-radius: 0 8px 8px 0;
+    }
+    .highlight-box p { font-size: 1.15rem; margin: 0; }
+
+    .green-box {
+      background: #E8F5E9;
+      border: 2px solid var(--green);
+      border-radius: 8px;
+      padding: 14px 20px;
+      margin-top: 16px;
+    }
+    .green-box h4 { color: var(--green-dark); font-size: 1.15rem; margin-bottom: 4px; }
+    .green-box p { font-size: 1.1rem; }
+
+    .red-box {
+      background: #FFEBEE;
+      border: 2px solid var(--red);
+      border-radius: 8px;
+      padding: 14px 20px;
+      margin-top: 16px;
+    }
+    .red-box h4 { color: var(--red); font-size: 1.15rem; margin-bottom: 4px; }
+    .red-box p { font-size: 1.1rem; }
+
+    .icon-text { display: flex; align-items: center; gap: 18px; margin: 16px 0; }
+    .icon-text .icon { font-size: 2.4rem; }
+    .icon-text .text h3 { margin-bottom: 4px; font-size: 1.35rem; }
+    .icon-text .text p { font-size: 1.2rem; }
+
+    .stats-row { display: flex; justify-content: space-around; margin-top: 20px; gap: 24px; }
+    .stat { text-align: center; min-width: 150px; }
+    .stat .value { font-size: 2.5rem; font-weight: 900; color: var(--green); }
+    .stat .label { font-size: 1rem; color: var(--gray); }
+
+    .badge {
+      display: inline-block;
+      background: rgba(124,58,237,0.12);
+      color: var(--purple);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 16px;
+    }
+
+    .translate-card {
+      background: var(--light-gray);
+      border-radius: 10px;
+      padding: 18px 20px;
+      text-align: center;
+    }
+    .translate-card .arrow { font-size: 1.6rem; margin: 6px 0; color: var(--green); }
+    .translate-card .before { font-size: 1.1rem; color: var(--red); font-weight: 600; }
+    .translate-card .after { font-size: 1.1rem; color: var(--green-dark); font-weight: 700; }
+    .translate-card .naics { font-size: 0.9rem; color: var(--gray); margin-top: 4px; }
+
+    .bar-chart { margin-top: 14px; }
+    .bar-row { display: flex; align-items: center; margin-bottom: 10px; gap: 12px; }
+    .bar-label { width: 200px; font-size: 1rem; font-weight: 600; text-align: right; flex-shrink: 0; }
+    .bar-track { flex: 1; height: 32px; background: #eee; border-radius: 6px; overflow: hidden; position: relative; }
+    .bar-fill { height: 100%; border-radius: 6px; display: flex; align-items: center; padding-left: 10px; font-size: 0.9rem; font-weight: 700; color: white; }
+    .bar-pct { width: 50px; font-size: 1rem; font-weight: 700; flex-shrink: 0; }
+
+    .slide-footer {
+      position: absolute;
+      bottom: 15px;
+      left: 50px;
+      font-size: 0.85rem;
+      color: var(--gray);
+      font-weight: 500;
+    }
+    .slide-footer a { color: var(--green-dark); text-decoration: none; }
+    .slide-footer a:hover { text-decoration: underline; }
+    .slide-num {
+      position: absolute;
+      bottom: 15px;
+      right: 25px;
+      font-size: 0.9rem;
+      color: #999;
+    }
+
+    /* Slide viewer */
+    #slide-viewer {
+      height: 100vh;
+      overflow-y: auto;
+      overflow-x: hidden;
+      scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
+      padding-bottom: 64px;
+    }
+    #slide-viewer .slide { scroll-snap-align: start; scroll-snap-stop: always; }
+
+    #nav-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--nav);
+      color: white;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 22px;
+      z-index: 100;
+      font-size: 1rem;
+    }
+    #nav-bar button {
+      background: var(--green);
+      color: var(--black);
+      border: none;
+      padding: 8px 18px;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    #nav-bar button:hover { background: var(--green-dark); color: white; }
+    #nav-bar button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  </style>
+</head>
+<body>
+
+<div id="slide-viewer">
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 1: ENCORE FUNDING PRESENTS -->
+  <!-- ============================================================ -->
+  <div class="slide slide-title" style="background: white; color: var(--black);">
+    <p style="font-size: 1.2rem; color: var(--gray); font-weight: 600; letter-spacing: 2px; margin-bottom: 20px;">ENCORE FUNDING PRESENTS</p>
+    <h1 style="color: var(--black); font-size: 3.4rem;">Facts vs Faction</h1>
+    <div style="display: flex; align-items: center; justify-content: center; gap: 40px; margin-top: 40px;">
+      <img src="images/GovconGiants-logo-black.png" alt="GovCon Giants" style="height: 55px;">
+      <img src="images/EncoreLogo_Primary_Color_CMYK.png" alt="Encore Funding" style="height: 70px;">
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 2: TITLE -->
+  <!-- ============================================================ -->
+  <div class="slide slide-title" style="background: var(--black); color: white;">
+    <h1 style="color: white;">You're Already a<br><span class="green">Government Contractor</span></h1>
+    <p class="subtitle" style="color: var(--green);">You Just Don't Know It Yet</p>
+    <div class="slide-footer"><a href="https://govcongiants.org" style="color: var(--green);">GovconGiants.org</a></div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE: FREE GUIDE -->
+  <!-- ============================================================ -->
+  <div class="slide slide-content">
+    <h2 style="font-size: 2.2rem; border: none; padding-bottom: 0;">Get Your Free Guide</h2>
+    <p style="font-size: 1.15rem; color: var(--gray); margin-top: 8px;">
+      <strong>How Staffing Companies Win Federal Contracts</strong> — the complete playbook from today's session.
+    </p>
+    <div style="display: flex; gap: 30px; align-items: center; margin-top: 16px; flex: 1;">
+      <div style="flex-shrink: 0; width: 260px; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.2);">
+        <img src="images/handout-cover.png" alt="GovCon Staffing Playbook Cover" style="width: 100%; height: auto; display: block;">
+      </div>
+      <div style="flex: 1;">
+        <ul class="bullets" style="margin-top: 0;">
+          <li style="font-size: 1.1rem; padding: 8px 0 8px 34px;">NAICS translation tables</li>
+          <li style="font-size: 1.1rem; padding: 8px 0 8px 34px;">Compliance checklists</li>
+          <li style="font-size: 1.1rem; padding: 8px 0 8px 34px;">AI prompts for GovCon staffing</li>
+          <li style="font-size: 1.1rem; padding: 8px 0 8px 34px;">30-day action plan</li>
+        </ul>
+        <p style="font-size: 1.15rem; color: var(--green-dark); font-weight: 700; margin-top: 14px;">Free for every attendee today.</p>
+      </div>
+      <div style="flex-shrink: 0; text-align: center;">
+        <img src="images/qr-encoregov.svg" alt="QR Code — encoregov.com" style="width: 160px; height: 160px; display: block; border-radius: 8px;">
+        <p style="font-size: 0.95rem; font-weight: 700; color: var(--green-dark); margin-top: 8px;">encoregov.com</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE: THE MARKET -->
+  <!-- ============================================================ -->
+  <div class="slide slide-content">
+    <h2>The federal contracting marketplace</h2>
+    <div class="stats-row" style="margin-top: 30px;">
+      <div class="stat">
+        <div class="value">$775B</div>
+        <div class="label">in federal contracts<br>(FY2024)</div>
+      </div>
+      <div class="stat">
+        <div class="value">23%</div>
+        <div class="label">required to go to<br>small businesses</div>
+      </div>
+      <div class="stat">
+        <div class="value">$86B</div>
+        <div class="label">in small business<br>subcontracts</div>
+      </div>
+    </div>
+    <div class="green-box" style="margin-top: 30px;">
+      <h4>What this means for you</h4>
+      <p>The government is the largest buyer of services in the world — and they need the same people you already recruit.</p>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE: MYTHS SECTION TITLE -->
+  <!-- ============================================================ -->
+  <div class="slide slide-title" style="background: var(--black); color: white;">
+    <p style="font-size: 1.1rem; color: var(--green); font-weight: 700; letter-spacing: 2px; margin-bottom: 16px;">FACTS vs FACTION</p>
+    <h1 style="color: white; font-size: 3rem;">Myths That Keep<br>You <span class="red">Out</span></h1>
+    <p style="font-size: 1.3rem; color: #ccc; margin-top: 24px; max-width: 700px;">Let's separate what's real from what's holding you back.</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE: MYTH #1 -->
+  <!-- ============================================================ -->
+  <div class="slide slide-content" style="justify-content: center;">
+    <div style="display: flex; gap: 36px; align-items: center;">
+      <div style="flex: 1;">
+        <p style="font-size: 1rem; color: var(--gray); font-weight: 700; letter-spacing: 1px; margin-bottom: 14px;">MYTH #1</p>
+        <div class="red-box" style="padding: 16px 22px;">
+          <h4 style="font-size: 1rem;">Myth</h4>
+          <p style="font-size: 1.4rem; font-weight: 700; color: var(--black);">"You need government experience to start"</p>
+        </div>
+        <div class="green-box" style="padding: 16px 22px; margin-top: 14px;">
+          <h4 style="font-size: 1rem;">Fact</h4>
+          <p style="font-size: 1.4rem; font-weight: 700; color: var(--black);">Your commercial work counts.</p>
+        </div>
+        <div class="highlight-box" style="margin-top: 14px;">
+          <p>Government buyers accept commercial past performance. If you've staffed a hospital, a warehouse, or a call center — you already have it.</p>
+        </div>
+      </div>
+      <div style="flex-shrink: 0; width: 320px; height: 380px; border-radius: 16px; overflow: hidden;">
+        <img src="images/myth-experience.png" alt="Commercial experience" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE: MYTH #2 -->
+  <!-- ============================================================ -->
+  <div class="slide slide-content" style="justify-content: center;">
+    <div style="display: flex; gap: 36px; align-items: center;">
+      <div style="flex: 1;">
+        <p style="font-size: 1rem; color: var(--gray); font-weight: 700; letter-spacing: 1px; margin-bottom: 14px;">MYTH #2</p>
+        <div class="red-box" style="padding: 16px 22px;">
+          <h4 style="font-size: 1rem;">Myth</h4>
+          <p style="font-size: 1.4rem; font-weight: 700; color: var(--black);">"It's all on SAM.gov"</p>
+        </div>
+        <div class="green-box" style="padding: 16px 22px; margin-top: 14px;">
+          <h4 style="font-size: 1rem;">Fact</h4>
+          <p style="font-size: 1.4rem; font-weight: 700; color: var(--black);">Only 5% is publicly posted.</p>
+        </div>
+        <div class="highlight-box" style="margin-top: 14px;">
+          <p>55% flows through task orders on contract vehicles. 30% goes sole-source. $86B in subcontracts never touches SAM.gov.</p>
+        </div>
+      </div>
+      <div style="flex-shrink: 0; width: 320px; height: 380px; border-radius: 16px; overflow: hidden;">
+        <img src="images/myth-samgov.png" alt="Hidden opportunities" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE: MYTH #3 -->
+  <!-- ============================================================ -->
+  <div class="slide slide-content" style="justify-content: center;">
+    <div style="display: flex; gap: 36px; align-items: center;">
+      <div style="flex: 1;">
+        <p style="font-size: 1rem; color: var(--gray); font-weight: 700; letter-spacing: 1px; margin-bottom: 14px;">MYTH #3</p>
+        <div class="red-box" style="padding: 16px 22px;">
+          <h4 style="font-size: 1rem;">Myth</h4>
+          <p style="font-size: 1.4rem; font-weight: 700; color: var(--black);">"It takes years to win"</p>
+        </div>
+        <div class="green-box" style="padding: 16px 22px; margin-top: 14px;">
+          <h4 style="font-size: 1rem;">Fact</h4>
+          <p style="font-size: 1.4rem; font-weight: 700; color: var(--black);">Subcontracting can start in weeks.</p>
+        </div>
+        <div class="highlight-box" style="margin-top: 14px;">
+          <p>You don't need a prime contract to get started. Partner with a prime, deliver on a subcontract, and build past performance while getting paid.</p>
+        </div>
+      </div>
+      <div style="flex-shrink: 0; width: 320px; height: 380px; border-radius: 16px; overflow: hidden;">
+        <img src="images/myth-speed-new.jpg" alt="Fast start" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 4: YOUR EVERGREEN CUSTOMER -->
+  <!-- ============================================================ -->
+  <div class="slide slide-center">
+    <h2 style="font-size: 2.6rem;">What if one customer paid you<br>for <span class="green">10, 20, 30 years?</span></h2>
+    <p style="font-size: 1.3rem; color: var(--gray); margin-top: 30px; max-width: 780px;">
+      Federal agencies don't churn like commercial clients.
+    </p>
+    <p style="font-size: 1.2rem; color: var(--gray); margin-top: 16px; max-width: 780px;">
+      Contracts renew. Task orders repeat. Relationships compound.
+    </p>
+    <div class="highlight-box" style="margin-top: 30px; text-align: left; max-width: 700px;">
+      <p><strong>This is the "evergreen customer."</strong> The government is the most reliable, highest-paying client you'll ever have — once you get in.</p>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE: SUCCESS STORY — MAMA U -->
+  <!-- ============================================================ -->
+  <div class="slide slide-content" style="justify-content: center;">
+    <div style="display: flex; gap: 36px; align-items: center;">
+      <div style="flex: 1;">
+        <div class="badge" style="background: rgba(139,195,74,0.15); color: var(--green);">GovCon Giants Podcast Guest</div>
+        <h2 style="font-size: 2rem; border: none; padding-bottom: 0; margin-top: 10px;">Corliss "Mama U" Udoema</h2>
+        <p style="font-size: 1.15rem; color: var(--green-dark); font-weight: 600; margin-top: 6px;">CEO & Founder, Contract Solutions, Inc. (CSI)</p>
+        <p style="font-size: 1.05rem; color: var(--gray); margin-top: 8px;">Manassas, Virginia</p>
+        <div class="stats-row" style="justify-content: flex-start; gap: 30px; margin-top: 18px;">
+          <div class="stat" style="text-align: left; min-width: auto;">
+            <div class="value" style="font-size: 1.8rem;">20</div>
+            <div class="label">Years in GovCon</div>
+          </div>
+          <div class="stat" style="text-align: left; min-width: auto;">
+            <div class="value" style="font-size: 1.8rem;">35+</div>
+            <div class="label">Years contracting<br>experience</div>
+          </div>
+        </div>
+        <ul class="bullets" style="margin-top: 14px;">
+          <li style="font-size: 1.1rem; padding: 6px 0 6px 34px;"><strong>Staffing & recruiting</strong> firm turned federal contractor</li>
+          <li style="font-size: 1.1rem; padding: 6px 0 6px 34px;"><strong>Two Congressional awards</strong> for small business development</li>
+          <li style="font-size: 1.1rem; padding: 6px 0 6px 34px;"><strong>Internationally recognized</strong> speaker & business consultant</li>
+        </ul>
+      </div>
+      <div style="flex-shrink: 0; width: 280px; height: 360px; border-radius: 16px; overflow: hidden; border: 3px solid var(--green);">
+        <img src="images/mama-u-headshot.jpeg" alt="Corliss Mama U Udoema" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE: TRANSITION — HOW TO GET STARTED -->
+  <!-- ============================================================ -->
+  <div class="slide slide-title" style="background: var(--black); color: white;">
+    <p style="font-size: 1.1rem; color: var(--green); font-weight: 700; letter-spacing: 2px; margin-bottom: 16px;">NOW LET'S TALK ABOUT</p>
+    <h1 style="color: white; font-size: 3rem;">How to Get<br><span class="green">Started</span></h1>
+    <p style="font-size: 1.3rem; color: #ccc; margin-top: 24px; max-width: 700px;">The steps to position your company for federal contracts.</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE: DEFINE YOUR CORE CAPABILITY -->
+  <!-- ============================================================ -->
+  <div class="slide slide-content">
+    <h2>Define your core capability</h2>
+    <p style="font-size: 1.2rem; color: var(--gray); margin-bottom: 16px;">Most staffing companies lose because they say <span class="red bold">"we do everything."</span></p>
+    <p style="font-size: 1.15rem; margin-bottom: 18px;">The government can't buy "staffing" — they buy specific services under specific codes.</p>
+    <div class="two-col">
+      <div>
+        <div class="red-box">
+          <h4>Too broad</h4>
+          <p>"We're a full-service staffing company providing talent across all industries nationwide."</p>
+        </div>
+      </div>
+      <div>
+        <div class="green-box">
+          <h4>Focused &amp; findable</h4>
+          <p>"We provide administrative support services (NAICS 561110) to federal agencies in the DC metro area."</p>
+        </div>
+      </div>
+    </div>
+    <div class="highlight-box" style="margin-top: 16px;">
+      <p><strong>Your formula:</strong> 1 role family + 1 NAICS code + 1 agency target = contracts you can actually win.</p>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 6: YOUR EXPERIENCE IS ENOUGH -->
+  <!-- ============================================================ -->
+  <div class="slide slide-content">
+    <h2>Your experience is enough</h2>
+    <p style="font-size: 1.15rem; color: var(--gray); margin-bottom: 16px;">You think your experience isn't "federal enough" — <span class="green bold">you're wrong.</span></p>
+    <ul class="bullets">
+      <li><strong>Staffed a hospital?</strong> That's healthcare support services past performance</li>
+      <li><strong>Ran a call center?</strong> That's contact center services past performance</li>
+      <li><strong>Filled warehouse shifts?</strong> That's logistics support services past performance</li>
+      <li><strong>Placed security guards?</strong> That's physical security services past performance</li>
+    </ul>
+    <div class="green-box" style="margin-top: 14px;">
+      <h4>The truth</h4>
+      <p>Government buyers accept commercial past performance. You don't need prior federal work.</p>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE: WHO BUYS STAFFING SERVICES -->
+  <!-- ============================================================ -->
+  <div class="slide slide-content">
+    <h2>Who's actually buying?</h2>
+    <table style="font-size: 1rem;">
+      <thead><tr><th style="padding: 10px 14px;">Agency</th><th style="padding: 10px 14px;">What they buy (in staffing terms)</th></tr></thead>
+      <tbody>
+        <tr><td style="padding: 8px 14px;"><strong>VA</strong></td><td style="padding: 8px 14px;">Nurses, admin backfills, call center reps, medical support</td></tr>
+        <tr><td style="padding: 8px 14px;"><strong>DoD</strong></td><td style="padding: 8px 14px;">Warehouse/logistics, base ops, admin support, security</td></tr>
+        <tr><td style="padding: 8px 14px;"><strong>DHS</strong></td><td style="padding: 8px 14px;">Contact centers, ops support, mission surge staff</td></tr>
+        <tr><td style="padding: 8px 14px;"><strong>HHS</strong></td><td style="padding: 8px 14px;">Program support, public-facing services, data entry</td></tr>
+        <tr><td style="padding: 8px 14px;"><strong>GSA</strong></td><td style="padding: 8px 14px;">Facilities maintenance, janitorial, building ops</td></tr>
+      </tbody>
+    </table>
+    <div class="green-box" style="padding: 10px 16px; margin-top: 12px;">
+      <h4 style="font-size: 1.05rem;">These agencies already buy what you sell</h4>
+      <p style="font-size: 1rem;">They just won't find you if your website says "staffing" instead of "support services."</p>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE: THE BENEFITS NOBODY TALKS ABOUT -->
+  <!-- ============================================================ -->
+  <div class="slide slide-content">
+    <h2>The benefits nobody talks about</h2>
+    <ul class="bullets" style="margin-top: 18px;">
+      <li><strong>Long-term contracts</strong> — 3-5 year base periods plus option years</li>
+      <li><strong>Net-30 payment</strong> — the government always pays (they're the U.S. Treasury)</li>
+      <li><strong>Set-aside advantages</strong> — small business certifications unlock non-competitive awards</li>
+      <li><strong>Contract vehicles = pipeline</strong> — once you're on a vehicle, work comes to you</li>
+    </ul>
+    <div class="highlight-box" style="margin-top: 20px;">
+      <p><strong>Compare that to commercial staffing:</strong> 60-90 day payment terms, client churn, constant rebidding. Government contracting is the most stable revenue stream in business.</p>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE: THE BRUTAL CHALLENGES -->
+  <!-- ============================================================ -->
+  <div class="slide slide-content">
+    <h2 style="border-bottom-color: var(--red);">The brutal challenges</h2>
+    <div class="red-box" style="margin-top: 16px; margin-bottom: 20px; padding: 14px 20px;">
+      <p style="font-size: 1.15rem;"><strong>Nobody posts this part on LinkedIn.</strong></p>
+    </div>
+    <ul class="bullets" style="margin-top: 10px;">
+      <li style="padding: 10px 0 10px 40px; font-size: 1.3rem;"><strong>Compliance is real</strong> — SCA wage determinations, FAR clauses</li>
+      <li style="padding: 10px 0 10px 40px; font-size: 1.3rem;"><strong>Cash flow gap</strong> — you staff before you get paid (60+ days)</li>
+      <li style="padding: 10px 0 10px 40px; font-size: 1.3rem;"><strong>Proposal fatigue</strong> — government moves slow, demands detail</li>
+      <li style="padding: 10px 0 10px 40px; font-size: 1.3rem;"><strong>You will lose bids. A lot.</strong> — That's normal.</li>
+    </ul>
+    <div class="highlight-box" style="margin-top: 20px; padding: 14px 20px;">
+      <p style="font-size: 1.15rem;"><strong>The question isn't whether it's hard.</strong> It's whether the payoff is worth it. (It is.)</p>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 9: REAL STORIES FROM THE TRENCHES -->
+  <!-- ============================================================ -->
+  <div class="slide slide-center">
+    <p style="font-size: 1.1rem; color: var(--green); font-weight: 700; margin-bottom: 16px; letter-spacing: 1px;">UP NEXT</p>
+    <h2 style="font-size: 2.6rem;">Real Stories From<br>the Trenches</h2>
+    <p style="font-size: 1.3rem; color: var(--gray); margin-top: 24px; max-width: 780px;">
+      No theory. Just results.
+    </p>
+    <p style="font-size: 1.15rem; color: var(--gray); margin-top: 16px; max-width: 780px;">
+      Two people who've been in the trenches — one built a staffing firm into a government contractor, the other sat on the other side of the table awarding the contracts.
+    </p>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 10: FIRESIDE CHAT INTRO -->
+  <!-- ============================================================ -->
+  <div class="slide slide-title" style="background: var(--black); color: white;">
+    <p class="subtitle" style="color: var(--green);">Fireside Chat</p>
+    <h1 style="color: white; font-size: 2.4rem;">From the Trenches</h1>
+    <div style="display: flex; justify-content: center; gap: 60px; margin-top: 30px;">
+      <div style="text-align: center; max-width: 320px;">
+        <img src="images/tracy-balazs-headshot.jpeg" alt="Tracy Balazs" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 3px solid var(--green); margin-bottom: 14px;">
+        <h3 style="color: var(--green); font-size: 1.3rem; margin-bottom: 6px;">Tracy Balazs</h3>
+        <p style="font-size: 1.05rem; color: #ccc;">CEO & President, Compass Government Solutions</p>
+        <p style="font-size: 0.95rem; color: #999; margin-top: 8px;">Staffing firm turned government contractor</p>
+      </div>
+      <div style="text-align: center; max-width: 320px;">
+        <img src="images/tracy-marcinowski-headshot.jpeg" alt="Tracy Marcinowski" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 3px solid var(--green); margin-bottom: 14px;">
+        <h3 style="color: var(--green); font-size: 1.3rem; margin-bottom: 6px;">Tracy Marcinowski</h3>
+        <p style="font-size: 1.05rem; color: #ccc;">Strategic Acquisition Solutions</p>
+        <p style="font-size: 0.95rem; color: #999; margin-top: 8px;">Former Asst Commissioner for Acquisitions, Public Buildings Service, GSA</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 11: FREE GUIDE + QR CODE -->
+  <!-- ============================================================ -->
+  <div class="slide slide-content" style="justify-content: center;">
+    <div style="display: flex; gap: 30px; align-items: center;">
+      <div style="flex: 1;">
+        <h2 style="font-size: 2.2rem; border: none; padding-bottom: 0;">Get Your Free Guide</h2>
+        <p style="font-size: 1.2rem; color: var(--gray); margin-top: 14px;">
+          <strong>How Staffing Companies Win Federal Contracts</strong> — the complete playbook from today's session.
+        </p>
+        <ul class="bullets" style="margin-top: 16px;">
+          <li style="font-size: 1.05rem; padding: 6px 0 6px 34px;">NAICS translation tables</li>
+          <li style="font-size: 1.05rem; padding: 6px 0 6px 34px;">Compliance checklists</li>
+          <li style="font-size: 1.05rem; padding: 6px 0 6px 34px;">AI prompts for GovCon staffing</li>
+          <li style="font-size: 1.05rem; padding: 6px 0 6px 34px;">30-day action plan</li>
+        </ul>
+        <p style="font-size: 1.15rem; color: var(--green-dark); font-weight: 700; margin-top: 18px;">Free for every attendee today.</p>
+      </div>
+      <div style="flex-shrink: 0; display: flex; gap: 20px; align-items: flex-end;">
+        <div style="width: 200px; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.2);">
+          <img src="images/handout-cover.png" alt="GovCon Staffing Playbook Cover" style="width: 100%; height: auto; display: block;">
+        </div>
+        <div style="text-align: center;">
+          <img src="images/qr-encoregov.svg" alt="QR Code — encoregov.com" style="width: 160px; height: 160px; display: block; border-radius: 8px;">
+          <p style="font-size: 0.9rem; font-weight: 700; color: var(--green-dark); margin-top: 8px;">encoregov.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE: CLOSING — SPEAKERS + ENCORE CONTACT -->
+  <!-- ============================================================ -->
+  <div class="slide slide-title" style="background: var(--orange); color: white;">
+    <div style="display: flex; justify-content: center; align-items: center; gap: 50px; width: 100%;">
+      <!-- Tracy Balazs -->
+      <div style="text-align: center; max-width: 260px;">
+        <img src="images/tracy-balazs-headshot.jpeg" alt="Tracy Balazs" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 4px solid white; margin-bottom: 14px;">
+        <h3 style="color: white; font-size: 1.4rem; margin-bottom: 6px;">Tracy Balazs</h3>
+        <p style="font-size: 1.1rem; color: rgba(255,255,255,0.85);">CEO & President, Compass Government Solutions</p>
+      </div>
+      <!-- Encore Contact -->
+      <div style="text-align: center; max-width: 380px;">
+        <img src="images/EncoreLogo_Primary_Reversed.png" alt="Encore Funding" style="height: 65px; margin-bottom: 18px;">
+        <h3 style="color: white; font-size: 1.8rem; margin-bottom: 14px;">Let's Talk Funding</h3>
+        <p style="font-size: 1.3rem;"><strong>Office:</strong> (216) 998-9900</p>
+        <p style="font-size: 1.3rem;"><strong>Direct:</strong> (216) 798-3844</p>
+        <p style="font-size: 1.3rem;">ssweedler@encore-funding.com</p>
+        <p style="font-size: 1.3rem; margin-top: 8px; font-weight: 700;">encoregov.com</p>
+      </div>
+      <!-- Tracy Marcinowski -->
+      <div style="text-align: center; max-width: 260px;">
+        <img src="images/tracy-marcinowski-headshot.jpeg" alt="Tracy Marcinowski" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 4px solid white; margin-bottom: 14px;">
+        <h3 style="color: white; font-size: 1.4rem; margin-bottom: 6px;">Tracy Marcinowski</h3>
+        <p style="font-size: 1.1rem; color: rgba(255,255,255,0.85);">Strategic Acquisition Solutions</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE: CLOSING — ENCORE FUNDING CONTACT -->
+  <!-- ============================================================ -->
+  <div class="slide slide-title" style="background: var(--orange); color: white;">
+    <img src="images/EncoreLogo_Primary_Reversed.png" alt="Encore Funding" style="height: 65px; margin-bottom: 30px;">
+    <h1 style="color: white; font-size: 2.6rem;">Let's Talk Funding</h1>
+    <div style="margin-top: 30px; font-size: 1.3rem; line-height: 2;">
+      <p style="font-size: 1.25rem;"><strong>Office:</strong> (216) 998-9900</p>
+      <p style="font-size: 1.25rem;"><strong>Direct:</strong> (216) 798-3844</p>
+      <p style="font-size: 1.25rem;">ssweedler@encore-funding.com</p>
+      <p style="font-size: 1.25rem; margin-top: 10px; font-weight: 700;">encoregov.com</p>
+    </div>
+  </div>
+
+</div><!-- /#slide-viewer -->
+
+<div id="nav-bar">
+  <button type="button" id="btn-prev" aria-label="Previous slide">← Prev</button>
+  <span id="slide-counter">Slide 1 of 1</span>
+  <button type="button" id="btn-next" aria-label="Next slide">Next →</button>
+</div>
+
+<script>
+  (function () {
+    var viewer = document.getElementById('slide-viewer');
+    var slides = viewer.querySelectorAll('.slide');
+    var total = slides.length;
+    var counterEl = document.getElementById('slide-counter');
+    var btnPrev = document.getElementById('btn-prev');
+    var btnNext = document.getElementById('btn-next');
+
+    // Auto-number slides and ensure consistent footer on every slide
+    for (var n = 0; n < slides.length; n++) {
+      var numEl = slides[n].querySelector('.slide-num');
+      if (numEl) numEl.textContent = String(n + 1);
+      else {
+        numEl = document.createElement('span');
+        numEl.className = 'slide-num';
+        numEl.textContent = String(n + 1);
+        slides[n].appendChild(numEl);
+      }
+      if (!slides[n].querySelector('.slide-footer')) {
+        var footer = document.createElement('div');
+        footer.className = 'slide-footer';
+        footer.innerHTML = '<a href="https://govcongiants.org">GovconGiants.org</a>';
+        slides[n].appendChild(footer);
+      }
+    }
+    if (counterEl) counterEl.textContent = 'Slide 1 of ' + total;
+
+    function getCurrentIndex() {
+      var scrollTop = viewer.scrollTop;
+      var best = 0;
+      for (var i = 0; i < slides.length; i++) {
+        if (slides[i].offsetTop <= scrollTop + 50) best = i;
+      }
+      return best;
+    }
+
+    function updateNav() {
+      var current = getCurrentIndex() + 1;
+      counterEl.textContent = 'Slide ' + current + ' of ' + total;
+      btnPrev.disabled = current <= 1;
+      btnNext.disabled = current >= total;
+    }
+
+    function goToSlide(index) {
+      var i = Math.max(0, Math.min(index, total - 1));
+      slides[i].scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    viewer.addEventListener('scroll', function () { requestAnimationFrame(updateNav); });
+    btnPrev.addEventListener('click', function () { goToSlide(getCurrentIndex() - 1); });
+    btnNext.addEventListener('click', function () { goToSlide(getCurrentIndex() + 1); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); goToSlide(getCurrentIndex() + 1); }
+      else if (e.key === 'ArrowLeft') { e.preventDefault(); goToSlide(getCurrentIndex() - 1); }
+    });
+    updateNav();
+  })();
+</script>
+
+</body>
+</html>
