@@ -1,0 +1,1716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>February 2026 Proposal Writing Surge | GovCon Giants</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #7c3aed;
+            --accent: #10b981;
+            --accent-dark: #059669;
+            --dark: #1a1a2e;
+            --light: #f8fafc;
+            --red: #dc2626;
+            --orange: #ea580c;
+            --teal: #0d9488;
+        }
+
+        @page {
+            size: landscape;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #e5e7eb;
+            line-height: 1.4;
+            color: var(--dark);
+        }
+
+        .slide {
+            width: 1280px;
+            height: 720px;
+            background: white;
+            margin: 20px auto;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+            page-break-after: always;
+            page-break-inside: avoid;
+        }
+
+        @media print {
+            body { background: white; }
+            .slide {
+                margin: 0;
+                box-shadow: none;
+                page-break-after: always;
+            }
+        }
+
+        /* Title Slide */
+        .slide-title {
+            background: linear-gradient(135deg, var(--secondary) 0%, #4f46e5 100%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px;
+        }
+
+        .slide-title .badge {
+            background: rgba(255,255,255,0.2);
+            padding: 10px 30px;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+        }
+
+        .slide-title h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .slide-title .subtitle {
+            font-size: 1.8rem;
+            opacity: 0.95;
+            margin-bottom: 50px;
+        }
+
+        .slide-title .meta {
+            display: flex;
+            gap: 60px;
+            margin-top: 30px;
+        }
+
+        .slide-title .meta-item {
+            text-align: center;
+        }
+
+        .slide-title .meta-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+        }
+
+        .slide-title .meta-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+        }
+
+        /* Section Title Slide */
+        .slide-section {
+            background: linear-gradient(135deg, var(--accent-dark) 0%, var(--accent) 100%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 80px;
+        }
+
+        .slide-section .session-num {
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+
+        .slide-section h2 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        .slide-section .time-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        /* Content Slide */
+        .slide-content {
+            padding: 60px 80px;
+        }
+
+        .slide-content .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid var(--secondary);
+        }
+
+        .slide-content h2 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: var(--primary);
+            max-width: 80%;
+        }
+
+        .slide-content .session-tag {
+            background: var(--secondary);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .slide-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .slide-content li {
+            font-size: 1.6rem;
+            padding: 18px 0 18px 50px;
+            position: relative;
+            color: #333;
+        }
+
+        .slide-content li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 30px;
+            background: var(--secondary);
+            border-radius: 50%;
+        }
+
+        .slide-content li::after {
+            content: '>';
+            position: absolute;
+            left: 9px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        /* Two Column Layout */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 20px;
+        }
+
+        .two-col .col h3 {
+            font-size: 1.4rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .two-col li {
+            font-size: 1.3rem;
+            padding: 12px 0 12px 40px;
+        }
+
+        .two-col li::before {
+            width: 24px;
+            height: 24px;
+        }
+
+        .two-col li::after {
+            left: 7px;
+            font-size: 0.85rem;
+        }
+
+        /* Workshop Slide */
+        .slide-workshop {
+            padding: 60px 80px;
+            background: linear-gradient(180deg, white 0%, #f5f3ff 100%);
+        }
+
+        .slide-workshop .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .slide-workshop h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--secondary);
+        }
+
+        .slide-workshop .workshop-tag {
+            background: var(--secondary);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 20px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .workshop-box {
+            background: white;
+            border: 3px solid var(--secondary);
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: 20px;
+        }
+
+        .workshop-box h3 {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 25px;
+        }
+
+        .workshop-steps {
+            display: flex;
+            gap: 30px;
+        }
+
+        .workshop-step {
+            flex: 1;
+            background: #f5f3ff;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .workshop-step .num {
+            width: 50px;
+            height: 50px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin: 0 auto 15px;
+        }
+
+        .workshop-step p {
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        /* Stats Slide */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, var(--secondary) 0%, #4f46e5 100%);
+            color: white;
+            border-radius: 20px;
+            padding: 35px 25px;
+            text-align: center;
+        }
+
+        .stat-card .value {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+
+        .stat-card .label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Key Point Slide */
+        .slide-key-point {
+            background: var(--dark);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 80px;
+        }
+
+        .slide-key-point .icon {
+            font-size: 5rem;
+            margin-bottom: 30px;
+        }
+
+        .slide-key-point h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            max-width: 900px;
+            line-height: 1.3;
+        }
+
+        .slide-key-point p {
+            font-size: 1.5rem;
+            opacity: 0.8;
+            margin-top: 30px;
+            max-width: 800px;
+        }
+
+        /* Table Slide */
+        .slide-table {
+            padding: 50px 60px;
+        }
+
+        .slide-table h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 30px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 1.1rem;
+        }
+
+        .data-table th {
+            background: var(--secondary);
+            color: white;
+            padding: 18px 20px;
+            text-align: left;
+            font-weight: 700;
+        }
+
+        .data-table td {
+            padding: 16px 20px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .data-table tr:nth-child(even) {
+            background: #f8fafc;
+        }
+
+        /* Footer */
+        .slide-footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0,0,0,0.03);
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .slide-footer .logo {
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 3px solid #f59e0b;
+            border-radius: 15px;
+            padding: 25px 35px;
+            margin-top: 30px;
+        }
+
+        .highlight-box h4 {
+            color: #92400e;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .highlight-box p {
+            color: #78350f;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        /* CTA Slide */
+        .slide-cta {
+            background: linear-gradient(135deg, var(--red) 0%, #b91c1c 100%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px;
+        }
+
+        .slide-cta h2 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 30px;
+        }
+
+        .slide-cta p {
+            font-size: 1.5rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin-bottom: 40px;
+        }
+
+        .slide-cta .cta-box {
+            background: white;
+            color: var(--dark);
+            padding: 30px 60px;
+            border-radius: 15px;
+            font-size: 1.3rem;
+        }
+
+        .slide-cta .cta-box strong {
+            color: var(--red);
+            font-size: 1.5rem;
+        }
+
+        /* Process Flow */
+        .process-flow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        .process-step {
+            flex: 1;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .process-step .circle {
+            width: 80px;
+            height: 80px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 800;
+            margin: 0 auto 15px;
+        }
+
+        .process-step h4 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .process-step p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .process-arrow {
+            font-size: 2rem;
+            color: var(--secondary);
+        }
+
+        /* Break Slide */
+        .slide-break {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .slide-break .break-icon {
+            font-size: 6rem;
+            margin-bottom: 30px;
+        }
+
+        .slide-break h2 {
+            font-size: 3rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+
+        .slide-break p {
+            font-size: 1.5rem;
+            color: #666;
+        }
+
+        /* Comparison Slide */
+        .compare-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .compare-col {
+            border-radius: 15px;
+            padding: 30px;
+        }
+
+        .compare-col.bad {
+            background: #fef2f2;
+            border: 3px solid #fca5a5;
+        }
+
+        .compare-col.good {
+            background: #f0fdf4;
+            border: 3px solid #86efac;
+        }
+
+        .compare-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .compare-col.bad h3 { color: var(--red); }
+        .compare-col.good h3 { color: var(--accent-dark); }
+
+        .compare-col li {
+            font-size: 1.1rem;
+            padding: 10px 0 10px 30px;
+        }
+
+        /* Section boxes */
+        .section-boxes {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .section-box {
+            background: #f8fafc;
+            border-radius: 15px;
+            padding: 25px;
+            border-left: 5px solid var(--secondary);
+        }
+
+        .section-box h4 {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+
+        .section-box p {
+            color: #555;
+            font-size: 1rem;
+        }
+
+        /* Numbered list style */
+        .numbered-list {
+            counter-reset: item;
+            list-style: none;
+            padding: 0;
+        }
+
+        .numbered-list li {
+            counter-increment: item;
+            padding: 15px 0 15px 60px;
+            position: relative;
+            font-size: 1.4rem;
+        }
+
+        .numbered-list li::before {
+            content: counter(item);
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+
+        .numbered-list li::after {
+            display: none;
+        }
+
+        /* Checklist style */
+        .checklist li::before {
+            content: '';
+            width: 28px;
+            height: 28px;
+            background: var(--accent);
+        }
+
+        .checklist li::after {
+            content: '>';
+            left: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============================================ -->
+<!-- SLIDE 1: Title Slide -->
+<!-- ============================================ -->
+<div class="slide slide-title">
+    <div class="badge">Federal Help Center Pro Members</div>
+    <h1>Proposal Writing Surge</h1>
+    <p class="subtitle">Master the Art of Winning Government Proposals</p>
+    <div class="meta">
+        <div class="meta-item">
+            <div class="meta-value">Feb 28</div>
+            <div class="meta-label">Date</div>
+        </div>
+        <div class="meta-item">
+            <div class="meta-value">9am-5pm</div>
+            <div class="meta-label">Eastern</div>
+        </div>
+        <div class="meta-item">
+            <div class="meta-value">8 Hours</div>
+            <div class="meta-label">Live Training</div>
+        </div>
+        <div class="meta-item">
+            <div class="meta-value">6</div>
+            <div class="meta-label">Sessions</div>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SLIDE 2: Today's Agenda -->
+<!-- ============================================ -->
+<div class="slide slide-content">
+    <div class="header">
+        <h2>Today's Agenda</h2>
+        <span class="session-tag">Full Day</span>
+    </div>
+    <div class="section-boxes">
+        <div class="section-box">
+            <h4>9:00 - 10:00 AM</h4>
+            <p>Proposal Fundamentals & The Evaluation Mindset</p>
+        </div>
+        <div class="section-box">
+            <h4>10:00 - 11:00 AM</h4>
+            <p>Simplified Acquisition Proposals</p>
+        </div>
+        <div class="section-box">
+            <h4>11:15 - 12:30 PM</h4>
+            <p>Technical Approach & Past Performance</p>
+        </div>
+        <div class="section-box">
+            <h4>1:15 - 2:15 PM</h4>
+            <p>WORKSHOP: Build Your Compliance Matrix</p>
+        </div>
+        <div class="section-box">
+            <h4>2:30 - 3:30 PM</h4>
+            <p>GSA Schedule & GWAC Task Orders</p>
+        </div>
+        <div class="section-box">
+            <h4>3:30 - 4:30 PM</h4>
+            <p>WORKSHOP: Draft Your Technical Approach</p>
+        </div>
+    </div>
+    <div class="slide-footer">
+        <span class="logo">GovCon Giants</span>
+        <span>February 28, 2026</span>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SLIDE 3: What You'll Walk Away With -->
+<!-- ============================================ -->
+<div class="slide slide-content">
+    <div class="header">
+        <h2>What You'll Walk Away With</h2>
+        <span class="session-tag">Outcomes</span>
+    </div>
+    <ul>
+        <li>Complete compliance matrix template for any RFP</li>
+        <li>Technical approach framework you can reuse</li>
+        <li>Past performance write-ups in federal format</li>
+        <li>Win themes that differentiate you from competitors</li>
+        <li>Bid/no-bid decision tool to stop wasting time</li>
+    </ul>
+    <div class="slide-footer">
+        <span class="logo">GovCon Giants</span>
+        <span>February 28, 2026</span>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SESSION 1: Proposal Fundamentals -->
+<!-- ============================================ -->
+<div class="slide slide-section" style="background: linear-gradient(135deg, var(--secondary) 0%, #4f46e5 100%);">
+    <div class="session-num">Session 1 of 6</div>
+    <h2>Proposal Fundamentals &<br>The Evaluation Mindset</h2>
+    <span class="time-badge">9:00 AM - 10:00 AM (60 min)</span>
+</div>
+
+<!-- ============================================ -->
+<!-- SLIDE 5: The Problem -->
+<!-- ============================================ -->
+<div class="slide slide-key-point">
+    <div class="icon">?</div>
+    <h2>Most proposals lose<br>for preventable reasons</h2>
+    <p>Understanding why proposals fail is the first step to writing ones that win.</p>
+</div>
+
+<!-- ============================================ -->
+<!-- SLIDE 6: Why Proposals Lose -->
+<!-- ============================================ -->
+<div class="slide slide-content">
+    <div class="header">
+        <h2>The 5 Most Common Reasons Proposals Lose</h2>
+        <span class="session-tag">Fundamentals</span>
+    </div>
+    <ul class="numbered-list">
+        <li>Non-compliant: Failed to address required elements</li>
+        <li>Generic response: Copy-paste that ignores specifics</li>
+        <li>Weak discriminators: Nothing differentiates from competitors</li>
+        <li>Poor past performance: Experience not presented effectively</li>
+        <li>Price too high/low: Pricing strategy doesn't match value</li>
+    </ul>
+    <div class="slide-footer">
+        <span class="logo">GovCon Giants</span>
+        <span>Session 1: Fundamentals</span>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SLIDE 7: The Evaluator's Perspective -->
+<!-- ============================================ -->
+<div class="slide slide-key-point" style="background: linear-gradient(135deg, var(--secondary) 0%, #4f46e5 100%);">
+    <h2>Evaluators don't read proposals.<br>They SCORE them.</h2>
+    <p>Every section, every paragraph is evaluated against specific criteria. Write to score points.</p>
+</div>
+
+<!-- ============================================ -->
+<!-- SLIDE 8: Evaluation Criteria -->
+<!-- ============================================ -->
+<div class="slide slide-content">
+    <div class="header">
+        <h2>How Evaluators Score Proposals</h2>
+        <span class="session-tag">Evaluation</span>
+    </div>
+    <div class="two-col">
+        <div class="col">
+            <h3>Evaluation Factors</h3>
+            <ul>
+                <li>Technical Approach (often 40-50%)</li>
+                <li>Past Performance (often 20-30%)</li>
+                <li>Price (varies widely)</li>
+                <li>Management Approach</li>
+                <li>Key Personnel</li>
+            </ul>
+        </div>
+        <div class="col">
+            <h3>Rating Scale (Common)</h3>
+            <ul>
+                <li>Outstanding / Exceptional</li>
+                <li>Good / Acceptable</li>
+                <li>Marginal / Acceptable</li>
+                <li>Unacceptable</li>
+            </ul>
+        </div>
+    </div>
+    <div class="highlight-box">
+        <h4>Key Insight</h4>
+        <p>Section L tells you what to submit. Section M tells you how it will be scored. Read both carefully.</p>
+    </div>
+    <div class="slide-footer">
+        <span class="logo">GovCon Giants</span>
+        <span>Session 1: Fundamentals</span>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SLIDE 9: Compliance vs Responsiveness -->
+<!-- ============================================ -->
+<div class="slide slide-content">
+    <div class="header">
+        <h2>Three Levels of Proposal Quality</h2>
+        <span class="session-tag">Framework</span>
+    </div>
+    <div class="section-boxes">
+        <div class="section-box" style="border-left-color: #ef4444;">
+            <h4>1. Compliant</h4>
+            <p>Follows all format requirements, answers all questions, meets page limits. The minimum bar.</p>
+        </div>
+        <div class="section-box" style="border-left-color: #f59e0b;">
+            <h4>2. Responsive</h4>
+            <p>Directly addresses evaluation criteria. Shows you understood what they asked for.</p>
+        </div>
+        <div class="section-box" style="border-left-color: #10b981;">
+            <h4>3. Competitive</h4>
+            <p>Demonstrates clear discriminators. Shows why you're the BEST choice, not just A choice.</p>
+        </div>
+    </div>
+    <div class="highlight-box">
+        <h4>Your Goal</h4>
+        <p>Every proposal must be compliant. Most should be responsive. Winners are always competitive.</p>
+    </div>
+    <div class="slide-footer">
+        <span class="logo">GovCon Giants</span>
+        <span>Session 1: Fundamentals</span>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SLIDE 10: The Proposal Lifecycle -->
+<!-- ============================================ -->
+<div class="slide slide-content">
+    <div class="header">
+        <h2>The Proposal Lifecycle</h2>
+        <span class="session-tag">Process</span>
+    </div>
+    <div class="process-flow">
+        <div class="process-step">
+            <div class="circle">1</div>
+            <h4>Pre-RFP</h4>
+            <p>Shape the requirement</p>
+        </div>
+        <div class="process-arrow">></div>
+        <div class="process-step">
+            <div class="circle">2</div>
+            <h4>RFP Release</h4>
+            <p>Bid/No-Bid decision</p>
+        </div>
+        <div class="process-arrow">></div>
+        <div class="process-step">
+            <div class="circle">3</div>
+            <h4>Write</h4>
+            <p>Draft & review cycles</p>
+        </div>
+        <div class="process-arrow">></div>
+        <div class="process-step">
+            <div class="circle">4</div>
+            <h4>Submit</h4>
+            <p>Final compliance check</p>
+        </div>
+    </div>
+    <div class="highlight-box">
+        <h4>The Truth</h4>
+        <p>Proposals are won or lost in the Pre-RFP phase. If you're starting at RFP release, you're already behind.</p>
+    </div>
+    <div class="slide-footer">
+        <span class="logo">GovCon Giants</span>
+        <span>Session 1: Fundamentals</span>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SESSION 2: Simplified Acquisitions -->
+<!-- ============================================ -->
+<div class="slide slide-section" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+    <div class="session-num">Session 2 of 6</div>
+    <h2>Simplified Acquisition<br>Proposals</h2>
+    <span class="time-badge">10:00 AM - 11:00 AM (60 min)</span>
+</div>
+
+<!-- ============================================ -->
+<!-- SLIDE 12: Why Start Here -->
+<!-- ============================================ -->
+<div class="slide slide-key-point" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+    <h2>Simplified acquisitions are<br>where most small businesses should start</h2>
+    <p>Faster decisions, shorter responses, lower risk, and valuable experience for bigger proposals.</p>
+</div>
+
+<!-- ============================================ -->
+<!-- SLIDE 13: Simplified Thresholds -->
+<!-- ============================================ -->
+<div class="slide slide-content">
+    <div class="header">
+        <h2>Simplified Acquisition Thresholds</h2>
+        <span class="session-tag">Basics</span>
+    </div>
+    <div class="stats-grid">
+        <div class="stat-card" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+            <div class="value">$10K</div>
+            <div class="label">Micro-Purchase</div>
+        </div>
+        <div class="stat-card" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+            <div class="value">$50K</div>
+            <div class="label">Micro-Purchase (Construction)</div>
+        </div>
+        <div class="stat-card" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+            <div class="value">$250K</div>
+            <div class="label">Simplified Threshold</div>
+        </div>
+        <div class="stat-card" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+            <div class="value">Faster</div>
+            <div class="label">Award Decision</div>
+        </div>
+    </div>
+    <div class="highlight-box">
+        <h4>What "Simplified" Means</h4>
+        <p>Streamlined procedures for the government - but you still need to submit a professional, compliant response.</p>
+    </div>
+    <div class="slide-footer">
+        <span class="logo">GovCon Giants</span>
+        <span>Session 2: Simplified Acquisitions</span>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SLIDE 14: Quote vs Proposal -->
+<!-- ============================================ -->
+<div class="slide slide-content">
+    <div class="header">
+        <h2>Quote vs. Proposal</h2>
+        <span class="session-tag">Definitions</span>
+    </div>
+    <div class="compare-grid">
+        <div class="compare-col" style="background: #f0fdf4; border-color: #86efac;">
+            <h3 style="color: #059669;">Quote (RFQ)</h3>
+            <ul>
+                <li>Simplified acquisitions</li>
+                <li>Commercial items (FAR Part 12)</li>
+                <li>Usually price-focused</li>
+                <li>Shorter format</li>
+                <li>Uses SF 1449 often</li>
+                <li>Faster turnaround</li>
+            </ul>
+        </div>
+        <div class="compare-col" style="background: #eff6ff; border-color: #93c5fd;">
+            <h3 style="color: var(--primary);">Proposal (RFP)</h3>
+            <ul>
+                <li>Negotiated procurements</li>
+                <li>Multiple evaluation factors</li>
+                <li>Technical volumes required</li>
+                <li>More complex format</li>
+                <li>Uses SF 33 typically</li>
+                <li>Longer evaluation period</li>
+            </ul>
+        </div>
+    </div>
+    <div class="slide-footer">
+        <span class="logo">GovCon Giants</span>
+        <span>Session 2: Simplified Acquisitions</span>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SLIDE 15: Simplified Response Format -->
+<!-- ============================================ -->
+<div class="slide slide-content">
+    <div class="header">
+        <h2>Simplified Acquisition Response Format</h2>
+        <span class="session-tag">Template</span>
+    </div>
+    <ul class="numbered-list">
+        <li>Cover Letter: Company info, POC, SAM status</li>
+        <li>Technical Capability: How you meet requirements</li>
+        <li>Relevant Experience: 2-3 similar projects</li>
+        <li>Pricing: Line items with rates/totals</li>
+        <li>Certifications & Reps: Required clauses signed</li>
+    </ul>
+    <div class="highlight-box">
+        <h4>Keep It Tight</h4>
+        <p>Simplified doesn't mean sloppy. It means concise, focused, and easy for the evaluator to score.</p>
+    </div>
+    <div class="slide-footer">
+        <span class="logo">GovCon Giants</span>
+        <span>Session 2: Simplified Acquisitions</span>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SLIDE 16: LPTA vs Best Value -->
+<!-- ============================================ -->
+<div class="slide slide-content">
+    <div class="header">
+        <h2>LPTA vs. Best Value</h2>
+        <span class="session-tag">Strategy</span>
+    </div>
+    <div class="compare-grid">
+        <div class="compare-col bad" style="background: #fef3c7; border-color: #fbbf24;">
+            <h3 style="color: #92400e;">LPTA (Lowest Price Technically Acceptable)</h3>
+            <ul>
+                <li>Price is the deciding factor</li>
+                <li>Technical is pass/fail</li>
+                <li>Meet requirements - nothing more</li>
+                <li>Don't over-engineer</li>
+                <li>Focus on lowest compliant price</li>
+            </ul>
+        </div>
+        <div class="compare-col good">
+            <h3>Best Value</h3>
+            <ul>
+                <li>Technical quality matters</li>
+                <li>Higher price can win</li>
+                <li>Discriminators count</li>
+                <li>Emphasize strengths</li>
+                <li>Worth investing in quality</li>
+            </ul>
+        </div>
+    </div>
+    <div class="highlight-box">
+        <h4>Know Your Evaluation Type</h4>
+        <p>Your entire strategy changes based on whether it's LPTA or Best Value. Check Section M carefully.</p>
+    </div>
+    <div class="slide-footer">
+        <span class="logo">GovCon Giants</span>
+        <span>Session 2: Simplified Acquisitions</span>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- BREAK -->
+<!-- ============================================ -->
+<div class="slide slide-break">
+    <div class="break-icon">*</div>
+    <h2>15-Minute Break</h2>
+    <p>11:00 AM - 11:15 AM</p>
+</div>
+
+<!-- ============================================ -->
+<!-- SESSION 3: Technical Approach & Past Performance -->
+<!-- ============================================ -->
+<div class="slide slide-section" style="background: linear-gradient(135deg, #ea580c 0%, #f97316 100%);">
+    <div class="session-num">Session 3 of 6</div>
+    <h2>Technical Approach &<br>Past Performance</h2>
+    <span class="time-badge">11:15 AM - 12:30 PM (75 min)</span>
+</div>
+
+<!-- ============================================ -->
+<!-- SLIDE 19: Technical Approach -->
+<!-- ============================================ -->
+<div class="slide slide-key-point" style="background: linear-gradient(135deg, #ea580c 0%, #f97316 100%);">
+    <h2>Your technical approach tells the<br>evaluator HOW you'll do the work</h2>
+    <p>Not what you CAN do. Not what you've DONE. How you WILL deliver on THIS contract.</p>
+</div>
+
+<!-- ============================================ -->
+<!-- SLIDE 20: Technical Approach Structure -->
+<!-- ============================================ -->
+<div class="slide slide-content">
+    <div class="header">
+        <h2>Technical Approach Structure</h2>
+        <span class="session-tag">Framework</span>
+    </div>
+    <ul class="numbered-list">
+        <li>Understanding: Demonstrate you grasp the requirement</li>
+        <li>Approach: Your methodology to accomplish objectives</li>
+        <li>Management: How you'll manage the contract</li>
+        <li>Staffing: Key personnel and organization</li>
+        <li>Quality Control: How you ensure deliverables meet standards</li>
+    </ul>
+    <div class="slide-footer">
+        <span class="logo">GovCon Giants</span>
+        <span>Session 3: Technical Approach</span>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SLIDE 21: Understanding Section -->
+<!-- ============================================ -->
+<div class="slide slide-content">
+    <div class="header">
+        <h2>Writing the Understanding Section</h2>
+        <span class="session-tag">Technical</span>
+    </div>
+    <div class="two-col">
+        <div class="col">
+            <h3>Do This</h3>
+            <ul>
+                <li>Restate key objectives in your words</li>
+                <li>Identify critical success factors</li>
+                <li>Note potential challenges</li>
+                <li>Show you've done your research</li>
+            </ul>
+        </div>
+        <div class="col">
+            <h3>Don't Do This</h3>
+            <ul>
+                <li>Copy-paste from the RFP</li>
+                <li>Use generic statements</li>
+                <li>Ignore agency context</li>
+                <li>Miss key requirements</li>
+            </ul>
+        </div>
+    </div>
+    <div class="highlight-box">
+        <h4>The Goal</h4>
+        <p>"This offeror clearly understands what we need and why it matters."</p>
+    </div>
+    <div class="slide-footer">
+        <span class="logo">GovCon Giants</span>
+        <span>Session 3: Technical Approach</span>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SLIDE 22: Win Themes -->
+<!-- ============================================ -->
+<div class="slide slide-content">
+    <div class="header">
+        <h2>Developing Win Themes</h2>
+        <span class="session-tag">Strategy</span>
+    </div>
+    <ul>
+        <li>Win themes are compelling reasons to choose YOU</li>
+        <li>Each theme should connect to evaluation criteria</li>
+        <li>Repeat themes throughout your proposal</li>
+        <li>Support themes with evidence (data, experience)</li>
+        <li>3-5 themes maximum per proposal</li>
+    </ul>
+    <div class="highlight-box">
+        <h4>Example Win Theme</h4>
+        <p>"Our proven rapid deployment methodology reduces implementation time by 40%, ensuring the agency achieves mission objectives faster."</p>
+    </div>
+    <div class="slide-footer">
+        <span class="logo">GovCon Giants</span>
+        <span>Session 3: Technical Approach</span>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SLIDE 23: Past Performance -->
+<!-- ============================================ -->
+<div class="slide slide-content">
+    <div class="header">
+        <h2>Past Performance: The Proof</h2>
+        <span class="session-tag">Evidence</span>
+    </div>
+    <ul>
+        <li>Past performance proves you can deliver what you promise</li>
+        <li>Relevance matters more than recency</li>
+        <li>Demonstrate similar scope, size, and complexity</li>
+        <li>Include problems solved and results achieved</li>
+        <li>Government contracts carry more weight than commercial</li>
+    </ul>
+    <div class="highlight-box">
+        <h4>No Federal Experience?</h4>
+        <p>Use state/local government, subcontracts, or commercial contracts with similar scope. Frame relevance clearly.</p>
+    </div>
+    <div class="slide-footer">
+        <span class="logo">GovCon Giants</span>
+        <span>Session 3: Technical Approach</span>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SLIDE 24: STAR Method -->
+<!-- ============================================ -->
+<div class="slide slide-content">
+    <div class="header">
+        <h2>The STAR Method for Past Performance</h2>
+        <span class="session-tag">Format</span>
+    </div>
+    <div class="section-boxes">
+        <div class="section-box">
+            <h4>S - Situation</h4>
+            <p>Describe the client's challenge or need you were hired to address.</p>
+        </div>
+        <div class="section-box">
+            <h4>T - Task</h4>
+            <p>Explain your specific responsibilities and the scope of work.</p>
+        </div>
+        <div class="section-box">
+            <h4>A - Action</h4>
+            <p>Detail the approach and methods you used to accomplish the task.</p>
+        </div>
+    </div>
+    <div class="section-boxes" style="margin-top: 20px;">
+        <div class="section-box">
+            <h4>R - Result</h4>
+            <p>Quantify the outcomes: savings, improvements, metrics achieved.</p>
+        </div>
+        <div class="section-box" style="grid-column: span 2;">
+            <h4>Relevance Statement</h4>
+            <p>Explicitly connect this experience to the current requirement: "This experience demonstrates our ability to..."</p>
+        </div>
+    </div>
+    <div class="slide-footer">
+        <span class="logo">GovCon Giants</span>
+        <span>Session 3: Technical Approach</span>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- LUNCH -->
+<!-- ============================================ -->
+<div class="slide slide-break">
+    <div class="break-icon">*</div>
+    <h2>Lunch Break</h2>
+    <p>12:30 PM - 1:15 PM (45 minutes)</p>
+</div>
+
+<!-- ============================================ -->
+<!-- SESSION 4: Compliance Matrix Workshop -->
+<!-- ============================================ -->
+<div class="slide slide-section" style="background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);">
+    <div class="session-num">Session 4 of 6</div>
+    <h2>WORKSHOP:<br>Build Your Compliance Matrix</h2>
+    <span class="time-badge">1:15 PM - 2:15 PM (60 min)</span>
+</div>
+
+<!-- ============================================ -->
+<!-- SLIDE 27: Why Compliance Matrix -->
+<!-- ============================================ -->
+<div class="slide slide-key-point" style="background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);">
+    <h2>The compliance matrix is your<br>proposal's foundation</h2>
+    <p>Before you write a single word of your response, you need to know every requirement you must address.</p>
+</div>
+
+<!-- ============================================ -->
+<!-- SLIDE 28: Compliance Matrix Structure -->
+<!-- ============================================ -->
+<div class="slide slide-table">
+    <h2>Compliance Matrix Structure</h2>
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>RFP Ref</th>
+                <th>Requirement</th>
+                <th>Response Section</th>
+                <th>Page Limit</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>L.5.1</td>
+                <td>Technical approach to Task 1</td>
+                <td>Vol I, Section 2.1</td>
+                <td>5 pages</td>
+                <td>In Progress</td>
+            </tr>
+            <tr>
+                <td>L.5.2</td>
+                <td>Staffing plan with org chart</td>
+                <td>Vol I, Section 3.0</td>
+                <td>3 pages</td>
+                <td>Draft Complete</td>
+            </tr>
+            <tr>
+                <td>L.6.1</td>
+                <td>3 relevant past performance refs</td>
+                <td>Vol II, Section 1.0</td>
+                <td>2 pages each</td>
+                <td>Not Started</td>
+            </tr>
+            <tr>
+                <td>L.7.1</td>
+                <td>Completed pricing schedule</td>
+                <td>Vol III</td>
+                <td>N/A</td>
+                <td>In Progress</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="highlight-box">
+        <h4>Every Requirement Tracked</h4>
+        <p>If it's in Section L or M, it goes in your matrix. Missing even one requirement can disqualify your proposal.</p>
+    </div>
+    <div class="slide-footer">
+        <span class="logo">GovCon Giants</span>
+        <span>Session 4: Compliance Matrix</span>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SLIDE 29: Workshop -->
+<!-- ============================================ -->
+<div class="slide slide-workshop">
+    <div class="header">
+        <h2>WORKSHOP: Build Your Matrix</h2>
+        <span class="workshop-tag">Hands-On</span>
+    </div>
+    <div class="workshop-box">
+        <h3>Using a Real RFP from SAM.gov</h3>
+        <div class="workshop-steps">
+            <div class="workshop-step">
+                <div class="num">1</div>
+                <p>Read Section L (Instructions)</p>
+            </div>
+            <div class="workshop-step">
+                <div class="num">2</div>
+                <p>Extract every requirement</p>
+            </div>
+            <div class="workshop-step">
+                <div class="num">3</div>
+                <p>Map to response sections</p>
+            </div>
+            <div class="workshop-step">
+                <div class="num">4</div>
+                <p>Note page limits & formats</p>
+            </div>
+        </div>
+    </div>
+    <div class="highlight-box">
+        <h4>Deliverable</h4>
+        <p>You'll have a completed compliance matrix template you can reuse for every future proposal.</p>
+    </div>
+    <div class="slide-footer">
+        <span class="logo">GovCon Giants</span>
+        <span>Session 4: Compliance Matrix</span>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- BREAK -->
+<!-- ============================================ -->
+<div class="slide slide-break">
+    <div class="break-icon">*</div>
+    <h2>15-Minute Break</h2>
+    <p>2:15 PM - 2:30 PM</p>
+</div>
+
+<!-- ============================================ -->
+<!-- SESSION 5: Task Orders -->
+<!-- ============================================ -->
+<div class="slide slide-section" style="background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);">
+    <div class="session-num">Session 5 of 6</div>
+    <h2>GSA Schedule &<br>GWAC Task Orders</h2>
+    <span class="time-badge">2:30 PM - 3:30 PM (60 min)</span>
+</div>
+
+<!-- ============================================ -->
+<!-- SLIDE 32: Why Task Orders -->
+<!-- ============================================ -->
+<div class="slide slide-key-point" style="background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);">
+    <h2>Task orders are where the<br>real money flows</h2>
+    <p>Having a contract vehicle (GSA Schedule, GWAC) is just the start. Winning task orders is the goal.</p>
+</div>
+
+<!-- ============================================ -->
+<!-- SLIDE 33: Task Order vs Open Market -->
+<!-- ============================================ -->
+<div class="slide slide-content">
+    <div class="header">
+        <h2>Task Order vs. Open Market Proposals</h2>
+        <span class="session-tag">Comparison</span>
+    </div>
+    <div class="compare-grid">
+        <div class="compare-col" style="background: #f0fdfa; border-color: #5eead4;">
+            <h3 style="color: #0d9488;">Task Order Proposals</h3>
+            <ul>
+                <li>Compete against schedule holders</li>
+                <li>Faster turnaround (often 7-14 days)</li>
+                <li>Already pre-vetted via contract</li>
+                <li>Pricing already negotiated</li>
+                <li>Shorter technical responses</li>
+                <li>eBuy is primary platform</li>
+            </ul>
+        </div>
+        <div class="compare-col" style="background: #eff6ff; border-color: #93c5fd;">
+            <h3 style="color: var(--primary);">Open Market (SAM.gov)</h3>
+            <ul>
+                <li>Compete against everyone</li>
+                <li>Longer timelines (30-60+ days)</li>
+                <li>Must prove qualifications</li>
+                <li>Negotiate pricing each time</li>
+                <li>Full proposal volumes</li>
+                <li>Posted on SAM.gov</li>
+            </ul>
+        </div>
+    </div>
+    <div class="slide-footer">
+        <span class="logo">GovCon Giants</span>
+        <span>Session 5: Task Orders</span>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SLIDE 34: eBuy Response Format -->
+<!-- ============================================ -->
+<div class="slide slide-content">
+    <div class="header">
+        <h2>eBuy Response Format</h2>
+        <span class="session-tag">Template</span>
+    </div>
+    <ul class="numbered-list">
+        <li>Cover Letter with GSA Schedule info</li>
+        <li>Technical Approach (usually 5-10 pages)</li>
+        <li>Relevant Experience (2-3 examples)</li>
+        <li>Key Personnel resumes</li>
+        <li>Pricing based on your schedule rates</li>
+    </ul>
+    <div class="highlight-box">
+        <h4>Turnaround Time</h4>
+        <p>eBuy responses typically have 7-14 day deadlines. Have your templates ready BEFORE opportunities post.</p>
+    </div>
+    <div class="slide-footer">
+        <span class="logo">GovCon Giants</span>
+        <span>Session 5: Task Orders</span>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SLIDE 35: Common GWAC Vehicles -->
+<!-- ============================================ -->
+<div class="slide slide-content">
+    <div class="header">
+        <h2>Major GWAC Vehicles</h2>
+        <span class="session-tag">Reference</span>
+    </div>
+    <div class="section-boxes">
+        <div class="section-box">
+            <h4>8(a) STARS III</h4>
+            <p>IT services for 8(a) certified small businesses. $50B ceiling.</p>
+        </div>
+        <div class="section-box">
+            <h4>OASIS+</h4>
+            <p>Professional services. Multiple pools including small business.</p>
+        </div>
+        <div class="section-box">
+            <h4>Alliant 2</h4>
+            <p>IT solutions. Both small business and unrestricted pools.</p>
+        </div>
+        <div class="section-box">
+            <h4>CIO-SP3</h4>
+            <p>IT services for NIH and other agencies. Small business pool.</p>
+        </div>
+        <div class="section-box">
+            <h4>GSA MAS</h4>
+            <p>Multiple Award Schedule. Over 11M products and services.</p>
+        </div>
+        <div class="section-box">
+            <h4>SEWP V</h4>
+            <p>IT hardware, software, and services through NASA.</p>
+        </div>
+    </div>
+    <div class="slide-footer">
+        <span class="logo">GovCon Giants</span>
+        <span>Session 5: Task Orders</span>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SLIDE 36: Task Order Pricing -->
+<!-- ============================================ -->
+<div class="slide slide-content">
+    <div class="header">
+        <h2>Task Order Pricing Strategy</h2>
+        <span class="session-tag">Pricing</span>
+    </div>
+    <ul>
+        <li>Your GSA rates are the CEILING, not the floor</li>
+        <li>Discounting is expected for competitive task orders</li>
+        <li>Volume discounts can win larger awards</li>
+        <li>Consider blended rates for teams</li>
+        <li>Price to win, but protect your margins</li>
+    </ul>
+    <div class="highlight-box">
+        <h4>The Balance</h4>
+        <p>Task orders often go to lowest price technically acceptable (LPTA). Know when to compete on price vs. quality.</p>
+    </div>
+    <div class="slide-footer">
+        <span class="logo">GovCon Giants</span>
+        <span>Session 5: Task Orders</span>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SESSION 6: Technical Approach Workshop -->
+<!-- ============================================ -->
+<div class="slide slide-section" style="background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);">
+    <div class="session-num">Session 6 of 6</div>
+    <h2>WORKSHOP:<br>Draft Your Technical Approach</h2>
+    <span class="time-badge">3:30 PM - 4:30 PM (60 min)</span>
+</div>
+
+<!-- ============================================ -->
+<!-- SLIDE 38: Workshop Setup -->
+<!-- ============================================ -->
+<div class="slide slide-workshop" style="background: linear-gradient(180deg, white 0%, #fef2f2 100%);">
+    <div class="header">
+        <h2>WORKSHOP: Write Your Approach</h2>
+        <span class="workshop-tag" style="background: #dc2626;">Hands-On</span>
+    </div>
+    <div class="workshop-box" style="border-color: #dc2626;">
+        <h3 style="color: #dc2626;">Using an Opportunity from Your Pipeline</h3>
+        <div class="workshop-steps">
+            <div class="workshop-step" style="background: #fef2f2;">
+                <div class="num" style="background: #dc2626;">1</div>
+                <p>Develop your win themes</p>
+            </div>
+            <div class="workshop-step" style="background: #fef2f2;">
+                <div class="num" style="background: #dc2626;">2</div>
+                <p>Draft Understanding section</p>
+            </div>
+            <div class="workshop-step" style="background: #fef2f2;">
+                <div class="num" style="background: #dc2626;">3</div>
+                <p>Outline Technical Approach</p>
+            </div>
+            <div class="workshop-step" style="background: #fef2f2;">
+                <div class="num" style="background: #dc2626;">4</div>
+                <p>Get live feedback</p>
+            </div>
+        </div>
+    </div>
+    <div class="highlight-box">
+        <h4>Deliverable</h4>
+        <p>A framework for your next proposal that you can refine and submit.</p>
+    </div>
+    <div class="slide-footer">
+        <span class="logo">GovCon Giants</span>
+        <span>Session 6: Technical Approach Workshop</span>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SLIDE 39: Win Theme Development -->
+<!-- ============================================ -->
+<div class="slide slide-content">
+    <div class="header">
+        <h2>Developing Your Win Themes</h2>
+        <span class="session-tag">Exercise</span>
+    </div>
+    <ul class="numbered-list">
+        <li>What can you do that competitors can't?</li>
+        <li>What unique experience do you bring?</li>
+        <li>What risks do you mitigate for the government?</li>
+        <li>How do you reduce cost/time/complexity?</li>
+        <li>What makes your approach innovative?</li>
+    </ul>
+    <div class="highlight-box">
+        <h4>Exercise</h4>
+        <p>Write down 3-5 win themes for your target opportunity. Each should be one sentence that starts with "We..."</p>
+    </div>
+    <div class="slide-footer">
+        <span class="logo">GovCon Giants</span>
+        <span>Session 6: Technical Approach Workshop</span>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- BREAK -->
+<!-- ============================================ -->
+<div class="slide slide-break">
+    <div class="break-icon">*</div>
+    <h2>15-Minute Break</h2>
+    <p>4:30 PM - 4:45 PM</p>
+</div>
+
+<!-- ============================================ -->
+<!-- SLIDE 41: Q&A -->
+<!-- ============================================ -->
+<div class="slide slide-section" style="background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);">
+    <div class="session-num">4:45 PM - 5:00 PM</div>
+    <h2>Open Q&A + Next Steps</h2>
+    <span class="time-badge">15 Minutes</span>
+</div>
+
+<!-- ============================================ -->
+<!-- SLIDE 42: What You Received -->
+<!-- ============================================ -->
+<div class="slide slide-content">
+    <div class="header">
+        <h2>What You Received Today</h2>
+        <span class="session-tag">Deliverables</span>
+    </div>
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="value">1</div>
+            <div class="label">Compliance Matrix Template</div>
+        </div>
+        <div class="stat-card">
+            <div class="value">1</div>
+            <div class="label">Technical Approach Framework</div>
+        </div>
+        <div class="stat-card">
+            <div class="value">1</div>
+            <div class="label">Past Performance Template</div>
+        </div>
+        <div class="stat-card">
+            <div class="value">1</div>
+            <div class="label">Win Theme Worksheet</div>
+        </div>
+    </div>
+    <div class="highlight-box" style="margin-top: 40px;">
+        <h4>Plus These Resources</h4>
+        <p>Bid/No-Bid Tool | Pricing Worksheet | Sample Proposals | eBuy Response Template | Full Recording</p>
+    </div>
+    <div class="slide-footer">
+        <span class="logo">GovCon Giants</span>
+        <span>February 28, 2026</span>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SLIDE 43: 30-Day Action Plan -->
+<!-- ============================================ -->
+<div class="slide slide-content">
+    <div class="header">
+        <h2>Your 30-Day Proposal Action Plan</h2>
+        <span class="session-tag">Next Steps</span>
+    </div>
+    <div class="two-col">
+        <div class="col">
+            <h3>Week 1-2</h3>
+            <ul>
+                <li>Complete compliance matrix template</li>
+                <li>Build your past performance library</li>
+                <li>Identify 3 target opportunities</li>
+                <li>Set up eBuy alerts (if applicable)</li>
+            </ul>
+        </div>
+        <div class="col">
+            <h3>Week 3-4</h3>
+            <ul>
+                <li>Submit first simplified acquisition</li>
+                <li>Draft technical approach sections</li>
+                <li>Request capability statement reviews</li>
+                <li>Respond to a Sources Sought</li>
+            </ul>
+        </div>
+    </div>
+    <div class="highlight-box">
+        <h4>Accountability</h4>
+        <p>Post your proposal progress in the Pro community. Get feedback before you submit!</p>
+    </div>
+    <div class="slide-footer">
+        <span class="logo">GovCon Giants</span>
+        <span>February 28, 2026</span>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SLIDE 44: Thank You -->
+<!-- ============================================ -->
+<div class="slide slide-cta">
+    <h2>Thank You!</h2>
+    <p>Questions? Reach out in the Pro community or email support@govcongiants.com</p>
+    <div class="cta-box">
+        <p>Recording available within 48 hours at</p>
+        <strong>federalhelpcenter.com/pro</strong>
+    </div>
+</div>
+
+</body>
+</html>

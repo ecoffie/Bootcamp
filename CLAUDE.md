@@ -1,6 +1,6 @@
 # GovCon Giants - Bootcamp Project
 
-**Last Updated:** February 23, 2026
+**Last Updated:** February 24, 2026
 **Owner:** Eric Coffie
 **Purpose:** Federal contracting bootcamp materials, marketing assets, and business tools
 
@@ -42,7 +42,7 @@ This repository contains all GovCon Giants resources for helping small businesse
 - `january-hit-list-*.html` — Contract opportunity hit lists
 - `january-*.html` — January bootcamp materials
 - `product-*.html` — Product/tool landing pages
-- `youtube-live-*-slides.html` — 14 YouTube Live slide decks (308 total slides)
+- `youtube-live-*-slides.html` — 12 YouTube Live slide decks
 - `tier1-batch-*.csv` / `tier2-batch-*.csv` — Contractor research batches
 - `highlevel-kb-*.md` — AI chatbot knowledge base (30 topics)
 - `*.py` — Data processing, scraping, and hit list scripts
@@ -56,7 +56,7 @@ For specifics, see these docs:
 | Doc | Contents |
 |-----|----------|
 | [docs/bootcamps.md](docs/bootcamps.md) | All bootcamp events, presentations, handouts, webinars |
-| [docs/youtube-lives.md](docs/youtube-lives.md) | 14 slide decks, scripts, thumbnails, content strategy |
+| [docs/youtube-lives.md](docs/youtube-lives.md) | 12 slide decks, scripts, thumbnails, content strategy |
 | [docs/email-sequences.md](docs/email-sequences.md) | All 4 email sequences (40 emails total) |
 | [docs/databases.md](docs/databases.md) | SBLO, Tier 1, Tier 2, contractor databases, KB, Python scripts |
 | [docs/vault.md](docs/vault.md) | The Vault premium doc library — architecture, deployment, gotchas |
@@ -127,7 +127,6 @@ SAM.gov, USAspending.gov, FPDS, SBA Prime Directory, Agency strategic plans, GAO
 
 ## Pending Tasks
 
-- [ ] Create consolidated pain points/priorities database (CSV format)
-- [ ] Update SBLO contacts quarterly
-- [ ] Generate February 2026 hit lists
+- [ ] Generate March 2026 hit lists
+- [ ] Update SBLO contacts (Q2 2026)
 - [ ] Update expiring contracts data monthly

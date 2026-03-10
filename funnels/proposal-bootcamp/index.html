@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Proposal Resources | GovCon Giants</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0f172a;
+            --navy-light: #1e293b;
+            --green: #4ade80;
+            --green-dark: #059669;
+            --red: #ef4444;
+            --purple: #7c3aed;
+            --gold: #fbbf24;
+            --white: #ffffff;
+            --gray: #94a3b8;
+            --gray-light: #e2e8f0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--navy);
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* NAV */
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .nav-logo {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--white);
+            text-decoration: none;
+        }
+        .nav-logo span { color: var(--green); }
+        .nav-cta {
+            background: var(--green-dark);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .nav-cta:hover { background: #047857; }
+
+        /* HERO */
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 40px 40px;
+            text-align: center;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(74, 222, 128, 0.15);
+            color: var(--green);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+        }
+        .hero h1 {
+            font-size: clamp(36px, 5vw, 64px);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        .hero h1 .green { color: var(--green); }
+        .hero h1 .red { color: var(--red); }
+        .hero-sub {
+            font-size: 20px;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        /* STAT BAR */
+        .stat-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto 60px;
+        }
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+        }
+        .stat-num {
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--green);
+        }
+        .stat-num.red { color: var(--red); }
+        .stat-label {
+            font-size: 13px;
+            color: var(--gray);
+            margin-top: 4px;
+        }
+
+        /* FORM SECTION */
+        .form-section {
+            max-width: 600px;
+            margin: 0 auto 80px;
+            padding: 0 40px;
+        }
+        .form-box {
+            background: var(--navy-light);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 40px;
+        }
+        .form-box h2 {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        .form-box .form-sub {
+            color: var(--gray);
+            font-size: 14px;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .form-input {
+            width: 100%;
+            padding: 14px 16px;
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            color: white;
+            font-size: 15px;
+            font-family: 'Inter', sans-serif;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .form-input:focus { border-color: var(--green); }
+        .form-input::placeholder { color: rgba(255,255,255,0.35); }
+        .form-input.full { margin-bottom: 12px; }
+        .form-btn {
+            width: 100%;
+            padding: 16px;
+            background: var(--green-dark);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 4px;
+        }
+        .form-btn:hover { background: #047857; }
+
+        /* WHAT YOU GET */
+        .downloads-section {
+            max-width: 1000px;
+            margin: 0 auto 80px;
+            padding: 0 40px;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+        .section-sub {
+            text-align: center;
+            color: var(--gray);
+            font-size: 16px;
+            margin-bottom: 40px;
+        }
+        .download-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .download-card {
+            background: var(--navy-light);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 14px;
+            padding: 28px;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+        .download-card:hover {
+            border-color: rgba(74, 222, 128, 0.3);
+            transform: translateY(-2px);
+        }
+        .download-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(74, 222, 128, 0.12);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            margin-bottom: 16px;
+        }
+        .download-card h3 {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .download-card p {
+            font-size: 14px;
+            color: var(--gray);
+            line-height: 1.5;
+        }
+        .download-card .tag {
+            display: inline-block;
+            background: rgba(74, 222, 128, 0.12);
+            color: var(--green);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-top: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .download-card .tag.purple {
+            background: rgba(124, 58, 237, 0.12);
+            color: #a78bfa;
+        }
+
+        /* WHY SECTION */
+        .why-section {
+            max-width: 900px;
+            margin: 0 auto 80px;
+            padding: 0 40px;
+        }
+        .why-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        .why-col h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .why-col h3.green { color: var(--green); }
+        .why-col h3.red { color: var(--red); }
+        .why-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 14px;
+            font-size: 15px;
+            color: rgba(255,255,255,0.85);
+        }
+        .why-item .check { color: var(--green); flex-shrink: 0; }
+        .why-item .x { color: var(--red); flex-shrink: 0; opacity: 0.7; }
+
+        /* FOOTER */
+        .footer {
+            text-align: center;
+            padding: 40px;
+            color: var(--gray);
+            font-size: 13px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        .footer a { color: var(--green); text-decoration: none; }
+
+        /* DISCLAIMER */
+        .disclaimer {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 40px 40px;
+            text-align: center;
+            font-size: 11px;
+            color: rgba(255,255,255,0.3);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .stat-bar { grid-template-columns: repeat(2, 1fr); }
+            .form-row { grid-template-columns: 1fr; }
+            .why-grid { grid-template-columns: 1fr; }
+            .hero { padding: 40px 20px 20px; }
+            .nav { padding: 16px 20px; }
+        }
+
+        @media (max-width: 480px) {
+            .stat-bar { grid-template-columns: 1fr 1fr; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav class="nav">
+        <a href="https://govcongiants.org" class="nav-logo">GovCon <span>Giants</span></a>
+        <a href="https://federalhelpcenter.com/pro" class="nav-cta">Join FHC Pro</a>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-badge">FREE PROPOSAL RESOURCES — FEBRUARY 2026</div>
+        <h1><span class="green">50%</span> of Federal Contracts <span class="red">Never Hit SAM.gov</span></h1>
+        <p class="hero-sub">Task orders, IDIQs, and blanket purchase agreements account for half of all federal contract dollars. Learn how to find them — and how to write proposals that win them.</p>
+
+        <div class="stat-bar">
+            <div class="stat-item">
+                <div class="stat-num">50%</div>
+                <div class="stat-label">Of $ Through Task Orders</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num">$350B+</div>
+                <div class="stat-label">Annually via IDIQs</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num">5–10</div>
+                <div class="stat-label">Avg. Competitors</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num red">&lt;5%</div>
+                <div class="stat-label">Respond to Sources Sought</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORM -->
+    <section class="form-section">
+        <div class="form-box">
+            <h2>Get All 5 Resources Free</h2>
+            <p class="form-sub">Download instantly. No webinar. No waiting.</p>
+            <form id="leadForm">
+                <div class="form-row">
+                    <input type="text" name="firstName" class="form-input" placeholder="First Name" required>
+                    <input type="text" name="lastName" class="form-input" placeholder="Last Name" required>
+                </div>
+                <input type="email" name="email" class="form-input full" placeholder="Email Address" required>
+                <input type="tel" name="phone" class="form-input full" placeholder="Phone Number">
+                <button type="submit" class="form-btn">Get Free Proposal Resources →</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- DOWNLOADS -->
+    <section class="downloads-section">
+        <h2 class="section-title">What You'll Get</h2>
+        <p class="section-sub">5 proposal resources built for contractors who want to win task orders — not just find them.</p>
+
+        <div class="download-grid">
+            <div class="download-card">
+                <div class="download-icon">📄</div>
+                <h3>IDIQ Task Order Response Template</h3>
+                <p>Fill-in-the-blank framework for responding to task order solicitations. Technical approach, staffing, past performance, and pricing sections — all templated.</p>
+                <span class="tag">Template</span>
+            </div>
+
+            <div class="download-card">
+                <div class="download-icon">📊</div>
+                <h3>50 Active IDIQ Vehicles</h3>
+                <p>Active IDIQ contracts across civilian and defense agencies. Vehicle name, agency, NAICS codes, ceiling value, and ordering period end dates.</p>
+                <span class="tag purple">Sample from Recompete Tracker</span>
+            </div>
+
+            <div class="download-card">
+                <div class="download-icon">📋</div>
+                <h3>Sources Sought Response Template</h3>
+                <p>Less than 5% of contractors respond to Sources Sought notices. This template makes it easy — fill it out and you're automatically in the top 5%.</p>
+                <span class="tag">Template</span>
+            </div>
+
+            <div class="download-card">
+                <div class="download-icon">✅</div>
+                <h3>Task Order Proposal Checklist</h3>
+                <p>Pre-submit checklist: compliance, formatting, evaluation criteria alignment, pricing verification, and volume page counts. Never submit non-compliant again.</p>
+                <span class="tag">Checklist</span>
+            </div>
+
+            <div class="download-card">
+                <div class="download-icon">🎯</div>
+                <h3>10 IDIQ Vehicles Every Small Business Should Know</h3>
+                <p>GSA MAS, OASIS+, CIO-SP4, SEWP, Alliant 3 and more — what they are in plain English, who can use them, and how to get on them.</p>
+                <span class="tag">Guide</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY THIS MATTERS -->
+    <section class="why-section">
+        <h2 class="section-title">Two Worlds of Federal Contracting</h2>
+        <p class="section-sub">Most contractors only know about one of them.</p>
+
+        <div class="why-grid">
+            <div class="why-col">
+                <h3 class="red">World 1: Full & Open (SAM.gov)</h3>
+                <div class="why-item"><span class="x">✕</span> 20–100+ competitors per opportunity</div>
+                <div class="why-item"><span class="x">✕</span> 2–5% win rate</div>
+                <div class="why-item"><span class="x">✕</span> 50–200 page proposals</div>
+                <div class="why-item"><span class="x">✕</span> 6–18 month timeline to award</div>
+                <div class="why-item"><span class="x">✕</span> Everyone knows about these</div>
+            </div>
+            <div class="why-col">
+                <h3 class="green">World 2: Task Orders (IDIQs)</h3>
+                <div class="why-item"><span class="check">✓</span> 5–10 competitors per task order</div>
+                <div class="why-item"><span class="check">✓</span> 15–30% win rate</div>
+                <div class="why-item"><span class="check">✓</span> 10–30 page proposals</div>
+                <div class="why-item"><span class="check">✓</span> 30–60 day award timeline</div>
+                <div class="why-item"><span class="check">✓</span> Most contractors don't know these exist</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DISCLAIMER -->
+    <div class="disclaimer">
+        By providing your information, you are giving consent for us or our partners to contact you by mail, phone, text, or email using automated telephone dialing system to the data provided, even if the phone number is present on a state or national Do Not Call list. We do not sell your personal information to other companies, and you can withdraw consent at any time. Consent is not a condition of any purchase. By submitting this form, you agree to our Privacy Policy and Terms of Service.
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <a href="https://govcongiants.org">GovCon Giants</a> • <a href="https://federalhelpcenter.com">Federal Help Center</a> • <a href="https://shop.govcongiants.org">Shop</a>
+    </footer>
+
+    <script>
+        document.getElementById('leadForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Processing...';
+            submitBtn.disabled = true;
+
+            const firstName = this.querySelector('input[name="firstName"]').value;
+            const lastName = this.querySelector('input[name="lastName"]').value;
+            const email = this.querySelector('input[name="email"]').value;
+            const phone = this.querySelector('input[name="phone"]').value;
+
+            const name = firstName + ' ' + lastName;
+
+            // Store in localStorage
+            localStorage.setItem('leadName', name);
+            localStorage.setItem('leadEmail', email);
+            localStorage.setItem('leadPhone', phone);
+
+            // Send to API (GoHighLevel webhook)
+            try {
+                await fetch('/api/lead', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name,
+                        firstName,
+                        lastName,
+                        email,
+                        phone,
+                        source: 'proposal-bootcamp',
+                        tags: ['feb-proposal-bootcamp']
+                    })
+                });
+            } catch (err) {
+                console.log('API error (continuing anyway):', err);
+            }
+
+            // Redirect to upsell page
+            window.location.href = '2-upsell.html';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>February 2026 Hit List - Proposal-Ready Opportunities</title>
+    <style>
+        @page {
+            size: letter;
+            margin: 0.5in;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 30px;
+            background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%);
+            color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .header .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            font-weight: 300;
+            margin-bottom: 15px;
+        }
+
+        .header .badge {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 20px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .intro-box {
+            background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+            border: 2px solid #c4b5fd;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 40px;
+        }
+
+        .intro-box h2 {
+            color: #5b21b6;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .intro-box p {
+            color: #6d28d9;
+            margin-bottom: 10px;
+        }
+
+        .intro-box ul {
+            margin-left: 20px;
+            color: #6d28d9;
+        }
+
+        .intro-box li {
+            margin-bottom: 5px;
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            color: white;
+            padding: 20px 25px;
+            border-radius: 12px;
+            margin: 40px 0 25px;
+        }
+
+        .section-header h2 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .section-header p {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        .opportunity-card {
+            background: #ffffff;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .opportunity-card:hover {
+            border-color: #7c3aed;
+            box-shadow: 0 8px 20px rgba(124, 58, 237, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .opportunity-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .opportunity-number {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #7c3aed;
+            min-width: 50px;
+        }
+
+        .opportunity-title {
+            flex: 1;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+
+        .badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .badge-simplified {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .badge-full-open {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .badge-task-order {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .badge-sources-sought {
+            background: #f3e8ff;
+            color: #7c3aed;
+        }
+
+        .badge-8a {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .badge-sdvosb {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .badge-wosb {
+            background: #fce7f3;
+            color: #9f1239;
+        }
+
+        .badge-hubzone {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .badge-sb {
+            background: #e0e7ff;
+            color: #3730a3;
+        }
+
+        .badge-beginner {
+            background: #dcfce7;
+            color: #166534;
+            border: 2px solid #86efac;
+        }
+
+        .badge-intermediate {
+            background: #fef3c7;
+            color: #92400e;
+            border: 2px solid #fcd34d;
+        }
+
+        .opportunity-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .detail-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .detail-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
+
+        .detail-value {
+            font-size: 0.95rem;
+            color: #1a1a1a;
+            font-weight: 500;
+        }
+
+        .description {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f9fafb;
+            border-radius: 8px;
+            border-left: 4px solid #7c3aed;
+        }
+
+        .description-text {
+            color: #4b5563;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .why-good {
+            margin-top: 15px;
+            padding: 15px;
+            background: #f0fdf4;
+            border-radius: 8px;
+            border-left: 4px solid #10b981;
+        }
+
+        .why-good h4 {
+            color: #166534;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
+        .why-good p {
+            color: #15803d;
+            font-size: 0.9rem;
+        }
+
+        .link-button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .link-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(124, 58, 237, 0.4);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 30px;
+            background: #f8fafc;
+            border-radius: 12px;
+        }
+
+        .footer h3 {
+            color: #1e3a8a;
+            margin-bottom: 15px;
+        }
+
+        .footer p {
+            color: #6b7280;
+            margin-bottom: 20px;
+        }
+
+        .footer .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 700;
+        }
+
+        @media print {
+            .container { padding: 0; }
+            .opportunity-card { break-inside: avoid; page-break-inside: avoid; }
+            .header, .section-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2rem; }
+            .opportunity-details { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>February 2026 Hit List</h1>
+            <p class="subtitle">Proposal-Ready Opportunities for Practice & Wins</p>
+            <span class="badge">Proposal Writing Surge Companion</span>
+        </div>
+
+        <div class="intro-box">
+            <h2>How to Use This Hit List</h2>
+            <p>These opportunities are curated specifically for proposal writing practice and beginner-to-intermediate contractors:</p>
+            <ul>
+                <li><strong>Simplified Acquisitions</strong> - Great for first-time proposers (shorter responses)</li>
+                <li><strong>Sources Sought</strong> - Low-risk way to get on agency radar before RFPs drop</li>
+                <li><strong>Full & Open (Small)</strong> - Good practice for competitive proposal writing</li>
+                <li><strong>Task Orders</strong> - For those with GSA Schedules or GWAC access</li>
+            </ul>
+            <p style="margin-top: 15px;"><strong>Tip:</strong> Use these opportunities during the Proposal Writing Surge workshops to practice building compliance matrices and drafting technical approaches.</p>
+        </div>
+
+        <!-- SECTION: Simplified Acquisitions -->
+        <div class="section-header">
+            <h2>Simplified Acquisitions (Under $250K)</h2>
+            <p>Perfect for beginners - shorter proposals, faster decisions</p>
+        </div>
+
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <span class="opportunity-number">#1</span>
+                <div>
+                    <div class="opportunity-title">IT Support Services - Help Desk Operations</div>
+                    <div class="badges">
+                        <span class="badge badge-simplified">Simplified</span>
+                        <span class="badge badge-sb">Small Business</span>
+                        <span class="badge badge-beginner">Beginner Friendly</span>
+                    </div>
+                </div>
+            </div>
+            <div class="opportunity-details">
+                <div class="detail-item">
+                    <span class="detail-label">Agency</span>
+                    <span class="detail-value">Department of Agriculture</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Est. Value</span>
+                    <span class="detail-value">$75,000 - $150,000</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">NAICS</span>
+                    <span class="detail-value">541512 - Computer Systems Design</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Response Due</span>
+                    <span class="detail-value">March 15, 2026</span>
+                </div>
+            </div>
+            <div class="description">
+                <p class="description-text">Provide Tier 1 and Tier 2 help desk support for USDA regional office. Services include phone support, ticket management, basic troubleshooting, and escalation procedures. 12-month base with two 12-month options.</p>
+            </div>
+            <div class="why-good">
+                <h4>Why This is Good for Practice</h4>
+                <p>Clear, straightforward requirements. Common IT service scope that many small businesses can perform. Good for building compliance matrix skills with manageable complexity.</p>
+            </div>
+        </div>
+
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <span class="opportunity-number">#2</span>
+                <div>
+                    <div class="opportunity-title">Administrative Support Services</div>
+                    <div class="badges">
+                        <span class="badge badge-simplified">Simplified</span>
+                        <span class="badge badge-wosb">WOSB</span>
+                        <span class="badge badge-beginner">Beginner Friendly</span>
+                    </div>
+                </div>
+            </div>
+            <div class="opportunity-details">
+                <div class="detail-item">
+                    <span class="detail-label">Agency</span>
+                    <span class="detail-value">Department of Interior</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Est. Value</span>
+                    <span class="detail-value">$50,000 - $100,000</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">NAICS</span>
+                    <span class="detail-value">561110 - Office Administrative Services</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Response Due</span>
+                    <span class="detail-value">March 10, 2026</span>
+                </div>
+            </div>
+            <div class="description">
+                <p class="description-text">Administrative support including document preparation, scheduling, correspondence management, and records maintenance for Bureau of Land Management district office. On-site support required 3 days per week.</p>
+            </div>
+            <div class="why-good">
+                <h4>Why This is Good for Practice</h4>
+                <p>WOSB set-aside reduces competition. Simple service requirements with clear deliverables. Excellent first proposal opportunity for administrative services companies.</p>
+            </div>
+        </div>
+
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <span class="opportunity-number">#3</span>
+                <div>
+                    <div class="opportunity-title">Janitorial Services - Federal Building</div>
+                    <div class="badges">
+                        <span class="badge badge-simplified">Simplified</span>
+                        <span class="badge badge-sdvosb">SDVOSB</span>
+                        <span class="badge badge-beginner">Beginner Friendly</span>
+                    </div>
+                </div>
+            </div>
+            <div class="opportunity-details">
+                <div class="detail-item">
+                    <span class="detail-label">Agency</span>
+                    <span class="detail-value">General Services Administration</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Est. Value</span>
+                    <span class="detail-value">$120,000 - $180,000</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">NAICS</span>
+                    <span class="detail-value">561720 - Janitorial Services</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Response Due</span>
+                    <span class="detail-value">March 20, 2026</span>
+                </div>
+            </div>
+            <div class="description">
+                <p class="description-text">Daily janitorial services for 45,000 sq ft federal building. Includes floor care, restroom sanitation, trash removal, and periodic deep cleaning. Must meet Green Seal certification requirements.</p>
+            </div>
+            <div class="why-good">
+                <h4>Why This is Good for Practice</h4>
+                <p>SDVOSB set-aside with clear scope. GSA janitorial contracts have well-established requirements. Good for learning how to address specific compliance requirements (Green Seal).</p>
+            </div>
+        </div>
+
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <span class="opportunity-number">#4</span>
+                <div>
+                    <div class="opportunity-title">Training Development Services</div>
+                    <div class="badges">
+                        <span class="badge badge-simplified">Simplified</span>
+                        <span class="badge badge-8a">8(a)</span>
+                        <span class="badge badge-beginner">Beginner Friendly</span>
+                    </div>
+                </div>
+            </div>
+            <div class="opportunity-details">
+                <div class="detail-item">
+                    <span class="detail-label">Agency</span>
+                    <span class="detail-value">Department of Labor</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Est. Value</span>
+                    <span class="detail-value">$80,000 - $125,000</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">NAICS</span>
+                    <span class="detail-value">611430 - Professional Development Training</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Response Due</span>
+                    <span class="detail-value">March 18, 2026</span>
+                </div>
+            </div>
+            <div class="description">
+                <p class="description-text">Develop and deliver supervisor training curriculum for DOL regional offices. Includes instructional design, course materials, and delivery of 6 two-day training sessions. Virtual delivery acceptable.</p>
+            </div>
+            <div class="why-good">
+                <h4>Why This is Good for Practice</h4>
+                <p>8(a) sole source potential. Training/consulting companies can demonstrate past performance from commercial work. Good for practicing technical approach writing.</p>
+            </div>
+        </div>
+
+        <!-- SECTION: Sources Sought / RFI -->
+        <div class="section-header" style="background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);">
+            <h2>Sources Sought & RFI Notices</h2>
+            <p>Low-risk responses to get on agency radar before RFPs drop</p>
+        </div>
+
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <span class="opportunity-number">#5</span>
+                <div>
+                    <div class="opportunity-title">Cybersecurity Assessment Services - Sources Sought</div>
+                    <div class="badges">
+                        <span class="badge badge-sources-sought">Sources Sought</span>
+                        <span class="badge badge-sb">Small Business</span>
+                    </div>
+                </div>
+            </div>
+            <div class="opportunity-details">
+                <div class="detail-item">
+                    <span class="detail-label">Agency</span>
+                    <span class="detail-value">Department of Homeland Security</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Est. Value</span>
+                    <span class="detail-value">$500,000 - $2,000,000</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">NAICS</span>
+                    <span class="detail-value">541512 - Computer Systems Design</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Response Due</span>
+                    <span class="detail-value">March 5, 2026</span>
+                </div>
+            </div>
+            <div class="description">
+                <p class="description-text">DHS is seeking information from small businesses capable of providing cybersecurity vulnerability assessments, penetration testing, and security compliance audits. Agency is determining if this requirement can be set aside for small business.</p>
+            </div>
+            <div class="why-good">
+                <h4>Why This is Good for Practice</h4>
+                <p>Sources Sought responses are shorter (typically 5-10 pages) and lower stakes. Your response could influence how the agency structures the eventual RFP. Great way to practice capability statements.</p>
+            </div>
+        </div>
+
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <span class="opportunity-number">#6</span>
+                <div>
+                    <div class="opportunity-title">Facilities Maintenance - RFI</div>
+                    <div class="badges">
+                        <span class="badge badge-sources-sought">RFI</span>
+                        <span class="badge badge-hubzone">HUBZone</span>
+                    </div>
+                </div>
+            </div>
+            <div class="opportunity-details">
+                <div class="detail-item">
+                    <span class="detail-label">Agency</span>
+                    <span class="detail-value">Department of Veterans Affairs</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Est. Value</span>
+                    <span class="detail-value">$1,000,000 - $3,000,000</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">NAICS</span>
+                    <span class="detail-value">561210 - Facilities Support Services</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Response Due</span>
+                    <span class="detail-value">March 8, 2026</span>
+                </div>
+            </div>
+            <div class="description">
+                <p class="description-text">VA Medical Center seeking information on facilities maintenance capabilities including HVAC, electrical, plumbing, and general building maintenance. Interested in understanding small business capacity for 5-year IDIQ structure.</p>
+            </div>
+            <div class="why-good">
+                <h4>Why This is Good for Practice</h4>
+                <p>RFI responses let you provide input on contract structure. HUBZone set-aside reduces competition. Responding now positions you for the eventual solicitation.</p>
+            </div>
+        </div>
+
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <span class="opportunity-number">#7</span>
+                <div>
+                    <div class="opportunity-title">Professional Staffing Services - Market Research</div>
+                    <div class="badges">
+                        <span class="badge badge-sources-sought">Sources Sought</span>
+                        <span class="badge badge-wosb">WOSB</span>
+                    </div>
+                </div>
+            </div>
+            <div class="opportunity-details">
+                <div class="detail-item">
+                    <span class="detail-label">Agency</span>
+                    <span class="detail-value">Department of Health and Human Services</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Est. Value</span>
+                    <span class="detail-value">$2,000,000 - $5,000,000</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">NAICS</span>
+                    <span class="detail-value">561320 - Temporary Help Services</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Response Due</span>
+                    <span class="detail-value">March 12, 2026</span>
+                </div>
+            </div>
+            <div class="description">
+                <p class="description-text">HHS seeking information from WOSB-certified companies capable of providing professional staffing services including project managers, business analysts, and administrative support for multiple program offices.</p>
+            </div>
+            <div class="why-good">
+                <h4>Why This is Good for Practice</h4>
+                <p>Perfect for staffing companies. WOSB focus means less competition. Sources Sought response is great practice for the capability summary section of larger proposals.</p>
+            </div>
+        </div>
+
+        <!-- SECTION: Full & Open -->
+        <div class="section-header" style="background: linear-gradient(135deg, #ea580c 0%, #f97316 100%);">
+            <h2>Full & Open Competitions</h2>
+            <p>More complex proposals - good for building skills after simplified acquisitions</p>
+        </div>
+
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <span class="opportunity-number">#8</span>
+                <div>
+                    <div class="opportunity-title">Program Management Support Services</div>
+                    <div class="badges">
+                        <span class="badge badge-full-open">Full & Open</span>
+                        <span class="badge badge-sb">Small Business</span>
+                        <span class="badge badge-intermediate">Intermediate</span>
+                    </div>
+                </div>
+            </div>
+            <div class="opportunity-details">
+                <div class="detail-item">
+                    <span class="detail-label">Agency</span>
+                    <span class="detail-value">Department of Energy</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Est. Value</span>
+                    <span class="detail-value">$500,000 - $1,500,000</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">NAICS</span>
+                    <span class="detail-value">541611 - Administrative Management Consulting</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Response Due</span>
+                    <span class="detail-value">March 28, 2026</span>
+                </div>
+            </div>
+            <div class="description">
+                <p class="description-text">Provide program management support for DOE Office of Science initiatives. Services include schedule management, budget tracking, reporting, stakeholder coordination, and risk management. Requires PMP-certified personnel.</p>
+            </div>
+            <div class="why-good">
+                <h4>Why This is Good for Practice</h4>
+                <p>Typical consulting services RFP with standard evaluation factors. Good for practicing technical approach structure with Understanding, Approach, and Management sections. Longer timeline allows thorough proposal development.</p>
+            </div>
+        </div>
+
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <span class="opportunity-number">#9</span>
+                <div>
+                    <div class="opportunity-title">Engineering Technical Services</div>
+                    <div class="badges">
+                        <span class="badge badge-full-open">Full & Open</span>
+                        <span class="badge badge-8a">8(a)</span>
+                        <span class="badge badge-intermediate">Intermediate</span>
+                    </div>
+                </div>
+            </div>
+            <div class="opportunity-details">
+                <div class="detail-item">
+                    <span class="detail-label">Agency</span>
+                    <span class="detail-value">U.S. Army Corps of Engineers</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Est. Value</span>
+                    <span class="detail-value">$750,000 - $2,000,000</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">NAICS</span>
+                    <span class="detail-value">541330 - Engineering Services</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Response Due</span>
+                    <span class="detail-value">April 5, 2026</span>
+                </div>
+            </div>
+            <div class="description">
+                <p class="description-text">Engineering support services for civil works projects including design review, construction oversight, environmental compliance, and technical documentation. Multiple task order structure with firm-fixed-price and time-and-materials CLINs.</p>
+            </div>
+            <div class="why-good">
+                <h4>Why This is Good for Practice</h4>
+                <p>USACE has well-structured RFPs with clear evaluation criteria. 8(a) set-aside reduces competition. Good for practicing complex proposal structures with multiple volumes.</p>
+            </div>
+        </div>
+
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <span class="opportunity-number">#10</span>
+                <div>
+                    <div class="opportunity-title">Data Analytics and Reporting Services</div>
+                    <div class="badges">
+                        <span class="badge badge-full-open">Full & Open</span>
+                        <span class="badge badge-sb">Small Business</span>
+                        <span class="badge badge-intermediate">Intermediate</span>
+                    </div>
+                </div>
+            </div>
+            <div class="opportunity-details">
+                <div class="detail-item">
+                    <span class="detail-label">Agency</span>
+                    <span class="detail-value">Department of Education</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Est. Value</span>
+                    <span class="detail-value">$400,000 - $800,000</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">NAICS</span>
+                    <span class="detail-value">541519 - Other Computer Related Services</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Response Due</span>
+                    <span class="detail-value">March 25, 2026</span>
+                </div>
+            </div>
+            <div class="description">
+                <p class="description-text">Provide data analytics services including dashboard development, statistical analysis, data visualization, and automated reporting. Must demonstrate experience with Power BI, Tableau, or similar tools. Cloud-based solutions preferred.</p>
+            </div>
+            <div class="why-good">
+                <h4>Why This is Good for Practice</h4>
+                <p>Clear technical requirements that allow you to demonstrate specific capabilities. Good for practicing how to address tool/technology requirements. Strong past performance in similar work can be a differentiator.</p>
+            </div>
+        </div>
+
+        <!-- SECTION: GSA/GWAC Task Orders -->
+        <div class="section-header" style="background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);">
+            <h2>GSA Schedule & GWAC Task Orders</h2>
+            <p>For contractors with existing contract vehicles</p>
+        </div>
+
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <span class="opportunity-number">#11</span>
+                <div>
+                    <div class="opportunity-title">IT Infrastructure Support - GSA Schedule</div>
+                    <div class="badges">
+                        <span class="badge badge-task-order">GSA MAS</span>
+                        <span class="badge badge-sb">Small Business</span>
+                    </div>
+                </div>
+            </div>
+            <div class="opportunity-details">
+                <div class="detail-item">
+                    <span class="detail-label">Agency</span>
+                    <span class="detail-value">Department of Commerce</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Est. Value</span>
+                    <span class="detail-value">$200,000 - $400,000</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Vehicle</span>
+                    <span class="detail-value">GSA MAS - IT Category</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Response Due</span>
+                    <span class="detail-value">March 14, 2026 (eBuy)</span>
+                </div>
+            </div>
+            <div class="description">
+                <p class="description-text">Network administration and infrastructure support for Census Bureau regional office. Includes server management, network monitoring, security patching, and user support. 12-month period with options.</p>
+            </div>
+            <div class="why-good">
+                <h4>Why This is Good for Practice</h4>
+                <p>GSA task orders have faster turnarounds and shorter responses. Good for practicing the eBuy response format. Pricing already negotiated on your schedule simplifies the cost volume.</p>
+            </div>
+        </div>
+
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <span class="opportunity-number">#12</span>
+                <div>
+                    <div class="opportunity-title">Software Development Support - 8(a) STARS III</div>
+                    <div class="badges">
+                        <span class="badge badge-task-order">8(a) STARS III</span>
+                        <span class="badge badge-8a">8(a)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="opportunity-details">
+                <div class="detail-item">
+                    <span class="detail-label">Agency</span>
+                    <span class="detail-value">Department of Transportation</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Est. Value</span>
+                    <span class="detail-value">$500,000 - $1,000,000</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Vehicle</span>
+                    <span class="detail-value">8(a) STARS III GWAC</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Response Due</span>
+                    <span class="detail-value">March 21, 2026</span>
+                </div>
+            </div>
+            <div class="description">
+                <p class="description-text">Agile software development support for FAA internal applications. Includes full-stack development, DevSecOps, testing, and documentation. Must demonstrate experience with AWS GovCloud and FedRAMP requirements.</p>
+            </div>
+            <div class="why-good">
+                <h4>Why This is Good for Practice</h4>
+                <p>GWAC task orders for 8(a) contractors only. Technical requirements are specific, allowing you to demonstrate relevant experience. Good for practicing Agile/DevOps proposal writing.</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <h3>Ready to Write Winning Proposals?</h3>
+            <p>Join the Proposal Writing Surge on February 28th to learn how to respond to these opportunities effectively.</p>
+            <a href="https://federalhelpcenter.com/pro" class="cta-button">Join Pro & Get Surge Access</a>
+        </div>
+    </div>
+</body>
+</html>
