@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>March 2026 Recompete Contracts Surge | GovCon Giants</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; line-height: 1.6; color: #1a1a2e; background: #ffffff; }
+
+        /* Hero Section */
+        .hero { background: linear-gradient(135deg, #0B2E1B 0%, #1F7A4D 50%, #26C281 100%); color: white; padding: 80px 20px; text-align: center; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); opacity: 0.5; }
+        .hero-content { max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
+        .hero-badge { display: inline-block; background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); padding: 10px 25px; border-radius: 30px; font-size: 0.9rem; font-weight: 600; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; }
+        .hero-badge.free { background: #fbbf24; color: #1a1a2e; }
+        .hero h1 { font-size: 3.2rem; font-weight: 900; margin-bottom: 20px; line-height: 1.1; }
+        .hero .subtitle { font-size: 1.4rem; opacity: 0.95; margin-bottom: 30px; font-weight: 400; }
+        .hero-stats { display: flex; justify-content: center; gap: 50px; margin: 40px 0; flex-wrap: wrap; }
+        .hero-stat { text-align: center; }
+        .hero-stat .value { font-size: 2.5rem; font-weight: 900; }
+        .hero-stat .label { font-size: 0.85rem; opacity: 0.9; text-transform: uppercase; letter-spacing: 1px; }
+        .hero-cta { display: inline-block; background: white; color: #0B2E1B; padding: 18px 50px; border-radius: 50px; font-size: 1.2rem; font-weight: 700; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .hero-cta:hover { transform: translateY(-3px); box-shadow: 0 15px 50px rgba(0,0,0,0.3); }
+        .hero-subtext { margin-top: 15px; font-size: 0.95rem; opacity: 0.9; }
+
+        /* Container */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        /* Section */
+        .section { padding: 80px 0; }
+        .section-dark { background: #f8fafc; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 2.5rem; font-weight: 800; color: #0B2E1B; margin-bottom: 15px; }
+        .section-title p { font-size: 1.2rem; color: #666; max-width: 600px; margin: 0 auto; }
+
+        /* Big Number Stats */
+        .big-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin: 40px 0; }
+        .big-stat { text-align: center; padding: 30px; background: white; border-radius: 16px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); }
+        .big-stat .number { font-size: 3rem; font-weight: 900; background: linear-gradient(135deg, #0B2E1B, #26C281); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .big-stat .label { font-size: 1rem; color: #666; margin-top: 10px; }
+
+        /* Card Grid */
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 40px; }
+        .card { background: white; border-radius: 16px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); border: 2px solid transparent; transition: all 0.3s ease; }
+        .card:hover { border-color: #26C281; transform: translateY(-5px); }
+        .card .icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .card h3 { font-size: 1.3rem; font-weight: 700; color: #0B2E1B; margin-bottom: 10px; }
+        .card p { color: #666; font-size: 0.95rem; }
+
+        /* What You'll Learn */
+        .learn-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .learn-card { display: flex; gap: 20px; align-items: flex-start; }
+        .learn-number { width: 50px; height: 50px; background: linear-gradient(135deg, #0B2E1B 0%, #26C281 100%); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.2rem; flex-shrink: 0; }
+        .learn-content h3 { font-size: 1.1rem; font-weight: 700; color: #0B2E1B; margin-bottom: 8px; }
+        .learn-content p { color: #666; font-size: 0.95rem; }
+
+        /* Resources Grid */
+        .resources-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .resource-card { background: white; border-radius: 16px; padding: 25px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); border-left: 5px solid #26C281; display: flex; gap: 20px; align-items: flex-start; }
+        .resource-card .icon { font-size: 2rem; color: #26C281; }
+        .resource-card h4 { font-size: 1.1rem; font-weight: 700; color: #0B2E1B; margin-bottom: 5px; }
+        .resource-card p { color: #666; font-size: 0.9rem; }
+        .resource-card .badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; margin-top: 8px; }
+        .badge-new { background: #dcfce7; color: #166534; }
+        .badge-popular { background: #fef3c7; color: #92400e; }
+
+        /* Agenda */
+        .agenda-timeline { max-width: 700px; margin: 0 auto; }
+        .agenda-item { display: flex; gap: 25px; padding: 25px 0; border-bottom: 2px solid #e5e7eb; }
+        .agenda-item:last-child { border-bottom: none; }
+        .agenda-time { min-width: 100px; text-align: right; }
+        .agenda-time .time { font-size: 1.1rem; font-weight: 700; color: #26C281; }
+        .agenda-time .duration { font-size: 0.85rem; color: #888; }
+        .agenda-content h3 { font-size: 1.15rem; font-weight: 700; color: #0B2E1B; margin-bottom: 5px; }
+        .agenda-content p { color: #666; font-size: 0.95rem; }
+        .agenda-tag { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; margin-bottom: 8px; }
+        .tag-opening { background: #e0e7ff; color: #3730a3; }
+        .tag-recompete { background: #dcfce7; color: #166534; }
+        .tag-idiq { background: #fef3c7; color: #92400e; }
+        .tag-teaming { background: #fee2e2; color: #991b1b; }
+        .tag-demo { background: #fce7f3; color: #9d174d; }
+        .tag-qa { background: #e0f2fe; color: #0369a1; }
+        .agenda-break { background: #f8fafc; border-radius: 10px; padding: 15px 25px; text-align: center; color: #666; font-style: italic; margin: 15px 0; }
+
+        /* Speakers */
+        .speakers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .speaker-card { background: white; border-radius: 16px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); border-top: 4px solid #26C281; text-align: center; }
+        .speaker-card .speaker-img { width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, #0B2E1B 0%, #26C281 100%); margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; font-weight: 800; color: white; }
+        .speaker-card h3 { font-size: 1.2rem; font-weight: 700; color: #0B2E1B; margin-bottom: 5px; }
+        .speaker-card .speaker-title { font-size: 0.85rem; color: #26C281; font-weight: 600; margin-bottom: 10px; }
+        .speaker-card .speaker-topic { font-size: 0.95rem; font-weight: 600; color: #059669; margin-bottom: 10px; }
+        .speaker-card .speaker-description { font-size: 0.9rem; color: #555; text-align: left; }
+        .speaker-placeholder { font-style: italic; color: #888; }
+
+        /* Who This Is For */
+        .who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 900px; margin: 0 auto; }
+        .who-card { background: white; border-radius: 16px; padding: 35px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); }
+        .who-card.yes { border-top: 5px solid #10b981; }
+        .who-card.no { border-top: 5px solid #ef4444; }
+        .who-card h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .who-card.yes h3 { color: #059669; }
+        .who-card.no h3 { color: #dc2626; }
+        .who-card ul { list-style: none; }
+        .who-card li { padding: 10px 0; padding-left: 30px; position: relative; color: #555; }
+        .who-card.yes li::before { content: '>'; position: absolute; left: 0; color: #10b981; font-weight: bold; }
+        .who-card.no li::before { content: 'x'; position: absolute; left: 0; color: #ef4444; font-weight: bold; }
+
+        /* Registration CTA */
+        .registration-section { background: linear-gradient(135deg, #0B2E1B 0%, #1F7A4D 100%); color: white; padding: 80px 20px; text-align: center; }
+        .registration-section h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 15px; }
+        .registration-section .subtitle { font-size: 1.2rem; opacity: 0.95; margin-bottom: 40px; }
+        .registration-cta { display: inline-block; background: #fbbf24; color: #1a1a2e; padding: 20px 60px; border-radius: 50px; font-size: 1.3rem; font-weight: 700; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .registration-cta:hover { transform: translateY(-3px); box-shadow: 0 15px 50px rgba(0,0,0,0.3); }
+        .free-badge { display: inline-block; background: rgba(251,191,36,0.2); padding: 8px 20px; border-radius: 20px; font-size: 0.9rem; font-weight: 700; margin-bottom: 20px; color: #fbbf24; }
+
+        /* FAQ */
+        .faq-list { max-width: 700px; margin: 0 auto; }
+        .faq-item { background: white; border-radius: 12px; margin-bottom: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); overflow: hidden; }
+        .faq-question { padding: 20px 25px; font-weight: 600; color: #0B2E1B; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .faq-question::after { content: '+'; font-size: 1.5rem; color: #26C281; }
+        .faq-item.active .faq-question::after { content: '-'; }
+        .faq-answer { padding: 0 25px 20px; color: #666; display: none; }
+        .faq-item.active .faq-answer { display: block; }
+
+        /* Final CTA */
+        .final-cta { background: linear-gradient(135deg, #059669 0%, #10b981 100%); color: white; padding: 80px 20px; text-align: center; }
+        .final-cta h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 15px; }
+        .final-cta p { font-size: 1.2rem; opacity: 0.95; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .final-cta-btn { display: inline-block; background: white; color: #059669; padding: 20px 60px; border-radius: 50px; font-size: 1.3rem; font-weight: 700; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .final-cta-btn:hover { transform: translateY(-3px); }
+
+        /* Footer */
+        .footer { background: #1a1a2e; color: rgba(255,255,255,0.7); padding: 40px 20px; text-align: center; }
+        .footer a { color: white; text-decoration: none; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hero-stats { gap: 25px; }
+            .hero-stat .value { font-size: 2rem; }
+            .section-title h2 { font-size: 2rem; }
+            .who-grid { grid-template-columns: 1fr; }
+            .agenda-item { flex-direction: column; gap: 10px; }
+            .agenda-time { text-align: left; }
+            .big-stats { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-content">
+            <span class="hero-badge free">FREE EVENT - Open to the Public</span>
+            <h1>$221 Billion in Federal Contracts Are Expiring</h1>
+            <p class="subtitle">Learn how to find, position for, and win recompete contracts and IDIQ task orders</p>
+
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="value">Mar 28</div>
+                    <div class="label">Date</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="value">9am-1pm</div>
+                    <div class="label">Eastern</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="value">4 Hours</div>
+                    <div class="label">Live Training</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="value">FREE</div>
+                    <div class="label">No Cost</div>
+                </div>
+            </div>
+
+            <a href="funnels/march-surge/1-landing.html" class="hero-cta">Register Free + Get 6 Resources</a>
+            <p class="hero-subtext">Includes free downloads: Expiring Contracts List, IDIQ Guide, Templates & More</p>
+        </div>
+    </div>
+
+    <!-- The Opportunity Section -->
+    <div class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>The Biggest Untapped Opportunity in GovCon</h2>
+                <p>Every federal contract expires. The work doesn't go away - it gets rebid. And someone is going to win it.</p>
+            </div>
+
+            <div class="big-stats">
+                <div class="big-stat">
+                    <div class="number">$221B</div>
+                    <div class="label">Expiring in 2026-2027</div>
+                </div>
+                <div class="big-stat">
+                    <div class="number">6,000+</div>
+                    <div class="label">Contracts Tracked</div>
+                </div>
+                <div class="big-stat">
+                    <div class="number">$77B</div>
+                    <div class="label">In Expiring IDIQs</div>
+                </div>
+                <div class="big-stat">
+                    <div class="number">20%</div>
+                    <div class="label">Go to New Contractors</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- The Problem Section -->
+    <div class="section section-dark">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Most Contractors Miss These Opportunities</h2>
+                <p>80% of recompetes go to the incumbent. But 20% - that's $44 billion - goes to someone new. Are you positioned?</p>
+            </div>
+
+            <div class="card-grid">
+                <div class="card">
+                    <div class="icon">X</div>
+                    <h3>Waiting for SAM.gov</h3>
+                    <p>By the time the solicitation drops, the incumbent has been positioning for 18 months. You're already too late.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">X</div>
+                    <h3>Ignoring the Incumbent</h3>
+                    <p>The current contract holder isn't your enemy - they're your potential teaming partner. Most want small business partners.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">X</div>
+                    <h3>Not Responding to Sources Sought</h3>
+                    <p>Less than 5% of contractors respond. If you do, the agency knows you exist when they build their acquisition strategy.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">X</div>
+                    <h3>Missing IDIQ Task Orders</h3>
+                    <p>50% of these contracts are task order vehicles - they never hit SAM.gov. You have to know where to look.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- What You'll Learn Section -->
+    <div class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>What You'll Learn at the March Surge</h2>
+                <p>4 hours of focused training on the recompete and IDIQ opportunity. Walk away with a strategy.</p>
+            </div>
+
+            <div class="learn-grid">
+                <div class="learn-card">
+                    <div class="learn-number">1</div>
+                    <div class="learn-content">
+                        <h3>Find Expiring Contracts in Your NAICS</h3>
+                        <p>Use the Recompete Tracker to identify contracts in YOUR industry expiring in the next 12-18 months.</p>
+                    </div>
+                </div>
+
+                <div class="learn-card">
+                    <div class="learn-number">2</div>
+                    <div class="learn-content">
+                        <h3>Research the Incumbent</h3>
+                        <p>Learn who holds the contract, their strengths and weaknesses, and whether they're a teaming partner.</p>
+                    </div>
+                </div>
+
+                <div class="learn-card">
+                    <div class="learn-number">3</div>
+                    <div class="learn-content">
+                        <h3>Understand IDIQ Vehicles</h3>
+                        <p>OASIS+, GSA MAS, CIO-SP4, Alliant 2 - learn which vehicles matter and how task orders work.</p>
+                    </div>
+                </div>
+
+                <div class="learn-card">
+                    <div class="learn-number">4</div>
+                    <div class="learn-content">
+                        <h3>Position 12-18 Months Early</h3>
+                        <p>Contact SBLOs, respond to Sources Sought, build relationships before the RFP drops.</p>
+                    </div>
+                </div>
+
+                <div class="learn-card">
+                    <div class="learn-number">5</div>
+                    <div class="learn-content">
+                        <h3>Team With the Incumbent</h3>
+                        <p>Learn how to approach primes about subcontracting on their recompete bid - build past performance now.</p>
+                    </div>
+                </div>
+
+                <div class="learn-card">
+                    <div class="learn-number">6</div>
+                    <div class="learn-content">
+                        <h3>Use AI to Accelerate Research</h3>
+                        <p>Live demo of using AI tools to research incumbents, analyze contracts, and identify opportunities faster.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Free Resources Section -->
+    <div class="section section-dark">
+        <div class="container">
+            <div class="section-title">
+                <h2>6 Free Resources When You Register</h2>
+                <p>Get instant access to these downloads - even before the event</p>
+            </div>
+
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="icon">1</div>
+                    <div>
+                        <h4>March 2026 Expiring Contracts List</h4>
+                        <p>100+ contracts expiring in Q2-Q3 2026 with agency, NAICS, incumbent, and value</p>
+                        <span class="badge badge-new">NEW</span>
+                    </div>
+                </div>
+
+                <div class="resource-card">
+                    <div class="icon">2</div>
+                    <div>
+                        <h4>Recompete Positioning Checklist</h4>
+                        <p>12-18 month timeline: research, positioning, pre-solicitation, and proposal phases</p>
+                        <span class="badge badge-new">NEW</span>
+                    </div>
+                </div>
+
+                <div class="resource-card">
+                    <div class="icon">3</div>
+                    <div>
+                        <h4>10 IDIQ Vehicles Guide</h4>
+                        <p>The most active IDIQ and GWAC vehicles - eligibility, agencies, and how to get on</p>
+                        <span class="badge badge-popular">POPULAR</span>
+                    </div>
+                </div>
+
+                <div class="resource-card">
+                    <div class="icon">4</div>
+                    <div>
+                        <h4>Active IDIQ Vehicles List</h4>
+                        <p>Excel spreadsheet of current IDIQs with ceiling values, ordering agencies, and NAICS</p>
+                    </div>
+                </div>
+
+                <div class="resource-card">
+                    <div class="icon">5</div>
+                    <div>
+                        <h4>Sources Sought Response Template</h4>
+                        <p>Fill-in-the-blank template for responding to Sources Sought notices</p>
+                    </div>
+                </div>
+
+                <div class="resource-card">
+                    <div class="icon">6</div>
+                    <div>
+                        <h4>Task Order Response Template</h4>
+                        <p>Framework for responding to IDIQ task order solicitations on eBuy and agency portals</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Speakers Section -->
+    <div class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Your Expert Instructors</h2>
+                <p>Learn from practitioners who have won at the highest levels of federal contracting</p>
+            </div>
+
+            <div class="speakers-grid">
+                <div class="speaker-card">
+                    <div class="speaker-img">EC</div>
+                    <h3>Eric Coffie</h3>
+                    <div class="speaker-title">Founder, GovCon Giants</div>
+                    <div class="speaker-topic">Opening + AI Research Demo</div>
+                    <p class="speaker-description">Eric has helped thousands of contractors find and win federal opportunities. He'll open the event with the $221B opportunity overview and close with a live AI research demo.</p>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-img">?</div>
+                    <h3>Speaker TBD</h3>
+                    <div class="speaker-title speaker-placeholder">To be announced</div>
+                    <div class="speaker-topic">Finding Recompete Contracts</div>
+                    <p class="speaker-description">This session will cover how to systematically find expiring contracts in your NAICS, research incumbents, and identify the best opportunities for your business.</p>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-img">?</div>
+                    <h3>Speaker TBD</h3>
+                    <div class="speaker-title speaker-placeholder">To be announced</div>
+                    <div class="speaker-topic">IDIQ & Task Order Basics</div>
+                    <p class="speaker-description">Learn how IDIQ vehicles work, which ones matter for small businesses, and how to find and respond to task order opportunities.</p>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-img">?</div>
+                    <h3>Speaker TBD</h3>
+                    <div class="speaker-title speaker-placeholder">To be announced</div>
+                    <div class="speaker-topic">Teaming With Incumbents</div>
+                    <p class="speaker-description">How to approach incumbent contractors about teaming on recompetes. Build past performance by subbing now - prime later.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Agenda Section -->
+    <div class="section section-dark">
+        <div class="container">
+            <div class="section-title">
+                <h2>The 4-Hour Agenda</h2>
+                <p>March 28, 2026 | 9:00 AM - 1:00 PM Eastern. <a href="march-28-surge-agenda.html" style="color: #26C281;">View detailed agenda</a></p>
+            </div>
+
+            <div class="agenda-timeline">
+                <div class="agenda-item">
+                    <div class="agenda-time">
+                        <div class="time">9:00 AM</div>
+                        <div class="duration">45 min</div>
+                    </div>
+                    <div class="agenda-content">
+                        <span class="agenda-tag tag-opening">Opening</span>
+                        <h3>Why Expiring Contracts Are Your Best Opportunity</h3>
+                        <p><strong>Eric Coffie</strong> - The $221B opportunity, 80/20 incumbent rule, and the 12-18 month positioning timeline.</p>
+                    </div>
+                </div>
+
+                <div class="agenda-item">
+                    <div class="agenda-time">
+                        <div class="time">9:45 AM</div>
+                        <div class="duration">45 min</div>
+                    </div>
+                    <div class="agenda-content">
+                        <span class="agenda-tag tag-recompete">Session 1</span>
+                        <h3>Finding & Analyzing Recompete Contracts</h3>
+                        <p><strong>Speaker TBD</strong> - How to find expiring contracts in your NAICS, research incumbents, and prioritize opportunities.</p>
+                    </div>
+                </div>
+
+                <div class="agenda-break">15-Minute Break</div>
+
+                <div class="agenda-item">
+                    <div class="agenda-time">
+                        <div class="time">10:45 AM</div>
+                        <div class="duration">45 min</div>
+                    </div>
+                    <div class="agenda-content">
+                        <span class="agenda-tag tag-idiq">Session 2</span>
+                        <h3>IDIQ Vehicles & Task Order Basics</h3>
+                        <p><strong>Speaker TBD</strong> - How IDIQs work, which vehicles matter, and where to find task order opportunities.</p>
+                    </div>
+                </div>
+
+                <div class="agenda-item">
+                    <div class="agenda-time">
+                        <div class="time">11:30 AM</div>
+                        <div class="duration">45 min</div>
+                    </div>
+                    <div class="agenda-content">
+                        <span class="agenda-tag tag-teaming">Session 3</span>
+                        <h3>Teaming With Incumbents</h3>
+                        <p><strong>Speaker TBD</strong> - How to approach primes about subcontracting on recompetes. Build past performance now.</p>
+                    </div>
+                </div>
+
+                <div class="agenda-break">15-Minute Break</div>
+
+                <div class="agenda-item">
+                    <div class="agenda-time">
+                        <div class="time">12:30 PM</div>
+                        <div class="duration">30 min</div>
+                    </div>
+                    <div class="agenda-content">
+                        <span class="agenda-tag tag-demo">Live Demo</span>
+                        <h3>Contract Research with AI Tools</h3>
+                        <p><strong>Eric Coffie</strong> - Live demonstration of using AI to research incumbents, analyze contracts, and build outreach.</p>
+                    </div>
+                </div>
+
+                <div class="agenda-item">
+                    <div class="agenda-time">
+                        <div class="time">12:45 PM</div>
+                        <div class="duration">15 min</div>
+                    </div>
+                    <div class="agenda-content">
+                        <span class="agenda-tag tag-qa">Closing</span>
+                        <h3>Q&A + April Bootcamp Preview</h3>
+                        <p><strong>Eric Coffie</strong> - Open questions, next steps, and preview of the April Proposal Writing Bootcamp.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Who This Is For Section -->
+    <div class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Is This Surge Right For You?</h2>
+            </div>
+
+            <div class="who-grid">
+                <div class="who-card yes">
+                    <h3>> This IS For You If...</h3>
+                    <ul>
+                        <li>You're SAM.gov registered and ready to pursue opportunities</li>
+                        <li>You've been searching SAM.gov but not winning</li>
+                        <li>You want to learn about task orders and IDIQs</li>
+                        <li>You're interested in teaming or subcontracting</li>
+                        <li>You want to position early instead of scrambling</li>
+                        <li>You have 4 hours to invest in your GovCon strategy</li>
+                    </ul>
+                </div>
+
+                <div class="who-card no">
+                    <h3>x This Is NOT For You If...</h3>
+                    <ul>
+                        <li>You're not SAM.gov registered yet</li>
+                        <li>You're looking for a "get rich quick" scheme</li>
+                        <li>You're not willing to put in positioning work</li>
+                        <li>You expect contracts to fall in your lap</li>
+                        <li>You have zero relevant experience to offer</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Registration CTA Section -->
+    <div class="registration-section">
+        <div class="container">
+            <span class="free-badge">100% FREE - No Credit Card Required</span>
+            <h2>Register for the March 28 Surge</h2>
+            <p class="subtitle">Get instant access to 6 free resources + your spot at the live event</p>
+
+            <a href="funnels/march-surge/1-landing.html" class="registration-cta">Register Free Now</a>
+
+            <p style="margin-top: 20px; font-size: 0.95rem; opacity: 0.9;">
+                March 28, 2026 | 9:00 AM - 1:00 PM Eastern | Virtual Event
+            </p>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">Is this really free? What's the catch?</div>
+                    <div class="faq-answer">Yes, it's completely free. We'll introduce you to our paid programs (like the April Proposal Bootcamp and Pro membership) but there's zero obligation. We want to provide value and build our community.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What if I can't attend live?</div>
+                    <div class="faq-answer">Register anyway! You'll get the free resources immediately, and we'll send you the recording within 48 hours. However, the live Q&A and interaction is valuable - attend if you can.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">I'm new to federal contracting. Is this too advanced?</div>
+                    <div class="faq-answer">This is perfect for you! We start with fundamentals - what expiring contracts are, why they matter, and how the process works. You'll learn the concepts and get resources to start your journey.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Do I need a GSA Schedule to benefit from this?</div>
+                    <div class="faq-answer">No. While we cover IDIQ vehicles including GSA, most of what you'll learn applies to ALL federal contracts. Expiring contracts exist in every acquisition method - not just GSA.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What's the difference between this and the April Bootcamp?</div>
+                    <div class="faq-answer">This March Surge teaches you how to FIND opportunities (expiring contracts, IDIQs, teaming). The April Bootcamp teaches you how to WIN them (proposal writing, pricing, past performance). They're complementary - find first, then write to win.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Final CTA Section -->
+    <div class="final-cta">
+        <div class="container">
+            <h2>$221 Billion Is Expiring. Go Get Your Share.</h2>
+            <p>Stop searching SAM.gov blindly. Learn exactly which contracts are rebidding, who has them now, and how to position yourself to win.</p>
+
+            <a href="funnels/march-surge/1-landing.html" class="final-cta-btn">Register Free + Get Resources</a>
+            <p style="margin-top: 30px; font-size: 0.95rem;">
+                <strong>March 28, 2026 | 9:00 AM - 1:00 PM Eastern</strong><br>
+                Free & Open to the Public
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2026 <a href="https://govcongiants.com">GovCon Giants</a></p>
+    </div>
+
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
