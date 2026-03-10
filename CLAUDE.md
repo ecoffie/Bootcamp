@@ -14,7 +14,7 @@ This repository contains all GovCon Giants resources for helping small businesse
 
 ## Key Dates
 
-- **Next Event:** March 28, 2026 (Contract Vehicles Bootcamp - FREE)
+- **Next Event:** March 28, 2026 (Contracting Launchpad Bootcamp - FREE)
 - **April Bootcamp:** Winning with Certifications (Pro Members)
 - **Past Bootcamp:** February 28, 2026 (Specifics & Proposals)
 - **Past Bootcamp:** January 31, 2026 (replay at `/jan-31-bootcamp-paid`)
@@ -33,7 +33,7 @@ This repository contains all GovCon Giants resources for helping small businesse
 | `december-downloads-sequence/` | 7-email December leads sequence |
 | `march-surge-email-sequence/` | 7-email March surge sequence |
 | `funnels/` | Marketing funnels (opportunity-hunter, march-surge, etc.) |
-| `funnels/march-surge/` | March 28 Contract Vehicles Bootcamp funnel (landing, upsell, downsell, thank-you) |
+| `funnels/march-surge/` | March 28 Contracting Launchpad Bootcamp funnel (landing, upsell, downsell, thank-you) |
 | `march-surge-page/` | Static HTML deploy folder for March 28 (agenda, slides, hit-list, downloads) |
 | `funnels/march-surge/downloads/` | 6 free resources (expiring contracts, IDIQ guides, templates) |
 | `presentations/` | Bootcamp slides, TempNet, Veteran War Room |
@@ -135,7 +135,7 @@ SAM.gov, USAspending.gov, FPDS, SBA Prime Directory, Agency strategic plans, GAO
 
 ---
 
-## March 2026 Contract Vehicles Bootcamp
+## March 2026 Contracting Launchpad Bootcamp
 
 **Date:** March 28, 2026
 **Time:** 9:00 AM ET | Live on Zoom
@@ -182,7 +182,7 @@ SAM.gov, USAspending.gov, FPDS, SBA Prime Directory, Agency strategic plans, GAO
 
 - [x] Generate March 2026 expiring contracts data
 - [x] Create March surge funnel and email sequence
-- [x] Rename March event to "Contract Vehicles Bootcamp" (was "Recompete Contracts Surge")
+- [x] Rename March event to "Contracting Launchpad Bootcamp" (was "Recompete Contracts Surge")
 - [x] Deploy march-surge-page static site to Vercel
 - [ ] Assign custom domain to march-surge-page Vercel project
 - [ ] Update SBLO contacts (Q2 2026)
