@@ -1,6 +1,6 @@
 # GovCon Giants - Bootcamp Project
 
-**Last Updated:** March 9, 2026
+**Last Updated:** March 10, 2026
 **Owner:** Eric Coffie
 **Purpose:** Federal contracting bootcamp materials, marketing assets, and business tools
 
@@ -14,7 +14,7 @@ This repository contains all GovCon Giants resources for helping small businesse
 
 ## Key Dates
 
-- **Next Event:** March 28, 2026 (Recompete Contracts Surge - FREE)
+- **Next Event:** March 28, 2026 (Contract Vehicles Bootcamp - FREE)
 - **April Bootcamp:** Winning with Certifications (Pro Members)
 - **Past Bootcamp:** February 28, 2026 (Specifics & Proposals)
 - **Past Bootcamp:** January 31, 2026 (replay at `/jan-31-bootcamp-paid`)
@@ -33,7 +33,8 @@ This repository contains all GovCon Giants resources for helping small businesse
 | `december-downloads-sequence/` | 7-email December leads sequence |
 | `march-surge-email-sequence/` | 7-email March surge sequence |
 | `funnels/` | Marketing funnels (opportunity-hunter, march-surge, etc.) |
-| `funnels/march-surge/` | March 28 Recompete Surge funnel (landing, upsell, downsell, thank-you) |
+| `funnels/march-surge/` | March 28 Contract Vehicles Bootcamp funnel (landing, upsell, downsell, thank-you) |
+| `march-surge-page/` | Static HTML deploy folder for March 28 (agenda, slides, hit-list, downloads) |
 | `funnels/march-surge/downloads/` | 6 free resources (expiring contracts, IDIQ guides, templates) |
 | `presentations/` | Bootcamp slides, TempNet, Veteran War Room |
 | `webinar/` | Webinar materials and scripts |
@@ -48,8 +49,8 @@ This repository contains all GovCon Giants resources for helping small businesse
 - `january-hit-list-*.html` — Contract opportunity hit lists
 - `january-*.html` — January bootcamp materials
 - `february-28-surge-agenda.html` — February Surge agenda (Pro)
-- `march-28-surge-agenda.html` — March Surge agenda (FREE, with download links)
-- `march-surge-page.html` — March Surge landing page
+- `march-28-surge-agenda.html` — March agenda (original, links to funnels/march-surge/downloads/)
+- `march-surge-page.html` — March landing page (original)
 - `product-*.html` — Product/tool landing pages
 - `youtube-live-*-slides.html` — 12 YouTube Live slide decks
 - `tier1-batch-*.csv` / `tier2-batch-*.csv` — Contractor research batches
@@ -134,22 +135,40 @@ SAM.gov, USAspending.gov, FPDS, SBA Prime Directory, Agency strategic plans, GAO
 
 ---
 
-## March 2026 Surge Event
+## March 2026 Contract Vehicles Bootcamp
 
-**Date:** March 28, 2026 (Saturday)
-**Time:** 9:00 AM - 5:00 PM Eastern (8 hours)
-**Topic:** Recompete Contracts, IDV, IDIQ
+**Date:** March 28, 2026
+**Time:** 9:00 AM ET | Live on Zoom
+**Topic:** Contract Vehicles — IDIQs, BPAs, Sources Sought, Set-Asides, Contract Types
 **Format:** FREE, open to public
+**Registration:** `govcongiants.org/contract-vehicles-bootcamp`
 **April Bootcamp:** Winning with Certifications (Pro Members)
 
+### Curriculum (6 Sessions)
+1. The Federal Contract Vehicle Landscape (Opening)
+2. IDIQs — Indefinite Delivery/Indefinite Quantity
+3. BPAs — Blanket Purchase Agreements
+4. Sources Sought & RFIs — Early-Stage Signals
+5. Set-Asides & Socioeconomic Vehicles
+6. Contract Type Breakdown (FFP, T&M, Cost-Reimbursement)
+7. Workshop: Build Your Vehicle-Specific Win Strategy
+
+### Deployments
+- **Next.js funnel:** `govcongiants.org/contract-vehicles-bootcamp` (govcon-funnels)
+  - Routes: `/march-surge/` (landing, upsell, downsell, thank-you)
+- **Static HTML:** `march-surge-page.vercel.app` (Vercel project: march-surge-page)
+  - Files: index.html, agenda.html, slides.html, hit-list.html, proposal-landing-page.html
+  - 6 download files co-located in same folder
+
 ### Files Created
-- `march-28-surge-agenda.html` — Full 8-hour agenda with clickable downloads
-- `march-surge-page.html` — Landing page
+- `march-surge-page/` — Static deploy folder (agenda, slides, hit-list, downloads)
 - `funnels/march-surge/` — 4-page funnel (landing → upsell → downsell → thank-you)
 - `funnels/march-surge/downloads/` — 6 free resources
 - `march-surge-email-sequence/` — 7 emails
+- `march-28-surge-agenda.html` — Original agenda (root, points to funnels/downloads)
+- `march-surge-page.html` — Original landing page (root)
 
-### Free Downloads (from recompete tracker)
+### Free Downloads
 1. `march-2026-expiring-contracts.xlsx` — 944 real contracts
 2. `recompete-positioning-checklist.pdf` — 12-18 month timeline
 3. `10-idiq-vehicles-guide.pdf`
@@ -163,6 +182,9 @@ SAM.gov, USAspending.gov, FPDS, SBA Prime Directory, Agency strategic plans, GAO
 
 - [x] Generate March 2026 expiring contracts data
 - [x] Create March surge funnel and email sequence
+- [x] Rename March event to "Contract Vehicles Bootcamp" (was "Recompete Contracts Surge")
+- [x] Deploy march-surge-page static site to Vercel
+- [ ] Assign custom domain to march-surge-page Vercel project
 - [ ] Update SBLO contacts (Q2 2026)
 - [ ] Update expiring contracts data monthly
 - [ ] April Bootcamp: Winning with Certifications materials
