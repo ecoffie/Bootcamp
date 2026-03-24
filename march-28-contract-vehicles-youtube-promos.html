@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>March 28 Contract Vehicles Bootcamp - YouTube Promo Lives Content</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 16px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            opacity: 0.95;
+        }
+
+        .goal-box {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .goal-box h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .goal-box p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        .live-card {
+            background: white;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .live-header {
+            padding: 25px 30px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .live-1 .live-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        }
+
+        .live-2 .live-header {
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+        }
+
+        .live-3 .live-header {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        }
+
+        .live-4 .live-header {
+            background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+        }
+
+        .live-number {
+            font-size: 3rem;
+            font-weight: 800;
+            opacity: 0.3;
+        }
+
+        .live-info h2 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .live-date {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        .live-content {
+            padding: 30px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e5e7eb;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .title-options {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 15px;
+        }
+
+        .title-option {
+            padding: 10px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .title-option:last-child {
+            border-bottom: none;
+        }
+
+        .title-option strong {
+            color: #7c3aed;
+        }
+
+        .thumbnail-desc {
+            background: #fef3c7;
+            border: 2px solid #f59e0b;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .thumbnail-desc h4 {
+            color: #92400e;
+            margin-bottom: 10px;
+        }
+
+        .thumbnail-desc ul {
+            margin-left: 20px;
+            color: #78350f;
+        }
+
+        .script-section {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .script-part {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .script-part:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .script-label {
+            display: inline-block;
+            background: #1e3a8a;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .script-label.hook {
+            background: #dc2626;
+        }
+
+        .script-label.content {
+            background: #7c3aed;
+        }
+
+        .script-label.cta {
+            background: #059669;
+        }
+
+        .script-label.transition {
+            background: #f59e0b;
+        }
+
+        .script-text {
+            font-style: italic;
+            color: #444;
+            line-height: 1.8;
+        }
+
+        .script-text p {
+            margin-bottom: 12px;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            color: white;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .cta-box h4 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .cta-box p {
+            opacity: 0.95;
+            margin-bottom: 15px;
+        }
+
+        .cta-link {
+            display: inline-block;
+            background: white;
+            color: #059669;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .talking-points {
+            list-style: none;
+        }
+
+        .talking-points li {
+            padding: 10px 0 10px 30px;
+            position: relative;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .talking-points li::before {
+            content: '>';
+            position: absolute;
+            left: 0;
+            color: #7c3aed;
+            font-weight: bold;
+        }
+
+        .talking-points li:last-child {
+            border-bottom: none;
+        }
+
+        .timing-note {
+            background: #fef2f2;
+            border: 2px solid #fecaca;
+            border-radius: 8px;
+            padding: 15px;
+            color: #991b1b;
+            margin-top: 20px;
+        }
+
+        .timing-note strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .summary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .summary-table th, .summary-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .summary-table th {
+            background: #1e3a8a;
+            color: white;
+        }
+
+        .summary-table tr:nth-child(even) {
+            background: #f8fafc;
+        }
+
+        .strategy-box {
+            background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
+            color: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .strategy-box h3 {
+            margin-bottom: 15px;
+        }
+
+        .strategy-box ul {
+            margin-left: 20px;
+        }
+
+        .strategy-box li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>March 28 Contract Vehicles Bootcamp</h1>
+            <p>4 YouTube Lives to Drive 1,000+ Registrations | Mar 17, 20, 24, 26</p>
+        </div>
+
+        <div class="goal-box">
+            <h2>Goal: 1,000+ Signups</h2>
+            <p>FREE bootcamp registration with email capture → Upsell to Pro Membership</p>
+        </div>
+
+        <!-- STRATEGY BOX -->
+        <div class="strategy-box">
+            <h3>4-Live Strategy for Maximum Conversions</h3>
+            <ul>
+                <li><strong>Live 1 (Mon Mar 17):</strong> AWARENESS - Show the $77T IDIQ opportunity</li>
+                <li><strong>Live 2 (Thu Mar 20):</strong> EDUCATION - Deep dive on specific vehicles</li>
+                <li><strong>Live 3 (Mon Mar 24):</strong> VALUE - NEW 2026 rule: Flip 8(a) contracts to YOUR set-aside</li>
+                <li><strong>Live 4 (Wed Mar 26):</strong> CONVERSION - Final call, bootcamp walkthrough, urgency</li>
+            </ul>
+            <p style="margin-top: 15px;"><strong>Key Difference:</strong> This bootcamp is FREE registration. Lower barrier = higher signups. Monetize via Pro upsell in funnel.</p>
+        </div>
+
+        <!-- SUMMARY TABLE -->
+        <div class="live-card">
+            <div class="live-content">
+                <div class="section-title">Schedule Overview</div>
+                <table class="summary-table">
+                    <tr>
+                        <th>Date</th>
+                        <th>Theme</th>
+                        <th>Goal</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Mon Mar 17</strong></td>
+                        <td>The $77 TRILLION IDIQ Opportunity</td>
+                        <td>Awareness - Show the money</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Thu Mar 20</strong></td>
+                        <td>The 10 Vehicles You Need to Know</td>
+                        <td>Education - Build authority</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mon Mar 24</strong></td>
+                        <td>2026 Rule Change: Flip Contracts to YOUR Set-Aside</td>
+                        <td>Value - FAR 19.108-11 opportunity</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Wed Mar 26</strong></td>
+                        <td>Final Call - Bootcamp Preview</td>
+                        <td>Conversion - 2 days before event</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- LIVE #1 -->
+        <div class="live-card live-1">
+            <div class="live-header">
+                <div>
+                    <h2>LIVE #1: The $77 Trillion IDIQ Opportunity</h2>
+                    <div class="live-date">Monday, March 17, 2026</div>
+                </div>
+                <div class="live-number">01</div>
+            </div>
+            <div class="live-content">
+                <div class="section">
+                    <div class="section-title">Title Options (Pick One)</div>
+                    <div class="title-options">
+                        <div class="title-option"><strong>Option 1:</strong> "$77 TRILLION in Federal Contract Vehicles - Are You On One?"</div>
+                        <div class="title-option"><strong>Option 2:</strong> "IDIQs Explained: How Small Businesses Win $77T in Federal Work"</div>
+                        <div class="title-option"><strong>Option 3:</strong> "The Contract Vehicle Secret: Why 55% of Federal Money Flows Through IDIQs"</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Thumbnail Concept</div>
+                    <div class="thumbnail-desc">
+                        <h4>Visual Elements:</h4>
+                        <ul>
+                            <li>Large text: "$77 TRILLION" in green/gold</li>
+                            <li>Subtext: "CONTRACT VEHICLES" or "IDIQs"</li>
+                            <li>Your face with intrigued/revealing expression</li>
+                            <li>Background: Government buildings, contract documents</li>
+                            <li>Small badge: "FREE TRAINING MAR 28"</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Talking Points</div>
+                    <ul class="talking-points">
+                        <li>$77 trillion in active IDIQ ceiling value across federal government</li>
+                        <li>55%+ of federal contract dollars flow through vehicles, not open market</li>
+                        <li>What is an IDIQ? (Indefinite Delivery/Indefinite Quantity)</li>
+                        <li>IDIQs vs. BPAs vs. GWACs vs. FSS - the landscape</li>
+                        <li>Why agencies LOVE contract vehicles (speed, compliance, less paperwork)</li>
+                        <li>The task order game - where the real money moves</li>
+                        <li>You don't have to BE on a vehicle to WIN work through one</li>
+                        <li>$221B in contracts expiring 2026-2027 = recompete opportunity</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Script</div>
+                    <div class="script-section">
+                        <div class="script-part">
+                            <span class="script-label hook">HOOK (0:00-1:30)</span>
+                            <div class="script-text">
+                                <p>"I'm going to tell you something that's going to change how you think about government contracting. Ready? Over 55% of federal contract dollars - we're talking hundreds of billions every year - flow through something called contract vehicles. IDIQs, BPAs, GWACs. If you don't know what those are, you're missing the majority of opportunities."</p>
+                                <p>"And here's the crazy part - there's currently $77 TRILLION in ceiling value sitting in active IDIQ contracts right now. That's not a typo. Trillion with a T. And I'm going to show you exactly how to tap into it, even if you're not on a single vehicle."</p>
+                            </div>
+                        </div>
+
+                        <div class="script-part">
+                            <span class="script-label content">CONTENT (1:30-25:00)</span>
+                            <div class="script-text">
+                                <p><strong>Section 1: What Are Contract Vehicles? (8 min)</strong></p>
+                                <p>"Let me break this down simply. A contract vehicle is basically a pre-approved contract that agencies can use to buy things faster. Instead of doing a full competition for every purchase..."</p>
+                                <p>[Explain IDIQ structure, ceiling vs. actual spending, task orders, ordering periods]</p>
+
+                                <p><strong>Section 2: Why This Matters for YOU (5 min)</strong></p>
+                                <p>"So why am I telling you this? Because if you're out there looking at SAM.gov trying to find opportunities, you're only seeing part of the picture. The real action is happening inside these vehicles..."</p>
+                                <p>[Explain task order visibility, how to find them, why most contractors miss them]</p>
+
+                                <p><strong>Section 3: The Types of Vehicles (7 min)</strong></p>
+                                <p>"Let me quickly run through the main types you need to know about..."</p>
+                                <p>[Overview of IDIQs, BPAs, GWACs, GSA MAS - high level what each is]</p>
+
+                                <p><strong>Section 4: Two Paths to Win (5 min)</strong></p>
+                                <p>"Now here's the part everyone gets wrong. You do NOT have to be on a vehicle to win work. You have two paths..."</p>
+                                <p>[Explain: 1) Get on a vehicle yourself, 2) Subcontract to someone who is. Both are valid strategies]</p>
+                            </div>
+                        </div>
+
+                        <div class="script-part">
+                            <span class="script-label cta">CTA (25:00-30:00)</span>
+                            <div class="script-text">
+                                <p>"Alright, I just gave you the foundation. But I know what you're thinking - 'Which vehicles do I target? How do I find task orders? Should I try to get on one or just sub?' Those are exactly the questions we're answering on March 28th."</p>
+                                <p>"We're doing a FREE full-day bootcamp on contract vehicles. And I mean full day - 8 hours of training where you're going to learn IDIQs, BPAs, set-asides, how to respond to Sources Sought, how to compete on task orders. Everything."</p>
+                                <p>"The link to register is in the description. It's free to attend, you just need to sign up. And when you do, you'll get 6 resources immediately - including an expiring contracts list and template for responding to Sources Sought."</p>
+                                <p>"On Thursday I'm going to go deeper on the 10 specific vehicles you need to know about - OASIS+, GSA MAS, Alliant 3, all of them. Make sure you're subscribed so you don't miss it."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Call-to-Action</div>
+                    <div class="cta-box">
+                        <h4>FREE Contract Vehicles Bootcamp - March 28</h4>
+                        <p>Register free + get 6 downloadable resources instantly</p>
+                        <a href="https://govcongiants.org/contract-vehicles-bootcamp" class="cta-link">Register Free Now</a>
+                    </div>
+                </div>
+
+                <div class="timing-note">
+                    <strong>Recommended Length: 30 minutes</strong>
+                    Focus on the SCALE of the opportunity. Make viewers realize they've been fishing in a small pond while the ocean is right there. Create curiosity about the specific vehicles (teased for Live #2).
+                </div>
+            </div>
+        </div>
+
+        <!-- LIVE #2 -->
+        <div class="live-card live-2">
+            <div class="live-header">
+                <div>
+                    <h2>LIVE #2: The 10 Vehicles You NEED to Know</h2>
+                    <div class="live-date">Thursday, March 20, 2026</div>
+                </div>
+                <div class="live-number">02</div>
+            </div>
+            <div class="live-content">
+                <div class="section">
+                    <div class="section-title">Title Options (Pick One)</div>
+                    <div class="title-options">
+                        <div class="title-option"><strong>Option 1:</strong> "OASIS+, GSA MAS, Alliant 3: The 10 Contract Vehicles That Matter"</div>
+                        <div class="title-option"><strong>Option 2:</strong> "Which Federal Contract Vehicle Is Right for YOUR Business?"</div>
+                        <div class="title-option"><strong>Option 3:</strong> "The Contract Vehicle Cheat Sheet - 10 IDIQs Explained in 30 Minutes"</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Thumbnail Concept</div>
+                    <div class="thumbnail-desc">
+                        <h4>Visual Elements:</h4>
+                        <ul>
+                            <li>Large text: "10 VEHICLES" or "WHICH ONE?"</li>
+                            <li>Logos or icons representing OASIS+, GSA, etc.</li>
+                            <li>Your face with teaching/pointing expression</li>
+                            <li>Checklist or comparison visual</li>
+                            <li>Badge: "CHEAT SHEET" or "EXPLAINED"</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Talking Points</div>
+                    <ul class="talking-points">
+                        <li><strong>OASIS+</strong> - GSA's biggest professional services vehicle, all NAICS</li>
+                        <li><strong>GSA MAS</strong> - The Multiple Award Schedule, product and services categories</li>
+                        <li><strong>CIO-SP3</strong> - NIH IT services vehicle (extended thru Apr 2027, CIO-SP4 cancelled)</li>
+                        <li><strong>Alliant 2/3</strong> - GSA IT vehicle for large enterprise work</li>
+                        <li><strong>SEWP V</strong> - NASA IT products vehicle, fastest ordering</li>
+                        <li><strong>8(a) STARS III</strong> - SBA 8(a) IT services vehicle</li>
+                        <li><strong>VETS 2</strong> - Service-disabled veteran-owned IT vehicle</li>
+                        <li><strong>Agency-specific BPAs</strong> - How to find and position for these</li>
+                        <li>How to evaluate: Which vehicle matches YOUR NAICS and certs?</li>
+                        <li>On-ramping opportunities - when new vehicles open for applications</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Script</div>
+                    <div class="script-section">
+                        <div class="script-part">
+                            <span class="script-label hook">HOOK (0:00-1:30)</span>
+                            <div class="script-text">
+                                <p>"Last year, I was sitting with a contractor who had just lost his third bid in a row. Great company. Solid past performance. Competitive pricing. He looked at me and said, 'Eric, I don't understand. I'm doing everything right.' And I asked him one question: 'Which contract vehicles are you on?' He stared at me. He didn't even know what I was talking about."</p>
+                                <p>"That conversation changed everything for him. Within 6 months, he won his first task order — $1.2 million. Today I'm going to show you exactly what I showed him: the 10 contract vehicles that matter, and which ones fit YOUR business."</p>
+                            </div>
+                        </div>
+
+                        <div class="script-part">
+                            <span class="script-label content">CONTENT (1:30-28:00)</span>
+                            <div class="script-text">
+                                <p><strong>Section 1: The GSA Vehicles (8 min)</strong></p>
+                                <p>"Let's start with GSA - the General Services Administration. They run the biggest vehicles..."</p>
+                                <p>[OASIS+ - what it is, who's eligible, the NAICS expansion, on-ramp status]</p>
+                                <p>[GSA MAS - categories, how pricing works, SIN codes, getting on schedule]</p>
+                                <p>[Alliant 2/3 - enterprise IT, who the primes are, task order volume]</p>
+
+                                <p><strong>Section 2: Agency-Specific Vehicles (8 min)</strong></p>
+                                <p>"Now let's look at vehicles run by specific agencies..."</p>
+                                <p>[CIO-SP3 - NIH vehicle, extended thru Apr 2027 (CIO-SP4 cancelled Jan 2026)]</p>
+                                <p>[SEWP V - NASA's IT product vehicle, why it's so popular]</p>
+                                <p>[Agency BPAs - how to find them, how to position]</p>
+
+                                <p><strong>Section 3: Socioeconomic Vehicles (6 min)</strong></p>
+                                <p>"If you have certifications, there are vehicles specifically for you..."</p>
+                                <p>[8(a) STARS III - SBA 8(a) exclusive]</p>
+                                <p>[VETS 2 - SDVOSB exclusive]</p>
+                                <p>[HUBZone and WOSB opportunities]</p>
+
+                                <p><strong>Section 4: How to Choose (6 min)</strong></p>
+                                <p>"So which one is right for you? Let me give you a framework..."</p>
+                                <p>[Match by NAICS, match by cert, match by agency targets, consider: get on vs. sub through]</p>
+                            </div>
+                        </div>
+
+                        <div class="script-part">
+                            <span class="script-label cta">CTA (28:00-32:00)</span>
+                            <div class="script-text">
+                                <p>"I just gave you the overview - but here's the thing. Knowing the vehicles exist is step one. Actually WINNING work through them is step two. And that's what we're covering March 28th."</p>
+                                <p>"At the bootcamp, we're going to help you score each vehicle for YOUR business. We're going to show you how to find active task orders. And we're going to give you templates for responding to Sources Sought - which is how you get on agency radar BEFORE the RFP even drops."</p>
+                                <p>"Speaking of Sources Sought - that's what I'm covering on Monday. It's one of the most underused strategies in government contracting, and most small businesses completely ignore it. Don't miss that one."</p>
+                                <p>"In the meantime, go register for March 28th. Link in the description. It's free, and you get 6 resources including the IDIQ Vehicles Guide I referenced today. See you Monday."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Call-to-Action</div>
+                    <div class="cta-box">
+                        <h4>FREE Contract Vehicles Bootcamp - March 28</h4>
+                        <p>Get the 10 IDIQ Vehicles Guide + 5 more resources when you register</p>
+                        <a href="https://govcongiants.org/contract-vehicles-bootcamp" class="cta-link">Register Free Now</a>
+                    </div>
+                </div>
+
+                <div class="timing-note">
+                    <strong>Recommended Length: 32-35 minutes</strong>
+                    This is your AUTHORITY live. Demonstrate deep knowledge of the vehicles. Viewers should think "this person really knows their stuff." Tease the Sources Sought strategy for Live #3.
+                </div>
+            </div>
+        </div>
+
+        <!-- LIVE #3 -->
+        <div class="live-card live-3">
+            <div class="live-header">
+                <div>
+                    <h2>LIVE #3: The 2026 Rule That Changes Everything</h2>
+                    <div class="live-date">Monday, March 24, 2026</div>
+                </div>
+                <div class="live-number">03</div>
+            </div>
+            <div class="live-content">
+                <div class="section">
+                    <div class="section-title">Title Options (Pick One)</div>
+                    <div class="title-options">
+                        <div class="title-option"><strong>Option 1:</strong> "NEW 2026 Rule: How to Flip 8(a) Contracts to YOUR Set-Aside (FAR 19.108-11)"</div>
+                        <div class="title-option"><strong>Option 2:</strong> "The FAR Rule Change That Opens Locked Doors for HUBZone, SDVOSB, WOSB"</div>
+                        <div class="title-option"><strong>Option 3:</strong> "Sources Sought Strategy: Use the New Rules to WIN in 2026"</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Thumbnail Concept</div>
+                    <div class="thumbnail-desc">
+                        <h4>Visual Elements:</h4>
+                        <ul>
+                            <li>Large text: "NEW 2026 RULE" or "FAR 19.108-11"</li>
+                            <li>Before/After visual: "8(a) Lock" → "YOUR Set-Aside"</li>
+                            <li>Your face with revealing/excited expression</li>
+                            <li>Small text: "DOORS JUST OPENED" in green</li>
+                            <li>HUBZone, SDVOSB, WOSB badges</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Talking Points</div>
+                    <ul class="talking-points">
+                        <li><strong>NEW: FAR 19.108-11 (Sept 2025)</strong> — "Once 8(a), Always 8(a)" is DEAD</li>
+                        <li>8(a) follow-on contracts can now move to HUBZone, SDVOSB, WOSB</li>
+                        <li>If you're NOT 8(a), doors just opened that were locked for YEARS</li>
+                        <li>Sources Sought = your tool to FLIP requirements to your set-aside</li>
+                        <li>How to use Rule of Two to make your case</li>
+                        <li>The anatomy of a winning Sources Sought response</li>
+                        <li>What to include: capabilities, past performance, SET-ASIDE RECOMMENDATION</li>
+                        <li>How to find Sources Sought on SAM.gov</li>
+                        <li>Building SBLO relationships — they advocate for you</li>
+                        <li>2026 is THE year to capitalize on this rule change</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Script</div>
+                    <div class="script-section">
+                        <div class="script-part">
+                            <span class="script-label hook">HOOK (0:00-2:00)</span>
+                            <div class="script-text">
+                                <p>"Last September, the federal government quietly changed a rule that had been locked in place for DECADES. It's called FAR 19.108-11. And if you're HUBZone, SDVOSB, or WOSB... this rule change just opened doors that were previously LOCKED to you."</p>
+                                <p>"For years, if a contract was awarded under the 8(a) program, the follow-on HAD to stay 8(a). 'Once 8(a), always 8(a).' That's dead. Now, those contracts can be competed under YOUR set-aside category. And the tool you use to make that happen? Sources Sought responses."</p>
+                                <p>"Today I'm going to show you exactly how to use this new rule to flip contracts to YOUR set-aside — and give you the template to do it."</p>
+                            </div>
+                        </div>
+
+                        <div class="script-part">
+                            <span class="script-label content">CONTENT (1:30-25:00)</span>
+                            <div class="script-text">
+                                <p><strong>Section 1: What Is Sources Sought? (5 min)</strong></p>
+                                <p>"Let me explain what's happening when an agency posts a Sources Sought or RFI. They're doing market research. They're trying to figure out: Are there enough qualified small businesses to do this work? How should we structure this contract?..."</p>
+                                <p>[Explain the purpose, why agencies do it, what they're looking for]</p>
+
+                                <p><strong>Section 2: Why Your Response Matters (5 min)</strong></p>
+                                <p>"Here's why you NEED to respond to these. Your response literally helps the agency decide whether to set the contract aside for small business. If no small businesses respond, they'll open it to full competition..."</p>
+                                <p>[Explain influence on set-asides, relationship building, getting on their radar]</p>
+
+                                <p><strong>Section 3: The Response Template (10 min)</strong></p>
+                                <p>"Now let me walk you through exactly what to include in your response. I'm going to give you the template..."</p>
+                                <p>[Go through each section: Company overview, relevant capabilities, past performance, personnel, certifications, questions for the agency, teaming interest]</p>
+
+                                <p><strong>Section 4: Finding and Responding (5 min)</strong></p>
+                                <p>"Where do you find these? Let me show you how to search SAM.gov..."</p>
+                                <p>[Quick demo/explanation of filtering for Sources Sought, response timeline, submission method]</p>
+                            </div>
+                        </div>
+
+                        <div class="script-part">
+                            <span class="script-label cta">CTA (25:00-30:00)</span>
+                            <div class="script-text">
+                                <p>"I just gave you a strategy that could completely change your pipeline. But here's the thing - knowing about Sources Sought is one piece. You also need to know which vehicles to target, how to compete on task orders, whether to team or go direct. It all works together."</p>
+                                <p>"That's exactly what we're covering in 4 days. March 28th. FREE bootcamp. 8 hours. Contract vehicles, Sources Sought, set-asides, task order responses - the whole picture."</p>
+                                <p>"When you register, you get 6 resources including the Sources Sought response template I just walked through. You can download it immediately and start using it TODAY."</p>
+                                <p>"On Wednesday - 2 days before the bootcamp - I'm doing my final live. I'm going to walk through exactly what we're covering on March 28th and answer any questions. If you're on the fence, that's your chance to get clarity."</p>
+                                <p>"Link to register is in the description. See you Wednesday."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Call-to-Action</div>
+                    <div class="cta-box">
+                        <h4>Get the Sources Sought Template FREE</h4>
+                        <p>Register for March 28 bootcamp and download all 6 resources now</p>
+                        <a href="https://govcongiants.org/contract-vehicles-bootcamp" class="cta-link">Register Free + Get Templates</a>
+                    </div>
+                </div>
+
+                <div class="timing-note">
+                    <strong>Recommended Length: 30 minutes</strong>
+                    This is your VALUE live. Give away something genuinely useful (the template). Viewers who use it will trust you more. They should think "if the free stuff is this good, the bootcamp must be amazing."
+                </div>
+            </div>
+        </div>
+
+        <!-- LIVE #4 -->
+        <div class="live-card live-4">
+            <div class="live-header">
+                <div>
+                    <h2>LIVE #4: Final Call - Bootcamp Preview</h2>
+                    <div class="live-date">Wednesday, March 26, 2026</div>
+                </div>
+                <div class="live-number">04</div>
+            </div>
+            <div class="live-content">
+                <div class="section">
+                    <div class="section-title">Title Options (Pick One)</div>
+                    <div class="title-options">
+                        <div class="title-option"><strong>Option 1:</strong> "March 28 Contract Vehicles Bootcamp - Full Preview (LAST CALL)"</div>
+                        <div class="title-option"><strong>Option 2:</strong> "What You'll Learn in 8 Hours on Saturday - Contract Vehicles Deep Dive"</div>
+                        <div class="title-option"><strong>Option 3:</strong> "FREE GovCon Bootcamp in 2 Days - Here's Exactly What We're Covering"</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Thumbnail Concept</div>
+                    <div class="thumbnail-desc">
+                        <h4>Visual Elements:</h4>
+                        <ul>
+                            <li>Large text: "2 DAYS LEFT" or "FINAL CALL"</li>
+                            <li>Calendar showing March 28 circled</li>
+                            <li>Your face with direct/urgent expression</li>
+                            <li>Clock or countdown visual</li>
+                            <li>Badge: "FREE BOOTCAMP" in green</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Talking Points</div>
+                    <ul class="talking-points">
+                        <li>Quick recap: What we covered in Lives 1-3</li>
+                        <li>Full bootcamp agenda walkthrough - hour by hour</li>
+                        <li>The 6 free resources you get just for registering</li>
+                        <li>Who this is for (and who it's NOT for)</li>
+                        <li>What makes this different from other webinars</li>
+                        <li>Live Q&A - answer viewer questions</li>
+                        <li>How to prepare for the bootcamp</li>
+                        <li>The Pro membership upsell opportunity (be transparent)</li>
+                        <li>Urgency: registration closes at midnight Friday</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Script</div>
+                    <div class="script-section">
+                        <div class="script-part">
+                            <span class="script-label hook">HOOK (0:00-2:00)</span>
+                            <div class="script-text">
+                                <p>"Two years ago, I was exactly where some of you are right now. I had a registered business. I had my SAM profile. I was searching SAM.gov every single day. And I kept losing. Bid after bid after bid. I remember sitting in my office thinking, 'Maybe this government contracting thing just isn't for me.'"</p>
+                                <p>"Then someone showed me what I'd been missing. Contract vehicles. Task orders. Sources Sought. The whole system I didn't even know existed. Within a year, everything changed."</p>
+                                <p>"That's why I'm doing this bootcamp on Saturday. 8 hours. Free. Everything I wish someone had told me two years ago. Today I'm going to walk you through exactly what we're covering — and answer any questions you have before we start."</p>
+                            </div>
+                        </div>
+
+                        <div class="script-part">
+                            <span class="script-label content">CONTENT (2:00-25:00)</span>
+                            <div class="script-text">
+                                <p><strong>Section 1: Quick Recap (3 min)</strong></p>
+                                <p>"If you missed any of the previous lives, let me catch you up..."</p>
+                                <p>[60-second summary of each: $77T opportunity, 10 vehicles, Sources Sought]</p>
+
+                                <p><strong>Section 2: The Full Agenda (10 min)</strong></p>
+                                <p>"Here's exactly what we're covering on Saturday, hour by hour..."</p>
+                                <p>[Walk through each session:
+                                - 9am: Contract Vehicles 101 - The Big Picture
+                                - 10:45am: The 10 Most Active Vehicles Deep Dive
+                                - 12:45pm: Sources Sought & RFI Responses Workshop
+                                - 1:45pm: Set-Asides & Socioeconomic Vehicles
+                                - 2:45pm: Task Order Response Strategy
+                                - 4pm: Getting ON vs. Working THROUGH Vehicles
+                                - 4:50pm: Q&A]</p>
+
+                                <p><strong>Section 3: What You Get (5 min)</strong></p>
+                                <p>"When you register, you immediately get access to 6 resources..."</p>
+                                <p>[List and briefly explain each: Expiring contracts list, positioning checklist, 10 IDIQ guide, active vehicles list, Sources Sought template, Task order template]</p>
+
+                                <p><strong>Section 4: Who This Is For (3 min)</strong></p>
+                                <p>"Let me be real about who should register and who shouldn't..."</p>
+                                <p>[For: Small business owners serious about federal contracts, people who've struggled to find opportunities, anyone with certs wanting to leverage them, those willing to spend 8 hours learning]</p>
+                                <p>[Not for: People looking for magic bullets, those not willing to do outreach, people just collecting free stuff with no intention to act]</p>
+
+                                <p><strong>Section 5: The Upsell - Transparency (4 min)</strong></p>
+                                <p>"I want to be transparent with you. After you register, you'll see an offer for our Pro membership. I'm not going to pretend that's not there. Here's the deal..."</p>
+                                <p>[Explain: bootcamp is genuinely free and valuable, Pro is $99/mo for those who want ongoing support, no obligation, the training on Saturday stands alone]</p>
+                            </div>
+                        </div>
+
+                        <div class="script-part">
+                            <span class="script-label cta">CTA (25:00-35:00)</span>
+                            <div class="script-text">
+                                <p>"Alright. Here's the situation. The bootcamp is Saturday, March 28th. 9am to 5pm Eastern. It's on Zoom. It's free. You just need to register."</p>
+                                <p>"When you register, you get the 6 resources immediately. You can start reviewing them before Saturday. Come prepared with questions."</p>
+                                <p>"The link is in the description. govcongiants.org/contract-vehicles-bootcamp."</p>
+                                <p>"Now I want to open it up for Q&A. If you have any questions about the bootcamp, about contract vehicles, about any of this - drop them in the chat. Let's do this."</p>
+                                <p>[Live Q&A for remaining 10 minutes]</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Call-to-Action</div>
+                    <div class="cta-box">
+                        <h4>Last Chance - Register Before Saturday</h4>
+                        <p>FREE Contract Vehicles Bootcamp - March 28, 9am-5pm ET</p>
+                        <a href="https://govcongiants.org/contract-vehicles-bootcamp" class="cta-link">Register Free Now</a>
+                    </div>
+                </div>
+
+                <div class="timing-note">
+                    <strong>Recommended Length: 35-45 minutes (include Q&A)</strong>
+                    This is your CONVERSION live. Be direct about what they get. Be transparent about the upsell. Answer objections in Q&A. Create urgency without being pushy. End strong.
+                </div>
+            </div>
+        </div>
+
+        <!-- TIPS -->
+        <div class="live-card">
+            <div class="live-content">
+                <div class="section-title">General Tips for All Lives</div>
+                <ul class="talking-points">
+                    <li>Promote each live 24-48 hours before on all socials (LinkedIn, IG, Facebook, email)</li>
+                    <li>Pin a comment with the registration link during every live</li>
+                    <li>Mention the bootcamp date (March 28) and that it's FREE multiple times</li>
+                    <li>Engage with chat - answer questions, give shoutouts by name</li>
+                    <li>Save and repost clips to Shorts/Reels immediately after</li>
+                    <li>Send email to your list same day with replay link + registration CTA</li>
+                    <li>Cross-promote: "Did you catch Monday's live? Here's what you missed..."</li>
+                    <li>The 6 free resources are your hook - mention them every live</li>
+                    <li>Track registrations after each live to see what's working</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- METRICS -->
+        <div class="live-card">
+            <div class="live-content">
+                <div class="section-title">Target Metrics for 1,000+ Signups</div>
+                <table class="summary-table">
+                    <tr>
+                        <th>Metric</th>
+                        <th>Target</th>
+                        <th>Notes</th>
+                    </tr>
+                    <tr>
+                        <td>Live viewers (each)</td>
+                        <td>200-500</td>
+                        <td>Engaged viewers who might convert</td>
+                    </tr>
+                    <tr>
+                        <td>Replay views (48 hrs)</td>
+                        <td>2,000-5,000</td>
+                        <td>YouTube algorithm boost</td>
+                    </tr>
+                    <tr>
+                        <td>Click-through to landing</td>
+                        <td>10-15%</td>
+                        <td>From video description link</td>
+                    </tr>
+                    <tr>
+                        <td>Landing page conversion</td>
+                        <td>30-40%</td>
+                        <td>Email capture rate</td>
+                    </tr>
+                    <tr>
+                        <td>Email list size</td>
+                        <td>5,000+</td>
+                        <td>Nurture to conversion</td>
+                    </tr>
+                    <tr>
+                        <td>Email campaign conversion</td>
+                        <td>5-10%</td>
+                        <td>Multi-touch sequence</td>
+                    </tr>
+                </table>
+                <p style="margin-top: 15px; color: #666; font-size: 0.9rem;">Multiple touchpoints: Lives drive awareness → Landing captures email → Nurture sequence converts → Lives build trust → Repeat exposure increases conversion.</p>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

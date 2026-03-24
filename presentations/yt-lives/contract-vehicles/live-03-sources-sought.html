@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YT Live 3: Sources Sought Response Template | GovCon Giants</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: white;
+            background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .content {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .slide {
+            background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
+            border-radius: 16px;
+            padding: 60px 80px;
+            margin-bottom: 30px;
+            border: 3px solid rgba(255,255,255,0.2);
+            width: 1280px;
+            min-height: 720px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .slide-number {
+            display: none;
+        }
+
+        .slide h2 {
+            color: white;
+            font-size: 2.8rem;
+            margin-bottom: 30px;
+            font-weight: 800;
+        }
+
+        .slide h3 {
+            color: #10b981;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .slide p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .slide ul {
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+
+        .slide li {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 12px;
+            padding-left: 10px;
+            font-size: 1.2rem;
+        }
+
+        .slide li::marker {
+            color: #10b981;
+        }
+
+        .stat-highlight {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            color: white;
+            border-radius: 20px;
+            padding: 50px;
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .stat-highlight .number {
+            font-size: 5rem;
+            font-weight: 900;
+        }
+
+        .stat-highlight .label {
+            font-size: 1.4rem;
+            opacity: 0.95;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 25px 0;
+        }
+
+        .info-box {
+            background: rgba(255,255,255,0.1);
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 16px;
+            padding: 25px;
+        }
+
+        .info-box h4 {
+            color: #10b981;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+
+        .info-box p {
+            font-size: 1.1rem;
+            margin-bottom: 0;
+        }
+
+        .info-box ul {
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+
+        .info-box li {
+            font-size: 1.05rem;
+        }
+
+        .info-box.green {
+            border-color: #10b981;
+            background: rgba(16, 185, 129, 0.15);
+        }
+
+        .info-box.green h4 {
+            color: #34d399;
+        }
+
+        .info-box.purple {
+            border-color: #a855f7;
+            background: rgba(168, 85, 247, 0.15);
+        }
+
+        .info-box.purple h4 {
+            color: #c084fc;
+        }
+
+        .info-box.red {
+            border-color: #ef4444;
+            background: rgba(239, 68, 68, 0.15);
+        }
+
+        .info-box.red h4 {
+            color: #f87171;
+        }
+
+        .info-box.orange {
+            border-color: #f97316;
+            background: rgba(249, 115, 22, 0.15);
+        }
+
+        .info-box.orange h4 {
+            color: #fb923c;
+        }
+
+        .template-box {
+            background: rgba(0,0,0,0.3);
+            border: 2px solid #10b981;
+            border-radius: 16px;
+            padding: 25px;
+            font-family: 'Courier New', monospace;
+            font-size: 1rem;
+            color: #e2e8f0;
+            line-height: 1.8;
+        }
+
+        .template-box .label {
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        .template-box .placeholder {
+            color: #a855f7;
+            font-style: italic;
+        }
+
+        .step-number {
+            background: #10b981;
+            color: #1e293b;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            color: white;
+            border-radius: 20px;
+            padding: 50px;
+            text-align: center;
+            margin-top: 30px;
+            width: 1280px;
+        }
+
+        .cta-box h2 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 2.4rem;
+        }
+
+        .cta-box p {
+            color: rgba(255,255,255,0.95);
+            margin-bottom: 25px;
+            font-size: 1.3rem;
+        }
+
+        .cta-box .url {
+            display: inline-block;
+            background: white;
+            color: #059669;
+            padding: 18px 50px;
+            border-radius: 40px;
+            font-weight: 800;
+            font-size: 1.4rem;
+            text-decoration: none;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .slide {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <!-- ==================== HOOK ==================== -->
+
+            <!-- Slide 1: Title -->
+            <div class="slide">
+                <span class="slide-number">SLIDE 1</span>
+                <h2 style="text-align: center;">The <span style="color: #10b981;">2026 Strategy</span> to Flip<br>Contracts to YOUR Set-Aside</h2>
+                <p style="text-align: center; font-size: 1.5rem; margin-bottom: 30px;">How Sources Sought + New FAR Rules = Massive Opportunity</p>
+                <div class="stat-highlight">
+                    <div class="number">NEW</div>
+                    <div class="label">FAR 19.108-11 (Sept 2025): 8(a) contracts can now move to HUBZone, SDVOSB, WOSB</div>
+                </div>
+                <p style="text-align: center; color: #10b981; font-size: 1.2rem;">March 24, 2026 | Contract Vehicles Bootcamp Series</p>
+            </div>
+
+            <!-- Slide 2: Today's Free Giveaway -->
+            <div class="slide">
+                <span class="slide-number">SLIDE 2</span>
+                <h2>Today's FREE Giveaway</h2>
+                <div class="two-col">
+                    <div>
+                        <h3>Sources Sought Response Template</h3>
+                        <p style="margin-bottom: 20px;">A fill-in-the-blank template that makes responding easy:</p>
+                        <ul>
+                            <li>Professional formatting</li>
+                            <li>All required elements included</li>
+                            <li>Example language to customize</li>
+                            <li>Tips for each section</li>
+                            <li>Works for any Sources Sought</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="template-box" style="font-size: 0.9rem;">
+                            <span class="label">SUBJECT:</span> Sources Sought Response - <span class="placeholder">[Solicitation #]</span><br><br>
+                            <span class="label">COMPANY:</span> <span class="placeholder">[Your Company Name]</span><br>
+                            <span class="label">CAGE:</span> <span class="placeholder">[XXXXX]</span><br>
+                            <span class="label">UEI:</span> <span class="placeholder">[XXXXXXXXXXXX]</span><br><br>
+                            <span class="label">CAPABILITY STATEMENT:</span><br>
+                            <span class="placeholder">[2-3 paragraph summary...]</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Why This Matters -->
+            <div class="slide">
+                <span class="slide-number">SLIDE 3</span>
+                <h2>Why Sources Sought Matter</h2>
+                <div class="stat-highlight" style="background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%); max-width: 700px; margin: 0 auto 30px;">
+                    <div class="number">30-90</div>
+                    <div class="label">Days of advance notice before RFP drops</div>
+                </div>
+                <p style="text-align: center; font-size: 1.5rem;">
+                    A Sources Sought is the government asking: <em>"Who can do this work?"</em>
+                </p>
+                <p style="text-align: center; margin-top: 20px; color: #10b981; font-size: 1.4rem; font-weight: 600;">
+                    Your response can influence whether it becomes a set-aside!
+                </p>
+            </div>
+
+            <!-- Slide 4: What is a Sources Sought -->
+            <div class="slide">
+                <span class="slide-number">SLIDE 4</span>
+                <h2>What is a Sources Sought?</h2>
+                <div class="two-col">
+                    <div>
+                        <h3>It's Market Research</h3>
+                        <p style="margin-bottom: 20px;">The contracting officer wants to know:</p>
+                        <ul>
+                            <li>Are there capable companies out there?</li>
+                            <li>Are there enough small businesses?</li>
+                            <li>What's the competitive landscape?</li>
+                            <li>Should this be a set-aside?</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="info-box green" style="margin-bottom: 20px;">
+                            <h4>NOT a Solicitation</h4>
+                            <p>No contract is being awarded. You're just saying "I'm interested and capable."</p>
+                        </div>
+                        <div class="info-box purple">
+                            <h4>Why Respond?</h4>
+                            <p>Your response helps determine if it becomes a set-aside. Get on the CO's radar early!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5: The Power of Responding -->
+            <div class="slide">
+                <span class="slide-number">SLIDE 5</span>
+                <h2>The Power of Your Response</h2>
+                <div class="two-col">
+                    <div class="info-box green">
+                        <h4>If Enough Small Businesses Respond...</h4>
+                        <ul>
+                            <li>CO may set-aside for small business</li>
+                            <li>May create 8(a), HUBZone, SDVOSB pool</li>
+                            <li>Competition narrows significantly</li>
+                            <li>Large businesses excluded</li>
+                        </ul>
+                    </div>
+                    <div class="info-box red">
+                        <h4>If You DON'T Respond...</h4>
+                        <ul>
+                            <li>CO may go full & open</li>
+                            <li>Large businesses compete</li>
+                            <li>You miss early positioning</li>
+                            <li>No chance to influence requirements</li>
+                        </ul>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 30px; color: #10b981; font-size: 1.3rem; font-weight: 600;">
+                    Real story: One of our members responded, it became an 8(a) set-aside, they won $4.2M.
+                </p>
+            </div>
+
+            <!-- Slide 6: The 8(a) Rule Change -->
+            <div class="slide">
+                <span class="slide-number">SLIDE 6</span>
+                <h2>The 8(a) Rule That Changed Everything</h2>
+                <p style="color: #10b981; font-size: 1.4rem; margin-bottom: 30px;">FAR 19.108-11 (Sept 26, 2025) — Why Sources Sought matters MORE now</p>
+                <div class="two-col">
+                    <div class="info-box red" style="text-align: center; padding: 40px;">
+                        <h4 style="color: #f87171; font-size: 1.2rem;">Before</h4>
+                        <p style="font-size: 1.8rem; font-weight: 800; margin-top: 15px; color: white;">"Once 8(a),<br>Always 8(a)"</p>
+                    </div>
+                    <div class="info-box green" style="text-align: center; padding: 40px;">
+                        <h4 style="color: #34d399; font-size: 1.2rem;">After (FAR 19.108-11, Sept 2025)</h4>
+                        <p style="font-size: 1.6rem; font-weight: 800; margin-top: 15px; color: white;">8(a) follow-ons can move to HUBZone, SDVOSB, WOSB</p>
+                    </div>
+                </div>
+                <div class="info-box purple" style="margin-top: 30px; text-align: center; padding: 30px;">
+                    <p style="font-size: 1.4rem; font-style: italic; margin: 0;">"If you're HUBZone or SDVOSB, doors just opened that were previously locked."</p>
+                </div>
+                <p style="text-align: center; margin-top: 25px; color: #10b981; font-size: 1.2rem; font-weight: 600;">
+                    Your Sources Sought response can FLIP a requirement to YOUR set-aside category!
+                </p>
+            </div>
+
+            <!-- Slide 7: How to Flip a Requirement -->
+            <div class="slide">
+                <span class="slide-number">SLIDE 7</span>
+                <h2>Flipping a Requirement: 8(a) → Your Set-Aside</h2>
+                <p style="color: #94a3b8; margin-bottom: 25px; font-size: 1.2rem;">The FAR 8(a) follow-on lock is GONE — here's how to capitalize</p>
+                <div class="two-col">
+                    <div>
+                        <h3 style="color: #10b981;">Step 1: Sources Sought Response</h3>
+                        <ul>
+                            <li>Monitor SAM.gov for Sources Sought notices</li>
+                            <li>Respond even if you won't bid — shapes perception</li>
+                            <li>Clearly state your socioeconomic status (SDVOSB, HUBZone, WOSB)</li>
+                            <li>Demonstrate capability + past performance</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 style="color: #a855f7;">Step 2: Make the Case</h3>
+                        <ul>
+                            <li>Reference <strong>Rule of Two</strong> — 2+ can compete = MUST set aside</li>
+                            <li>Show the CO there's competition in YOUR category</li>
+                            <li>Request 1-on-1 meeting with buying office</li>
+                            <li>Build SBLO relationship — they advocate for you</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="info-box orange" style="margin-top: 25px; text-align: center;">
+                    <h4>The Opportunity</h4>
+                    <p style="margin: 0;">Contracts that were locked to 8(a) for years are now open for recompete under YOUR set-aside.</p>
+                </div>
+            </div>
+
+            <!-- Slide 8: Let's Fill This Out -->
+            <div class="slide">
+                <span class="slide-number">SLIDE 8</span>
+                <h2 style="text-align: center;">Let's Fill Out the Template Together</h2>
+                <p style="text-align: center; font-size: 1.5rem; margin-bottom: 40px;">I'll walk through each section live</p>
+                <div class="info-box" style="text-align: center; padding: 50px;">
+                    <h4 style="font-size: 1.8rem;">6 Sections</h4>
+                    <p style="font-size: 1.2rem; margin-top: 20px;">Header → Interest Statement → Capability Statement → Past Performance → Questions/Feedback → Closing</p>
+                </div>
+                <p style="text-align: center; margin-top: 30px; font-size: 1.2rem;">Open your template and follow along...</p>
+            </div>
+
+            <!-- Slide 7: Section 1 - Header -->
+            <div class="slide">
+                <span class="slide-number">SLIDE 7</span>
+                <h2>Section 1: Header Information</h2>
+                <div class="two-col">
+                    <div>
+                        <div class="template-box" style="font-size: 0.95rem;">
+                            <span class="label">TO:</span> <span class="placeholder">[Contracting Officer Name]</span><br>
+                            <span class="label">FROM:</span> <span class="placeholder">[Your Company Name]</span><br>
+                            <span class="label">RE:</span> Sources Sought - <span class="placeholder">[Solicitation #]</span><br>
+                            <span class="label">DATE:</span> <span class="placeholder">[Response Date]</span><br><br>
+                            <span class="label">COMPANY INFO:</span><br>
+                            CAGE Code: <span class="placeholder">[XXXXX]</span><br>
+                            UEI: <span class="placeholder">[XXXXXXXXXXXX]</span><br>
+                            Business Size: <span class="placeholder">[Small/Large]</span><br>
+                            Certifications: <span class="placeholder">[8(a), SDVOSB, etc.]</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>Pro Tips</h3>
+                        <ul>
+                            <li>Get CO name from SAM.gov listing</li>
+                            <li>Include ALL certifications</li>
+                            <li>Double-check your CAGE & UEI</li>
+                            <li>Match the solicitation number exactly</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 8: Section 2 - Interest Statement -->
+            <div class="slide">
+                <span class="slide-number">SLIDE 8</span>
+                <h2>Section 2: Statement of Interest</h2>
+                <div class="template-box" style="margin-bottom: 30px;">
+                    <span class="label">STATEMENT OF INTEREST:</span><br><br>
+                    <span class="placeholder">[Company Name]</span> is pleased to express our interest in the above-referenced Sources Sought. We are a <span class="placeholder">[certification status]</span> company with extensive experience in <span class="placeholder">[relevant service area]</span>.<br><br>
+                    We believe we are well-positioned to support this requirement based on our <span class="placeholder">[key differentiator]</span> and track record of <span class="placeholder">[relevant experience]</span>.
+                </div>
+                <h3>What to Include</h3>
+                <ul>
+                    <li>Clear statement that you're interested and capable</li>
+                    <li>Highlight your certification status upfront</li>
+                    <li>Preview your key differentiator</li>
+                </ul>
+            </div>
+
+            <!-- Slide 9: Section 3 - Capability Statement -->
+            <div class="slide">
+                <span class="slide-number">SLIDE 9</span>
+                <h2>Section 3: Capability Statement</h2>
+                <div class="two-col">
+                    <div>
+                        <div class="template-box" style="font-size: 0.9rem;">
+                            <span class="label">CAPABILITY OVERVIEW:</span><br><br>
+                            <span class="placeholder">[Company]</span> has provided <span class="placeholder">[service type]</span> services since <span class="placeholder">[year]</span>. Our core capabilities include:<br><br>
+                            • <span class="placeholder">[Capability 1]</span><br>
+                            • <span class="placeholder">[Capability 2]</span><br>
+                            • <span class="placeholder">[Capability 3]</span><br><br>
+                            <span class="label">RELEVANT EXPERIENCE:</span><br>
+                            We have successfully performed similar work for <span class="placeholder">[Agency/Client]</span>.
+                        </div>
+                    </div>
+                    <div>
+                        <h3>Key Points</h3>
+                        <ul>
+                            <li>Match capabilities to their requirements</li>
+                            <li>Quantify when possible ($, years, projects)</li>
+                            <li>Include federal AND commercial experience</li>
+                            <li>Keep it relevant — no fluff</li>
+                        </ul>
+                        <div class="info-box orange" style="margin-top: 20px;">
+                            <h4>Don't Oversell</h4>
+                            <p>This isn't a proposal. Be honest about your capabilities.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 10: Section 4 - Past Performance -->
+            <div class="slide">
+                <span class="slide-number">SLIDE 10</span>
+                <h2>Section 4: Past Performance Summary</h2>
+                <div class="template-box" style="margin-bottom: 30px; font-size: 0.95rem;">
+                    <span class="label">RELEVANT PAST PERFORMANCE:</span><br><br>
+                    <span class="label">Contract 1:</span><br>
+                    Client: <span class="placeholder">[Agency/Company Name]</span><br>
+                    Value: <span class="placeholder">[$X,XXX,XXX]</span><br>
+                    Period: <span class="placeholder">[Start - End]</span><br>
+                    Services: <span class="placeholder">[Brief description of work]</span><br>
+                    Relevance: <span class="placeholder">[How this relates to the requirement]</span><br><br>
+                    <span class="label">Contract 2:</span> <span class="placeholder">[Same format...]</span>
+                </div>
+                <h3>No Federal Past Performance?</h3>
+                <p>Include commercial work, subcontracting experience, or state/local contracts. Label clearly as "Commercial" or "Subcontract."</p>
+            </div>
+
+            <!-- Slide 11: Section 5 - Questions/Feedback -->
+            <div class="slide">
+                <span class="slide-number">SLIDE 11</span>
+                <h2>Section 5: Questions & Feedback</h2>
+                <div class="two-col">
+                    <div>
+                        <div class="template-box" style="font-size: 0.9rem;">
+                            <span class="label">QUESTIONS FOR CLARIFICATION:</span><br><br>
+                            1. <span class="placeholder">[Question about scope]</span><br>
+                            2. <span class="placeholder">[Question about timeline]</span><br>
+                            3. <span class="placeholder">[Question about requirements]</span><br><br>
+                            <span class="label">RECOMMENDATIONS:</span><br>
+                            Based on our experience, we recommend <span class="placeholder">[suggestion]</span> to <span class="placeholder">[benefit to government]</span>.
+                        </div>
+                    </div>
+                    <div>
+                        <h3>This is Your Influence</h3>
+                        <ul>
+                            <li>Ask smart questions — shows expertise</li>
+                            <li>Suggest set-aside if applicable</li>
+                            <li>Recommend bundling/unbundling</li>
+                            <li>Identify unclear requirements</li>
+                        </ul>
+                        <div class="info-box green" style="margin-top: 20px;">
+                            <h4>Power Move</h4>
+                            <p style="font-size: 1rem;">"We recommend this be set aside for small businesses, as the scope aligns well with small business capabilities."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 12: Section 6 - Closing -->
+            <div class="slide">
+                <span class="slide-number">SLIDE 12</span>
+                <h2>Section 6: Professional Closing</h2>
+                <div class="template-box" style="max-width: 800px; margin: 0 auto 30px;">
+                    <span class="label">CLOSING:</span><br><br>
+                    We appreciate the opportunity to respond to this Sources Sought and would welcome the chance to discuss our capabilities further. Please feel free to contact me directly with any questions.<br><br>
+                    Respectfully submitted,<br><br>
+                    <span class="placeholder">[Your Name]</span><br>
+                    <span class="placeholder">[Title]</span><br>
+                    <span class="placeholder">[Phone]</span><br>
+                    <span class="placeholder">[Email]</span>
+                </div>
+                <h3>Final Checklist</h3>
+                <ul>
+                    <li>Include direct contact info (not generic inbox)</li>
+                    <li>Attach capability statement (1-2 pages max)</li>
+                    <li>Submit before deadline — early is better</li>
+                </ul>
+            </div>
+
+            <!-- Slide 13: Common Mistakes -->
+            <div class="slide">
+                <span class="slide-number">SLIDE 13</span>
+                <h2>Common Mistakes to Avoid</h2>
+                <div class="two-col">
+                    <div class="info-box red">
+                        <h4>DON'T</h4>
+                        <ul>
+                            <li>Write a full proposal (too long)</li>
+                            <li>Include pricing information</li>
+                            <li>Claim capabilities you don't have</li>
+                            <li>Submit after the deadline</li>
+                            <li>Use generic template without customization</li>
+                        </ul>
+                    </div>
+                    <div class="info-box green">
+                        <h4>DO</h4>
+                        <ul>
+                            <li>Keep it 2-4 pages max</li>
+                            <li>Customize for each opportunity</li>
+                            <li>Highlight relevant certifications</li>
+                            <li>Answer their specific questions</li>
+                            <li>Follow their format instructions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 14: Where to Find Sources Sought -->
+            <div class="slide">
+                <span class="slide-number">SLIDE 14</span>
+                <h2>Where to Find Sources Sought</h2>
+                <div class="two-col">
+                    <div>
+                        <div class="info-box" style="margin-bottom: 20px;">
+                            <h4>SAM.gov</h4>
+                            <p>Filter by "Notice Type" → "Sources Sought" or "Request for Information"</p>
+                        </div>
+                        <div class="info-box" style="margin-bottom: 20px;">
+                            <h4>GovWin / Deltek</h4>
+                            <p>Premium tool with better filtering and alerts</p>
+                        </div>
+                        <div class="info-box">
+                            <h4>Agency Forecast Sites</h4>
+                            <p>acquisitiongateway.gov/forecast for upcoming opportunities</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>Set Up Alerts</h3>
+                        <ul>
+                            <li>SAM.gov saved searches with email alerts</li>
+                            <li>Filter by your NAICS codes</li>
+                            <li>Filter by set-aside type</li>
+                            <li>Check daily — response windows are short!</li>
+                        </ul>
+                        <p style="margin-top: 20px; color: #f97316; font-weight: 600;">
+                            Response deadlines: Usually 7-14 days. Don't wait!
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 15: Your Action Plan -->
+            <div class="slide">
+                <span class="slide-number">SLIDE 15</span>
+                <h2>Your Action Plan This Week</h2>
+                <div style="display: flex; gap: 25px; margin-bottom: 25px;">
+                    <div class="step-number">1</div>
+                    <div>
+                        <h3 style="margin-bottom: 8px;">Download the Template</h3>
+                        <p style="font-size: 1.1rem;">Register for the bootcamp to get instant access</p>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 25px; margin-bottom: 25px;">
+                    <div class="step-number">2</div>
+                    <div>
+                        <h3 style="margin-bottom: 8px;">Set Up SAM.gov Alerts</h3>
+                        <p style="font-size: 1.1rem;">Create saved search for "Sources Sought" in your NAICS</p>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 25px; margin-bottom: 25px;">
+                    <div class="step-number">3</div>
+                    <div>
+                        <h3 style="margin-bottom: 8px;">Pre-Fill Your Template</h3>
+                        <p style="font-size: 1.1rem;">Add company info, capability statement, past performance — have it ready</p>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 25px;">
+                    <div class="step-number">4</div>
+                    <div>
+                        <h3 style="margin-bottom: 8px;">Respond to 3 This Month</h3>
+                        <p style="font-size: 1.1rem;">Practice makes perfect. Build the habit.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 16: Other 5 Handouts -->
+            <div class="slide">
+                <span class="slide-number">SLIDE 16</span>
+                <h2>Get All 6 FREE Resources</h2>
+                <p style="font-size: 1.4rem; margin-bottom: 30px;">Register for the bootcamp to get ALL 6:</p>
+                <div class="two-col">
+                    <div>
+                        <ul style="font-size: 1.2rem;">
+                            <li>10 IDIQ Vehicles Guide</li>
+                            <li>Active IDIQ Vehicles List (50+)</li>
+                            <li>March 2026 Expiring Contracts</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul style="font-size: 1.2rem;">
+                            <li>Recompete Positioning Checklist</li>
+                            <li><strong style="color: #10b981;">Sources Sought Response Template</strong> ← Today!</li>
+                            <li>Task Order Response Template</li>
+                        </ul>
+                    </div>
+                </div>
+                <p style="margin-top: 40px; text-align: center; color: #10b981; font-size: 1.4rem; font-weight: 600;">
+                    All 6 are FREE when you register for the March 28 Bootcamp!
+                </p>
+            </div>
+
+            <!-- Slide 17: Wednesday Tease -->
+            <div class="slide">
+                <span class="slide-number">SLIDE 17</span>
+                <h2>Next Live: Final Call</h2>
+                <p style="font-size: 1.4rem; margin-bottom: 30px;">2 days before the bootcamp — your last chance to register and ask questions.</p>
+                <div class="info-box" style="text-align: center; padding: 40px;">
+                    <h4 style="font-size: 1.6rem;">What I'll Cover Next</h4>
+                    <ul style="text-align: left; max-width: 600px; margin: 20px auto 0;">
+                        <li>Full bootcamp agenda walkthrough</li>
+                        <li>The 6 resources you'll get</li>
+                        <li>Live Q&A — bring your questions</li>
+                        <li>Final registration push</li>
+                    </ul>
+                </div>
+                <p style="margin-top: 30px; text-align: center; color: #a855f7; font-weight: 700; font-size: 1.3rem;">
+                    Subscribe so you don't miss it!
+                </p>
+            </div>
+
+            <!-- Slide 18: March 28 Bootcamp -->
+            <div class="slide">
+                <span class="slide-number">SLIDE 18</span>
+                <h2>March 28: Contract Vehicles Bootcamp</h2>
+                <p style="font-size: 1.3rem; margin-bottom: 30px;">FREE | 8 Hours | Live on Zoom</p>
+                <div class="two-col">
+                    <div>
+                        <h3>What We Cover</h3>
+                        <ul>
+                            <li>The $77 Trillion IDIQ Landscape</li>
+                            <li>Deep dive into 10 key vehicles</li>
+                            <li>Finding & winning task orders</li>
+                            <li>Sources Sought workshop</li>
+                            <li>Teaming & subcontracting</li>
+                            <li>Your 30-day action plan</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="info-box" style="margin-bottom: 20px;">
+                            <h4>LIVE Q&A Throughout</h4>
+                            <p>Ask questions specific to YOUR situation. Get real-time answers.</p>
+                        </div>
+                        <div class="info-box">
+                            <h4>Networking</h4>
+                            <p>Connect with other contractors. Find teaming partners.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Box -->
+            <div class="cta-box">
+                <h2>Get Your FREE Sources Sought Template</h2>
+                <p>Plus 5 more resources when you register</p>
+                <a href="https://govcongiants.org/cvb" class="url">govcongiants.org/cvb</a>
+                <p style="margin-top: 25px; font-size: 1.1rem;">March 28, 2026 | 9 AM - 5 PM ET | FREE</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

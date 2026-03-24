@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YT Live 2: Active IDIQ Vehicles List | GovCon Giants</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: white;
+            background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .content {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .slide {
+            background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
+            border-radius: 16px;
+            padding: 60px 80px;
+            margin-bottom: 30px;
+            border: 3px solid rgba(255,255,255,0.2);
+            width: 1280px;
+            min-height: 720px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .slide-number {
+            display: none;
+        }
+
+        .slide h2 {
+            color: white;
+            font-size: 2.8rem;
+            margin-bottom: 30px;
+            font-weight: 800;
+        }
+
+        .slide h3 {
+            color: #10b981;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .slide p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .slide ul {
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+
+        .slide li {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 12px;
+            padding-left: 10px;
+            font-size: 1.2rem;
+        }
+
+        .slide li::marker {
+            color: #10b981;
+        }
+
+        .slide ol {
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+
+        .slide ol li {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 12px;
+            font-size: 1.15rem;
+        }
+
+        .stat-highlight {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            color: white;
+            border-radius: 20px;
+            padding: 50px;
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .stat-highlight .number {
+            font-size: 5rem;
+            font-weight: 900;
+        }
+
+        .stat-highlight .label {
+            font-size: 1.4rem;
+            opacity: 0.95;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .stat-box .number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: white;
+        }
+
+        .stat-box .label {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.9);
+            margin-top: 8px;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 25px 0;
+        }
+
+        .three-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 25px;
+            margin: 25px 0;
+        }
+
+        .info-box {
+            background: rgba(255,255,255,0.1);
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 16px;
+            padding: 25px;
+        }
+
+        .info-box h4 {
+            color: #10b981;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+
+        .info-box p {
+            font-size: 1.1rem;
+            margin-bottom: 0;
+        }
+
+        .info-box ul {
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+
+        .info-box li {
+            font-size: 1.05rem;
+        }
+
+        .info-box.green {
+            border-color: #10b981;
+            background: rgba(16, 185, 129, 0.15);
+        }
+
+        .info-box.green h4 {
+            color: #34d399;
+        }
+
+        .info-box.purple {
+            border-color: #a855f7;
+            background: rgba(168, 85, 247, 0.15);
+        }
+
+        .info-box.purple h4 {
+            color: #c084fc;
+        }
+
+        .info-box.blue {
+            border-color: #3b82f6;
+            background: rgba(59, 130, 246, 0.15);
+        }
+
+        .info-box.blue h4 {
+            color: #60a5fa;
+        }
+
+        .info-box.orange {
+            border-color: #f97316;
+            background: rgba(249, 115, 22, 0.15);
+        }
+
+        .info-box.orange h4 {
+            color: #fb923c;
+        }
+
+        .vehicle-card {
+            background: rgba(255,255,255,0.1);
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .vehicle-card h4 {
+            color: #10b981;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .vehicle-card .type {
+            color: #a855f7;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .vehicle-card p {
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+
+        .vehicle-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 1.1rem;
+        }
+
+        .vehicle-table th {
+            background: rgba(16, 185, 129, 0.3);
+            color: white;
+            padding: 16px 20px;
+            text-align: left;
+            font-weight: 700;
+            border-bottom: 2px solid #10b981;
+        }
+
+        .vehicle-table td {
+            padding: 14px 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.9);
+        }
+
+        .vehicle-table tr:nth-child(even) {
+            background: rgba(255,255,255,0.05);
+        }
+
+        .vehicle-table tr.highlight {
+            background: rgba(16, 185, 129, 0.2);
+            border-left: 4px solid #10b981;
+        }
+
+        .spreadsheet-preview {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        .spreadsheet-preview .header {
+            background: #1e3a8a;
+            color: white;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .spreadsheet-preview .header div,
+        .spreadsheet-preview .row div {
+            padding: 12px 16px;
+            border-right: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .spreadsheet-preview .row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            font-size: 14px;
+            color: #1e293b;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .spreadsheet-preview .row div {
+            border-right: 1px solid #e2e8f0;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            color: white;
+            border-radius: 20px;
+            padding: 50px;
+            text-align: center;
+            margin-top: 30px;
+            width: 1280px;
+        }
+
+        .cta-box h2 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 2.4rem;
+        }
+
+        .cta-box p {
+            color: rgba(255,255,255,0.95);
+            margin-bottom: 25px;
+            font-size: 1.3rem;
+        }
+
+        .cta-box .url {
+            display: inline-block;
+            background: white;
+            color: #059669;
+            padding: 18px 50px;
+            border-radius: 40px;
+            font-weight: 800;
+            font-size: 1.4rem;
+            text-decoration: none;
+        }
+
+        .recap-box {
+            background: rgba(255,255,255,0.1);
+            border-left: 4px solid #10b981;
+            padding: 20px 30px;
+            margin-bottom: 30px;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .recap-box p {
+            margin-bottom: 0;
+            font-size: 1.2rem;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .slide {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <!-- ==================== HOOK ==================== -->
+
+            <!-- Slide 1: Title -->
+            <div class="slide">
+                <span class="slide-number">SLIDE 1</span>
+                <h2 style="text-align: center;">Finding Opportunities with the<br><span style="color: #a855f7;">Active IDIQ Vehicles List</span></h2>
+                <p style="text-align: center; font-size: 1.5rem; margin-bottom: 40px;">50+ Vehicles with Ceiling Values, NAICS Codes & More</p>
+                <div class="stat-grid">
+                    <div class="stat-box">
+                        <div class="number">$77T</div>
+                        <div class="label">Total IDIQ Ceiling Value</div>
+                    </div>
+                    <div class="stat-box" style="background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);">
+                        <div class="number">55%</div>
+                        <div class="label">Federal $ Through Vehicles</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="number">50+</div>
+                        <div class="label">Vehicles in This List</div>
+                    </div>
+                </div>
+                <p style="text-align: center; color: #10b981; font-size: 1.2rem;">March 20, 2026 | Contract Vehicles Bootcamp Series</p>
+            </div>
+
+            <!-- Slide 2: Today's Free Giveaway -->
+            <div class="slide">
+                <span class="slide-number">SLIDE 2</span>
+                <h2>Today's FREE Giveaway</h2>
+                <div class="two-col">
+                    <div>
+                        <h3>Active IDIQ Vehicles List</h3>
+                        <p style="margin-bottom: 20px;">A comprehensive Excel spreadsheet with:</p>
+                        <ul>
+                            <li>50+ active GWAC & IDIQ vehicles</li>
+                            <li>Ceiling values for each</li>
+                            <li>Covered NAICS codes</li>
+                            <li>Set-aside pools available</li>
+                            <li>Application status (open/closed)</li>
+                            <li>Expiration dates</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="spreadsheet-preview">
+                            <div class="header">
+                                <div>Vehicle Name</div>
+                                <div>Ceiling</div>
+                                <div>Status</div>
+                                <div>Expires</div>
+                            </div>
+                            <div class="row">
+                                <div>GSA MAS</div>
+                                <div>Unlimited</div>
+                                <div style="color: #059669;">Open</div>
+                                <div>Ongoing</div>
+                            </div>
+                            <div class="row">
+                                <div>OASIS+</div>
+                                <div>No Cap</div>
+                                <div style="color: #059669;">Open</div>
+                                <div>2034</div>
+                            </div>
+                            <div class="row">
+                                <div>8(a) STARS III</div>
+                                <div>$50B</div>
+                                <div style="color: #059669;">Open</div>
+                                <div>2032</div>
+                            </div>
+                            <div class="row">
+                                <div>Alliant 3</div>
+                                <div>No Cap</div>
+                                <div style="color: #059669;">Awarded</div>
+                                <div>2036</div>
+                            </div>
+                            <div class="row">
+                                <div>+ 46 more...</div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: How I Use This List -->
+            <div class="slide">
+                <span class="slide-number">SLIDE 3</span>
+                <h2>How I Use This List</h2>
+                <div class="two-col">
+                    <div>
+                        <h3>Step 1: Filter by NAICS</h3>
+                        <p>Which vehicles cover MY codes? Filter the spreadsheet to your primary NAICS.</p>
+                        <h3 style="margin-top: 25px;">Step 2: Check Set-Aside Pools</h3>
+                        <p>Am I 8(a)? SDVOSB? HUBZone? Look for vehicles with dedicated pools.</p>
+                    </div>
+                    <div>
+                        <h3>Step 3: Review Ceiling vs. Spending</h3>
+                        <p>High ceiling = agency planning. Cross-reference with actual spending data.</p>
+                        <h3 style="margin-top: 25px;">Step 4: Note Application Windows</h3>
+                        <p>Which vehicles are open? Coming soon? Plan your applications.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Column Breakdown -->
+            <div class="slide">
+                <span class="slide-number">SLIDE 4</span>
+                <h2>Understanding Each Column</h2>
+                <table class="vehicle-table">
+                    <tr>
+                        <th>Column</th>
+                        <th>What It Tells You</th>
+                        <th>How to Use It</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Vehicle Name</strong></td>
+                        <td>Official contract vehicle title</td>
+                        <td>Search SAM.gov for task orders</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ceiling Value</strong></td>
+                        <td>Maximum potential spending</td>
+                        <td>Higher = more opportunity</td>
+                    </tr>
+                    <tr>
+                        <td><strong>NAICS Codes</strong></td>
+                        <td>Industries covered</td>
+                        <td>Match to your capabilities</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Set-Aside Pools</strong></td>
+                        <td>SB, 8(a), SDVOSB, etc.</td>
+                        <td>Target your certification</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Application Status</strong></td>
+                        <td>Open, Closed, Coming Soon</td>
+                        <td>Plan your applications</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Expiration Date</strong></td>
+                        <td>When vehicle ends</td>
+                        <td>Track recompetes</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Slide 5: IT Services Example -->
+            <div class="slide">
+                <span class="slide-number">SLIDE 5</span>
+                <h2>Example: IT Services Company</h2>
+                <p style="margin-bottom: 20px;">NAICS: 541512 (Computer Systems Design) | Certification: 8(a)</p>
+                <table class="vehicle-table">
+                    <tr>
+                        <th>Best Vehicles</th>
+                        <th>Ceiling</th>
+                        <th>Why It Fits</th>
+                    </tr>
+                    <tr class="highlight">
+                        <td><strong>8(a) STARS III</strong></td>
+                        <td>$50B</td>
+                        <td>8(a) only, IT focus, currently open</td>
+                    </tr>
+                    <tr>
+                        <td>CIO-SP3 (extended)</td>
+                        <td>$20B</td>
+                        <td>IT services, 8(a) pool (thru Apr 2027)</td>
+                    </tr>
+                    <tr>
+                        <td>GSA MAS (IT Category)</td>
+                        <td>Unlimited</td>
+                        <td>Broad IT coverage, always open</td>
+                    </tr>
+                    <tr>
+                        <td>OASIS+ (8(a) Pool)</td>
+                        <td>No Cap</td>
+                        <td>Professional services, includes IT</td>
+                    </tr>
+                    <tr>
+                        <td>Alliant 3 SB</td>
+                        <td>No Cap</td>
+                        <td>Awarded Feb 2026 — Phase 2 coming</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Slide 6: Construction Example -->
+            <div class="slide">
+                <span class="slide-number">SLIDE 6</span>
+                <h2>Example: Construction Company</h2>
+                <p style="margin-bottom: 20px;">NAICS: 236220 (Commercial Construction) | Certification: SDVOSB</p>
+                <table class="vehicle-table">
+                    <tr>
+                        <th>Best Vehicles</th>
+                        <th>Ceiling</th>
+                        <th>Why It Fits</th>
+                    </tr>
+                    <tr class="highlight">
+                        <td><strong>VETS 2 (VA)</strong></td>
+                        <td>$5B</td>
+                        <td>SDVOSB only, IT services focus</td>
+                    </tr>
+                    <tr>
+                        <td>GSA PSHC</td>
+                        <td>Varies</td>
+                        <td>Facilities & construction</td>
+                    </tr>
+                    <tr>
+                        <td>MATOC (Corps of Engineers)</td>
+                        <td>$2-10B</td>
+                        <td>Agency-specific, construction focus</td>
+                    </tr>
+                    <tr>
+                        <td>Agency BPAs</td>
+                        <td>Varies</td>
+                        <td>Look for DoD, VA, GSA BPAs</td>
+                    </tr>
+                </table>
+                <p style="margin-top: 20px; color: #f97316; font-weight: 600;">Note: Construction has fewer GWACs — focus on agency-specific vehicles!</p>
+            </div>
+
+            <!-- Slide 7: Professional Services Example -->
+            <div class="slide">
+                <span class="slide-number">SLIDE 7</span>
+                <h2>Example: Professional Services</h2>
+                <p style="margin-bottom: 20px;">NAICS: 541611 (Management Consulting) | Certification: HUBZone</p>
+                <table class="vehicle-table">
+                    <tr>
+                        <th>Best Vehicles</th>
+                        <th>Ceiling</th>
+                        <th>Why It Fits</th>
+                    </tr>
+                    <tr class="highlight">
+                        <td><strong>OASIS+ (HUBZone Pool)</strong></td>
+                        <td>No Cap</td>
+                        <td>Management consulting, HUBZone set-aside</td>
+                    </tr>
+                    <tr>
+                        <td>HCaTS SB</td>
+                        <td>$5.75B</td>
+                        <td>Human capital/training (expires Nov 2026)</td>
+                    </tr>
+                    <tr>
+                        <td>GSA MAS (Prof Services)</td>
+                        <td>Unlimited</td>
+                        <td>Always available option</td>
+                    </tr>
+                    <tr>
+                        <td>Agency-Specific IDIQs</td>
+                        <td>Varies</td>
+                        <td>DHS, DoD, HHS all have consulting vehicles</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Slide 8: Open Applications Right Now -->
+            <div class="slide">
+                <span class="slide-number">SLIDE 8</span>
+                <h2>Vehicles Open for Application NOW</h2>
+                <div class="two-col">
+                    <div>
+                        <div class="info-box green" style="margin-bottom: 20px;">
+                            <h4>GSA MAS</h4>
+                            <p>Always open. 6-12 month process. Broad coverage.</p>
+                        </div>
+                        <div class="info-box green" style="margin-bottom: 20px;">
+                            <h4>OASIS+</h4>
+                            <p>On-ramp open. Professional services focus.</p>
+                        </div>
+                        <div class="info-box green">
+                            <h4>8(a) STARS III</h4>
+                            <p>Open to 8(a) firms. IT services.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="info-box green" style="margin-bottom: 20px;">
+                            <h4>NEW: Alliant 3</h4>
+                            <p>Awarded Feb 2026. Phase 2 awards coming. No ceiling cap!</p>
+                        </div>
+                        <div class="info-box orange" style="margin-bottom: 20px;">
+                            <h4>Coming Soon: SEWP VI</h4>
+                            <p>NASA IT products. $60B ceiling. Source selection ongoing.</p>
+                        </div>
+                        <div class="info-box">
+                            <h4>Track the List</h4>
+                            <p>The spreadsheet marks application status. Check back monthly!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 9: Filtering by NAICS -->
+            <div class="slide">
+                <span class="slide-number">SLIDE 9</span>
+                <h2>Pro Tip: Filter by NAICS in Excel</h2>
+                <div class="two-col">
+                    <div>
+                        <h3>Step-by-Step</h3>
+                        <ol>
+                            <li>Open the Active IDIQ Vehicles List</li>
+                            <li>Select the NAICS column</li>
+                            <li>Data → Filter</li>
+                            <li>Click filter dropdown</li>
+                            <li>Search for your NAICS (e.g., "541512")</li>
+                            <li>Review matching vehicles</li>
+                        </ol>
+                    </div>
+                    <div>
+                        <div class="info-box purple" style="margin-bottom: 20px;">
+                            <h4>Partial Match Works!</h4>
+                            <p>Search "5415" to see all IT-related vehicles. Search "236" for all construction.</p>
+                        </div>
+                        <div class="info-box">
+                            <h4>Multiple NAICS?</h4>
+                            <p>Most vehicles cover multiple codes. Filter by your PRIMARY NAICS first, then review which vehicles cover your secondaries.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 10: Ceiling vs Actual Spending -->
+            <div class="slide">
+                <span class="slide-number">SLIDE 10</span>
+                <h2>Ceiling vs. Actual Spending</h2>
+                <p style="margin-bottom: 25px;">Ceiling doesn't equal spending. Here's the reality:</p>
+                <table class="vehicle-table">
+                    <tr>
+                        <th>Vehicle</th>
+                        <th>Ceiling</th>
+                        <th>Annual Spend (Est.)</th>
+                        <th>Utilization</th>
+                    </tr>
+                    <tr>
+                        <td>GSA MAS</td>
+                        <td>Unlimited</td>
+                        <td>$50B+</td>
+                        <td>Very High</td>
+                    </tr>
+                    <tr>
+                        <td>SEWP V</td>
+                        <td>$20B</td>
+                        <td>$2B/yr</td>
+                        <td>High</td>
+                    </tr>
+                    <tr>
+                        <td>OASIS+</td>
+                        <td>No Cap</td>
+                        <td>$8B</td>
+                        <td>Growing</td>
+                    </tr>
+                    <tr>
+                        <td>Alliant 2/3</td>
+                        <td>$82.8B / No Cap</td>
+                        <td>$5B+</td>
+                        <td>Transitioning</td>
+                    </tr>
+                </table>
+                <p style="margin-top: 20px; color: #10b981; font-weight: 600;">
+                    Key insight: Use USASpending.gov to verify actual spending on vehicles you're targeting.
+                </p>
+            </div>
+
+            <!-- Slide 11: Set-Aside Pools Explained -->
+            <div class="slide">
+                <span class="slide-number">SLIDE 11</span>
+                <h2>Set-Aside Pools Explained</h2>
+                <div class="two-col">
+                    <div>
+                        <div class="info-box" style="margin-bottom: 15px;">
+                            <h4>8(a)</h4>
+                            <p>Minority-owned, economically disadvantaged. Sole-source up to $5.5M (Oct 2025 update).</p>
+                        </div>
+                        <div class="info-box" style="margin-bottom: 15px;">
+                            <h4>SDVOSB</h4>
+                            <p>Service-Disabled Veteran-Owned. VA prefers these.</p>
+                        </div>
+                        <div class="info-box">
+                            <h4>HUBZone</h4>
+                            <p>Located in Historically Underutilized Business Zone.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="info-box" style="margin-bottom: 15px;">
+                            <h4>WOSB/EDWOSB</h4>
+                            <p>Women-Owned Small Business. Economically disadvantaged adds benefits.</p>
+                        </div>
+                        <div class="info-box" style="margin-bottom: 15px;">
+                            <h4>Small Business (SB)</h4>
+                            <p>General small business pool. Meet size standards.</p>
+                        </div>
+                        <div class="info-box">
+                            <h4>Unrestricted</h4>
+                            <p>Open to all. Large businesses compete here.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 12: Tracking Expiration Dates -->
+            <div class="slide">
+                <span class="slide-number">SLIDE 12</span>
+                <h2>Why Expiration Dates Matter</h2>
+                <h3>Recompete Opportunity</h3>
+                <p style="margin-bottom: 25px;">When a vehicle expires, it gets replaced. That's your chance to get ON the new one.</p>
+                <table class="vehicle-table">
+                    <tr>
+                        <th>Vehicle</th>
+                        <th>Expires</th>
+                        <th>Replacement</th>
+                    </tr>
+                    <tr>
+                        <td>SEWP V</td>
+                        <td>2027</td>
+                        <td>SEWP VI (watch for RFI)</td>
+                    </tr>
+                    <tr>
+                        <td>Alliant 2</td>
+                        <td>2028</td>
+                        <td>Alliant 3 (Awarded Feb 2026!)</td>
+                    </tr>
+                    <tr>
+                        <td>VETS 2</td>
+                        <td>2028</td>
+                        <td>VETS 3 (anticipated)</td>
+                    </tr>
+                </table>
+                <p style="margin-top: 20px; color: #f97316; font-weight: 600;">Set calendar reminders 18 months before expiration!</p>
+            </div>
+
+            <!-- Slide 13: Your Action Plan -->
+            <div class="slide">
+                <span class="slide-number">SLIDE 13</span>
+                <h2>Your Action Plan This Week</h2>
+                <ul style="font-size: 1.3rem;">
+                    <li>Download the Active IDIQ Vehicles List (register at end)</li>
+                    <li>Filter by your primary NAICS code</li>
+                    <li>Identify 3-5 vehicles that fit your capabilities</li>
+                    <li>Check which have open applications</li>
+                    <li>Research current holders using SAM.gov</li>
+                    <li>Register for March 28 Bootcamp for deep-dive training</li>
+                </ul>
+            </div>
+
+            <!-- Slide 14: The Other 5 Handouts -->
+            <div class="slide">
+                <span class="slide-number">SLIDE 14</span>
+                <h2>But Wait... There's 5 More!</h2>
+                <p style="font-size: 1.4rem; margin-bottom: 30px;">Register for the bootcamp to get ALL 6 resources:</p>
+                <div class="two-col">
+                    <div>
+                        <ul style="font-size: 1.2rem;">
+                            <li>10 IDIQ Vehicles Guide</li>
+                            <li><strong style="color: #10b981;">Active IDIQ Vehicles List</strong> ← Today!</li>
+                            <li>March 2026 Expiring Contracts</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul style="font-size: 1.2rem;">
+                            <li>Recompete Positioning Checklist</li>
+                            <li>Sources Sought Response Template</li>
+                            <li>Task Order Response Template</li>
+                        </ul>
+                    </div>
+                </div>
+                <p style="margin-top: 40px; text-align: center; color: #10b981; font-size: 1.4rem; font-weight: 600;">
+                    All 6 are FREE when you register for the March 28 Bootcamp!
+                </p>
+            </div>
+
+            <!-- Slide 15: Common Questions -->
+            <div class="slide">
+                <span class="slide-number">SLIDE 15</span>
+                <h2>Common Questions</h2>
+                <div class="two-col">
+                    <div class="info-box" style="margin-bottom: 20px;">
+                        <h4>Q: How often is this list updated?</h4>
+                        <p>We update quarterly. At the bootcamp, you'll get the latest version plus strategies to track changes yourself.</p>
+                    </div>
+                    <div class="info-box" style="margin-bottom: 20px;">
+                        <h4>Q: What if my NAICS isn't covered?</h4>
+                        <p>Some industries have fewer GWACs. We'll cover agency-specific vehicles and BPAs at the bootcamp.</p>
+                    </div>
+                    <div class="info-box">
+                        <h4>Q: Can I apply to multiple vehicles?</h4>
+                        <p>Yes, but be strategic. Each application takes time. Focus on 2-3 that fit best.</p>
+                    </div>
+                    <div class="info-box">
+                        <h4>Q: Is this list free?</h4>
+                        <p>100% free when you register for the bootcamp. No strings attached.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 16: Next Live Tease -->
+            <div class="slide">
+                <span class="slide-number">SLIDE 16</span>
+                <h2>Next Live: Sources Sought Strategy</h2>
+                <p style="font-size: 1.4rem; margin-bottom: 30px;">Knowing the vehicles is step one. Getting on agency radar is step two.</p>
+                <div class="info-box" style="text-align: center; padding: 40px;">
+                    <h4 style="font-size: 1.6rem;">What 90% of Contractors Ignore</h4>
+                    <p style="font-size: 1.2rem; margin-top: 20px;">Sources Sought responses let you influence how contracts are structured — BEFORE the RFP drops.</p>
+                    <p style="font-size: 1.2rem; margin-top: 15px;">Next live I'm giving you the exact template.</p>
+                </div>
+                <p style="margin-top: 30px; text-align: center; color: #a855f7; font-weight: 700; font-size: 1.3rem;">
+                    Subscribe so you don't miss it!
+                </p>
+            </div>
+
+            <!-- Slide 17: March 28 Bootcamp -->
+            <div class="slide">
+                <span class="slide-number">SLIDE 17</span>
+                <h2>March 28: Contract Vehicles Bootcamp</h2>
+                <p style="font-size: 1.3rem; margin-bottom: 30px;">FREE | 8 Hours | Live on Zoom</p>
+                <div class="two-col">
+                    <div>
+                        <h3>What We Cover</h3>
+                        <ul>
+                            <li>The $77 Trillion IDIQ Landscape</li>
+                            <li>Deep dive into 10 key vehicles</li>
+                            <li>Finding & winning task orders</li>
+                            <li>Sources Sought strategies</li>
+                            <li>Teaming & subcontracting</li>
+                            <li>Your 30-day action plan</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="info-box" style="margin-bottom: 20px;">
+                            <h4>LIVE Q&A Throughout</h4>
+                            <p>Ask questions specific to YOUR situation. Get real-time answers.</p>
+                        </div>
+                        <div class="info-box">
+                            <h4>Networking</h4>
+                            <p>Connect with other contractors. Find teaming partners. Build relationships.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Box -->
+            <div class="cta-box">
+                <h2>Get Your FREE Active IDIQ Vehicles List</h2>
+                <p>50+ vehicles with ceiling values, NAICS codes & application status</p>
+                <a href="https://govcongiants.org/cvb" class="url">govcongiants.org/cvb</a>
+                <p style="margin-top: 25px; font-size: 1.1rem;">March 28, 2026 | 9 AM - 5 PM ET | FREE</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

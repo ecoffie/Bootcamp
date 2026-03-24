@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YT Live 1: 10 IDIQ Vehicles Guide | GovCon Giants</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #0f172a; color: #fff; }
+    .slide {
+      width: 1280px;
+      height: 720px;
+      padding: 60px;
+      display: none;
+      flex-direction: column;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      position: relative;
+      page-break-after: always;
+    }
+    .slide.active { display: flex; }
+    .slide::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, #059669, #10b981, #34d399);
+    }
+    .logo {
+      position: absolute;
+      top: 30px;
+      right: 60px;
+      font-weight: 900;
+      font-size: 18px;
+    }
+    .logo span { color: #10b981; }
+    .live-badge {
+      position: absolute;
+      top: 30px;
+      left: 60px;
+      background: #dc2626;
+      color: white;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .live-badge::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: white;
+      border-radius: 50%;
+      animation: pulse 1s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    h1 {
+      font-size: 56px;
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 30px;
+    }
+    h1 .highlight { color: #10b981; }
+    h2 {
+      font-size: 42px;
+      font-weight: 800;
+      margin-bottom: 30px;
+      color: #10b981;
+    }
+    h3 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #a78bfa;
+    }
+    p {
+      font-size: 24px;
+      line-height: 1.6;
+      color: #94a3b8;
+    }
+    .subtitle {
+      font-size: 28px;
+      color: #64748b;
+      margin-bottom: 40px;
+    }
+    ul {
+      list-style: none;
+      font-size: 26px;
+      line-height: 2;
+    }
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    li::before {
+      content: '✓';
+      color: #10b981;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+    .stat-box {
+      background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      margin: 20px 0;
+    }
+    .stat-box .number {
+      font-size: 72px;
+      font-weight: 900;
+      color: white;
+    }
+    .stat-box .label {
+      font-size: 24px;
+      color: #d1fae5;
+    }
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      flex: 1;
+    }
+    .card {
+      background: rgba(30, 41, 59, 0.8);
+      border: 1px solid #334155;
+      border-radius: 16px;
+      padding: 30px;
+    }
+    .card h4 {
+      font-size: 24px;
+      color: #10b981;
+      margin-bottom: 16px;
+    }
+    .card p {
+      font-size: 20px;
+    }
+    .cta-slide {
+      background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+    }
+    .cta-slide h1 { color: white; margin-bottom: 20px; }
+    .cta-slide .url {
+      font-size: 36px;
+      font-weight: 900;
+      color: #fef3c7;
+      background: rgba(0,0,0,0.2);
+      padding: 20px 50px;
+      border-radius: 12px;
+      margin-top: 30px;
+    }
+    .vehicle-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 22px;
+    }
+    .vehicle-table th {
+      background: #059669;
+      color: white;
+      padding: 16px;
+      text-align: left;
+    }
+    .vehicle-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid #334155;
+    }
+    .vehicle-table tr:nth-child(even) {
+      background: rgba(30, 41, 59, 0.5);
+    }
+    .handout-preview {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      color: #1e293b;
+      max-width: 500px;
+    }
+    .handout-preview h4 {
+      color: #059669;
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+    .slide-number {
+      position: absolute;
+      bottom: 30px;
+      right: 60px;
+      color: #475569;
+      font-size: 16px;
+    }
+    .controls {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+      z-index: 100;
+    }
+    .controls button {
+      background: #7c3aed;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .controls button:hover { background: #6d28d9; }
+    @media print {
+      .slide { display: flex !important; }
+      .controls { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Slide 1: Title -->
+<div class="slide active">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+    <h1>The <span class="highlight">$77 TRILLION</span><br>IDIQ Opportunity</h1>
+    <p class="subtitle">How to Use the 10 IDIQ Vehicles Guide</p>
+    <p style="margin-top: 40px; color: #10b981; font-size: 20px;">March 17, 2026 | Contract Vehicles Bootcamp Series</p>
+  </div>
+  <div class="slide-number">1 / 18</div>
+</div>
+
+<!-- Slide 2: Today's Free Giveaway -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Today's FREE Giveaway</h2>
+  <div class="two-col">
+    <div>
+      <h3>10 IDIQ Vehicles Guide</h3>
+      <ul>
+        <li>The most active GWAC & IDIQ vehicles</li>
+        <li>Ceiling values & spending data</li>
+        <li>Who can compete on each</li>
+        <li>How to get positioned</li>
+      </ul>
+      <p style="margin-top: 30px; color: #10b981; font-size: 22px;">
+        <strong>Stay until the end to get it FREE!</strong>
+      </p>
+    </div>
+    <div style="display: flex; align-items: center; justify-content: center;">
+      <div class="handout-preview">
+        <h4>📄 10 IDIQ VEHICLES GUIDE</h4>
+        <p style="font-size: 16px; color: #475569; line-height: 1.6;">
+          1. GSA MAS<br>
+          2. OASIS+<br>
+          3. 8(a) STARS III<br>
+          4. Alliant 2/3<br>
+          5. SEWP V/VI<br>
+          ...and 5 more
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">2 / 18</div>
+</div>
+
+<!-- Slide 3: The Problem -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+    <h1>Here's The Problem...</h1>
+    <div class="stat-box" style="max-width: 700px; margin: 40px auto;">
+      <div class="number">80%</div>
+      <div class="label">of federal contract dollars flow through vehicles - NOT the open market</div>
+    </div>
+    <p style="max-width: 800px; margin: 0 auto;">If you're only searching SAM.gov for "open" solicitations, you're missing 80% of the opportunity.</p>
+  </div>
+  <div class="slide-number">3 / 18</div>
+</div>
+
+<!-- Slide 4: What is an IDIQ -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>What is an IDIQ?</h2>
+  <div class="two-col">
+    <div>
+      <h3>IDIQ = Indefinite Delivery<br>Indefinite Quantity</h3>
+      <p style="margin-bottom: 30px;">A contract vehicle that lets agencies order services/products without re-competing every time.</p>
+      <ul>
+        <li>Pre-negotiated terms & rates</li>
+        <li>Pre-vetted pool of contractors</li>
+        <li>Task orders awarded in weeks, not months</li>
+        <li>Multi-year with huge ceiling values</li>
+      </ul>
+    </div>
+    <div>
+      <div class="card">
+        <h4>Think of it like...</h4>
+        <p>A "preferred vendor" list. Once you're on, agencies can buy from you directly without the full procurement process.</p>
+      </div>
+      <div class="card" style="margin-top: 20px;">
+        <h4>Why Agencies Love Them</h4>
+        <p>Speed. A full-and-open competition takes 6-12 months. A task order can be awarded in 2-4 weeks.</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">4 / 18</div>
+</div>
+
+<!-- Slide 5: Types of Vehicles -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Types of Contract Vehicles</h2>
+  <div class="two-col">
+    <div class="card">
+      <h4>GWAC (Government-Wide Acquisition Contract)</h4>
+      <p>Any agency can use. Example: OASIS+, 8(a) STARS III, Alliant</p>
+    </div>
+    <div class="card">
+      <h4>Agency-Specific IDIQ</h4>
+      <p>Only that agency uses. Example: VA T4NG, DHS EAGLE II</p>
+    </div>
+    <div class="card">
+      <h4>BPA (Blanket Purchase Agreement)</h4>
+      <p>Simplified ordering for recurring needs. Often under $7M.</p>
+    </div>
+    <div class="card">
+      <h4>GSA Schedule (MAS)</h4>
+      <p>The grandfather of all vehicles. Pre-approved pricing catalog.</p>
+    </div>
+  </div>
+  <div class="slide-number">5 / 18</div>
+</div>
+
+<!-- Slide 6: Let's Walk Through the Guide -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+    <h1>Let's Walk Through<br>the <span class="highlight">Guide</span></h1>
+    <p class="subtitle">I'll show you exactly how to use this document</p>
+    <p style="margin-top: 40px;">📄 Open the 10 IDIQ Vehicles Guide...</p>
+  </div>
+  <div class="slide-number">6 / 18</div>
+</div>
+
+<!-- Slide 7: Vehicle 1 - GSA MAS -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>#1: GSA MAS (Multiple Award Schedule)</h2>
+  <div class="two-col">
+    <div>
+      <ul>
+        <li><strong>Ceiling:</strong> Unlimited</li>
+        <li><strong>Spending:</strong> $50B+ annually</li>
+        <li><strong>Categories:</strong> IT, Professional Services, Facilities, more</li>
+        <li><strong>Duration:</strong> 20-year contracts</li>
+        <li><strong>Who can compete:</strong> Anyone (open application)</li>
+      </ul>
+    </div>
+    <div>
+      <div class="card">
+        <h4>Best For</h4>
+        <p>Companies wanting a "catch-all" vehicle. If agencies can buy it, it's probably on GSA.</p>
+      </div>
+      <div class="card" style="margin-top: 20px;">
+        <h4>How to Get On</h4>
+        <p>Apply through GSA eOffer. Takes 6-12 months. Need 2+ years operating history.</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">7 / 18</div>
+</div>
+
+<!-- Slide 8: Vehicle 2 - OASIS+ -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>#2: OASIS+ (Professional Services)</h2>
+  <div class="two-col">
+    <div>
+      <ul>
+        <li><strong>Ceiling:</strong> No Cap (unlimited)</li>
+        <li><strong>Categories:</strong> Management consulting, engineering, logistics, R&D</li>
+        <li><strong>Duration:</strong> 10 years</li>
+        <li><strong>Pools:</strong> Unrestricted, SB, 8(a), HUBZone, SDVOSB, WOSB</li>
+      </ul>
+    </div>
+    <div>
+      <div class="card">
+        <h4>Why It's Hot</h4>
+        <p>Replaced OASIS. Just reopened for applications in 2025. This is the professional services GWAC.</p>
+      </div>
+      <div class="card" style="margin-top: 20px;">
+        <h4>Requirements</h4>
+        <p>Need relevant experience, past performance, and must meet minimum revenue/contract thresholds.</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">8 / 18</div>
+</div>
+
+<!-- Slide 9: Vehicle 3 - 8(a) STARS III -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>#3: 8(a) STARS III</h2>
+  <div class="two-col">
+    <div>
+      <ul>
+        <li><strong>Ceiling:</strong> $50B</li>
+        <li><strong>Focus:</strong> IT services & solutions</li>
+        <li><strong>Duration:</strong> 10 years (through 2032)</li>
+        <li><strong>Who can compete:</strong> 8(a) certified ONLY</li>
+      </ul>
+    </div>
+    <div>
+      <div class="card">
+        <h4>The 8(a) Advantage</h4>
+        <p>If you're 8(a) certified and do IT work, this is your fast track. Sole-source up to $5.5M!</p>
+      </div>
+      <div class="card" style="margin-top: 20px;">
+        <h4>Application Status</h4>
+        <p>Currently accepting applications. Get in while you can - 8(a) certification expires after 9 years.</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">9 / 18</div>
+</div>
+
+<!-- Slide 10: Quick Vehicle Overview -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Vehicles 4-10 at a Glance</h2>
+  <table class="vehicle-table">
+    <tr>
+      <th>Vehicle</th>
+      <th>Focus</th>
+      <th>Ceiling</th>
+      <th>Set-Aside Pools</th>
+    </tr>
+    <tr>
+      <td>Alliant 2/3</td>
+      <td>IT Solutions</td>
+      <td>No Cap</td>
+      <td>SB, Unrestricted</td>
+    </tr>
+    <tr>
+      <td>SEWP V/VI</td>
+      <td>IT Hardware/Software</td>
+      <td>$20B/$60B</td>
+      <td>Open</td>
+    </tr>
+    <tr>
+      <td>CIO-SP3</td>
+      <td>IT Services (NIH)</td>
+      <td>$20B</td>
+      <td>Multiple pools</td>
+    </tr>
+    <tr>
+      <td>VETS 2</td>
+      <td>IT Services (VA)</td>
+      <td>$5B</td>
+      <td>SDVOSB only</td>
+    </tr>
+    <tr>
+      <td>HCaTS</td>
+      <td>Human Capital</td>
+      <td>$5.75B</td>
+      <td>SB, Unrestricted</td>
+    </tr>
+    <tr>
+      <td>GSA PSHC</td>
+      <td>Facilities</td>
+      <td>Varies</td>
+      <td>Multiple</td>
+    </tr>
+    <tr>
+      <td>Agency BPAs</td>
+      <td>Various</td>
+      <td>Varies</td>
+      <td>Agency-specific</td>
+    </tr>
+  </table>
+  <div class="slide-number">10 / 18</div>
+</div>
+
+<!-- Slide 11: How to Use This Guide -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>How to Use This Guide</h2>
+  <div style="flex: 1;">
+    <h3>Step 1: Identify Your NAICS Codes</h3>
+    <p style="margin-bottom: 30px;">Which vehicles cover your NAICS? Cross-reference with the guide.</p>
+
+    <h3>Step 2: Check Your Certifications</h3>
+    <p style="margin-bottom: 30px;">8(a)? SDVOSB? HUBZone? Some vehicles have dedicated pools for you.</p>
+
+    <h3>Step 3: Assess Your Readiness</h3>
+    <p style="margin-bottom: 30px;">Do you meet the minimum experience/revenue requirements?</p>
+
+    <h3>Step 4: Decide: ON vs. THROUGH</h3>
+    <p>Should you apply to get ON the vehicle? Or work THROUGH someone who's already on it?</p>
+  </div>
+  <div class="slide-number">11 / 18</div>
+</div>
+
+<!-- Slide 12: ON vs THROUGH -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Two Paths to Vehicle Work</h2>
+  <div class="two-col">
+    <div class="card" style="border: 2px solid #10b981;">
+      <h4 style="color: #10b981; font-size: 28px;">Get ON the Vehicle</h4>
+      <ul style="font-size: 20px;">
+        <li>Apply when vehicle opens</li>
+        <li>Meet all requirements</li>
+        <li>Wait for approval (months)</li>
+        <li>Compete for task orders</li>
+        <li>Prime contractor status</li>
+      </ul>
+      <p style="margin-top: 20px; font-size: 18px; color: #10b981;"><strong>Best for:</strong> Established companies with past performance</p>
+    </div>
+    <div class="card" style="border: 2px solid #a78bfa;">
+      <h4 style="color: #a78bfa; font-size: 28px;">Work THROUGH the Vehicle</h4>
+      <ul style="font-size: 20px;">
+        <li>Partner with holder as sub</li>
+        <li>No application needed</li>
+        <li>Start immediately</li>
+        <li>Build past performance</li>
+        <li>Subcontractor role</li>
+      </ul>
+      <p style="margin-top: 20px; font-size: 18px; color: #a78bfa;"><strong>Best for:</strong> New entrants building track record</p>
+    </div>
+  </div>
+  <div class="slide-number">12 / 18</div>
+</div>
+
+<!-- Slide 13: Finding Opportunities -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Where to Find Task Orders</h2>
+  <div style="flex: 1;">
+    <div class="card" style="margin-bottom: 20px;">
+      <h4>SAM.gov</h4>
+      <p>Filter by "Contract Type" → "Delivery/Task Order". Look for vehicle names in title.</p>
+    </div>
+    <div class="card" style="margin-bottom: 20px;">
+      <h4>GSA eBuy</h4>
+      <p>For GSA Schedule task orders. Must have GSA contract to see all opportunities.</p>
+    </div>
+    <div class="card" style="margin-bottom: 20px;">
+      <h4>Vehicle-Specific Portals</h4>
+      <p>OASIS+, SEWP, and others have their own ordering portals for task orders.</p>
+    </div>
+    <div class="card">
+      <h4>Direct from Primes</h4>
+      <p>If you're subbing, the prime will alert you to task orders they're pursuing.</p>
+    </div>
+  </div>
+  <div class="slide-number">13 / 18</div>
+</div>
+
+<!-- Slide 14: Common Mistakes -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Common Mistakes to Avoid</h2>
+  <ul style="font-size: 28px;">
+    <li style="color: #f87171;">Applying to every vehicle (spread too thin)</li>
+    <li style="color: #f87171;">Ignoring NAICS alignment (can't bid if not covered)</li>
+    <li style="color: #f87171;">Waiting to be "ready" (you can sub while building)</li>
+    <li style="color: #f87171;">Not tracking recompetes (vehicles expire and re-open)</li>
+    <li style="color: #f87171;">Skipping Sources Sought (influences set-asides)</li>
+  </ul>
+  <div class="slide-number">14 / 18</div>
+</div>
+
+<!-- Slide 15: Your Action Items -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Your Action Items This Week</h2>
+  <ul style="font-size: 26px;">
+    <li>Download the 10 IDIQ Vehicles Guide (link at end)</li>
+    <li>Identify 2-3 vehicles that match your NAICS</li>
+    <li>Research current holders on those vehicles</li>
+    <li>Decide: Apply to get ON, or reach out to work THROUGH?</li>
+    <li>Register for the March 28 Bootcamp (we go DEEP)</li>
+  </ul>
+  <div class="slide-number">15 / 18</div>
+</div>
+
+<!-- Slide 16: What You Get at the Bootcamp -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>March 28: Contract Vehicles Bootcamp</h2>
+  <p class="subtitle">8 Hours | 6 Free Resources | LIVE on Zoom</p>
+  <div class="two-col" style="margin-top: 20px;">
+    <div>
+      <h3>What We Cover</h3>
+      <ul style="font-size: 20px;">
+        <li>The $77 Trillion IDIQ Landscape</li>
+        <li>Deep dive into 10 key vehicles</li>
+        <li>Finding & winning task orders</li>
+        <li>Sources Sought strategies</li>
+        <li>Teaming & subcontracting</li>
+        <li>Your 30-day action plan</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Your 6 FREE Handouts</h3>
+      <ul style="font-size: 20px;">
+        <li>10 IDIQ Vehicles Guide ← Today's giveaway!</li>
+        <li>Active IDIQ Vehicles List (50+)</li>
+        <li>March 2026 Expiring Contracts</li>
+        <li>Recompete Positioning Checklist</li>
+        <li>Sources Sought Response Template</li>
+        <li>Task Order Response Template</li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-number">16 / 18</div>
+</div>
+
+<!-- Slide 17: Questions -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+    <h1>Questions?</h1>
+    <p class="subtitle">Drop them in the chat - I'll answer live!</p>
+    <p style="margin-top: 60px; font-size: 22px; color: #64748b;">
+      While you're asking, here's your link to register and get the guide:
+    </p>
+  </div>
+  <div class="slide-number">17 / 18</div>
+</div>
+
+<!-- Slide 18: CTA -->
+<div class="slide cta-slide">
+  <h1>Get Your FREE<br>10 IDIQ Vehicles Guide</h1>
+  <p style="font-size: 28px; color: white; opacity: 0.9;">Register for the Contract Vehicles Bootcamp to download instantly</p>
+  <div class="url">govcongiants.org/contract-vehicles-bootcamp</div>
+  <p style="margin-top: 40px; font-size: 22px; color: white; opacity: 0.8;">
+    March 28, 2026 | 9 AM - 5 PM ET | FREE
+  </p>
+  <div class="slide-number" style="color: rgba(255,255,255,0.6);">18 / 18</div>
+</div>
+
+<!-- Controls -->
+<div class="controls">
+  <button onclick="prevSlide()">← Previous</button>
+  <button onclick="nextSlide()">Next →</button>
+</div>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+
+  function showSlide(n) {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (n + slides.length) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }
+
+  function nextSlide() { showSlide(currentSlide + 1); }
+  function prevSlide() { showSlide(currentSlide - 1); }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+    if (e.key === 'ArrowLeft') prevSlide();
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YT Live 4: Final Call v2 - Contract Vehicles Bootcamp | GovCon Giants</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0f172a;
+      color: #fff;
+    }
+    .slide {
+      width: 1280px;
+      height: 720px;
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
+      position: relative;
+      page-break-after: always;
+    }
+    .slide.hidden { display: none; }
+
+    /* Logo */
+    .logo {
+      position: absolute;
+      top: 25px;
+      right: 50px;
+      font-weight: 900;
+      font-size: 18px;
+      color: white;
+    }
+    .logo span { color: #10b981; }
+
+    /* Live badge */
+    .live-badge {
+      position: absolute;
+      top: 25px;
+      left: 50px;
+      background: #dc2626;
+      color: white;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .live-badge::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: white;
+      border-radius: 50%;
+      animation: pulse 1s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    /* Typography */
+    h2 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 40px;
+      color: white;
+    }
+    .highlight { color: #10b981; }
+    .red { color: #dc2626; }
+
+    /* Hero icon */
+    .hero-icon {
+      font-size: 120px;
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    /* Stat boxes */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      margin: 30px 0;
+    }
+    .stat-box {
+      background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+      border-radius: 16px;
+      padding: 30px;
+      text-align: center;
+    }
+    .stat-box .number {
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: white;
+    }
+    .stat-box .label {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.9);
+      margin-top: 8px;
+    }
+
+    /* Icon grid */
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin: 40px auto;
+      max-width: 900px;
+    }
+    .icon-grid.four-col {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .icon-grid.two-col {
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 700px;
+    }
+    .icon-item {
+      text-align: center;
+    }
+    .icon-item .icon {
+      font-size: 64px;
+      margin-bottom: 12px;
+    }
+    .icon-item .text {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.95);
+    }
+    .icon-item .subtext {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.7);
+      margin-top: 4px;
+    }
+
+    /* Quote box */
+    .quote-box {
+      background: rgba(255,255,255,0.1);
+      border: 2px solid rgba(255,255,255,0.2);
+      border-radius: 16px;
+      padding: 30px 40px;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: white;
+      max-width: 900px;
+      margin: 30px auto;
+    }
+
+    /* Info box */
+    .info-box {
+      background: rgba(255,255,255,0.1);
+      border: 2px solid rgba(255,255,255,0.2);
+      border-radius: 16px;
+      padding: 25px;
+      text-align: center;
+    }
+    .info-box.green {
+      border-color: #10b981;
+      background: rgba(16, 185, 129, 0.15);
+    }
+
+    /* Countdown */
+    .countdown-big {
+      text-align: center;
+      margin: 40px 0;
+    }
+    .countdown-big .number {
+      font-size: 180px;
+      font-weight: 900;
+      color: #dc2626;
+      line-height: 1;
+    }
+    .countdown-big .label {
+      font-size: 2rem;
+      color: rgba(255,255,255,0.9);
+      margin-top: 20px;
+    }
+
+    /* CTA box */
+    .cta-box {
+      background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      margin: 30px auto;
+      max-width: 800px;
+    }
+    .cta-box .url {
+      display: inline-block;
+      background: white;
+      color: #059669;
+      padding: 18px 50px;
+      border-radius: 40px;
+      font-weight: 800;
+      font-size: 1.4rem;
+      margin-top: 20px;
+    }
+
+    /* Red CTA slide */
+    .cta-slide {
+      background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .cta-slide h2 {
+      color: white;
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+    }
+    .cta-slide .url {
+      display: inline-block;
+      background: white;
+      color: #dc2626;
+      padding: 20px 60px;
+      border-radius: 40px;
+      font-weight: 900;
+      font-size: 1.6rem;
+      margin-top: 30px;
+    }
+    .cta-slide .subtitle {
+      font-size: 1.6rem;
+      color: rgba(255,255,255,0.9);
+      margin-top: 25px;
+    }
+
+    /* Comparison */
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin: 30px auto;
+      max-width: 1000px;
+    }
+    .compare-box {
+      background: rgba(255,255,255,0.1);
+      border: 2px solid rgba(255,255,255,0.2);
+      border-radius: 16px;
+      padding: 30px;
+      text-align: center;
+    }
+    .compare-box.red {
+      border-color: #dc2626;
+      background: rgba(220, 38, 38, 0.15);
+    }
+    .compare-box.green {
+      border-color: #10b981;
+      background: rgba(16, 185, 129, 0.15);
+    }
+    .compare-box h3 {
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+    }
+    .compare-box .icon {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+
+    /* Steps */
+    .step-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+      margin: 40px auto;
+      max-width: 1100px;
+    }
+    .step-item {
+      text-align: center;
+    }
+    .step-item .number {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      font-weight: 900;
+      margin: 0 auto 15px;
+    }
+    .step-item .text {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.95);
+    }
+
+    /* Email banner */
+    .email-banner {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #dc2626;
+      color: white;
+      text-align: center;
+      padding: 16px 40px;
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .email-banner .keyword {
+      background: white;
+      color: #dc2626;
+      padding: 4px 16px;
+      border-radius: 6px;
+      margin: 0 8px;
+    }
+
+    /* Slide number */
+    .slide-number {
+      position: absolute;
+      bottom: 20px;
+      right: 50px;
+      color: rgba(255,255,255,0.4);
+      font-size: 14px;
+    }
+    .slide.cta-slide .slide-number,
+    .email-banner ~ .slide-number {
+      bottom: 70px;
+    }
+
+    /* Controls */
+    .controls {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+      z-index: 100;
+    }
+    .controls button {
+      background: #7c3aed;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    .controls button:hover { background: #6d28d9; }
+
+    @media print {
+      .slide { display: flex !important; }
+      .controls { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- SLIDE 1: Title - Countdown -->
+<div class="slide active">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div class="countdown-big">
+    <div class="number">2</div>
+    <div class="label">Days Until Bootcamp</div>
+  </div>
+  <h2>Are You <span class="highlight">Ready</span>?</h2>
+  <div class="slide-number">1 / 18</div>
+  <div class="email-banner">email<span class="keyword">"ready"</span>to hello@govconedu.com</div>
+</div>
+
+<!-- SLIDE 2: Hook - The Problem -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div class="hero-icon">55%</div>
+  <h2>Of Federal Dollars Flow Through <span class="highlight">Vehicles</span></h2>
+  <div class="quote-box">
+    You're competing for 45% while ignoring 55%.
+  </div>
+  <div class="slide-number">2 / 18</div>
+</div>
+
+<!-- SLIDE 3: What We Covered This Week -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>This Week's <span class="highlight">Lives</span></h2>
+  <div class="icon-grid">
+    <div class="icon-item">
+      <div class="icon">1</div>
+      <div class="text">IDIQ Guide</div>
+      <div class="subtext">$77T Landscape</div>
+    </div>
+    <div class="icon-item">
+      <div class="icon">2</div>
+      <div class="text">Vehicles List</div>
+      <div class="subtext">50+ Active</div>
+    </div>
+    <div class="icon-item">
+      <div class="icon">3</div>
+      <div class="text">Sources Sought</div>
+      <div class="subtext">Live Template</div>
+    </div>
+  </div>
+  <div class="quote-box">
+    Saturday is the <span class="red">DEEP DIVE</span>
+  </div>
+  <div class="slide-number">3 / 18</div>
+</div>
+
+<!-- SLIDE 4: The Stats -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Why This <span class="highlight">Matters</span></h2>
+  <div class="stat-grid">
+    <div class="stat-box">
+      <div class="number">$77T</div>
+      <div class="label">IDIQ Ceiling</div>
+    </div>
+    <div class="stat-box">
+      <div class="number">55%</div>
+      <div class="label">Through Vehicles</div>
+    </div>
+    <div class="stat-box">
+      <div class="number">???</div>
+      <div class="label">Your Share</div>
+    </div>
+  </div>
+  <div class="slide-number">4 / 18</div>
+  <div class="email-banner">email<span class="keyword">"ready"</span>to hello@govconedu.com</div>
+</div>
+
+<!-- SLIDE 5: Agenda Overview -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Saturday's <span class="highlight">Agenda</span></h2>
+  <div class="icon-grid" style="grid-template-columns: repeat(3, 1fr); max-width: 1000px;">
+    <div class="icon-item">
+      <div class="icon">9am</div>
+      <div class="text">IDIQ Landscape</div>
+    </div>
+    <div class="icon-item">
+      <div class="icon">10:30</div>
+      <div class="text">10 Vehicles</div>
+    </div>
+    <div class="icon-item">
+      <div class="icon">12:45</div>
+      <div class="text">Task Orders</div>
+    </div>
+    <div class="icon-item">
+      <div class="icon">2:15</div>
+      <div class="text">Sources Sought</div>
+    </div>
+    <div class="icon-item">
+      <div class="icon">3:45</div>
+      <div class="text">Teaming</div>
+    </div>
+    <div class="icon-item">
+      <div class="icon">4:45</div>
+      <div class="text">Action Plan</div>
+    </div>
+  </div>
+  <div class="slide-number">5 / 18</div>
+</div>
+
+<!-- SLIDE 6: 6 Free Resources -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2><span class="highlight">6</span> Free Resources</h2>
+  <div class="icon-grid" style="grid-template-columns: repeat(3, 1fr);">
+    <div class="icon-item">
+      <div class="icon">📘</div>
+      <div class="text">10 IDIQ Guide</div>
+    </div>
+    <div class="icon-item">
+      <div class="icon">📊</div>
+      <div class="text">Vehicles List</div>
+    </div>
+    <div class="icon-item">
+      <div class="icon">📅</div>
+      <div class="text">Expiring Contracts</div>
+    </div>
+    <div class="icon-item">
+      <div class="icon">✅</div>
+      <div class="text">Recompete Checklist</div>
+    </div>
+    <div class="icon-item">
+      <div class="icon">📝</div>
+      <div class="text">Sources Sought</div>
+    </div>
+    <div class="icon-item">
+      <div class="icon">📄</div>
+      <div class="text">Task Order Template</div>
+    </div>
+  </div>
+  <div class="quote-box" style="background: rgba(16, 185, 129, 0.2); border-color: #10b981;">
+    Instant download when you register!
+  </div>
+  <div class="slide-number">6 / 18</div>
+  <div class="email-banner">email<span class="keyword">"ready"</span>to hello@govconedu.com</div>
+</div>
+
+<!-- SLIDE 7: Who This Is For -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>This Is For <span class="highlight">You</span> If...</h2>
+  <div class="icon-grid four-col">
+    <div class="icon-item">
+      <div class="icon">😤</div>
+      <div class="text">Tired of Full & Open</div>
+    </div>
+    <div class="icon-item">
+      <div class="icon">🤔</div>
+      <div class="text">Confused by IDIQs</div>
+    </div>
+    <div class="icon-item">
+      <div class="icon">🏅</div>
+      <div class="text">Have Certifications</div>
+    </div>
+    <div class="icon-item">
+      <div class="icon">🎯</div>
+      <div class="text">Want Clear Action</div>
+    </div>
+  </div>
+  <div class="slide-number">7 / 18</div>
+</div>
+
+<!-- SLIDE 8: Who This Is NOT For -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>This Is <span class="red">NOT</span> For You If...</h2>
+  <div class="icon-grid four-col">
+    <div class="icon-item">
+      <div class="icon">❌</div>
+      <div class="text">Not in SAM.gov</div>
+    </div>
+    <div class="icon-item">
+      <div class="icon">❌</div>
+      <div class="text">Want Overnight Win</div>
+    </div>
+    <div class="icon-item">
+      <div class="icon">❌</div>
+      <div class="text">Won't Take Action</div>
+    </div>
+    <div class="icon-item">
+      <div class="icon">❌</div>
+      <div class="text">Expect Millions Fast</div>
+    </div>
+  </div>
+  <div class="quote-box" style="background: rgba(220, 38, 38, 0.15); border-color: #dc2626;">
+    This is education + action
+  </div>
+  <div class="slide-number">8 / 18</div>
+</div>
+
+<!-- SLIDE 9: Comparison -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>What Makes This <span class="highlight">Different</span></h2>
+  <div class="compare-grid">
+    <div class="compare-box red">
+      <div class="icon">❌</div>
+      <h3 style="color: #dc2626;">Other Training</h3>
+      <p style="font-size: 1.1rem; color: rgba(255,255,255,0.8);">Theory • Generic • No Tools • Expensive</p>
+    </div>
+    <div class="compare-box green">
+      <div class="icon">✅</div>
+      <h3 style="color: #10b981;">This Bootcamp</h3>
+      <p style="font-size: 1.1rem; color: rgba(255,255,255,0.8);">Real Strategies • 6 Templates • Live Q&A • FREE</p>
+    </div>
+  </div>
+  <div class="slide-number">9 / 18</div>
+</div>
+
+<!-- SLIDE 10: Testimonial 1 -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div class="hero-icon">💬</div>
+  <div class="quote-box" style="font-size: 1.8rem;">
+    "Won my first task order 3 months after attending."
+  </div>
+  <p style="text-align: center; font-size: 1.2rem; color: #10b981; margin-top: 20px;">— IT Services, 8(a) Certified</p>
+  <div class="slide-number">10 / 18</div>
+</div>
+
+<!-- SLIDE 11: Testimonial 2 -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div class="hero-icon">💬</div>
+  <div class="quote-box" style="font-size: 1.8rem;">
+    "I've responded to 12 Sources Sought since the bootcamp."
+  </div>
+  <p style="text-align: center; font-size: 1.2rem; color: #10b981; margin-top: 20px;">— Professional Services, SDVOSB</p>
+  <div class="slide-number">11 / 18</div>
+</div>
+
+<!-- SLIDE 12: Event Details -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Event <span class="highlight">Details</span></h2>
+  <div class="stat-grid" style="max-width: 900px; margin: 40px auto;">
+    <div class="stat-box">
+      <div class="number" style="font-size: 2rem;">SAT</div>
+      <div class="label">March 28, 2026</div>
+    </div>
+    <div class="stat-box">
+      <div class="number" style="font-size: 2rem;">9-5</div>
+      <div class="label">Eastern Time</div>
+    </div>
+    <div class="stat-box">
+      <div class="number" style="font-size: 2rem;">FREE</div>
+      <div class="label">100% Free</div>
+    </div>
+  </div>
+  <div class="quote-box">
+    LIVE on Zoom • Link sent after registration
+  </div>
+  <div class="slide-number">12 / 18</div>
+  <div class="email-banner">email<span class="keyword">"ready"</span>to hello@govconedu.com</div>
+</div>
+
+<!-- SLIDE 13: Urgency -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div class="countdown-big">
+    <div class="number" style="font-size: 140px;">2</div>
+    <div class="label">Days Left to Register</div>
+  </div>
+  <div class="quote-box" style="background: rgba(220, 38, 38, 0.2); border-color: #dc2626;">
+    Resources go back in the vault after March 28
+  </div>
+  <div class="slide-number">13 / 18</div>
+</div>
+
+<!-- SLIDE 14: What Happens Next -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>When You <span class="highlight">Register</span></h2>
+  <div class="step-grid">
+    <div class="step-item">
+      <div class="number">1</div>
+      <div class="text">Instant Downloads</div>
+    </div>
+    <div class="step-item">
+      <div class="number">2</div>
+      <div class="text">Confirmation Email</div>
+    </div>
+    <div class="step-item">
+      <div class="number">3</div>
+      <div class="text">Zoom Link Friday</div>
+    </div>
+    <div class="step-item">
+      <div class="number">4</div>
+      <div class="text">Join Saturday!</div>
+    </div>
+  </div>
+  <div class="slide-number">14 / 18</div>
+</div>
+
+<!-- SLIDE 15: FAQ 1 -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div class="hero-icon">?</div>
+  <h2>Is This Really <span class="highlight">Free</span>?</h2>
+  <div class="quote-box">
+    100% free. No credit card. No hidden fees.
+  </div>
+  <div class="slide-number">15 / 18</div>
+</div>
+
+<!-- SLIDE 16: FAQ 2 -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div class="hero-icon">🎥</div>
+  <h2>What If I Can't <span class="highlight">Attend Live</span>?</h2>
+  <div class="quote-box">
+    Register anyway! Get resources now + replay access.
+  </div>
+  <div class="slide-number">16 / 18</div>
+</div>
+
+<!-- SLIDE 17: Questions -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div class="hero-icon">🙋</div>
+  <h2>Any <span class="highlight">Questions</span>?</h2>
+  <div class="quote-box">
+    Drop them in the chat - last chance before Saturday!
+  </div>
+  <div class="slide-number">17 / 18</div>
+  <div class="email-banner">email<span class="keyword">"ready"</span>to hello@govconedu.com</div>
+</div>
+
+<!-- SLIDE 18: Final CTA -->
+<div class="slide cta-slide">
+  <h2>Register Now</h2>
+  <p style="font-size: 1.8rem; color: rgba(255,255,255,0.95);">8 Hours | 6 Resources | FREE</p>
+  <div class="url">govcongiants.org/contract-vehicles-bootcamp</div>
+  <p class="subtitle">March 28, 2026 | 9 AM - 5 PM ET</p>
+  <div class="slide-number">18 / 18</div>
+</div>
+
+<!-- Controls -->
+<div class="controls">
+  <button onclick="prevSlide()">Previous</button>
+  <button onclick="nextSlide()">Next</button>
+</div>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+
+  function showSlide(n) {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (n + slides.length) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }
+
+  function nextSlide() { showSlide(currentSlide + 1); }
+  function prevSlide() { showSlide(currentSlide - 1); }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+    if (e.key === 'ArrowLeft') prevSlide();
+  });
+</script>
+
+</body>
+</html>

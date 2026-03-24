@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YT Live 4: Final Call - Contract Vehicles Bootcamp | GovCon Giants</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #0f172a; color: #fff; }
+    .slide {
+      width: 1280px;
+      height: 720px;
+      padding: 60px;
+      display: none;
+      flex-direction: column;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      position: relative;
+      page-break-after: always;
+    }
+    .slide.active { display: flex; }
+    .slide::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, #dc2626, #ef4444, #f97316);
+    }
+    .logo {
+      position: absolute;
+      top: 30px;
+      right: 60px;
+      font-weight: 900;
+      font-size: 18px;
+    }
+    .logo span { color: #10b981; }
+    .live-badge {
+      position: absolute;
+      top: 30px;
+      left: 60px;
+      background: #dc2626;
+      color: white;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .live-badge::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: white;
+      border-radius: 50%;
+      animation: pulse 1s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    h1 {
+      font-size: 52px;
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 30px;
+    }
+    h1 .highlight { color: #dc2626; }
+    h1 .green { color: #10b981; }
+    h2 {
+      font-size: 42px;
+      font-weight: 800;
+      margin-bottom: 30px;
+      color: #10b981;
+    }
+    h3 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #10b981;
+    }
+    p {
+      font-size: 24px;
+      line-height: 1.6;
+      color: #94a3b8;
+    }
+    .subtitle {
+      font-size: 28px;
+      color: #64748b;
+      margin-bottom: 40px;
+    }
+    ul {
+      list-style: none;
+      font-size: 24px;
+      line-height: 1.8;
+    }
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+    li::before {
+      content: '✓';
+      color: #10b981;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+    .countdown-box {
+      background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      margin: 20px 0;
+    }
+    .countdown-box .number {
+      font-size: 96px;
+      font-weight: 900;
+      color: white;
+    }
+    .countdown-box .label {
+      font-size: 28px;
+      color: #fecaca;
+    }
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin: 30px 0;
+    }
+    .stat-box {
+      background: rgba(16, 185, 129, 0.2);
+      border: 2px solid #10b981;
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+    }
+    .stat-box .number {
+      font-size: 48px;
+      font-weight: 900;
+      color: #10b981;
+    }
+    .stat-box .label {
+      font-size: 18px;
+      color: #94a3b8;
+      margin-top: 8px;
+    }
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      flex: 1;
+    }
+    .three-col {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      flex: 1;
+    }
+    .card {
+      background: rgba(30, 41, 59, 0.8);
+      border: 1px solid #334155;
+      border-radius: 16px;
+      padding: 25px;
+    }
+    .card h4 {
+      font-size: 20px;
+      color: #10b981;
+      margin-bottom: 12px;
+    }
+    .card p {
+      font-size: 18px;
+    }
+    .resource-card {
+      background: rgba(30, 41, 59, 0.8);
+      border: 2px solid #10b981;
+      border-radius: 16px;
+      padding: 25px;
+      text-align: center;
+    }
+    .resource-card .icon {
+      font-size: 36px;
+      margin-bottom: 12px;
+    }
+    .resource-card h4 {
+      font-size: 18px;
+      color: #10b981;
+      margin-bottom: 8px;
+    }
+    .resource-card p {
+      font-size: 14px;
+      color: #64748b;
+    }
+    .cta-slide {
+      background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+    }
+    .cta-slide h1 { color: white; margin-bottom: 20px; }
+    .cta-slide .url {
+      font-size: 36px;
+      font-weight: 900;
+      color: #1e293b;
+      background: rgba(255,255,255,0.95);
+      padding: 20px 50px;
+      border-radius: 12px;
+      margin-top: 30px;
+    }
+    .agenda-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 16px 0;
+      border-bottom: 1px solid #334155;
+    }
+    .agenda-item .time {
+      background: #7c3aed;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .agenda-item .content h4 {
+      color: #e2e8f0;
+      font-size: 20px;
+      margin-bottom: 4px;
+    }
+    .agenda-item .content p {
+      font-size: 16px;
+      color: #64748b;
+    }
+    .urgency-banner {
+      background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      margin: 20px 0;
+    }
+    .urgency-banner p {
+      color: white;
+      font-size: 24px;
+      font-weight: 700;
+    }
+    .slide-number {
+      position: absolute;
+      bottom: 30px;
+      right: 60px;
+      color: #475569;
+      font-size: 16px;
+    }
+    .controls {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+      z-index: 100;
+    }
+    .controls button {
+      background: #dc2626;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    .controls button:hover { background: #b91c1c; }
+    @media print {
+      .slide { display: flex !important; }
+      .controls { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Slide 1: Title -->
+<div class="slide active">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+    <div class="countdown-box" style="margin-bottom: 30px;">
+      <div class="number">2</div>
+      <div class="label">DAYS UNTIL BOOTCAMP</div>
+    </div>
+    <h1>Contract Vehicles Bootcamp<br><span class="highlight">Final Preview</span></h1>
+    <p class="subtitle">Last Chance to Register + Get All 6 FREE Resources</p>
+    <p style="margin-top: 20px; color: #10b981; font-size: 20px;">March 26, 2026 | Contract Vehicles Bootcamp Series</p>
+  </div>
+  <div class="slide-number">1 / 15</div>
+</div>
+
+<!-- Slide 2: What We've Covered -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>What We've Covered This Week</h2>
+  <div class="three-col">
+    <div class="card">
+      <h4>Live 1: IDIQ Guide</h4>
+      <p>The $77 Trillion landscape and 10 vehicles you need to know</p>
+    </div>
+    <div class="card">
+      <h4>Live 2: Vehicles List</h4>
+      <p>50+ active vehicles with ceiling values and NAICS codes</p>
+    </div>
+    <div class="card">
+      <h4>Live 3: Sources Sought</h4>
+      <p>Filled out the response template LIVE</p>
+    </div>
+  </div>
+  <p style="text-align: center; margin-top: 40px; font-size: 26px;">
+    If you missed any of these, the replays are on our channel. But Saturday is the <span style="color: #dc2626; font-weight: 900;">DEEP DIVE</span>.
+  </p>
+  <div class="slide-number">2 / 15</div>
+</div>
+
+<!-- Slide 3: Why This Bootcamp Exists -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Why This Bootcamp Exists</h2>
+  <div class="stat-grid">
+    <div class="stat-box">
+      <div class="number">$77T</div>
+      <div class="label">IDIQ Ceiling Value</div>
+    </div>
+    <div class="stat-box">
+      <div class="number">80%</div>
+      <div class="label">Federal $ Through Vehicles</div>
+    </div>
+    <div class="stat-box">
+      <div class="number">???</div>
+      <div class="label">Your Share</div>
+    </div>
+  </div>
+  <p style="text-align: center; font-size: 26px; max-width: 900px; margin: 0 auto;">
+    Most contractors are competing for the 20% of opportunities on the open market. The smart ones are positioned on vehicles capturing the other 80%.
+  </p>
+  <div class="slide-number">3 / 15</div>
+</div>
+
+<!-- Slide 4: Full Agenda -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Saturday's Full Agenda</h2>
+  <div style="flex: 1; overflow: auto;">
+    <div class="agenda-item">
+      <div class="time">9:00 AM</div>
+      <div class="content">
+        <h4>The $77 Trillion IDIQ Landscape</h4>
+        <p>Understanding how federal contracting REALLY works</p>
+      </div>
+    </div>
+    <div class="agenda-item">
+      <div class="time">10:30 AM</div>
+      <div class="content">
+        <h4>10 Vehicles You Need to Know</h4>
+        <p>Deep dive into GSA MAS, OASIS+, 8(a) STARS III, and more</p>
+      </div>
+    </div>
+    <div class="agenda-item">
+      <div class="time">12:45 PM</div>
+      <div class="content">
+        <h4>Finding & Winning Task Orders</h4>
+        <p>Where they're posted and how to respond effectively</p>
+      </div>
+    </div>
+    <div class="agenda-item">
+      <div class="time">2:15 PM</div>
+      <div class="content">
+        <h4>Sources Sought & Set-Asides</h4>
+        <p>Influence solicitations before they drop</p>
+      </div>
+    </div>
+    <div class="agenda-item">
+      <div class="time">3:45 PM</div>
+      <div class="content">
+        <h4>Teaming & Subcontracting</h4>
+        <p>Work THROUGH vehicles you're not on</p>
+      </div>
+    </div>
+    <div class="agenda-item" style="border-bottom: none;">
+      <div class="time">4:45 PM</div>
+      <div class="content">
+        <h4>Your 30-Day Action Plan</h4>
+        <p>Exactly what to do Monday morning</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">4 / 15</div>
+</div>
+
+<!-- Slide 5: Your 6 FREE Resources -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Your 6 FREE Resources</h2>
+  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+    <div class="resource-card">
+      <div class="icon">📘</div>
+      <h4>10 IDIQ Vehicles Guide</h4>
+      <p>The most active GWAC & IDIQ vehicles explained</p>
+    </div>
+    <div class="resource-card">
+      <div class="icon">📊</div>
+      <h4>Active Vehicles List</h4>
+      <p>50+ vehicles with ceiling values & NAICS</p>
+    </div>
+    <div class="resource-card">
+      <div class="icon">📅</div>
+      <h4>Expiring Contracts</h4>
+      <p>100+ contracts expiring March 2026</p>
+    </div>
+    <div class="resource-card">
+      <div class="icon">✅</div>
+      <h4>Recompete Checklist</h4>
+      <p>18-month positioning timeline</p>
+    </div>
+    <div class="resource-card">
+      <div class="icon">📝</div>
+      <h4>Sources Sought Template</h4>
+      <p>Fill-in-the-blank response format</p>
+    </div>
+    <div class="resource-card">
+      <div class="icon">📄</div>
+      <h4>Task Order Template</h4>
+      <p>Framework for IDIQ task orders</p>
+    </div>
+  </div>
+  <p style="text-align: center; margin-top: 30px; font-size: 22px; color: #10b981;">
+    <strong>All 6 available for instant download when you register!</strong>
+  </p>
+  <div class="slide-number">5 / 15</div>
+</div>
+
+<!-- Slide 6: Who This Is For -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>This Bootcamp Is For You If...</h2>
+  <div class="two-col">
+    <div>
+      <ul style="font-size: 22px;">
+        <li>You're tired of competing on full & open solicitations</li>
+        <li>You want to understand where agencies REALLY spend money</li>
+        <li>You're confused about IDIQs, GWACs, BPAs</li>
+        <li>You want to know if you should get ON a vehicle or work THROUGH one</li>
+      </ul>
+    </div>
+    <div>
+      <ul style="font-size: 22px;">
+        <li>You have certifications but aren't leveraging them</li>
+        <li>You want to build relationships with prime contractors</li>
+        <li>You're looking for faster paths to contract wins</li>
+        <li>You want a clear 30-day action plan</li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-number">6 / 15</div>
+</div>
+
+<!-- Slide 7: Who This Is NOT For -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>This Is NOT For You If...</h2>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+    <ul style="font-size: 28px; max-width: 800px; margin: 0 auto;">
+      <li style="color: #f87171;">You're not registered in SAM.gov yet</li>
+      <li style="color: #f87171;">You're looking for overnight success</li>
+      <li style="color: #f87171;">You won't take action after the bootcamp</li>
+      <li style="color: #f87171;">You think one bootcamp will win you millions</li>
+    </ul>
+    <p style="text-align: center; margin-top: 40px; font-size: 24px; color: #94a3b8;">
+      This is education + action. If you're not ready to put in the work, this isn't for you.
+    </p>
+  </div>
+  <div class="slide-number">7 / 15</div>
+</div>
+
+<!-- Slide 8: What Makes This Different -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>What Makes This Different</h2>
+  <div class="two-col">
+    <div>
+      <h3 style="color: #f87171;">Other Training</h3>
+      <ul style="font-size: 20px; color: #f87171;">
+        <li style="color: #f87171;">Theory and concepts</li>
+        <li style="color: #f87171;">Generic advice</li>
+        <li style="color: #f87171;">No templates or tools</li>
+        <li style="color: #f87171;">No Q&A time</li>
+        <li style="color: #f87171;">Expensive</li>
+      </ul>
+    </div>
+    <div>
+      <h3>This Bootcamp</h3>
+      <ul style="font-size: 20px;">
+        <li>Real strategies from active contractors</li>
+        <li>Specific to YOUR certification status</li>
+        <li>6 ready-to-use templates</li>
+        <li>LIVE Q&A throughout</li>
+        <li>100% FREE</li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-number">8 / 15</div>
+</div>
+
+<!-- Slide 9: Success Stories -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>What Past Attendees Are Saying</h2>
+  <div class="three-col">
+    <div class="card">
+      <p style="font-size: 18px; font-style: italic; margin-bottom: 16px;">"I finally understand how vehicles work. Won my first task order 3 months after attending."</p>
+      <p style="font-size: 14px; color: #10b981;">— IT Services, 8(a) certified</p>
+    </div>
+    <div class="card">
+      <p style="font-size: 18px; font-style: italic; margin-bottom: 16px;">"The Sources Sought template alone was worth it. I've responded to 12 since the bootcamp."</p>
+      <p style="font-size: 14px; color: #10b981;">— Professional Services, SDVOSB</p>
+    </div>
+    <div class="card">
+      <p style="font-size: 18px; font-style: italic; margin-bottom: 16px;">"Eric breaks down complex topics in a way that actually makes sense. Highly recommend."</p>
+      <p style="font-size: 14px; color: #10b981;">— Construction, HUBZone</p>
+    </div>
+  </div>
+  <div class="slide-number">9 / 15</div>
+</div>
+
+<!-- Slide 10: Event Details -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Event Details</h2>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    <div class="card" style="max-width: 600px; border: 2px solid #10b981; padding: 40px;">
+      <div style="text-align: center;">
+        <p style="font-size: 32px; color: #e2e8f0; margin-bottom: 20px;"><strong>Saturday, March 28, 2026</strong></p>
+        <p style="font-size: 28px; color: #10b981; margin-bottom: 20px;">9:00 AM - 5:00 PM Eastern</p>
+        <p style="font-size: 24px; color: #94a3b8; margin-bottom: 20px;">LIVE on Zoom</p>
+        <p style="font-size: 36px; color: #10b981; font-weight: 900;">FREE</p>
+      </div>
+    </div>
+    <p style="margin-top: 30px; color: #64748b; font-size: 20px;">
+      Zoom link sent to your email after registration
+    </p>
+  </div>
+  <div class="slide-number">10 / 15</div>
+</div>
+
+<!-- Slide 11: Limited Time -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+    <div class="urgency-banner" style="max-width: 700px;">
+      <p>🚨 REGISTRATION CLOSES IN 2 DAYS 🚨</p>
+    </div>
+    <h1 style="margin-top: 30px;">This is Your <span class="highlight">Last Chance</span></h1>
+    <p style="font-size: 26px; max-width: 800px; margin-top: 20px;">
+      After March 28, these resources go back in the vault. Register now to get instant access.
+    </p>
+  </div>
+  <div class="slide-number">11 / 15</div>
+</div>
+
+<!-- Slide 12: What Happens Next -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>What Happens When You Register</h2>
+  <div style="flex: 1;">
+    <div style="display: flex; gap: 30px; margin-bottom: 30px;">
+      <div style="background: #10b981; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 24px; flex-shrink: 0;">1</div>
+      <div>
+        <h3 style="margin-bottom: 8px;">Instant Access to Downloads</h3>
+        <p style="font-size: 20px;">All 6 resources available immediately on the thank-you page</p>
+      </div>
+    </div>
+    <div style="display: flex; gap: 30px; margin-bottom: 30px;">
+      <div style="background: #10b981; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 24px; flex-shrink: 0;">2</div>
+      <div>
+        <h3 style="margin-bottom: 8px;">Confirmation Email</h3>
+        <p style="font-size: 20px;">Event details and calendar invite sent to your inbox</p>
+      </div>
+    </div>
+    <div style="display: flex; gap: 30px; margin-bottom: 30px;">
+      <div style="background: #10b981; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 24px; flex-shrink: 0;">3</div>
+      <div>
+        <h3 style="margin-bottom: 8px;">Zoom Link (Day Before)</h3>
+        <p style="font-size: 20px;">Friday March 27 - check your email for the link</p>
+      </div>
+    </div>
+    <div style="display: flex; gap: 30px;">
+      <div style="background: #10b981; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 24px; flex-shrink: 0;">4</div>
+      <div>
+        <h3 style="margin-bottom: 8px;">Join Us Saturday</h3>
+        <p style="font-size: 20px;">8 hours of transformation - bring coffee!</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">12 / 15</div>
+</div>
+
+<!-- Slide 13: FAQ -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Quick Questions</h2>
+  <div class="two-col">
+    <div class="card">
+      <h4>Is this really free?</h4>
+      <p style="font-size: 18px;">100% free. No credit card. No hidden fees. We make money when you succeed and join Pro later.</p>
+    </div>
+    <div class="card">
+      <h4>What if I can't attend live?</h4>
+      <p style="font-size: 18px;">Register anyway! You get the resources immediately. Replay available for registered attendees.</p>
+    </div>
+    <div class="card">
+      <h4>Do I need certifications?</h4>
+      <p style="font-size: 18px;">No. We cover strategies for all - certified and non-certified small businesses.</p>
+    </div>
+    <div class="card">
+      <h4>Is this for beginners?</h4>
+      <p style="font-size: 18px;">Beginners to intermediate. If you've won $10M+ on vehicles already, this might be review.</p>
+    </div>
+  </div>
+  <div class="slide-number">13 / 15</div>
+</div>
+
+<!-- Slide 14: Final Questions -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+    <h1>Any Questions?</h1>
+    <p class="subtitle">Drop them in the chat - this is your last chance before Saturday!</p>
+    <p style="margin-top: 60px; font-size: 22px; color: #64748b;">
+      Registration link coming up next...
+    </p>
+  </div>
+  <div class="slide-number">14 / 15</div>
+</div>
+
+<!-- Slide 15: CTA -->
+<div class="slide cta-slide">
+  <h1>Register Now<br>Before It's Too Late</h1>
+  <p style="font-size: 28px; color: white; opacity: 0.9;">8 Hours | 6 Free Resources | 100% FREE</p>
+  <div class="url">govcongiants.org/contract-vehicles-bootcamp</div>
+  <p style="margin-top: 40px; font-size: 22px; color: white; opacity: 0.8;">
+    March 28, 2026 | 9 AM - 5 PM ET
+  </p>
+  <p style="margin-top: 20px; font-size: 18px; color: white; opacity: 0.7;">
+    See you Saturday! 🚀
+  </p>
+  <div class="slide-number" style="color: rgba(255,255,255,0.6);">15 / 15</div>
+</div>
+
+<!-- Controls -->
+<div class="controls">
+  <button onclick="prevSlide()">← Previous</button>
+  <button onclick="nextSlide()">Next →</button>
+</div>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+
+  function showSlide(n) {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (n + slides.length) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }
+
+  function nextSlide() { showSlide(currentSlide + 1); }
+  function prevSlide() { showSlide(currentSlide - 1); }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+    if (e.key === 'ArrowLeft') prevSlide();
+  });
+</script>
+
+</body>
+</html>
