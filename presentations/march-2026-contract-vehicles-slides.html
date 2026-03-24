@@ -1,0 +1,1672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>March 2026 Contract Vehicles Bootcamp Slides | GovCon Giants</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --green: #8BC34A;
+            --green-dark: #689F38;
+            --blue: #1e3a8a;
+            --purple: #7c3aed;
+            --red: #E53935;
+            --black: #1a1a1a;
+            --gray: #666;
+            --light-gray: #f5f5f5;
+        }
+
+        @page {
+            size: 960px 540px landscape;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #e5e7eb;
+            line-height: 1.4;
+            color: var(--black);
+        }
+
+        .slide {
+            width: 960px;
+            height: 540px;
+            background: white;
+            margin: 20px auto;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: visible;
+            page-break-after: always;
+            page-break-inside: avoid;
+            padding: 40px 50px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media print {
+            body { background: white; }
+            .slide {
+                margin: 0;
+                box-shadow: none;
+                page-break-after: always;
+            }
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 25px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1.3rem;
+            line-height: 1.5;
+        }
+
+        .green { color: var(--green); }
+        .blue { color: var(--blue); }
+        .purple { color: var(--purple); }
+        .red { color: var(--red); }
+        .gray { color: var(--gray); }
+        .bold { font-weight: 700; }
+
+        /* Title Slide */
+        .slide-title {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .slide-title h1 {
+            font-size: 3rem;
+        }
+
+        .slide-title .subtitle {
+            font-size: 1.8rem;
+            color: var(--green);
+            margin-bottom: 30px;
+        }
+
+        /* Section Divider */
+        .slide-section {
+            background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 100%);
+            color: white;
+            justify-content: center;
+            padding: 50px;
+        }
+
+        .slide-section .session-num {
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            opacity: 0.8;
+            margin-bottom: 15px;
+        }
+
+        .slide-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        .slide-section .time-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        /* Centered Content */
+        .slide-center {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .slide-center h2 {
+            font-size: 2.5rem;
+            max-width: 800px;
+        }
+
+        /* Standard Content */
+        .slide-content h2 {
+            border-bottom: 3px solid var(--green);
+            padding-bottom: 15px;
+        }
+
+        /* Bullet List */
+        ul.bullets {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        ul.bullets li {
+            font-size: 1.4rem;
+            padding: 12px 0 12px 45px;
+            position: relative;
+        }
+
+        ul.bullets li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--green);
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+
+        ul.bullets.numbered li::before {
+            content: counter(item);
+            counter-increment: item;
+            background: var(--green);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+
+        ul.bullets.numbered {
+            counter-reset: item;
+        }
+
+        /* Simple bullets */
+        ul.simple {
+            list-style: disc;
+            padding-left: 30px;
+            margin-top: 15px;
+        }
+
+        ul.simple li {
+            font-size: 1.25rem;
+            padding: 8px 0;
+        }
+
+        /* Two Column */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            flex: 1;
+            margin-top: 15px;
+        }
+
+        /* Three Column */
+        .three-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 25px;
+            flex: 1;
+            margin-top: 15px;
+        }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 1.1rem;
+        }
+
+        table th {
+            background: var(--black);
+            color: white;
+            padding: 15px 20px;
+            text-align: left;
+            font-weight: 700;
+        }
+
+        table td {
+            padding: 15px 20px;
+            border-bottom: 2px solid #eee;
+        }
+
+        table tr:nth-child(even) {
+            background: var(--light-gray);
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: #FFF9C4;
+            border-left: 5px solid #FBC02D;
+            padding: 20px 25px;
+            margin-top: 25px;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .highlight-box p {
+            font-size: 1.2rem;
+            margin: 0;
+        }
+
+        /* Green Box */
+        .green-box {
+            background: #E8F5E9;
+            border: 2px solid var(--green);
+            border-radius: 12px;
+            padding: 20px 25px;
+            margin-top: 25px;
+        }
+
+        .green-box h4 {
+            color: var(--green-dark);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        /* Blue Box */
+        .blue-box {
+            background: #E3F2FD;
+            border: 2px solid var(--blue);
+            border-radius: 12px;
+            padding: 20px 25px;
+            margin-top: 15px;
+        }
+
+        /* Red CTA Box */
+        .cta-box {
+            background: var(--red);
+            color: white;
+            padding: 20px 40px;
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-top: auto;
+        }
+
+        /* Stats Row */
+        .stats-row {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat .value {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: var(--green);
+        }
+
+        .stat .label {
+            font-size: 1rem;
+            color: var(--gray);
+        }
+
+        /* Vehicle Card */
+        .vehicle-card {
+            background: var(--light-gray);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .vehicle-card h4 {
+            font-size: 1.2rem;
+            color: var(--blue);
+            margin-bottom: 10px;
+        }
+
+        .vehicle-card p {
+            font-size: 0.95rem;
+            color: var(--gray);
+        }
+
+        /* Icon with text */
+        .icon-text {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin: 18px 0;
+        }
+
+        .icon-text .icon {
+            font-size: 3rem;
+        }
+
+        .icon-text .text h3 {
+            margin-bottom: 5px;
+            font-size: 1.3rem;
+        }
+
+        .icon-text .text p {
+            font-size: 1.1rem;
+        }
+
+        /* Process Steps */
+        .process-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .process-step {
+            text-align: center;
+            flex: 1;
+        }
+
+        .process-step .num {
+            width: 55px;
+            height: 55px;
+            background: var(--green);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin: 0 auto 10px;
+        }
+
+        .process-step h4 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .process-step p {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        /* Slide number */
+        .slide-num {
+            position: absolute;
+            bottom: 15px;
+            right: 25px;
+            font-size: 0.9rem;
+            color: #999;
+        }
+
+        /* Agenda item */
+        .agenda-item {
+            display: flex;
+            gap: 20px;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 1.15rem;
+        }
+
+        .agenda-item .time {
+            font-weight: 700;
+            color: var(--green);
+            min-width: 120px;
+        }
+
+        .agenda-item .title {
+            font-weight: 600;
+        }
+
+        /* Big number */
+        .big-number {
+            font-size: 6rem;
+            font-weight: 900;
+            color: var(--green);
+            line-height: 1;
+        }
+
+        /* Comparison table */
+        .compare-row {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .compare-col {
+            flex: 1;
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .compare-col.good {
+            background: #E8F5E9;
+            border: 2px solid var(--green);
+        }
+
+        .compare-col.bad {
+            background: #FFEBEE;
+            border: 2px solid var(--red);
+        }
+
+        /* Workshop prompt */
+        .workshop-box {
+            background: #FFF3E0;
+            border: 2px solid #FF9800;
+            border-radius: 12px;
+            padding: 20px 25px;
+            margin-top: 20px;
+        }
+
+        .workshop-box h4 {
+            color: #E65100;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ==================== INTRO SECTION ==================== -->
+
+<!-- SLIDE 1: Title -->
+<div class="slide slide-title">
+    <h1>Contract Vehicles Bootcamp</h1>
+    <p class="subtitle">Master IDIQs, BPAs, Set-Asides & Task Orders</p>
+    <p style="font-size: 1.3rem; margin-top: 20px;">Free Full-Day Training | GovCon Giants</p>
+    <div style="display: flex; justify-content: center; gap: 80px; margin-top: 50px;">
+        <div style="text-align: center;">
+            <div style="font-size: 2.5rem; font-weight: 900; color: var(--green);">Mar 28</div>
+            <div style="font-size: 1rem; color: var(--gray);">Date</div>
+        </div>
+        <div style="text-align: center;">
+            <div style="font-size: 2.5rem; font-weight: 900; color: var(--green);">9am-5pm</div>
+            <div style="font-size: 1rem; color: var(--gray);">Eastern</div>
+        </div>
+        <div style="text-align: center;">
+            <div style="font-size: 2.5rem; font-weight: 900; color: var(--green);">8 Hours</div>
+            <div style="font-size: 1rem; color: var(--gray);">Live Training</div>
+        </div>
+    </div>
+    <span class="slide-num">1</span>
+</div>
+
+<!-- SLIDE 2: Your Resources -->
+<div class="slide slide-content">
+    <h2>Your Free Resources for Today</h2>
+    <ul class="bullets">
+        <li><strong>10 IDIQ Vehicles Guide</strong> – The most active GWAC/IDIQ vehicles explained</li>
+        <li><strong>Active IDIQ Vehicles List</strong> – 50 vehicles with ceiling values & NAICS</li>
+        <li><strong>March 2026 Expiring Contracts</strong> – 100+ recompete opportunities</li>
+        <li><strong>Recompete Positioning Checklist</strong> – 18-month timeline</li>
+        <li><strong>Sources Sought Template</strong> – Fill-in-the-blank response</li>
+        <li><strong>Task Order Template</strong> – IDIQ task order response framework</li>
+    </ul>
+    <span class="slide-num">2</span>
+</div>
+
+<!-- SLIDE 3: What You'll Learn -->
+<div class="slide slide-content">
+    <h2>What You'll Learn Today</h2>
+    <ul class="bullets">
+        <li>Understand IDIQs, BPAs, GWACs and how they work</li>
+        <li>Know which vehicles match YOUR NAICS and certifications</li>
+        <li>Find task orders and compete for work through vehicles</li>
+        <li>Respond to Sources Sought and get on agency radar</li>
+        <li>Decide: Get ON a vehicle vs. work THROUGH one</li>
+        <li>Build your 90-day contract vehicles strategy</li>
+    </ul>
+    <span class="slide-num">3</span>
+</div>
+
+<!-- SLIDE 4: Today's Agenda -->
+<div class="slide slide-content">
+    <h2>Today's Agenda</h2>
+    <div class="agenda-item"><span class="time">9:00 AM</span><span class="title">Session 1: Contract Vehicles 101 - The Big Picture</span></div>
+    <div class="agenda-item"><span class="time">10:30 AM</span><span class="title">Break (15 min)</span></div>
+    <div class="agenda-item"><span class="time">10:45 AM</span><span class="title">Session 2: The 10 Most Active IDIQ/GWAC Vehicles</span></div>
+    <div class="agenda-item"><span class="time">12:00 PM</span><span class="title">Lunch (45 min)</span></div>
+    <div class="agenda-item"><span class="time">12:45 PM</span><span class="title">Session 3: Sources Sought & RFI Responses</span></div>
+    <div class="agenda-item"><span class="time">1:45 PM</span><span class="title">Session 4: Set-Asides & Socioeconomic Vehicles</span></div>
+    <div class="agenda-item"><span class="time">2:45 PM</span><span class="title">Session 5: Task Order Response Strategy</span></div>
+    <div class="agenda-item"><span class="time">4:00 PM</span><span class="title">Session 6: Getting ON vs. Working THROUGH Vehicles</span></div>
+    <span class="slide-num">4</span>
+</div>
+
+<!-- SLIDE 5: The Big Opportunity -->
+<div class="slide slide-center">
+    <div class="big-number">$77T</div>
+    <h2 style="margin-top: 20px;">Active IDIQ Ceiling Value</h2>
+    <p class="gray" style="margin-top: 15px;">80%+ of federal contract dollars flow through vehicles, not open market.</p>
+    <span class="slide-num">5</span>
+</div>
+
+<!-- ==================== SESSION 1: Contract Vehicles 101 ==================== -->
+
+<!-- SLIDE 6: Session Divider -->
+<div class="slide slide-section">
+    <div class="session-num">Session 1</div>
+    <h2>Contract Vehicles 101<br>The Big Picture</h2>
+    <span class="time-badge">9:00 AM - 10:30 AM | 90 min</span>
+    <span class="slide-num">6</span>
+</div>
+
+<!-- SLIDE 7: What is a Contract Vehicle? -->
+<div class="slide slide-content">
+    <h2>What is a Contract Vehicle?</h2>
+    <p style="font-size: 1.5rem; margin-bottom: 30px;">A <span class="green bold">pre-approved contract</span> that agencies can use to buy goods and services <span class="bold">faster</span>.</p>
+    <div class="two-col">
+        <div>
+            <h3>Without a Vehicle</h3>
+            <ul class="simple">
+                <li>Full & open competition</li>
+                <li>60-180 day solicitation</li>
+                <li>Extensive proposal required</li>
+                <li>More compliance burden</li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="green">With a Vehicle</h3>
+            <ul class="simple">
+                <li>Pre-qualified contractors</li>
+                <li>14-30 day task orders</li>
+                <li>Streamlined proposals</li>
+                <li>Faster procurement</li>
+            </ul>
+        </div>
+    </div>
+    <span class="slide-num">7</span>
+</div>
+
+<!-- SLIDE 8: Why Agencies Love Vehicles -->
+<div class="slide slide-content">
+    <h2>Why Agencies Use Contract Vehicles</h2>
+    <div class="icon-text">
+        <span class="icon">⚡</span>
+        <div class="text">
+            <h3>Speed</h3>
+            <p>Issue task orders in weeks, not months</p>
+        </div>
+    </div>
+    <div class="icon-text">
+        <span class="icon">✅</span>
+        <div class="text">
+            <h3>Compliance</h3>
+            <p>Contractors already vetted and approved</p>
+        </div>
+    </div>
+    <div class="icon-text">
+        <span class="icon">📋</span>
+        <div class="text">
+            <h3>Less Paperwork</h3>
+            <p>Pre-negotiated terms and pricing</p>
+        </div>
+    </div>
+    <div class="icon-text">
+        <span class="icon">🎯</span>
+        <div class="text">
+            <h3>Small Business Goals</h3>
+            <p>Easy access to certified small businesses</p>
+        </div>
+    </div>
+    <span class="slide-num">8</span>
+</div>
+
+<!-- SLIDE 9: Types of Contract Vehicles -->
+<div class="slide slide-content">
+    <h2>Types of Contract Vehicles</h2>
+    <table>
+        <tr>
+            <th>Type</th>
+            <th>Full Name</th>
+            <th>What It Is</th>
+        </tr>
+        <tr>
+            <td class="bold">IDIQ</td>
+            <td>Indefinite Delivery/Indefinite Quantity</td>
+            <td>Ceiling contract with task orders</td>
+        </tr>
+        <tr>
+            <td class="bold">BPA</td>
+            <td>Blanket Purchase Agreement</td>
+            <td>Recurring call orders under schedule</td>
+        </tr>
+        <tr>
+            <td class="bold">GWAC</td>
+            <td>Government-Wide Acquisition Contract</td>
+            <td>IDIQ usable by all agencies</td>
+        </tr>
+        <tr>
+            <td class="bold">FSS/MAS</td>
+            <td>Federal Supply Schedule</td>
+            <td>GSA-managed pricing schedule</td>
+        </tr>
+    </table>
+    <span class="slide-num">9</span>
+</div>
+
+<!-- SLIDE 10: IDIQ Structure -->
+<div class="slide slide-content">
+    <h2>How an IDIQ Works</h2>
+    <div class="process-row">
+        <div class="process-step">
+            <div class="num">1</div>
+            <h4>Agency Awards IDIQ</h4>
+            <p>Multiple contractors selected</p>
+        </div>
+        <div class="process-step">
+            <div class="num">2</div>
+            <h4>Ceiling Set</h4>
+            <p>Max value over ordering period</p>
+        </div>
+        <div class="process-step">
+            <div class="num">3</div>
+            <h4>Task Orders Issued</h4>
+            <p>Individual work packages</p>
+        </div>
+        <div class="process-step">
+            <div class="num">4</div>
+            <h4>Contractors Compete</h4>
+            <p>Fair opportunity for each TO</p>
+        </div>
+    </div>
+    <div class="highlight-box">
+        <p><strong>Key Point:</strong> The ceiling is NOT guaranteed spend. Contractors compete for each task order.</p>
+    </div>
+    <span class="slide-num">10</span>
+</div>
+
+<!-- SLIDE 11: Ceiling vs Actual -->
+<div class="slide slide-content">
+    <h2>Ceiling vs. Actual Spending</h2>
+    <div class="stats-row">
+        <div class="stat">
+            <div class="value">$77T</div>
+            <div class="label">Total Ceiling Value</div>
+        </div>
+        <div class="stat">
+            <div class="value" style="color: var(--blue);">~$200B</div>
+            <div class="label">Annual Task Orders</div>
+        </div>
+        <div class="stat">
+            <div class="value" style="color: var(--gray);">0.3%</div>
+            <div class="label">Utilization Rate</div>
+        </div>
+    </div>
+    <div class="green-box" style="margin-top: 40px;">
+        <h4>What This Means</h4>
+        <p>Huge ceiling doesn't mean huge awards. Focus on task order volume, not ceiling.</p>
+    </div>
+    <span class="slide-num">11</span>
+</div>
+
+<!-- SLIDE 12: Task Orders - Where the Money Is -->
+<div class="slide slide-content">
+    <h2>Task Orders: Where the Real Money Flows</h2>
+    <ul class="bullets">
+        <li>Individual work packages under an IDIQ/GWAC</li>
+        <li>Typically 2-4 week response windows (not 60 days)</li>
+        <li>Shorter proposals - often 15-30 pages</li>
+        <li>"Fair opportunity" - all vehicle holders can compete</li>
+        <li>Some are directed to specific contractors (sole source)</li>
+    </ul>
+    <div class="highlight-box">
+        <p><strong>Strategy:</strong> Get on a high-volume vehicle OR partner with someone who is.</p>
+    </div>
+    <span class="slide-num">12</span>
+</div>
+
+<!-- SLIDE 13: Two Paths to Win -->
+<div class="slide slide-content">
+    <h2>Two Paths to Win Vehicle Work</h2>
+    <div class="compare-row">
+        <div class="compare-col good">
+            <h3 class="green">Path 1: Get ON the Vehicle</h3>
+            <ul class="simple">
+                <li>Apply during on-ramp</li>
+                <li>Invest in getting schedule</li>
+                <li>Compete as prime on TOs</li>
+                <li>Higher margins</li>
+                <li>More admin burden</li>
+            </ul>
+        </div>
+        <div class="compare-col good" style="border-color: var(--blue);">
+            <h3 class="blue">Path 2: Work THROUGH the Vehicle</h3>
+            <ul class="simple">
+                <li>Subcontract to a prime</li>
+                <li>No vehicle investment</li>
+                <li>Partner on task orders</li>
+                <li>Lower margins</li>
+                <li>Less admin, faster start</li>
+            </ul>
+        </div>
+    </div>
+    <p style="text-align: center; margin-top: 25px; color: var(--gray);">Both are valid strategies. We'll help you decide which is right for you.</p>
+    <span class="slide-num">13</span>
+</div>
+
+<!-- SLIDE 14: Finding Task Orders -->
+<div class="slide slide-content">
+    <h2>Where to Find Task Orders</h2>
+    <ul class="bullets">
+        <li><strong>SAM.gov</strong> – Filter by IDIQ/BPA, search for task orders</li>
+        <li><strong>eBuy (GSA)</strong> – RFQs for GSA Schedule holders</li>
+        <li><strong>Agency Forecast Sites</strong> – Upcoming vehicle requirements</li>
+        <li><strong>GovWin / Bloomberg</strong> – Paid intelligence platforms</li>
+        <li><strong>Vehicle-Specific Portals</strong> – OASIS+, SEWP, CIO-SP4 sites</li>
+    </ul>
+    <div class="workshop-box">
+        <h4>Workshop: Find Task Orders in Your NAICS</h4>
+        <p>We'll search SAM.gov together and identify active task orders.</p>
+    </div>
+    <span class="slide-num">14</span>
+</div>
+
+<!-- SLIDE 15: Expiring Contracts = Recompete Opportunities -->
+<div class="slide slide-content">
+    <h2>Expiring Contracts = Recompete Opportunities</h2>
+    <div class="stats-row">
+        <div class="stat">
+            <div class="value">$221B</div>
+            <div class="label">Expiring 2026-2027</div>
+        </div>
+        <div class="stat">
+            <div class="value" style="color: var(--blue);">6,000+</div>
+            <div class="label">Contracts Tracked</div>
+        </div>
+        <div class="stat">
+            <div class="value" style="color: var(--purple);">20%</div>
+            <div class="label">Go to New Contractors</div>
+        </div>
+    </div>
+    <div class="green-box" style="margin-top: 30px;">
+        <h4>Your Expiring Contracts List</h4>
+        <p>100+ contracts expiring Q2-Q3 2026 with agency, NAICS, incumbent, and value included.</p>
+    </div>
+    <span class="slide-num">15</span>
+</div>
+
+<!-- ==================== SESSION 2: The 10 Most Active Vehicles ==================== -->
+
+<!-- SLIDE 16: Session Divider -->
+<div class="slide slide-section">
+    <div class="session-num">Session 2</div>
+    <h2>The 10 Most Active<br>IDIQ/GWAC Vehicles</h2>
+    <span class="time-badge">10:45 AM - 12:00 PM | 75 min</span>
+    <span class="slide-num">16</span>
+</div>
+
+<!-- SLIDE 17: GSA Vehicles Overview -->
+<div class="slide slide-content">
+    <h2>GSA-Managed Vehicles</h2>
+    <div class="three-col">
+        <div class="vehicle-card">
+            <h4>OASIS+</h4>
+            <p>Professional Services</p>
+            <p style="margin-top: 10px; font-size: 0.85rem;">All NAICS eligible<br>Unrestricted + SB pools</p>
+        </div>
+        <div class="vehicle-card">
+            <h4>GSA MAS</h4>
+            <p>Multiple Award Schedule</p>
+            <p style="margin-top: 10px; font-size: 0.85rem;">Products & Services<br>Category-based</p>
+        </div>
+        <div class="vehicle-card">
+            <h4>Alliant 2/3</h4>
+            <p>IT Services</p>
+            <p style="margin-top: 10px; font-size: 0.85rem;">Enterprise IT<br>Large contract ceiling</p>
+        </div>
+    </div>
+    <p style="margin-top: 25px; color: var(--gray); text-align: center;">GSA manages some of the largest government-wide vehicles.</p>
+    <span class="slide-num">17</span>
+</div>
+
+<!-- SLIDE 18: OASIS+ Deep Dive -->
+<div class="slide slide-content">
+    <h2>OASIS+ (Professional Services)</h2>
+    <div class="two-col">
+        <div>
+            <h3>What It Is</h3>
+            <ul class="simple">
+                <li>GSA's premier professional services vehicle</li>
+                <li>Replaced OASIS (2024)</li>
+                <li>All NAICS codes eligible</li>
+                <li>Multiple pools: Unrestricted, SB, 8(a), SDVOSB, WOSB, HUBZone</li>
+            </ul>
+        </div>
+        <div>
+            <h3>How to Get On</h3>
+            <ul class="simple">
+                <li>On-ramp windows open periodically</li>
+                <li>Self-scoring criteria</li>
+                <li>Requires past performance</li>
+                <li>Currently accepting applications</li>
+            </ul>
+        </div>
+    </div>
+    <div class="blue-box">
+        <p><strong>Task Order Volume:</strong> High - hundreds of billions in potential work</p>
+    </div>
+    <span class="slide-num">18</span>
+</div>
+
+<!-- SLIDE 19: GSA MAS -->
+<div class="slide slide-content">
+    <h2>GSA MAS (Multiple Award Schedule)</h2>
+    <div class="two-col">
+        <div>
+            <h3>What It Is</h3>
+            <ul class="simple">
+                <li>Long-term contracts with GSA</li>
+                <li>Pre-negotiated pricing</li>
+                <li>Categories (Large Categories A-Z)</li>
+                <li>Products AND services</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Key Categories</h3>
+            <ul class="simple">
+                <li>IT (Category 54151)</li>
+                <li>Professional Services (541)</li>
+                <li>Facilities (561)</li>
+                <li>Office Products, Furniture</li>
+            </ul>
+        </div>
+    </div>
+    <div class="highlight-box">
+        <p><strong>Note:</strong> Getting a GSA Schedule takes 6-12 months. Plan ahead!</p>
+    </div>
+    <span class="slide-num">19</span>
+</div>
+
+<!-- SLIDE 20: Agency-Specific Vehicles -->
+<div class="slide slide-content">
+    <h2>Agency-Specific Vehicles</h2>
+    <div class="three-col">
+        <div class="vehicle-card">
+            <h4>CIO-SP4</h4>
+            <p>HHS / NIH</p>
+            <p style="margin-top: 10px; font-size: 0.85rem;">IT Services<br>Government-wide use</p>
+        </div>
+        <div class="vehicle-card">
+            <h4>SEWP V</h4>
+            <p>NASA</p>
+            <p style="margin-top: 10px; font-size: 0.85rem;">IT Products<br>Fastest ordering</p>
+        </div>
+        <div class="vehicle-card">
+            <h4>Agency BPAs</h4>
+            <p>Various</p>
+            <p style="margin-top: 10px; font-size: 0.85rem;">Recurring buys<br>Agency-specific</p>
+        </div>
+    </div>
+    <p style="margin-top: 25px; color: var(--gray); text-align: center;">Some agencies manage their own vehicles with government-wide ordering.</p>
+    <span class="slide-num">20</span>
+</div>
+
+<!-- SLIDE 21: CIO-SP4 -->
+<div class="slide slide-content">
+    <h2>CIO-SP4 (IT Services)</h2>
+    <div class="two-col">
+        <div>
+            <h3>What It Is</h3>
+            <ul class="simple">
+                <li>HHS/NIH managed GWAC</li>
+                <li>IT services focus</li>
+                <li>$50B ceiling</li>
+                <li>All agencies can order</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Task Areas</h3>
+            <ul class="simple">
+                <li>IT Services</li>
+                <li>Cybersecurity</li>
+                <li>Health IT</li>
+                <li>Cloud Services</li>
+            </ul>
+        </div>
+    </div>
+    <div class="green-box">
+        <p><strong>Opportunity:</strong> Heavy HHS, VA, DoD usage. If these are your target agencies, CIO-SP4 matters.</p>
+    </div>
+    <span class="slide-num">21</span>
+</div>
+
+<!-- SLIDE 22: SEWP V -->
+<div class="slide slide-content">
+    <h2>SEWP V (IT Products)</h2>
+    <div class="two-col">
+        <div>
+            <h3>What It Is</h3>
+            <ul class="simple">
+                <li>NASA managed GWAC</li>
+                <li>IT products (hardware, software)</li>
+                <li>Known for FAST ordering</li>
+                <li>Average 3-5 day orders</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Why It's Popular</h3>
+            <ul class="simple">
+                <li>Fastest vehicle for products</li>
+                <li>Agencies love the speed</li>
+                <li>$15B+ annual volume</li>
+                <li>Pre-competed pricing</li>
+            </ul>
+        </div>
+    </div>
+    <div class="highlight-box">
+        <p><strong>For Product Companies:</strong> SEWP V is essential if you sell IT products.</p>
+    </div>
+    <span class="slide-num">22</span>
+</div>
+
+<!-- SLIDE 23: Socioeconomic Vehicles -->
+<div class="slide slide-content">
+    <h2>Socioeconomic Vehicles</h2>
+    <div class="three-col">
+        <div class="vehicle-card">
+            <h4>8(a) STARS III</h4>
+            <p>SBA 8(a) Exclusive</p>
+            <p style="margin-top: 10px; font-size: 0.85rem;">IT Services<br>$50B ceiling</p>
+        </div>
+        <div class="vehicle-card">
+            <h4>VETS 2</h4>
+            <p>SDVOSB Exclusive</p>
+            <p style="margin-top: 10px; font-size: 0.85rem;">IT Services<br>GSA managed</p>
+        </div>
+        <div class="vehicle-card">
+            <h4>WOSB/HUBZone Pools</h4>
+            <p>Various Vehicles</p>
+            <p style="margin-top: 10px; font-size: 0.85rem;">Set-aside pools<br>on major vehicles</p>
+        </div>
+    </div>
+    <p style="margin-top: 25px; text-align: center;"><span class="green bold">If you have certifications, you have exclusive access</span> to these vehicles.</p>
+    <span class="slide-num">23</span>
+</div>
+
+<!-- SLIDE 24: Which Vehicle is Right for You? -->
+<div class="slide slide-content">
+    <h2>Which Vehicle is Right for YOU?</h2>
+    <table>
+        <tr>
+            <th>If You Sell...</th>
+            <th>Consider These Vehicles</th>
+        </tr>
+        <tr>
+            <td>IT Services</td>
+            <td>OASIS+, CIO-SP4, 8(a) STARS III, Alliant</td>
+        </tr>
+        <tr>
+            <td>IT Products</td>
+            <td>SEWP V, GSA MAS (IT Category)</td>
+        </tr>
+        <tr>
+            <td>Professional Services</td>
+            <td>OASIS+, GSA MAS (Professional Services)</td>
+        </tr>
+        <tr>
+            <td>Construction</td>
+            <td>GSA MAS (Facilities), Agency BPAs</td>
+        </tr>
+        <tr>
+            <td>8(a) Certified</td>
+            <td>8(a) STARS III, OASIS+ 8(a) Pool</td>
+        </tr>
+    </table>
+    <span class="slide-num">24</span>
+</div>
+
+<!-- SLIDE 25: Workshop - Score Your Vehicles -->
+<div class="slide slide-content">
+    <h2>Workshop: Score Your Vehicles</h2>
+    <p style="margin-bottom: 20px;">Use your <strong>Active IDIQ Vehicles List</strong> to score each vehicle for your business:</p>
+    <table>
+        <tr>
+            <th>Criteria</th>
+            <th>Score 1-5</th>
+        </tr>
+        <tr>
+            <td>NAICS codes match</td>
+            <td>___</td>
+        </tr>
+        <tr>
+            <td>Target agencies use it</td>
+            <td>___</td>
+        </tr>
+        <tr>
+            <td>Certifications align</td>
+            <td>___</td>
+        </tr>
+        <tr>
+            <td>Task order volume</td>
+            <td>___</td>
+        </tr>
+        <tr>
+            <td>Realistic to get on</td>
+            <td>___</td>
+        </tr>
+    </table>
+    <span class="slide-num">25</span>
+</div>
+
+<!-- ==================== SESSION 3: Sources Sought ==================== -->
+
+<!-- SLIDE 26: Session Divider -->
+<div class="slide slide-section">
+    <div class="session-num">Session 3</div>
+    <h2>Sources Sought &<br>RFI Responses</h2>
+    <span class="time-badge">12:45 PM - 1:45 PM | 60 min</span>
+    <span class="slide-num">26</span>
+</div>
+
+<!-- SLIDE 27: What is Sources Sought? -->
+<div class="slide slide-content">
+    <h2>What is a Sources Sought Notice?</h2>
+    <p style="font-size: 1.5rem; margin-bottom: 30px;">A <span class="green bold">market research tool</span> agencies use BEFORE writing the solicitation.</p>
+    <ul class="bullets">
+        <li>Agency is asking: "Who can do this work?"</li>
+        <li>Helps determine: Set-aside or full competition?</li>
+        <li>Your response shapes how the RFP is written</li>
+        <li>NOT a solicitation - no contract awarded yet</li>
+    </ul>
+    <div class="highlight-box">
+        <p><strong>90% of contractors ignore Sources Sought.</strong> This is your chance to stand out.</p>
+    </div>
+    <span class="slide-num">27</span>
+</div>
+
+<!-- SLIDE 28: Why Respond? -->
+<div class="slide slide-content">
+    <h2>Why You NEED to Respond</h2>
+    <div class="icon-text">
+        <span class="icon">🎯</span>
+        <div class="text">
+            <h3>Influence the Solicitation</h3>
+            <p>Your response can shape requirements, NAICS, and set-aside decisions</p>
+        </div>
+    </div>
+    <div class="icon-text">
+        <span class="icon">👋</span>
+        <div class="text">
+            <h3>Get on Agency Radar</h3>
+            <p>Contracting officers notice who responds</p>
+        </div>
+    </div>
+    <div class="icon-text">
+        <span class="icon">🤝</span>
+        <div class="text">
+            <h3>Find Teaming Partners</h3>
+            <p>See who else is interested in the opportunity</p>
+        </div>
+    </div>
+    <div class="icon-text">
+        <span class="icon">📊</span>
+        <div class="text">
+            <h3>Early Intelligence</h3>
+            <p>Understand the requirement before RFP drops</p>
+        </div>
+    </div>
+    <span class="slide-num">28</span>
+</div>
+
+<!-- SLIDE 29: Set-Aside Decision -->
+<div class="slide slide-content">
+    <h2>How Your Response Affects Set-Asides</h2>
+    <div class="process-row">
+        <div class="process-step">
+            <div class="num">1</div>
+            <h4>Agency Posts SS</h4>
+            <p>"Can small businesses do this?"</p>
+        </div>
+        <div class="process-step">
+            <div class="num">2</div>
+            <h4>You Respond</h4>
+            <p>Show you're capable</p>
+        </div>
+        <div class="process-step">
+            <div class="num">3</div>
+            <h4>Agency Decides</h4>
+            <p>Set-aside or open?</p>
+        </div>
+        <div class="process-step">
+            <div class="num">4</div>
+            <h4>RFP Released</h4>
+            <p>Based on responses</p>
+        </div>
+    </div>
+    <div class="green-box" style="margin-top: 30px;">
+        <h4>If No Small Businesses Respond...</h4>
+        <p>The contract goes full & open competition. Your response directly impacts the outcome.</p>
+    </div>
+    <span class="slide-num">29</span>
+</div>
+
+<!-- SLIDE 30: Sources Sought Response Template -->
+<div class="slide slide-content">
+    <h2>Sources Sought Response Template</h2>
+    <div class="two-col">
+        <div>
+            <h3>Section 1: Company Overview</h3>
+            <ul class="simple" style="font-size: 1.1rem;">
+                <li>Company name, CAGE, DUNS</li>
+                <li>Business size and certs</li>
+                <li>NAICS codes</li>
+                <li>Years in business</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Section 2: Capabilities</h3>
+            <ul class="simple" style="font-size: 1.1rem;">
+                <li>Relevant experience</li>
+                <li>Key personnel</li>
+                <li>Past performance (similar work)</li>
+                <li>Differentiators</li>
+            </ul>
+        </div>
+    </div>
+    <div class="two-col" style="margin-top: 20px;">
+        <div>
+            <h3>Section 3: Questions</h3>
+            <ul class="simple" style="font-size: 1.1rem;">
+                <li>Clarifying questions</li>
+                <li>Scope questions</li>
+                <li>Timeline questions</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Section 4: Teaming</h3>
+            <ul class="simple" style="font-size: 1.1rem;">
+                <li>Interest in teaming</li>
+                <li>Prime or sub</li>
+                <li>Contact info</li>
+            </ul>
+        </div>
+    </div>
+    <span class="slide-num">30</span>
+</div>
+
+<!-- SLIDE 31: Finding Sources Sought -->
+<div class="slide slide-content">
+    <h2>Finding Sources Sought on SAM.gov</h2>
+    <ul class="bullets">
+        <li>Go to SAM.gov → Contract Opportunities</li>
+        <li>Filter by Notice Type: "Sources Sought" or "Special Notice"</li>
+        <li>Filter by NAICS, Agency, Set-Aside</li>
+        <li>Response deadline typically 7-14 days</li>
+        <li>Submit via email to the POC listed</li>
+    </ul>
+    <div class="workshop-box">
+        <h4>Workshop: Find & Draft a Response</h4>
+        <p>We'll find a live Sources Sought and start drafting your response using the template.</p>
+    </div>
+    <span class="slide-num">31</span>
+</div>
+
+<!-- ==================== SESSION 4: Set-Asides ==================== -->
+
+<!-- SLIDE 32: Session Divider -->
+<div class="slide slide-section">
+    <div class="session-num">Session 4</div>
+    <h2>Set-Asides &<br>Socioeconomic Vehicles</h2>
+    <span class="time-badge">1:45 PM - 2:30 PM | 45 min</span>
+    <span class="slide-num">32</span>
+</div>
+
+<!-- SLIDE 33: Set-Aside Overview -->
+<div class="slide slide-content">
+    <h2>Federal Set-Aside Programs</h2>
+    <div class="stats-row">
+        <div class="stat">
+            <div class="value">23%</div>
+            <div class="label">Small Business Goal</div>
+        </div>
+        <div class="stat">
+            <div class="value" style="color: var(--blue);">5%</div>
+            <div class="label">WOSB Goal</div>
+        </div>
+        <div class="stat">
+            <div class="value" style="color: var(--purple);">3%</div>
+            <div class="label">HUBZone Goal</div>
+        </div>
+        <div class="stat">
+            <div class="value" style="color: #E65100;">3%</div>
+            <div class="label">SDVOSB Goal</div>
+        </div>
+    </div>
+    <p style="text-align: center; margin-top: 30px; color: var(--gray);">Agencies MUST meet these goals. Set-asides help them do it.</p>
+    <span class="slide-num">33</span>
+</div>
+
+<!-- SLIDE 34: Sole Source Thresholds -->
+<div class="slide slide-content">
+    <h2>Sole Source Thresholds</h2>
+    <table>
+        <tr>
+            <th>Program</th>
+            <th>Threshold</th>
+            <th>What It Means</th>
+        </tr>
+        <tr>
+            <td class="bold">8(a)</td>
+            <td>$4.5M (Services) / $7M (Mfg)</td>
+            <td>Direct award, no competition</td>
+        </tr>
+        <tr>
+            <td class="bold">SDVOSB</td>
+            <td>$4.5M (Services) / $7M (Mfg)</td>
+            <td>Direct award if justified</td>
+        </tr>
+        <tr>
+            <td class="bold">WOSB/EDWOSB</td>
+            <td>$4.5M (Services) / $7M (Mfg)</td>
+            <td>Direct award if justified</td>
+        </tr>
+        <tr>
+            <td class="bold">HUBZone</td>
+            <td>$4.5M (Services) / $7M (Mfg)</td>
+            <td>Direct award if justified</td>
+        </tr>
+    </table>
+    <div class="green-box">
+        <p><strong>Strategy:</strong> If you have a certification and relationship with agency, pursue sole source.</p>
+    </div>
+    <span class="slide-num">34</span>
+</div>
+
+<!-- SLIDE 35: 8(a) Program -->
+<div class="slide slide-content">
+    <h2>8(a) Business Development Program</h2>
+    <div class="two-col">
+        <div>
+            <h3>Benefits</h3>
+            <ul class="simple">
+                <li>Sole source up to $4.5M/$7M</li>
+                <li>8(a) set-aside competitions</li>
+                <li>Exclusive vehicle pools</li>
+                <li>Mentor-Protege eligible</li>
+                <li>9-year program</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Requirements</h3>
+            <ul class="simple">
+                <li>51%+ owned by socially disadvantaged</li>
+                <li>Economically disadvantaged</li>
+                <li>Good character</li>
+                <li>US citizen</li>
+                <li>Small business in NAICS</li>
+            </ul>
+        </div>
+    </div>
+    <span class="slide-num">35</span>
+</div>
+
+<!-- SLIDE 36: Leveraging Your Certification -->
+<div class="slide slide-content">
+    <h2>Leveraging Your Certification</h2>
+    <ul class="bullets">
+        <li><strong>Update SAM.gov profile</strong> with all certifications</li>
+        <li><strong>Target agencies</strong> behind on small business goals</li>
+        <li><strong>Contact SBLOs</strong> at target agencies</li>
+        <li><strong>Respond to Sources Sought</strong> to drive set-asides</li>
+        <li><strong>Join vehicle pools</strong> for your certification (OASIS+, 8(a) STARS III)</li>
+        <li><strong>Pursue sole source</strong> for under-threshold work</li>
+    </ul>
+    <span class="slide-num">36</span>
+</div>
+
+<!-- ==================== SESSION 5: Task Order Response ==================== -->
+
+<!-- SLIDE 37: Session Divider -->
+<div class="slide slide-section">
+    <div class="session-num">Session 5</div>
+    <h2>Task Order<br>Response Strategy</h2>
+    <span class="time-badge">2:45 PM - 4:00 PM | 75 min</span>
+    <span class="slide-num">37</span>
+</div>
+
+<!-- SLIDE 38: Task Order vs Open Market -->
+<div class="slide slide-content">
+    <h2>Task Order vs. Open Market Proposals</h2>
+    <div class="compare-row">
+        <div class="compare-col" style="background: #E3F2FD; border-color: var(--blue);">
+            <h3 class="blue">Task Order</h3>
+            <ul class="simple">
+                <li>2-4 week response</li>
+                <li>15-30 page proposals</li>
+                <li>Pre-approved contractors</li>
+                <li>Pricing often pre-set</li>
+                <li>Faster award</li>
+            </ul>
+        </div>
+        <div class="compare-col" style="background: #FFF3E0; border-color: #FF9800;">
+            <h3 style="color: #E65100;">Open Market</h3>
+            <ul class="simple">
+                <li>30-60 day response</li>
+                <li>50-200+ page proposals</li>
+                <li>Open competition</li>
+                <li>Full pricing required</li>
+                <li>Longer award timeline</li>
+            </ul>
+        </div>
+    </div>
+    <p style="text-align: center; margin-top: 20px;"><span class="green bold">Task orders = More opportunities, faster decisions, less proposal burden.</span></p>
+    <span class="slide-num">38</span>
+</div>
+
+<!-- SLIDE 39: Task Order Response Framework -->
+<div class="slide slide-content">
+    <h2>Task Order Response Framework</h2>
+    <div class="two-col">
+        <div>
+            <h3>Technical Volume</h3>
+            <ul class="simple" style="font-size: 1.1rem;">
+                <li>Understanding of requirements</li>
+                <li>Technical approach</li>
+                <li>Management approach</li>
+                <li>Key personnel</li>
+                <li>Past performance</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Pricing Volume</h3>
+            <ul class="simple" style="font-size: 1.1rem;">
+                <li>Labor rates (usually from vehicle)</li>
+                <li>Level of effort</li>
+                <li>ODCs and travel</li>
+                <li>Fee/margin</li>
+                <li>Total price</li>
+            </ul>
+        </div>
+    </div>
+    <div class="highlight-box">
+        <p><strong>Key:</strong> Task orders often use vehicle labor rates. Know your rates before competing!</p>
+    </div>
+    <span class="slide-num">39</span>
+</div>
+
+<!-- SLIDE 40: Fair Opportunity -->
+<div class="slide slide-content">
+    <h2>Fair Opportunity Process</h2>
+    <ul class="bullets">
+        <li>All vehicle holders get chance to compete (usually)</li>
+        <li>Task order posted on vehicle portal or emailed</li>
+        <li>Q&A period for clarifications</li>
+        <li>Proposals evaluated, award made</li>
+        <li>Some exceptions allow directed awards</li>
+    </ul>
+    <div class="blue-box">
+        <p><strong>Exception:</strong> Under $7M, agencies can use "lowest price technically acceptable" or limit competition to a subset of vendors.</p>
+    </div>
+    <span class="slide-num">40</span>
+</div>
+
+<!-- SLIDE 41: Teaming on Task Orders -->
+<div class="slide slide-content">
+    <h2>Teaming on Task Orders</h2>
+    <div class="two-col">
+        <div>
+            <h3>As Prime</h3>
+            <ul class="simple">
+                <li>You're on the vehicle</li>
+                <li>Lead the proposal</li>
+                <li>Subcontract to partners</li>
+                <li>Full responsibility</li>
+                <li>Highest margin</li>
+            </ul>
+        </div>
+        <div>
+            <h3>As Subcontractor</h3>
+            <ul class="simple">
+                <li>Partner is on vehicle</li>
+                <li>Provide capabilities</li>
+                <li>Less proposal work</li>
+                <li>Lower risk</li>
+                <li>Lower margin</li>
+            </ul>
+        </div>
+    </div>
+    <p style="text-align: center; margin-top: 20px;">Both are valid. Choose based on your situation and the opportunity.</p>
+    <span class="slide-num">41</span>
+</div>
+
+<!-- SLIDE 42: Workshop - Task Order Template -->
+<div class="slide slide-content">
+    <h2>Workshop: Using the Task Order Template</h2>
+    <p style="margin-bottom: 20px;">Your <strong>Task Order Response Template</strong> includes:</p>
+    <ul class="bullets">
+        <li>Cover letter format</li>
+        <li>Technical approach outline</li>
+        <li>Management approach structure</li>
+        <li>Key personnel matrix</li>
+        <li>Past performance write-up template</li>
+        <li>Pricing worksheet</li>
+    </ul>
+    <div class="workshop-box">
+        <h4>Exercise: Draft Your Technical Approach</h4>
+        <p>Pick a task order from your research and outline your approach using the template.</p>
+    </div>
+    <span class="slide-num">42</span>
+</div>
+
+<!-- ==================== SESSION 6: ON vs THROUGH ==================== -->
+
+<!-- SLIDE 43: Session Divider -->
+<div class="slide slide-section">
+    <div class="session-num">Session 6</div>
+    <h2>Getting ON vs.<br>Working THROUGH Vehicles</h2>
+    <span class="time-badge">4:00 PM - 4:45 PM | 45 min</span>
+    <span class="slide-num">43</span>
+</div>
+
+<!-- SLIDE 44: The Strategic Decision -->
+<div class="slide slide-content">
+    <h2>The Strategic Decision</h2>
+    <p style="font-size: 1.5rem; margin-bottom: 30px;">Should you <span class="green bold">get ON</span> a vehicle yourself, or <span class="blue bold">work THROUGH</span> a partner who's already on?</p>
+    <div class="stats-row">
+        <div class="stat">
+            <div class="value">6-18</div>
+            <div class="label">Months to Get On</div>
+        </div>
+        <div class="stat">
+            <div class="value" style="color: var(--blue);">$10-50K</div>
+            <div class="label">Investment Cost</div>
+        </div>
+        <div class="stat">
+            <div class="value" style="color: var(--purple);">30 Days</div>
+            <div class="label">To Sub (Partnership)</div>
+        </div>
+    </div>
+    <span class="slide-num">44</span>
+</div>
+
+<!-- SLIDE 45: When to Get ON -->
+<div class="slide slide-content">
+    <h2>When to Get ON a Vehicle</h2>
+    <ul class="bullets">
+        <li><strong>High volume of task orders</strong> in your NAICS</li>
+        <li><strong>Target agencies</strong> use the vehicle heavily</li>
+        <li><strong>You have past performance</strong> to qualify</li>
+        <li><strong>You can invest</strong> time and money (6-18 months)</li>
+        <li><strong>You want to be prime</strong> and control relationships</li>
+        <li><strong>On-ramp is open</strong> or opening soon</li>
+    </ul>
+    <span class="slide-num">45</span>
+</div>
+
+<!-- SLIDE 46: When to Work THROUGH -->
+<div class="slide slide-content">
+    <h2>When to Work THROUGH a Partner</h2>
+    <ul class="bullets">
+        <li><strong>You're new</strong> to government contracting</li>
+        <li><strong>Limited past performance</strong> - need to build it</li>
+        <li><strong>Need revenue faster</strong> - can't wait 12+ months</li>
+        <li><strong>Niche capability</strong> that primes need</li>
+        <li><strong>Testing the market</strong> before committing</li>
+        <li><strong>Vehicle is closed</strong> to new entrants</li>
+    </ul>
+    <span class="slide-num">46</span>
+</div>
+
+<!-- SLIDE 47: Finding Prime Partners -->
+<div class="slide slide-content">
+    <h2>Finding Prime Partners</h2>
+    <ul class="bullets">
+        <li>Check vehicle awardee lists (GSA, vehicle websites)</li>
+        <li>Filter by NAICS codes that match your capabilities</li>
+        <li>Research small business subcontracting plans</li>
+        <li>Look at past task order awards - who's winning?</li>
+        <li>Attend vehicle conferences and industry days</li>
+        <li>Use LinkedIn to connect with BD leads</li>
+    </ul>
+    <div class="green-box">
+        <h4>Your Pitch to Primes</h4>
+        <p>"I have [capability] and can help you win [type of work]. I'm certified [cert] which helps your SB goals."</p>
+    </div>
+    <span class="slide-num">47</span>
+</div>
+
+<!-- SLIDE 48: Your 90-Day Vehicle Strategy -->
+<div class="slide slide-content">
+    <h2>Your 90-Day Vehicle Strategy</h2>
+    <div class="process-row">
+        <div class="process-step">
+            <div class="num">1</div>
+            <h4>Days 1-30</h4>
+            <p>Score vehicles, identify targets</p>
+        </div>
+        <div class="process-step">
+            <div class="num">2</div>
+            <h4>Days 31-60</h4>
+            <p>Research primes, start outreach</p>
+        </div>
+        <div class="process-step">
+            <div class="num">3</div>
+            <h4>Days 61-90</h4>
+            <p>Respond to Sources Sought, pursue TOs</p>
+        </div>
+    </div>
+    <div class="workshop-box" style="margin-top: 30px;">
+        <h4>Build Your Strategy Now</h4>
+        <p>Using your vehicle scorecard and resources, outline your next 90 days.</p>
+    </div>
+    <span class="slide-num">48</span>
+</div>
+
+<!-- ==================== Q&A & CLOSING ==================== -->
+
+<!-- SLIDE 49: Session Divider -->
+<div class="slide slide-section">
+    <div class="session-num">Wrap-Up</div>
+    <h2>Q&A + Next Steps</h2>
+    <span class="time-badge">4:50 PM - 5:00 PM | 10 min</span>
+    <span class="slide-num">49</span>
+</div>
+
+<!-- SLIDE 50: What You Learned Today -->
+<div class="slide slide-content">
+    <h2>What You Learned Today</h2>
+    <ul class="bullets">
+        <li>How contract vehicles work (IDIQs, BPAs, GWACs)</li>
+        <li>The 10 most active vehicles and which fit YOUR business</li>
+        <li>How to respond to Sources Sought and shape solicitations</li>
+        <li>Set-aside programs and how to leverage certifications</li>
+        <li>Task order response strategy and templates</li>
+        <li>When to get ON vs. work THROUGH a vehicle</li>
+    </ul>
+    <span class="slide-num">50</span>
+</div>
+
+<!-- SLIDE 51: Your Resources -->
+<div class="slide slide-content">
+    <h2>Your 6 Free Resources</h2>
+    <div class="two-col">
+        <div>
+            <ul class="bullets">
+                <li>10 IDIQ Vehicles Guide</li>
+                <li>Active IDIQ Vehicles List</li>
+                <li>March 2026 Expiring Contracts</li>
+            </ul>
+        </div>
+        <div>
+            <ul class="bullets">
+                <li>Recompete Positioning Checklist</li>
+                <li>Sources Sought Template</li>
+                <li>Task Order Template</li>
+            </ul>
+        </div>
+    </div>
+    <div class="green-box" style="margin-top: 30px;">
+        <h4>Download All Resources</h4>
+        <p>Access at: <strong>govcongiants.org/contract-vehicles-bootcamp/thank-you</strong></p>
+    </div>
+    <span class="slide-num">51</span>
+</div>
+
+<!-- SLIDE 52: Next Steps -->
+<div class="slide slide-content">
+    <h2>Your Next Steps</h2>
+    <ul class="bullets numbered">
+        <li>Review and score vehicles from Active IDIQ List</li>
+        <li>Search SAM.gov for task orders in your NAICS</li>
+        <li>Identify 3-5 primes on your target vehicles</li>
+        <li>Find one Sources Sought and draft a response</li>
+        <li>Start building relationships with SBLOs</li>
+    </ul>
+    <span class="slide-num">52</span>
+</div>
+
+<!-- SLIDE 53: Continue Your Journey -->
+<div class="slide slide-content">
+    <h2>Continue Your Journey</h2>
+    <div class="icon-text">
+        <span class="icon">🎓</span>
+        <div class="text">
+            <h3>Pro Membership</h3>
+            <p>Monthly bootcamps, templates, deal reviews, community</p>
+        </div>
+    </div>
+    <div class="icon-text">
+        <span class="icon">📊</span>
+        <div class="text">
+            <h3>Expiring Contracts Tracker</h3>
+            <p>6,900+ contracts with filters by NAICS, agency, value</p>
+        </div>
+    </div>
+    <div class="icon-text">
+        <span class="icon">📚</span>
+        <div class="text">
+            <h3>The Vault</h3>
+            <p>125+ premium templates, proposals, and guides</p>
+        </div>
+    </div>
+    <div class="cta-box" style="margin-top: 20px;">
+        Pro Membership: $99/mo or $799/year → federalhelpcenter.com/pro
+    </div>
+    <span class="slide-num">53</span>
+</div>
+
+<!-- SLIDE 54: Thank You -->
+<div class="slide slide-center">
+    <h1>Thank You!</h1>
+    <p style="font-size: 1.5rem; margin-top: 20px;">Questions? Let's dive in.</p>
+    <div style="margin-top: 50px;">
+        <p class="gray">GovCon Giants | govcongiants.org</p>
+        <p class="gray">hello@govconedu.com | 786-477-0477</p>
+    </div>
+    <span class="slide-num">54</span>
+</div>
+
+</body>
+</html>
