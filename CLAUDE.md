@@ -1,6 +1,6 @@
 # GovCon Giants - Bootcamp Project
 
-**Last Updated:** March 10, 2026
+**Last Updated:** March 26, 2026
 **Owner:** Eric Coffie
 **Purpose:** Federal contracting bootcamp materials, marketing assets, and business tools
 
@@ -135,23 +135,34 @@ SAM.gov, USAspending.gov, FPDS, SBA Prime Directory, Agency strategic plans, GAO
 
 ---
 
-## March 2026 Contracting Launchpad Bootcamp
+## March 2026 Contract Vehicles Bootcamp
 
 **Date:** March 28, 2026
 **Time:** 9:00 AM ET | Live on Zoom
-**Topic:** Contract Vehicles — IDIQs, BPAs, Sources Sought, Set-Asides, Contract Types
+**Topic:** Contract Vehicles — IDIQs, GWACs, Qualifications & Team Building
 **Format:** FREE, open to public
 **Registration:** `govcongiants.org/contract-vehicles-bootcamp`
 **April Bootcamp:** Winning with Certifications (Pro Members)
 
-### Curriculum (6 Sessions)
-1. The Federal Contract Vehicle Landscape (Opening)
-2. IDIQs — Indefinite Delivery/Indefinite Quantity
-3. BPAs — Blanket Purchase Agreements
-4. Sources Sought & RFIs — Early-Stage Signals
-5. Set-Asides & Socioeconomic Vehicles
-6. Contract Type Breakdown (FFP, T&M, Cost-Reimbursement)
-7. Workshop: Build Your Vehicle-Specific Win Strategy
+### Curriculum (6 Sessions) — Updated March 26, 2026
+1. **Contract Vehicles 101** — The Big Picture (IDIQ, GWAC, BPA, GSA MAS)
+2. **Vehicles By YOUR Industry** — 8 industries, 40+ real IDIQs with names & values
+3. **Sources Sought & RFI Responses** — Get on radar before RFP
+4. **How to Qualify + Team Assembly** — Real requirement tear-downs, solopreneur gaps, team building
+5. **Task Order Response Strategy** — Win work under IDIQs
+6. **ON vs. THROUGH Vehicles** — Strategic decision + subcontracting deep dive
+
+### Key Content Additions (March 26, 2026)
+- **Industry-specific vehicles:** 6 IDIQs per industry (Construction, IT, Cyber, Professional Services, Healthcare, Logistics, Facilities, Training)
+- **Breaking News slides:** FAR Overhaul, CIO-SP4 cancelled, OASIS+ rolling awards, SEWP VI status, $183B record
+- **Real requirement tear-downs:** OASIS+ and CIO-SP3 SB qualification requirements
+- **Team assembly guide:** 4 ways solopreneurs fill capability gaps
+- **Subcontracting deep dive:** Money reality (prime cuts), how to approach primes, red flags
+- **AI use cases:** Specific prompts for proposals, pricing, compliance matrix, capability statements
+- **Email CTA banners:** 5 keywords (VEHICLES, PROMPTS, TEAM, SUBK, SOURCES)
+
+### Slides File
+`presentations/march-28-bootcamp-slides.html` — ~70 slides
 
 ### Deployments
 - **Next.js funnel:** `govcongiants.org/contract-vehicles-bootcamp` (govcon-funnels)
@@ -161,6 +172,7 @@ SAM.gov, USAspending.gov, FPDS, SBA Prime Directory, Agency strategic plans, GAO
   - 6 download files co-located in same folder
 
 ### Files Created
+- `presentations/march-28-bootcamp-slides.html` — Main slide deck (70 slides)
 - `march-surge-page/` — Static deploy folder (agenda, slides, hit-list, downloads)
 - `funnels/march-surge/` — 4-page funnel (landing → upsell → downsell → thank-you)
 - `funnels/march-surge/downloads/` — 6 free resources
