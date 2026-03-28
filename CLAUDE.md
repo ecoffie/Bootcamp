@@ -152,17 +152,18 @@ SAM.gov, USAspending.gov, FPDS, SBA Prime Directory, Agency strategic plans, GAO
 5. **Task Order Response Strategy** — Win work under IDIQs
 6. **ON vs. THROUGH Vehicles** — Strategic decision + subcontracting deep dive
 
-### Key Content Additions (March 26, 2026)
+### Key Content Additions (March 28, 2026)
 - **Industry-specific vehicles:** 6 IDIQs per industry (Construction, IT, Cyber, Professional Services, Healthcare, Logistics, Facilities, Training)
-- **Breaking News slides:** FAR Overhaul, CIO-SP4 cancelled, OASIS+ rolling awards, SEWP VI status, $183B record
+- **Breaking News slides:** FAR Overhaul, CIO-SP4 cancelled, OASIS+ rolling awards, SEWP VI protests (5 open), Alliant 3 (43 awards), Polaris WOSB (55 awards), EVOLVE ($10B)
 - **Real requirement tear-downs:** OASIS+ and CIO-SP3 SB qualification requirements
 - **Team assembly guide:** 4 ways solopreneurs fill capability gaps
 - **Subcontracting deep dive:** Money reality (prime cuts), how to approach primes, red flags
-- **AI use cases:** Specific prompts for proposals, pricing, compliance matrix, capability statements
+- **AI use cases:** Specific prompts for vehicle research, teaming, qualification analysis
 - **Email CTA banners:** 5 keywords (VEHICLES, PROMPTS, TEAM, SUBK, SOURCES)
+- **Market Intelligence examples:** Daily Intel, Weekly Deep Dive, Pursuit Brief mockups
 
 ### Slides File
-`presentations/march-28-bootcamp-slides.html` — ~70 slides
+`presentations/march-28-bootcamp-slides.html` — 99 slides
 
 ### Deployments
 - **Next.js funnel:** `govcongiants.org/contract-vehicles-bootcamp` (govcon-funnels)
@@ -172,7 +173,9 @@ SAM.gov, USAspending.gov, FPDS, SBA Prime Directory, Agency strategic plans, GAO
   - 6 download files co-located in same folder
 
 ### Files Created
-- `presentations/march-28-bootcamp-slides.html` — Main slide deck (70 slides)
+- `presentations/march-28-bootcamp-slides.html` — Main slide deck (99 slides)
+- `presentations/March-28-Contract-Vehicles-Bootcamp.pdf` — PDF export (99 pages)
+- `presentations/march-28-pngs/` — Individual slide images (99 PNGs)
 - `march-surge-page/` — Static deploy folder (agenda, slides, hit-list, downloads)
 - `funnels/march-surge/` — 4-page funnel (landing → upsell → downsell → thank-you)
 - `funnels/march-surge/downloads/` — 6 free resources
@@ -196,6 +199,9 @@ SAM.gov, USAspending.gov, FPDS, SBA Prime Directory, Agency strategic plans, GAO
 - [x] Create March surge funnel and email sequence
 - [x] Rename March event to "Contracting Launchpad Bootcamp" (was "Recompete Contracts Surge")
 - [x] Deploy march-surge-page static site to Vercel
+- [x] Export slides to PDF (99 pages)
+- [x] Add breaking news: Alliant 3, Polaris WOSB, EVOLVE, SEWP VI protests
+- [x] Add Market Intelligence briefing examples (Daily, Weekly, Pursuit)
 - [ ] Assign custom domain to march-surge-page Vercel project
 - [ ] Update SBLO contacts (Q2 2026)
 - [ ] Update expiring contracts data monthly
