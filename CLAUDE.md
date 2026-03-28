@@ -144,13 +144,19 @@ SAM.gov, USAspending.gov, FPDS, SBA Prime Directory, Agency strategic plans, GAO
 **Registration:** `govcongiants.org/contract-vehicles-bootcamp`
 **April Bootcamp:** Winning with Certifications (Pro Members)
 
-### Curriculum (6 Sessions) — Updated March 26, 2026
-1. **Contract Vehicles 101** — The Big Picture (IDIQ, GWAC, BPA, GSA MAS)
-2. **Vehicles By YOUR Industry** — 8 industries, 40+ real IDIQs with names & values
-3. **Sources Sought & RFI Responses** — Get on radar before RFP
-4. **How to Qualify + Team Assembly** — Real requirement tear-downs, solopreneur gaps, team building
-5. **Task Order Response Strategy** — Win work under IDIQs
-6. **ON vs. THROUGH Vehicles** — Strategic decision + subcontracting deep dive
+### Curriculum (6 Sessions) — Updated March 28, 2026
+
+| Session | Time | Topic | Duration |
+|---------|------|-------|----------|
+| 1 | 9:00 AM | **Contract Vehicles 101** — The Big Picture (IDIQ, GWAC, BPA, GSA MAS) | 90 min |
+| 2 | 10:45 AM | **Vehicles By YOUR Industry** — 8 industries, 40+ real IDIQs with names & values | 75 min |
+| 3 | 12:45 PM | **Sources Sought & RFI Responses** — Get on radar before RFP | 60 min |
+| 4 | 1:45 PM | **How to Qualify + Team Assembly** — Real requirement tear-downs, solopreneur gaps | 60 min |
+| 5 | 3:00 PM | **Task Order Response Strategy** — Win work under IDIQs | 60 min |
+| 6 | 4:00 PM | **ON vs. THROUGH Vehicles** — Strategic decision + subcontracting deep dive | 45 min |
+
+Breaks: 10:30-10:45 AM, 12:00-12:45 PM (lunch), 2:45-3:00 PM, 4:45-4:50 PM
+Closing Q&A: 4:50-5:00 PM
 
 ### Key Content Additions (March 28, 2026)
 - **Industry-specific vehicles:** 6 IDIQs per industry (Construction, IT, Cyber, Professional Services, Healthcare, Logistics, Facilities, Training)
@@ -197,11 +203,13 @@ SAM.gov, USAspending.gov, FPDS, SBA Prime Directory, Agency strategic plans, GAO
 
 - [x] Generate March 2026 expiring contracts data
 - [x] Create March surge funnel and email sequence
-- [x] Rename March event to "Contracting Launchpad Bootcamp" (was "Recompete Contracts Surge")
+- [x] Rename March event to "Contract Vehicles Bootcamp" (was "Recompete Contracts Surge")
 - [x] Deploy march-surge-page static site to Vercel
 - [x] Export slides to PDF (99 pages)
 - [x] Add breaking news: Alliant 3, Polaris WOSB, EVOLVE, SEWP VI protests
 - [x] Add Market Intelligence briefing examples (Daily, Weekly, Pursuit)
+- [x] Update agenda files to match slide structure (march-28-surge-agenda.html, march-28-contract-vehicles-agenda.html)
+- [x] Update march-surge-page.html with Contract Vehicles theme
 - [ ] Assign custom domain to march-surge-page Vercel project
 - [ ] Update SBLO contacts (Q2 2026)
 - [ ] Update expiring contracts data monthly
