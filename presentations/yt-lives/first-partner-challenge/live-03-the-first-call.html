@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YT Live 3: The First Call | GovCon Giants</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #0f172a; color: #fff; }
+    .slide {
+      width: 1280px;
+      height: 720px;
+      padding: 60px;
+      display: none;
+      flex-direction: column;
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+      position: relative;
+      page-break-after: always;
+    }
+    .slide.active { display: flex; }
+    .slide::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, #6366f1, #8b5cf6, #a78bfa);
+    }
+    .logo {
+      position: absolute;
+      top: 30px;
+      right: 60px;
+      font-weight: 900;
+      font-size: 18px;
+    }
+    .logo span { color: #10b981; }
+    .live-badge {
+      position: absolute;
+      top: 30px;
+      left: 60px;
+      background: #dc2626;
+      color: white;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .live-badge::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: white;
+      border-radius: 50%;
+      animation: pulse 1s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    h1 {
+      font-size: 56px;
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 30px;
+    }
+    h1 .highlight { color: #a78bfa; }
+    h2 {
+      font-size: 42px;
+      font-weight: 800;
+      margin-bottom: 30px;
+      color: #a78bfa;
+    }
+    h3 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #10b981;
+    }
+    p {
+      font-size: 24px;
+      line-height: 1.6;
+      color: #94a3b8;
+    }
+    .subtitle {
+      font-size: 28px;
+      color: #64748b;
+      margin-bottom: 40px;
+    }
+    ul {
+      list-style: none;
+      font-size: 26px;
+      line-height: 2;
+    }
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    li::before {
+      content: '✓';
+      color: #a78bfa;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+    .stat-box {
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      margin: 20px 0;
+    }
+    .stat-box .number {
+      font-size: 72px;
+      font-weight: 900;
+      color: white;
+    }
+    .stat-box .label {
+      font-size: 24px;
+      color: #e0e7ff;
+    }
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      flex: 1;
+    }
+    .card {
+      background: rgba(30, 27, 75, 0.8);
+      border: 1px solid #4338ca;
+      border-radius: 16px;
+      padding: 30px;
+    }
+    .card h4 {
+      font-size: 24px;
+      color: #a78bfa;
+      margin-bottom: 16px;
+    }
+    .card p {
+      font-size: 20px;
+    }
+    .cta-slide {
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+    }
+    .cta-slide h1 { color: white; margin-bottom: 20px; }
+    .cta-slide .url {
+      font-size: 36px;
+      font-weight: 900;
+      color: #fef3c7;
+      background: rgba(0,0,0,0.2);
+      padding: 20px 50px;
+      border-radius: 12px;
+      margin-top: 30px;
+    }
+    .script-box {
+      background: rgba(16, 185, 129, 0.1);
+      border: 2px solid #10b981;
+      border-radius: 16px;
+      padding: 25px;
+      margin: 15px 0;
+    }
+    .script-box h4 {
+      color: #10b981;
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+    .script-box p {
+      font-size: 20px;
+      color: #d1fae5;
+      font-style: italic;
+    }
+    .objection-card {
+      background: rgba(251, 146, 60, 0.1);
+      border: 1px solid #f97316;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 15px;
+    }
+    .objection-card h4 {
+      color: #f97316;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    .objection-card p {
+      font-size: 18px;
+      color: #fed7aa;
+    }
+    .slide-number {
+      position: absolute;
+      bottom: 30px;
+      right: 60px;
+      color: #475569;
+      font-size: 16px;
+    }
+    .controls {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+      z-index: 100;
+    }
+    .controls button {
+      background: #6366f1;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .controls button:hover { background: #4f46e5; }
+    @media print {
+      .slide { display: flex !important; }
+      .controls { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Slide 1: Title -->
+<div class="slide active">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+    <h1>The <span class="highlight">First Call</span><br>Scripts That Actually Work</h1>
+    <p class="subtitle">First Partner Challenge Series | Part 3 of 4</p>
+    <p style="margin-top: 40px; color: #a78bfa; font-size: 20px;">What to say + How to handle objections</p>
+  </div>
+  <div class="slide-number">1 / 16</div>
+</div>
+
+<!-- Slide 2: Why Cold Calls Fail -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Why Most Cold Calls Fail</h2>
+  <div class="two-col">
+    <div>
+      <h3 style="color: #f87171;">What People Do Wrong</h3>
+      <ul style="font-size: 20px;">
+        <li style="color: #f87171;">Start with a pitch, not a question</li>
+        <li style="color: #f87171;">Talk about themselves first</li>
+        <li style="color: #f87171;">Ask for too much too soon</li>
+        <li style="color: #f87171;">Sound like they're reading a script</li>
+        <li style="color: #f87171;">No clear "ask" at the end</li>
+      </ul>
+    </div>
+    <div>
+      <h3>What Actually Works</h3>
+      <ul style="font-size: 20px;">
+        <li>Lead with curiosity</li>
+        <li>Show you did research</li>
+        <li>Ask for just 2 minutes</li>
+        <li>Sound like a conversation</li>
+        <li>Clear next step</li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-number">2 / 16</div>
+</div>
+
+<!-- Slide 3: The 2-Minute Framework -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>The 2-Minute Call Framework</h2>
+  <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; flex: 1; align-items: center;">
+    <div class="card" style="text-align: center;">
+      <h4 style="font-size: 48px; margin-bottom: 10px;">1</h4>
+      <p style="font-size: 18px; color: #a78bfa; font-weight: bold;">OPEN</p>
+      <p style="font-size: 16px;">15 seconds<br>Get permission</p>
+    </div>
+    <div class="card" style="text-align: center;">
+      <h4 style="font-size: 48px; margin-bottom: 10px;">2</h4>
+      <p style="font-size: 18px; color: #a78bfa; font-weight: bold;">BRIDGE</p>
+      <p style="font-size: 16px;">30 seconds<br>Show research</p>
+    </div>
+    <div class="card" style="text-align: center;">
+      <h4 style="font-size: 48px; margin-bottom: 10px;">3</h4>
+      <p style="font-size: 18px; color: #a78bfa; font-weight: bold;">VALUE</p>
+      <p style="font-size: 16px;">60 seconds<br>Your pitch</p>
+    </div>
+    <div class="card" style="text-align: center;">
+      <h4 style="font-size: 48px; margin-bottom: 10px;">4</h4>
+      <p style="font-size: 18px; color: #a78bfa; font-weight: bold;">CLOSE</p>
+      <p style="font-size: 16px;">15 seconds<br>Next step</p>
+    </div>
+  </div>
+  <div class="slide-number">3 / 16</div>
+</div>
+
+<!-- Slide 4: Step 1 - The Opening -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Step 1: The Opening (15 seconds)</h2>
+  <div class="script-box" style="max-width: 900px; margin: 30px auto;">
+    <h4>Say This:</h4>
+    <p>"Hi, this is [YOUR NAME] with [YOUR COMPANY]. I'm a small business in federal contracting, and I came across your company while researching [THEIR NAICS/INDUSTRY]. Do you have 2 minutes for a quick question?"</p>
+  </div>
+  <div class="two-col" style="margin-top: 30px;">
+    <div class="card">
+      <h4>Why It Works</h4>
+      <p>You're not selling. You're asking a question. People say yes to 2 minutes.</p>
+    </div>
+    <div class="card">
+      <h4>Key Phrase</h4>
+      <p>"Quick question" is non-threatening. It opens the door without pressure.</p>
+    </div>
+  </div>
+  <div class="slide-number">4 / 16</div>
+</div>
+
+<!-- Slide 5: Step 2 - The Bridge -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Step 2: The Bridge (30 seconds)</h2>
+  <div class="script-box" style="max-width: 900px; margin: 30px auto;">
+    <h4>If They Say Yes:</h4>
+    <p>"Great, thanks. I saw that you've done work with [AGENCY or CONTRACT] and your capabilities in [AREA]. I'm looking to connect with companies who might be open to teaming on future opportunities. Are you currently exploring teaming relationships for 2026?"</p>
+  </div>
+  <div class="two-col" style="margin-top: 30px;">
+    <div class="card">
+      <h4>Show Your Research</h4>
+      <p>Mentioning specific work they've done proves you're not just dialing random numbers.</p>
+    </div>
+    <div class="card">
+      <h4>The Question</h4>
+      <p>Asking about THEIR plans opens dialogue. It's not "let me tell you about me."</p>
+    </div>
+  </div>
+  <div class="slide-number">5 / 16</div>
+</div>
+
+<!-- Slide 6: Step 3 - The Value -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Step 3: The Value Exchange (60 seconds)</h2>
+  <div class="script-box" style="max-width: 900px; margin: 30px auto;">
+    <h4>When They Ask "What Do You Do?":</h4>
+    <p>"We're a [YOUR CERT] [SIZE] business specializing in [YOUR NAICS/SERVICES]. We've done [YOUR EXPERIENCE]. I'm specifically looking for partners who need our certification for set-asides, could use our technical capabilities, or are on vehicles we could subcontract through. Would any of those fit?"</p>
+  </div>
+  <div class="card" style="max-width: 800px; margin: 20px auto;">
+    <h4>The 3 Value Hooks</h4>
+    <p style="font-size: 20px;">
+      1. <strong>Certification value</strong> - Your certs help them win set-asides<br>
+      2. <strong>Technical value</strong> - You have skills they need<br>
+      3. <strong>Vehicle access</strong> - You can sub through their vehicles
+    </p>
+  </div>
+  <div class="slide-number">6 / 16</div>
+</div>
+
+<!-- Slide 7: Step 4 - The Close -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Step 4: The Close (15 seconds)</h2>
+  <div class="two-col">
+    <div>
+      <h3>If Interested:</h3>
+      <div class="script-box">
+        <p>"That's great. What's the best way to continue this? Can I send my capability statement and schedule a 15-minute call this week?"</p>
+      </div>
+    </div>
+    <div>
+      <h3>If Not Right Now:</h3>
+      <div class="script-box">
+        <p>"I appreciate the honesty. Would you be open to connecting on LinkedIn or staying in touch for future opportunities?"</p>
+      </div>
+    </div>
+  </div>
+  <div class="card" style="margin-top: 30px;">
+    <h4>Always Get Something</h4>
+    <p>Even a "no" can become a LinkedIn connection. That's still a win. Stay in their orbit.</p>
+  </div>
+  <div class="slide-number">7 / 16</div>
+</div>
+
+<!-- Slide 8: Handling Objections -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Handling Common Objections</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+    <div class="objection-card">
+      <h4>"We're not looking for partners right now"</h4>
+      <p>"Completely understand. Things change quickly in GovCon. Mind if I send my capability statement for when opportunities do come up?"</p>
+    </div>
+    <div class="objection-card">
+      <h4>"Send me an email"</h4>
+      <p>"Will do. What email should I use, and is there anything specific you'd want me to address?"</p>
+    </div>
+    <div class="objection-card">
+      <h4>"What's in it for us?"</h4>
+      <p>"Fair question. I can bring [YOUR CERT] for set-aside compliance and [YOUR SKILL] for technical depth. I'm looking for mutually beneficial relationships."</p>
+    </div>
+    <div class="objection-card">
+      <h4>"We only work with companies we know"</h4>
+      <p>"That makes sense. This call is the start of getting to know each other. Would a 15-minute video call help?"</p>
+    </div>
+  </div>
+  <div class="slide-number">8 / 16</div>
+</div>
+
+<!-- Slide 9: The Gatekeeper -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Getting Past the Gatekeeper</h2>
+  <div class="two-col">
+    <div>
+      <div class="script-box">
+        <h4>Option 1: Direct Ask</h4>
+        <p>"Hi, I'm trying to reach someone in business development or your small business liaison. Who handles teaming partnerships?"</p>
+      </div>
+      <div class="script-box">
+        <h4>Option 2: Name Drop</h4>
+        <p>"I was researching [COMPANY]'s work on [CONTRACT] and wanted to discuss a potential teaming opportunity. Who's the right person?"</p>
+      </div>
+    </div>
+    <div>
+      <div class="card">
+        <h4>Pro Tips</h4>
+        <ul style="font-size: 18px;">
+          <li>Be friendly, not demanding</li>
+          <li>Gatekeepers can help if you ask nicely</li>
+          <li>Get a name even if they're not available</li>
+          <li>Ask for email if phone is blocked</li>
+          <li>Call back at different times</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">9 / 16</div>
+</div>
+
+<!-- Slide 10: Voicemail Script -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Leaving a Voicemail That Gets Returned</h2>
+  <div class="script-box" style="max-width: 900px; margin: 30px auto;">
+    <h4>The 20-Second Voicemail:</h4>
+    <p>"Hi [NAME], this is [YOUR NAME] with [COMPANY]. I'm a [CERT] small business looking to connect about teaming opportunities in [NAICS/AREA]. I saw your work with [AGENCY] and think there might be fit. My number is [NUMBER]. Again, [YOUR NAME], [NUMBER]. I'll send a quick email too."</p>
+  </div>
+  <div class="two-col" style="margin-top: 30px;">
+    <div class="card">
+      <h4>Key Elements</h4>
+      <ul style="font-size: 18px;">
+        <li>Say your number TWICE</li>
+        <li>Keep it under 30 seconds</li>
+        <li>Reference something specific</li>
+        <li>Mention the follow-up email</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Follow-Up Rhythm</h4>
+      <p>Call → Voicemail → Email same day<br>Wait 3 days → Call again<br>Wait 1 week → Final attempt</p>
+    </div>
+  </div>
+  <div class="slide-number">10 / 16</div>
+</div>
+
+<!-- Slide 11: The Numbers Game -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>It's a Numbers Game</h2>
+  <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; flex: 1; align-items: center;">
+    <div class="stat-box">
+      <div class="number">10</div>
+      <div class="label">calls made</div>
+    </div>
+    <div class="stat-box" style="background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);">
+      <div class="number">5</div>
+      <div class="label">conversations</div>
+    </div>
+    <div class="stat-box" style="background: linear-gradient(135deg, #059669 0%, #10b981 100%);">
+      <div class="number">2</div>
+      <div class="label">interested</div>
+    </div>
+    <div class="stat-box" style="background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);">
+      <div class="number">1</div>
+      <div class="label">meeting booked</div>
+    </div>
+  </div>
+  <p style="text-align: center; margin-top: 20px;">That's why we aim for 5+ calls at the Challenge. More calls = more opportunities.</p>
+  <div class="slide-number">11 / 16</div>
+</div>
+
+<!-- Slide 12: Mindset -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+    <h1>The Right Mindset</h1>
+    <p class="subtitle" style="max-width: 800px; margin: 30px auto;">You're not asking for a favor.<br>You're offering a business opportunity.</p>
+    <div class="card" style="max-width: 700px; margin: 40px auto; border: 2px solid #10b981;">
+      <h4 style="color: #10b981; font-size: 28px;">Remember</h4>
+      <p style="font-size: 22px;">Primes NEED small business partners. Your certifications and capabilities have VALUE. You're not begging—you're proposing a mutually beneficial partnership.</p>
+    </div>
+  </div>
+  <div class="slide-number">12 / 16</div>
+</div>
+
+<!-- Slide 13: Practice Makes Perfect -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Practice Before the Challenge</h2>
+  <ul style="font-size: 26px;">
+    <li>Read the script out loud 10 times</li>
+    <li>Record yourself and listen back</li>
+    <li>Practice with a friend or family member</li>
+    <li>Time yourself (should be ~2 minutes total)</li>
+    <li>Customize with YOUR certifications and capabilities</li>
+  </ul>
+  <div class="card" style="margin-top: 30px;">
+    <h4>On Challenge Day</h4>
+    <p>You'll have live coaching and support. But the more you practice beforehand, the more confident you'll sound on real calls.</p>
+  </div>
+  <div class="slide-number">13 / 16</div>
+</div>
+
+<!-- Slide 14: After the Call -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>After Every Call</h2>
+  <div class="two-col">
+    <div>
+      <h3>Immediately</h3>
+      <ul style="font-size: 20px;">
+        <li>Log the call in your tracker</li>
+        <li>Note their response & next steps</li>
+        <li>Set follow-up reminder</li>
+        <li>Send email if promised</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Within 24 Hours</h3>
+      <ul style="font-size: 20px;">
+        <li>Send capability statement</li>
+        <li>Connect on LinkedIn</li>
+        <li>Calendar the follow-up</li>
+        <li>Research next opportunity to mention</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card" style="margin-top: 30px;">
+    <h4>The Fortune is in the Follow-Up</h4>
+    <p>Most partnerships don't happen on the first call. Consistent follow-up is what converts contacts into contracts.</p>
+  </div>
+  <div class="slide-number">14 / 16</div>
+</div>
+
+<!-- Slide 15: Questions -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+    <h1>Questions?</h1>
+    <p class="subtitle">Drop them in the chat!</p>
+    <p style="margin-top: 60px; font-size: 22px; color: #64748b;">
+      Final Live: April 25 Challenge Preview
+    </p>
+  </div>
+  <div class="slide-number">15 / 16</div>
+</div>
+
+<!-- Slide 16: CTA -->
+<div class="slide cta-slide">
+  <h1>Put It Into Practice</h1>
+  <p style="font-size: 28px; color: white; opacity: 0.9;">Join us April 25 to make real calls with live coaching</p>
+  <div class="url">govcongiants.org/first-partner-challenge</div>
+  <p style="margin-top: 40px; font-size: 22px; color: white; opacity: 0.8;">
+    April 25, 2026 | 9 AM - 6 PM ET | FREE
+  </p>
+  <div class="slide-number" style="color: rgba(255,255,255,0.6);">16 / 16</div>
+</div>
+
+<!-- Controls -->
+<div class="controls">
+  <button onclick="prevSlide()">← Previous</button>
+  <button onclick="nextSlide()">Next →</button>
+</div>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+
+  function showSlide(n) {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (n + slides.length) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }
+
+  function nextSlide() { showSlide(currentSlide + 1); }
+  function prevSlide() { showSlide(currentSlide - 1); }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+    if (e.key === 'ArrowLeft') prevSlide();
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YT Live 1: Why Teaming Matters | GovCon Giants</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #0f172a; color: #fff; }
+    .slide {
+      width: 1280px;
+      height: 720px;
+      padding: 60px;
+      display: none;
+      flex-direction: column;
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+      position: relative;
+      page-break-after: always;
+    }
+    .slide.active { display: flex; }
+    .slide::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, #6366f1, #8b5cf6, #a78bfa);
+    }
+    .logo {
+      position: absolute;
+      top: 30px;
+      right: 60px;
+      font-weight: 900;
+      font-size: 18px;
+    }
+    .logo span { color: #10b981; }
+    .live-badge {
+      position: absolute;
+      top: 30px;
+      left: 60px;
+      background: #dc2626;
+      color: white;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .live-badge::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: white;
+      border-radius: 50%;
+      animation: pulse 1s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    h1 {
+      font-size: 56px;
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 30px;
+    }
+    h1 .highlight { color: #a78bfa; }
+    h2 {
+      font-size: 42px;
+      font-weight: 800;
+      margin-bottom: 30px;
+      color: #a78bfa;
+    }
+    h3 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #10b981;
+    }
+    p {
+      font-size: 24px;
+      line-height: 1.6;
+      color: #94a3b8;
+    }
+    .subtitle {
+      font-size: 28px;
+      color: #64748b;
+      margin-bottom: 40px;
+    }
+    ul {
+      list-style: none;
+      font-size: 26px;
+      line-height: 2;
+    }
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    li::before {
+      content: '✓';
+      color: #a78bfa;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+    .stat-box {
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      margin: 20px 0;
+    }
+    .stat-box .number {
+      font-size: 72px;
+      font-weight: 900;
+      color: white;
+    }
+    .stat-box .label {
+      font-size: 24px;
+      color: #e0e7ff;
+    }
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      flex: 1;
+    }
+    .card {
+      background: rgba(30, 27, 75, 0.8);
+      border: 1px solid #4338ca;
+      border-radius: 16px;
+      padding: 30px;
+    }
+    .card h4 {
+      font-size: 24px;
+      color: #a78bfa;
+      margin-bottom: 16px;
+    }
+    .card p {
+      font-size: 20px;
+    }
+    .cta-slide {
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+    }
+    .cta-slide h1 { color: white; margin-bottom: 20px; }
+    .cta-slide .url {
+      font-size: 36px;
+      font-weight: 900;
+      color: #fef3c7;
+      background: rgba(0,0,0,0.2);
+      padding: 20px 50px;
+      border-radius: 12px;
+      margin-top: 30px;
+    }
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      flex: 1;
+    }
+    .icon-card {
+      background: rgba(30, 27, 75, 0.6);
+      border: 1px solid #4338ca;
+      border-radius: 16px;
+      padding: 30px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .icon-card .icon {
+      font-size: 40px;
+      flex-shrink: 0;
+    }
+    .icon-card h4 {
+      font-size: 22px;
+      color: #a78bfa;
+      margin-bottom: 8px;
+    }
+    .icon-card p {
+      font-size: 18px;
+    }
+    .slide-number {
+      position: absolute;
+      bottom: 30px;
+      right: 60px;
+      color: #475569;
+      font-size: 16px;
+    }
+    .controls {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+      z-index: 100;
+    }
+    .controls button {
+      background: #6366f1;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .controls button:hover { background: #4f46e5; }
+    @media print {
+      .slide { display: flex !important; }
+      .controls { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Slide 1: Title -->
+<div class="slide active">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+    <h1>Why <span class="highlight">Teaming</span> Is Your<br>Fastest Path to Contracts</h1>
+    <p class="subtitle">First Partner Challenge Series | Part 1 of 4</p>
+    <p style="margin-top: 40px; color: #a78bfa; font-size: 20px;">April 2026 | Free Registration Open</p>
+  </div>
+  <div class="slide-number">1 / 12</div>
+</div>
+
+<!-- Slide 2: The Hard Truth -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+    <h1>The Hard Truth About<br>Going Solo</h1>
+    <div class="stat-box" style="max-width: 700px; margin: 40px auto;">
+      <div class="number">73%</div>
+      <div class="label">of small businesses fail to win their first contract within 3 years</div>
+    </div>
+    <p style="max-width: 800px; margin: 0 auto;">The #1 reason? They tried to do it alone.</p>
+  </div>
+  <div class="slide-number">2 / 12</div>
+</div>
+
+<!-- Slide 3: Teaming Changes Everything -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Teaming Changes Everything</h2>
+  <div class="two-col">
+    <div>
+      <h3>Going Solo</h3>
+      <ul style="font-size: 22px;">
+        <li style="color: #f87171;">Need ALL qualifications yourself</li>
+        <li style="color: #f87171;">Limited past performance</li>
+        <li style="color: #f87171;">Compete against established players</li>
+        <li style="color: #f87171;">Miss set-aside requirements</li>
+        <li style="color: #f87171;">Longer path to first win</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Teaming Up</h3>
+      <ul style="font-size: 22px;">
+        <li>Combine capabilities & certs</li>
+        <li>Leverage partner's past performance</li>
+        <li>Compete as a stronger team</li>
+        <li>Access more set-asides</li>
+        <li>Faster path to revenue</li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-number">3 / 12</div>
+</div>
+
+<!-- Slide 4: The Numbers -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>The Numbers Don't Lie</h2>
+  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; flex: 1; align-items: center;">
+    <div class="stat-box">
+      <div class="number">40%</div>
+      <div class="label">of federal contracts go to teams</div>
+    </div>
+    <div class="stat-box" style="background: linear-gradient(135deg, #059669 0%, #10b981 100%);">
+      <div class="number">$200B+</div>
+      <div class="label">flows through subcontracting annually</div>
+    </div>
+    <div class="stat-box">
+      <div class="number">23%</div>
+      <div class="label">SB goal means primes NEED you</div>
+    </div>
+  </div>
+  <div class="slide-number">4 / 12</div>
+</div>
+
+<!-- Slide 5: Why Primes Need You -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Why Large Primes NEED Small Business Partners</h2>
+  <div class="icon-grid">
+    <div class="icon-card">
+      <div class="icon">📊</div>
+      <div>
+        <h4>Subcontracting Goals</h4>
+        <p>Large contracts REQUIRE subcontracting plans with SB goals</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">🏷️</div>
+      <div>
+        <h4>Set-Aside Access</h4>
+        <p>Your certifications (8(a), SDVOSB, HUBZone) open doors they can't enter alone</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">🔧</div>
+      <div>
+        <h4>Specialized Skills</h4>
+        <p>Primes need niche expertise they don't have in-house</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">📍</div>
+      <div>
+        <h4>Local Presence</h4>
+        <p>Many contracts require local workforce or facilities</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">5 / 12</div>
+</div>
+
+<!-- Slide 6: Types of Teaming -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Types of Teaming Arrangements</h2>
+  <div class="two-col">
+    <div class="card" style="border: 2px solid #a78bfa;">
+      <h4 style="font-size: 28px;">Prime/Sub Relationship</h4>
+      <p style="margin-bottom: 15px;">Most common. You support a larger prime.</p>
+      <ul style="font-size: 18px;">
+        <li>They manage the contract</li>
+        <li>You deliver your scope</li>
+        <li>They pay you directly</li>
+        <li>Lower risk, faster entry</li>
+      </ul>
+    </div>
+    <div class="card" style="border: 2px solid #10b981;">
+      <h4 style="font-size: 28px; color: #10b981;">Joint Venture</h4>
+      <p style="margin-bottom: 15px;">Formal partnership for bigger opportunities.</p>
+      <ul style="font-size: 18px;">
+        <li>Shared responsibility</li>
+        <li>Combined capabilities</li>
+        <li>Can use mentor-protege</li>
+        <li>Higher reward, more complex</li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-number">6 / 12</div>
+</div>
+
+<!-- Slide 7: The Partner Paradox -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+    <h1>The Partner Paradox</h1>
+    <p class="subtitle" style="max-width: 800px; margin: 30px auto 0;">"I need past performance to win contracts...<br>but I need contracts to get past performance."</p>
+    <div class="card" style="max-width: 700px; margin: 40px auto; border: 2px solid #10b981;">
+      <h4 style="color: #10b981; font-size: 28px;">The Solution: Teaming</h4>
+      <p style="font-size: 22px;">When you sub on a contract, you build past performance.<br>Their win becomes YOUR experience.</p>
+    </div>
+  </div>
+  <div class="slide-number">7 / 12</div>
+</div>
+
+<!-- Slide 8: What Partners Are Looking For -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>What Partners Are Looking For</h2>
+  <div class="icon-grid">
+    <div class="icon-card">
+      <div class="icon">✅</div>
+      <div>
+        <h4>Certifications</h4>
+        <p>8(a), SDVOSB, HUBZone, WOSB - your certs are valuable currency</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">🎯</div>
+      <div>
+        <h4>Relevant NAICS</h4>
+        <p>Match their target opportunities with your capabilities</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">📄</div>
+      <div>
+        <h4>Clear Capabilities</h4>
+        <p>Know exactly what you bring and communicate it crisply</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">🤝</div>
+      <div>
+        <h4>Reliability</h4>
+        <p>They need to trust you'll deliver when they need you</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">8 / 12</div>
+</div>
+
+<!-- Slide 9: Your Biggest Asset -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+    <h2>Your Biggest Asset Isn't Your Product</h2>
+    <h1 style="margin-top: 30px;">It's Your <span class="highlight">Relationships</span></h1>
+    <p style="max-width: 800px; margin: 40px auto; font-size: 26px;">
+      In GovCon, who you know determines what you win.<br>
+      Every prime you connect with is a potential path to revenue.
+    </p>
+  </div>
+  <div class="slide-number">9 / 12</div>
+</div>
+
+<!-- Slide 10: The Challenge -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>The First Partner Challenge</h2>
+  <p class="subtitle">April 25, 2026 | One Day to Change Your GovCon Journey</p>
+  <div class="two-col" style="margin-top: 20px;">
+    <div>
+      <h3>What You'll Do</h3>
+      <ul style="font-size: 20px;">
+        <li>Make 5+ calls to potential partners</li>
+        <li>Use proven scripts that work</li>
+        <li>Book 1-2 real meetings</li>
+        <li>Get live coaching on your approach</li>
+        <li>Leave with actual relationships</li>
+      </ul>
+    </div>
+    <div>
+      <h3>What You Get (FREE)</h3>
+      <ul style="font-size: 20px;">
+        <li>Call list template</li>
+        <li>Phone scripts that convert</li>
+        <li>Teaming agreement template</li>
+        <li>Follow-up email templates</li>
+        <li>Partner research guide</li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-number">10 / 12</div>
+</div>
+
+<!-- Slide 11: Questions -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+    <h1>Questions?</h1>
+    <p class="subtitle">Drop them in the chat!</p>
+    <p style="margin-top: 60px; font-size: 22px; color: #64748b;">
+      Next Live: How to Find the RIGHT Partners
+    </p>
+  </div>
+  <div class="slide-number">11 / 12</div>
+</div>
+
+<!-- Slide 12: CTA -->
+<div class="slide cta-slide">
+  <h1>Join the First Partner<br>Challenge</h1>
+  <p style="font-size: 28px; color: white; opacity: 0.9;">Make real connections. Book real meetings. One day.</p>
+  <div class="url">govcongiants.org/first-partner-challenge</div>
+  <p style="margin-top: 40px; font-size: 22px; color: white; opacity: 0.8;">
+    April 25, 2026 | 9 AM - 6 PM ET | FREE
+  </p>
+  <div class="slide-number" style="color: rgba(255,255,255,0.6);">12 / 12</div>
+</div>
+
+<!-- Controls -->
+<div class="controls">
+  <button onclick="prevSlide()">← Previous</button>
+  <button onclick="nextSlide()">Next →</button>
+</div>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+
+  function showSlide(n) {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (n + slides.length) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }
+
+  function nextSlide() { showSlide(currentSlide + 1); }
+  function prevSlide() { showSlide(currentSlide - 1); }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+    if (e.key === 'ArrowLeft') prevSlide();
+  });
+</script>
+
+</body>
+</html>

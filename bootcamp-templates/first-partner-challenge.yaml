@@ -1,0 +1,795 @@
+# First Partner Challenge Bootcamp Template
+# Use with: /deploy-bootcamp [date] first-partner-challenge
+
+meta:
+  name: "First Partner Challenge"
+  slug: "first-partner-challenge"
+  tagline: "Find Your First Teaming Partner or Consultant Client in One Day"
+  duration: "9 hours"  # 9am-6pm
+  format: "FREE"
+  email_keyword: "partner"
+  registration_url: "govcongiants.org/first-partner-challenge"
+  reference_doc: "docs/first-partner-challenge-reference.md"
+
+# The core methodology
+objectives:
+  title: "The 5 Objectives"
+  highlight: "Get to Step 3 as fast as possible — that's where the motion begins"
+  items:
+    - number: 1
+      label: "Pick Industry"
+      description: "Max 2 NAICS codes, double niche down"
+    - number: 2
+      label: "Find Sources Sought"
+      description: "Use Market Assassin to find opportunities"
+    - number: 3
+      label: "Build Call List"
+      description: "10-15 companies who can perform the work"
+    - number: 4
+      label: "Make Calls"
+      description: "LIVE calls during the bootcamp (Power Hours)"
+    - number: 5
+      label: "Book Meetings"
+      description: "Leave with 1-2 follow-up calls scheduled"
+
+# What makes this bootcamp unique
+differentiator:
+  headline: "This Bootcamp is Different"
+  text: "You won't just learn — you'll make real calls to real companies during the session."
+  subtext: "Leave with meetings booked, not just notes taken."
+
+# Value exchange table
+value_exchange:
+  title: "The Value Exchange"
+  you_bring:
+    - "Market research (Sources Sought)"
+    - "Upfront BD work"
+    - "Submission handling"
+    - "Possibly certifications (8a, SDVOSB)"
+    - "Free marketing for them"
+  they_bring:
+    - "Experience performing work"
+    - "Money / Capital"
+    - "Past performance"
+    - "Estimating capability"
+    - "Capacity to deliver"
+
+# Two paths attendees can choose
+paths:
+  - name: "Path A: Teaming Partner"
+    color: "blue"
+    items:
+      - "Find a prime to team with"
+      - "You do portion of the work"
+      - "They hold the contract"
+      - "Build past performance"
+  - name: "Path B: Consultant Client"
+    color: "purple"
+    items:
+      - "Find a small biz to serve"
+      - "Run tools for them"
+      - "Build consulting revenue"
+      - "Multiple clients = stability"
+
+# Session schedule
+schedule:
+  start_time: "9:00 AM"
+  end_time: "6:00 PM"
+  timezone: "ET"
+
+  breaks:
+    - time: "10:15 AM - 10:30 AM"
+      duration: 15
+      label: "Break"
+    - time: "12:00 PM - 12:45 PM"
+      duration: 45
+      label: "Lunch"
+    - time: "2:15 PM - 2:30 PM"
+      duration: 15
+      label: "Break — Prep Your Phone"
+    - time: "4:45 PM - 5:00 PM"
+      duration: 15
+      label: "Break"
+
+  sessions:
+    - number: 1
+      title: "Welcome + The Strategy"
+      subtitle: "Why Partner First?"
+      time: "9:00 AM"
+      duration: 30
+      type: "strategy"
+      slides:
+        - type: "session_header"
+        - type: "two_column"
+          title: "Solo vs. Team: The Math"
+          left:
+            heading: "Going Solo"
+            color: "red"
+            items:
+              - "No past performance"
+              - "No capital for large projects"
+              - "No existing relationships"
+              - "Compete against established players"
+          right:
+            heading: "With a Partner"
+            color: "green"
+            items:
+              - "Borrow their past performance"
+              - "They fund the work"
+              - "Access their relationships"
+              - "Team against competition"
+        - type: "table"
+          title: "The Value Exchange"
+          use: "value_exchange"
+        - type: "two_paths"
+          use: "paths"
+        - type: "quote"
+          text: "If you want to go fast, go alone. If you want to go far, go together."
+          subtext: "Your first federal contract is the hardest. A partner makes it easier."
+
+    - number: 2
+      title: "Pick Your Industry"
+      subtitle: "Max 2 NAICS Codes"
+      time: "9:30 AM"
+      duration: 45
+      type: "workshop"
+      slides:
+        - type: "session_header"
+        - type: "icon_grid"
+          title: "Why Just ONE Industry?"
+          items:
+            - icon: "🔍"
+              title: "Focus = Speed"
+              text: "Narrow your Keywords, NAICS, PSC codes"
+            - icon: "💬"
+              title: "Clear Message"
+              text: "Decision makers know how to help you"
+            - icon: "🎯"
+              title: "Strategy Faster"
+              text: "\"I sell to THIS office\" vs \"the government\""
+            - icon: "🤝"
+              title: "Known for ONE Thing"
+              text: "Everyone should know your specialty"
+          highlight: "Rule: Maximum 2 NAICS codes today"
+        - type: "stat_cards"
+          title: "How to Pick Your Industry"
+          intro: "Pick based on ONE of these three reasons:"
+          cards:
+            - icon: "🤝"
+              value: "Connections"
+              label: "Who do you already know?"
+            - icon: "💼"
+              value: "Experience"
+              label: "What have you done before?"
+            - icon: "💰"
+              value: "Money Flow"
+              label: "Where is spending happening?"
+        - type: "comparison"
+          title: "Double Niche Down"
+          intro: "Don't say \"Construction\" — say what KIND:"
+          left:
+            heading: "Too Broad"
+            color: "red"
+            items: ["Construction", "IT Services", "Professional Services", "Healthcare"]
+          right:
+            heading: "Just Right"
+            color: "green"
+            items: ["HVAC Construction", "SharePoint Development", "Training & Development", "Medical Equipment Maintenance"]
+        - type: "naics_grid"
+          title: "Top Service NAICS (By Spend)"
+          items:
+            - code: "541512"
+              name: "Computer Systems Design"
+            - code: "541511"
+              name: "Custom Programming"
+            - code: "541330"
+              name: "Engineering Services"
+            - code: "541611"
+              name: "Management Consulting"
+            - code: "561210"
+              name: "Facilities Support"
+            - code: "236220"
+              name: "Commercial Construction"
+            - code: "238220"
+              name: "HVAC Contractors"
+            - code: "611430"
+              name: "Professional Training"
+        - type: "workshop"
+          title: "Pick Your Industry NOW"
+          checklist:
+            - "Write down 1-2 NAICS codes"
+            - "Double niche: What specific type?"
+            - "Why this one? (Connections, Experience, or Money)"
+            - "Share in chat: \"My NAICS is _____ because _____\""
+          script:
+            label: "Remember"
+            text: "You are deciding where you want to BEGIN, not where you end up. You can change later."
+
+    - number: 3
+      title: "Find Sources Sought"
+      subtitle: "With Market Assassin"
+      time: "10:30 AM"
+      duration: 60
+      type: "tactical"
+      slides:
+        - type: "session_header"
+        - type: "definition"
+          title: "What is a Sources Sought?"
+          text: "A government market research notice (FAR 15.201) where agencies seek info about vendor capabilities before issuing a formal solicitation."
+          icon_grid:
+            - icon: "📣"
+              title: "Early Signal"
+              text: "Opportunity before RFP drops"
+            - icon: "🎯"
+              title: "Your Reason to Call"
+              text: "\"I found an opportunity...\""
+            - icon: "📝"
+              title: "Low Competition"
+              text: "Less than 5% of companies respond"
+            - icon: "🏆"
+              title: "Influence"
+              text: "Shape requirements before solicitation"
+        - type: "big_stat"
+          value: "<5%"
+          color: "red"
+          headline: "of companies respond to Sources Sought"
+          subtext: "This is your competitive advantage. When you call a company with a real Sources Sought, you're bringing value they can't ignore."
+        - type: "tools"
+          title: "Tools We'll Use Today"
+          tools:
+            - icon: "🎯"
+              name: "Market Assassin"
+              desc: "Find Sources Sought by NAICS automatically"
+            - icon: "🏢"
+              name: "Contractor Database"
+              desc: "Search 3,500+ primes by NAICS, location"
+            - icon: "📊"
+              name: "Federal Market Scanner"
+              desc: "See agency spending data"
+          highlight: "tools.govcongiants.org"
+        - type: "live_demo"
+          title: "Market Assassin Search"
+          steps:
+            - "Enter your NAICS code(s)"
+            - "Filter by notice type: \"Sources Sought\""
+            - "Filter by state (optional)"
+            - "See live opportunities in your industry"
+          action: "Everyone: Find 2-3 Sources Sought in your NAICS"
+          action_sub: "Save the notice IDs — you'll need them for your calls"
+        - type: "workshop"
+          title: "Find Your Sources Sought"
+          checklist:
+            - "Go to tools.govcongiants.org"
+            - "Open Market Assassin"
+            - "Enter your NAICS code"
+            - "Filter: Notice Type = \"Sources Sought\""
+            - "Find 2-3 opportunities"
+            - "Save: Notice ID, Agency, Description"
+          note: "Can't find one? Try an RFP, or pick from our example list."
+
+    - number: 4
+      title: "Analyze Your Sources Sought"
+      subtitle: "What Does It Require?"
+      time: "11:30 AM"
+      duration: 30
+      type: "workshop"
+      slides:
+        - type: "session_header"
+        - type: "icon_grid"
+          title: "Read the Notice: Key Questions"
+          items:
+            - icon: "📋"
+              title: "What capabilities needed?"
+              text: "Technical requirements listed"
+            - icon: "🏢"
+              title: "Who can perform this?"
+              text: "What type of company?"
+            - icon: "👤"
+              title: "What portion could YOU do?"
+              text: "Even if small"
+            - icon: "🤝"
+              title: "Who do you need?"
+              text: "What's the gap to fill?"
+        - type: "example_breakdown"
+          title: "Example Breakdown"
+          notice:
+            label: "Sources Sought: IT Support Services"
+            text: "Agency seeks small businesses capable of providing help desk support, network administration, and cybersecurity monitoring for regional offices..."
+          they_need:
+            - "Help desk (Tier 1-2)"
+            - "Network admin"
+            - "Cybersecurity monitoring"
+          you_bring:
+            - "Your 8(a) certification"
+            - "BD / proposal writing"
+            - "Project coordination"
+
+    - number: 5
+      title: "Build Your Call List"
+      subtitle: "Find 10-15 Companies"
+      time: "12:45 PM"
+      duration: 45
+      type: "tactical"
+      slides:
+        - type: "session_header"
+        - type: "stat_cards"
+          title: "Why Do You Need Other Companies?"
+          cards:
+            - icon: "💼"
+              value: "Experience"
+              label: "They've done this work before"
+            - icon: "💰"
+              value: "Money"
+              label: "Capital to fund the project"
+            - icon: "📊"
+              value: "Past Performance"
+              label: "Track record to show agency"
+          quote: "You bring the opportunity. They bring the capability. Together you win."
+        - type: "icon_grid"
+          title: "Where to Find Companies"
+          items:
+            - icon: "🏢"
+              title: "Contractor Database"
+              text: "3,500+ primes with NAICS, contact info"
+            - icon: "🔍"
+              title: "DSBS"
+              text: "Dynamic Small Business Search (SBA)"
+            - icon: "🏛️"
+              title: "SAM.gov"
+              text: "Entity search by capability"
+            - icon: "💼"
+              title: "LinkedIn"
+              text: "Company + Decision maker"
+        - type: "two_column"
+          title: "Who to Target"
+          left:
+            heading: "Ideal Partner Has"
+            color: "green"
+            checkmarks: true
+            items:
+              - "Government experience"
+              - "Your NAICS codes"
+              - "Capacity to do more work"
+              - "Near your Sources Sought location"
+          right:
+            heading: "Talk To"
+            color: "blue"
+            items:
+              - "Owner — Decision maker"
+              - "President/CEO — Authority"
+              - "NOT BD/Sales — They see you as competition"
+        - type: "workshop"
+          title: "Build Your Call List"
+          checklist:
+            - "Open Google Sheets (or use our template)"
+            - "Search Contractor Database by your NAICS"
+            - "Add 10-15 companies with: Name, Phone, Email, POC"
+            - "Note: What do they do? Near your Sources Sought?"
+            - "Goal: Ready to call after lunch"
+          note: "Template: docs.google.com/spreadsheets/fpc-call-list"
+
+    - number: 6
+      title: "The Pitch + Role Play"
+      subtitle: "What to Say When They Answer"
+      time: "1:30 PM"
+      duration: 45
+      type: "workshop"
+      slides:
+        - type: "session_header"
+        - type: "script"
+          title: "The Phone Script"
+          scripts:
+            - label: "When They Answer"
+              text: "Hi, my name is [NAME]. I have a market research request from the government — [AGENCY] is looking for companies that do [WORK TYPE]. I'm seeing if you'd be a good fit as a teaming partner."
+            - label: "The Hook"
+              text: "My company can handle a portion of this. I'm looking for someone who can do [THEIR SPECIALTY]. Would you have 15 minutes this week to discuss?"
+        - type: "bullets"
+          title: "Key Phrases That Work"
+          items:
+            - "\"I found an opportunity I wanted to share with you\""
+            - "\"I'm willing to do all the upfront work\""
+            - "\"Looking for companies ready, willing, and able\""
+            - "\"What portion could your company handle?\""
+            - "\"Can we schedule 15 minutes to discuss?\""
+          highlight: "Goal: Get a MEETING, not close a deal"
+        - type: "quote_center"
+          text: "I have nothing to sell. I'm looking for someone I can trust to work with on long-term prospective deals."
+          subtext: "You're not selling services. You're proposing a partnership."
+        - type: "two_column"
+          title: "What to Look For on the Call"
+          left:
+            heading: "Good Signs"
+            color: "green"
+            checkmarks: true
+            items:
+              - "Asks questions about the opportunity"
+              - "Mentions capacity / availability"
+              - "Willing to schedule follow-up"
+              - "Excited about growth"
+          right:
+            heading: "Move On If"
+            color: "red"
+            items:
+              - "Too busy, no interest"
+              - "Wants you to do everything free forever"
+              - "Can't articulate what they do"
+              - "Bad communication"
+        - type: "workshop"
+          title: "Practice in Pairs"
+          badge: "Role Play"
+          checklist:
+            - "Partner up (breakout rooms)"
+            - "Person A: The Caller (uses script)"
+            - "Person B: The Business Owner (skeptical but open)"
+            - "2 minutes each, then switch"
+            - "Give feedback: What worked? What felt awkward?"
+          action: "After this, you're calling REAL companies"
+
+    - number: 7
+      title: "Power Hour #1"
+      subtitle: "LIVE CALLS"
+      time: "2:30 PM"
+      duration: 60
+      type: "power_hour"
+      color: "red"
+      slides:
+        - type: "power_hour_header"
+          subtitle: "Make Real Calls. Right Now."
+        - type: "power_hour_rules"
+          title: "Power Hour Rules"
+          items:
+            - "Goal: Make 3-5 calls minimum"
+            - "Track: Reached, Voicemail, Meeting Booked"
+            - "Share wins in chat as they happen"
+            - "Left voicemail? Send follow-up email immediately"
+            - "Got a meeting? Post it: \"Meeting booked with [Company]!\""
+          action: "Mute yourself. Make the calls. Unmute to celebrate wins."
+        - type: "script"
+          title: "Voicemail Script"
+          scripts:
+            - label: "Keep it Short (30 sec max)"
+              text: "Hi [NAME], this is [YOUR NAME]. I found a government opportunity that looks like a fit for your company — it's a [AGENCY] Sources Sought for [WORK TYPE]. I'm looking for a teaming partner. My number is [PHONE]. I'll also send an email. Thanks!"
+          followup:
+            - "Send follow-up email with Sources Sought link"
+            - "Subject: \"Government Opportunity - Potential Teaming\""
+        - type: "go_slide"
+          headline: "GO."
+          text: "Open your call list. Pick up the phone. Make the first call."
+          subtext: "We'll check in at 3:30 PM for Hot Seats."
+
+    - number: 8
+      title: "Hot Seats"
+      subtitle: "What Worked? What Didn't?"
+      time: "3:30 PM"
+      duration: 30
+      type: "qa"
+      slides:
+        - type: "session_header"
+          subtitle: "Refine Your Approach"
+        - type: "bullets"
+          title: "Hot Seat Discussion"
+          items:
+            - "Who got through? What did they say?"
+            - "Common objections? How did you handle?"
+            - "What felt awkward? Let's fix the script"
+            - "Any meetings booked? Celebrate!"
+            - "What will you change for Round 2?"
+        - type: "objections_table"
+          title: "Common Objections + Responses"
+          objections:
+            - they_say: "We're too busy"
+              you_say: "I'll do all the upfront work. Just need 15 min to see if it's a fit."
+            - they_say: "Send me info"
+              you_say: "Happy to. When can I follow up — Thursday or Friday?"
+            - they_say: "We don't do teaming"
+              you_say: "I understand. Do you know anyone who might be interested?"
+            - they_say: "What's in it for us?"
+              you_say: "Free BD work. I bring the opportunity, you bring the capability."
+
+    - number: 9
+      title: "Power Hour #2"
+      subtitle: "MORE CALLS, BETTER PITCH"
+      time: "4:00 PM"
+      duration: 45
+      type: "power_hour"
+      color: "red"
+      slides:
+        - type: "power_hour_header"
+          subtitle: "Apply What You Learned"
+        - type: "power_hour_rules"
+          title: "Focus for Power Hour #2"
+          items:
+            - "Apply adjustments from Hot Seats"
+            - "Follow up on voicemails with emails"
+            - "Try different companies from your list"
+            - "Push for the meeting: \"How's Thursday at 2?\""
+          action: "Goal: Book at least 1 follow-up meeting"
+        - type: "go_slide"
+          headline: "ROUND 2. GO."
+          text: "45 more minutes. Better pitch. More confidence."
+          subtext: "We'll reconvene at 5:00 PM to share wins."
+
+    - number: 10
+      title: "Wins + Commitments"
+      subtitle: "Share Results. Plan Next Steps."
+      time: "5:00 PM"
+      duration: 45
+      type: "strategy"
+      slides:
+        - type: "session_header"
+        - type: "checklist"
+          title: "Share Your Wins"
+          items:
+            - "How many calls did you make?"
+            - "How many people did you reach?"
+            - "Any meetings booked?"
+            - "Best conversation you had?"
+            - "What will you do differently next time?"
+          highlight: "Every call is progress. Every \"no\" is closer to \"yes.\""
+        - type: "icon_grid"
+          title: "What's Next After Today"
+          items:
+            - icon: "📞"
+              title: "Follow Up"
+              text: "Email everyone you called within 48 hours"
+            - icon: "📅"
+              title: "Take the Meeting"
+              text: "Go over the Sources Sought together"
+            - icon: "📝"
+              title: "Define Roles"
+              text: "Who does what? Work share agreement"
+            - icon: "✍️"
+              title: "Sign Agreement"
+              text: "Teaming agreement template provided"
+        - type: "bullets"
+          title: "Teaming Agreement Basics"
+          items:
+            - "Define roles: Who does what portion of the work?"
+            - "Workshare: Percentage split (you: 20%, them: 80%?)"
+            - "Exclusivity: Are you exclusive on this opportunity?"
+            - "Duration: How long does this agreement last?"
+            - "Exit: How do you end if it doesn't work?"
+          note: "Template download: govcongiants.org/teaming-agreement"
+        - type: "bullets"
+          title: "What About Charging Money?"
+          intro: "Do NOT charge them unless:"
+          items:
+            - "They want something specific (SAM registration, website)"
+            - "You're doing market research reports for them"
+            - "Attending meetings/events on their behalf"
+          quote: "Partnership value varies based on workshare. You're building relationships first, revenue second."
+        - type: "icon_grid"
+          title: "Daily Activities Going Forward"
+          items:
+            - icon: "🔍"
+              title: "Market Research"
+              text: "New Sources Sought weekly"
+            - icon: "📞"
+              title: "Keep Calling"
+              text: "5 new companies per week"
+            - icon: "💬"
+              title: "Partner Check-ins"
+              text: "Weekly or biweekly calls"
+            - icon: "📋"
+              title: "Respond Together"
+              text: "Submit to Sources Sought as a team"
+        - type: "workshop"
+          title: "Accountability Partners"
+          intro: "Pair up with someone from today's bootcamp:"
+          checklist:
+            - "Exchange contact info (phone + email)"
+            - "Commit to checking in this week"
+            - "Share: Did you follow up? Any meetings happen?"
+            - "Hold each other accountable to action"
+          script:
+            label: "Post in Chat"
+            text: "Looking for accountability partner — I'm in [INDUSTRY]. DM me!"
+
+    - number: 11
+      title: "Close"
+      subtitle: "Next Steps + Resources"
+      time: "5:45 PM"
+      duration: 15
+      type: "close"
+      slides:
+        - type: "session_header"
+          subtitle: "Keep the Momentum"
+        - type: "resources"
+          title: "Your Resources"
+          items:
+            - icon: "🎬"
+              title: "Recording"
+              text: "Full replay access"
+            - icon: "📋"
+              title: "Call List Template"
+              text: "Google Sheets"
+            - icon: "📝"
+              title: "Teaming Agreement"
+              text: "Template download"
+            - icon: "📞"
+              title: "Phone Script"
+              text: "PDF version"
+            - icon: "🎯"
+              title: "Market Assassin"
+              text: "30-day access"
+            - icon: "🏢"
+              title: "Contractor Database"
+              text: "Full search"
+        - type: "cta"
+          title: "Continue Your Journey"
+          text: "Monthly bootcamps, all tools access, community support, and more."
+          url: "federalhelpcenter.com/pro"
+          price: "$99/month or $799/year"
+        - type: "final"
+          headline: "Go Find Your First Partner"
+          subtext: "The calls you made today are just the beginning."
+          badge: "govcongiants.org | @govcongiants"
+
+# Deliverables attendees leave with
+deliverables:
+  - icon: "🏭"
+    title: "Industry Selected"
+    description: "1-2 NAICS codes"
+  - icon: "📋"
+    title: "2-3 Sources Sought"
+    description: "Opportunities identified"
+  - icon: "📞"
+    title: "Call List"
+    description: "10-15 companies"
+  - icon: "🎤"
+    title: "Practiced Pitch"
+    description: "Confident phone script"
+  - icon: "✅"
+    title: "Calls Made"
+    description: "5+ during bootcamp"
+  - icon: "📅"
+    title: "Meetings Booked"
+    description: "Goal: 1-2"
+  - icon: "📝"
+    title: "Teaming Agreement"
+    description: "Template"
+  - icon: "🎬"
+    title: "Full Recording"
+    description: "Access"
+
+# Tools featured in this bootcamp
+tools:
+  - name: "Market Assassin"
+    icon: "🎯"
+    description: "Find Sources Sought by NAICS automatically"
+    url: "tools.govcongiants.org/federal-market-assassin"
+  - name: "Contractor Database"
+    icon: "🏢"
+    description: "Search 3,500+ primes by NAICS, location"
+    url: "tools.govcongiants.org/contractor-database"
+  - name: "Federal Market Scanner"
+    icon: "📊"
+    description: "See agency spending data"
+    url: "tools.govcongiants.org/opportunity-scout"
+
+# Key scripts/templates
+scripts:
+  phone_intro:
+    label: "When They Answer"
+    text: "Hi, my name is [NAME]. I have a market research request from the government — [AGENCY] is looking for companies that do [WORK TYPE]. I'm seeing if you'd be a good fit as a teaming partner."
+
+  phone_hook:
+    label: "The Hook"
+    text: "My company can handle a portion of this. I'm looking for someone who can do [THEIR SPECIALTY]. Would you have 15 minutes this week to discuss?"
+
+  voicemail:
+    label: "Keep it Short (30 sec max)"
+    text: "Hi [NAME], this is [YOUR NAME]. I found a government opportunity that looks like a fit for your company — it's a [AGENCY] Sources Sought for [WORK TYPE]. I'm looking for a teaming partner. My number is [PHONE]. I'll also send an email. Thanks!"
+
+  mindset:
+    text: "I have nothing to sell. I'm looking for someone I can trust to work with on long-term prospective deals."
+
+# Email sequence configuration
+email_sequence:
+  keyword: "partner"
+  total_emails: 16
+  themes:
+    pre_event:
+      - day: 0
+        type: "welcome"
+        subject: "You're In: First Partner Challenge [DATE]"
+        focus: "Confirmation + what to prepare"
+      - day: 1
+        type: "value"
+        subject: "Why Your First Partner Matters More Than Your First Contract"
+        focus: "The math on partnering vs going solo"
+      - day: 3
+        type: "story"
+        subject: "How Marcus Found His Partner in 3 Calls"
+        focus: "Success story of challenge graduate"
+      - day: 5
+        type: "prep"
+        subject: "Your Pre-Challenge Assignment (5 min)"
+        focus: "Pick your NAICS before the event"
+      - day: 7
+        type: "reminder"
+        subject: "1 Week Until You Find Your Partner"
+        focus: "What to have ready, tools overview"
+      - day: 10
+        type: "tools"
+        subject: "The 3 Tools You'll Use on Challenge Day"
+        focus: "Market Assassin, Contractor DB, Scanner"
+      - day: 12
+        type: "script"
+        subject: "The Phone Script That Gets Meetings"
+        focus: "Preview of what they'll say"
+      - day: 14
+        type: "final"
+        subject: "Tomorrow: Find Your First Partner"
+        focus: "Final prep, Zoom link, what to bring"
+    day_of:
+      - day: 15
+        type: "day_of"
+        subject: "Starting NOW: First Partner Challenge"
+        focus: "Join link, we're live"
+    post_event:
+      - day: 16
+        type: "recap"
+        subject: "You Made Calls. Here's What's Next."
+        focus: "Follow-up steps, recording link"
+      - day: 18
+        type: "followup"
+        subject: "Did You Send Those Follow-Up Emails?"
+        focus: "Accountability check"
+      - day: 20
+        type: "resource"
+        subject: "Your Teaming Agreement Template"
+        focus: "Download link, how to use"
+      - day: 22
+        type: "story"
+        subject: "Sarah Booked 3 Meetings — Her Secret"
+        focus: "Challenge graduate success"
+      - day: 25
+        type: "checkin"
+        subject: "Quick Check: Any Meetings Happen?"
+        focus: "Accountability, offer help"
+      - day: 30
+        type: "next"
+        subject: "Ready for the Next Step?"
+        focus: "FHC Pro upsell"
+      - day: 45
+        type: "invite"
+        subject: "Next Bootcamp: [NEXT TOPIC]"
+        focus: "Upcoming event invitation"
+
+# Landing page configuration
+landing_page:
+  headline: "Find Your First Partner in One Day"
+  subheadline: "Make real calls. Book real meetings. Leave with a partner in progress."
+  hero_stats:
+    - value: "5+"
+      label: "Live Calls You'll Make"
+    - value: "1-2"
+      label: "Meetings You'll Book"
+    - value: "FREE"
+      label: "Registration"
+  sections:
+    - type: "differentiator"
+    - type: "objectives"
+    - type: "agenda_preview"
+    - type: "tools"
+    - type: "deliverables"
+    - type: "testimonials"
+    - type: "registration"
+
+# Quotes used throughout
+quotes:
+  - text: "If you want to go fast, go alone. If you want to go far, go together."
+    context: "opening"
+  - text: "You bring the opportunity. They bring the capability. Together you win."
+    context: "value_exchange"
+  - text: "Get to Step 3 as fast as possible — that's where the motion begins."
+    context: "objectives"
+  - text: "Call to learn, not to earn."
+    context: "calls"
+  - text: "You are deciding where you want to BEGIN, not where you end up."
+    context: "industry_selection"
+  - text: "Goal: Get a MEETING, not close a deal."
+    context: "pitch"
+  - text: "Every call is progress. Every 'no' is closer to 'yes'."
+    context: "wins"

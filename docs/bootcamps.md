@@ -1,9 +1,56 @@
 # Bootcamps & Presentations
 
-## February 2026 Bootcamp (Upcoming)
+## April 2026 First Partner Challenge (Upcoming)
+**Date:** April 25, 2026
+**Time:** 9:00 AM - 6:00 PM ET
+**Topic:** Find Your First Teaming Partner in One Day
+**Status:** Active — promoting at `/first-partner-challenge`
+**Format:** FREE, live action challenge with real calls
+
+### The 5 Objectives
+1. Pick Industry (max 2 NAICS codes)
+2. Find Sources Sought (Market Assassin)
+3. Build Call List (10-15 companies)
+4. Make Calls (LIVE during Power Hours)
+5. Book Meetings (goal: 1-2)
+
+### Funnel Pages
+| Funnel Path | Description |
+|-------------|-------------|
+| `funnels/first-partner-challenge/1-landing.html` | Registration page |
+| `funnels/first-partner-challenge/4-thank-you.html` | Confirmation with downloads |
+
+### Free Handouts (`funnels/first-partner-challenge/downloads/`)
+| File | Description |
+|------|-------------|
+| `call-list-template.csv` | Partner tracking spreadsheet |
+| `phone-script.html` | Word-for-word call script |
+| `teaming-agreement-template.html` | Teaming agreement template |
+
+### Email Sequence (`april-25-first-partner-challenge-email-sequence/`)
+16 emails: 8 pre-event, 1 day-of, 7 post-event
+
+### YT Lives Series (`presentations/yt-lives/first-partner-challenge/`)
+| File | Title | Slides |
+|------|-------|--------|
+| `live-01-why-teaming-matters.html` | Why Teaming Is Your Fastest Path | 12 |
+| `live-02-finding-partners.html` | How to Find the RIGHT Partners | 14 |
+| `live-03-the-first-call.html` | Scripts That Actually Work | 16 |
+| `live-04-challenge-preview.html` | April 25 Challenge Preview | 14 |
+
+---
+
+## March 2026 Contract Vehicles Bootcamp (Completed)
+**Date:** March 28, 2026
+**Topic:** Contract Vehicles — IDIQs, GWACs, Qualifications
+**Status:** Completed — materials at `/contract-vehicles-bootcamp`
+
+---
+
+## February 2026 Bootcamp (Completed)
 **Date:** February 28, 2026
 **Topic:** Specifics and Proposals
-**Status:** Active — promoting at `/bootcamp` and `/feb-28-bootcamp`
+**Status:** Completed
 
 | Funnel Path | Description |
 |-------------|-------------|

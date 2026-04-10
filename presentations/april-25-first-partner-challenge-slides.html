@@ -1,0 +1,1607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>April 25, 2026 First Partner Challenge Slides | GovCon Giants</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --green: #10b981;
+            --green-dark: #059669;
+            --blue: #1e3a8a;
+            --purple: #7c3aed;
+            --red: #dc2626;
+            --orange: #f59e0b;
+            --black: #1a1a1a;
+            --gray: #666;
+            --light-gray: #f5f5f5;
+        }
+
+        @page {
+            size: 960px 540px landscape;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #e5e7eb;
+            line-height: 1.4;
+            color: var(--black);
+        }
+
+        .slide {
+            width: 960px;
+            height: 540px;
+            background: white;
+            margin: 20px auto;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+            page-break-after: always;
+            page-break-inside: avoid;
+            padding: 40px 50px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media print {
+            body { background: white; }
+            .slide {
+                margin: 0;
+                box-shadow: none;
+                page-break-after: always;
+            }
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 25px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1.3rem;
+            line-height: 1.5;
+        }
+
+        .green { color: var(--green); }
+        .blue { color: var(--blue); }
+        .purple { color: var(--purple); }
+        .red { color: var(--red); }
+        .orange { color: var(--orange); }
+        .gray { color: var(--gray); }
+        .bold { font-weight: 700; }
+
+        /* Title Slide */
+        .slide-title {
+            background: linear-gradient(135deg, var(--blue) 0%, var(--purple) 100%);
+            color: white;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .slide-title h1 {
+            font-size: 3.2rem;
+            margin-bottom: 15px;
+        }
+
+        .slide-title .subtitle {
+            font-size: 1.6rem;
+            opacity: 0.95;
+            margin-bottom: 30px;
+        }
+
+        .slide-title .date-badge {
+            background: rgba(255,255,255,0.2);
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        /* Session Header */
+        .slide-session {
+            background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 100%);
+            color: white;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .slide-session .session-num {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            opacity: 0.8;
+            margin-bottom: 15px;
+        }
+
+        .slide-session h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        .slide-session .time-badge {
+            background: rgba(255,255,255,0.2);
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-size: 1.1rem;
+        }
+
+        /* Power Hour Session (Red) */
+        .slide-power-hour {
+            background: linear-gradient(135deg, var(--red) 0%, #ef4444 100%);
+            color: white;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .slide-power-hour .session-num {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            opacity: 0.8;
+            margin-bottom: 15px;
+        }
+
+        .slide-power-hour h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        .slide-power-hour .time-badge {
+            background: rgba(255,255,255,0.2);
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-size: 1.1rem;
+        }
+
+        /* Centered Content */
+        .slide-center {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .slide-center h2 {
+            font-size: 2.5rem;
+            max-width: 800px;
+        }
+
+        /* Standard Content */
+        .slide-content h2 {
+            border-bottom: 4px solid var(--green);
+            padding-bottom: 15px;
+        }
+
+        /* Bullet List */
+        ul.bullets {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        ul.bullets li {
+            font-size: 1.35rem;
+            padding: 12px 0 12px 45px;
+            position: relative;
+        }
+
+        ul.bullets li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--green);
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+
+        ul.bullets.checkmarks li::before {
+            content: '✓';
+        }
+
+        /* Stat Cards */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border: 2px solid var(--green);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .stat-card .value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--green-dark);
+        }
+
+        .stat-card .label {
+            font-size: 0.95rem;
+            color: var(--gray);
+            margin-top: 5px;
+        }
+
+        /* Icon Grid */
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .icon-grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .icon-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .icon-item .icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .icon-item .text {
+            font-size: 1.2rem;
+        }
+
+        .icon-item .text strong {
+            display: block;
+            color: var(--blue);
+            margin-bottom: 3px;
+        }
+
+        /* Objective Steps */
+        .objective-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .objective-item {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border: 2px solid #93c5fd;
+            border-radius: 12px;
+            padding: 20px 15px;
+            text-align: center;
+        }
+
+        .objective-item .number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--purple);
+            line-height: 1;
+        }
+
+        .objective-item .label {
+            font-size: 0.95rem;
+            color: var(--blue);
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        /* Comparison Table */
+        .compare-table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        .compare-table th {
+            background: var(--blue);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-size: 1.1rem;
+        }
+
+        .compare-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e5e7eb;
+            font-size: 1.1rem;
+        }
+
+        .compare-table tr:nth-child(even) {
+            background: #f9fafb;
+        }
+
+        /* Two Column */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .two-col-uneven {
+            grid-template-columns: 1.2fr 0.8fr;
+        }
+
+        /* Script Box */
+        .script-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 2px solid var(--orange);
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 20px;
+        }
+
+        .script-box .label {
+            font-weight: 700;
+            color: #92400e;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .script-box p {
+            font-size: 1.15rem;
+            color: #78350f;
+            font-style: italic;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, var(--blue) 0%, var(--purple) 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        .highlight-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        /* Action Box (Red) */
+        .action-box {
+            background: linear-gradient(135deg, var(--red) 0%, #ef4444 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        .action-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        /* Quote */
+        .quote {
+            background: #f8fafc;
+            border-left: 5px solid var(--green);
+            padding: 25px 30px;
+            margin: 20px 0;
+            font-size: 1.3rem;
+            font-style: italic;
+        }
+
+        /* Big Number */
+        .big-number {
+            font-size: 5rem;
+            font-weight: 900;
+            color: var(--green);
+            line-height: 1;
+        }
+
+        /* Workshop Badge */
+        .workshop-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            color: #92400e;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        /* Live Badge */
+        .live-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--red) 0%, #ef4444 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        /* Tool Card */
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .tool-card {
+            background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+            border: 2px solid #c4b5fd;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .tool-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .tool-card .name {
+            font-weight: 700;
+            color: var(--purple);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .tool-card .desc {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        /* NAICS Grid */
+        .naics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .naics-item {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 12px 15px;
+            font-size: 1rem;
+        }
+
+        .naics-item strong {
+            color: var(--purple);
+        }
+
+        /* Slide Number */
+        .slide-num {
+            position: absolute;
+            bottom: 15px;
+            right: 20px;
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        /* CTA Slide */
+        .slide-cta {
+            background: linear-gradient(135deg, var(--purple) 0%, #a855f7 100%);
+            color: white;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .slide-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            border: none;
+        }
+
+        .slide-cta .url {
+            font-size: 2rem;
+            font-weight: 800;
+            background: rgba(255,255,255,0.2);
+            padding: 15px 40px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        /* Checklist */
+        .checklist {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .checklist li {
+            font-size: 1.25rem;
+            padding: 10px 0 10px 40px;
+            position: relative;
+        }
+
+        .checklist li::before {
+            content: '☐';
+            position: absolute;
+            left: 0;
+            color: var(--green);
+            font-size: 1.4rem;
+        }
+
+        /* Email Banner */
+        .email-banner {
+            background: linear-gradient(135deg, var(--red) 0%, #ef4444 100%);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-top: auto;
+        }
+
+        .email-banner .keyword {
+            background: white;
+            color: var(--red);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 800;
+            font-size: 1.1rem;
+        }
+
+        .email-banner .text {
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ==================== SLIDE 1: TITLE ==================== -->
+<div class="slide slide-title">
+    <h1>First Partner Challenge</h1>
+    <p class="subtitle">Find Your First Teaming Partner or Consultant Client in One Day</p>
+    <div class="date-badge">April 25, 2026 | 9 AM - 6 PM ET | FREE</div>
+    <span class="slide-num">1</span>
+</div>
+
+<!-- ==================== SLIDE 2: THIS IS DIFFERENT ==================== -->
+<div class="slide slide-center" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);">
+    <h2 style="color: #92400e;">This Bootcamp is Different</h2>
+    <p style="font-size: 1.5rem; max-width: 700px; margin-top: 20px; color: #78350f;">
+        You won't just learn — you'll make <strong>real calls</strong> to <strong>real companies</strong> during the session.
+    </p>
+    <p style="font-size: 1.3rem; margin-top: 20px; color: #78350f;">
+        Leave with meetings booked, not just notes taken.
+    </p>
+    <span class="slide-num">2</span>
+</div>
+
+<!-- ==================== SLIDE 3: THE 5 OBJECTIVES ==================== -->
+<div class="slide slide-content">
+    <h2>The 5 Objectives</h2>
+    <div class="objective-grid">
+        <div class="objective-item">
+            <div class="number">1</div>
+            <div class="label">Pick Industry</div>
+        </div>
+        <div class="objective-item">
+            <div class="number">2</div>
+            <div class="label">Find Sources Sought</div>
+        </div>
+        <div class="objective-item">
+            <div class="number">3</div>
+            <div class="label">Build Call List</div>
+        </div>
+        <div class="objective-item">
+            <div class="number">4</div>
+            <div class="label">Make Calls</div>
+        </div>
+        <div class="objective-item">
+            <div class="number">5</div>
+            <div class="label">Book Meetings</div>
+        </div>
+    </div>
+    <div class="highlight-box">
+        <h3>Get to Step 3 as fast as possible — that's where the motion begins</h3>
+    </div>
+    <span class="slide-num">3</span>
+</div>
+
+<!-- ==================== SLIDE 4: TODAY'S AGENDA ==================== -->
+<div class="slide slide-content">
+    <h2>Today's Agenda</h2>
+    <ul class="bullets">
+        <li><strong>9:00 AM:</strong> Welcome + The Strategy</li>
+        <li><strong>9:30 AM:</strong> Pick Your Industry (Workshop)</li>
+        <li><strong>10:30 AM:</strong> Find Sources Sought with Market Assassin</li>
+        <li><strong>12:45 PM:</strong> Build Your Call List</li>
+        <li><strong>1:30 PM:</strong> The Pitch + Role Play</li>
+        <li><strong class="red">2:30 PM: POWER HOUR #1 — Live Calls</strong></li>
+        <li><strong class="red">4:00 PM: POWER HOUR #2 — More Calls</strong></li>
+        <li><strong>5:00 PM:</strong> Wins + Commitments</li>
+    </ul>
+    <span class="slide-num">4</span>
+</div>
+
+<!-- ==================== SLIDE 5: WHAT YOU'LL WALK AWAY WITH ==================== -->
+<div class="slide slide-content">
+    <h2>What You'll Walk Away With</h2>
+    <div class="icon-grid">
+        <div class="icon-item">
+            <div class="icon">🏭</div>
+            <div class="text"><strong>Industry Selected</strong>Max 2 NAICS codes, focused</div>
+        </div>
+        <div class="icon-item">
+            <div class="icon">📋</div>
+            <div class="text"><strong>2-3 Sources Sought</strong>Your reason to call</div>
+        </div>
+        <div class="icon-item">
+            <div class="icon">📞</div>
+            <div class="text"><strong>Call List</strong>10-15 potential partners</div>
+        </div>
+        <div class="icon-item">
+            <div class="icon">🎤</div>
+            <div class="text"><strong>Practiced Pitch</strong>Confident phone script</div>
+        </div>
+        <div class="icon-item">
+            <div class="icon">✅</div>
+            <div class="text"><strong>Calls Made</strong>5+ during bootcamp</div>
+        </div>
+        <div class="icon-item">
+            <div class="icon">📅</div>
+            <div class="text"><strong>Meetings Booked</strong>Goal: 1-2 follow-ups</div>
+        </div>
+    </div>
+    <span class="slide-num">5</span>
+</div>
+
+<!-- ==================== SESSION 1: WELCOME + THE STRATEGY ==================== -->
+<div class="slide slide-session">
+    <div class="session-num">Session 1</div>
+    <h2>Welcome + The Strategy</h2>
+    <p class="subtitle">Why Partner First?</p>
+    <div class="time-badge">9:00 AM - 9:30 AM</div>
+    <span class="slide-num">6</span>
+</div>
+
+<!-- ==================== SLIDE 7: SOLO VS TEAM ==================== -->
+<div class="slide slide-content">
+    <h2>Solo vs. Team: The Math</h2>
+    <div class="two-col">
+        <div>
+            <h3 class="red">Going Solo</h3>
+            <ul class="bullets">
+                <li>No past performance</li>
+                <li>No capital for large projects</li>
+                <li>No existing relationships</li>
+                <li>Compete against established players</li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="green">With a Partner</h3>
+            <ul class="bullets">
+                <li>Borrow their past performance</li>
+                <li>They fund the work</li>
+                <li>Access their relationships</li>
+                <li>Team against competition</li>
+            </ul>
+        </div>
+    </div>
+    <span class="slide-num">7</span>
+</div>
+
+<!-- ==================== SLIDE 8: THE VALUE EXCHANGE ==================== -->
+<div class="slide slide-content">
+    <h2>The Value Exchange</h2>
+    <table class="compare-table">
+        <tr>
+            <th>What You Bring</th>
+            <th>What They Bring</th>
+        </tr>
+        <tr>
+            <td>Market research (Sources Sought)</td>
+            <td>Experience performing work</td>
+        </tr>
+        <tr>
+            <td>Upfront BD work</td>
+            <td>Money / Capital</td>
+        </tr>
+        <tr>
+            <td>Submission handling</td>
+            <td>Past performance</td>
+        </tr>
+        <tr>
+            <td>Possibly certifications (8a, SDVOSB)</td>
+            <td>Estimating capability</td>
+        </tr>
+        <tr>
+            <td>Free marketing for them</td>
+            <td>Capacity to deliver</td>
+        </tr>
+    </table>
+    <span class="slide-num">8</span>
+</div>
+
+<!-- ==================== SLIDE 9: TWO PATHS ==================== -->
+<div class="slide slide-content">
+    <h2>Two Paths — Pick Yours</h2>
+    <div class="two-col">
+        <div style="background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); padding: 25px; border-radius: 12px; border: 2px solid #93c5fd;">
+            <h3 class="blue">Path A: Teaming Partner</h3>
+            <ul class="bullets">
+                <li>Find a prime to team with</li>
+                <li>You do portion of the work</li>
+                <li>They hold the contract</li>
+                <li>Build past performance</li>
+            </ul>
+        </div>
+        <div style="background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%); padding: 25px; border-radius: 12px; border: 2px solid #c4b5fd;">
+            <h3 class="purple">Path B: Consultant Client</h3>
+            <ul class="bullets">
+                <li>Find a small biz to serve</li>
+                <li>Run tools for them</li>
+                <li>Build consulting revenue</li>
+                <li>Multiple clients = stability</li>
+            </ul>
+        </div>
+    </div>
+    <span class="slide-num">9</span>
+</div>
+
+<!-- ==================== SLIDE 10: THE KEY QUOTE ==================== -->
+<div class="slide slide-center">
+    <div class="quote" style="font-size: 1.6rem; max-width: 800px;">
+        "If you want to go fast, go alone.<br>
+        If you want to go far, go together."
+    </div>
+    <p style="margin-top: 30px; color: var(--gray); font-size: 1.2rem;">
+        Your first federal contract is the hardest. A partner makes it easier.
+    </p>
+    <span class="slide-num">10</span>
+</div>
+
+<!-- ==================== SESSION 2: PICK YOUR INDUSTRY ==================== -->
+<div class="slide slide-session">
+    <div class="session-num">Session 2</div>
+    <h2>Pick Your Industry</h2>
+    <p class="subtitle">Max 2 NAICS Codes</p>
+    <div class="time-badge">9:30 AM - 10:15 AM</div>
+    <span class="slide-num">11</span>
+</div>
+
+<!-- ==================== SLIDE 12: WHY JUST ONE ==================== -->
+<div class="slide slide-content">
+    <h2>Why Just ONE Industry?</h2>
+    <div class="icon-grid">
+        <div class="icon-item">
+            <div class="icon">🔍</div>
+            <div class="text"><strong>Focus = Speed</strong>Narrow your Keywords, NAICS, PSC codes</div>
+        </div>
+        <div class="icon-item">
+            <div class="icon">💬</div>
+            <div class="text"><strong>Clear Message</strong>Decision makers know how to help you</div>
+        </div>
+        <div class="icon-item">
+            <div class="icon">🎯</div>
+            <div class="text"><strong>Strategy Faster</strong>"I sell to THIS office" vs "the government"</div>
+        </div>
+        <div class="icon-item">
+            <div class="icon">🤝</div>
+            <div class="text"><strong>Known for ONE Thing</strong>Everyone should know your specialty</div>
+        </div>
+    </div>
+    <div class="highlight-box">
+        <h3>Rule: Maximum 2 NAICS codes today</h3>
+    </div>
+    <span class="slide-num">12</span>
+</div>
+
+<!-- ==================== SLIDE 13: HOW TO PICK ==================== -->
+<div class="slide slide-content">
+    <h2>How to Pick Your Industry</h2>
+    <p style="margin-bottom: 20px;">Pick based on ONE of these three reasons:</p>
+    <div class="stat-grid">
+        <div class="stat-card">
+            <div class="value">🤝</div>
+            <div class="label" style="font-size: 1.1rem; font-weight: 600;">Current Connections</div>
+            <p style="font-size: 0.9rem; margin-top: 10px;">Who do you already know?</p>
+        </div>
+        <div class="stat-card">
+            <div class="value">💼</div>
+            <div class="label" style="font-size: 1.1rem; font-weight: 600;">Past Experience</div>
+            <p style="font-size: 0.9rem; margin-top: 10px;">What have you done before?</p>
+        </div>
+        <div class="stat-card">
+            <div class="value">💰</div>
+            <div class="label" style="font-size: 1.1rem; font-weight: 600;">Money Flow</div>
+            <p style="font-size: 0.9rem; margin-top: 10px;">Where is spending happening?</p>
+        </div>
+    </div>
+    <span class="slide-num">13</span>
+</div>
+
+<!-- ==================== SLIDE 14: DOUBLE NICHE DOWN ==================== -->
+<div class="slide slide-content">
+    <h2>Double Niche Down</h2>
+    <p style="font-size: 1.3rem; margin-bottom: 25px;">Don't say "Construction" — say what KIND:</p>
+    <div class="two-col">
+        <div>
+            <h3 class="red">Too Broad</h3>
+            <ul class="bullets">
+                <li>Construction</li>
+                <li>IT Services</li>
+                <li>Professional Services</li>
+                <li>Healthcare</li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="green">Just Right</h3>
+            <ul class="bullets">
+                <li>HVAC Construction</li>
+                <li>SharePoint Development</li>
+                <li>Training & Development</li>
+                <li>Medical Equipment Maintenance</li>
+            </ul>
+        </div>
+    </div>
+    <span class="slide-num">14</span>
+</div>
+
+<!-- ==================== SLIDE 15: TOP SERVICE NAICS ==================== -->
+<div class="slide slide-content">
+    <h2>Top Service NAICS (By Spend)</h2>
+    <div class="naics-grid">
+        <div class="naics-item"><strong>541512</strong> — Computer Systems Design</div>
+        <div class="naics-item"><strong>541511</strong> — Custom Programming</div>
+        <div class="naics-item"><strong>541330</strong> — Engineering Services</div>
+        <div class="naics-item"><strong>541611</strong> — Management Consulting</div>
+        <div class="naics-item"><strong>561210</strong> — Facilities Support</div>
+        <div class="naics-item"><strong>236220</strong> — Commercial Construction</div>
+        <div class="naics-item"><strong>238220</strong> — HVAC Contractors</div>
+        <div class="naics-item"><strong>611430</strong> — Professional Training</div>
+    </div>
+    <span class="slide-num">15</span>
+</div>
+
+<!-- ==================== SLIDE 16: WORKSHOP - PICK NOW ==================== -->
+<div class="slide slide-content">
+    <span class="workshop-badge">Workshop</span>
+    <h2>Pick Your Industry NOW</h2>
+    <ul class="checklist">
+        <li>Write down 1-2 NAICS codes</li>
+        <li>Double niche: What specific type?</li>
+        <li>Why this one? (Connections, Experience, or Money)</li>
+        <li>Share in chat: "My NAICS is _____ because _____"</li>
+    </ul>
+    <div class="script-box">
+        <div class="label">Remember</div>
+        <p>You are deciding where you want to BEGIN, not where you end up. You can change later.</p>
+    </div>
+    <span class="slide-num">16</span>
+</div>
+
+<!-- ==================== SESSION 3: FIND SOURCES SOUGHT ==================== -->
+<div class="slide slide-session">
+    <div class="session-num">Session 3</div>
+    <h2>Find Sources Sought</h2>
+    <p class="subtitle">With Market Assassin</p>
+    <div class="time-badge">10:30 AM - 11:30 AM</div>
+    <span class="slide-num">17</span>
+</div>
+
+<!-- ==================== SLIDE 18: WHAT IS SOURCES SOUGHT ==================== -->
+<div class="slide slide-content">
+    <h2>What is a Sources Sought?</h2>
+    <p style="font-size: 1.4rem; margin-bottom: 25px;">
+        A government market research notice (FAR 15.201) where agencies seek info about vendor capabilities <strong>before</strong> issuing a formal solicitation.
+    </p>
+    <div class="icon-grid">
+        <div class="icon-item">
+            <div class="icon">📣</div>
+            <div class="text"><strong>Early Signal</strong>Opportunity before RFP drops</div>
+        </div>
+        <div class="icon-item">
+            <div class="icon">🎯</div>
+            <div class="text"><strong>Your Reason to Call</strong>"I found an opportunity..."</div>
+        </div>
+        <div class="icon-item">
+            <div class="icon">📝</div>
+            <div class="text"><strong>Low Competition</strong>Less than 5% of companies respond</div>
+        </div>
+        <div class="icon-item">
+            <div class="icon">🏆</div>
+            <div class="text"><strong>Influence</strong>Shape requirements before solicitation</div>
+        </div>
+    </div>
+    <span class="slide-num">18</span>
+</div>
+
+<!-- ==================== SLIDE 19: WHY SOURCES SOUGHT = GOLD ==================== -->
+<div class="slide slide-center">
+    <div class="big-number" style="color: var(--red);">&lt;5%</div>
+    <h2 style="margin-top: 20px;">of companies respond to Sources Sought</h2>
+    <p style="font-size: 1.3rem; max-width: 700px; margin-top: 20px; color: var(--gray);">
+        This is your competitive advantage. When you call a company with a real Sources Sought, you're bringing value they can't ignore.
+    </p>
+    <span class="slide-num">19</span>
+</div>
+
+<!-- ==================== SLIDE 20: TOOLS WE'LL USE ==================== -->
+<div class="slide slide-content">
+    <h2>Tools We'll Use Today</h2>
+    <div class="tool-grid">
+        <div class="tool-card">
+            <div class="icon">🎯</div>
+            <div class="name">Market Assassin</div>
+            <div class="desc">Find Sources Sought by NAICS automatically</div>
+        </div>
+        <div class="tool-card">
+            <div class="icon">🏢</div>
+            <div class="name">Contractor Database</div>
+            <div class="desc">Search 3,500+ primes by NAICS, location</div>
+        </div>
+        <div class="tool-card">
+            <div class="icon">📊</div>
+            <div class="name">Federal Market Scanner</div>
+            <div class="desc">See agency spending data</div>
+        </div>
+    </div>
+    <div class="highlight-box">
+        <h3>tools.govcongiants.org</h3>
+    </div>
+    <span class="slide-num">20</span>
+</div>
+
+<!-- ==================== SLIDE 21: MARKET ASSASSIN DEMO ==================== -->
+<div class="slide slide-content">
+    <span class="live-badge">Live Demo</span>
+    <h2>Market Assassin Search</h2>
+    <ul class="bullets">
+        <li>Enter your NAICS code(s)</li>
+        <li>Filter by notice type: "Sources Sought"</li>
+        <li>Filter by state (optional)</li>
+        <li>See live opportunities in your industry</li>
+    </ul>
+    <div class="action-box">
+        <h3>Everyone: Find 2-3 Sources Sought in your NAICS</h3>
+        <p>Save the notice IDs — you'll need them for your calls</p>
+    </div>
+    <span class="slide-num">21</span>
+</div>
+
+<!-- ==================== SLIDE 22: WORKSHOP - FIND YOURS ==================== -->
+<div class="slide slide-content">
+    <span class="workshop-badge">Workshop</span>
+    <h2>Find Your Sources Sought</h2>
+    <ul class="checklist">
+        <li>Go to tools.govcongiants.org</li>
+        <li>Open Market Assassin</li>
+        <li>Enter your NAICS code</li>
+        <li>Filter: Notice Type = "Sources Sought"</li>
+        <li>Find 2-3 opportunities</li>
+        <li>Save: Notice ID, Agency, Description</li>
+    </ul>
+    <p style="margin-top: 20px; font-size: 1.1rem; color: var(--gray);">
+        <strong>Can't find one?</strong> Try an RFP, or pick from our example list.
+    </p>
+    <span class="slide-num">22</span>
+</div>
+
+<!-- ==================== SESSION 4: ANALYZE REQUIREMENTS ==================== -->
+<div class="slide slide-session">
+    <div class="session-num">Session 4</div>
+    <h2>Analyze Your Sources Sought</h2>
+    <p class="subtitle">What Does It Require?</p>
+    <div class="time-badge">11:30 AM - 12:00 PM</div>
+    <span class="slide-num">23</span>
+</div>
+
+<!-- ==================== SLIDE 24: READ THE NOTICE ==================== -->
+<div class="slide slide-content">
+    <h2>Read the Notice: Key Questions</h2>
+    <div class="icon-grid">
+        <div class="icon-item">
+            <div class="icon">📋</div>
+            <div class="text"><strong>What capabilities needed?</strong>Technical requirements listed</div>
+        </div>
+        <div class="icon-item">
+            <div class="icon">🏢</div>
+            <div class="text"><strong>Who can perform this?</strong>What type of company?</div>
+        </div>
+        <div class="icon-item">
+            <div class="icon">👤</div>
+            <div class="text"><strong>What portion could YOU do?</strong>Even if small</div>
+        </div>
+        <div class="icon-item">
+            <div class="icon">🤝</div>
+            <div class="text"><strong>Who do you need?</strong>What's the gap to fill?</div>
+        </div>
+    </div>
+    <span class="slide-num">24</span>
+</div>
+
+<!-- ==================== SLIDE 25: BREAK DOWN EXAMPLE ==================== -->
+<div class="slide slide-content">
+    <h2>Example Breakdown</h2>
+    <div class="script-box" style="background: white; border: 2px solid var(--blue);">
+        <div class="label" style="color: var(--blue);">Sources Sought: IT Support Services</div>
+        <p style="color: var(--black); font-style: normal; font-size: 1rem;">
+            "Agency seeks small businesses capable of providing help desk support, network administration, and cybersecurity monitoring for regional offices..."
+        </p>
+    </div>
+    <div class="two-col" style="margin-top: 20px;">
+        <div>
+            <h3 class="blue">They Need</h3>
+            <ul class="bullets" style="font-size: 1rem;">
+                <li>Help desk (Tier 1-2)</li>
+                <li>Network admin</li>
+                <li>Cybersecurity monitoring</li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="green">You Could Bring</h3>
+            <ul class="bullets" style="font-size: 1rem;">
+                <li>Your 8(a) certification</li>
+                <li>BD / proposal writing</li>
+                <li>Project coordination</li>
+            </ul>
+        </div>
+    </div>
+    <span class="slide-num">25</span>
+</div>
+
+<!-- ==================== SESSION 5: BUILD CALL LIST ==================== -->
+<div class="slide slide-session">
+    <div class="session-num">Session 5</div>
+    <h2>Build Your Call List</h2>
+    <p class="subtitle">Find 10-15 Companies</p>
+    <div class="time-badge">12:45 PM - 1:30 PM</div>
+    <span class="slide-num">26</span>
+</div>
+
+<!-- ==================== SLIDE 27: WHY OTHER COMPANIES ==================== -->
+<div class="slide slide-content">
+    <h2>Why Do You Need Other Companies?</h2>
+    <div class="stat-grid">
+        <div class="stat-card">
+            <div class="value">💼</div>
+            <div class="label" style="font-size: 1.1rem; font-weight: 600;">Experience</div>
+            <p style="font-size: 0.9rem; margin-top: 10px;">They've done this work before</p>
+        </div>
+        <div class="stat-card">
+            <div class="value">💰</div>
+            <div class="label" style="font-size: 1.1rem; font-weight: 600;">Money</div>
+            <p style="font-size: 0.9rem; margin-top: 10px;">Capital to fund the project</p>
+        </div>
+        <div class="stat-card">
+            <div class="value">📊</div>
+            <div class="label" style="font-size: 1.1rem; font-weight: 600;">Past Performance</div>
+            <p style="font-size: 0.9rem; margin-top: 10px;">Track record to show agency</p>
+        </div>
+    </div>
+    <div class="quote">
+        "You bring the opportunity. They bring the capability. Together you win."
+    </div>
+    <span class="slide-num">27</span>
+</div>
+
+<!-- ==================== SLIDE 28: WHERE TO FIND ==================== -->
+<div class="slide slide-content">
+    <h2>Where to Find Companies</h2>
+    <div class="icon-grid">
+        <div class="icon-item">
+            <div class="icon">🏢</div>
+            <div class="text"><strong>Contractor Database</strong>3,500+ primes with NAICS, contact info</div>
+        </div>
+        <div class="icon-item">
+            <div class="icon">🔍</div>
+            <div class="text"><strong>DSBS</strong>Dynamic Small Business Search (SBA)</div>
+        </div>
+        <div class="icon-item">
+            <div class="icon">🏛️</div>
+            <div class="text"><strong>SAM.gov</strong>Entity search by capability</div>
+        </div>
+        <div class="icon-item">
+            <div class="icon">💼</div>
+            <div class="text"><strong>LinkedIn</strong>Company + Decision maker</div>
+        </div>
+    </div>
+    <span class="slide-num">28</span>
+</div>
+
+<!-- ==================== SLIDE 29: WHO TO TARGET ==================== -->
+<div class="slide slide-content">
+    <h2>Who to Target</h2>
+    <div class="two-col">
+        <div>
+            <h3 class="green">Ideal Partner Has</h3>
+            <ul class="bullets checkmarks">
+                <li>Government experience</li>
+                <li>Your NAICS codes</li>
+                <li>Capacity to do more work</li>
+                <li>Near your Sources Sought location</li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="blue">Talk To</h3>
+            <ul class="bullets">
+                <li><strong>Owner</strong> — Decision maker</li>
+                <li><strong>President/CEO</strong> — Authority</li>
+                <li><strong>NOT BD/Sales</strong> — They see you as competition</li>
+            </ul>
+        </div>
+    </div>
+    <span class="slide-num">29</span>
+</div>
+
+<!-- ==================== SLIDE 30: WORKSHOP - BUILD LIST ==================== -->
+<div class="slide slide-content">
+    <span class="workshop-badge">Workshop</span>
+    <h2>Build Your Call List</h2>
+    <ul class="checklist">
+        <li>Open Google Sheets (or use our template)</li>
+        <li>Search Contractor Database by your NAICS</li>
+        <li>Add 10-15 companies with: Name, Phone, Email, POC</li>
+        <li>Note: What do they do? Near your Sources Sought?</li>
+        <li>Goal: Ready to call after lunch</li>
+    </ul>
+    <p style="margin-top: 15px; font-size: 1.1rem; color: var(--gray);">
+        <strong>Template:</strong> docs.google.com/spreadsheets/fpc-call-list
+    </p>
+    <span class="slide-num">30</span>
+</div>
+
+<!-- ==================== SESSION 6: THE PITCH ==================== -->
+<div class="slide slide-session">
+    <div class="session-num">Session 6</div>
+    <h2>The Pitch + Role Play</h2>
+    <p class="subtitle">What to Say When They Answer</p>
+    <div class="time-badge">1:30 PM - 2:15 PM</div>
+    <span class="slide-num">31</span>
+</div>
+
+<!-- ==================== SLIDE 32: THE PHONE SCRIPT ==================== -->
+<div class="slide slide-content">
+    <h2>The Phone Script</h2>
+    <div class="script-box">
+        <div class="label">When They Answer</div>
+        <p>"Hi, my name is [NAME]. I have a market research request from the government — [AGENCY] is looking for companies that do [WORK TYPE]. I'm seeing if you'd be a good fit as a teaming partner."</p>
+    </div>
+    <div class="script-box" style="margin-top: 15px;">
+        <div class="label">The Hook</div>
+        <p>"My company can handle a portion of this. I'm looking for someone who can do [THEIR SPECIALTY]. Would you have 15 minutes this week to discuss?"</p>
+    </div>
+    <span class="slide-num">32</span>
+</div>
+
+<!-- ==================== SLIDE 33: KEY PHRASES ==================== -->
+<div class="slide slide-content">
+    <h2>Key Phrases That Work</h2>
+    <ul class="bullets">
+        <li>"I found an opportunity I wanted to share with you"</li>
+        <li>"I'm willing to do all the upfront work"</li>
+        <li>"Looking for companies ready, willing, and able"</li>
+        <li>"What portion could your company handle?"</li>
+        <li>"Can we schedule 15 minutes to discuss?"</li>
+    </ul>
+    <div class="highlight-box">
+        <h3>Goal: Get a MEETING, not close a deal</h3>
+    </div>
+    <span class="slide-num">33</span>
+</div>
+
+<!-- ==================== SLIDE 34: THE MINDSET ==================== -->
+<div class="slide slide-center">
+    <h2 style="font-size: 2rem; max-width: 800px;">
+        "I have nothing to sell.<br><br>
+        I'm looking for someone I can trust to work with on long-term prospective deals."
+    </h2>
+    <p style="margin-top: 30px; color: var(--gray); font-size: 1.2rem;">
+        You're not selling services. You're proposing a partnership.
+    </p>
+    <span class="slide-num">34</span>
+</div>
+
+<!-- ==================== SLIDE 35: WHAT TO LOOK FOR ==================== -->
+<div class="slide slide-content">
+    <h2>What to Look For on the Call</h2>
+    <div class="two-col">
+        <div>
+            <h3 class="green">Good Signs</h3>
+            <ul class="bullets checkmarks">
+                <li>Asks questions about the opportunity</li>
+                <li>Mentions capacity / availability</li>
+                <li>Willing to schedule follow-up</li>
+                <li>Excited about growth</li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="red">Move On If</h3>
+            <ul class="bullets">
+                <li>Too busy, no interest</li>
+                <li>Wants you to do everything free forever</li>
+                <li>Can't articulate what they do</li>
+                <li>Bad communication</li>
+            </ul>
+        </div>
+    </div>
+    <span class="slide-num">35</span>
+</div>
+
+<!-- ==================== SLIDE 36: ROLE PLAY ==================== -->
+<div class="slide slide-content">
+    <span class="workshop-badge">Role Play</span>
+    <h2>Practice in Pairs</h2>
+    <ul class="checklist">
+        <li>Partner up (breakout rooms)</li>
+        <li>Person A: The Caller (uses script)</li>
+        <li>Person B: The Business Owner (skeptical but open)</li>
+        <li>2 minutes each, then switch</li>
+        <li>Give feedback: What worked? What felt awkward?</li>
+    </ul>
+    <div class="action-box">
+        <h3>After this, you're calling REAL companies</h3>
+    </div>
+    <span class="slide-num">36</span>
+</div>
+
+<!-- ==================== POWER HOUR 1 ==================== -->
+<div class="slide slide-power-hour">
+    <div class="session-num">Power Hour #1</div>
+    <h2>LIVE CALLS</h2>
+    <p class="subtitle">Make Real Calls. Right Now.</p>
+    <div class="time-badge">2:30 PM - 3:30 PM</div>
+    <span class="slide-num">37</span>
+</div>
+
+<!-- ==================== SLIDE 38: POWER HOUR RULES ==================== -->
+<div class="slide slide-content" style="border-left: 8px solid var(--red);">
+    <span class="live-badge">Live Calls</span>
+    <h2>Power Hour Rules</h2>
+    <ul class="bullets">
+        <li><strong>Goal:</strong> Make 3-5 calls minimum</li>
+        <li><strong>Track:</strong> Reached, Voicemail, Meeting Booked</li>
+        <li><strong>Share wins</strong> in chat as they happen</li>
+        <li>Left voicemail? Send follow-up email immediately</li>
+        <li>Got a meeting? Post it: "Meeting booked with [Company]!"</li>
+    </ul>
+    <div class="action-box">
+        <h3>Mute yourself. Make the calls. Unmute to celebrate wins.</h3>
+    </div>
+    <span class="slide-num">38</span>
+</div>
+
+<!-- ==================== SLIDE 39: VOICEMAIL SCRIPT ==================== -->
+<div class="slide slide-content">
+    <h2>Voicemail Script</h2>
+    <div class="script-box">
+        <div class="label">Keep it Short (30 sec max)</div>
+        <p>"Hi [NAME], this is [YOUR NAME]. I found a government opportunity that looks like a fit for your company — it's a [AGENCY] Sources Sought for [WORK TYPE]. I'm looking for a teaming partner. My number is [PHONE]. I'll also send an email. Thanks!"</p>
+    </div>
+    <div style="margin-top: 20px;">
+        <h3>Then Immediately:</h3>
+        <ul class="bullets">
+            <li>Send follow-up email with Sources Sought link</li>
+            <li>Subject: "Government Opportunity - Potential Teaming"</li>
+        </ul>
+    </div>
+    <span class="slide-num">39</span>
+</div>
+
+<!-- ==================== SLIDE 40: GO TIME ==================== -->
+<div class="slide slide-center" style="background: linear-gradient(135deg, var(--red) 0%, #ef4444 100%); color: white;">
+    <h2 style="font-size: 3rem; margin-bottom: 30px;">GO.</h2>
+    <p style="font-size: 1.5rem; opacity: 0.95;">
+        Open your call list. Pick up the phone. Make the first call.
+    </p>
+    <p style="font-size: 1.2rem; margin-top: 30px; opacity: 0.8;">
+        We'll check in at 3:30 PM for Hot Seats.
+    </p>
+    <span class="slide-num">40</span>
+</div>
+
+<!-- ==================== HOT SEATS ==================== -->
+<div class="slide slide-session">
+    <div class="session-num">Hot Seats</div>
+    <h2>What Worked? What Didn't?</h2>
+    <p class="subtitle">Refine Your Approach</p>
+    <div class="time-badge">3:30 PM - 4:00 PM</div>
+    <span class="slide-num">41</span>
+</div>
+
+<!-- ==================== SLIDE 42: HOT SEAT QUESTIONS ==================== -->
+<div class="slide slide-content">
+    <h2>Hot Seat Discussion</h2>
+    <ul class="bullets">
+        <li><strong>Who got through?</strong> What did they say?</li>
+        <li><strong>Common objections?</strong> How did you handle?</li>
+        <li><strong>What felt awkward?</strong> Let's fix the script</li>
+        <li><strong>Any meetings booked?</strong> Celebrate!</li>
+        <li><strong>What will you change</strong> for Round 2?</li>
+    </ul>
+    <span class="slide-num">42</span>
+</div>
+
+<!-- ==================== SLIDE 43: COMMON OBJECTIONS ==================== -->
+<div class="slide slide-content">
+    <h2>Common Objections + Responses</h2>
+    <table class="compare-table">
+        <tr>
+            <th>They Say</th>
+            <th>You Say</th>
+        </tr>
+        <tr>
+            <td>"We're too busy"</td>
+            <td>"I'll do all the upfront work. Just need 15 min to see if it's a fit."</td>
+        </tr>
+        <tr>
+            <td>"Send me info"</td>
+            <td>"Happy to. When can I follow up — Thursday or Friday?"</td>
+        </tr>
+        <tr>
+            <td>"We don't do teaming"</td>
+            <td>"I understand. Do you know anyone who might be interested?"</td>
+        </tr>
+        <tr>
+            <td>"What's in it for us?"</td>
+            <td>"Free BD work. I bring the opportunity, you bring the capability."</td>
+        </tr>
+    </table>
+    <span class="slide-num">43</span>
+</div>
+
+<!-- ==================== POWER HOUR 2 ==================== -->
+<div class="slide slide-power-hour">
+    <div class="session-num">Power Hour #2</div>
+    <h2>MORE CALLS, BETTER PITCH</h2>
+    <p class="subtitle">Apply What You Learned</p>
+    <div class="time-badge">4:00 PM - 4:45 PM</div>
+    <span class="slide-num">44</span>
+</div>
+
+<!-- ==================== SLIDE 45: ROUND 2 FOCUS ==================== -->
+<div class="slide slide-content" style="border-left: 8px solid var(--red);">
+    <span class="live-badge">Round 2</span>
+    <h2>Focus for Power Hour #2</h2>
+    <ul class="bullets">
+        <li>Apply adjustments from Hot Seats</li>
+        <li>Follow up on voicemails with emails</li>
+        <li>Try different companies from your list</li>
+        <li>Push for the meeting: "How's Thursday at 2?"</li>
+    </ul>
+    <div class="action-box">
+        <h3>Goal: Book at least 1 follow-up meeting</h3>
+    </div>
+    <span class="slide-num">45</span>
+</div>
+
+<!-- ==================== SLIDE 46: GO TIME 2 ==================== -->
+<div class="slide slide-center" style="background: linear-gradient(135deg, var(--red) 0%, #ef4444 100%); color: white;">
+    <h2 style="font-size: 3rem; margin-bottom: 30px;">ROUND 2. GO.</h2>
+    <p style="font-size: 1.5rem; opacity: 0.95;">
+        45 more minutes. Better pitch. More confidence.
+    </p>
+    <p style="font-size: 1.2rem; margin-top: 30px; opacity: 0.8;">
+        We'll reconvene at 5:00 PM to share wins.
+    </p>
+    <span class="slide-num">46</span>
+</div>
+
+<!-- ==================== SESSION: WINS + COMMITMENTS ==================== -->
+<div class="slide slide-session">
+    <div class="session-num">Session 8</div>
+    <h2>Wins + Commitments</h2>
+    <p class="subtitle">Share Results. Plan Next Steps.</p>
+    <div class="time-badge">5:00 PM - 5:45 PM</div>
+    <span class="slide-num">47</span>
+</div>
+
+<!-- ==================== SLIDE 48: SHARE YOUR WINS ==================== -->
+<div class="slide slide-content">
+    <h2>Share Your Wins</h2>
+    <ul class="checklist">
+        <li>How many calls did you make?</li>
+        <li>How many people did you reach?</li>
+        <li>Any meetings booked?</li>
+        <li>Best conversation you had?</li>
+        <li>What will you do differently next time?</li>
+    </ul>
+    <div class="highlight-box">
+        <h3>Every call is progress. Every "no" is closer to "yes."</h3>
+    </div>
+    <span class="slide-num">48</span>
+</div>
+
+<!-- ==================== SLIDE 49: NEXT STEPS AFTER TODAY ==================== -->
+<div class="slide slide-content">
+    <h2>What's Next After Today</h2>
+    <div class="icon-grid">
+        <div class="icon-item">
+            <div class="icon">📞</div>
+            <div class="text"><strong>Follow Up</strong>Email everyone you called within 48 hours</div>
+        </div>
+        <div class="icon-item">
+            <div class="icon">📅</div>
+            <div class="text"><strong>Take the Meeting</strong>Go over the Sources Sought together</div>
+        </div>
+        <div class="icon-item">
+            <div class="icon">📝</div>
+            <div class="text"><strong>Define Roles</strong>Who does what? Work share agreement</div>
+        </div>
+        <div class="icon-item">
+            <div class="icon">✍️</div>
+            <div class="text"><strong>Sign Agreement</strong>Teaming agreement template provided</div>
+        </div>
+    </div>
+    <span class="slide-num">49</span>
+</div>
+
+<!-- ==================== SLIDE 50: TEAMING AGREEMENT BASICS ==================== -->
+<div class="slide slide-content">
+    <h2>Teaming Agreement Basics</h2>
+    <ul class="bullets">
+        <li><strong>Define roles:</strong> Who does what portion of the work?</li>
+        <li><strong>Workshare:</strong> Percentage split (you: 20%, them: 80%?)</li>
+        <li><strong>Exclusivity:</strong> Are you exclusive on this opportunity?</li>
+        <li><strong>Duration:</strong> How long does this agreement last?</li>
+        <li><strong>Exit:</strong> How do you end if it doesn't work?</li>
+    </ul>
+    <p style="margin-top: 20px; font-size: 1.1rem; color: var(--gray);">
+        Template download: govcongiants.org/teaming-agreement
+    </p>
+    <span class="slide-num">50</span>
+</div>
+
+<!-- ==================== SLIDE 51: CHARGING MONEY ==================== -->
+<div class="slide slide-content">
+    <h2>What About Charging Money?</h2>
+    <p style="font-size: 1.2rem; margin-bottom: 20px;">Do NOT charge them unless:</p>
+    <ul class="bullets">
+        <li>They want something <strong>specific</strong> (SAM registration, website)</li>
+        <li>You're doing <strong>market research reports</strong> for them</li>
+        <li>Attending meetings/events <strong>on their behalf</strong></li>
+    </ul>
+    <div class="quote">
+        "Partnership value varies based on workshare. You're building relationships first, revenue second."
+    </div>
+    <span class="slide-num">51</span>
+</div>
+
+<!-- ==================== SLIDE 52: DAILY ACTIVITIES ==================== -->
+<div class="slide slide-content">
+    <h2>Daily Activities Going Forward</h2>
+    <div class="icon-grid">
+        <div class="icon-item">
+            <div class="icon">🔍</div>
+            <div class="text"><strong>Market Research</strong>New Sources Sought weekly</div>
+        </div>
+        <div class="icon-item">
+            <div class="icon">📞</div>
+            <div class="text"><strong>Keep Calling</strong>5 new companies per week</div>
+        </div>
+        <div class="icon-item">
+            <div class="icon">💬</div>
+            <div class="text"><strong>Partner Check-ins</strong>Weekly or biweekly calls</div>
+        </div>
+        <div class="icon-item">
+            <div class="icon">📋</div>
+            <div class="text"><strong>Respond Together</strong>Submit to Sources Sought as a team</div>
+        </div>
+    </div>
+    <span class="slide-num">52</span>
+</div>
+
+<!-- ==================== SLIDE 53: ACCOUNTABILITY ==================== -->
+<div class="slide slide-content">
+    <h2>Accountability Partners</h2>
+    <p style="font-size: 1.3rem; margin-bottom: 25px;">
+        Pair up with someone from today's bootcamp:
+    </p>
+    <ul class="checklist">
+        <li>Exchange contact info (phone + email)</li>
+        <li>Commit to checking in this week</li>
+        <li>Share: Did you follow up? Any meetings happen?</li>
+        <li>Hold each other accountable to action</li>
+    </ul>
+    <div class="script-box">
+        <div class="label">Post in Chat</div>
+        <p>"Looking for accountability partner — I'm in [INDUSTRY]. DM me!"</p>
+    </div>
+    <span class="slide-num">53</span>
+</div>
+
+<!-- ==================== CLOSE ==================== -->
+<div class="slide slide-session">
+    <div class="session-num">Close</div>
+    <h2>Next Steps + Resources</h2>
+    <p class="subtitle">Keep the Momentum</p>
+    <div class="time-badge">5:45 PM - 6:00 PM</div>
+    <span class="slide-num">54</span>
+</div>
+
+<!-- ==================== SLIDE 55: RESOURCES ==================== -->
+<div class="slide slide-content">
+    <h2>Your Resources</h2>
+    <div class="icon-grid icon-grid-3">
+        <div class="icon-item">
+            <div class="icon">🎬</div>
+            <div class="text"><strong>Recording</strong>Full replay access</div>
+        </div>
+        <div class="icon-item">
+            <div class="icon">📋</div>
+            <div class="text"><strong>Call List Template</strong>Google Sheets</div>
+        </div>
+        <div class="icon-item">
+            <div class="icon">📝</div>
+            <div class="text"><strong>Teaming Agreement</strong>Template download</div>
+        </div>
+        <div class="icon-item">
+            <div class="icon">📞</div>
+            <div class="text"><strong>Phone Script</strong>PDF version</div>
+        </div>
+        <div class="icon-item">
+            <div class="icon">🎯</div>
+            <div class="text"><strong>Market Assassin</strong>30-day access</div>
+        </div>
+        <div class="icon-item">
+            <div class="icon">🏢</div>
+            <div class="text"><strong>Contractor Database</strong>Full search</div>
+        </div>
+    </div>
+    <span class="slide-num">55</span>
+</div>
+
+<!-- ==================== SLIDE 56: JOIN PRO ==================== -->
+<div class="slide slide-cta">
+    <h2>Continue Your Journey</h2>
+    <p style="font-size: 1.3rem; max-width: 700px; margin: 0 auto 30px; opacity: 0.95;">
+        Monthly bootcamps, all tools access, community support, and more.
+    </p>
+    <div class="url">federalhelpcenter.com/pro</div>
+    <p style="margin-top: 20px; font-size: 1.1rem; opacity: 0.8;">$99/month or $799/year</p>
+    <span class="slide-num">56</span>
+</div>
+
+<!-- ==================== SLIDE 57: FINAL ==================== -->
+<div class="slide slide-title">
+    <h1>Go Find Your First Partner</h1>
+    <p class="subtitle">The calls you made today are just the beginning.</p>
+    <div class="date-badge">govcongiants.org | @govcongiants</div>
+    <span class="slide-num">57</span>
+</div>
+
+</body>
+</html>

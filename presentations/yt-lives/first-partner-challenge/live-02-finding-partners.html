@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YT Live 2: Finding Partners | GovCon Giants</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #0f172a; color: #fff; }
+    .slide {
+      width: 1280px;
+      height: 720px;
+      padding: 60px;
+      display: none;
+      flex-direction: column;
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+      position: relative;
+      page-break-after: always;
+    }
+    .slide.active { display: flex; }
+    .slide::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, #6366f1, #8b5cf6, #a78bfa);
+    }
+    .logo {
+      position: absolute;
+      top: 30px;
+      right: 60px;
+      font-weight: 900;
+      font-size: 18px;
+    }
+    .logo span { color: #10b981; }
+    .live-badge {
+      position: absolute;
+      top: 30px;
+      left: 60px;
+      background: #dc2626;
+      color: white;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .live-badge::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: white;
+      border-radius: 50%;
+      animation: pulse 1s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    h1 {
+      font-size: 56px;
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 30px;
+    }
+    h1 .highlight { color: #a78bfa; }
+    h2 {
+      font-size: 42px;
+      font-weight: 800;
+      margin-bottom: 30px;
+      color: #a78bfa;
+    }
+    h3 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #10b981;
+    }
+    p {
+      font-size: 24px;
+      line-height: 1.6;
+      color: #94a3b8;
+    }
+    .subtitle {
+      font-size: 28px;
+      color: #64748b;
+      margin-bottom: 40px;
+    }
+    ul {
+      list-style: none;
+      font-size: 26px;
+      line-height: 2;
+    }
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    li::before {
+      content: '✓';
+      color: #a78bfa;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+    .stat-box {
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      margin: 20px 0;
+    }
+    .stat-box .number {
+      font-size: 72px;
+      font-weight: 900;
+      color: white;
+    }
+    .stat-box .label {
+      font-size: 24px;
+      color: #e0e7ff;
+    }
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      flex: 1;
+    }
+    .card {
+      background: rgba(30, 27, 75, 0.8);
+      border: 1px solid #4338ca;
+      border-radius: 16px;
+      padding: 30px;
+    }
+    .card h4 {
+      font-size: 24px;
+      color: #a78bfa;
+      margin-bottom: 16px;
+    }
+    .card p {
+      font-size: 20px;
+    }
+    .cta-slide {
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+    }
+    .cta-slide h1 { color: white; margin-bottom: 20px; }
+    .cta-slide .url {
+      font-size: 36px;
+      font-weight: 900;
+      color: #fef3c7;
+      background: rgba(0,0,0,0.2);
+      padding: 20px 50px;
+      border-radius: 12px;
+      margin-top: 30px;
+    }
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      flex: 1;
+    }
+    .icon-card {
+      background: rgba(30, 27, 75, 0.6);
+      border: 1px solid #4338ca;
+      border-radius: 16px;
+      padding: 30px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .icon-card .icon {
+      font-size: 40px;
+      flex-shrink: 0;
+    }
+    .icon-card h4 {
+      font-size: 22px;
+      color: #a78bfa;
+      margin-bottom: 8px;
+    }
+    .icon-card p {
+      font-size: 18px;
+    }
+    .tool-card {
+      background: rgba(30, 27, 75, 0.6);
+      border: 1px solid #4338ca;
+      border-radius: 16px;
+      padding: 25px;
+    }
+    .tool-card h4 {
+      font-size: 22px;
+      color: #a78bfa;
+      margin-bottom: 10px;
+    }
+    .tool-card p {
+      font-size: 17px;
+    }
+    .tool-card .url-small {
+      display: block;
+      margin-top: 10px;
+      color: #10b981;
+      font-size: 15px;
+      font-weight: 600;
+    }
+    .slide-number {
+      position: absolute;
+      bottom: 30px;
+      right: 60px;
+      color: #475569;
+      font-size: 16px;
+    }
+    .controls {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+      z-index: 100;
+    }
+    .controls button {
+      background: #6366f1;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .controls button:hover { background: #4f46e5; }
+    @media print {
+      .slide { display: flex !important; }
+      .controls { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Slide 1: Title -->
+<div class="slide active">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+    <h1>How to Find the<br><span class="highlight">RIGHT Partners</span></h1>
+    <p class="subtitle">First Partner Challenge Series | Part 2 of 4</p>
+    <p style="margin-top: 40px; color: #a78bfa; font-size: 20px;">Where to look + What to look for</p>
+  </div>
+  <div class="slide-number">1 / 14</div>
+</div>
+
+<!-- Slide 2: The Problem -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+    <h1>Most People Look in the<br>Wrong Places</h1>
+    <div class="two-col" style="margin-top: 40px; max-width: 900px; margin-left: auto; margin-right: auto;">
+      <div class="card" style="border-color: #f87171;">
+        <h4 style="color: #f87171;">What Doesn't Work</h4>
+        <p style="font-size: 18px; text-align: left;">
+          - Random LinkedIn outreach<br>
+          - Networking events without strategy<br>
+          - Cold emailing everyone<br>
+          - Hoping partners find you
+        </p>
+      </div>
+      <div class="card" style="border-color: #10b981;">
+        <h4 style="color: #10b981;">What Does Work</h4>
+        <p style="font-size: 18px; text-align: left;">
+          - Targeted research using data<br>
+          - Finding companies who NEED you<br>
+          - Warm introductions<br>
+          - Strategic outreach with value
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">2 / 14</div>
+</div>
+
+<!-- Slide 3: Where Partners Hide -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Where to Find Potential Partners</h2>
+  <div class="icon-grid">
+    <div class="icon-card">
+      <div class="icon">🔍</div>
+      <div>
+        <h4>SAM.gov Entity Search</h4>
+        <p>Search by NAICS, location, set-asides. Find companies in your space.</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">📊</div>
+      <div>
+        <h4>USASpending.gov</h4>
+        <p>See who's winning contracts. Find primes with active work.</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">🏢</div>
+      <div>
+        <h4>Agency SB Office Pages</h4>
+        <p>Many agencies list their small business partners publicly.</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">🎪</div>
+      <div>
+        <h4>Industry Days & Events</h4>
+        <p>Primes attend to find subs. Be there with your pitch ready.</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">3 / 14</div>
+</div>
+
+<!-- Slide 4: Tool 1 - SAM.gov -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Tool #1: SAM.gov Entity Search</h2>
+  <div class="two-col">
+    <div>
+      <h3>How to Use It</h3>
+      <ul style="font-size: 20px;">
+        <li>Go to SAM.gov → Search → Entity Information</li>
+        <li>Filter by your NAICS codes</li>
+        <li>Filter by state/location</li>
+        <li>Filter by business type (Large, Small, 8(a), etc.)</li>
+        <li>Export results to spreadsheet</li>
+      </ul>
+    </div>
+    <div>
+      <div class="card">
+        <h4>Pro Tip</h4>
+        <p>Look for LARGE businesses in your NAICS - they need small business subs to meet goals. Also look for small businesses with contract vehicles you want access to.</p>
+      </div>
+      <div class="card" style="margin-top: 20px;">
+        <h4>What to Capture</h4>
+        <p>Company name, UEI, NAICS codes, POC name, phone, email, certifications</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">4 / 14</div>
+</div>
+
+<!-- Slide 5: Tool 2 - USASpending -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Tool #2: USASpending.gov</h2>
+  <div class="two-col">
+    <div>
+      <h3>The Secret Weapon</h3>
+      <ul style="font-size: 20px;">
+        <li>Shows WHO is winning contracts NOW</li>
+        <li>See contract values and agencies</li>
+        <li>Filter by NAICS, agency, location</li>
+        <li>Find primes with active work = active subbing needs</li>
+      </ul>
+    </div>
+    <div>
+      <div class="card">
+        <h4>Search Strategy</h4>
+        <p>Look for companies that won contracts in the last 12 months in your NAICS. These are ACTIVE buyers of subcontractor services.</p>
+      </div>
+      <div class="card" style="margin-top: 20px;">
+        <h4>Bonus: Sub Plans</h4>
+        <p>Large contracts ($750K+) require subcontracting plans. These primes MUST use small businesses.</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">5 / 14</div>
+</div>
+
+<!-- Slide 6: Tool 3 - SBA Dynamic -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Tool #3: SBA Dynamic Small Business Search</h2>
+  <div class="two-col">
+    <div>
+      <h3>For Finding Certified SBs</h3>
+      <ul style="font-size: 20px;">
+        <li>dsbs.sba.gov</li>
+        <li>Search by certification type</li>
+        <li>Search by NAICS code</li>
+        <li>Search by state/keywords</li>
+        <li>Find complementary businesses</li>
+      </ul>
+    </div>
+    <div>
+      <div class="card">
+        <h4>Why It Matters</h4>
+        <p>Sometimes the best partners are other small businesses. Team together to bid on larger opportunities neither could win alone.</p>
+      </div>
+      <div class="card" style="margin-top: 20px;">
+        <h4>Look For</h4>
+        <p>Companies with certifications you DON'T have. Your 8(a) + their HUBZone = more opportunities.</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">6 / 14</div>
+</div>
+
+<!-- Slide 7: Tool 4 - LinkedIn -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Tool #4: LinkedIn (Done Right)</h2>
+  <div class="two-col">
+    <div>
+      <h3>Strategic Search</h3>
+      <ul style="font-size: 20px;">
+        <li>Search "small business liaison" + company</li>
+        <li>Search "BD manager" + federal contractor</li>
+        <li>Search "teaming" + your industry</li>
+        <li>Follow GovCon hashtags for active players</li>
+      </ul>
+    </div>
+    <div>
+      <div class="card">
+        <h4>SBLM = Small Business Liaison Manager</h4>
+        <p>Every large prime has one. Their JOB is to find small business partners. They WANT to hear from you.</p>
+      </div>
+      <div class="card" style="margin-top: 20px;">
+        <h4>Connection Strategy</h4>
+        <p>Research first, then send personalized connection request. Mention specific opportunity or capability match.</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">7 / 14</div>
+</div>
+
+<!-- Slide 8: What to Look For -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>What to Look For in a Partner</h2>
+  <div class="icon-grid">
+    <div class="icon-card">
+      <div class="icon">✅</div>
+      <div>
+        <h4>Complementary Capabilities</h4>
+        <p>They have what you don't. You have what they need.</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">📈</div>
+      <div>
+        <h4>Active Contract Wins</h4>
+        <p>Recent awards mean current subbing needs.</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">🎯</div>
+      <div>
+        <h4>NAICS Alignment</h4>
+        <p>Work in the same codes you target.</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">🌟</div>
+      <div>
+        <h4>Good Reputation</h4>
+        <p>Check for protests, CPARS issues. Ask around.</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">8 / 14</div>
+</div>
+
+<!-- Slide 9: Red Flags -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Red Flags to Watch For</h2>
+  <ul style="font-size: 28px;">
+    <li style="color: #f87171;">Ask for money upfront to "partner"</li>
+    <li style="color: #f87171;">Vague about actual opportunities</li>
+    <li style="color: #f87171;">Want your info but share nothing</li>
+    <li style="color: #f87171;">No recent contract activity</li>
+    <li style="color: #f87171;">Won't sign teaming agreement</li>
+    <li style="color: #f87171;">Push you to "just trust us"</li>
+  </ul>
+  <div class="slide-number">9 / 14</div>
+</div>
+
+<!-- Slide 10: The Research Checklist -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Partner Research Checklist</h2>
+  <div class="two-col">
+    <div>
+      <h3>Before You Call</h3>
+      <ul style="font-size: 20px;">
+        <li>Checked SAM.gov registration</li>
+        <li>Reviewed USASpending awards</li>
+        <li>Looked up key personnel on LinkedIn</li>
+        <li>Checked NAICS code alignment</li>
+        <li>Identified what YOU bring to them</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Know Your Pitch</h3>
+      <ul style="font-size: 20px;">
+        <li>Your certifications</li>
+        <li>Your relevant NAICS codes</li>
+        <li>Your key capabilities</li>
+        <li>Your location advantage</li>
+        <li>Why you + them = stronger team</li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-number">10 / 14</div>
+</div>
+
+<!-- Slide 11: Your Target List -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Build Your Target List</h2>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+    <p style="font-size: 26px; margin-bottom: 30px;">For the First Partner Challenge, you'll need:</p>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+      <div class="stat-box">
+        <div class="number">20</div>
+        <div class="label">Companies researched</div>
+      </div>
+      <div class="stat-box" style="background: linear-gradient(135deg, #059669 0%, #10b981 100%);">
+        <div class="number">10</div>
+        <div class="label">Phone numbers found</div>
+      </div>
+      <div class="stat-box">
+        <div class="number">5+</div>
+        <div class="label">Calls on Challenge Day</div>
+      </div>
+    </div>
+    <p style="text-align: center; margin-top: 30px; font-size: 22px;">Start building your list NOW!</p>
+  </div>
+  <div class="slide-number">11 / 14</div>
+</div>
+
+<!-- Slide 12: Action Items -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Your Action Items This Week</h2>
+  <ul style="font-size: 26px;">
+    <li>Search SAM.gov for 10 companies in your NAICS</li>
+    <li>Check USASpending for their recent awards</li>
+    <li>Find the SBLM or BD contact on LinkedIn</li>
+    <li>Add to your call list template</li>
+    <li>Register for the First Partner Challenge</li>
+  </ul>
+  <div class="slide-number">12 / 14</div>
+</div>
+
+<!-- Slide 13: Questions -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+    <h1>Questions?</h1>
+    <p class="subtitle">Drop them in the chat!</p>
+    <p style="margin-top: 60px; font-size: 22px; color: #64748b;">
+      Next Live: The First Call (Scripts That Work)
+    </p>
+  </div>
+  <div class="slide-number">13 / 14</div>
+</div>
+
+<!-- Slide 14: CTA -->
+<div class="slide cta-slide">
+  <h1>Join the First Partner<br>Challenge</h1>
+  <p style="font-size: 28px; color: white; opacity: 0.9;">Put your research into action. Make real calls. Book real meetings.</p>
+  <div class="url">govcongiants.org/first-partner-challenge</div>
+  <p style="margin-top: 40px; font-size: 22px; color: white; opacity: 0.8;">
+    April 25, 2026 | 9 AM - 6 PM ET | FREE
+  </p>
+  <div class="slide-number" style="color: rgba(255,255,255,0.6);">14 / 14</div>
+</div>
+
+<!-- Controls -->
+<div class="controls">
+  <button onclick="prevSlide()">← Previous</button>
+  <button onclick="nextSlide()">Next →</button>
+</div>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+
+  function showSlide(n) {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (n + slides.length) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }
+
+  function nextSlide() { showSlide(currentSlide + 1); }
+  function prevSlide() { showSlide(currentSlide - 1); }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+    if (e.key === 'ArrowLeft') prevSlide();
+  });
+</script>
+
+</body>
+</html>

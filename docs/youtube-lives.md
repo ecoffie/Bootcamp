@@ -1,6 +1,45 @@
 # YouTube Lives
 
-## Slide Decks (12 decks)
+## First Partner Challenge Series (April 2026)
+
+**Directory:** `presentations/yt-lives/first-partner-challenge/`
+
+| # | File | Title | Slides |
+|---|------|-------|--------|
+| 1 | `live-01-why-teaming-matters.html` | Why Teaming Is Your Fastest Path to Contracts | 12 |
+| 2 | `live-02-finding-partners.html` | How to Find the RIGHT Partners | 14 |
+| 3 | `live-03-the-first-call.html` | The First Call — Scripts That Actually Work | 16 |
+| 4 | `live-04-challenge-preview.html` | April 25 Challenge Preview | 14 |
+
+**Export Script:** `export-slides.js`
+
+```bash
+# Export slides to PNG
+cd presentations/yt-lives/first-partner-challenge
+node export-slides.js 01  # → live-01-pngs/
+node export-slides.js 02  # → live-02-pngs/
+node export-slides.js 03  # → live-03-pngs/
+node export-slides.js 04  # → live-04-pngs/
+```
+
+---
+
+## Contract Vehicles Series (March 2026)
+
+**Directory:** `presentations/yt-lives/contract-vehicles/`
+
+| # | File | Title | Slides |
+|---|------|-------|--------|
+| 1 | `live-01-idiq-guide.html` | The $77 TRILLION IDIQ Opportunity | 18 |
+| 2 | `live-02-vehicles-breakdown.html` | Active IDIQ Vehicles List | 17 |
+| 3 | `live-03-sources-sought.html` | Sources Sought Response Template | 20 |
+| 4 | `live-04-final-call.html` | Final Call for Contract Vehicles Bootcamp | 18 |
+
+**Export Script:** `export-slides.js`
+
+---
+
+## General Slide Decks (12 decks)
 
 | # | File | Title | Slides |
 |---|------|-------|--------|

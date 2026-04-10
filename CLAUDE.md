@@ -1,6 +1,6 @@
 # GovCon Giants - Bootcamp Project
 
-**Last Updated:** March 26, 2026
+**Last Updated:** April 10, 2026
 **Owner:** Eric Coffie
 **Purpose:** Federal contracting bootcamp materials, marketing assets, and business tools
 
@@ -14,8 +14,8 @@ This repository contains all GovCon Giants resources for helping small businesse
 
 ## Key Dates
 
-- **Next Event:** March 28, 2026 (Contracting Launchpad Bootcamp - FREE)
-- **April Bootcamp:** Winning with Certifications (Pro Members)
+- **Next Event:** April 25, 2026 (First Partner Challenge Bootcamp - FREE)
+- **Past Bootcamp:** March 28, 2026 (Contract Vehicles Bootcamp - FREE)
 - **Past Bootcamp:** February 28, 2026 (Specifics & Proposals)
 - **Past Bootcamp:** January 31, 2026 (replay at `/jan-31-bootcamp-paid`)
 - **FY2026 NDAA Signed:** December 18, 2025
@@ -199,6 +199,90 @@ Closing Q&A: 4:50-5:00 PM
 
 ---
 
+## April 2026 First Partner Challenge Bootcamp
+
+**Date:** April 25, 2026
+**Time:** 9:00 AM - 6:00 PM ET | Live on Zoom
+**Topic:** Find Your First Teaming Partner or Consultant Client
+**Format:** FREE, open to public
+**Registration:** `govcongiants.org/first-partner-challenge`
+
+### The 5 Objectives
+
+1. **Pick Industry** — Max 2 NAICS codes, double niche down
+2. **Find Sources Sought** — Use Market Assassin to find opportunities
+3. **Build Call List** — 10-15 companies who can perform the work
+4. **Make Calls** — LIVE calls during the bootcamp (Power Hours)
+5. **Book Meetings** — Leave with 1-2 follow-up calls scheduled
+
+### Curriculum (8 Sessions)
+
+| Time | Session | Duration |
+|------|---------|----------|
+| 9:00 AM | **Welcome + The Strategy** — Solo vs Team, value exchange | 30 min |
+| 9:30 AM | **Pick Your Industry** — NAICS selection workshop | 45 min |
+| 10:30 AM | **Find Sources Sought** — Market Assassin live demo | 60 min |
+| 11:30 AM | **Analyze Requirements** — What capabilities needed? | 30 min |
+| 12:45 PM | **Build Call List** — Contractor Database workshop | 45 min |
+| 1:30 PM | **The Pitch + Role Play** — Practice phone script | 45 min |
+| 2:30 PM | **Power Hour #1** — LIVE CALLS (real companies) | 60 min |
+| 3:30 PM | **Hot Seats** — What worked? Refine approach | 30 min |
+| 4:00 PM | **Power Hour #2** — More calls, better pitch | 45 min |
+| 5:00 PM | **Wins + Commitments** — Share results, next steps | 45 min |
+
+Breaks: 10:15-10:30 AM, 12:00-12:45 PM (lunch), 2:15-2:30 PM, 4:45-5:00 PM
+
+### Key Differentiator
+
+**LIVE CALLS during the bootcamp** — Everyone makes real calls to real companies with accountability. Not homework — action.
+
+### Tools Used
+
+| Tool | Purpose |
+|------|---------|
+| **Market Assassin** | Find Sources Sought by NAICS |
+| **Contractor Database** | Build call list of potential partners |
+| **Federal Market Scanner** | Validate spending in industry |
+
+### The Value Exchange
+
+| What You Bring | What They Bring |
+|----------------|-----------------|
+| Market research (Sources Sought) | Experience performing work |
+| Upfront BD work | Money/capital |
+| Submission handling | Past performance |
+| Possibly certifications | Estimating capability |
+
+### Files Created
+
+**Agenda & Slides**
+- `april-25-first-partner-challenge-agenda.html` — Main agenda
+- `presentations/april-25-first-partner-slides.html` — 57-slide deck
+- `docs/first-partner-challenge-reference.md` — Challenge methodology reference
+
+**Email Sequence** (`april-25-first-partner-challenge-email-sequence/`)
+- 16 HTML emails: pre-event (8), day-of (1), post-event (7)
+- Follows GovCon Giants email template styling
+
+**Landing Page Funnel** (`funnels/first-partner-challenge/`)
+- `index.html` — Redirect
+- `1-landing.html` — Registration page (purple/indigo theme)
+- `4-thank-you.html` — Confirmation with download links
+
+**Free Handouts** (`funnels/first-partner-challenge/downloads/`)
+- `call-list-template.csv` — Partner tracking spreadsheet
+- `phone-script.html` — Word-for-word call script with objection handlers
+- `teaming-agreement-template.html` — Formal teaming agreement template
+
+**YT Lives Series** (`presentations/yt-lives/first-partner-challenge/`)
+- `live-01-why-teaming-matters.html` — 12 slides
+- `live-02-finding-partners.html` — 14 slides
+- `live-03-the-first-call.html` — 16 slides
+- `live-04-challenge-preview.html` — 14 slides
+- `export-slides.js` — Puppeteer PNG export script
+
+---
+
 ## Pending Tasks
 
 - [x] Generate March 2026 expiring contracts data
@@ -208,9 +292,16 @@ Closing Q&A: 4:50-5:00 PM
 - [x] Export slides to PDF (99 pages)
 - [x] Add breaking news: Alliant 3, Polaris WOSB, EVOLVE, SEWP VI protests
 - [x] Add Market Intelligence briefing examples (Daily, Weekly, Pursuit)
-- [x] Update agenda files to match slide structure (march-28-surge-agenda.html, march-28-contract-vehicles-agenda.html)
+- [x] Update agenda files to match slide structure
 - [x] Update march-surge-page.html with Contract Vehicles theme
+- [x] Plan April First Partner Challenge curriculum
+- [x] Create April bootcamp agenda HTML
+- [x] Create April bootcamp slides (57 slides)
+- [x] Create April email sequence (16 emails)
+- [x] Create April landing page/funnel
+- [x] Create April handouts (call list, phone script, teaming agreement)
+- [x] Create April YT Lives series (4 promo videos)
 - [ ] Assign custom domain to march-surge-page Vercel project
+- [ ] Export April slides to PDF/PNG
 - [ ] Update SBLO contacts (Q2 2026)
 - [ ] Update expiring contracts data monthly
-- [ ] April Bootcamp: Winning with Certifications materials

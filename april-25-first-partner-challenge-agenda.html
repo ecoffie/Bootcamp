@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>April 25, 2026 First Partner Challenge | GovCon Giants</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a2e;
+            background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .header .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            margin-bottom: 20px;
+        }
+
+        .header-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .header-stat {
+            text-align: center;
+        }
+
+        .header-stat .value {
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        .header-stat .label {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .intro {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border: 2px solid #86efac;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 40px;
+        }
+
+        .intro h2 {
+            color: #166534;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .intro p {
+            color: #15803d;
+        }
+
+        .intro ul {
+            margin-top: 15px;
+            margin-left: 20px;
+            color: #15803d;
+        }
+
+        .intro li {
+            margin-bottom: 8px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 2px solid #f59e0b;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .highlight-box h2 {
+            color: #92400e;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+        .highlight-box p {
+            color: #78350f;
+            font-size: 1.1rem;
+        }
+
+        .schedule-section {
+            margin-bottom: 40px;
+        }
+
+        .time-block {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .time-block:last-child {
+            border-bottom: none;
+        }
+
+        .time-column {
+            min-width: 120px;
+            text-align: right;
+        }
+
+        .time {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #7c3aed;
+        }
+
+        .duration {
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        .content-column {
+            flex: 1;
+        }
+
+        .session-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin-bottom: 8px;
+        }
+
+        .session-description {
+            color: #555;
+            margin-bottom: 12px;
+        }
+
+        .session-bullets {
+            list-style: none;
+            padding: 0;
+        }
+
+        .session-bullets li {
+            padding: 6px 0 6px 25px;
+            position: relative;
+            color: #444;
+        }
+
+        .session-bullets li::before {
+            content: '>';
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        .break-block {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 15px 20px;
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 25px;
+        }
+
+        .break-block .time {
+            color: #888;
+        }
+
+        .session-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-right: 8px;
+            margin-bottom: 10px;
+        }
+
+        .tag-strategy {
+            background: #e0e7ff;
+            color: #3730a3;
+        }
+
+        .tag-tactical {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .tag-workshop {
+            background: #fce7f3;
+            color: #9d174d;
+        }
+
+        .tag-live {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .tag-qa {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .power-hour {
+            background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin-bottom: 25px;
+        }
+
+        .power-hour .time-block {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .power-hour .time {
+            color: white;
+        }
+
+        .power-hour .session-title {
+            color: white;
+        }
+
+        .power-hour .session-description {
+            color: rgba(255,255,255,0.9);
+        }
+
+        .power-hour .session-bullets li {
+            color: rgba(255,255,255,0.95);
+        }
+
+        .power-hour .session-bullets li::before {
+            color: #fde68a;
+        }
+
+        .power-hour .session-tag {
+            background: rgba(255,255,255,0.2);
+            color: white;
+        }
+
+        .objectives {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border: 2px solid #93c5fd;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 40px;
+        }
+
+        .objectives h2 {
+            color: #1e40af;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .objectives-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+        }
+
+        .objective-item {
+            text-align: center;
+            padding: 15px 10px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #bfdbfe;
+        }
+
+        .objective-item .number {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #7c3aed;
+        }
+
+        .objective-item .text {
+            font-size: 0.85rem;
+            color: #1e40af;
+            margin-top: 5px;
+        }
+
+        .deliverables {
+            background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
+            color: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        .deliverables h2 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .deliverables-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .deliverable-item {
+            background: rgba(255,255,255,0.15);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .deliverable-item .icon {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        .tools-section {
+            background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+            border: 2px solid #c4b5fd;
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 30px;
+        }
+
+        .tools-section h2 {
+            color: #6b21a8;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .tool-item {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #ddd6fe;
+        }
+
+        .tool-item .icon {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+
+        .tool-item .name {
+            font-weight: 700;
+            color: #6b21a8;
+            margin-bottom: 5px;
+        }
+
+        .tool-item .desc {
+            font-size: 0.85rem;
+            color: #7c3aed;
+        }
+
+        .footer {
+            background: #f8fafc;
+            padding: 30px 40px;
+            text-align: center;
+            border-top: 3px solid #e2e8f0;
+        }
+
+        .footer p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .footer .cta {
+            display: inline-block;
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-weight: 700;
+            text-decoration: none;
+            margin-top: 15px;
+        }
+
+        .footer .free-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .time-block {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .time-column {
+                text-align: left;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header-stats {
+                gap: 20px;
+            }
+
+            .objectives-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .container { box-shadow: none; max-width: 100%; }
+            .session-card, .stat-card, .agenda-item,
+            .cta-section, .header, table, tr, h2, h3 {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+            h2, h3, h4 { page-break-after: avoid; }
+            thead { display: table-header-group; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-badge">Free Live Bootcamp</div>
+            <h1>First Partner Challenge</h1>
+            <p class="subtitle">Find Your First Teaming Partner or Consultant Client in One Day</p>
+            <div class="header-stats">
+                <div class="header-stat">
+                    <div class="value">Apr 25</div>
+                    <div class="label">Date</div>
+                </div>
+                <div class="header-stat">
+                    <div class="value">9am-6pm</div>
+                    <div class="label">Eastern Time</div>
+                </div>
+                <div class="header-stat">
+                    <div class="value">LIVE</div>
+                    <div class="label">Calls</div>
+                </div>
+                <div class="header-stat">
+                    <div class="value">FREE</div>
+                    <div class="label">Registration</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="highlight-box">
+                <h2>This Bootcamp is Different</h2>
+                <p>You won't just learn — you'll make <strong>real calls</strong> to <strong>real companies</strong> during the session.<br>Leave with meetings booked, not just notes taken.</p>
+            </div>
+
+            <div class="objectives">
+                <h2>The 5 Objectives</h2>
+                <div class="objectives-grid">
+                    <div class="objective-item">
+                        <div class="number">1</div>
+                        <div class="text">Pick Industry</div>
+                    </div>
+                    <div class="objective-item">
+                        <div class="number">2</div>
+                        <div class="text">Find Sources Sought</div>
+                    </div>
+                    <div class="objective-item">
+                        <div class="number">3</div>
+                        <div class="text">Build Call List</div>
+                    </div>
+                    <div class="objective-item">
+                        <div class="number">4</div>
+                        <div class="text">Make Calls</div>
+                    </div>
+                    <div class="objective-item">
+                        <div class="number">5</div>
+                        <div class="text">Book Meetings</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="intro">
+                <h2>What You'll Walk Away With</h2>
+                <p>This isn't theory — it's a working session. By the end of the day, you'll have:</p>
+                <ul>
+                    <li>Your industry selected (max 2 NAICS codes)</li>
+                    <li>2-3 Sources Sought opportunities identified</li>
+                    <li>Call list of 10-15 potential partner companies</li>
+                    <li>Practiced pitch and phone script</li>
+                    <li><strong>Actual calls made</strong> (minimum 5 during bootcamp)</li>
+                    <li><strong>Meetings booked</strong> (goal: 1-2 follow-up calls scheduled)</li>
+                    <li>Teaming agreement template for next steps</li>
+                </ul>
+            </div>
+
+            <div class="schedule-section">
+                <!-- Session 1 -->
+                <div class="time-block">
+                    <div class="time-column">
+                        <div class="time">9:00 AM</div>
+                        <div class="duration">30 min</div>
+                    </div>
+                    <div class="content-column">
+                        <span class="session-tag tag-strategy">Strategy</span>
+                        <div class="session-title">Welcome + The Strategy</div>
+                        <p class="session-description">Why finding a partner first is the fastest path to federal contracts.</p>
+                        <ul class="session-bullets">
+                            <li>Solo vs. Team: The math on winning federal contracts</li>
+                            <li>The value exchange: What you bring vs. what they bring</li>
+                            <li>Two paths: Teaming Partner vs. Consultant Client</li>
+                            <li>Overview of today's challenge objectives</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Session 2 -->
+                <div class="time-block">
+                    <div class="time-column">
+                        <div class="time">9:30 AM</div>
+                        <div class="duration">45 min</div>
+                    </div>
+                    <div class="content-column">
+                        <span class="session-tag tag-workshop">Workshop</span>
+                        <div class="session-title">Pick Your Industry</div>
+                        <p class="session-description">Choose your focus. Max 2 NAICS codes. Double niche down.</p>
+                        <ul class="session-bullets">
+                            <li>Why just ONE industry? (Focus = Speed)</li>
+                            <li>Top NAICS codes by spending: Products, Services, IT, Construction</li>
+                            <li>Pick based on: Connections, Experience, or Money Flow</li>
+                            <li>WORKSHOP: Select your 1-2 NAICS codes now</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Break -->
+                <div class="break-block">
+                    <div class="time">10:15 AM - 10:30 AM</div>
+                    <p>15-Minute Break</p>
+                </div>
+
+                <!-- Session 3 -->
+                <div class="time-block">
+                    <div class="time-column">
+                        <div class="time">10:30 AM</div>
+                        <div class="duration">60 min</div>
+                    </div>
+                    <div class="content-column">
+                        <span class="session-tag tag-tactical">Tactical</span>
+                        <div class="session-title">Find Sources Sought with Market Assassin</div>
+                        <p class="session-description">Use our tools to find opportunities in your industry — LIVE.</p>
+                        <ul class="session-bullets">
+                            <li>What is a Sources Sought? (FAR 15.201 market research)</li>
+                            <li>Why Sources Sought = Your reason to call companies</li>
+                            <li>LIVE DEMO: Market Assassin search by your NAICS</li>
+                            <li>WORKSHOP: Everyone finds 2-3 Sources Sought opportunities</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Session 4 -->
+                <div class="time-block">
+                    <div class="time-column">
+                        <div class="time">11:30 AM</div>
+                        <div class="duration">30 min</div>
+                    </div>
+                    <div class="content-column">
+                        <span class="session-tag tag-workshop">Workshop</span>
+                        <div class="session-title">Analyze Your Sources Sought</div>
+                        <p class="session-description">Understand what the opportunity requires and who can perform.</p>
+                        <ul class="session-bullets">
+                            <li>Read the notice: What capabilities are needed?</li>
+                            <li>Who can actually perform this work?</li>
+                            <li>What portion could YOU do?</li>
+                            <li>WORKSHOP: Break down your Sources Sought requirements</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Lunch -->
+                <div class="break-block">
+                    <div class="time">12:00 PM - 12:45 PM</div>
+                    <p>45-Minute Lunch Break</p>
+                </div>
+
+                <!-- Session 5 -->
+                <div class="time-block">
+                    <div class="time-column">
+                        <div class="time">12:45 PM</div>
+                        <div class="duration">45 min</div>
+                    </div>
+                    <div class="content-column">
+                        <span class="session-tag tag-tactical">Tactical</span>
+                        <div class="session-title">Build Your Call List</div>
+                        <p class="session-description">Find 10-15 companies who can perform your Sources Sought.</p>
+                        <ul class="session-bullets">
+                            <li>Contractor Database: Search by NAICS, location, past awards</li>
+                            <li>DSBS: Dynamic Small Business Search</li>
+                            <li>Who to target: Experience + Money + Capacity</li>
+                            <li>WORKSHOP: Build your call list in Google Sheets</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Session 6 -->
+                <div class="time-block">
+                    <div class="time-column">
+                        <div class="time">1:30 PM</div>
+                        <div class="duration">45 min</div>
+                    </div>
+                    <div class="content-column">
+                        <span class="session-tag tag-workshop">Workshop</span>
+                        <div class="session-title">The Pitch + Role Play</div>
+                        <p class="session-description">Practice what to say before you make real calls.</p>
+                        <ul class="session-bullets">
+                            <li>The phone script: "I found an opportunity..."</li>
+                            <li>What to say to get a meeting (not close a deal)</li>
+                            <li>Who to ask for: Owner or Decision Maker</li>
+                            <li>ROLE PLAY: Practice in pairs, get feedback</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Break -->
+                <div class="break-block">
+                    <div class="time">2:15 PM - 2:30 PM</div>
+                    <p>15-Minute Break — Prep Your Phone</p>
+                </div>
+
+                <!-- Power Hour 1 -->
+                <div class="power-hour">
+                    <div class="time-block">
+                        <div class="time-column">
+                            <div class="time">2:30 PM</div>
+                            <div class="duration">60 min</div>
+                        </div>
+                        <div class="content-column">
+                            <span class="session-tag tag-live">LIVE CALLS</span>
+                            <div class="session-title">Power Hour #1 — Make Real Calls</div>
+                            <p class="session-description">Everyone makes real calls. Mics on. Accountability.</p>
+                            <ul class="session-bullets">
+                                <li>Call the companies on your list — RIGHT NOW</li>
+                                <li>Goal: 3-5 calls minimum</li>
+                                <li>Track results: Reached, Voicemail, Meeting Booked</li>
+                                <li>Share wins in chat as they happen</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Session 7 -->
+                <div class="time-block">
+                    <div class="time-column">
+                        <div class="time">3:30 PM</div>
+                        <div class="duration">30 min</div>
+                    </div>
+                    <div class="content-column">
+                        <span class="session-tag tag-qa">Hot Seats</span>
+                        <div class="session-title">Hot Seats + Adjustments</div>
+                        <p class="session-description">What worked? What didn't? Refine your approach.</p>
+                        <ul class="session-bullets">
+                            <li>Share what happened on your calls</li>
+                            <li>Common objections and how to handle them</li>
+                            <li>Adjust your pitch based on feedback</li>
+                            <li>Prep for Round 2</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Power Hour 2 -->
+                <div class="power-hour">
+                    <div class="time-block">
+                        <div class="time-column">
+                            <div class="time">4:00 PM</div>
+                            <div class="duration">45 min</div>
+                        </div>
+                        <div class="content-column">
+                            <span class="session-tag tag-live">LIVE CALLS</span>
+                            <div class="session-title">Power Hour #2 — More Calls, Better Pitch</div>
+                            <p class="session-description">Round 2 with a refined pitch. Book those meetings.</p>
+                            <ul class="session-bullets">
+                                <li>Apply what you learned from Hot Seats</li>
+                                <li>Call more companies from your list</li>
+                                <li>Follow up on voicemails with emails</li>
+                                <li>Goal: Book at least 1 follow-up meeting</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Break -->
+                <div class="break-block">
+                    <div class="time">4:45 PM - 5:00 PM</div>
+                    <p>15-Minute Break</p>
+                </div>
+
+                <!-- Session 8 -->
+                <div class="time-block">
+                    <div class="time-column">
+                        <div class="time">5:00 PM</div>
+                        <div class="duration">45 min</div>
+                    </div>
+                    <div class="content-column">
+                        <span class="session-tag tag-strategy">Strategy</span>
+                        <div class="session-title">Wins + Commitments</div>
+                        <p class="session-description">Share results, learn from each other, commit to next steps.</p>
+                        <ul class="session-bullets">
+                            <li>Share your wins: Calls made, meetings booked</li>
+                            <li>Teaming Agreement overview: What to sign when they say yes</li>
+                            <li>Daily activities after today: Keep the momentum</li>
+                            <li>Accountability partners: Pair up for follow-through</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Close -->
+                <div class="time-block">
+                    <div class="time-column">
+                        <div class="time">5:45 PM</div>
+                        <div class="duration">15 min</div>
+                    </div>
+                    <div class="content-column">
+                        <span class="session-tag tag-qa">Close</span>
+                        <div class="session-title">Close + Next Steps</div>
+                        <p class="session-description">What to do after the bootcamp to close the deal.</p>
+                        <ul class="session-bullets">
+                            <li>Follow up within 48 hours</li>
+                            <li>Join Federal Help Center Pro for ongoing support</li>
+                            <li>Access recordings and resources</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tools-section">
+                <h2>Tools You'll Use Today</h2>
+                <div class="tools-grid">
+                    <div class="tool-item">
+                        <div class="icon">🎯</div>
+                        <div class="name">Market Assassin</div>
+                        <div class="desc">Find Sources Sought by NAICS</div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="icon">🏢</div>
+                        <div class="name">Contractor Database</div>
+                        <div class="desc">Search 3,500+ prime contractors</div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="icon">📊</div>
+                        <div class="name">Federal Market Scanner</div>
+                        <div class="desc">See agency spending data</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="deliverables">
+                <h2>What You'll Leave With</h2>
+                <div class="deliverables-grid">
+                    <div class="deliverable-item">
+                        <div class="icon">🏭</div>
+                        <div>Industry Selected<br>(1-2 NAICS)</div>
+                    </div>
+                    <div class="deliverable-item">
+                        <div class="icon">📋</div>
+                        <div>2-3 Sources Sought<br>Opportunities</div>
+                    </div>
+                    <div class="deliverable-item">
+                        <div class="icon">📞</div>
+                        <div>Call List<br>(10-15 Companies)</div>
+                    </div>
+                    <div class="deliverable-item">
+                        <div class="icon">🎤</div>
+                        <div>Practiced Pitch<br>+ Phone Script</div>
+                    </div>
+                    <div class="deliverable-item">
+                        <div class="icon">✅</div>
+                        <div>Calls Made<br>(5+ During Session)</div>
+                    </div>
+                    <div class="deliverable-item">
+                        <div class="icon">📅</div>
+                        <div>Meetings Booked<br>(Goal: 1-2)</div>
+                    </div>
+                    <div class="deliverable-item">
+                        <div class="icon">📝</div>
+                        <div>Teaming Agreement<br>Template</div>
+                    </div>
+                    <div class="deliverable-item">
+                        <div class="icon">🎬</div>
+                        <div>Full Recording<br>Access</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="free-badge">FREE Registration</div>
+            <p><strong>April 25, 2026 | 9:00 AM - 6:00 PM Eastern</strong></p>
+            <p>Live on Zoom | Bring Your Phone — You'll Be Making Calls</p>
+            <a href="https://govcongiants.org/first-partner-challenge" class="cta">Register Free</a>
+        </div>
+    </div>
+</body>
+</html>
