@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YT Live 4: Building Mindy Live | GovCon Giants</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #0f172a; color: #fff; }
+    .slide {
+      width: 1280px;
+      height: 720px;
+      padding: 60px;
+      display: none;
+      flex-direction: column;
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+      position: relative;
+      page-break-after: always;
+    }
+    .slide.active { display: flex; }
+    .slide::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, #6366f1, #8b5cf6, #a78bfa);
+    }
+    .logo {
+      position: absolute;
+      top: 30px;
+      right: 60px;
+      font-weight: 900;
+      font-size: 18px;
+    }
+    .logo span { color: #10b981; }
+    .live-badge {
+      position: absolute;
+      top: 30px;
+      left: 60px;
+      background: #dc2626;
+      color: white;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .live-badge::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: white;
+      border-radius: 50%;
+      animation: pulse 1s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    h1 {
+      font-size: 56px;
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 30px;
+    }
+    h1 .highlight { color: #a78bfa; }
+    h2 {
+      font-size: 42px;
+      font-weight: 800;
+      margin-bottom: 30px;
+      color: #a78bfa;
+    }
+    h3 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #10b981;
+    }
+    p {
+      font-size: 24px;
+      line-height: 1.6;
+      color: #94a3b8;
+    }
+    .subtitle {
+      font-size: 28px;
+      color: #64748b;
+      margin-bottom: 40px;
+    }
+    ul {
+      list-style: none;
+      font-size: 26px;
+      line-height: 2;
+    }
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    li::before {
+      content: '✓';
+      color: #a78bfa;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+    .stat-box {
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      margin: 20px 0;
+    }
+    .stat-box .number {
+      font-size: 72px;
+      font-weight: 900;
+      color: white;
+    }
+    .stat-box .label {
+      font-size: 24px;
+      color: #e0e7ff;
+    }
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      flex: 1;
+    }
+    .card {
+      background: rgba(30, 27, 75, 0.8);
+      border: 1px solid #4338ca;
+      border-radius: 16px;
+      padding: 30px;
+    }
+    .card h4 {
+      font-size: 24px;
+      color: #a78bfa;
+      margin-bottom: 16px;
+    }
+    .card p {
+      font-size: 20px;
+    }
+    .cta-slide {
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+    }
+    .cta-slide h1 { color: white; margin-bottom: 20px; }
+    .cta-slide .url {
+      font-size: 36px;
+      font-weight: 900;
+      color: #fef3c7;
+      background: rgba(0,0,0,0.2);
+      padding: 20px 50px;
+      border-radius: 12px;
+      margin-top: 30px;
+    }
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      flex: 1;
+    }
+    .icon-card {
+      background: rgba(30, 27, 75, 0.6);
+      border: 1px solid #4338ca;
+      border-radius: 16px;
+      padding: 30px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .icon-card .icon {
+      font-size: 40px;
+      flex-shrink: 0;
+    }
+    .icon-card h4 {
+      font-size: 22px;
+      color: #a78bfa;
+      margin-bottom: 8px;
+    }
+    .icon-card p {
+      font-size: 18px;
+    }
+    .slide-number {
+      position: absolute;
+      bottom: 30px;
+      right: 60px;
+      color: #475569;
+      font-size: 16px;
+    }
+    .controls {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+      z-index: 100;
+    }
+    .controls button {
+      background: #6366f1;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .controls button:hover { background: #4f46e5; }
+    @media print {
+      .slide { display: flex !important; }
+      .controls { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Slide 1: Title -->
+<div class="slide active">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+    <h1>Building <span class="highlight">Mindy</span> Live</h1>
+    <p class="subtitle">Shipping Real Features, In Public</p>
+    <p style="margin-top: 40px; color: #a78bfa; font-size: 20px;">Build in Public Series | Stream 4 of 5</p>
+  </div>
+  <div class="slide-number">1 / 11</div>
+</div>
+
+<!-- Slide 2: The Honest Reality -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+    <h1>This Is What Shipping<br>Actually Looks Like</h1>
+    <p class="subtitle" style="max-width: 900px; margin: 30px auto 0;">Dashboard bugs. Onboarding not done. Edge cases in the alert system.</p>
+    <p style="max-width: 800px; margin: 20px auto; font-size: 26px; color: #a78bfa;">No highlight reel. Just a founder, a codebase, and real work.</p>
+  </div>
+  <div class="slide-number">2 / 11</div>
+</div>
+
+<!-- Slide 3: What Mindy Is -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+    <h2>Meet Mindy</h2>
+    <h1 style="margin-top: 20px;">An AI That Finds Federal<br>Contracts <span class="highlight">While You Sleep</span></h1>
+  </div>
+  <div class="slide-number">3 / 11</div>
+</div>
+
+<!-- Slide 4: Build Status Checklist -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Build Status</h2>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+    <ul style="font-size: 30px; line-height: 2.2;">
+      <li style="list-style: none;"><span style="margin-right: 8px;">🟢</span> Alert engine — working</li>
+      <li style="list-style: none;"><span style="margin-right: 8px;">🟢</span> Briefing generator — working</li>
+      <li style="list-style: none;"><span style="margin-right: 8px;">🟡</span> Auth + onboarding — in progress</li>
+      <li style="list-style: none;"><span style="margin-right: 8px;">🟡</span> Dashboard — polishing</li>
+      <li style="list-style: none;"><span style="margin-right: 8px;">🟡</span> Payment flow — in progress</li>
+    </ul>
+  </div>
+  <div class="slide-number">4 / 11</div>
+</div>
+<style>
+  /* Override checkmark bullets on the build-status list */
+  .slide ul li[style*="list-style: none"]::before { content: none; }
+</style>
+
+<!-- Slide 5: Agenda - Feature Work -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>On the Screen Today: Feature Work</h2>
+  <div class="icon-grid">
+    <div class="icon-card">
+      <div class="icon">🔐</div>
+      <div>
+        <h4>Auth Flow</h4>
+        <p>Wiring up sign-in so users land in their dashboard cleanly</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">🖥️</div>
+      <div>
+        <h4>Dashboard UI</h4>
+        <p>Polishing the screen where briefings actually show up</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">💳</div>
+      <div>
+        <h4>Payment Integration</h4>
+        <p>Connecting checkout so Pro plans work end to end</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">⚙️</div>
+      <div>
+        <h4>Live, In Public</h4>
+        <p>Real commits, real features — you watch them ship</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">5 / 11</div>
+</div>
+
+<!-- Slide 6: Agenda - Bug Fixes -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Bug Fixes From Last Session</h2>
+  <div class="icon-grid">
+    <div class="icon-card">
+      <div class="icon">🐛</div>
+      <div>
+        <h4>Dashboard Bugs</h4>
+        <p>Squashing the rough edges users would hit first</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">🧩</div>
+      <div>
+        <h4>Alert Edge Cases</h4>
+        <p>The weird inputs that break the matching engine</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">📋</div>
+      <div>
+        <h4>Working the Backlog</h4>
+        <p>Clearing the list we wrote down last stream</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">✅</div>
+      <div>
+        <h4>Verify, Not Assume</h4>
+        <p>Each fix tested live before we move on</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">6 / 11</div>
+</div>
+
+<!-- Slide 7: Agenda - Live Debugging -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Live Debugging — No Shortcuts</h2>
+  <div class="icon-grid">
+    <div class="icon-card">
+      <div class="icon">🔍</div>
+      <div>
+        <h4>Real-Time Diagnosis</h4>
+        <p>Reading the error and tracing it on stream</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">🚫</div>
+      <div>
+        <h4>No Pre-Made Edits</h4>
+        <p>Nothing fixed off-camera — you see it all</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">🛠️</div>
+      <div>
+        <h4>No Shortcuts</h4>
+        <p>The honest path, even when it's the slow one</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">🧠</div>
+      <div>
+        <h4>Think Out Loud</h4>
+        <p>Sharing the why behind every decision</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">7 / 11</div>
+</div>
+
+<!-- Slide 8: Agenda - Q&A -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Q&amp;A Throughout</h2>
+  <div class="icon-grid">
+    <div class="icon-card">
+      <div class="icon">⌨️</div>
+      <div>
+        <h4>The Build</h4>
+        <p>Ask about the stack, the code, the architecture</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">📈</div>
+      <div>
+        <h4>The Business</h4>
+        <p>How a build-in-public SaaS actually comes together</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">🏛️</div>
+      <div>
+        <h4>Federal Contracting</h4>
+        <p>GovCon strategy questions — fire away</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">💬</div>
+      <div>
+        <h4>Drop It In Chat</h4>
+        <p>I'm reading everything as we go</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">8 / 11</div>
+</div>
+
+<!-- Slide 9: What Should I Build Next -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+    <h1>What Should I<br>Build <span class="highlight">Next?</span></h1>
+    <p class="subtitle" style="margin-top: 30px;">Drop it in the chat — I'll build the top request live.</p>
+  </div>
+  <div class="slide-number">9 / 11</div>
+</div>
+
+<!-- Slide 10: Q&A -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+    <h1>Questions?</h1>
+    <p class="subtitle">Drop them in the chat!</p>
+    <p style="margin-top: 60px; font-size: 22px; color: #64748b;">
+      Build, business, or federal contracting — ask me anything
+    </p>
+  </div>
+  <div class="slide-number">10 / 11</div>
+</div>
+
+<!-- Slide 11: CTA -->
+<div class="slide cta-slide">
+  <h1>Try Mindy Free —<br>She's Live Now</h1>
+  <p style="font-size: 28px; color: white; opacity: 0.9;">An AI that finds federal contracts while you sleep.</p>
+  <div class="url">getmindy.ai</div>
+  <p style="margin-top: 40px; font-size: 22px; color: white; opacity: 0.8;">
+    Eric Coffie | GovCon Giants
+  </p>
+  <div class="slide-number" style="color: rgba(255,255,255,0.6);">11 / 11</div>
+</div>
+
+<!-- Controls -->
+<div class="controls">
+  <button onclick="prevSlide()">← Previous</button>
+  <button onclick="nextSlide()">Next →</button>
+</div>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+
+  function showSlide(n) {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (n + slides.length) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }
+
+  function nextSlide() { showSlide(currentSlide + 1); }
+  function prevSlide() { showSlide(currentSlide - 1); }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+    if (e.key === 'ArrowLeft') prevSlide();
+  });
+</script>
+
+</body>
+</html>

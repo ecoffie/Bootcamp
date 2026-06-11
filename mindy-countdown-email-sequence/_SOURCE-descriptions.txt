@@ -1,0 +1,368 @@
+
+YOUTUBE LIVESTREAM DESCRIPTIONS
+Mindy — Build in Public Series
+5 streams  •  Copy/paste ready  •  Complementary thumbnail + title pairings
+
+Channel: GovCon Giants  •  May 2026
+
+Thumbnail + Title Strategy
+The thumbnail and title are two halves of one pitch. The thumbnail is the emotional hook — a big number, a bold claim, a visual that stops the scroll. The title adds context, specificity, and the reason to click. Together they answer: “What is this?” and “Why should I watch?”
+
+Rule: Never repeat the same words in both. The viewer sees them side-by-side — if they say the same thing, you’ve wasted half your real estate.
+
+#
+Thumbnail text (visual hook)
+YouTube title (context + click)
+
+1
+AN AI TO REPLACE SAM.GOV
+I Built This While the Government Was Sleeping (Live Coding)
+
+2
+$750B
+Coding an AI for the Biggest Market Nobody Talks About (Day 1)
+
+3
+24,000 CONTRACTS A NIGHT
+I Built an AI That Never Sleeps — Here’s How She Works (Live)
+
+4
+9 DAYS TO LAUNCH
+Can I Ship a Full SaaS Product in 9 Days? (Building Mindy Live)
+
+5
+LOCKHEED HAS 47 PEOPLE / THEIR REPLACEMENT
+One AI vs. a 47-Person Team — Building the $149/mo Alternative (Live)
+
+How They Work Together
+Stream 1: Thumbnail screams “SAM.gov is getting replaced” (controversy). Title adds mystery: “while the government was sleeping” (curiosity gap).
+Stream 2: Thumbnail is just a massive $750B (number shock). Title explains what it is: a market nobody talks about (insider knowledge).
+Stream 3: Thumbnail shows the feat: 24,000 contracts a night (scale). Title personifies it: an AI that never sleeps (character intrigue).
+Stream 4: Thumbnail is the deadline: 9 DAYS (urgency). Title adds stakes: can we actually ship? (tension).
+Stream 5: Thumbnail names the enemy: Lockheed, 47 people (David vs. Goliath). Title makes it tangible: $149/mo vs. an army (value prop).
+
+Before You Post — Quick Notes
+Above the fold: YouTube shows only the first ~150 characters before “Show more.” The opening line of every description is the hook. Don’t waste it on “Welcome to my channel.”
+Links: getmindy.ai link is FIRST in every description. YouTube makes it clickable. This is your #1 conversion driver from streams.
+Timestamps: Add after the stream ends. YouTube auto-generates chapters from timestamps, which boosts the VOD in search.
+Tags: Included at the bottom of each description. Also add them in YouTube Studio’s tag field.
+Pinned comment: Post immediately when going live. Pin it. This is your CTA for the live audience.
+Category: Science & Technology
+Visibility: Public. Schedule 15–30 min before start time so subscribers get notified.
+
+Stream 1
+
+Thumbnail Text
+AN AI TO REPLACE SAM.GOV
+YouTube Title
+I Built This While the Government Was Sleeping (Live Coding)
+
+Description (copy/paste)
+
+I built an AI that reads every federal contract posted overnight and delivers a briefing before you wake up. The government doesn’t know about her yet. Her name is Mindy.
+
+🔗 Try Mindy free: https://getmindy.ai
+📱 Follow @getmindyai: https://instagram.com/getmindyai
+
+Every day, the government posts 1,500+ contracts across dozens of websites. Most small businesses never see them. They’re buried in jargon, scattered across portals, and designed for procurement officers — not the businesses that need the work.
+
+Mindy changes that. She scans 24,000+ contracts a night, matches them to your business, and sends you the ones that matter — before your first cup of coffee.
+
+In this stream I’m opening the codebase live and showing you exactly how she works:
+• How Mindy pulls data from SAM.gov and federal procurement sites
+• The matching algorithm that pairs opportunities to your NAICS codes
+• Building the daily briefing engine in real time
+• Why SAM.gov’s UX is broken and how AI fixes it
+• Live Q&A — ask me anything about govcon or the tech stack
+
+⏰ TIMESTAMPS (added after stream):
+0:00 — Going live
+[fill in after stream]
+
+———
+
+$170 billion is set aside for small businesses every year. Most of it goes unclaimed because the businesses that qualify never see the opportunity. Mindy makes sure you do.
+
+📩 Free daily briefing: https://getmindy.ai
+
+———
+
+ABOUT
+I’m Eric Coffie, founder of GovCon Giants. I’ve helped thousands of small businesses break into federal contracting. Now I’m building the tool I wish existed when I started.
+
+Subscribe for more build-in-public streams, govcon education, and Mindy updates.
+
+#govcon #federalcontracting #buildinpublic #ai #saas #samgov #smallbusiness #livecoding #mindy #govcongiants
+
+Tags
+govcon, federal contracting, SAM.gov, AI, build in public, live coding, small business, government contracts, SaaS, Mindy, GovCon Giants, 8a, WOSB, SDVOSB, veteran owned business
+
+Pinned Comment
+👇 Try Mindy free — she’ll find contracts that match your business by tomorrow morning:
+https://getmindy.ai
+
+Drop your questions in chat. I’m reading everything.
+
+Stream 2
+
+Thumbnail Text
+$750B
+YouTube Title
+Coding an AI for the Biggest Market Nobody Talks About (Day 1)
+
+Description (copy/paste)
+
+$750 billion. That’s how much the US government spends on contracts every year. It’s the biggest market in the world and almost nobody in tech is building for it. Today that changes.
+
+🔗 Try Mindy free: https://getmindy.ai
+📱 Follow @getmindyai: https://instagram.com/getmindyai
+
+Her name is Mindy. She scans 24,000+ federal contracts every night and delivers a personalized briefing before you wake up. Think of her as a BD analyst that works 24/7, never takes PTO, and costs less than your phone bill.
+
+This is Day 1 of building Mindy in public. I’m walking through the entire system from the ground up:
+• The data pipeline — how Mindy ingests SAM.gov, FPDS, USASpending, and more
+• Contract parsing — turning messy government data into clean opportunities
+• The matching engine — pairing contracts to your NAICS codes and set-asides
+• Briefing generation — how Mindy picks the 3–12 contracts that matter to YOU
+• The stack: Next.js, Vercel, Resend, and the AI layer on top
+
+⏰ TIMESTAMPS (added after stream):
+0:00 — Going live
+[fill in after stream]
+
+———
+
+Here’s the gap: Lockheed Martin has 47 people whose entire job is what Mindy does for $149/month. Booz Allen pays $2M/year for market intelligence tools. GovWin charges $15K/year. Small businesses get SAM.gov and a prayer.
+
+Mindy is the equalizer.
+
+📩 Get your free daily briefing: https://getmindy.ai
+
+———
+
+ABOUT
+I’m Eric Coffie, founder of GovCon Giants (49K+ subscribers). This is a build-in-public series. Subscribe to follow along as I ship Mindy from code to launch.
+
+#govcon #buildinpublic #ai #750billion #federalcontracting #saas #livecoding #mindy #govcongiants #smallbusiness #startup
+
+Tags
+govcon, federal contracting, $750 billion, AI tool, build in public, live coding, small business, government contracts, SaaS, startup, Mindy, GovCon Giants, day 1, coding from scratch
+
+Pinned Comment
+Day 1 of building Mindy in public. She launches May 30.
+
+👇 Get early access free: https://getmindy.ai
+
+What feature should I build next? Drop it in chat.
+
+Stream 3
+
+Thumbnail Text
+SHE READS 24,000 CONTRACTS A NIGHT / BUILDING MINDY
+YouTube Title
+I Built an AI That Never Sleeps — Here's How She Works (Live)
+
+Description (copy/paste)
+
+Last night, Mindy read 24,000 federal contracts. By 7 AM she had my briefing ready. I haven’t opened SAM.gov in 47 days. Tonight I’m showing you the engine behind all of it — live.
+
+🔗 Try Mindy free: https://getmindy.ai
+📱 Follow @getmindyai: https://instagram.com/getmindyai
+
+Mindy is an AI I built to end the midnight SAM.gov scroll. She scans the entire federal market overnight, matches opportunities to your business profile, and delivers a briefing before your alarm goes off.
+
+Tonight I’m deep in the alert engine. Here’s what I’m building live:
+• Real-time contract detection — how Mindy catches new postings within hours
+• The scoring algorithm — how she ranks which contracts matter most to you
+• Amendment tracking — catching changes the government quietly makes after posting
+• Incumbent intelligence — how Mindy figures out who has the contract right now
+• The notification pipeline — from detection to your inbox in minutes
+
+⏰ TIMESTAMPS (added after stream):
+0:00 — Going live
+[fill in after stream]
+
+———
+
+The government wants to give small businesses $170 billion a year. The problem isn’t access. It’s information. Contracts are scattered across 15 websites, written in procurement jargon, and buried under a UX from 2004. Mindy reads all of it so you don’t have to.
+
+📩 Free daily briefing: https://getmindy.ai
+
+———
+
+ABOUT
+I’m Eric Coffie, founder of GovCon Giants. Building Mindy in public — the AI that finds federal contracts while you sleep.
+
+Subscribe and hit the bell. I stream every time I’m building something worth watching.
+
+#govcon #federalcontracting #ai #buildinpublic #livecoding #mindy #samgov #smallbusiness #alerts #govcongiants
+
+Tags
+govcon, federal contracting, AI alerts, build in public, live coding, SAM.gov, contract alerts, small business, Mindy, GovCon Giants, government contracts, night coding
+
+Pinned Comment
+Mindy scanned 24,000+ contracts last night. Want to see what she’d find for YOUR business?
+
+👇 Free daily briefing: https://getmindy.ai
+
+Drop your NAICS code in chat and I’ll show you what Mindy finds.
+
+Stream 4
+
+Thumbnail Text
+9 DAYS TO LAUNCH
+Update the number each stream: 9, 6, 3, etc.
+YouTube Title
+Can I Ship a Full SaaS Product in 9 Days? (Building Mindy Live)
+Update the number to match.
+
+Description (copy/paste)
+
+9 days until launch. The dashboard has bugs. The onboarding flow isn’t done. I just found an edge case in the alert system. And 9,000 people are on the waitlist. No pressure.
+
+🔗 Sign up before launch: https://getmindy.ai
+📱 Follow @getmindyai: https://instagram.com/getmindyai
+
+This is what shipping a real product actually looks like. No highlight reel. No “just raised $5M” tweet. Just a founder, a codebase, and a deadline that’s not moving.
+
+Mindy is an AI that finds federal contracts while you sleep. She launches May 30 at the GovCon Giants bootcamp. I’m building the rest of it right now, and you’re watching.
+
+What I’m working on today:
+• [UPDATE PER STREAM — e.g., auth flow, dashboard UI, payment integration]
+• Bug fixes from the last session
+• Live debugging — no edits, no shortcuts
+• Q&A about the build, the business, or federal contracting
+
+⏰ TIMESTAMPS (added after stream):
+0:00 — Going live
+[fill in after stream]
+
+———
+
+LAUNCH STATUS:
+🔴 9 days remaining
+🟢 Alert engine — working
+🟢 Briefing generator — working
+🟡 Auth + onboarding — in progress
+🔴 Dashboard — needs work
+🔴 Payment flow — not started
+(I’ll update this checklist each stream.)
+
+📩 Get on the list: https://getmindy.ai
+
+———
+
+ABOUT
+I’m Eric Coffie, founder of GovCon Giants (49K subs). Building Mindy in public — an AI that helps small businesses find and win federal contracts.
+
+Subscribe to follow the countdown. Will we ship on time? Only one way to find out.
+
+#buildinpublic #saas #startup #livecoding #countdown #launch #govcon #federalcontracting #mindy #govcongiants #shipfast #indiehacker
+
+Tags
+build in public, SaaS launch, countdown, live coding, startup, indie hacker, govcon, federal contracting, ship fast, Mindy, GovCon Giants, launch day
+
+Pinned Comment
+🔴 9 DAYS.
+
+Mindy goes live May 30. Get in before launch:
+👇 https://getmindy.ai
+
+Will we ship on time? Drop your prediction in chat.
+
+Stream 5
+
+Thumbnail Text
+LOCKHEED HAS 47 PEOPLE / I'M BUILDING THEIR REPLACEMENT
+YouTube Title
+One AI vs. a 47-Person Team — Building the $149/mo Alternative (Live)
+
+Description (copy/paste)
+
+Lockheed Martin pays 47 people to do what Mindy does in her sleep. Booz Allen spends $2M/year on the same tools. Today I’m building the features that make a $149/month AI competitive with all of them.
+
+🔗 Try Mindy free: https://getmindy.ai
+📱 Follow @getmindyai: https://instagram.com/getmindyai
+
+The big contractors have armies. Dedicated BD teams, enterprise intelligence subscriptions, analysts whose entire job is tracking recompetes and incumbent contracts. Small businesses get SAM.gov and guesswork.
+
+Mindy levels the playing field. And today I’m building the features that make the difference:
+• Incumbent tracking — who has the contract now and when does it expire
+• Recompete alerts — knowing about opportunities before they’re even posted
+• Competitive intelligence — who else is bidding and what’s their win history
+• Teaming suggestions — AI-powered partner matching for joint ventures
+• Live Q&A on govcon strategy and the architecture behind Mindy
+
+⏰ TIMESTAMPS (added after stream):
+0:00 — Going live
+[fill in after stream]
+
+———
+
+The numbers that matter:
+• $750 billion — total US federal contracting market
+• $170 billion — mandated for small businesses
+• 24,000+ — contracts Mindy scans per night
+• 1,500+ — new opportunities posted daily
+• $149/month — Mindy Pro (vs. $15K+/year for GovWin, Bloomberg Gov)
+
+📩 Free daily briefing: https://getmindy.ai
+
+———
+
+ABOUT
+I’m Eric Coffie, founder of GovCon Giants. I built Mindy because I watched small businesses lose contracts they never knew existed. The big contractors have armies. Now you have Mindy.
+
+Subscribe for build-in-public streams, govcon education, and the tools nobody else is building.
+
+#govcon #federalcontracting #lockheedmartin #ai #davidvsgoliath #smallbusiness #buildinpublic #livecoding #mindy #govcongiants #competitiveintelligence
+
+Tags
+govcon, Lockheed Martin, federal contracting, AI, competitive intelligence, build in public, live coding, small business, David vs Goliath, Mindy, GovCon Giants, BD team, recompete
+
+Pinned Comment
+47 people at Lockheed. $2M/year at Booz Allen. $15K/year for GovWin.
+
+Or Mindy. Free to start.
+👇 https://getmindy.ai
+
+What’s the hardest part of finding federal contracts? Tell me in chat.
+
+Quick Reference — All 5 Streams
+
+#
+Thumbnail (visual)
+Title (context)
+Hook strategy
+
+1
+AN AI TO REPLACE SAM.GOV
+I Built This While the Government Was Sleeping (Live Coding)
+Controversy + mystery
+
+2
+$750B
+Coding an AI for the Biggest Market Nobody Talks About (Day 1)
+Number shock + insider knowledge
+
+3
+24,000 CONTRACTS A NIGHT
+I Built an AI That Never Sleeps — Here’s How She Works
+Scale + character intrigue
+
+4
+9 DAYS TO LAUNCH
+Can I Ship a Full SaaS Product in 9 Days?
+Urgency + stakes
+
+5
+THEIR REPLACEMENT
+One AI vs. a 47-Person Team — the $149/mo Alternative
+David vs. Goliath + value
+
+Links for Every Description
+https://getmindy.ai
+https://instagram.com/getmindyai
+Add as you claim them:
+https://tiktok.com/@getmindyai
+https://linkedin.com/company/getmindyai

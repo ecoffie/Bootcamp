@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mindy Feature Series 1: Find Your Federal Market | GovCon Giants</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #0f172a; color: #fff; }
+    .slide {
+      width: 1280px;
+      height: 720px;
+      padding: 60px;
+      display: none;
+      flex-direction: column;
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+      position: relative;
+      page-break-after: always;
+    }
+    .slide.active { display: flex; }
+    .slide::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, #6366f1, #8b5cf6, #a78bfa);
+    }
+    .logo {
+      position: absolute;
+      top: 30px;
+      right: 60px;
+      font-weight: 900;
+      font-size: 18px;
+    }
+    .logo span { color: #10b981; }
+    .live-badge {
+      position: absolute;
+      top: 30px;
+      left: 60px;
+      background: #dc2626;
+      color: white;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .live-badge::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: white;
+      border-radius: 50%;
+      animation: pulse 1s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    h1 {
+      font-size: 56px;
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 30px;
+    }
+    h1 .highlight { color: #a78bfa; }
+    h2 {
+      font-size: 42px;
+      font-weight: 800;
+      margin-bottom: 30px;
+      color: #a78bfa;
+    }
+    h3 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #10b981;
+    }
+    p {
+      font-size: 24px;
+      line-height: 1.6;
+      color: #94a3b8;
+    }
+    .subtitle {
+      font-size: 28px;
+      color: #64748b;
+      margin-bottom: 40px;
+    }
+    ul {
+      list-style: none;
+      font-size: 26px;
+      line-height: 2;
+    }
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    li::before {
+      content: '✓';
+      color: #a78bfa;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+    .stat-box {
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      margin: 20px 0;
+    }
+    .stat-box .number {
+      font-size: 72px;
+      font-weight: 900;
+      color: white;
+    }
+    .stat-box .label {
+      font-size: 24px;
+      color: #e0e7ff;
+    }
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      flex: 1;
+    }
+    .card {
+      background: rgba(30, 27, 75, 0.8);
+      border: 1px solid #4338ca;
+      border-radius: 16px;
+      padding: 30px;
+    }
+    .card h4 {
+      font-size: 24px;
+      color: #a78bfa;
+      margin-bottom: 16px;
+    }
+    .card p {
+      font-size: 20px;
+    }
+    .cta-slide {
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+    }
+    .cta-slide h1 { color: white; margin-bottom: 20px; }
+    .cta-slide .url {
+      font-size: 36px;
+      font-weight: 900;
+      color: #fef3c7;
+      background: rgba(0,0,0,0.2);
+      padding: 20px 50px;
+      border-radius: 12px;
+      margin-top: 30px;
+    }
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      flex: 1;
+    }
+    .icon-card {
+      background: rgba(30, 27, 75, 0.6);
+      border: 1px solid #4338ca;
+      border-radius: 16px;
+      padding: 30px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .icon-card .icon {
+      font-size: 40px;
+      flex-shrink: 0;
+    }
+    .icon-card h4 {
+      font-size: 22px;
+      color: #a78bfa;
+      margin-bottom: 8px;
+    }
+    .icon-card p {
+      font-size: 18px;
+    }
+    .slide-number {
+      position: absolute;
+      bottom: 30px;
+      right: 60px;
+      color: #475569;
+      font-size: 16px;
+    }
+    .controls {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+      z-index: 100;
+    }
+    .controls button {
+      background: #6366f1;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .controls button:hover { background: #4f46e5; }
+    @media print {
+      .slide { display: flex !important; }
+      .controls { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Slide 1: Title -->
+<div class="slide active">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+    <h1>Find Your <span class="highlight">Federal Market</span></h1>
+    <p class="subtitle">Mindy Feature Series | Part 1 of 5 — The Hidden 72%</p>
+    <p style="margin-top: 20px; color: #a78bfa; font-size: 24px;">Live → Mindy Launch June 27 &nbsp;|&nbsp; Eric Coffie</p>
+  </div>
+  <div class="slide-number">1 / 18</div>
+</div>
+
+<!-- Slide 2: The $50M mistake -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+    <h1>The <span class="highlight">$50M Mistake</span></h1>
+    <p style="max-width: 850px; margin: 30px auto 0; font-size: 28px;">
+      Most people set their alerts on <strong style="color:#fff;">ONE</strong> NAICS code.<br>
+      Then they wonder why the work never shows up.
+    </p>
+  </div>
+  <div class="slide-number">2 / 18</div>
+</div>
+
+<!-- Slide 3: THE DRONE SLIDE -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+    <h2>"Drones" Isn't One Code</h2>
+    <div class="stat-box" style="max-width: 820px; margin: 20px auto;">
+      <div class="number">70+</div>
+      <div class="label">NAICS codes buy drones — $245M in FY2025</div>
+    </div>
+    <p style="max-width: 820px; margin: 0 auto; font-size: 26px;">
+      The obvious code — 336411 Aircraft Manufacturing — is only <strong style="color:#a78bfa;">28%</strong> of the market.
+    </p>
+  </div>
+  <div class="slide-number">3 / 18</div>
+</div>
+
+<!-- Slide 4: The hidden 72% -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+    <h2>The Hidden 72%</h2>
+    <div class="stat-box" style="max-width: 760px; margin: 20px auto; background: linear-gradient(135deg, #059669 0%, #10b981 100%);">
+      <div class="number">3 of 4</div>
+      <div class="label">drone dollars hide in non-obvious codes</div>
+    </div>
+    <p style="max-width: 860px; margin: 0 auto; font-size: 22px;">
+      Search &amp; Detection (334511) &nbsp;·&nbsp; R&amp;D (541715) &nbsp;·&nbsp; Computer Programming (541511)
+    </p>
+  </div>
+  <div class="slide-number">4 / 18</div>
+</div>
+
+<!-- Slide 5: It's not a fluke -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>It's Not a Drone Fluke</h2>
+  <div class="icon-grid" style="grid-template-columns: repeat(3, 1fr);">
+    <div class="icon-card" style="flex-direction: column; align-items: center; text-align: center;">
+      <div class="icon">🚁</div>
+      <div>
+        <h4>Drones</h4>
+        <p>70+ codes · $245M<br>28% obvious · <strong style="color:#f87171;">72% missed</strong></p>
+      </div>
+    </div>
+    <div class="icon-card" style="flex-direction: column; align-items: center; text-align: center;">
+      <div class="icon">🔐</div>
+      <div>
+        <h4>Cybersecurity</h4>
+        <p>72+ codes · $2.07B<br>26% obvious · <strong style="color:#f87171;">74% missed</strong></p>
+      </div>
+    </div>
+    <div class="icon-card" style="flex-direction: column; align-items: center; text-align: center;">
+      <div class="icon">🩺</div>
+      <div>
+        <h4>Medical Supplies</h4>
+        <p>48+ codes · $25M<br>26% obvious · <strong style="color:#f87171;">74% missed</strong></p>
+      </div>
+    </div>
+  </div>
+  <p style="text-align:center; margin-top: 20px; font-size: 20px;">Every market: the obvious code is only ~1/4. From USASpending FY2025.</p>
+  <div class="slide-number">5 / 18</div>
+</div>
+
+<!-- Slide 6: Cyber breakdown -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+    <h2>🔐 Cybersecurity: $2.07B</h2>
+    <div class="stat-box" style="max-width: 760px; margin: 20px auto;">
+      <div class="number">74%</div>
+      <div class="label">of cyber dollars hide outside the obvious code</div>
+    </div>
+    <p style="max-width: 880px; margin: 0 auto; font-size: 24px;">
+      72+ NAICS codes buy cyber. Only <strong style="color:#a78bfa;">26%</strong> flows through 541512 (Computer Systems Design).
+      Sellers watching only that one code miss <strong style="color:#10b981;">$1.5B</strong> in Engineering Services, R&amp;D, and a dozen more.
+    </p>
+  </div>
+  <div class="slide-number">6 / 18</div>
+</div>
+
+<!-- Slide 7: Medical supplies breakdown -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+    <h2>🩺 Medical Supplies: $25M</h2>
+    <div class="stat-box" style="max-width: 760px; margin: 20px auto; background: linear-gradient(135deg, #059669 0%, #10b981 100%);">
+      <div class="number">74%</div>
+      <div class="label">of medical-supply dollars hide outside the obvious code</div>
+    </div>
+    <p style="max-width: 880px; margin: 0 auto; font-size: 24px;">
+      48+ NAICS codes buy medical supplies. The obvious code is just <strong style="color:#a78bfa;">26%</strong> of the market —
+      the same ~1-in-4 pattern, in a completely different industry. From USASpending FY2025.
+    </p>
+  </div>
+  <div class="slide-number">7 / 18</div>
+</div>
+
+<!-- Slide 8: What this costs you -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+    <h1>What This <span class="highlight">Costs You</span></h1>
+    <div class="stat-box" style="max-width: 800px; margin: 20px auto; background: linear-gradient(135deg, #b91c1c 0%, #ef4444 100%);">
+      <div class="number">$50M</div>
+      <div class="label">one missed code can hide an opportunity this size</div>
+    </div>
+    <p style="max-width: 880px; margin: 0 auto; font-size: 26px;">
+      Three of every four dollars hide in codes you'd never think to search.<br>
+      This is the single most expensive mistake in federal BD.
+    </p>
+  </div>
+  <div class="slide-number">8 / 18</div>
+</div>
+
+<!-- Slide 9: NAICS vs PSC -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>NAICS vs PSC</h2>
+  <div class="two-col">
+    <div class="card" style="border: 2px solid #a78bfa;">
+      <h4 style="font-size: 28px;">NAICS = WHO the seller is</h4>
+      <p style="margin-bottom: 15px;">The vendor's industry bucket.</p>
+      <p style="color:#cbd5e1;">Drones top NAICS: <strong style="color:#fff;">"Aircraft Manufacturing"</strong> — a catch-all that also holds jets and helicopters.</p>
+    </div>
+    <div class="card" style="border: 2px solid #10b981;">
+      <h4 style="font-size: 28px; color:#10b981;">PSC = WHAT was bought</h4>
+      <p style="margin-bottom: 15px;">The literal product.</p>
+      <p style="color:#cbd5e1;">Drones top PSC: <strong style="color:#fff;">"1550 Unmanned Aircraft"</strong> — exactly what you sell. Pros search by what's bought.</p>
+    </div>
+  </div>
+  <div class="slide-number">9 / 18</div>
+</div>
+
+<!-- Slide 10: How Mindy fixes it — keyword-first -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>How Mindy Fixes It</h2>
+  <div class="two-col">
+    <div style="display: flex; flex-direction: column; justify-content: center;">
+      <div class="stat-box">
+        <div class="number" style="font-size: 56px;">Type "drones"</div>
+        <div class="label">that's the whole input</div>
+      </div>
+    </div>
+    <div class="card" style="border: 2px solid #10b981;">
+      <h4 style="font-size: 28px; color: #10b981;">Keyword-First Research</h4>
+      <p style="margin-bottom: 15px;">She derives the full code set for you.</p>
+      <ul style="font-size: 20px;">
+        <li>Plain words, no codes to memorize</li>
+        <li>90%-coverage code set, auto-built</li>
+        <li>You never manage 70 codes</li>
+        <li>One missed code can't cost you the deal</li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-number">10 / 18</div>
+</div>
+
+<!-- Slide 11: The 6-Question Federal Market Scanner -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>The 6-Question Market Scanner</h2>
+  <p style="margin-bottom: 24px; font-size: 22px;">Enter a NAICS + State. Mindy answers all six — grounded in real spend.</p>
+  <div class="icon-grid" style="grid-template-columns: repeat(3, 1fr); gap: 24px;">
+    <div class="icon-card" style="flex-direction: column; align-items: flex-start;">
+      <div class="icon">🏛️</div>
+      <div><h4>1. WHO buys?</h4><p>The agencies spending in your market.</p></div>
+    </div>
+    <div class="icon-card" style="flex-direction: column; align-items: flex-start;">
+      <div class="icon">🛒</div>
+      <div><h4>2. HOW do they buy?</h4><p>Vehicles &amp; set-asides they use.</p></div>
+    </div>
+    <div class="icon-card" style="flex-direction: column; align-items: flex-start;">
+      <div class="icon">🏆</div>
+      <div><h4>3. WHO has it now?</h4><p>Current incumbents &amp; holders.</p></div>
+    </div>
+    <div class="icon-card" style="flex-direction: column; align-items: flex-start;">
+      <div class="icon">📋</div>
+      <div><h4>4. WHAT opps exist?</h4><p>Live solicitations to pursue.</p></div>
+    </div>
+    <div class="icon-card" style="flex-direction: column; align-items: flex-start;">
+      <div class="icon">📅</div>
+      <div><h4>5. WHAT events?</h4><p>Industry days &amp; deadlines.</p></div>
+    </div>
+    <div class="icon-card" style="flex-direction: column; align-items: flex-start;">
+      <div class="icon">📞</div>
+      <div><h4>6. WHO to talk to?</h4><p>The buyers &amp; OSBP contacts.</p></div>
+    </div>
+  </div>
+  <p style="text-align:center; margin-top: 18px; font-size: 18px; color:#64748b;">Route: /api/market-scanner</p>
+  <div class="slide-number">11 / 18</div>
+</div>
+
+<!-- Slide 12: LIVE DEMO #1 — Keyword research -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h3>🔴 LIVE DEMO — Keyword Research</h3>
+  <h2 style="font-size: 36px; margin-bottom: 24px;">From one word to the whole market</h2>
+  <div class="two-col">
+    <div style="display: flex; flex-direction: column; justify-content: center;">
+      <ul style="font-size: 24px;">
+        <li>Open getmindy.ai → Market Research</li>
+        <li>Type the keyword: <strong style="color:#fff;">"drones"</strong></li>
+        <li>Mindy derives the full coverage set (~8 NAICS)</li>
+        <li>Shows total market + coverage ratio</li>
+        <li>Obvious code = only 28% — the rest revealed</li>
+      </ul>
+    </div>
+    <div class="card" style="border: 2px solid #10b981; display:flex; flex-direction:column; justify-content:center; text-align:center;">
+      <div style="font-size: 64px; font-weight: 900; color:#10b981;">$245M</div>
+      <p style="font-size: 22px; margin-top: 8px;">across 70+ codes — one keyword, full coverage. "Sport Mode" uses the entire set, not just the top 3.</p>
+    </div>
+  </div>
+  <div class="slide-number">12 / 18</div>
+</div>
+
+<!-- Slide 13: LIVE DEMO #2 — Auto-setup -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h3>🔴 LIVE DEMO — Auto-Setup</h3>
+  <h2 style="font-size: 36px; margin-bottom: 24px;">Paste a capability statement → configured</h2>
+  <div class="two-col">
+    <div style="display: flex; flex-direction: column; justify-content: center;">
+      <ul style="font-size: 24px;">
+        <li>Paste your capability statement</li>
+        <li>/api/suggest-codes reads it like an expert</li>
+        <li>Suggests NAICS/PSC from real awards</li>
+        <li>Browse sample opps → pick 3+ matches</li>
+        <li>Profile built — codes, location, agencies</li>
+      </ul>
+    </div>
+    <div class="card" style="border: 2px solid #a78bfa; display:flex; flex-direction:column; justify-content:center; text-align:center;">
+      <div style="font-size: 64px; font-weight: 900; color:#a78bfa;">~30 sec</div>
+      <p style="font-size: 22px; margin-top: 8px;">From a one-pager to a fully grounded profile. Every fact from USASpending — confirm before anything saves.</p>
+    </div>
+  </div>
+  <div class="slide-number">13 / 18</div>
+</div>
+
+<!-- Slide 14: Office-level buyer intel -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Drill Past the Agency</h2>
+  <div class="two-col">
+    <div class="card" style="border: 2px solid #f87171;">
+      <h4 style="font-size: 28px; color:#f87171;">Useless</h4>
+      <p style="font-size: 24px; color:#cbd5e1;">"The Army spends $X."</p>
+      <p style="margin-top:15px;">Too big to act on.</p>
+    </div>
+    <div class="card" style="border: 2px solid #10b981;">
+      <h4 style="font-size: 28px; color:#10b981;">A BD Target</h4>
+      <p style="font-size: 24px; color:#cbd5e1;">"USACE Omaha District spends on your NAICS — here's the small-business contact."</p>
+      <p style="margin-top:15px;">The office + the OSBP person to call.</p>
+    </div>
+  </div>
+  <div class="slide-number">14 / 18</div>
+</div>
+
+<!-- Slide 15: Office-level buyer intel DETAIL -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>From Department → Real Office</h2>
+  <div class="two-col">
+    <div class="card" style="border: 2px solid #10b981; display:flex; flex-direction:column; justify-content:center;">
+      <h4 style="font-size: 28px; color:#10b981;">USACE — Omaha District</h4>
+      <ul style="font-size: 22px; margin-top: 10px;">
+        <li>Per-office spend on YOUR NAICS</li>
+        <li>Contract count + distinct vendors</li>
+        <li>The OSBP small-business contact, named</li>
+      </ul>
+    </div>
+    <div style="display:flex; flex-direction:column; justify-content:center;">
+      <div class="stat-box">
+        <div class="number" style="font-size: 56px;">170</div>
+        <div class="label">DoD commands with OSBP contacts</div>
+      </div>
+      <p style="font-size: 20px; margin-top: 16px;">Per-office spend from USASpending awards. Contacts from the 170-command federal directory — the office + the person to call.</p>
+    </div>
+  </div>
+  <div class="slide-number">15 / 18</div>
+</div>
+
+<!-- Slide 16: Auto-setup -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+    <h2>Paste It. Done.</h2>
+    <div class="stat-box" style="max-width: 700px; margin: 20px auto;">
+      <div class="number">30 sec</div>
+      <div class="label">capability statement → fully configured</div>
+    </div>
+    <p style="max-width: 840px; margin: 0 auto; font-size: 24px;">
+      Mindy reads it like an expert — codes, location, set-asides, buying agencies — all grounded in real spend. Confirm before anything saves.
+    </p>
+  </div>
+  <div class="slide-number">16 / 18</div>
+</div>
+
+<!-- Slide 17: Mindy never guesses -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+    <h1>Mindy <span class="highlight">Never Guesses</span></h1>
+    <p style="max-width: 850px; margin: 30px auto 0; font-size: 28px;">
+      Every code and every dollar comes straight from<br>
+      <strong style="color:#10b981;">USASpending FY2025</strong> — not an AI hallucination.
+    </p>
+  </div>
+  <div class="slide-number">17 / 18</div>
+</div>
+
+<!-- Slide 18: CTA -->
+<div class="slide cta-slide">
+  <h1>See It All Live at the Mindy Launch</h1>
+  <p style="font-size: 28px; color: white; opacity: 0.95; max-width: 850px;">Saturday, June 27, 2026 — the full launch demo.</p>
+  <div class="url">govcongiants.com/mindy-launch</div>
+  <p style="margin-top: 40px; font-size: 22px; color: white; opacity: 0.8;">
+    Already live: getmindy.ai
+  </p>
+  <div class="slide-number" style="color: rgba(255,255,255,0.6);">18 / 18</div>
+</div>
+
+<!-- Controls -->
+<div class="controls">
+  <button onclick="prevSlide()">← Previous</button>
+  <button onclick="nextSlide()">Next →</button>
+</div>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+
+  function showSlide(n) {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (n + slides.length) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }
+
+  function nextSlide() { showSlide(currentSlide + 1); }
+  function prevSlide() { showSlide(currentSlide - 1); }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+    if (e.key === 'ArrowLeft') prevSlide();
+  });
+</script>
+
+</body>
+</html>

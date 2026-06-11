@@ -80,9 +80,9 @@ For specifics, see these docs:
 
 | Project | Path | URL | Framework |
 |---------|------|-----|-----------|
-| GovCon Funnels | `/Users/ericcoffie/Projects/govcon-funnels` | `govcongiants.org` | Next.js 16 |
-| GovCon Shop | `/Users/ericcoffie/govcon-shop` | `shop.govcongiants.org` | Next.js 16 |
-| The Vault | `/Users/ericcoffie/Projects/vault` | `govcongiants.org/vault` | Next.js 15 |
+| GovCon Funnels | `/Users/ericcoffie/Projects/govcon-funnels` | `govcongiants.com` | Next.js 16 |
+| GovCon Shop | `/Users/ericcoffie/govcon-shop` | `shop.govcongiants.com` | Next.js 16 |
+| The Vault | `/Users/ericcoffie/Projects/vault` | `govcongiants.com/vault` | Next.js 15 |
 
 ---
 
@@ -141,7 +141,7 @@ SAM.gov, USAspending.gov, FPDS, SBA Prime Directory, Agency strategic plans, GAO
 **Time:** 9:00 AM ET | Live on Zoom
 **Topic:** Contract Vehicles — IDIQs, GWACs, Qualifications & Team Building
 **Format:** FREE, open to public
-**Registration:** `govcongiants.org/contract-vehicles-bootcamp`
+**Registration:** `govcongiants.com/contract-vehicles-bootcamp`
 **April Bootcamp:** Winning with Certifications (Pro Members)
 
 ### Curriculum (6 Sessions) — Updated March 28, 2026
@@ -172,7 +172,7 @@ Closing Q&A: 4:50-5:00 PM
 `presentations/march-28-bootcamp-slides.html` — 99 slides
 
 ### Deployments
-- **Next.js funnel:** `govcongiants.org/contract-vehicles-bootcamp` (govcon-funnels)
+- **Next.js funnel:** `govcongiants.com/contract-vehicles-bootcamp` (govcon-funnels)
   - Routes: `/march-surge/` (landing, upsell, downsell, thank-you)
 - **Static HTML:** `march-surge-page.vercel.app` (Vercel project: march-surge-page)
   - Files: index.html, agenda.html, slides.html, hit-list.html, proposal-landing-page.html
@@ -205,7 +205,7 @@ Closing Q&A: 4:50-5:00 PM
 **Time:** 9:00 AM - 6:00 PM ET | Live on Zoom
 **Topic:** Find Your First Teaming Partner or Consultant Client
 **Format:** FREE, open to public
-**Registration:** `govcongiants.org/first-partner-challenge`
+**Registration:** `govcongiants.com/first-partner-challenge`
 
 ### The 5 Objectives
 

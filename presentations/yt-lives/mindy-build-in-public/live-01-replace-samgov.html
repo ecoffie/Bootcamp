@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mindy Build in Public 1: An AI To Replace SAM.gov | GovCon Giants</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #0f172a; color: #fff; }
+    .slide {
+      width: 1280px;
+      height: 720px;
+      padding: 60px;
+      display: none;
+      flex-direction: column;
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+      position: relative;
+      page-break-after: always;
+    }
+    .slide.active { display: flex; }
+    .slide::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, #6366f1, #8b5cf6, #a78bfa);
+    }
+    .logo {
+      position: absolute;
+      top: 30px;
+      right: 60px;
+      font-weight: 900;
+      font-size: 18px;
+    }
+    .logo span { color: #10b981; }
+    .live-badge {
+      position: absolute;
+      top: 30px;
+      left: 60px;
+      background: #dc2626;
+      color: white;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .live-badge::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: white;
+      border-radius: 50%;
+      animation: pulse 1s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    h1 {
+      font-size: 56px;
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 30px;
+    }
+    h1 .highlight { color: #a78bfa; }
+    h2 {
+      font-size: 42px;
+      font-weight: 800;
+      margin-bottom: 30px;
+      color: #a78bfa;
+    }
+    h3 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #10b981;
+    }
+    p {
+      font-size: 24px;
+      line-height: 1.6;
+      color: #94a3b8;
+    }
+    .subtitle {
+      font-size: 28px;
+      color: #64748b;
+      margin-bottom: 40px;
+    }
+    ul {
+      list-style: none;
+      font-size: 26px;
+      line-height: 2;
+    }
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    li::before {
+      content: '✓';
+      color: #a78bfa;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+    .stat-box {
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      margin: 20px 0;
+    }
+    .stat-box .number {
+      font-size: 72px;
+      font-weight: 900;
+      color: white;
+    }
+    .stat-box .label {
+      font-size: 24px;
+      color: #e0e7ff;
+    }
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      flex: 1;
+    }
+    .card {
+      background: rgba(30, 27, 75, 0.8);
+      border: 1px solid #4338ca;
+      border-radius: 16px;
+      padding: 30px;
+    }
+    .card h4 {
+      font-size: 24px;
+      color: #a78bfa;
+      margin-bottom: 16px;
+    }
+    .card p {
+      font-size: 20px;
+    }
+    .cta-slide {
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+    }
+    .cta-slide h1 { color: white; margin-bottom: 20px; }
+    .cta-slide .url {
+      font-size: 36px;
+      font-weight: 900;
+      color: #fef3c7;
+      background: rgba(0,0,0,0.2);
+      padding: 20px 50px;
+      border-radius: 12px;
+      margin-top: 30px;
+    }
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      flex: 1;
+    }
+    .icon-card {
+      background: rgba(30, 27, 75, 0.6);
+      border: 1px solid #4338ca;
+      border-radius: 16px;
+      padding: 30px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .icon-card .icon {
+      font-size: 40px;
+      flex-shrink: 0;
+    }
+    .icon-card h4 {
+      font-size: 22px;
+      color: #a78bfa;
+      margin-bottom: 8px;
+    }
+    .icon-card p {
+      font-size: 18px;
+    }
+    .slide-number {
+      position: absolute;
+      bottom: 30px;
+      right: 60px;
+      color: #475569;
+      font-size: 16px;
+    }
+    .controls {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+      z-index: 100;
+    }
+    .controls button {
+      background: #6366f1;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .controls button:hover { background: #4f46e5; }
+    @media print {
+      .slide { display: flex !important; }
+      .controls { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Slide 1: Title -->
+<div class="slide active">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+    <h1>An AI To <span class="highlight">Replace SAM.gov</span></h1>
+    <p class="subtitle">Build in Public Series | Stream 1 of 5</p>
+    <p style="margin-top: 20px; color: #a78bfa; font-size: 24px;">Live Coding with Eric Coffie</p>
+  </div>
+  <div class="slide-number">1 / 11</div>
+</div>
+
+<!-- Slide 2: The Problem -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+    <h1>The Government Posts<br><span class="highlight">1,500+ Contracts</span> a Day</h1>
+    <p style="max-width: 850px; margin: 30px auto 0; font-size: 28px;">
+      Buried in jargon. Scattered across dozens of sites.<br>Most small businesses never see them.
+    </p>
+  </div>
+  <div class="slide-number">2 / 11</div>
+</div>
+
+<!-- Slide 3: Big Stat — 24,000 a night -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+    <h2>Mindy Reads What You Can't</h2>
+    <div class="stat-box" style="max-width: 750px; margin: 20px auto;">
+      <div class="number">24,000+</div>
+      <div class="label">federal contracts scanned every single night</div>
+    </div>
+    <p style="max-width: 800px; margin: 0 auto;">While you sleep, she's reading the entire market.</p>
+  </div>
+  <div class="slide-number">3 / 11</div>
+</div>
+
+<!-- Slide 4: Big Stat — $170B -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+    <h2>The Money Is Already Set Aside</h2>
+    <div class="stat-box" style="max-width: 750px; margin: 20px auto; background: linear-gradient(135deg, #059669 0%, #10b981 100%);">
+      <div class="number">$170B</div>
+      <div class="label">set aside for small business every year</div>
+    </div>
+    <p style="max-width: 800px; margin: 0 auto;">Much of it goes unclaimed — because nobody sees the opportunity.</p>
+  </div>
+  <div class="slide-number">4 / 11</div>
+</div>
+
+<!-- Slide 5: Meet Mindy -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Meet Mindy</h2>
+  <div class="icon-grid">
+    <div class="icon-card">
+      <div class="icon">🌙</div>
+      <div>
+        <h4>Reads Overnight</h4>
+        <p>She scans every federal contract posted while you sleep</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">🎯</div>
+      <div>
+        <h4>Matches Your Business</h4>
+        <p>Pairs opportunities to your NAICS codes automatically</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">☕</div>
+      <div>
+        <h4>Briefs You by Morning</h4>
+        <p>Sends the contracts that matter before your first coffee</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">🤖</div>
+      <div>
+        <h4>Never Sleeps</h4>
+        <p>A BD analyst that works 24/7 and never takes PTO</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">5 / 11</div>
+</div>
+
+<!-- Slide 6: Build Agenda — Data Pull -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Build #1: Pulling the Data</h2>
+  <div class="two-col">
+    <div class="card" style="border: 2px solid #a78bfa;">
+      <h4 style="font-size: 28px;">SAM.gov + Procurement Sites</h4>
+      <p style="margin-bottom: 15px;">Where Mindy gets every opportunity.</p>
+      <ul style="font-size: 20px;">
+        <li>Pull from SAM.gov directly</li>
+        <li>Add dozens of federal sites</li>
+        <li>Catch postings within hours</li>
+        <li>One clean feed, no portals</li>
+      </ul>
+    </div>
+    <div style="display: flex; flex-direction: column; justify-content: center;">
+      <div class="stat-box">
+        <div class="number">Dozens</div>
+        <div class="label">of sites — unified into one source</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">6 / 11</div>
+</div>
+
+<!-- Slide 7: Build Agenda — Matching Algorithm -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Build #2: The Matching Algorithm</h2>
+  <div class="two-col">
+    <div style="display: flex; flex-direction: column; justify-content: center;">
+      <div class="stat-box" style="background: linear-gradient(135deg, #059669 0%, #10b981 100%);">
+        <div class="number">NAICS</div>
+        <div class="label">your codes are the key</div>
+      </div>
+    </div>
+    <div class="card" style="border: 2px solid #10b981;">
+      <h4 style="font-size: 28px; color: #10b981;">Opportunities → Your Profile</h4>
+      <p style="margin-bottom: 15px;">How Mindy finds YOUR contracts.</p>
+      <ul style="font-size: 20px;">
+        <li>Pair contracts to your NAICS</li>
+        <li>Filter out the noise</li>
+        <li>Surface only what fits</li>
+        <li>The right work, every day</li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-number">7 / 11</div>
+</div>
+
+<!-- Slide 8: Build Agenda — Briefing Engine -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Build #3: The Daily Briefing Engine</h2>
+  <div class="icon-grid">
+    <div class="icon-card">
+      <div class="icon">📥</div>
+      <div>
+        <h4>Ingest</h4>
+        <p>Take the night's 24,000+ scanned contracts</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">🔎</div>
+      <div>
+        <h4>Match</h4>
+        <p>Run them against your business profile</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">✂️</div>
+      <div>
+        <h4>Pick</h4>
+        <p>Keep only the ones that matter to you</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">📧</div>
+      <div>
+        <h4>Deliver</h4>
+        <p>Send your briefing before you wake up</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">8 / 11</div>
+</div>
+
+<!-- Slide 9: Build Agenda — Why SAM.gov UX Is Broken -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Build #4: Why SAM.gov Is Broken</h2>
+  <div class="two-col">
+    <div>
+      <h3 style="color: #f87171;">SAM.gov Today</h3>
+      <ul style="font-size: 22px;">
+        <li style="color: #f87171;">Built for procurement officers</li>
+        <li style="color: #f87171;">Buried in jargon</li>
+        <li style="color: #f87171;">Scattered across portals</li>
+        <li style="color: #f87171;">You go find the work</li>
+      </ul>
+    </div>
+    <div>
+      <h3>How AI Fixes It</h3>
+      <ul style="font-size: 22px;">
+        <li>Built for the business</li>
+        <li>Plain-language briefings</li>
+        <li>One feed, matched to you</li>
+        <li>The work comes to you</li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-number">9 / 11</div>
+</div>
+
+<!-- Slide 10: Q&A -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+    <h1>Live <span class="highlight">Q&amp;A</span></h1>
+    <p class="subtitle">Drop your questions in the chat!</p>
+    <p style="margin-top: 40px; font-size: 24px; color: #64748b;">
+      Ask me anything about govcon or the tech stack.
+    </p>
+  </div>
+  <div class="slide-number">10 / 11</div>
+</div>
+
+<!-- Slide 11: CTA -->
+<div class="slide cta-slide">
+  <h1>Try Mindy Free</h1>
+  <p style="font-size: 28px; color: white; opacity: 0.9; max-width: 850px;">She'll find contracts that match your business by tomorrow morning.</p>
+  <div class="url">getmindy.ai</div>
+  <p style="margin-top: 40px; font-size: 22px; color: white; opacity: 0.8;">
+    The AI that reads every federal contract while you sleep.
+  </p>
+  <div class="slide-number" style="color: rgba(255,255,255,0.6);">11 / 11</div>
+</div>
+
+<!-- Controls -->
+<div class="controls">
+  <button onclick="prevSlide()">← Previous</button>
+  <button onclick="nextSlide()">Next →</button>
+</div>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+
+  function showSlide(n) {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (n + slides.length) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }
+
+  function nextSlide() { showSlide(currentSlide + 1); }
+  function prevSlide() { showSlide(currentSlide - 1); }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+    if (e.key === 'ArrowLeft') prevSlide();
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mindy Feature Series 3: Write the Winning Proposal | GovCon Giants</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #0f172a; color: #fff; }
+    .slide {
+      width: 1280px;
+      height: 720px;
+      padding: 60px;
+      display: none;
+      flex-direction: column;
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+      position: relative;
+      page-break-after: always;
+    }
+    .slide.active { display: flex; }
+    .slide::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, #6366f1, #8b5cf6, #a78bfa);
+    }
+    .logo {
+      position: absolute;
+      top: 30px;
+      right: 60px;
+      font-weight: 900;
+      font-size: 18px;
+    }
+    .logo span { color: #10b981; }
+    .live-badge {
+      position: absolute;
+      top: 30px;
+      left: 60px;
+      background: #dc2626;
+      color: white;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .live-badge::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: white;
+      border-radius: 50%;
+      animation: pulse 1s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    h1 {
+      font-size: 56px;
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 30px;
+    }
+    h1 .highlight { color: #a78bfa; }
+    h2 {
+      font-size: 42px;
+      font-weight: 800;
+      margin-bottom: 30px;
+      color: #a78bfa;
+    }
+    h3 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #10b981;
+    }
+    p {
+      font-size: 24px;
+      line-height: 1.6;
+      color: #94a3b8;
+    }
+    .subtitle {
+      font-size: 28px;
+      color: #64748b;
+      margin-bottom: 40px;
+    }
+    ul {
+      list-style: none;
+      font-size: 26px;
+      line-height: 2;
+    }
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    li::before {
+      content: '✓';
+      color: #a78bfa;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+    .stat-box {
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      margin: 20px 0;
+    }
+    .stat-box .number {
+      font-size: 72px;
+      font-weight: 900;
+      color: white;
+    }
+    .stat-box .label {
+      font-size: 24px;
+      color: #e0e7ff;
+    }
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      flex: 1;
+    }
+    .card {
+      background: rgba(30, 27, 75, 0.8);
+      border: 1px solid #4338ca;
+      border-radius: 16px;
+      padding: 30px;
+    }
+    .card h4 {
+      font-size: 24px;
+      color: #a78bfa;
+      margin-bottom: 16px;
+    }
+    .card p {
+      font-size: 20px;
+    }
+    .cta-slide {
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+    }
+    .cta-slide h1 { color: white; margin-bottom: 20px; }
+    .cta-slide .url {
+      font-size: 36px;
+      font-weight: 900;
+      color: #fef3c7;
+      background: rgba(0,0,0,0.2);
+      padding: 20px 50px;
+      border-radius: 12px;
+      margin-top: 30px;
+    }
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      flex: 1;
+    }
+    .icon-card {
+      background: rgba(30, 27, 75, 0.6);
+      border: 1px solid #4338ca;
+      border-radius: 16px;
+      padding: 30px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .icon-card .icon {
+      font-size: 40px;
+      flex-shrink: 0;
+    }
+    .icon-card h4 {
+      font-size: 22px;
+      color: #a78bfa;
+      margin-bottom: 8px;
+    }
+    .icon-card p {
+      font-size: 18px;
+    }
+    .slide-number {
+      position: absolute;
+      bottom: 30px;
+      right: 60px;
+      color: #475569;
+      font-size: 16px;
+    }
+    .controls {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+      z-index: 100;
+    }
+    .controls button {
+      background: #6366f1;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .controls button:hover { background: #4f46e5; }
+    @media print {
+      .slide { display: flex !important; }
+      .controls { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Slide 1: Title -->
+<div class="slide active">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+    <h1>Write the <span class="highlight">Winning Proposal</span></h1>
+    <p class="subtitle">Mindy Feature Series | Part 3 of 5</p>
+    <p style="margin-top: 20px; color: #a78bfa; font-size: 24px;">Live → Mindy Launch June 27 · with Eric Coffie</p>
+  </div>
+  <div class="slide-number">1 / 18</div>
+</div>
+
+<!-- Slide 2: The Problem -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+    <h1>A Federal Proposal Is<br>Hundreds of <span class="highlight">"Shall" Statements</span></h1>
+    <p style="max-width: 850px; margin: 30px auto 0; font-size: 28px;">
+      Every <em>shall</em>, <em>must</em>, and <em>required</em> is a hoop.<br>Miss one — and you lose.
+    </p>
+  </div>
+  <div class="slide-number">2 / 18</div>
+</div>
+
+<!-- Slide 3: Why ChatGPT Fails -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Why ChatGPT Fails Here</h2>
+  <div class="two-col">
+    <div class="card" style="border: 2px solid #f87171;">
+      <h4 style="font-size: 28px; color: #f87171;">Generic AI</h4>
+      <p style="margin-bottom: 15px;">It doesn't know your company — or your bid.</p>
+      <ul style="font-size: 20px;">
+        <li style="color: #f87171;">[Insert your UEI here]</li>
+        <li style="color: #f87171;">[Add past performance]</li>
+        <li style="color: #f87171;">[Company name]</li>
+        <li style="color: #f87171;">Placeholders everywhere</li>
+      </ul>
+    </div>
+    <div style="display: flex; flex-direction: column; justify-content: center;">
+      <div class="stat-box">
+        <div class="number">[ ]</div>
+        <div class="label">brackets you still have to fill in yourself</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">3 / 18</div>
+</div>
+
+<!-- Slide 4: Proposal Assist Workflow Overview -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Meet Proposal Assist: The Pipeline</h2>
+  <div class="icon-grid">
+    <div class="icon-card">
+      <div class="icon">🧭</div>
+      <div>
+        <h4>1. Wizard (Intake)</h4>
+        <p>Upload the RFP, paste a SAM link — auto-extract scope</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">🚦</div>
+      <div>
+        <h4>2. Bid / No-Bid Gate</h4>
+        <p>Real go/no-go on the incumbent + competition</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">✅</div>
+      <div>
+        <h4>3. Compliance Matrix</h4>
+        <p>Every shall / must / required, extracted</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">📝</div>
+      <div>
+        <h4>4. Vault-Grounded Draft</h4>
+        <p>Sections written from YOUR real docs + the solicitation</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">📄</div>
+      <div>
+        <h4>5. Export to Word</h4>
+        <p>Clean .docx — tables and headings preserved</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">🔗</div>
+      <div>
+        <h4>One Connected Flow</h4>
+        <p>Real routes under /api/app/proposal/*</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">4 / 18</div>
+</div>
+
+<!-- Slide 5: Cut to Bid-Ready — Has SOW/PWS Filter -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>First: Cut to Bid-Ready</h2>
+  <div class="two-col">
+    <div style="display: flex; flex-direction: column; justify-content: center;">
+      <div class="stat-box" style="background: linear-gradient(135deg, #059669 0%, #10b981 100%);">
+        <div class="number">SOW/PWS</div>
+        <div class="label">only opps with a real scope document</div>
+      </div>
+    </div>
+    <div class="card" style="border: 2px solid #10b981;">
+      <h4 style="font-size: 28px; color: #10b981;">The "Has SOW/PWS" Filter</h4>
+      <p style="margin-bottom: 15px;">Mindy reads the attached docs and badges each one.</p>
+      <ul style="font-size: 20px;">
+        <li>PWS / SOW / Combined badges</li>
+        <li>Skip the empty-stub titles</li>
+        <li>Jump straight to evaluable opps</li>
+        <li>Work you can actually bid</li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-number">5 / 18</div>
+</div>
+
+<!-- Slide 6: What's in Your Vault -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>What's in Your Vault?</h2>
+  <p style="margin-bottom: 24px;">The library every draft pulls from — your real language, not generic AI.</p>
+  <div class="icon-grid">
+    <div class="icon-card">
+      <div class="icon">📑</div>
+      <div>
+        <h4>Past Proposals</h4>
+        <p>Your winning language, reused</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">📋</div>
+      <div>
+        <h4>SOWs / PWS</h4>
+        <p>Scope docs Mindy grounds drafts in</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">👤</div>
+      <div>
+        <h4>Team Bios</h4>
+        <p>Key personnel, ready to cite</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">🏆</div>
+      <div>
+        <h4>Similar Awards</h4>
+        <p>Past performance proof points</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">🗂️</div>
+      <div>
+        <h4>Org Charts</h4>
+        <p>Management plan structure</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">💲</div>
+      <div>
+        <h4>CLIN Samples</h4>
+        <p>Pricing language to model</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">6 / 18</div>
+</div>
+
+<!-- Slide 7: Mindy Reads the Whole Solicitation -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+    <h2>Then: Mindy Reads the WHOLE Solicitation</h2>
+    <div class="stat-box" style="max-width: 800px; margin: 20px auto;">
+      <div class="number">100%</div>
+      <div class="label">of the solicitation read — not skimmed</div>
+    </div>
+    <p style="max-width: 820px; margin: 0 auto;">The Wizard ingests every page before she writes a word.</p>
+  </div>
+  <div class="slide-number">7 / 18</div>
+</div>
+
+<!-- Slide 8: Bid/No-Bid Gate -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Step 1: The Bid / No-Bid Gate</h2>
+  <div class="icon-grid">
+    <div class="icon-card">
+      <div class="icon">🚦</div>
+      <div>
+        <h4>Real Go / No-Go</h4>
+        <p>Surfaces the eliminators that disqualify you fast</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">🔒</div>
+      <div>
+        <h4>Vehicle Required?</h4>
+        <p>Flags if you must hold a contract to even compete</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">⏱️</div>
+      <div>
+        <h4>Save the Hours</h4>
+        <p>Don't draft a proposal you can never submit</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">🎯</div>
+      <div>
+        <h4>Signal, Not Noise</h4>
+        <p>Real eliminators only — not a checkbox dump</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">8 / 18</div>
+</div>
+
+<!-- Slide 9: LIVE DEMO #1 — Intake + Bid/No-Bid -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h3>🎬 LIVE DEMO</h3>
+  <h2 style="margin-bottom: 24px;">Intake + Bid/No-Bid at getmindy.ai</h2>
+  <div class="card" style="border: 2px solid #a78bfa; flex: 1; display: flex; flex-direction: column; justify-content: center;">
+    <ul style="font-size: 25px;">
+      <li>Open a pipeline pursuit → <strong>Start Proposal</strong></li>
+      <li>Upload an RFP PDF — or paste a SAM.gov link</li>
+      <li>Mindy auto-extracts scope, NAICS, agency, deadline</li>
+      <li>Bid/No-Bid gate shows the <strong>incumbent + competition</strong></li>
+      <li>Weigh it → pick <strong>BID</strong> (tracked in the pipeline)</li>
+    </ul>
+  </div>
+  <div class="slide-number">9 / 18</div>
+</div>
+
+<!-- Slide 10: Compliance Matrix -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Step 2: The Compliance Matrix</h2>
+  <div class="two-col">
+    <div class="card" style="border: 2px solid #a78bfa;">
+      <h4 style="font-size: 28px;">Every Requirement, Extracted</h4>
+      <p style="margin-bottom: 15px;">She pulls each obligation automatically.</p>
+      <ul style="font-size: 20px;">
+        <li>Every <em>shall</em></li>
+        <li>Every <em>must</em></li>
+        <li>Every <em>required</em></li>
+        <li>Nothing slips through</li>
+      </ul>
+    </div>
+    <div style="display: flex; flex-direction: column; justify-content: center;">
+      <div class="stat-box">
+        <div class="number">0</div>
+        <div class="label">requirements missed by hand</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">10 / 18</div>
+</div>
+
+<!-- Slide 11: Compliance Matrix EXAMPLE -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>What the Matrix Looks Like</h2>
+  <p style="margin-bottom: 20px;">Columns: Requirement | Your Answer | Status — each cell links to a Vault doc.</p>
+  <table style="width: 100%; border-collapse: collapse; font-size: 22px; flex: 1;">
+    <thead>
+      <tr style="background: rgba(99,102,241,0.4);">
+        <th style="text-align: left; padding: 18px; border: 1px solid #4338ca; color: #a78bfa;">Requirement</th>
+        <th style="text-align: left; padding: 18px; border: 1px solid #4338ca; color: #a78bfa;">Your Answer</th>
+        <th style="text-align: left; padding: 18px; border: 1px solid #4338ca; color: #a78bfa;">Status</th>
+      </tr>
+    </thead>
+    <tbody style="color: #cbd5e1;">
+      <tr>
+        <td style="padding: 18px; border: 1px solid #4338ca;">Contractor <em>shall</em> hold an active facility clearance (FCL)</td>
+        <td style="padding: 18px; border: 1px solid #4338ca;">No FCL on file</td>
+        <td style="padding: 18px; border: 1px solid #4338ca; color: #f87171; font-weight: 700;">⚠ Gap</td>
+      </tr>
+      <tr style="background: rgba(30,27,75,0.5);">
+        <td style="padding: 18px; border: 1px solid #4338ca;">Offeror <em>must</em> show 3 yrs relevant past performance</td>
+        <td style="padding: 18px; border: 1px solid #4338ca;">4 yrs — Vault: DHS HelpDesk award</td>
+        <td style="padding: 18px; border: 1px solid #4338ca; color: #10b981; font-weight: 700;">✓ Met</td>
+      </tr>
+      <tr>
+        <td style="padding: 18px; border: 1px solid #4338ca;">Required: 24/7 support coverage</td>
+        <td style="padding: 18px; border: 1px solid #4338ca;">24/7 NOC + on-call SLA</td>
+        <td style="padding: 18px; border: 1px solid #4338ca; color: #34d399; font-weight: 700;">★ Exceed</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="slide-number">11 / 18</div>
+</div>
+
+<!-- Slide 12: Grounded Drafts -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Step 3: Grounded Drafts — Real Facts</h2>
+  <div class="two-col">
+    <div style="display: flex; flex-direction: column; justify-content: center;">
+      <div class="stat-box" style="background: linear-gradient(135deg, #059669 0%, #10b981 100%);">
+        <div class="number">Your Vault</div>
+        <div class="label">UEI · CAGE · past performance · contact</div>
+      </div>
+    </div>
+    <div class="card" style="border: 2px solid #10b981;">
+      <h4 style="font-size: 28px; color: #10b981;">Real Facts, Not [Placeholders]</h4>
+      <p style="margin-bottom: 15px;">Drafts pull from YOUR profile + the solicitation.</p>
+      <ul style="font-size: 20px;">
+        <li>Your real UEI and CAGE</li>
+        <li>Your actual past performance</li>
+        <li>Your named contact person</li>
+        <li>Grounded — never guessed</li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-number">12 / 18</div>
+</div>
+
+<!-- Slide 13: Before / After -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Before vs. After</h2>
+  <div class="two-col">
+    <div class="card" style="border: 2px solid #f87171;">
+      <h4 style="font-size: 26px; color: #f87171;">ChatGPT Draft</h4>
+      <ul style="font-size: 20px;">
+        <li style="color: #f87171;">"[Insert your UEI here]"</li>
+        <li style="color: #f87171;">"[Add CAGE code]"</li>
+        <li style="color: #f87171;">"[Describe relevant past performance]"</li>
+        <li style="color: #f87171;">Generic — guesses your company</li>
+      </ul>
+    </div>
+    <div class="card" style="border: 2px solid #10b981;">
+      <h4 style="font-size: 26px; color: #10b981;">Mindy Draft</h4>
+      <ul style="font-size: 20px;">
+        <li>Your real UEI, pulled from the Vault</li>
+        <li>Your real CAGE code</li>
+        <li>"Per our DHS HelpDesk award…" with citation</li>
+        <li>Grounded — never a [placeholder]</li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-number">13 / 18</div>
+</div>
+
+<!-- Slide 14: LIVE DEMO #2 — Compliance + Draft + Export -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h3>🎬 LIVE DEMO</h3>
+  <h2 style="margin-bottom: 24px;">Compliance → Draft → Export</h2>
+  <div class="card" style="border: 2px solid #10b981; flex: 1; display: flex; flex-direction: column; justify-content: center;">
+    <ul style="font-size: 25px;">
+      <li>Compliance matrix builds — Requirement | Answer | Gap</li>
+      <li>Browse the <strong>Vault</strong> → pick a past SOW</li>
+      <li>Mindy drafts a section <strong>grounded in it, with citations</strong></li>
+      <li>Real UEI / CAGE / past performance fill in</li>
+      <li><strong>Export to Word</strong> — formatted .docx, tables intact</li>
+    </ul>
+  </div>
+  <div class="slide-number">14 / 18</div>
+</div>
+
+<!-- Slide 15: Export -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Step 4: Export to Word</h2>
+  <div class="icon-grid">
+    <div class="icon-card">
+      <div class="icon">📄</div>
+      <div>
+        <h4>Clean .docx Export</h4>
+        <p>Compliance Matrix + draft sections as one Word doc</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">📐</div>
+      <div>
+        <h4>Formatting Preserved</h4>
+        <p>Sections, tables, and TOC come through intact</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">✍️</div>
+      <div>
+        <h4>Edit-Ready</h4>
+        <p>Hand it to your team — it's a first-pass, not autopilot</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">🔌</div>
+      <div>
+        <h4>Real Route</h4>
+        <p>/api/app/proposal/export → doc-download</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">15 / 18</div>
+</div>
+
+<!-- Slide 16: Pipeline Next-Action -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>And: Know What's Next</h2>
+  <p style="margin-bottom: 24px;">Mindy computes the next move per pursuit — from stage + deadline + draft status. No blank columns.</p>
+  <div class="icon-grid">
+    <div class="icon-card">
+      <div class="icon">📊</div>
+      <div>
+        <h4>Draft Compliance Matrix</h4>
+        <p>Just started — build the matrix first</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">📝</div>
+      <div>
+        <h4>Refine Draft</h4>
+        <p>Matrix done — tighten the sections</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">🚀</div>
+      <div>
+        <h4>Submit Proposal</h4>
+        <p>"Finalize — due in 5 days"</p>
+      </div>
+    </div>
+    <div class="icon-card">
+      <div class="icon">🔁</div>
+      <div>
+        <h4>Always Moving Forward</h4>
+        <p>Every pursuit knows its next step</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">16 / 18</div>
+</div>
+
+<!-- Slide 17: Coming + Honesty -->
+<div class="slide">
+  <div class="live-badge">LIVE</div>
+  <div class="logo">GovCon <span>Giants</span></div>
+  <h2>Coming: Find Work Under "Funny Names"</h2>
+  <div class="two-col">
+    <div class="card" style="border: 2px solid #8b5cf6;">
+      <h4 style="font-size: 26px;">Semantic Matching <span style="color:#fbbf24;">(coming)</span></h4>
+      <p style="margin-bottom: 15px;">Match meaning, not keywords. A "building envelope" contract that's really cyber + construction — surfaced for you.</p>
+      <ul style="font-size: 19px;">
+        <li>Reads the full scope document</li>
+        <li>Finds work you'd never search for</li>
+      </ul>
+    </div>
+    <div style="display: flex; flex-direction: column; justify-content: center;">
+      <div class="stat-box" style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);">
+        <div class="label" style="font-size: 26px; color: white; font-weight: 700;">"Assist, not autopilot — honest about edge cases."</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">17 / 18</div>
+</div>
+
+<!-- Slide 18: CTA -->
+<div class="slide cta-slide">
+  <h1>See Proposal Assist Live<br>at the Mindy Launch</h1>
+  <p style="font-size: 28px; color: white; opacity: 0.95;">Saturday, June 27, 2026</p>
+  <div class="url">Register: govcongiants.com/mindy-launch</div>
+  <p style="margin-top: 40px; font-size: 22px; color: white; opacity: 0.85;">
+    Already live: getmindy.ai · Eric Coffie, GovCon Giants
+  </p>
+  <div class="slide-number" style="color: rgba(255,255,255,0.6);">18 / 18</div>
+</div>
+
+<!-- Controls -->
+<div class="controls">
+  <button onclick="prevSlide()">← Previous</button>
+  <button onclick="nextSlide()">Next →</button>
+</div>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+
+  function showSlide(n) {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (n + slides.length) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }
+
+  function nextSlide() { showSlide(currentSlide + 1); }
+  function prevSlide() { showSlide(currentSlide - 1); }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+    if (e.key === 'ArrowLeft') prevSlide();
+  });
+</script>
+
+</body>
+</html>
