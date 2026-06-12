@@ -283,6 +283,50 @@ Breaks: 10:15-10:30 AM, 12:00-12:45 PM (lunch), 2:15-2:30 PM, 4:45-5:00 PM
 
 ---
 
+## Mindy Launch (June 2026)
+
+**Event:** The Mindy Launch — full live demo of Mindy (the AI BD analyst, live at getmindy.ai)
+**Date:** Saturday, June 27, 2026, 10:00 AM – 4:00 PM ET | Free, on Zoom
+**Register:** `govcongiants.com/mindy-launch` (**.com only** — .org is retired)
+**Positioning:** "Mindy is the AI BD analyst for federal small business — reads the solicitation, knows the incumbent, finds who's buying, drafts the response. Grounded in real government data, never generic AI."
+
+### The 5 Pillars (spine of all content — = the YT series + agenda)
+1. **Find Your Federal Market** — the hidden 72% (drones = 70+ NAICS, $245M FY2025, obvious code only 28%)
+2. **Win the Recompete** — ~80% of opps are recompetes; who-holds-this-now (incumbent, ceiling, expiry, vehicle)
+3. **Write the Winning Proposal** — Proposal Assist: compliance matrix, Vault-grounded drafts (real UEI/CAGE, not [placeholders])
+4. **Know Who to Call** — full rosters by office, roles badged, codes decoded; 125K+ contacts, 170-command OSBP directory
+5. **Trust the Data** — 317K contractors / 88K opps; why a hallucinated number loses the bid
+
+### Grounded stats (fact-checked — always cite 317K for the contractor DB, never 2.7K)
+$750B market · $170B small-biz set-aside · 24,000+ contracts scanned/night · 317,106 contractors · 125K+ contacts · 88K+ SAM opps · 7,700+ forecasts · 170 OSBP commands.
+Hidden-market pattern (FY2025 USASpending): drones 72% / cyber 74% ($2.07B) / medical 74% hidden.
+
+### Files
+| Path | Contents |
+|------|----------|
+| `funnels/mindy-launch/1-landing.html` + `index.html` | Registration page (dark Mindy theme; full agenda, "See Mindy in Action" Vimeo reels, audiences by industry + stage) |
+| `funnels/mindy-launch/4-thank-you.html` | Confirmation page |
+| `funnels/mindy-launch/INTERNAL-EVENT-BRIEF.html` | Internal content-team brief (clickable link directory, do/don't) — shareable URL |
+| `funnels/mindy-launch/launch-promo-email.html` | Broadcast promo email |
+| `funnels/mindy-launch/sql/mindy_launch_leads.sql` | `funnel_leads` backup table migration |
+| `presentations/yt-lives/mindy-features/` | 5 feature-pillar YT decks (17–18 slides) + PNGs + 5 publish docs + ALL-5 graphics doc + YT-DESCRIPTIONS.md |
+| `presentations/yt-lives/mindy-build-in-public/` | 5 "Build in Public" teaser decks + THUMBNAIL-BRIEF.md |
+| `mindy-countdown-email-sequence/` | 7-email countdown sequence |
+
+### Deployment / routing
+- Static funnel deploys via the **`funnels`** Vercel project (prod alias `funnels-one.vercel.app`).
+- `govcongiants.com/mindy-launch` is a **rewrite** (not redirect) in govcon-funnels `next.config.ts` → proxies the funnels page so the URL stays on .com. Form posts to the main site's `/api/lead`.
+- Homepage header has a "Free Bootcamp" link → `/mindy-launch` (`SiteNav.tsx`).
+- getmindy.ai homepage demo reels live in market-assassin `src/app/mindy-landing/page.tsx` (`DEMO_REELS`).
+
+### Lead capture (where signups go)
+`/api/lead` (govcon-funnels) fans out in parallel: **GoHighLevel** (tagged `mindy-launch`) + **Supabase `funnel_leads`** backup (Mindy project) + **Slack** + confirmation email. Supabase backup is non-blocking. Tested end-to-end June 2026.
+
+### Supabase load reduction (June 2026, for 100K-user scale)
+Compute bumped Micro→Small (2GB). Migration `market-assassin/supabase/migrations/20260612_load_reduction_indexes.sql` adds pg_trgm GIN (sam_opportunities title/description, federal_contacts agency/office/name) + btree (posted_date, solicitation_number). Hot daily-alerts query trimmed from `select('*')` → explicit columns (drops 50KB raw_data/row). No feature loss.
+
+---
+
 ## Pending Tasks
 
 - [x] Generate March 2026 expiring contracts data
@@ -305,3 +349,18 @@ Breaks: 10:15-10:30 AM, 12:00-12:45 PM (lunch), 2:15-2:30 PM, 4:45-5:00 PM
 - [ ] Export April slides to PDF/PNG
 - [ ] Update SBLO contacts (Q2 2026)
 - [ ] Update expiring contracts data monthly
+
+### Mindy Launch (June 2026)
+- [x] Build Mindy Launch registration page (full agenda, demos, audiences)
+- [x] Wire govcongiants.com/mindy-launch rewrite (stays on .com)
+- [x] Add "Free Bootcamp" link to homepage header nav
+- [x] Build 5 feature-pillar YT decks + PNGs + 5 publish docs + ALL-5 graphics doc
+- [x] Build "Build in Public" teaser series + 7-email countdown sequence
+- [x] Build launch promo email + internal event brief (clickable links)
+- [x] Add "See Mindy in Action" Vimeo reels (portrait 9:16); swap getmindy.ai reels
+- [x] Wire Supabase funnel_leads backup for signups (tested end-to-end)
+- [x] Supabase: bump compute to 2GB + load-reduction indexes + SELECT* trim
+- [x] Sweep .org → .com everywhere; cite 317K (not 2.7K) for contractor DB
+- [ ] Fill in real {{STREAM_LINK}} URLs after scheduling the 5 YT lives
+- [ ] Confirm Supabase memory baseline dropped (~24h after tier bump)
+- [ ] (Optional) Phase-2 DB optimization: count:exact→estimated, shared client, cron→local runners

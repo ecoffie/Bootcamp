@@ -5,3 +5,6 @@
 # Large files
 *.mov
 *.mp4
+
+# Slide PNG exports (regenerable via export-slides.js)
+presentations/yt-lives/**/live-*-pngs/
