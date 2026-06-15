@@ -3,7 +3,7 @@
 ## March 28, 2026 Bootcamp Promo Content
 
 ### YouTube Live 1: The $77 TRILLION IDIQ Opportunity
-- [x] Create script (in march-28-contract-vehicles-youtube-promos.html)
+- [x] Create script (in yt-lives-master-script.html)
 - [x] Update stat from 80% to 55%
 - [x] Create slides matching script structure (10 slides)
 - [x] Apply dark theme (blue/purple gradient from January bootcamp)
@@ -76,7 +76,7 @@
 ---
 
 ## Key Files
-- Scripts: `/Users/ericcoffie/Bootcamp/march-28-contract-vehicles-youtube-promos.html`
+- Scripts: `yt-lives-master-script.html` (in this folder)
 - Design Standards: `/Users/ericcoffie/Bootcamp/docs/presentation-design-standards.md`
 - Visual Standards: `/Users/ericcoffie/Action Plan/VISUAL-DESIGN-STANDARDS.md`
 - Export Script: `/Users/ericcoffie/Bootcamp/presentations/yt-lives/contract-vehicles/export-slides.js`

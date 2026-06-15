@@ -90,21 +90,25 @@ Drop in chat: Which vehicle interests you most? 👇
 
 ---
 
-## YT Live 3: Sources Sought Template
+## YT Live 3: The 2025 Rule Change That Opens Locked Doors
 **Date:** March 24, 2026
 
 ---
 
-**Most contractors skip Sources Sought notices. That's exactly why YOU should respond.**
+**The "Once 8(a), Always 8(a)" rule is DEAD. Here's how to flip contracts to YOUR set-aside.**
 
-Sources Sought and RFI responses are how you get on an agency's radar BEFORE the contract drops. Tonight I'm giving you the exact template.
+In September 2025, FAR 19.108-11 changed everything. Contracts that were locked to 8(a) for years can now move to HUBZone, SDVOSB, and WOSB – WITHOUT SBA approval.
+
+If you're NOT 8(a), doors just opened. Tonight I'm showing you how to walk through them.
 
 Tonight I'm covering:
-- What Sources Sought and RFI notices actually are
-- Why 90% of contractors ignore them (and why that's your advantage)
-- How your response influences how agencies structure contracts
+- FAR 19.108-11: What changed and why it matters
+- The old rule vs. the new rule (before/after breakdown)
+- Who this helps: HUBZone, SDVOSB, WOSB contractors
+- Your tool to flip contracts: Sources Sought responses
+- Why 90% of contractors ignore Sources Sought (your advantage)
+- The 2-step strategy: Respond + Invoke Rule of Two
 - The exact template I use for every Sources Sought response
-- Real examples of responses that led to contract wins
 - How to find Sources Sought notices on SAM.gov
 
 LIVE WORKSHOP: We'll draft a Sources Sought response together using a real opportunity.
@@ -113,21 +117,24 @@ Download the FREE Sources Sought Template at the bootcamp:
 https://govcongiants.org/cvb
 
 Chapters
-00:00 - Why Most Contractors Miss This Step
-02:00 - What Is a Sources Sought Notice?
-05:00 - RFI vs Sources Sought: What's the Difference?
-08:00 - How Your Response Shapes the Contract
-12:00 - The Sources Sought Response Template (Section by Section)
-18:00 - LIVE: Finding Sources Sought on SAM.gov
-22:00 - WORKSHOP: Draft a Response Together
-26:00 - March 28 Bootcamp: Your Full Toolkit
+00:00 - The Rule Change That Opens Locked Doors
+02:00 - FAR 19.108-11: What Changed in September 2025
+05:00 - "Once 8(a), Always 8(a)" is DEAD
+08:00 - Who This Helps: HUBZone, SDVOSB, WOSB
+12:00 - Your Tool: Sources Sought Responses
+15:00 - The 2-Step Strategy (Respond + Rule of Two)
+18:00 - The Sources Sought Template (Section by Section)
+22:00 - LIVE: Finding Sources Sought on SAM.gov
+25:00 - March 28 Bootcamp: Your Full Toolkit
 28:00 - Thursday Final Call: Last Chance to Register
 
 Thursday is the FINAL live before the bootcamp – I'll answer all your questions and give you a sneak peek of the full agenda.
 
-Drop in chat: Have you ever responded to a Sources Sought? 👇
+Email "flip" to hello@govconedu.com for the free template.
 
-#GovCon #GovernmentContracts #SourcesSought #RFI #SAMgov #SmallBusiness
+Drop in chat: Are you HUBZone, SDVOSB, or WOSB certified? This rule change is for YOU. 👇
+
+#GovCon #GovernmentContracts #FAR19 #SourcesSought #HUBZone #SDVOSB #WOSB #SmallBusiness #8a
 
 ---
 

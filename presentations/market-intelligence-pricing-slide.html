@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Intelligence Pricing | GovCon Giants</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #e5e7eb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .slide {
+            width: 960px;
+            height: 540px;
+            background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
+            color: white;
+            padding: 35px 45px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            color: #fbbf24;
+        }
+
+        .single-table {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        th {
+            background: rgba(255,255,255,0.15);
+            padding: 8px 10px;
+            text-align: left;
+            font-weight: 700;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+        }
+
+        td {
+            padding: 7px 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .price {
+            font-weight: 700;
+            color: #fbbf24;
+        }
+
+        .free {
+            color: #10b981;
+            font-weight: 700;
+        }
+
+        .paid {
+            color: #f87171;
+        }
+
+        .check {
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        .x {
+            color: #f87171;
+            font-weight: bold;
+        }
+
+        .beta-note {
+            position: absolute;
+            bottom: 25px;
+            left: 45px;
+            right: 45px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .beta-badge {
+            background: #fbbf24;
+            color: #1a1a2e;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .beta-date {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .slide-number {
+            position: absolute;
+            bottom: 15px;
+            right: 20px;
+            font-size: 0.8rem;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <h1>Market Intelligence Pricing (Post-Beta: April 27, 2026)</h1>
+
+        <div class="single-table">
+            <table>
+                <tr>
+                    <th>User Type</th>
+                    <th>Daily Alerts ($19/mo)</th>
+                    <th>Daily Briefings ($49/mo)</th>
+                </tr>
+                <tr>
+                    <td>OH Free users (no purchase)</td>
+                    <td class="paid"><span class="x">✗</span> Pay $19/mo</td>
+                    <td class="paid"><span class="x">✗</span> Pay $49/mo</td>
+                </tr>
+                <tr>
+                    <td>OH Pro ($19/mo) subscribers</td>
+                    <td class="free"><span class="check">✓</span> Included</td>
+                    <td class="paid"><span class="x">✗</span> Pay $49/mo</td>
+                </tr>
+                <tr>
+                    <td>Any product buyer (excl OH free)</td>
+                    <td class="free"><span class="check">✓</span> Free</td>
+                    <td class="paid"><span class="x">✗</span> Pay $49/mo</td>
+                </tr>
+                <tr>
+                    <td>Pro Giant ($997)</td>
+                    <td class="free"><span class="check">✓</span> Free</td>
+                    <td class="free"><span class="check">✓</span> 1 year free</td>
+                </tr>
+                <tr>
+                    <td>Ultimate ($1,497)</td>
+                    <td class="free"><span class="check">✓</span> Free</td>
+                    <td class="free"><span class="check">✓</span> Lifetime free</td>
+                </tr>
+                <tr>
+                    <td>Beta users (no purchase)</td>
+                    <td>30 days free → $19/mo</td>
+                    <td>30 days free → $49/mo</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="beta-note">
+            <div class="beta-badge">Beta Ends: April 27, 2026</div>
+        </div>
+    </div>
+</body>
+</html>

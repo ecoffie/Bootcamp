@@ -65,7 +65,7 @@ const emailTemplates = {
       <p style="color: #94a3b8; font-size: 14px; margin: 0 0 16px 0;">Our team is here to help you succeed in government contracting.</p>
       <div style="margin-bottom: 12px;">
         <span style="color: #22c55e; font-size: 14px;">Call or Text:</span>
-        <a href="tel:7864770477" style="color: white; font-weight: bold; text-decoration: none; margin-left: 8px;">786-477-0477</a>
+        <a href="tel:5082906692" style="color: white; font-weight: bold; text-decoration: none; margin-left: 8px;">508-290-6692</a>
       </div>
       <div>
         <span style="color: #22c55e; font-size: 14px;">Email:</span>
@@ -150,7 +150,7 @@ const emailTemplates = {
       <p style="color: #94a3b8; font-size: 14px; margin: 0 0 16px 0;">Our team is here to help you succeed in government contracting.</p>
       <div style="margin-bottom: 12px;">
         <span style="color: #22c55e; font-size: 14px;">Call or Text:</span>
-        <a href="tel:7864770477" style="color: white; font-weight: bold; text-decoration: none; margin-left: 8px;">786-477-0477</a>
+        <a href="tel:5082906692" style="color: white; font-weight: bold; text-decoration: none; margin-left: 8px;">508-290-6692</a>
       </div>
       <div>
         <span style="color: #22c55e; font-size: 14px;">Email:</span>
@@ -233,7 +233,7 @@ const emailTemplates = {
       <p style="color: #94a3b8; font-size: 14px; margin: 0 0 16px 0;">Our team is here to help you succeed in government contracting.</p>
       <div style="margin-bottom: 12px;">
         <span style="color: #22c55e; font-size: 14px;">Call or Text:</span>
-        <a href="tel:7864770477" style="color: white; font-weight: bold; text-decoration: none; margin-left: 8px;">786-477-0477</a>
+        <a href="tel:5082906692" style="color: white; font-weight: bold; text-decoration: none; margin-left: 8px;">508-290-6692</a>
       </div>
       <div>
         <span style="color: #22c55e; font-size: 14px;">Email:</span>
@@ -318,7 +318,7 @@ const emailTemplates = {
       <p style="color: #94a3b8; font-size: 14px; margin: 0 0 16px 0;">Our team is here to help you succeed in government contracting.</p>
       <div style="margin-bottom: 12px;">
         <span style="color: #22c55e; font-size: 14px;">Call or Text:</span>
-        <a href="tel:7864770477" style="color: white; font-weight: bold; text-decoration: none; margin-left: 8px;">786-477-0477</a>
+        <a href="tel:5082906692" style="color: white; font-weight: bold; text-decoration: none; margin-left: 8px;">508-290-6692</a>
       </div>
       <div>
         <span style="color: #22c55e; font-size: 14px;">Email:</span>
@@ -402,7 +402,7 @@ const emailTemplates = {
       <p style="color: #94a3b8; font-size: 14px; margin: 0 0 16px 0;">Our team is here to help you succeed in government contracting.</p>
       <div style="margin-bottom: 12px;">
         <span style="color: #22c55e; font-size: 14px;">Call or Text:</span>
-        <a href="tel:7864770477" style="color: white; font-weight: bold; text-decoration: none; margin-left: 8px;">786-477-0477</a>
+        <a href="tel:5082906692" style="color: white; font-weight: bold; text-decoration: none; margin-left: 8px;">508-290-6692</a>
       </div>
       <div>
         <span style="color: #22c55e; font-size: 14px;">Email:</span>

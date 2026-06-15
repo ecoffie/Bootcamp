@@ -4,6 +4,8 @@
     "export-tempnet-pdf": "node presentations/export-pdf-tempnet.js"
   },
   "dependencies": {
+    "pdfkit": "^0.18.0",
+    "pptxgenjs": "^4.0.1",
     "puppeteer": "^24.37.2"
   }
 }

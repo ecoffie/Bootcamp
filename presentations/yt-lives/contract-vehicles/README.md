@@ -15,7 +15,7 @@ Promotional content for the March 28, 2026 Contract Vehicles Bootcamp.
 
 ### Scripts
 All scripts are in one file for easy reference:
-- `/Users/ericcoffie/Bootcamp/march-28-contract-vehicles-youtube-promos.html`
+- `yt-lives-master-script.html`
 
 ### YouTube Descriptions
 Copy-paste ready descriptions with chapters:
