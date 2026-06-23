@@ -68,43 +68,21 @@
             <div class="w-10 h-10 bg-violet-900/50 border border-violet-700/50 rounded-lg flex items-center justify-center text-violet-400">💻</div>
             <div>
               <p class="text-slate-500 text-sm">Where</p>
-              <p id="whereLine" class="text-white font-semibold">Live online — details below</p>
+              <p class="text-white font-semibold">Live online — link emailed before the event</p>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Access block: Zoom (first 150) vs YouTube (everyone after) -->
-      <div id="accessBlock" class="max-w-md mx-auto mb-12">
-        <!-- Zoom (first 150) -->
-        <div id="zoomAccess" class="hidden bg-green-900/20 border border-green-700/50 rounded-2xl p-8 text-center">
-          <div class="text-3xl mb-3">🎟️</div>
-          <h3 class="text-xl font-bold text-white mb-2">You got a live Zoom seat!</h3>
-          <p class="text-slate-400 text-sm mb-5">
-            You're one of the first 150 — you'll join the launch live on Zoom (limited to 100 in the room, so arrive a few minutes early).
-            We'll email your Zoom link the day before, and it'll appear here too.
-          </p>
-          <a id="zoomLink" href="https://us06web.zoom.us/j/89280506481?pwd=zFol5CPiXUW5PtO51FhDlwbuWrLQVi.1" target="_blank"
-             class="inline-block px-8 py-4 bg-green-600 hover:bg-green-500 text-white rounded-full font-bold text-lg transition-all">
-            Add the Zoom Event →
-          </a>
-          <p class="text-slate-600 text-xs mt-4">Can't make it live? The replay goes out to everyone afterward.</p>
-        </div>
-
-        <!-- YouTube (151+) -->
-        <div id="ytAccess" class="hidden bg-violet-900/20 border border-violet-700/50 rounded-2xl p-8 text-center">
-          <div class="text-3xl mb-3">📺</div>
-          <h3 class="text-xl font-bold text-white mb-2">You're in — watch live on YouTube</h3>
-          <p class="text-slate-400 text-sm mb-5">
-            The 100 live Zoom seats filled up — but you won't miss a thing. We'll stream the entire launch live on YouTube,
-            and you'll get the link by email before we go on.
-          </p>
-          <a id="ytLink" href="YOUTUBE_LINK_PLACEHOLDER" target="_blank"
-             class="inline-block px-8 py-4 bg-violet-600 hover:bg-violet-500 text-white rounded-full font-bold text-lg transition-all">
-            Watch on YouTube →
-          </a>
-          <p class="text-slate-600 text-xs mt-4">Same demo, same day, same free Mindy access.</p>
-        </div>
+      <!-- Access: everyone gets the live link by email before the event. No join
+           link is ever placed in this page, so it can't leak to non-registrants. -->
+      <div class="max-w-md mx-auto mb-12 bg-violet-900/20 border border-violet-700/50 rounded-2xl p-8 text-center">
+        <div class="text-3xl mb-3">📧</div>
+        <h3 class="text-xl font-bold text-white mb-2">Your access link is on the way</h3>
+        <p class="text-slate-400 text-sm">
+          You're registered. We'll email your live access link before the event —
+          so add June 27 to your calendar below and keep an eye on your inbox.
+        </p>
       </div>
 
       <!-- Add to Calendar — so they get a reminder for June 27 -->
@@ -191,46 +169,17 @@
   </footer>
 
   <script>
-    // Show the right access block based on the signup position the lead API
-    // returned (stored on the landing page before redirect). First 150 → Zoom;
-    // everyone after → YouTube. If we don't know (e.g. direct visit), fall back
-    // to the YouTube block so no one is wrongly promised a Zoom seat.
+    // Add-to-calendar for everyone who registered. Same event for all signups —
+    // the live access link is delivered by email before the event, never embedded
+    // in this page, so it can't leak to people who didn't sign up.
     (function () {
-      var getsZoom = localStorage.getItem('mindyLaunchGetsZoom'); // '1' | '0' | null
-      var zoom = document.getElementById('zoomAccess');
-      var yt = document.getElementById('ytAccess');
-      var whereLine = document.getElementById('whereLine');
-      var nextStep4 = document.getElementById('nextStep4');
-
-      // The real join URL this attendee will use — flows into the calendar invite.
-      var ZOOM_URL = document.getElementById('zoomLink').getAttribute('href');
-      var YT_URL = document.getElementById('ytLink').getAttribute('href');
-
-      var isZoom = getsZoom === '1';
-      if (isZoom) {
-        zoom.classList.remove('hidden');
-        if (whereLine) whereLine.textContent = 'Live on Zoom (your seat is reserved)';
-        if (nextStep4) nextStep4.querySelector('span:last-child').textContent =
-          'The day before, we’ll email your Zoom link';
-      } else {
-        // '0' (past the cap) or null (unknown / direct visit) → YouTube.
-        yt.classList.remove('hidden');
-        if (whereLine) whereLine.textContent = 'Live on YouTube';
-        if (nextStep4) nextStep4.querySelector('span:last-child').textContent =
-          'The day before, we’ll email your YouTube live link';
-      }
-
       // ── Add to Calendar ──
       // June 27, 2026, 10:00 AM ET (EDT = UTC−4) → 14:00 UTC, 90-min event.
-      var joinUrl = isZoom ? ZOOM_URL : YT_URL;
       var title = 'Mindy Launch — Live Demo (GovCon Giants)';
       var details =
-        'Watch the full Mindy launch live. ' +
-        (isZoom
-          ? 'Your live Zoom room: ' + joinUrl
-          : 'Watch live on YouTube: ' + joinUrl) +
+        'Watch the full Mindy launch live. We’ll email your access link before the event.' +
         '\\n\\nTry Mindy free anytime at https://getmindy.ai';
-      var location = isZoom ? joinUrl : 'YouTube Live — ' + joinUrl;
+      var location = 'Live online (access link emailed before the event)';
       var startUtc = '20260627T140000Z';
       var endUtc   = '20260627T153000Z';
 

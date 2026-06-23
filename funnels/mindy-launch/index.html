@@ -58,16 +58,12 @@
         </div>
       </div>
 
-      <!-- Scarcity banner: first 150 signups get the live Zoom; rest watch on YouTube -->
+      <!-- Live social proof: how many have already registered -->
       <div id="scarcityBanner" class="hidden max-w-md mx-auto mb-4 bg-violet-950/60 border border-violet-700/60 rounded-xl px-5 py-3 text-center">
         <p class="text-sm text-violet-200">
           <span class="inline-block w-2 h-2 rounded-full bg-red-500 animate-pulse mr-1.5 align-middle"></span>
-          <span class="font-bold text-white">First 150 signups</span> get the live <span class="font-semibold text-white">Zoom</span> room
-          (<span class="text-slate-400">100 seats</span>) —
-          <span id="scarcitySpots" class="font-bold text-green-400">—</span> Zoom spots left.
+          <span id="scarcitySpots" class="font-bold text-green-400">—</span> people have already registered — save your free seat for June 27.
         </p>
-        <p id="scarcityFull" class="hidden text-xs text-amber-300 mt-1">Zoom is full — new signups watch the launch live on YouTube.</p>
-        <p id="scarcityOpen" class="text-xs text-slate-500 mt-1">After that, everyone else watches free on YouTube.</p>
       </div>
 
       <!-- Email Capture Form -->
@@ -599,19 +595,14 @@
   </footer>
 
   <script>
-    // Live scarcity counter — pull the real signup count and show Zoom spots left.
+    // Live social proof — show how many people have registered so far.
     (async function loadSpots() {
       try {
         const res = await fetch('/api/mindy-launch/spots', { cache: 'no-store' });
         const d = await res.json();
-        if (!d || d.remaining === null || d.remaining === undefined) return; // fail soft: keep banner hidden
-        const banner = document.getElementById('scarcityBanner');
-        document.getElementById('scarcitySpots').textContent = d.remaining;
-        if (d.full) {
-          document.getElementById('scarcityFull').classList.remove('hidden');
-          document.getElementById('scarcityOpen').classList.add('hidden');
-        }
-        banner.classList.remove('hidden');
+        if (!d || d.registered === null || d.registered === undefined) return; // fail soft: keep banner hidden
+        document.getElementById('scarcitySpots').textContent = d.registered;
+        document.getElementById('scarcityBanner').classList.remove('hidden');
       } catch (err) {
         // Never block the page — banner just stays hidden.
         console.log('spots fetch failed:', err);
@@ -634,11 +625,10 @@
       localStorage.setItem('leadEmail', email);
       localStorage.setItem('leadPhone', phone);
 
-      // Send to API (GoHighLevel webhook + Supabase backup). The response
-      // tells us this signup's position so the thank-you page can show the
-      // Zoom link (first 150) vs YouTube (everyone after).
+      // Send to API (GoHighLevel webhook + Supabase backup). Everyone gets the
+      // same confirmation — the live access link is emailed before the event.
       try {
-        const res = await fetch('/api/lead', {
+        await fetch('/api/lead', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -649,11 +639,6 @@
             tags: ['mindy-launch', 'mindy-leads', 'free-event-attendee']
           })
         });
-        const data = await res.json().catch(() => ({}));
-        if (data && data.mindyLaunch) {
-          localStorage.setItem('mindyLaunchPosition', String(data.mindyLaunch.position));
-          localStorage.setItem('mindyLaunchGetsZoom', data.mindyLaunch.getsZoom ? '1' : '0');
-        }
       } catch (err) {
         console.log('API error (continuing anyway):', err);
       }
