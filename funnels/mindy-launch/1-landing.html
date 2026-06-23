@@ -658,8 +658,10 @@
         console.log('API error (continuing anyway):', err);
       }
 
-      // Redirect to thank you page
-      window.location.href = '4-thank-you.html';
+      // Redirect to thank you page. Use an absolute path: the page is served
+      // at govcongiants.com/mindy-launch (no trailing slash), so a relative
+      // '4-thank-you.html' would resolve to /4-thank-you.html and miss the funnel.
+      window.location.href = '/mindy-launch/4-thank-you.html';
     });
   </script>
 </body>
