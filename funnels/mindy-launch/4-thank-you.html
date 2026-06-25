@@ -74,7 +74,7 @@
             <div class="w-10 h-10 bg-violet-900/50 border border-violet-700/50 rounded-lg flex items-center justify-center text-violet-400">🕘</div>
             <div>
               <p class="text-slate-500 text-sm">Time</p>
-              <p class="text-white font-semibold">10:00 AM ET</p>
+              <p class="text-white font-semibold">10:00 AM – 1:00 PM ET</p>
             </div>
           </div>
           <div class="flex items-center gap-4">
@@ -187,14 +187,14 @@
     // in this page, so it can't leak to people who didn't sign up.
     (function () {
       // ── Add to Calendar ──
-      // June 27, 2026, 10:00 AM ET (EDT = UTC−4) → 14:00 UTC, 90-min event.
+      // June 27, 2026, 10:00 AM–1:00 PM ET (EDT = UTC−4) → 14:00–17:00 UTC, 3-hour event.
       var title = 'Mindy Launch — Live Demo (GovCon Giants)';
       var details =
         'Watch the full Mindy launch live. We’ll email your access link before the event.' +
         '\\n\\nTry Mindy free anytime at https://getmindy.ai';
       var location = 'Live online (access link emailed before the event)';
       var startUtc = '20260627T140000Z';
-      var endUtc   = '20260627T153000Z';
+      var endUtc   = '20260627T170000Z';
 
       // Google Calendar
       var gcal =
