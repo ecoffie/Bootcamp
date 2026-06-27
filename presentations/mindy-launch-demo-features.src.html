@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<title>The Mindy Launch — Feature Demo</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',system-ui,sans-serif;background:#0f172a;color:#fff;display:flex;justify-content:center}
+  .slide{width:1280px;height:720px;padding:64px 72px;display:none;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+    background:linear-gradient(135deg,#0f172a 0%,#1e1b4b 100%);position:relative;page-break-after:always;overflow:hidden}
+  .slide.active{display:flex}
+  .slide::before{content:'';position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,#6366f1,#8b5cf6,#a78bfa)}
+  .logo{position:absolute;top:28px;right:60px;font-weight:900;font-size:17px;color:#cbd5e1}.logo span{color:#10b981}
+  .slide-number{position:absolute;bottom:26px;right:60px;font-size:14px;color:#475569}
+  .sec-intel{--c:#a78bfa}.sec-pipe{--c:#38bdf8}.sec-est{--c:#fbbf24}.sec-res{--c:#10b981}.sec-acct{--c:#f472b6}
+  .kicker{font-size:17px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--c);margin-bottom:30px}
+  .x{color:#f87171}.green{color:#10b981}.accent{color:var(--c)}
+  .title{font-size:50px;font-weight:900;line-height:1.14;max-width:1000px}
+  .title.sm{font-size:40px}
+  .supp{font-size:24px;color:#94a3b8;margin-top:22px}
+
+  /* dominant visual: icon */
+  .viz{margin-bottom:30px;display:flex;align-items:center;justify-content:center}
+  .viz .luc svg{width:104px;height:104px;stroke-width:1.7}
+  .viz.red{color:#f87171}
+  .circle{width:188px;height:188px;border-radius:50%;color:var(--c);
+    background:color-mix(in srgb,var(--c) 13%,transparent);border:2px solid color-mix(in srgb,var(--c) 42%,transparent)}
+  .circle .luc svg{width:92px;height:92px}
+
+  /* live badge */
+  .live{position:absolute;top:30px;left:72px;background:#dc2626;color:#fff;padding:8px 18px;border-radius:24px;font-size:15px;font-weight:800;letter-spacing:1px;display:flex;align-items:center;gap:9px}
+  .live::before{content:'';width:9px;height:9px;background:#fff;border-radius:50%;animation:pulse 1s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+
+  /* old-way diagram + cost */
+  .tools{display:flex;gap:16px;margin-bottom:28px;flex-wrap:wrap;justify-content:center}
+  .tool{background:rgba(127,29,29,.18);border:1px solid #b91c1c;color:#fca5a5;padding:14px 20px;border-radius:13px;font-size:22px;font-weight:800;position:relative}
+  .tool::after{content:'';position:absolute;left:8px;right:8px;top:50%;height:3px;background:#f87171;transform:rotate(-7deg)}
+  .cost{margin-top:26px;background:rgba(127,29,29,.25);border:1px solid #b91c1c;color:#fca5a5;font-weight:800;font-size:23px;padding:12px 28px;border-radius:30px}
+
+  /* proof big number */
+  .bignum{font-size:140px;font-weight:900;color:var(--c);line-height:1;margin-bottom:14px}
+
+  /* divider + overview */
+  .divider .d-ic{color:var(--c);margin-bottom:14px}.divider .d-ic svg{width:78px;height:78px;stroke-width:1.6}
+  .divider .big{font-size:84px;font-weight:900;color:var(--c);line-height:1.05}
+  .divider p{font-size:25px;color:#94a3b8;margin-top:14px;max-width:880px}
+  /* overview pillars (visual, icon-led) */
+  .pillars{display:flex;gap:26px;justify-content:center}
+  .pill{width:208px;padding:38px 18px;border-radius:22px;display:flex;flex-direction:column;align-items:center;gap:20px;
+    background:color-mix(in srgb,var(--c) 9%,transparent);border:1.5px solid color-mix(in srgb,var(--c) 40%,transparent)}
+  .pill .luc svg{width:66px;height:66px;color:var(--c);stroke-width:1.7}
+  .pill h5{font-size:23px;font-weight:800;color:#fff;letter-spacing:.3px}
+  .map{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;width:100%;margin-top:26px;text-align:left}
+  .mapcol h5{font-size:16px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px}
+  .mapcol ul{list-style:none}.mapcol li{font-size:17px;color:#cbd5e1;margin-bottom:9px;line-height:1.25}
+
+  /* screenshot showcase */
+  .slide:has(.shot-wrap){justify-content:center}
+  .slide:has(.shot-wrap) .title{font-size:34px;margin-top:6px}
+  .shot-wrap{width:880px;border-radius:14px;overflow:hidden;border:1px solid #334155;
+    box-shadow:0 26px 70px rgba(0,0,0,.55),0 0 0 1px color-mix(in srgb,var(--c) 20%,transparent);margin-bottom:22px}
+  .shot-bar{height:36px;background:#0b1220;display:flex;align-items:center;gap:8px;padding:0 16px;border-bottom:1px solid #1e293b}
+  .shot-dot{width:11px;height:11px;border-radius:50%}.d-r{background:#ef4444}.d-y{background:#eab308}.d-g{background:#22c55e}
+  .shot-url{margin-left:14px;font-size:13px;color:#64748b;background:#020617;padding:5px 14px;border-radius:8px;font-weight:600}
+  .shot-wrap img{display:block;width:100%;height:382px;object-fit:cover;object-position:top}
+  .shot-ph{height:382px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#0b1220;border-top:2px dashed #334155;gap:12px;color:#475569}
+  .shot-ph b{font-size:21px;color:#94a3b8;font-weight:800}.shot-ph span{font-size:15px}
+</style></head><body>
+
+<!-- OVERVIEW -->
+<div class="slide divider"><div class="logo">GovCon <span>Giants</span></div>
+  <h1 style="font-size:56px;font-weight:900;margin-bottom:40px">This is <span class="green">Mindy</span>.</h1>
+  <div class="pillars">
+    <div class="pill" style="--c:#a78bfa"><i class="luc" data-icon="brain"></i><h5>Intelligence</h5></div>
+    <div class="pill" style="--c:#38bdf8"><i class="luc" data-icon="filter"></i><h5>Pipeline</h5></div>
+    <div class="pill" style="--c:#fbbf24"><i class="luc" data-icon="calculator"></i><h5>Estimating</h5></div>
+    <div class="pill" style="--c:#10b981"><i class="luc" data-icon="telescope"></i><h5>Research</h5></div>
+    <div class="pill" style="--c:#f472b6"><i class="luc" data-icon="folder-lock"></i><h5>Your Vault</h5></div>
+  </div>
+  <p style="margin-top:40px">Find it. Price it. Write it. Win it — <span class="green">one platform.</span></p></div>
+
+<!-- ===== INTELLIGENCE ===== -->
+<div class="slide divider sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="d-ic"><i class="luc" data-icon="brain"></i></div><div class="big">Intelligence</div><p>Your market, read for you — every day.</p></div>
+
+<!-- Mindy Chat -->
+<div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Mindy Chat</div><div class="viz red"><i class="luc" data-icon="layers"></i></div><div class="title">You shouldn't need <span class="x">5 tools</span><br>to get <span class="green">one answer.</span></div></div>
+<div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Mindy Chat · the old way</div><div class="tools"><div class="tool">SAM</div><div class="tool">USAspending</div><div class="tool">FPDS</div><div class="tool">Sheets</div><div class="tool">ChatGPT</div></div><div class="title sm">Five tabs. Still guessing.</div><div class="cost">5 tools · 0 confidence</div></div>
+<div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot" data-shot="mindy-chat"></div><div class="title">Ask in plain English.<br>Get a <span class="green">grounded</span> answer.</div><div class="supp">Mindy Chat</div></div>
+<div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="bignum">28</div><div class="title sm">One question. A real answer.</div><div class="supp">data sources behind every reply</div></div>
+
+<!--INJECT:AI_INTERLUDE-->
+
+<!-- Today's Intel -->
+<div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Today's Intel</div><div class="viz red"><i class="luc" data-icon="search"></i></div><div class="title">You'll never scan <span class="x">88,000 opportunities</span><br>before coffee.</div></div>
+<div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Today's Intel · the old way</div><div class="viz red"><i class="luc" data-icon="clock"></i></div><div class="title sm">Skim SAM.gov and hope.</div><div class="cost">And you usually missed it</div></div>
+<div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot" data-shot="todays-intel"></div><div class="title">Your market, <span class="green">briefed</span><br>every morning.</div><div class="supp">Today's Intel</div></div>
+<div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="bignum">24,000</div><div class="title sm">You walk in already knowing.</div><div class="supp">contracts scanned for you every night</div></div>
+
+<!-- Source Feed -->
+<div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Source Feed</div><div class="viz red"><i class="luc" data-icon="bell"></i></div><div class="title">Opportunities break all day.<br>You <span class="x">can't live on SAM.gov.</span></div></div>
+<div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Source Feed · the old way</div><div class="viz red"><i class="luc" data-icon="refresh-cw"></i></div><div class="title sm">Saved searches. Manual refreshes.</div><div class="cost">Late · or never</div></div>
+<div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot" data-shot="source-feed"></div><div class="title">New opportunities<br>the <span class="green">moment</span> they post.</div><div class="supp">Source Feed</div></div>
+<div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="bignum">88K+</div><div class="title sm">The right ones find you.</div><div class="supp">SAM.gov opportunities tracked live</div></div>
+
+<!-- Market Dashboard -->
+<div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Market Dashboard</div><div class="viz red"><i class="luc" data-icon="layers"></i></div><div class="title">You can't build strategy<br>out of <span class="x">50 browser tabs.</span></div></div>
+<div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Market Dashboard · the old way</div><div class="viz red"><i class="luc" data-icon="table-2"></i></div><div class="title sm">A dozen exports and a hunch.</div><div class="cost">A week · a blurry picture</div></div>
+<div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot" data-shot="market-dashboard"></div><div class="title">Your whole market,<br><span class="green">one screen.</span></div><div class="supp">Market Dashboard</div></div>
+<div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="viz circle"><i class="luc" data-icon="layout-dashboard"></i></div><div class="title sm">One screen. <span class="accent">One glance.</span></div></div>
+
+<!-- ===== PIPELINE ===== -->
+<div class="slide divider sec-pipe"><div class="logo">GovCon <span>Giants</span></div><div class="d-ic"><i class="luc" data-icon="trending-up"></i></div><div class="big">Pipeline</div><p>Stop running BD out of a spreadsheet that dies in a drawer.</p></div>
+
+<!-- My Pursuits -->
+<div class="slide sec-pipe"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">My Pursuits</div><div class="viz red"><i class="luc" data-icon="table-2"></i></div><div class="title">The deals I lost<br>because <span class="x">I lost track.</span></div></div>
+<div class="slide sec-pipe"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">My Pursuits · the old way</div><div class="viz red"><i class="luc" data-icon="table-2"></i></div><div class="title sm">A Google Sheet you forget to update.</div><div class="cost">Deals through the cracks</div></div>
+<div class="slide sec-pipe"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot" data-shot="my-pursuits"></div><div class="title">Every bid you're chasing,<br><span class="accent">alive.</span></div><div class="supp">My Pursuits</div></div>
+<div class="slide sec-pipe"><div class="logo">GovCon <span>Giants</span></div><div class="viz circle"><i class="luc" data-icon="trending-up"></i></div><div class="title sm">The CRM that took a weekend —<br><span class="accent">built in.</span></div></div>
+
+<!-- My Target List -->
+<div class="slide sec-pipe"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">My Target List</div><div class="viz red"><i class="luc" data-icon="target"></i></div><div class="title">You can't win alone.<br>But <span class="x">who do you call?</span></div></div>
+<div class="slide sec-pipe"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">My Target List · the old way</div><div class="viz red"><i class="luc" data-icon="search"></i></div><div class="title sm">Cold-Google primes. Guess the email.</div><div class="cost">Hours of dead ends</div></div>
+<div class="slide sec-pipe"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot" data-shot="my-target-list"></div><div class="title">Who to team with.<br>Who to <span class="accent">call.</span></div><div class="supp">My Target List</div></div>
+<div class="slide sec-pipe"><div class="logo">GovCon <span>Giants</span></div><div class="bignum">317K</div><div class="title sm">Never wonder who to call.</div><div class="supp">contractors + 125K contacts</div></div>
+
+<!-- ===== ESTIMATING ===== -->
+<div class="slide divider sec-est"><div class="logo">GovCon <span>Giants</span></div><div class="d-ic"><i class="luc" data-icon="dollar-sign"></i></div><div class="big">Estimating</div><p>Price it right and write it fast — grounded in real award data.</p></div>
+
+<!-- Pricing Intel -->
+<div class="slide sec-est"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Pricing Intel</div><div class="viz red"><i class="luc" data-icon="dollar-sign"></i></div><div class="title">Price wrong and you lose —<br><span class="x">every time.</span></div></div>
+<div class="slide sec-est"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Pricing Intel · the old way</div><div class="viz red"><i class="luc" data-icon="dollar-sign"></i></div><div class="title sm">Price off gut feel and hope.</div><div class="cost">Lose money · or lose the bid</div></div>
+<div class="slide sec-est"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot" data-shot="pricing-intel"></div><div class="title">See what similar contracts<br><span class="accent">really won.</span></div><div class="supp">Pricing Intel</div></div>
+<div class="slide sec-est"><div class="logo">GovCon <span>Giants</span></div><div class="bignum">$750B</div><div class="title sm">Bid with numbers, not a hunch.</div><div class="supp">of real award history</div></div>
+
+<!-- Proposal Assist -->
+<div class="slide sec-est"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Proposal Assist</div><div class="viz red"><i class="luc" data-icon="file-text"></i></div><div class="title">Generic AI fills proposals<br>with <span class="x">fake UEIs.</span></div></div>
+<div class="slide sec-est"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Proposal Assist · the old way</div><div class="viz red"><i class="luc" data-icon="clock"></i></div><div class="title sm">Weeks of writing. Or a placeholder draft.</div><div class="cost">A draft that loses the bid</div></div>
+<div class="slide sec-est"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot" data-shot="proposal-assist"></div><div class="title">A compliant draft,<br>grounded in <span class="green">your data.</span></div><div class="supp">Proposal Assist</div></div>
+<div class="slide sec-est"><div class="logo">GovCon <span>Giants</span></div><div class="bignum">0</div><div class="title sm">A draft you can submit.</div><div class="supp">hallucinated numbers — it reads your Vault</div></div>
+
+<!-- ===== RESEARCH ===== -->
+<div class="slide divider sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="d-ic"><i class="luc" data-icon="compass"></i></div><div class="big">Research</div><p>Find the whole market — not just the obvious code.</p></div>
+
+<!-- Market Research -->
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Market Research</div><div class="viz red"><i class="luc" data-icon="compass"></i></div><div class="title">You niche on one code —<br>and miss <span class="x">72%.</span></div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Market Research · the old way</div><div class="viz red"><i class="luc" data-icon="compass"></i></div><div class="title sm">Pick the one NAICS you know.</div><div class="cost">You miss 72% of your market</div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot" data-shot="market-research"></div><div class="title">Paste a cap statement.<br>See your <span class="green">whole market.</span></div><div class="supp">Market Research</div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="bignum">72%</div><div class="title sm">From one word to your whole market.</div><div class="supp">the obvious NAICS is only 28% of spend</div></div>
+
+<!-- Upcoming Buys -->
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Upcoming Buys</div><div class="viz red"><i class="luc" data-icon="clock"></i></div><div class="title">On SAM.gov, you're already<br>a <span class="x">year behind.</span></div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Upcoming Buys · the old way</div><div class="viz red"><i class="luc" data-icon="clock"></i></div><div class="title sm">Wait for the RFP. Then scramble.</div><div class="cost">A year behind the incumbent</div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot" data-shot="upcoming-buys"></div><div class="title">See what agencies<br><span class="green">plan to buy.</span></div><div class="supp">Upcoming Buys</div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="bignum">9,973</div><div class="title sm">Be early, not late.</div><div class="supp">FY2026 forecasted buys — refreshed this week</div></div>
+
+<!-- Expiring Contracts -->
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Expiring Contracts</div><div class="viz red"><i class="luc" data-icon="hourglass"></i></div><div class="title">80% are recompetes.<br>Wait, and <span class="x">you've lost.</span></div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Expiring Contracts · the old way</div><div class="viz red"><i class="luc" data-icon="hourglass"></i></div><div class="title sm">Find out after it already awarded.</div><div class="cost">Too late to bid</div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot" data-shot="expiring-contracts"></div><div class="title">Find recompetes<br><span class="green">12–18 months early.</span></div><div class="supp">Expiring Contracts</div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="bignum">~80%</div><div class="title sm">Position before the competition.</div><div class="supp">of all opportunities are recompetes</div></div>
+
+<!-- Vehicle Expiry Watch -->
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Vehicle Expiry Watch</div><div class="viz red"><i class="luc" data-icon="lock"></i></div><div class="title">Miss the on-ramp —<br>locked out for <span class="x">a decade.</span></div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Vehicle Expiry Watch · the old way</div><div class="viz red"><i class="luc" data-icon="lock"></i></div><div class="title sm">Hear it re-opened from a competitor.</div><div class="cost">Locked out 5–10 years</div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot" data-shot="vehicle-expiry-watch"></div><div class="title">Know when the big vehicles<br><span class="green">re-open.</span></div><div class="supp">Vehicle Expiry Watch</div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="viz circle"><i class="luc" data-icon="bell"></i></div><div class="title sm">Be ready when the door <span class="accent">opens.</span></div></div>
+
+<!-- Market Research Report -->
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Research Report</div><div class="viz red"><i class="luc" data-icon="file-text"></i></div><div class="title">You need a report —<br><span class="x">not a screenshot.</span></div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Research Report · the old way</div><div class="viz red"><i class="luc" data-icon="dollar-sign"></i></div><div class="title sm">Pay a consultant. Wait weeks.</div><div class="cost">Weeks · thousands</div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot" data-shot="market-research-report"></div><div class="title">A full market report,<br><span class="green">on demand.</span></div><div class="supp">Market Research Report</div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="viz circle"><i class="luc" data-icon="file-text"></i></div><div class="title sm">A consultant's report —<br><span class="accent">in minutes.</span></div></div>
+
+<!-- Federal Grants -->
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Federal Grants</div><div class="viz red"><i class="luc" data-icon="banknote"></i></div><div class="title">Contracts aren't<br>the <span class="x">only money.</span></div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Federal Grants · the old way</div><div class="viz red"><i class="luc" data-icon="eye-off"></i></div><div class="title sm">Grants live in a system you never open.</div><div class="cost">Money left on the table</div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot" data-shot="federal-grants"></div><div class="title">Search live grants<br>beside <span class="green">contracts.</span></div><div class="supp">Federal Grants</div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="viz circle"><i class="luc" data-icon="banknote"></i></div><div class="title sm">A whole funding stream — <span class="accent">found.</span></div></div>
+
+<!-- Contractors -->
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Contractors</div><div class="viz red"><i class="luc" data-icon="building-2"></i></div><div class="title">Who's the competition?<br>Who's the <span class="x">partner?</span></div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Contractors · the old way</div><div class="viz red"><i class="luc" data-icon="eye-off"></i></div><div class="title sm">You don't know who's in your space.</div><div class="cost">Flying blind</div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot" data-shot="contractors"></div><div class="title">Search the whole<br><span class="green">contractor universe.</span></div><div class="supp">Contractors</div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="bignum">317,106</div><div class="title sm">Know the whole field.</div><div class="supp">contractors — rivals and partners alike</div></div>
+
+<!-- Decision Makers -->
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Decision Makers</div><div class="viz red"><i class="luc" data-icon="landmark"></i></div><div class="title">You can't sell<br>to who you <span class="x">can't reach.</span></div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Decision Makers · the old way</div><div class="viz red"><i class="luc" data-icon="users-round"></i></div><div class="title sm">Submit into the void. No name.</div><div class="cost">Nobody knows you exist</div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot" data-shot="decision-makers"></div><div class="title">Full buyer rosters,<br>by <span class="green">office.</span></div><div class="supp">Decision Makers</div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="bignum">125K+</div><div class="title sm">Know who to call.</div><div class="supp">contacts · 170 OSBP commands</div></div>
+
+<!-- ===== VAULT ===== -->
+<div class="slide divider sec-acct"><div class="logo">GovCon <span>Giants</span></div><div class="d-ic"><i class="luc" data-icon="folder-kanban"></i></div><div class="big">Your Vault</div><p>Seven years of templates and the formula — now inside the AI.</p></div>
+
+<!-- My Vault -->
+<div class="slide sec-acct"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">My Vault</div><div class="viz red"><i class="luc" data-icon="lock"></i></div><div class="title">Generic AI doesn't<br>know <span class="x">your company.</span></div></div>
+<div class="slide sec-acct"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">My Vault · the old way</div><div class="viz red"><i class="luc" data-icon="folder-kanban"></i></div><div class="title sm">Your data in folders the AI can't see.</div><div class="cost">Generic in · generic out</div></div>
+<div class="slide sec-acct"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot" data-shot="my-vault"></div><div class="title">Your documents become<br>Mindy's <span style="color:#f472b6">memory.</span></div><div class="supp">My Vault</div></div>
+<div class="slide sec-acct"><div class="logo">GovCon <span>Giants</span></div><div class="viz circle"><i class="luc" data-icon="folder-kanban"></i></div><div class="title sm"><span class="accent">You</span> become part of the corpus.</div></div>
+
+<!-- CLOSE -->
+<div class="slide divider sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="big" style="font-size:60px">One platform.<br>The whole pursuit.</div><p>Find it. Price it. Write it. Win it — grounded in real data.</p></div>
+
+<script>
+  let currentSlide=0;const slides=document.querySelectorAll('.slide');
+  slides.forEach((s,i)=>{if(!s.querySelector('.slide-number')){const d=document.createElement('div');d.className='slide-number';d.textContent=(i+1)+' / '+slides.length;s.appendChild(d);}});
+  function showSlide(n){slides[currentSlide].classList.remove('active');currentSlide=(n+slides.length)%slides.length;slides[currentSlide].classList.add('active');}
+  function nextSlide(){showSlide(currentSlide+1)}function prevSlide(){showSlide(currentSlide-1)}
+  document.addEventListener('keydown',(e)=>{if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();nextSlide();}if(e.key==='ArrowLeft')prevSlide();});
+  document.addEventListener('click',(e)=>{if(e.target.closest('a'))return;nextSlide();});
+  slides[0].classList.add('active');
+</script>
+</body></html>

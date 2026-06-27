@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<title>The Mindy Launch — Master Deck (Opening · Demo · Close)</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Inter',system-ui,sans-serif;background:#0f172a;color:#fff;display:flex;justify-content:center;flex-wrap:wrap}
+*{margin:0;padding:0;box-sizing:border-box}
+.dwrap{display:contents}
+body{font-family:'Inter',system-ui,sans-serif;background:#0f172a;color:#fff;display:flex;justify-content:center}
+@keyframes cubespin{0%,18%{transform:rotateY(0)}25%,43%{transform:rotateY(-90deg)}50%,68%{transform:rotateY(-180deg)}75%,93%{transform:rotateY(-270deg)}100%{transform:rotateY(-360deg)}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+  /* ===== OPENING + BIG PICTURE (38 slides) ===== */
+.dOPEN .slide{width:1280px;height:720px;padding:64px 72px;display:none;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+    background:linear-gradient(135deg,#0f172a 0%,#1e1b4b 100%);position:relative;page-break-after:always;overflow:hidden}
+.dOPEN .slide.active{display:flex}
+.dOPEN .slide::before{content:'';position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,#6366f1,#8b5cf6,#a78bfa)}
+.dOPEN .logo{position:absolute;top:28px;right:60px;font-weight:900;font-size:17px;color:#cbd5e1}
+.dOPEN .logo span{color:#10b981}
+.dOPEN .slide-number{position:absolute;bottom:26px;right:60px;font-size:14px;color:#475569}
+.dOPEN .kicker{font-size:18px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:#6366f1;margin-bottom:26px}
+.dOPEN .x{color:#f87171}
+.dOPEN .green{color:#10b981}
+.dOPEN .purple{color:#a78bfa}
+.dOPEN .amber{color:#fbbf24}
+.dOPEN .muted{color:#64748b}
+.dOPEN .title{font-size:56px;font-weight:900;line-height:1.12;max-width:1040px}
+.dOPEN .title.sm{font-size:42px}
+.dOPEN .supp{font-size:28px;color:#94a3b8;margin-top:24px;max-width:920px}
+.dOPEN .viz{margin-bottom:28px;color:#a78bfa}
+.dOPEN .viz .luc svg{width:96px;height:96px;stroke-width:1.7}
+.dOPEN .viz.red{color:#f87171}
+.dOPEN .viz.green{color:#10b981}
+.dOPEN .year{font-size:140px;font-weight:900;color:#1e293b;-webkit-text-stroke:2px #6366f1;line-height:1;margin-bottom:6px}
+.dOPEN .year.now{color:#a78bfa;-webkit-text-stroke:0}
+.dOPEN .reveal{font-size:210px;font-weight:900;letter-spacing:-5px;line-height:1;
+    background:linear-gradient(120deg,#a78bfa,#10b981);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.dOPEN .three{display:flex;gap:18px;width:100%;margin-top:6px}
+.dOPEN .thing{flex:1;background:rgba(30,27,75,.6);border:1px solid #4338ca;border-radius:18px;padding:28px 15px}
+.dOPEN .thing .luc svg{width:50px;height:50px;color:#a78bfa;stroke-width:1.7;margin-bottom:12px}
+.dOPEN .thing h4{font-size:26px;color:#fff;font-weight:800;margin-bottom:5px}
+.dOPEN .thing .do{font-size:19px;color:#10b981;font-weight:700;margin-bottom:8px}
+.dOPEN .thing p{font-size:16px;color:#94a3b8;line-height:1.35}
+.dOPEN .bignum{font-size:130px;font-weight:900;line-height:1;margin-bottom:6px;color:#a78bfa}
+.dOPEN .bignum.amber{color:#fbbf24}
+.dOPEN .bignum.green{color:#10b981}
+.dOPEN .sites{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;width:100%;max-width:980px;margin:6px 0 24px}
+.dOPEN .site{background:rgba(127,29,29,.16);border:1px solid #7f1d1d;color:#fca5a5;border-radius:12px;padding:16px 10px;font-size:19px;font-weight:800}
+.dOPEN .cost{background:rgba(127,29,29,.25);border:1px solid #b91c1c;color:#fca5a5;font-weight:800;font-size:24px;padding:12px 28px;border-radius:30px}
+.dOPEN .faces{display:flex;gap:20px;margin:6px 0 10px}
+.dOPEN .face{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;height:214px;
+    border:2px solid #6d28d9;border-radius:20px;background:linear-gradient(135deg,#1e1b4b,#2e1065);padding:18px}
+.dOPEN .face .luc svg{width:42px;height:42px;color:#a78bfa;stroke-width:1.7}
+.dOPEN .face .fl{font-size:23px;font-weight:900;color:#fff;text-align:center}
+.dOPEN .face .fl small{display:block;font-size:14px;color:#10b981;font-weight:700;margin-top:3px}
+.dOPEN .cube-scene{perspective:1300px;width:360px;height:212px;margin-bottom:34px}
+.dOPEN .cube{position:relative;width:360px;height:212px;transform-style:preserve-3d;animation:cubespin 13s infinite ease-in-out}
+.dOPEN .cubeface{position:absolute;width:360px;height:212px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
+    border:2px solid #6d28d9;border-radius:20px;background:linear-gradient(135deg,#1e1b4b,#2e1065);backface-visibility:hidden}
+.dOPEN .cubeface .luc svg{width:44px;height:44px;color:#a78bfa;stroke-width:1.7}
+.dOPEN .cubeface .lbl{font-size:33px;font-weight:900;color:#fff}
+.dOPEN .cubeface .lbl small{display:block;font-size:16px;color:#10b981;font-weight:700;margin-top:3px}
+.dOPEN .cf1{transform:rotateY(0deg) translateZ(180px)}
+.dOPEN .cf2{transform:rotateY(90deg) translateZ(180px)}
+.dOPEN .cf3{transform:rotateY(180deg) translateZ(180px)}
+.dOPEN .cf4{transform:rotateY(270deg) translateZ(180px)}
+.dOPEN 33%,.dOPEN 57%{transform:rotateY(-120deg)}
+.dOPEN 66%,.dOPEN 90%{transform:rotateY(-240deg)}
+.dOPEN 100%{transform:rotateY(-360deg)}
+.dOPEN }25%,.dOPEN 43%{transform:rotateY(-90deg)}
+.dOPEN 50%,.dOPEN 68%{transform:rotateY(-180deg)}
+.dOPEN 75%,.dOPEN 93%{transform:rotateY(-270deg)}
+.dOPEN 100%{transform:rotateY(-360deg)}
+.dOPEN }33%,.dOPEN 57%{transform:rotateY(-120deg)}
+.dOPEN 66%,.dOPEN 90%{transform:rotateY(-240deg)}
+.dOPEN 100%{transform:rotateY(-360deg)}
+.dOPEN }
+
+  .dotfield{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.dOPEN .dotfield span{width:16px;height:16px;border-radius:50%;background:#6366f1;box-shadow:0 0 8px rgba(99,102,241,.55)}
+.dOPEN .srclabel{position:absolute;color:#cbd5e1;font-weight:800;font-size:22px}
+.dOPEN .srclabel b{color:#a78bfa;font-size:30px}
+.dOPEN .pt small{font-size:15px;opacity:.85;font-weight:600}
+.dOPEN .quad{position:relative;width:760px;height:430px;margin:6px auto 0;border-left:3px solid #475569;border-bottom:3px solid #475569}
+.dOPEN .axis-y{position:absolute;left:-150px;top:50%;transform:translateY(-50%) rotate(-90deg);color:#94a3b8;font-weight:800;font-size:21px;white-space:nowrap}
+.dOPEN .axis-x{position:absolute;bottom:-44px;left:50%;transform:translateX(-50%);color:#94a3b8;font-weight:800;font-size:21px}
+.dOPEN .pt{position:absolute;padding:12px 20px;border-radius:30px;font-weight:800;font-size:21px;transform:translate(-50%,-50%)}
+.dOPEN .pt.bad{background:#3b1d2b;border:2px solid #f87171;color:#fca5a5}
+.dOPEN .pt.win{background:#10b981;color:#04241a;font-size:24px;box-shadow:0 0 40px rgba(16,185,129,.6)}
+.dOPEN .stat-row{display:flex;gap:30px;margin:10px 0 22px}
+.dOPEN .statb{background:rgba(127,29,29,.22);border:1px solid #b91c1c;border-radius:18px;padding:28px 40px;text-align:center}
+.dOPEN .statb.good{background:rgba(6,78,59,.32);border-color:#10b981}
+.dOPEN .statb .n{font-size:64px;font-weight:900;color:#f87171}
+.dOPEN .statb.good .n{color:#10b981}
+.dOPEN .statb .l{font-size:19px;color:#cbd5e1;margin-top:6px}
+.dOPEN .foot{font-size:14px;color:#475569;margin-top:6px}
+.dOPEN .core-wrap{position:relative;width:100%;height:440px;display:flex;align-items:center;justify-content:center}
+.dOPEN .core{width:210px;height:210px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+    background:radial-gradient(circle,#10b981 0%,#047857 70%);box-shadow:0 0 90px rgba(16,185,129,.5);z-index:2}
+.dOPEN .core .t{font-size:32px;font-weight:900;color:#04241a}
+.dOPEN .core .s{font-size:14px;color:#04241a;font-weight:700}
+.dOPEN .chip{position:absolute;background:rgba(30,27,75,.92);border:1px solid #4338ca;border-radius:30px;padding:9px 17px;font-size:17px;font-weight:700;color:#c7d2fe;white-space:nowrap}
+.dOPEN .chip b{color:#a78bfa}
+.dOPEN .neg{font-size:42px;font-weight:800;color:#475569;margin:6px 0}
+.dOPEN .neg s{text-decoration:line-through;text-decoration-color:#f87171}
+.dOPEN .tagline{margin-top:30px;font-size:30px;font-weight:800;color:#10b981;letter-spacing:1px}
+.dOPEN .shot-wrap{width:760px;border-radius:14px;overflow:hidden;border:1px solid #334155;box-shadow:0 24px 64px rgba(0,0,0,.55),0 0 0 1px rgba(167,139,250,.2);margin-bottom:20px}
+.dOPEN .shot-bar{height:34px;background:#0b1220;display:flex;align-items:center;gap:8px;padding:0 16px;border-bottom:1px solid #1e293b}
+.dOPEN .shot-dot{width:11px;height:11px;border-radius:50%}
+.dOPEN .d-r{background:#ef4444}
+.dOPEN .d-y{background:#eab308}
+.dOPEN .d-g{background:#22c55e}
+.dOPEN .shot-url{margin-left:14px;font-size:13px;color:#64748b;background:#020617;padding:5px 14px;border-radius:8px;font-weight:600}
+.dOPEN .shot-wrap img{display:block;width:100%;height:336px;object-fit:cover;object-position:top}
+.dOPEN .shot-ph{height:336px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#0b1220;border-top:2px dashed #334155;gap:12px}
+.dOPEN .shot-ph b{font-size:21px;color:#94a3b8;font-weight:800}
+.dOPEN .shot-ph span{font-size:15px;color:#475569}
+.dOPEN .slide:has(.shot-wrap) .title{font-size:38px;margin-top:2px}
+.dOPEN .foot{font-size:14px;color:#475569;margin-top:14px}
+.dOPEN .stat3{display:flex;gap:26px;margin:6px 0 14px}
+.dOPEN .sb{background:rgba(30,27,75,.5);border:1px solid #4338ca;border-radius:18px;padding:26px 34px;text-align:center;min-width:250px}
+.dOPEN .sb .n{font-size:60px;font-weight:900;line-height:1}
+.dOPEN .sb .l{font-size:18px;color:#cbd5e1;margin-top:8px}
+.dOPEN .sb.g .n{color:#10b981}
+.dOPEN .sb.r .n{color:#f87171}
+.dOPEN .sb.b .n{color:#a78bfa}
+.dOPEN .goaltbl{border-collapse:collapse;width:920px;margin:6px 0 14px}
+.dOPEN .goaltbl th{font-size:14px;letter-spacing:1.5px;text-transform:uppercase;color:#64748b;padding:10px 18px;text-align:right;border-bottom:2px solid #334155}
+.dOPEN .goaltbl th:first-child{text-align:left}
+.dOPEN .goaltbl td{font-size:24px;font-weight:800;padding:14px 18px;text-align:right;border-bottom:1px solid #1e293b}
+.dOPEN .goaltbl td:first-child{text-align:left;color:#e2e8f0;font-weight:700;font-size:22px}
+.dOPEN .goaltbl .ok{color:#10b981}
+.dOPEN .goaltbl .bad{color:#f87171}
+.dOPEN .goaltbl .sa{color:#a78bfa}
+.dOPEN .bignum.red{color:#f87171}
+.dOPEN .quad{position:relative;width:980px;height:480px;margin:6px auto 0;border:1px solid #1e293b;border-radius:16px;background:rgba(2,6,23,.5)}
+.dOPEN .ax{position:absolute;color:#475569;font-size:14px;font-weight:800;letter-spacing:2px;text-transform:uppercase}
+.dOPEN .ax.top{top:10px;left:50%;transform:translateX(-50%)}
+.dOPEN .ax.bot{bottom:10px;left:50%;transform:translateX(-50%)}
+.dOPEN .ax.l{left:12px;top:50%;transform:translateY(-50%) rotate(-90deg)}
+.dOPEN .ax.r{right:12px;top:50%;transform:translateY(-50%) rotate(90deg)}
+.dOPEN .midv{position:absolute;left:50%;top:6%;bottom:6%;border-left:1px dashed #334155}
+.dOPEN .midh{position:absolute;top:50%;left:4%;right:4%;border-top:1px dashed #334155}
+.dOPEN .bub{position:absolute;border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:800;color:#fff;transform:translate(-50%,-50%);padding:4px;line-height:1.05}
+.dOPEN .b-chatgpt{background:#d97706}
+.dOPEN .b-mindy{background:radial-gradient(circle,#10b981,#047857);box-shadow:0 0 50px rgba(16,185,129,.6)}
+.dOPEN .b-mid{background:#ca8a04}
+.dOPEN .b-govdash{background:#db2777}
+.dOPEN .b-free{background:#475569}
+.dOPEN .b-ent{background:#be123c}
+.dOPEN .tools{display:flex;gap:22px;margin:8px 0 18px;justify-content:center}
+.dOPEN .tool{background:rgba(30,27,75,.55);border:1px solid #4338ca;border-radius:16px;padding:22px 30px;font-size:30px;font-weight:900}
+.dOPEN .verdict{font-size:26px;color:#fca5a5;font-weight:700;max-width:980px}
+.dOPEN .verdict.win{color:#10b981}
+.dOPEN .split{display:flex;gap:36px;justify-content:center}
+.dOPEN .splitcol{display:flex;flex-direction:column;align-items:center}
+.dOPEN .splabel{font-size:24px;font-weight:800;color:#cbd5e1;margin-top:14px}
+.dOPEN .split .shot-wrap{width:440px}
+.dOPEN .split .shot-wrap img{height:240px}
+.dOPEN .split .shot-ph{height:240px}
+.dOPEN .split .shot-bar{height:30px}
+  /* ===== FEATURE DEMOS (75 slides) ===== */
+.dFEAT .slide{width:1280px;height:720px;padding:64px 72px;display:none;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+    background:linear-gradient(135deg,#0f172a 0%,#1e1b4b 100%);position:relative;page-break-after:always;overflow:hidden}
+.dFEAT .slide.active{display:flex}
+.dFEAT .slide::before{content:'';position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,#6366f1,#8b5cf6,#a78bfa)}
+.dFEAT .logo{position:absolute;top:28px;right:60px;font-weight:900;font-size:17px;color:#cbd5e1}
+.dFEAT .logo span{color:#10b981}
+.dFEAT .slide-number{position:absolute;bottom:26px;right:60px;font-size:14px;color:#475569}
+.dFEAT .sec-intel{--c:#a78bfa}
+.dFEAT .sec-pipe{--c:#38bdf8}
+.dFEAT .sec-est{--c:#fbbf24}
+.dFEAT .sec-res{--c:#10b981}
+.dFEAT .sec-acct{--c:#f472b6}
+.dFEAT .kicker{font-size:17px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--c);margin-bottom:30px}
+.dFEAT .x{color:#f87171}
+.dFEAT .green{color:#10b981}
+.dFEAT .accent{color:var(--c)}
+.dFEAT .title{font-size:50px;font-weight:900;line-height:1.14;max-width:1000px}
+.dFEAT .title.sm{font-size:40px}
+.dFEAT .supp{font-size:24px;color:#94a3b8;margin-top:22px}
+.dFEAT .viz{margin-bottom:30px;display:flex;align-items:center;justify-content:center}
+.dFEAT .viz .luc svg{width:104px;height:104px;stroke-width:1.7}
+.dFEAT .viz.red{color:#f87171}
+.dFEAT .circle{width:188px;height:188px;border-radius:50%;color:var(--c);
+    background:color-mix(in srgb,var(--c) 13%,transparent);border:2px solid color-mix(in srgb,var(--c) 42%,transparent)}
+.dFEAT .circle .luc svg{width:92px;height:92px}
+.dFEAT .live{position:absolute;top:30px;left:72px;background:#dc2626;color:#fff;padding:8px 18px;border-radius:24px;font-size:15px;font-weight:800;letter-spacing:1px;display:flex;align-items:center;gap:9px}
+.dFEAT .live::before{content:'';width:9px;height:9px;background:#fff;border-radius:50%;animation:pulse 1s infinite}
+.dFEAT .tools{display:flex;gap:16px;margin-bottom:28px;flex-wrap:wrap;justify-content:center}
+.dFEAT .tool{background:rgba(127,29,29,.18);border:1px solid #b91c1c;color:#fca5a5;padding:14px 20px;border-radius:13px;font-size:22px;font-weight:800;position:relative}
+.dFEAT .tool::after{content:'';position:absolute;left:8px;right:8px;top:50%;height:3px;background:#f87171;transform:rotate(-7deg)}
+.dFEAT .cost{margin-top:26px;background:rgba(127,29,29,.25);border:1px solid #b91c1c;color:#fca5a5;font-weight:800;font-size:23px;padding:12px 28px;border-radius:30px}
+.dFEAT .bignum{font-size:140px;font-weight:900;color:var(--c);line-height:1;margin-bottom:14px}
+.dFEAT .divider .d-ic{color:var(--c);margin-bottom:14px}
+.dFEAT .divider .d-ic svg{width:78px;height:78px;stroke-width:1.6}
+.dFEAT .divider .big{font-size:84px;font-weight:900;color:var(--c);line-height:1.05}
+.dFEAT .divider p{font-size:25px;color:#94a3b8;margin-top:14px;max-width:880px}
+.dFEAT .pillars{display:flex;gap:26px;justify-content:center}
+.dFEAT .pill{width:208px;padding:38px 18px;border-radius:22px;display:flex;flex-direction:column;align-items:center;gap:20px;
+    background:color-mix(in srgb,var(--c) 9%,transparent);border:1.5px solid color-mix(in srgb,var(--c) 40%,transparent)}
+.dFEAT .pill .luc svg{width:66px;height:66px;color:var(--c);stroke-width:1.7}
+.dFEAT .pill h5{font-size:23px;font-weight:800;color:#fff;letter-spacing:.3px}
+.dFEAT .map{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;width:100%;margin-top:26px;text-align:left}
+.dFEAT .mapcol h5{font-size:16px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px}
+.dFEAT .mapcol ul{list-style:none}
+.dFEAT .mapcol li{font-size:17px;color:#cbd5e1;margin-bottom:9px;line-height:1.25}
+.dFEAT .slide:has(.shot-wrap){justify-content:center}
+.dFEAT .slide:has(.shot-wrap) .title{font-size:34px;margin-top:6px}
+.dFEAT .shot-wrap{width:880px;border-radius:14px;overflow:hidden;border:1px solid #334155;
+    box-shadow:0 26px 70px rgba(0,0,0,.55),0 0 0 1px color-mix(in srgb,var(--c) 20%,transparent);margin-bottom:22px}
+.dFEAT .shot-bar{height:36px;background:#0b1220;display:flex;align-items:center;gap:8px;padding:0 16px;border-bottom:1px solid #1e293b}
+.dFEAT .shot-dot{width:11px;height:11px;border-radius:50%}
+.dFEAT .d-r{background:#ef4444}
+.dFEAT .d-y{background:#eab308}
+.dFEAT .d-g{background:#22c55e}
+.dFEAT .shot-url{margin-left:14px;font-size:13px;color:#64748b;background:#020617;padding:5px 14px;border-radius:8px;font-weight:600}
+.dFEAT .shot-wrap img{display:block;width:100%;height:382px;object-fit:cover;object-position:top}
+.dFEAT .shot-ph{height:382px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#0b1220;border-top:2px dashed #334155;gap:12px;color:#475569}
+.dFEAT .shot-ph b{font-size:21px;color:#94a3b8;font-weight:800}
+.dFEAT .shot-ph span{font-size:15px}
+  /* ===== AI / GROUNDING INTERLUDE (4 slides) ===== */
+.dINT .slide{width:1280px;height:720px;padding:64px 72px;display:none;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+    background:linear-gradient(135deg,#0f172a 0%,#1e1b4b 100%);position:relative;page-break-after:always;overflow:hidden}
+.dINT .slide.active{display:flex}
+.dINT .slide::before{content:'';position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,#6366f1,#8b5cf6,#a78bfa)}
+.dINT .logo{position:absolute;top:28px;right:60px;font-weight:900;font-size:17px;color:#cbd5e1}
+.dINT .logo span{color:#10b981}
+.dINT .slide-number{position:absolute;bottom:26px;right:60px;font-size:14px;color:#475569}
+.dINT .kicker{font-size:18px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:#6366f1;margin-bottom:26px}
+.dINT .x{color:#f87171}
+.dINT .green{color:#10b981}
+.dINT .title{font-size:56px;font-weight:900;line-height:1.12;max-width:1040px}
+.dINT .title.sm{font-size:42px}
+.dINT .supp{font-size:28px;color:#94a3b8;margin-top:24px;max-width:920px}
+.dINT .viz{margin-bottom:28px;color:#a78bfa}
+.dINT .viz .luc svg{width:96px;height:96px;stroke-width:1.7}
+.dINT .viz.red{color:#f87171}
+.dINT .stat-row{display:flex;gap:30px;margin:10px 0 22px}
+.dINT .statb{background:rgba(127,29,29,.22);border:1px solid #b91c1c;border-radius:18px;padding:28px 40px;text-align:center}
+.dINT .statb.good{background:rgba(6,78,59,.32);border-color:#10b981}
+.dINT .statb .n{font-size:64px;font-weight:900;color:#f87171}
+.dINT .statb.good .n{color:#10b981}
+.dINT .statb .l{font-size:19px;color:#cbd5e1;margin-top:6px}
+.dINT .foot{font-size:14px;color:#475569;margin-top:14px}
+  /* ===== OFFER & CLOSE (10 slides) ===== */
+.dCLOSE .slide{width:1280px;height:720px;padding:64px 72px;display:none;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+    background:linear-gradient(135deg,#0f172a 0%,#1e1b4b 100%);position:relative;page-break-after:always;overflow:hidden}
+.dCLOSE .slide.active{display:flex}
+.dCLOSE .slide::before{content:'';position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,#6366f1,#8b5cf6,#a78bfa)}
+.dCLOSE .logo{position:absolute;top:28px;right:60px;font-weight:900;font-size:17px;color:#cbd5e1}
+.dCLOSE .logo span{color:#10b981}
+.dCLOSE .slide-number{position:absolute;bottom:26px;right:60px;font-size:14px;color:#475569}
+.dCLOSE .kicker{font-size:18px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:#6366f1;margin-bottom:26px}
+.dCLOSE .x{color:#f87171}
+.dCLOSE .green{color:#10b981}
+.dCLOSE .amber{color:#fbbf24}
+.dCLOSE .muted{color:#64748b}
+.dCLOSE .title{font-size:56px;font-weight:900;line-height:1.12;max-width:1040px}
+.dCLOSE .title.sm{font-size:42px}
+.dCLOSE .supp{font-size:28px;color:#94a3b8;margin-top:24px;max-width:940px}
+.dCLOSE .stack{width:840px;display:flex;flex-direction:column;gap:14px;margin:10px 0 20px}
+.dCLOSE .row{display:flex;justify-content:space-between;align-items:center;background:rgba(30,27,75,.6);border:1px solid #4338ca;border-radius:14px;padding:18px 28px}
+.dCLOSE .row .what{font-size:25px;font-weight:700;color:#e2e8f0;text-align:left}
+.dCLOSE .row .cost{font-size:28px;font-weight:900;color:#f87171;white-space:nowrap}
+.dCLOSE .total{display:flex;justify-content:space-between;align-items:center;width:840px;border-top:3px solid #475569;padding:22px 28px 0;margin-top:4px}
+.dCLOSE .total .what{font-size:28px;font-weight:800;color:#fff;text-align:left}
+.dCLOSE .total .cost{font-size:46px;font-weight:900;color:#f87171}
+.dCLOSE .price{font-size:170px;font-weight:900;line-height:1;
+    background:linear-gradient(120deg,#a78bfa,#10b981);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.dCLOSE .price-sub{font-size:30px;color:#94a3b8;font-weight:700}
+.dCLOSE .anchor{font-size:54px;font-weight:800;color:#64748b;line-height:1;margin-bottom:-2px}
+.dCLOSE .anchor s{color:#f87171;text-decoration-thickness:3px}
+.dCLOSE .save{display:inline-block;margin-top:16px;background:#064e3b;border:1px solid #10b981;color:#a7f3d0;font-weight:800;font-size:22px;padding:9px 24px;border-radius:30px}
+.dCLOSE .seats{display:inline-block;margin-top:12px;background:rgba(0,0,0,.25);border:1px solid #4338ca;color:#c7d2fe;font-weight:700;font-size:20px;padding:8px 22px;border-radius:30px}
+.dCLOSE .reveal{font-size:150px;font-weight:900;letter-spacing:-4px;line-height:1;
+    background:linear-gradient(120deg,#a78bfa,#10b981);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.dCLOSE .tiers{display:flex;gap:30px;margin-top:10px}
+.dCLOSE .tier{background:rgba(30,27,75,.6);border:1px solid #4338ca;border-radius:18px;padding:34px 44px;text-align:center}
+.dCLOSE .tier.pro{border-color:#10b981;box-shadow:0 0 50px rgba(16,185,129,.25)}
+.dCLOSE .tier h4{font-size:24px;color:#a78bfa;font-weight:800;margin-bottom:8px}
+.dCLOSE .tier.pro h4{color:#10b981}
+.dCLOSE .tier .p{font-size:54px;font-weight:900;color:#fff}
+.dCLOSE .tier .pm{font-size:22px;color:#64748b}
+.dCLOSE .cta{font-size:40px;font-weight:900;color:#fef3c7;background:rgba(0,0,0,.25);padding:22px 56px;border-radius:14px;margin-top:30px}
+</style></head><body>
+
+<!-- ================= OPENING + BIG PICTURE ================= -->
+<div class="dwrap dOPEN">
+
+<!-- ============ PART 1 — THE STORY (intro) ============ -->
+
+
+<!-- ===== ACT 1 — THE STORY ===== -->
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">The Mindy Launch · June 27, 2026</div><div class="reveal" style="font-size:150px">Mindy</div></div>
+
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div><div class="title">Every once in a while, a small company<br>changes the game for <span class="green">everybody.</span></div></div>
+
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div><div class="title sm muted">And if you've followed GovCon Giants…</div><div class="title" style="margin-top:10px">we've done it <span class="purple">before.</span></div></div>
+
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div><div class="year">2017</div><div class="shot" data-shot="youtube-channel" data-url="youtube.com / @GovConGiants"></div><div class="title sm">We put it all on YouTube. <span class="green">Free.</span></div></div>
+
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div><div class="year">2018</div><div class="shot" data-shot="podcast" data-url="GovCon Giants Podcast"></div><div class="title sm">We launched the podcast.</div></div>
+
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div><div class="year">2019</div><div class="shot" data-shot="training" data-url="govcongiants.com / training"></div><div class="title sm">We trained <span class="green">7,000+</span> small businesses.</div></div>
+
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div><div class="year">2020</div><div class="shot" data-shot="federal-help-center" data-url="Federal Help Center"></div><div class="title sm">The Federal Help Center —<br>a community where it all lives.</div></div>
+
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div><div class="year now">2026</div><div class="title sm">A new revolution.<br>So we're going to do it <span class="green">again.</span></div></div>
+
+<!-- the three -->
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="title sm muted" style="margin-bottom:20px">For 7 years, everything we built lived in four places.</div>
+  <div class="three">
+    <div class="thing"><i class="luc" data-icon="play-circle"></i><h4>The Channel</h4><div class="do">learn it</div><p>free on YouTube</p></div>
+    <div class="thing"><i class="luc" data-icon="graduation-cap"></i><h4>The Courses</h4><div class="do">train</div><p>free &amp; paid training</p></div>
+    <div class="thing"><i class="luc" data-icon="heart-handshake"></i><h4>The Network</h4><div class="do">connect</div><p>podcast &amp; community</p></div>
+    <div class="thing"><i class="luc" data-icon="folder-kanban"></i><h4>The Vault</h4><div class="do">do it</div><p>templates &amp; guides</p></div>
+  </div></div>
+
+<!-- by the numbers (scale of each) -->
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">The Channel · by the numbers</div><div class="viz"><i class="luc" data-icon="play-circle"></i></div><div class="bignum green">1,700</div><div class="title sm">free training videos · <span class="green">53.9K</span> subscribers</div></div>
+
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">The Courses · by the numbers</div><div class="viz"><i class="luc" data-icon="graduation-cap"></i></div><div class="bignum green">500+</div><div class="title sm">course lessons · academy + bootcamps + challenges · <span class="green">7,000+</span> trained</div></div>
+
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">The Network · by the numbers</div><div class="viz"><i class="luc" data-icon="mic"></i></div><div class="bignum green">743</div><div class="title sm">podcast episodes · <span class="green">8 years</span></div></div>
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Live Trainings · Federal Help Center</div><div class="viz"><i class="luc" data-icon="monitor-play"></i></div><div class="bignum green">200+</div><div class="title sm">live trainings · 176 hours · <span class="green">7,500+</span> attendees <span class="muted" style="font-size:22px">(in one year)</span></div></div>
+
+
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">The Vault · by the numbers</div><div class="viz"><i class="luc" data-icon="folder-kanban"></i></div><div class="bignum green">125</div><div class="title sm">templates, guides &amp; documents</div></div>
+
+<!-- websites grind (the missing setup) -->
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="title sm" style="margin-bottom:8px">And the Vault? It meant mastering<br>all of <span class="x">these.</span></div>
+  <div class="sites">
+    <div class="site">SAM.gov</div><div class="site">USASpending</div><div class="site">FPDS</div><div class="site">SBA DSBS</div>
+    <div class="site">Grants.gov</div><div class="site">GSA eBuy</div><div class="site">Agency forecasts</div><div class="site">GAO &amp; budgets</div>
+  </div>
+  <div class="cost">By hand. Tab by tab.</div></div>
+
+<!-- four faces, separate -->
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="kicker">Four things</div>
+  <div class="faces">
+    <div class="face"><i class="luc" data-icon="play-circle"></i><div class="fl">The Channel<small>learn it</small></div></div>
+    <div class="face"><i class="luc" data-icon="graduation-cap"></i><div class="fl">The Courses<small>train</small></div></div>
+    <div class="face"><i class="luc" data-icon="heart-handshake"></i><div class="fl">The Network<small>connect</small></div></div>
+    <div class="face"><i class="luc" data-icon="folder-kanban"></i><div class="fl">The Vault<small>do it</small></div></div>
+  </div>
+  <div class="supp" style="margin-top:14px">A channel. The courses. A network. A vault.</div></div>
+
+<!-- rotating cube chant -->
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="cube-scene"><div class="cube">
+    <div class="cubeface cf1"><i class="luc" data-icon="play-circle"></i><div class="lbl">The Channel<small>free on YouTube</small></div></div>
+    <div class="cubeface cf2"><i class="luc" data-icon="graduation-cap"></i><div class="lbl">The Courses<small>free &amp; paid training</small></div></div>
+    <div class="cubeface cf3"><i class="luc" data-icon="heart-handshake"></i><div class="lbl">The Network<small>podcast &amp; community</small></div></div>
+    <div class="cubeface cf4"><i class="luc" data-icon="folder-kanban"></i><div class="lbl">The Vault<small>templates &amp; guides</small></div></div>
+  </div></div>
+  <div class="amber" style="font-size:34px;font-weight:800">Are you getting it?</div></div>
+
+<!-- not three -> one -->
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div><div class="title">I'm not handing you <span class="x">four things.</span></div><div class="supp">We put all of it — and every one of those websites — into <span class="green">one.</span></div></div>
+
+<!-- REVEAL -->
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div><div class="reveal">Mindy</div><div class="supp" style="margin-top:18px">It doesn't just show you how. It does it <span class="green">with</span> you.</div></div>
+
+
+
+
+<!-- ============ PART 2 — THE BIG PICTURE ============ -->
+
+
+<!-- 0 act title -->
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="kicker">Before I show you</div>
+  <div class="title">The <span class="green">big picture.</span></div>
+  <div class="supp">Why this matters — and why nothing else does what Mindy does.</div></div>
+
+<!-- ===== THE MISSION ===== -->
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="kicker">The Mission</div>
+  <div class="title">Reverse the <span class="x">shrinking</span><br>industrial base.</div>
+  <div class="supp">The number of small businesses winning federal work is collapsing.<br>Mindy exists to turn that around.</div></div>
+
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="kicker">The collapse</div>
+  <div class="bignum red">58,681</div>
+  <div class="title sm">small businesses won a federal prime in FY2022 —<br><span class="x">fewer than half</span> of a decade earlier.</div>
+  <div class="stat3" style="margin-top:24px"><div class="sb r"><div class="n">−70%</div><div class="l">small awardees at DoD since 2011</div></div><div class="sb b"><div class="n">$183.3B</div><div class="l">to small biz in FY2024 — record $, fewer firms</div></div></div>
+  <div class="foot">SBA FY2024 Procurement Scorecard · HigherGov / FPDS · Nextgov</div></div>
+
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="kicker">The gap · measured live</div>
+  <div class="stat3"><div class="sb g"><div class="n">51.4%</div><div class="l">of solicitations set aside for small biz</div></div>
+    <div class="sb r"><div class="n">48.6%</div><div class="l">still full-and-open — the bigger dollars</div></div>
+    <div class="sb b"><div class="n">28.8%</div><div class="l">of federal dollars reach small biz</div></div></div>
+  <div class="title sm" style="margin-top:18px">Small business wins half the bids —<br>but barely a <span class="x">quarter</span> of the money.</div>
+  <div class="foot">19,132 live solicitations · May 2020 – Jun 2026 · SBA FY2024</div></div>
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="kicker">The concentration</div>
+  <div class="stat3"><div class="sb r"><div class="n">$47.8B</div><div class="l">Lockheed Martin — one company</div></div>
+    <div class="sb r"><div class="n">30%</div><div class="l">of the Pentagon → just 5 primes</div></div>
+    <div class="sb b"><div class="n">$183B</div><div class="l">ALL small business — across 58,681 firms</div></div></div>
+  <div class="title sm">A handful of giants take the top.<br><span class="x">58,681</span> fight for what's left.</div>
+  <div class="foot">DoD FY2024: top 10 primes $139.8B · SBA FY2024 scorecard</div></div>
+
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="kicker">Goal "met" &ne; actually set aside</div>
+  <table class="goaltbl">
+    <tr><th>Category</th><th>Goal</th><th>Achieved $</th><th>Solicited as set-aside</th></tr>
+    <tr><td>Total Small Business</td><td style="color:#94a3b8">23%</td><td class="ok">28.8% &check;</td><td class="sa">41.41%</td></tr>
+    <tr><td>8(a) / SDB</td><td style="color:#94a3b8">13%</td><td class="bad">12.27% &times;</td><td class="bad">0.54%</td></tr>
+    <tr><td>WOSB / EDWOSB</td><td style="color:#94a3b8">5%</td><td class="bad">4.97% &times;</td><td class="bad">2.01%</td></tr>
+    <tr><td>HUBZone</td><td style="color:#94a3b8">3%</td><td class="bad">2.75% &times;</td><td class="bad">0.46%</td></tr>
+    <tr><td>SDVOSB</td><td style="color:#94a3b8">5%</td><td class="ok">5.14% &check;</td><td class="sa">6.09%</td></tr>
+  </table>
+  <div class="supp" style="font-size:22px">Agencies hit the dollar goals by <span class="x">crediting firms that win full-and-open.</span><br>Actually solicited as a set-aside? A fraction.</div></div>
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="title">When you see this,<br>there are <span class="green">two</span> choices.</div>
+  <div class="tools" style="margin-top:28px">
+    <div class="tool" style="border-color:#b91c1c;color:#fca5a5;background:rgba(127,29,29,.18)">Cry about it</div>
+    <div class="tool" style="border-color:#10b981;color:#10b981;background:rgba(6,78,59,.25)">Do something about it</div>
+  </div></div>
+
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="title">I chose to<br><span class="green">do something about it.</span></div></div>
+
+
+
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="kicker">The opportunity · Rule of Two</div>
+  <div class="title sm">When market research shows <span class="green">two capable</span><br>small businesses, it <span class="green">must</span> be set aside.</div>
+  <div class="supp" style="margin-top:8px">Shift just <b style="color:#fff">0.5%</b> of the $571B full-and-open pool…</div>
+  <div class="stat3" style="margin-top:18px"><div class="sb g"><div class="n">$2.9B</div><div class="l">redirected to small biz / yr</div></div>
+    <div class="sb g"><div class="n">914</div><div class="l">more small businesses sustained</div></div></div>
+  <div class="title sm" style="margin-top:18px">Mindy makes more of them <span class="green">visible &amp; capable.</span> That's the mission.</div></div>
+
+
+
+<!-- ===== EACH IS INSUFFICIENT ===== -->
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="kicker">The generic LLMs</div>
+  <div class="tools"><div class="tool">ChatGPT</div><div class="tool">Claude</div><div class="tool">Gemini</div></div>
+  <div class="title sm">Brilliant. And <span class="x">single-purpose.</span></div>
+  <div class="verdict" style="margin-top:16px">They know nothing about your federal market — and they make things up.</div></div>
+
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="kicker">The free tools</div>
+  <div class="tools"><div class="tool">SAM.gov</div><div class="tool">USASpending</div></div>
+  <div class="title sm">All the data. <span class="x">No intelligence.</span></div>
+  <div class="verdict" style="margin-top:16px">Backward-looking, clunky, analyst-only — information you still have to act on alone.</div></div>
+
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="kicker">The enterprise suites</div>
+  <div class="tools"><div class="tool">Bloomberg Gov</div><div class="tool">GovWin (Deltek)</div><div class="tool">Unanet</div></div>
+  <div class="title sm">Powerful. And <span class="x">not built for you.</span></div>
+  <div class="verdict" style="margin-top:16px">$25K+/yr, ERP-complex, sales-gated — built for the big primes, not the small business.</div></div>
+
+<!-- ===== MINDY — THE DIFFERENCE ===== -->
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="kicker green">The difference</div>
+  <div class="title">All-in-one <span class="green">AND</span> simple.</div>
+  <div class="verdict win" style="margin-top:18px">Grounded in real data. Powerful as an enterprise suite. Easy as a chat.<br>Built for the small business — priced for one.</div></div>
+
+<!-- ===== THE QUADRANT ===== -->
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="kicker" style="margin-bottom:14px">Why Mindy — the GovCon tool landscape</div>
+  <div class="quad">
+    <span class="ax top">Easy to use</span><span class="ax bot">Hard / complex</span><span class="ax l">Single-purpose</span><span class="ax r">All-in-one</span>
+    <div class="midv"></div><div class="midh"></div>
+    <div class="bub b-chatgpt" style="left:24%;top:16%;width:118px;height:118px;font-size:17px">ChatGPT</div>
+    <div class="bub b-mindy" style="left:88%;top:12%;width:152px;height:152px;font-size:26px">Mindy</div>
+    <div class="bub b-mid" style="left:34%;top:42%;width:94px;height:94px;font-size:13px">EZGov<br>Opps</div>
+    <div class="bub b-mid" style="left:46%;top:50%;width:86px;height:86px;font-size:13px">Bid<br>Speed</div>
+    <div class="bub b-govdash" style="left:76%;top:54%;width:104px;height:104px;font-size:15px">GovDash</div>
+    <div class="bub b-free" style="left:18%;top:64%;width:88px;height:88px;font-size:13px">SAM.gov</div>
+    <div class="bub b-free" style="left:13%;top:78%;width:104px;height:104px;font-size:12px">USA<br>Spending</div>
+    <div class="bub b-ent" style="left:64%;top:78%;width:92px;height:92px;font-size:12px">Bloomberg<br>Gov</div>
+    <div class="bub b-ent" style="left:80%;top:84%;width:104px;height:104px;font-size:12px">GovWin IQ<br>(Deltek)</div>
+    <div class="bub b-ent" style="left:90%;top:90%;width:82px;height:82px;font-size:13px">Unanet</div>
+  </div>
+  <div class="supp" style="font-size:22px;margin-top:14px">Everyone forces a trade-off. Mindy is the only one <span class="green">all-in-one AND simple.</span></div></div>
+
+<!-- ===== THE THESIS (how it works) ===== -->
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="title sm" style="margin-bottom:20px">Everything out there makes you <span class="x">choose.</span></div>
+  <div class="split">
+    <div class="splitcol"><div class="shot" data-shot="data-no-brain" data-url="SAM.gov · USASpending"></div><div class="splabel">Data — <span class="x">no brain</span></div></div>
+    <div class="splitcol"><div class="shot" data-shot="brain-no-data" data-url="ChatGPT · Gemini · Claude"></div><div class="splabel">A brain — <span class="x">no data</span></div></div>
+  </div></div>
+
+
+
+<!-- one box: the resolution to "you have to choose" (AI/grounding interlude moved to after the first demo) -->
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="title sm" style="margin-bottom:18px">You tell Mindy what you do.<br>It hands back <span class="green">everything — in one box.</span></div>
+  <div class="shot" data-shot="one-box-results" data-url="getmindy.ai"></div></div>
+
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div><div class="kicker green">The Mindy Data Core</div>
+  <div class="core-wrap"><div class="core"><div class="t">MINDY</div><div class="s">34 sources · one core</div></div>
+    <div class="chip" style="left:5%;top:10%">Opportunity corpus · <b>88K</b></div>
+    <div class="chip" style="left:2%;top:30%">Forecast intelligence · <b>9,973</b></div>
+    <div class="chip" style="left:5%;top:50%">Spend &amp; award intelligence</div>
+    <div class="chip" style="left:2%;top:70%">Buying-office graph</div>
+    <div class="chip" style="left:9%;bottom:6%">Federal grants</div>
+    <div class="chip" style="right:5%;top:10%">Contractor graph · <b>317K</b></div>
+    <div class="chip" style="right:2%;top:30%">Decision-maker network · <b>125K</b></div>
+    <div class="chip" style="right:5%;top:50%">OSBP rosters · <b>170</b></div>
+    <div class="chip" style="right:2%;top:70%">Agency intelligence</div>
+    <div class="chip" style="right:9%;bottom:6%">Pain points &amp; priorities</div>
+    <div class="chip" style="left:50%;top:1%;transform:translateX(-50%)">Knowledge-base RAG · <b>8 yrs</b></div>
+    <div class="chip" style="left:50%;bottom:-2%;transform:translateX(-50%)">Semantic search · scanned <b>nightly</b></div></div></div>
+
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="neg">Not a <s>search tool</s>.</div><div class="neg">Not a <s>proposal writer</s>.</div><div class="neg">Not a <s>data dump</s>.</div>
+  <div class="title" style="margin-top:20px">An <span class="green">intelligence platform.</span></div><div class="tagline">MINDY — Market Intelligence, Delivered Daily.</div></div>
+
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div><div class="title">Now let me <span class="green">show</span> you.</div><div class="supp">Live. With your data. Right now.</div></div>
+
+
+</div>
+
+<!-- ================= FEATURE DEMOS ================= -->
+<div class="dwrap dFEAT">
+
+
+<!-- OVERVIEW -->
+<div class="slide divider"><div class="logo">GovCon <span>Giants</span></div>
+  <h1 style="font-size:56px;font-weight:900;margin-bottom:40px">This is <span class="green">Mindy</span>.</h1>
+  <div class="pillars">
+    <div class="pill" style="--c:#a78bfa"><i class="luc" data-icon="brain"></i><h5>Intelligence</h5></div>
+    <div class="pill" style="--c:#38bdf8"><i class="luc" data-icon="filter"></i><h5>Pipeline</h5></div>
+    <div class="pill" style="--c:#fbbf24"><i class="luc" data-icon="calculator"></i><h5>Estimating</h5></div>
+    <div class="pill" style="--c:#10b981"><i class="luc" data-icon="telescope"></i><h5>Research</h5></div>
+    <div class="pill" style="--c:#f472b6"><i class="luc" data-icon="folder-lock"></i><h5>Your Vault</h5></div>
+  </div>
+  <p style="margin-top:40px">Find it. Price it. Write it. Win it — <span class="green">one platform.</span></p></div>
+
+<!-- ===== INTELLIGENCE ===== -->
+<div class="slide divider sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="d-ic"><i class="luc" data-icon="brain"></i></div><div class="big">Intelligence</div><p>Your market, read for you — every day.</p></div>
+
+<!-- Mindy Chat -->
+<div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Mindy Chat</div><div class="viz red"><i class="luc" data-icon="layers"></i></div><div class="title">You shouldn't need <span class="x">5 tools</span><br>to get <span class="green">one answer.</span></div></div>
+<div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Mindy Chat · the old way</div><div class="tools"><div class="tool">SAM</div><div class="tool">USAspending</div><div class="tool">FPDS</div><div class="tool">Sheets</div><div class="tool">ChatGPT</div></div><div class="title sm">Five tabs. Still guessing.</div><div class="cost">5 tools · 0 confidence</div></div>
+<div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot" data-shot="mindy-chat"></div><div class="title">Ask in plain English.<br>Get a <span class="green">grounded</span> answer.</div><div class="supp">Mindy Chat</div></div>
+<div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="bignum">28</div><div class="title sm">One question. A real answer.</div><div class="supp">data sources behind every reply</div></div>
+
+
+<!-- ================= AI / GROUNDING INTERLUDE ================= -->
+<div class="dwrap dINT">
+
+
+<!-- You just saw it answer — here's WHY you can trust it -->
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div><div class="kicker green">So why can you trust it?</div><div class="title">We put the LLM <span class="green">on the platform.</span></div><div class="supp">34 sources and the AI aren't two tools. They're one.</div></div>
+
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div><div class="viz red"><i class="luc" data-icon="alert-triangle"></i></div><div class="title">Generic AI <span class="x">makes things up.</span></div></div>
+
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="stat-row"><div class="statb"><div class="n">58–88%</div><div class="l">leading AI inventing answers to specialized questions</div></div><div class="statb"><div class="n">1 in 6</div><div class="l">even AI built <i>for lawyers</i></div></div></div>
+  <div class="title sm">A made-up UEI <span class="x">loses the bid.</span></div><div class="foot">Stanford RegLab — Dahl 2024; Magesh 2025</div></div>
+
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div><div class="title sm" style="margin-bottom:6px">Ground it on a curated corpus —<br>and the errors <span class="green">collapse.</span></div>
+  <div class="stat-row"><div class="statb"><div class="n">~40%</div><div class="l">generic AI</div></div><div class="statb good"><div class="n">0–6%</div><div class="l">grounded on a curated corpus</div></div></div>
+  <div class="foot">JMIR Cancer 2025 — same model, grounded vs. ungrounded · 3–5× fewer</div></div>
+
+
+</div>
+
+
+<!-- Today's Intel -->
+<div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Today's Intel</div><div class="viz red"><i class="luc" data-icon="search"></i></div><div class="title">You'll never scan <span class="x">88,000 opportunities</span><br>before coffee.</div></div>
+<div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Today's Intel · the old way</div><div class="viz red"><i class="luc" data-icon="clock"></i></div><div class="title sm">Skim SAM.gov and hope.</div><div class="cost">And you usually missed it</div></div>
+<div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot" data-shot="todays-intel"></div><div class="title">Your market, <span class="green">briefed</span><br>every morning.</div><div class="supp">Today's Intel</div></div>
+<div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="bignum">24,000</div><div class="title sm">You walk in already knowing.</div><div class="supp">contracts scanned for you every night</div></div>
+
+<!-- Source Feed -->
+<div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Source Feed</div><div class="viz red"><i class="luc" data-icon="bell"></i></div><div class="title">Opportunities break all day.<br>You <span class="x">can't live on SAM.gov.</span></div></div>
+<div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Source Feed · the old way</div><div class="viz red"><i class="luc" data-icon="refresh-cw"></i></div><div class="title sm">Saved searches. Manual refreshes.</div><div class="cost">Late · or never</div></div>
+<div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot" data-shot="source-feed"></div><div class="title">New opportunities<br>the <span class="green">moment</span> they post.</div><div class="supp">Source Feed</div></div>
+<div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="bignum">88K+</div><div class="title sm">The right ones find you.</div><div class="supp">SAM.gov opportunities tracked live</div></div>
+
+<!-- Market Dashboard -->
+<div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Market Dashboard</div><div class="viz red"><i class="luc" data-icon="layers"></i></div><div class="title">You can't build strategy<br>out of <span class="x">50 browser tabs.</span></div></div>
+<div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Market Dashboard · the old way</div><div class="viz red"><i class="luc" data-icon="table-2"></i></div><div class="title sm">A dozen exports and a hunch.</div><div class="cost">A week · a blurry picture</div></div>
+<div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot" data-shot="market-dashboard"></div><div class="title">Your whole market,<br><span class="green">one screen.</span></div><div class="supp">Market Dashboard</div></div>
+<div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="viz circle"><i class="luc" data-icon="layout-dashboard"></i></div><div class="title sm">One screen. <span class="accent">One glance.</span></div></div>
+
+<!-- ===== PIPELINE ===== -->
+<div class="slide divider sec-pipe"><div class="logo">GovCon <span>Giants</span></div><div class="d-ic"><i class="luc" data-icon="trending-up"></i></div><div class="big">Pipeline</div><p>Stop running BD out of a spreadsheet that dies in a drawer.</p></div>
+
+<!-- My Pursuits -->
+<div class="slide sec-pipe"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">My Pursuits</div><div class="viz red"><i class="luc" data-icon="table-2"></i></div><div class="title">The deals I lost<br>because <span class="x">I lost track.</span></div></div>
+<div class="slide sec-pipe"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">My Pursuits · the old way</div><div class="viz red"><i class="luc" data-icon="table-2"></i></div><div class="title sm">A Google Sheet you forget to update.</div><div class="cost">Deals through the cracks</div></div>
+<div class="slide sec-pipe"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot" data-shot="my-pursuits"></div><div class="title">Every bid you're chasing,<br><span class="accent">alive.</span></div><div class="supp">My Pursuits</div></div>
+<div class="slide sec-pipe"><div class="logo">GovCon <span>Giants</span></div><div class="viz circle"><i class="luc" data-icon="trending-up"></i></div><div class="title sm">The CRM that took a weekend —<br><span class="accent">built in.</span></div></div>
+
+<!-- My Target List -->
+<div class="slide sec-pipe"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">My Target List</div><div class="viz red"><i class="luc" data-icon="target"></i></div><div class="title">You can't win alone.<br>But <span class="x">who do you call?</span></div></div>
+<div class="slide sec-pipe"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">My Target List · the old way</div><div class="viz red"><i class="luc" data-icon="search"></i></div><div class="title sm">Cold-Google primes. Guess the email.</div><div class="cost">Hours of dead ends</div></div>
+<div class="slide sec-pipe"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot" data-shot="my-target-list"></div><div class="title">Who to team with.<br>Who to <span class="accent">call.</span></div><div class="supp">My Target List</div></div>
+<div class="slide sec-pipe"><div class="logo">GovCon <span>Giants</span></div><div class="bignum">317K</div><div class="title sm">Never wonder who to call.</div><div class="supp">contractors + 125K contacts</div></div>
+
+<!-- ===== ESTIMATING ===== -->
+<div class="slide divider sec-est"><div class="logo">GovCon <span>Giants</span></div><div class="d-ic"><i class="luc" data-icon="dollar-sign"></i></div><div class="big">Estimating</div><p>Price it right and write it fast — grounded in real award data.</p></div>
+
+<!-- Pricing Intel -->
+<div class="slide sec-est"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Pricing Intel</div><div class="viz red"><i class="luc" data-icon="dollar-sign"></i></div><div class="title">Price wrong and you lose —<br><span class="x">every time.</span></div></div>
+<div class="slide sec-est"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Pricing Intel · the old way</div><div class="viz red"><i class="luc" data-icon="dollar-sign"></i></div><div class="title sm">Price off gut feel and hope.</div><div class="cost">Lose money · or lose the bid</div></div>
+<div class="slide sec-est"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot" data-shot="pricing-intel"></div><div class="title">See what similar contracts<br><span class="accent">really won.</span></div><div class="supp">Pricing Intel</div></div>
+<div class="slide sec-est"><div class="logo">GovCon <span>Giants</span></div><div class="bignum">$750B</div><div class="title sm">Bid with numbers, not a hunch.</div><div class="supp">of real award history</div></div>
+
+<!-- Proposal Assist -->
+<div class="slide sec-est"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Proposal Assist</div><div class="viz red"><i class="luc" data-icon="file-text"></i></div><div class="title">Generic AI fills proposals<br>with <span class="x">fake UEIs.</span></div></div>
+<div class="slide sec-est"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Proposal Assist · the old way</div><div class="viz red"><i class="luc" data-icon="clock"></i></div><div class="title sm">Weeks of writing. Or a placeholder draft.</div><div class="cost">A draft that loses the bid</div></div>
+<div class="slide sec-est"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot" data-shot="proposal-assist"></div><div class="title">A compliant draft,<br>grounded in <span class="green">your data.</span></div><div class="supp">Proposal Assist</div></div>
+<div class="slide sec-est"><div class="logo">GovCon <span>Giants</span></div><div class="bignum">0</div><div class="title sm">A draft you can submit.</div><div class="supp">hallucinated numbers — it reads your Vault</div></div>
+
+<!-- ===== RESEARCH ===== -->
+<div class="slide divider sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="d-ic"><i class="luc" data-icon="compass"></i></div><div class="big">Research</div><p>Find the whole market — not just the obvious code.</p></div>
+
+<!-- Market Research -->
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Market Research</div><div class="viz red"><i class="luc" data-icon="compass"></i></div><div class="title">You niche on one code —<br>and miss <span class="x">72%.</span></div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Market Research · the old way</div><div class="viz red"><i class="luc" data-icon="compass"></i></div><div class="title sm">Pick the one NAICS you know.</div><div class="cost">You miss 72% of your market</div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot" data-shot="market-research"></div><div class="title">Paste a cap statement.<br>See your <span class="green">whole market.</span></div><div class="supp">Market Research</div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="bignum">72%</div><div class="title sm">From one word to your whole market.</div><div class="supp">the obvious NAICS is only 28% of spend</div></div>
+
+<!-- Upcoming Buys -->
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Upcoming Buys</div><div class="viz red"><i class="luc" data-icon="clock"></i></div><div class="title">On SAM.gov, you're already<br>a <span class="x">year behind.</span></div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Upcoming Buys · the old way</div><div class="viz red"><i class="luc" data-icon="clock"></i></div><div class="title sm">Wait for the RFP. Then scramble.</div><div class="cost">A year behind the incumbent</div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot" data-shot="upcoming-buys"></div><div class="title">See what agencies<br><span class="green">plan to buy.</span></div><div class="supp">Upcoming Buys</div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="bignum">9,973</div><div class="title sm">Be early, not late.</div><div class="supp">FY2026 forecasted buys — refreshed this week</div></div>
+
+<!-- Expiring Contracts -->
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Expiring Contracts</div><div class="viz red"><i class="luc" data-icon="hourglass"></i></div><div class="title">80% are recompetes.<br>Wait, and <span class="x">you've lost.</span></div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Expiring Contracts · the old way</div><div class="viz red"><i class="luc" data-icon="hourglass"></i></div><div class="title sm">Find out after it already awarded.</div><div class="cost">Too late to bid</div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot" data-shot="expiring-contracts"></div><div class="title">Find recompetes<br><span class="green">12–18 months early.</span></div><div class="supp">Expiring Contracts</div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="bignum">~80%</div><div class="title sm">Position before the competition.</div><div class="supp">of all opportunities are recompetes</div></div>
+
+<!-- Vehicle Expiry Watch -->
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Vehicle Expiry Watch</div><div class="viz red"><i class="luc" data-icon="lock"></i></div><div class="title">Miss the on-ramp —<br>locked out for <span class="x">a decade.</span></div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Vehicle Expiry Watch · the old way</div><div class="viz red"><i class="luc" data-icon="lock"></i></div><div class="title sm">Hear it re-opened from a competitor.</div><div class="cost">Locked out 5–10 years</div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot" data-shot="vehicle-expiry-watch"></div><div class="title">Know when the big vehicles<br><span class="green">re-open.</span></div><div class="supp">Vehicle Expiry Watch</div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="viz circle"><i class="luc" data-icon="bell"></i></div><div class="title sm">Be ready when the door <span class="accent">opens.</span></div></div>
+
+<!-- Market Research Report -->
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Research Report</div><div class="viz red"><i class="luc" data-icon="file-text"></i></div><div class="title">You need a report —<br><span class="x">not a screenshot.</span></div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Research Report · the old way</div><div class="viz red"><i class="luc" data-icon="dollar-sign"></i></div><div class="title sm">Pay a consultant. Wait weeks.</div><div class="cost">Weeks · thousands</div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot" data-shot="market-research-report"></div><div class="title">A full market report,<br><span class="green">on demand.</span></div><div class="supp">Market Research Report</div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="viz circle"><i class="luc" data-icon="file-text"></i></div><div class="title sm">A consultant's report —<br><span class="accent">in minutes.</span></div></div>
+
+<!-- Federal Grants -->
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Federal Grants</div><div class="viz red"><i class="luc" data-icon="banknote"></i></div><div class="title">Contracts aren't<br>the <span class="x">only money.</span></div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Federal Grants · the old way</div><div class="viz red"><i class="luc" data-icon="eye-off"></i></div><div class="title sm">Grants live in a system you never open.</div><div class="cost">Money left on the table</div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot" data-shot="federal-grants"></div><div class="title">Search live grants<br>beside <span class="green">contracts.</span></div><div class="supp">Federal Grants</div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="viz circle"><i class="luc" data-icon="banknote"></i></div><div class="title sm">A whole funding stream — <span class="accent">found.</span></div></div>
+
+<!-- Contractors -->
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Contractors</div><div class="viz red"><i class="luc" data-icon="building-2"></i></div><div class="title">Who's the competition?<br>Who's the <span class="x">partner?</span></div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Contractors · the old way</div><div class="viz red"><i class="luc" data-icon="eye-off"></i></div><div class="title sm">You don't know who's in your space.</div><div class="cost">Flying blind</div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot" data-shot="contractors"></div><div class="title">Search the whole<br><span class="green">contractor universe.</span></div><div class="supp">Contractors</div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="bignum">317,106</div><div class="title sm">Know the whole field.</div><div class="supp">contractors — rivals and partners alike</div></div>
+
+<!-- Decision Makers -->
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Decision Makers</div><div class="viz red"><i class="luc" data-icon="landmark"></i></div><div class="title">You can't sell<br>to who you <span class="x">can't reach.</span></div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Decision Makers · the old way</div><div class="viz red"><i class="luc" data-icon="users-round"></i></div><div class="title sm">Submit into the void. No name.</div><div class="cost">Nobody knows you exist</div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot" data-shot="decision-makers"></div><div class="title">Full buyer rosters,<br>by <span class="green">office.</span></div><div class="supp">Decision Makers</div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="bignum">125K+</div><div class="title sm">Know who to call.</div><div class="supp">contacts · 170 OSBP commands</div></div>
+
+<!-- ===== VAULT ===== -->
+<div class="slide divider sec-acct"><div class="logo">GovCon <span>Giants</span></div><div class="d-ic"><i class="luc" data-icon="folder-kanban"></i></div><div class="big">Your Vault</div><p>Seven years of templates and the formula — now inside the AI.</p></div>
+
+<!-- My Vault -->
+<div class="slide sec-acct"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">My Vault</div><div class="viz red"><i class="luc" data-icon="lock"></i></div><div class="title">Generic AI doesn't<br>know <span class="x">your company.</span></div></div>
+<div class="slide sec-acct"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">My Vault · the old way</div><div class="viz red"><i class="luc" data-icon="folder-kanban"></i></div><div class="title sm">Your data in folders the AI can't see.</div><div class="cost">Generic in · generic out</div></div>
+<div class="slide sec-acct"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot" data-shot="my-vault"></div><div class="title">Your documents become<br>Mindy's <span style="color:#f472b6">memory.</span></div><div class="supp">My Vault</div></div>
+<div class="slide sec-acct"><div class="logo">GovCon <span>Giants</span></div><div class="viz circle"><i class="luc" data-icon="folder-kanban"></i></div><div class="title sm"><span class="accent">You</span> become part of the corpus.</div></div>
+
+<!-- CLOSE -->
+<div class="slide divider sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="big" style="font-size:60px">One platform.<br>The whole pursuit.</div><p>Find it. Price it. Write it. Win it — grounded in real data.</p></div>
+
+
+</div>
+
+<!-- ================= OFFER & CLOSE ================= -->
+<div class="dwrap dCLOSE">
+
+
+<!-- 1 setup -->
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="title">So what would all of this<br><span class="green">normally cost?</span></div></div>
+
+<!-- 2 the value stack -->
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="kicker">To do what Mindy does</div>
+  <div class="stack">
+    <div class="row"><span class="what">A BD-data subscription (GovWin / Bloomberg Gov)</span><span class="cost">$20,000 / yr</span></div>
+    <div class="row"><span class="what">A proposal writer</span><span class="cost">$10,000 / proposal</span></div>
+    <div class="row"><span class="what">A capture manager</span><span class="cost">$150,000 / yr</span></div>
+    <div class="row"><span class="what">A market / BD analyst</span><span class="cost">$100,000 / yr</span></div>
+  </div>
+  <div class="total"><span class="what">You'd spend</span><span class="cost">$280,000+ / yr</span></div></div>
+
+<!-- 3 jobs line -->
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="title">So… what should we<br><span class="amber">charge?</span></div></div>
+
+<!-- 4 the price reveal -->
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="price">$149</div>
+  <div class="price-sub">a month.</div>
+  <div class="supp" style="margin-top:18px">For a market analyst, a capture manager, and a proposal writer<br>that never sleep — and never make up a number.</div></div>
+
+<!-- 5 tiers -->
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="kicker">Two ways in</div>
+  <div class="tiers">
+    <div class="tier pro"><h4>PRO</h4><div class="p">$149<span class="pm">/mo</span></div><div class="muted" style="margin-top:8px;font-size:18px">everything, one seat</div></div>
+    <div class="tier"><h4>TEAM</h4><div class="p">$499<span class="pm">/mo</span></div><div class="muted" style="margin-top:8px;font-size:18px">your whole shop</div></div>
+  </div></div>
+
+<!-- 5b lifetime turn: founders anchor -->
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="kicker">Or never pay monthly again</div>
+  <div class="title sm" style="margin-bottom:16px">Founders <span class="green">Lifetime.</span></div>
+  <div class="price" style="font-size:120px">$4,997</div>
+  <div class="price-sub">once. Mindy is yours for life.</div>
+  <div class="seats">Only 100 seats</div></div>
+
+<!-- 5c THE MINDY DAY SPECIAL — $2,997 -->
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="kicker amber">Because you showed up for Mindy Day</div>
+  <div class="anchor"><s>$4,997</s></div>
+  <div class="price" style="font-size:150px">$2,997</div>
+  <div class="price-sub">once. <span class="green">Lifetime access.</span></div>
+  <div class="save">You save $2,000</div>
+  <div class="supp" style="margin-top:18px">Today only — through <b>Saturday, June 27.</b><br>getmindy.ai/lifetime</div></div>
+
+<!-- 6 transformation -->
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="title">A solo shop that competes<br>like a <span class="green">prime.</span></div>
+  <div class="supp">The firepower of a BD department — for the price of a phone bill.</div></div>
+
+<!-- 7 CTA -->
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="title sm">Meet Mindy.</div>
+  <div class="cta">getmindy.ai/lifetime</div>
+  <div class="supp" style="margin-top:24px">Mindy Day pricing ends <b>Saturday, June 27.</b></div></div>
+
+<!-- 8 close -->
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="reveal">Mindy</div>
+  <div class="supp" style="margin-top:20px">We're changing how small business wins federal work — <span class="green">forever.</span></div></div>
+
+
+</div>
+
+<script>
+  document.querySelectorAll('.dotfield').forEach(d=>{const k=+d.dataset.n||0;for(let i=0;i<k;i++)d.appendChild(document.createElement('span'));});
+  let currentSlide=0;const slides=document.querySelectorAll('.slide');
+  slides.forEach((s,i)=>{const t=(i+1)+' / '+slides.length;let e=s.querySelector('.slide-number');if(!e){e=document.createElement('div');e.className='slide-number';s.appendChild(e);}e.textContent=t;});
+  function showSlide(n){slides[currentSlide].classList.remove('active');currentSlide=(n+slides.length)%slides.length;slides[currentSlide].classList.add('active');slides[currentSlide].scrollIntoView({block:'nearest'});}
+  function nextSlide(){showSlide(currentSlide+1)}function prevSlide(){showSlide(currentSlide-1)}
+  document.addEventListener('keydown',(e)=>{if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();nextSlide();}if(e.key==='ArrowLeft')prevSlide();});
+  document.addEventListener('click',(e)=>{if(e.target.closest('a'))return;nextSlide();});
+  slides[0].classList.add('active');
+</script>
+</body></html>

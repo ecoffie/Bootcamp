@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<title>The Mindy Launch — AI / Grounding Interlude</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',system-ui,sans-serif;background:#0f172a;color:#fff;display:flex;justify-content:center}
+  .slide{width:1280px;height:720px;padding:64px 72px;display:none;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+    background:linear-gradient(135deg,#0f172a 0%,#1e1b4b 100%);position:relative;page-break-after:always;overflow:hidden}
+  .slide.active{display:flex}
+  .slide::before{content:'';position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,#6366f1,#8b5cf6,#a78bfa)}
+  .logo{position:absolute;top:28px;right:60px;font-weight:900;font-size:17px;color:#cbd5e1}.logo span{color:#10b981}
+  .slide-number{position:absolute;bottom:26px;right:60px;font-size:14px;color:#475569}
+  .kicker{font-size:18px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:#6366f1;margin-bottom:26px}
+  .x{color:#f87171}.green{color:#10b981}
+  .title{font-size:56px;font-weight:900;line-height:1.12;max-width:1040px}.title.sm{font-size:42px}
+  .supp{font-size:28px;color:#94a3b8;margin-top:24px;max-width:920px}
+  .viz{margin-bottom:28px;color:#a78bfa}.viz .luc svg{width:96px;height:96px;stroke-width:1.7}.viz.red{color:#f87171}
+  .stat-row{display:flex;gap:30px;margin:10px 0 22px}
+  .statb{background:rgba(127,29,29,.22);border:1px solid #b91c1c;border-radius:18px;padding:28px 40px;text-align:center}
+  .statb.good{background:rgba(6,78,59,.32);border-color:#10b981}
+  .statb .n{font-size:64px;font-weight:900;color:#f87171}.statb.good .n{color:#10b981}.statb .l{font-size:19px;color:#cbd5e1;margin-top:6px}
+  .foot{font-size:14px;color:#475569;margin-top:14px}
+</style></head><body>
+
+<!-- You just saw it answer — here's WHY you can trust it -->
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div><div class="kicker green">So why can you trust it?</div><div class="title">We put the LLM <span class="green">on the platform.</span></div><div class="supp">34 sources and the AI aren't two tools. They're one.</div></div>
+
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div><div class="viz red"><i class="luc" data-icon="alert-triangle"></i></div><div class="title">Generic AI <span class="x">makes things up.</span></div></div>
+
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="stat-row"><div class="statb"><div class="n">58–88%</div><div class="l">leading AI inventing answers to specialized questions</div></div><div class="statb"><div class="n">1 in 6</div><div class="l">even AI built <i>for lawyers</i></div></div></div>
+  <div class="title sm">A made-up UEI <span class="x">loses the bid.</span></div><div class="foot">Stanford RegLab — Dahl 2024; Magesh 2025</div></div>
+
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div><div class="title sm" style="margin-bottom:6px">Ground it on a curated corpus —<br>and the errors <span class="green">collapse.</span></div>
+  <div class="stat-row"><div class="statb"><div class="n">~40%</div><div class="l">generic AI</div></div><div class="statb good"><div class="n">0–6%</div><div class="l">grounded on a curated corpus</div></div></div>
+  <div class="foot">JMIR Cancer 2025 — same model, grounded vs. ungrounded · 3–5× fewer</div></div>
+
+<script>/* slides injected into master; nav handled by master */</script>
+</body></html>

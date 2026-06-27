@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<title>The Mindy Launch — Offer & Close</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',system-ui,sans-serif;background:#0f172a;color:#fff;display:flex;justify-content:center}
+  .slide{width:1280px;height:720px;padding:64px 72px;display:none;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+    background:linear-gradient(135deg,#0f172a 0%,#1e1b4b 100%);position:relative;page-break-after:always;overflow:hidden}
+  .slide.active{display:flex}
+  .slide::before{content:'';position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,#6366f1,#8b5cf6,#a78bfa)}
+  .logo{position:absolute;top:28px;right:60px;font-weight:900;font-size:17px;color:#cbd5e1}.logo span{color:#10b981}
+  .slide-number{position:absolute;bottom:26px;right:60px;font-size:14px;color:#475569}
+  .kicker{font-size:18px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:#6366f1;margin-bottom:26px}
+  .x{color:#f87171}.green{color:#10b981}.amber{color:#fbbf24}.muted{color:#64748b}
+  .title{font-size:56px;font-weight:900;line-height:1.12;max-width:1040px}.title.sm{font-size:42px}
+  .supp{font-size:28px;color:#94a3b8;margin-top:24px;max-width:940px}
+
+  /* value stack */
+  .stack{width:840px;display:flex;flex-direction:column;gap:14px;margin:10px 0 20px}
+  .row{display:flex;justify-content:space-between;align-items:center;background:rgba(30,27,75,.6);border:1px solid #4338ca;border-radius:14px;padding:18px 28px}
+  .row .what{font-size:25px;font-weight:700;color:#e2e8f0;text-align:left}
+  .row .cost{font-size:28px;font-weight:900;color:#f87171;white-space:nowrap}
+  .total{display:flex;justify-content:space-between;align-items:center;width:840px;border-top:3px solid #475569;padding:22px 28px 0;margin-top:4px}
+  .total .what{font-size:28px;font-weight:800;color:#fff;text-align:left}
+  .total .cost{font-size:46px;font-weight:900;color:#f87171}
+
+  .price{font-size:170px;font-weight:900;line-height:1;
+    background:linear-gradient(120deg,#a78bfa,#10b981);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  .price-sub{font-size:30px;color:#94a3b8;font-weight:700}
+  .reveal{font-size:150px;font-weight:900;letter-spacing:-4px;line-height:1;
+    background:linear-gradient(120deg,#a78bfa,#10b981);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+
+  .tiers{display:flex;gap:30px;margin-top:10px}
+  .tier{background:rgba(30,27,75,.6);border:1px solid #4338ca;border-radius:18px;padding:34px 44px;text-align:center}
+  .tier.pro{border-color:#10b981;box-shadow:0 0 50px rgba(16,185,129,.25)}
+  .tier h4{font-size:24px;color:#a78bfa;font-weight:800;margin-bottom:8px}.tier.pro h4{color:#10b981}
+  .tier .p{font-size:54px;font-weight:900;color:#fff}.tier .pm{font-size:22px;color:#64748b}
+
+  .cta{font-size:40px;font-weight:900;color:#fef3c7;background:rgba(0,0,0,.25);padding:22px 56px;border-radius:14px;margin-top:30px}
+</style></head><body>
+
+<!-- 1 setup -->
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="title">So what would all of this<br><span class="green">normally cost?</span></div></div>
+
+<!-- 2 the value stack -->
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="kicker">To do what Mindy does</div>
+  <div class="stack">
+    <div class="row"><span class="what">A BD-data subscription (GovWin / Bloomberg Gov)</span><span class="cost">$20,000 / yr</span></div>
+    <div class="row"><span class="what">A proposal writer</span><span class="cost">$10,000 / proposal</span></div>
+    <div class="row"><span class="what">A capture manager</span><span class="cost">$150,000 / yr</span></div>
+    <div class="row"><span class="what">A market / BD analyst</span><span class="cost">$100,000 / yr</span></div>
+  </div>
+  <div class="total"><span class="what">You'd spend</span><span class="cost">$280,000+ / yr</span></div></div>
+
+<!-- 3 jobs line -->
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="title">So… what should we<br><span class="amber">charge?</span></div></div>
+
+<!-- 4 the price reveal -->
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="price">$149</div>
+  <div class="price-sub">a month.</div>
+  <div class="supp" style="margin-top:18px">For a market analyst, a capture manager, and a proposal writer<br>that never sleep — and never make up a number.</div></div>
+
+<!-- 5 tiers -->
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="kicker">Two ways in</div>
+  <div class="tiers">
+    <div class="tier pro"><h4>PRO</h4><div class="p">$149<span class="pm">/mo</span></div><div class="muted" style="margin-top:8px;font-size:18px">everything, one seat</div></div>
+    <div class="tier"><h4>TEAM</h4><div class="p">$499<span class="pm">/mo</span></div><div class="muted" style="margin-top:8px;font-size:18px">your whole shop</div></div>
+  </div></div>
+
+<!-- 6 transformation -->
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="title">A solo shop that competes<br>like a <span class="green">prime.</span></div>
+  <div class="supp">The firepower of a BD department — for the price of a phone bill.</div></div>
+
+<!-- 7 CTA -->
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="title sm">Meet Mindy.</div>
+  <div class="cta">getmindy.ai</div>
+  <div class="supp" style="margin-top:24px">Launch-day pricing ends tonight.</div></div>
+
+<!-- 8 close -->
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="reveal">Mindy</div>
+  <div class="supp" style="margin-top:20px">We're changing how small business wins federal work — <span class="green">forever.</span></div></div>
+
+<script>
+  let currentSlide=0;const slides=document.querySelectorAll('.slide');
+  slides.forEach((s,i)=>{if(!s.querySelector('.slide-number')){const d=document.createElement('div');d.className='slide-number';d.textContent=(i+1)+' / '+slides.length;s.appendChild(d);}});
+  function showSlide(n){slides[currentSlide].classList.remove('active');currentSlide=(n+slides.length)%slides.length;slides[currentSlide].classList.add('active');}
+  function nextSlide(){showSlide(currentSlide+1)}function prevSlide(){showSlide(currentSlide-1)}
+  document.addEventListener('keydown',(e)=>{if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();nextSlide();}if(e.key==='ArrowLeft')prevSlide();});
+  document.addEventListener('click',(e)=>{if(e.target.closest('a'))return;nextSlide();});
+  slides[0].classList.add('active');
+</script>
+</body></html>
