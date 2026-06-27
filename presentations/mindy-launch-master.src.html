@@ -9,7 +9,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:#0f172a;color:#fff;disp
 body{font-family:'Inter',system-ui,sans-serif;background:#0f172a;color:#fff;display:flex;justify-content:center}
 @keyframes cubespin{0%,18%{transform:rotateY(0)}25%,43%{transform:rotateY(-90deg)}50%,68%{transform:rotateY(-180deg)}75%,93%{transform:rotateY(-270deg)}100%{transform:rotateY(-360deg)}}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
-  /* ===== OPENING + BIG PICTURE (38 slides) ===== */
+  /* ===== OPENING + BIG PICTURE (30 slides) ===== */
 .dOPEN .slide{width:1280px;height:720px;padding:64px 72px;display:none;flex-direction:column;justify-content:center;align-items:center;text-align:center;
     background:linear-gradient(135deg,#0f172a 0%,#1e1b4b 100%);position:relative;page-break-after:always;overflow:hidden}
 .dOPEN .slide.active{display:flex}
@@ -158,7 +158,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:#0f172a;color:#fff;disp
 .dOPEN .split .shot-wrap img{height:240px}
 .dOPEN .split .shot-ph{height:240px}
 .dOPEN .split .shot-bar{height:30px}
-  /* ===== FEATURE DEMOS (75 slides) ===== */
+  /* ===== FEATURE DEMOS (67 slides) ===== */
 .dFEAT .slide{width:1280px;height:720px;padding:64px 72px;display:none;flex-direction:column;justify-content:center;align-items:center;text-align:center;
     background:linear-gradient(135deg,#0f172a 0%,#1e1b4b 100%);position:relative;page-break-after:always;overflow:hidden}
 .dFEAT .slide.active{display:flex}
@@ -242,7 +242,43 @@ body{font-family:'Inter',system-ui,sans-serif;background:#0f172a;color:#fff;disp
 .dINT .statb.good .n{color:#10b981}
 .dINT .statb .l{font-size:19px;color:#cbd5e1;margin-top:6px}
 .dINT .foot{font-size:14px;color:#475569;margin-top:14px}
-  /* ===== OFFER & CLOSE (10 slides) ===== */
+  /* ===== THE MISSION (closer) (8 slides) ===== */
+.dMISSION .slide{width:1280px;height:720px;padding:64px 72px;display:none;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+    background:linear-gradient(135deg,#0f172a 0%,#1e1b4b 100%);position:relative;page-break-after:always;overflow:hidden}
+.dMISSION .slide.active{display:flex}
+.dMISSION .slide::before{content:'';position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,#6366f1,#8b5cf6,#a78bfa)}
+.dMISSION .logo{position:absolute;top:28px;right:60px;font-weight:900;font-size:17px;color:#cbd5e1}
+.dMISSION .logo span{color:#10b981}
+.dMISSION .slide-number{position:absolute;bottom:26px;right:60px;font-size:14px;color:#475569}
+.dMISSION .kicker{font-size:18px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:#6366f1;margin-bottom:26px}
+.dMISSION .x{color:#f87171}
+.dMISSION .green{color:#10b981}
+.dMISSION .amber{color:#fbbf24}
+.dMISSION .muted{color:#64748b}
+.dMISSION .title{font-size:56px;font-weight:900;line-height:1.12;max-width:1040px}
+.dMISSION .title.sm{font-size:42px}
+.dMISSION .supp{font-size:28px;color:#94a3b8;margin-top:24px;max-width:920px}
+.dMISSION .foot{font-size:14px;color:#475569;margin-top:14px}
+.dMISSION .bignum{font-size:130px;font-weight:900;line-height:1;margin-bottom:6px;color:#a78bfa}
+.dMISSION .bignum.red{color:#f87171}
+.dMISSION .stat3{display:flex;gap:26px;margin:6px 0 14px}
+.dMISSION .sb{background:rgba(30,27,75,.5);border:1px solid #4338ca;border-radius:18px;padding:26px 34px;text-align:center;min-width:250px}
+.dMISSION .sb .n{font-size:60px;font-weight:900;line-height:1}
+.dMISSION .sb .l{font-size:18px;color:#cbd5e1;margin-top:8px}
+.dMISSION .sb.g .n{color:#10b981}
+.dMISSION .sb.r .n{color:#f87171}
+.dMISSION .sb.b .n{color:#a78bfa}
+.dMISSION .goaltbl{border-collapse:collapse;width:920px;margin:6px 0 14px}
+.dMISSION .goaltbl th{font-size:14px;letter-spacing:1.5px;text-transform:uppercase;color:#64748b;padding:10px 18px;text-align:right;border-bottom:2px solid #334155}
+.dMISSION .goaltbl th:first-child{text-align:left}
+.dMISSION .goaltbl td{font-size:24px;font-weight:800;padding:14px 18px;text-align:right;border-bottom:1px solid #1e293b}
+.dMISSION .goaltbl td:first-child{text-align:left;color:#e2e8f0;font-weight:700;font-size:22px}
+.dMISSION .goaltbl .ok{color:#10b981}
+.dMISSION .goaltbl .bad{color:#f87171}
+.dMISSION .goaltbl .sa{color:#a78bfa}
+.dMISSION .tools{display:flex;gap:22px;margin:8px 0 18px;justify-content:center}
+.dMISSION .tool{background:rgba(30,27,75,.55);border:1px solid #4338ca;border-radius:16px;padding:22px 30px;font-size:30px;font-weight:900}
+  /* ===== OFFER & CLOSE (13 slides) ===== */
 .dCLOSE .slide{width:1280px;height:720px;padding:64px 72px;display:none;flex-direction:column;justify-content:center;align-items:center;text-align:center;
     background:linear-gradient(135deg,#0f172a 0%,#1e1b4b 100%);position:relative;page-break-after:always;overflow:hidden}
 .dCLOSE .slide.active{display:flex}
@@ -374,68 +410,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:#0f172a;color:#fff;disp
 <div class="slide"><div class="logo">GovCon <span>Giants</span></div>
   <div class="kicker">Before I show you</div>
   <div class="title">The <span class="green">big picture.</span></div>
-  <div class="supp">Why this matters — and why nothing else does what Mindy does.</div></div>
-
-<!-- ===== THE MISSION ===== -->
-<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
-  <div class="kicker">The Mission</div>
-  <div class="title">Reverse the <span class="x">shrinking</span><br>industrial base.</div>
-  <div class="supp">The number of small businesses winning federal work is collapsing.<br>Mindy exists to turn that around.</div></div>
-
-<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
-  <div class="kicker">The collapse</div>
-  <div class="bignum red">58,681</div>
-  <div class="title sm">small businesses won a federal prime in FY2022 —<br><span class="x">fewer than half</span> of a decade earlier.</div>
-  <div class="stat3" style="margin-top:24px"><div class="sb r"><div class="n">−70%</div><div class="l">small awardees at DoD since 2011</div></div><div class="sb b"><div class="n">$183.3B</div><div class="l">to small biz in FY2024 — record $, fewer firms</div></div></div>
-  <div class="foot">SBA FY2024 Procurement Scorecard · HigherGov / FPDS · Nextgov</div></div>
-
-<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
-  <div class="kicker">The gap · measured live</div>
-  <div class="stat3"><div class="sb g"><div class="n">51.4%</div><div class="l">of solicitations set aside for small biz</div></div>
-    <div class="sb r"><div class="n">48.6%</div><div class="l">still full-and-open — the bigger dollars</div></div>
-    <div class="sb b"><div class="n">28.8%</div><div class="l">of federal dollars reach small biz</div></div></div>
-  <div class="title sm" style="margin-top:18px">Small business wins half the bids —<br>but barely a <span class="x">quarter</span> of the money.</div>
-  <div class="foot">19,132 live solicitations · May 2020 – Jun 2026 · SBA FY2024</div></div>
-<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
-  <div class="kicker">The concentration</div>
-  <div class="stat3"><div class="sb r"><div class="n">$47.8B</div><div class="l">Lockheed Martin — one company</div></div>
-    <div class="sb r"><div class="n">30%</div><div class="l">of the Pentagon → just 5 primes</div></div>
-    <div class="sb b"><div class="n">$183B</div><div class="l">ALL small business — across 58,681 firms</div></div></div>
-  <div class="title sm">A handful of giants take the top.<br><span class="x">58,681</span> fight for what's left.</div>
-  <div class="foot">DoD FY2024: top 10 primes $139.8B · SBA FY2024 scorecard</div></div>
-
-<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
-  <div class="kicker">Goal "met" &ne; actually set aside</div>
-  <table class="goaltbl">
-    <tr><th>Category</th><th>Goal</th><th>Achieved $</th><th>Solicited as set-aside</th></tr>
-    <tr><td>Total Small Business</td><td style="color:#94a3b8">23%</td><td class="ok">28.8% &check;</td><td class="sa">41.41%</td></tr>
-    <tr><td>8(a) / SDB</td><td style="color:#94a3b8">13%</td><td class="bad">12.27% &times;</td><td class="bad">0.54%</td></tr>
-    <tr><td>WOSB / EDWOSB</td><td style="color:#94a3b8">5%</td><td class="bad">4.97% &times;</td><td class="bad">2.01%</td></tr>
-    <tr><td>HUBZone</td><td style="color:#94a3b8">3%</td><td class="bad">2.75% &times;</td><td class="bad">0.46%</td></tr>
-    <tr><td>SDVOSB</td><td style="color:#94a3b8">5%</td><td class="ok">5.14% &check;</td><td class="sa">6.09%</td></tr>
-  </table>
-  <div class="supp" style="font-size:22px">Agencies hit the dollar goals by <span class="x">crediting firms that win full-and-open.</span><br>Actually solicited as a set-aside? A fraction.</div></div>
-<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
-  <div class="title">When you see this,<br>there are <span class="green">two</span> choices.</div>
-  <div class="tools" style="margin-top:28px">
-    <div class="tool" style="border-color:#b91c1c;color:#fca5a5;background:rgba(127,29,29,.18)">Cry about it</div>
-    <div class="tool" style="border-color:#10b981;color:#10b981;background:rgba(6,78,59,.25)">Do something about it</div>
-  </div></div>
-
-<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
-  <div class="title">I chose to<br><span class="green">do something about it.</span></div></div>
-
-
-
-<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
-  <div class="kicker">The opportunity · Rule of Two</div>
-  <div class="title sm">When market research shows <span class="green">two capable</span><br>small businesses, it <span class="green">must</span> be set aside.</div>
-  <div class="supp" style="margin-top:8px">Shift just <b style="color:#fff">0.5%</b> of the $571B full-and-open pool…</div>
-  <div class="stat3" style="margin-top:18px"><div class="sb g"><div class="n">$2.9B</div><div class="l">redirected to small biz / yr</div></div>
-    <div class="sb g"><div class="n">914</div><div class="l">more small businesses sustained</div></div></div>
-  <div class="title sm" style="margin-top:18px">Mindy makes more of them <span class="green">visible &amp; capable.</span> That's the mission.</div></div>
-
-
+  <div class="supp">Why nothing else out there does what Mindy does.</div></div>
 
 <!-- ===== EACH IS INSUFFICIENT ===== -->
 <div class="slide"><div class="logo">GovCon <span>Giants</span></div>
@@ -636,18 +611,6 @@ body{font-family:'Inter',system-ui,sans-serif;background:#0f172a;color:#fff;disp
 <div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot" data-shot="expiring-contracts"></div><div class="title">Find recompetes<br><span class="green">12–18 months early.</span></div><div class="supp">Expiring Contracts</div></div>
 <div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="bignum">~80%</div><div class="title sm">Position before the competition.</div><div class="supp">of all opportunities are recompetes</div></div>
 
-<!-- Vehicle Expiry Watch -->
-<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Vehicle Expiry Watch</div><div class="viz red"><i class="luc" data-icon="lock"></i></div><div class="title">Miss the on-ramp —<br>locked out for <span class="x">a decade.</span></div></div>
-<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Vehicle Expiry Watch · the old way</div><div class="viz red"><i class="luc" data-icon="lock"></i></div><div class="title sm">Hear it re-opened from a competitor.</div><div class="cost">Locked out 5–10 years</div></div>
-<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot" data-shot="vehicle-expiry-watch"></div><div class="title">Know when the big vehicles<br><span class="green">re-open.</span></div><div class="supp">Vehicle Expiry Watch</div></div>
-<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="viz circle"><i class="luc" data-icon="bell"></i></div><div class="title sm">Be ready when the door <span class="accent">opens.</span></div></div>
-
-<!-- Market Research Report -->
-<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Research Report</div><div class="viz red"><i class="luc" data-icon="file-text"></i></div><div class="title">You need a report —<br><span class="x">not a screenshot.</span></div></div>
-<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Research Report · the old way</div><div class="viz red"><i class="luc" data-icon="dollar-sign"></i></div><div class="title sm">Pay a consultant. Wait weeks.</div><div class="cost">Weeks · thousands</div></div>
-<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot" data-shot="market-research-report"></div><div class="title">A full market report,<br><span class="green">on demand.</span></div><div class="supp">Market Research Report</div></div>
-<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="viz circle"><i class="luc" data-icon="file-text"></i></div><div class="title sm">A consultant's report —<br><span class="accent">in minutes.</span></div></div>
-
 <!-- Federal Grants -->
 <div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Federal Grants</div><div class="viz red"><i class="luc" data-icon="banknote"></i></div><div class="title">Contracts aren't<br>the <span class="x">only money.</span></div></div>
 <div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Federal Grants · the old way</div><div class="viz red"><i class="luc" data-icon="eye-off"></i></div><div class="title sm">Grants live in a system you never open.</div><div class="cost">Money left on the table</div></div>
@@ -678,6 +641,74 @@ body{font-family:'Inter',system-ui,sans-serif;background:#0f172a;color:#fff;disp
 <!-- CLOSE -->
 <div class="slide divider sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="big" style="font-size:60px">One platform.<br>The whole pursuit.</div><p>Find it. Price it. Write it. Win it — grounded in real data.</p></div>
 
+
+</div>
+
+<!-- ================= THE MISSION (closer) ================= -->
+<div class="dwrap dMISSION">
+
+
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="kicker">The Mission</div>
+  <div class="title">Reverse the <span class="x">shrinking</span><br>industrial base.</div>
+  <div class="supp">The number of small businesses winning federal work is collapsing.<br>Mindy exists to turn that around.</div></div>
+
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="kicker">The collapse</div>
+  <div class="bignum red">58,681</div>
+  <div class="title sm">small businesses won a federal prime in FY2022 —<br><span class="x">fewer than half</span> of a decade earlier.</div>
+  <div class="stat3" style="margin-top:24px"><div class="sb r"><div class="n">−70%</div><div class="l">small awardees at DoD since 2011</div></div><div class="sb b"><div class="n">$183.3B</div><div class="l">to small biz in FY2024 — record $, fewer firms</div></div></div>
+  <div class="foot">SBA FY2024 Procurement Scorecard · HigherGov / FPDS · Nextgov</div></div>
+
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="kicker">The gap · measured live</div>
+  <div class="stat3"><div class="sb g"><div class="n">51.4%</div><div class="l">of solicitations set aside for small biz</div></div>
+    <div class="sb r"><div class="n">48.6%</div><div class="l">still full-and-open — the bigger dollars</div></div>
+    <div class="sb b"><div class="n">28.8%</div><div class="l">of federal dollars reach small biz</div></div></div>
+  <div class="title sm" style="margin-top:18px">Small business wins half the bids —<br>but barely a <span class="x">quarter</span> of the money.</div>
+  <div class="foot">19,132 live solicitations · May 2020 – Jun 2026 · SBA FY2024</div></div>
+
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="kicker">The concentration</div>
+  <div class="stat3"><div class="sb r"><div class="n">$47.8B</div><div class="l">Lockheed Martin — one company</div></div>
+    <div class="sb r"><div class="n">30%</div><div class="l">of the Pentagon → just 5 primes</div></div>
+    <div class="sb b"><div class="n">$183B</div><div class="l">ALL small business — across 58,681 firms</div></div></div>
+  <div class="title sm">A handful of giants take the top.<br><span class="x">58,681</span> fight for what's left.</div>
+  <div class="foot">DoD FY2024: top 10 primes $139.8B · SBA FY2024 scorecard</div></div>
+
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="kicker">Goal "met" &ne; actually set aside</div>
+  <table class="goaltbl">
+    <tr><th>Category</th><th>Goal</th><th>Achieved $</th><th>Solicited as set-aside</th></tr>
+    <tr><td>Total Small Business</td><td style="color:#94a3b8">23%</td><td class="ok">28.8% &check;</td><td class="sa">41.41%</td></tr>
+    <tr><td>8(a) / SDB</td><td style="color:#94a3b8">13%</td><td class="bad">12.27% &times;</td><td class="bad">0.54%</td></tr>
+    <tr><td>WOSB / EDWOSB</td><td style="color:#94a3b8">5%</td><td class="bad">4.97% &times;</td><td class="bad">2.01%</td></tr>
+    <tr><td>HUBZone</td><td style="color:#94a3b8">3%</td><td class="bad">2.75% &times;</td><td class="bad">0.46%</td></tr>
+    <tr><td>SDVOSB</td><td style="color:#94a3b8">5%</td><td class="ok">5.14% &check;</td><td class="sa">6.09%</td></tr>
+  </table>
+  <div class="supp" style="font-size:22px">Agencies hit the dollar goals by <span class="x">crediting firms that win full-and-open.</span><br>Actually solicited as a set-aside? A fraction.</div></div>
+
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="title">When you see this,<br>there are <span class="green">two</span> choices.</div>
+  <div class="tools" style="margin-top:28px">
+    <div class="tool" style="border-color:#b91c1c;color:#fca5a5;background:rgba(127,29,29,.18)">Cry about it</div>
+    <div class="tool" style="border-color:#10b981;color:#10b981;background:rgba(6,78,59,.25)">Do something about it</div>
+  </div></div>
+
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="title">I chose to<br><span class="green">do something about it.</span></div></div>
+
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="kicker">The opportunity · Rule of Two</div>
+  <div class="title sm">When market research shows <span class="green">two capable</span><br>small businesses, it <span class="green">must</span> be set aside.</div>
+  <div class="supp" style="margin-top:8px">Shift just <b style="color:#fff">0.5%</b> of the $571B full-and-open pool…</div>
+  <div class="stat3" style="margin-top:18px"><div class="sb g"><div class="n">$2.9B</div><div class="l">redirected to small biz / yr</div></div>
+    <div class="sb g"><div class="n">914</div><div class="l">more small businesses sustained</div></div></div>
+  <div class="title sm" style="margin-top:18px">Mindy makes more of them <span class="green">visible &amp; capable.</span> That's the mission.</div></div>
+
+
+
+<!-- ===== EACH IS INSUFFICIENT ===== -->
 
 </div>
 
@@ -746,10 +777,29 @@ body{font-family:'Inter',system-ui,sans-serif;background:#0f172a;color:#fff;disp
   <div class="cta">getmindy.ai/lifetime</div>
   <div class="supp" style="margin-top:24px">Mindy Day pricing ends <b>Saturday, June 27.</b></div></div>
 
-<!-- 8 close -->
+<!-- 8 close (emotional CTA lands clean, before the P.S.) -->
 <div class="slide"><div class="logo">GovCon <span>Giants</span></div>
   <div class="reveal">Mindy</div>
   <div class="supp" style="margin-top:20px">We're changing how small business wins federal work — <span class="green">forever.</span></div></div>
+
+<!-- 9 P.S. invitation — for people who didn't grab a seat today -->
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="kicker">P.S. — before you go</div>
+  <div class="title">Two more ways <span class="green">in.</span></div></div>
+
+<!-- 9b way 1 — start free -->
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="kicker">One — free, for everyone</div>
+  <div class="title">Start <span class="green">free.</span> Today.</div>
+  <div class="supp">Sign up at <b style="color:#fff">getmindy.ai</b> and put Mindy on your next pursuit. No card.</div></div>
+
+<!-- 9c way 2 — the Mindy Day Challenge (reframed for non-buyers) -->
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="kicker amber">The Mindy Day Challenge</div>
+  <div class="title sm" style="margin-bottom:10px">Not going lifetime today?<br><span class="green">Earn your way in.</span></div>
+  <div class="supp">Set up a meeting for me with your local <b style="color:#fff">Apex Accelerator</b>, <b style="color:#fff">SBDC</b>, or <b style="color:#fff">Economic Development Office.</b><br>Facilitate the intro — and we credit your account a <b style="color:#fff">full year of Pro.</b></div>
+  <div class="save">1 year of Pro · $1,788 — not lifetime</div>
+  <div class="muted" style="margin-top:16px;font-size:18px">CC <b style="color:#cbd5e1">eric@govcongiants.com</b> on the intro to claim.</div></div>
 
 
 </div>

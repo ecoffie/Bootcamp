@@ -34,6 +34,7 @@ const DECKS = [
   { scope: 'dOPEN',  file: 'mindy-launch-opening.src.html',       label: 'OPENING + BIG PICTURE' },
   { scope: 'dFEAT',  file: 'mindy-launch-demo-features.src.html', label: 'FEATURE DEMOS' },
   { scope: 'dINT',   file: 'mindy-launch-ai-interlude.src.html',  label: 'AI / GROUNDING INTERLUDE', injectAt: 'AI_INTERLUDE' },
+  { scope: 'dMISSION', file: 'mindy-launch-mission-closer.src.html', label: 'THE MISSION (closer)' },
   { scope: 'dCLOSE', file: 'mindy-launch-demo-close.src.html',    label: 'OFFER & CLOSE' },
 ];
 

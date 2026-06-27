@@ -44,6 +44,12 @@
   .divider .d-ic{color:var(--c);margin-bottom:14px}.divider .d-ic svg{width:78px;height:78px;stroke-width:1.6}
   .divider .big{font-size:84px;font-weight:900;color:var(--c);line-height:1.05}
   .divider p{font-size:25px;color:#94a3b8;margin-top:14px;max-width:880px}
+  /* overview pillars (visual, icon-led) */
+  .pillars{display:flex;gap:26px;justify-content:center}
+  .pill{width:208px;padding:38px 18px;border-radius:22px;display:flex;flex-direction:column;align-items:center;gap:20px;
+    background:color-mix(in srgb,var(--c) 9%,transparent);border:1.5px solid color-mix(in srgb,var(--c) 40%,transparent)}
+  .pill .luc svg{width:66px;height:66px;color:var(--c);stroke-width:1.7}
+  .pill h5{font-size:23px;font-weight:800;color:#fff;letter-spacing:.3px}
   .map{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;width:100%;margin-top:26px;text-align:left}
   .mapcol h5{font-size:16px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px}
   .mapcol ul{list-style:none}.mapcol li{font-size:17px;color:#cbd5e1;margin-bottom:9px;line-height:1.25}
@@ -62,16 +68,105 @@
 </style></head><body>
 
 <!-- OVERVIEW -->
-<div class="slide divider sec-res"><div class="logo">GovCon <span>Giants</span></div>
-  <h1 style="font-size:58px;font-weight:900">This is <span class="green">Mindy</span>.</h1>
-  <div class="map">
-    <div class="mapcol"><h5 style="color:#a78bfa">Intelligence</h5><ul><li>Mindy Chat</li><li>Today's Intel</li><li>Source Feed</li><li>Market Dashboard</li></ul></div>
-    <div class="mapcol"><h5 style="color:#38bdf8">Pipeline</h5><ul><li>My Pursuits</li><li>My Target List</li></ul></div>
-    <div class="mapcol"><h5 style="color:#fbbf24">Estimating</h5><ul><li>Pricing Intel</li><li>Proposal Assist</li></ul></div>
-    <div class="mapcol"><h5 style="color:#10b981">Research</h5><ul><li>Market Research</li><li>Upcoming Buys</li><li>Expiring Contracts</li><li>Vehicle Expiry Watch</li><li>Research Report</li><li>Federal Grants</li><li>Contractors</li><li>Decision Makers</li></ul></div>
-    <div class="mapcol"><h5 style="color:#f472b6">Your Vault</h5><ul><li>My Vault</li></ul></div>
+<div class="slide divider"><div class="logo">GovCon <span>Giants</span></div>
+  <h1 style="font-size:56px;font-weight:900;margin-bottom:40px">This is <span class="green">Mindy</span>.</h1>
+  <div class="pillars">
+    <div class="pill" style="--c:#a78bfa"><span class="luc"><svg
+  class="lucide lucide-brain"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 18V5" />
+  <path d="M15 13a4.17 4.17 0 0 1-3-4 4.17 4.17 0 0 1-3 4" />
+  <path d="M17.598 6.5A3 3 0 1 0 12 5a3 3 0 1 0-5.598 1.5" />
+  <path d="M17.997 5.125a4 4 0 0 1 2.526 5.77" />
+  <path d="M18 18a4 4 0 0 0 2-7.464" />
+  <path d="M19.967 17.483A4 4 0 1 1 12 18a4 4 0 1 1-7.967-.517" />
+  <path d="M6 18a4 4 0 0 1-2-7.464" />
+  <path d="M6.003 5.125a4 4 0 0 0-2.526 5.77" />
+</svg></span><h5>Intelligence</h5></div>
+    <div class="pill" style="--c:#38bdf8"><span class="luc"><svg
+  class="lucide lucide-filter"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M10 20a1 1 0 0 0 .553.895l2 1A1 1 0 0 0 14 21v-7a2 2 0 0 1 .517-1.341L21.74 4.67A1 1 0 0 0 21 3H3a1 1 0 0 0-.742 1.67l7.225 7.989A2 2 0 0 1 10 14z" />
+</svg></span><h5>Pipeline</h5></div>
+    <div class="pill" style="--c:#fbbf24"><span class="luc"><svg
+  class="lucide lucide-calculator"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <rect width="16" height="20" x="4" y="2" rx="2" />
+  <line x1="8" x2="16" y1="6" y2="6" />
+  <line x1="16" x2="16" y1="14" y2="18" />
+  <path d="M16 10h.01" />
+  <path d="M12 10h.01" />
+  <path d="M8 10h.01" />
+  <path d="M12 14h.01" />
+  <path d="M8 14h.01" />
+  <path d="M12 18h.01" />
+  <path d="M8 18h.01" />
+</svg></span><h5>Estimating</h5></div>
+    <div class="pill" style="--c:#10b981"><span class="luc"><svg
+  class="lucide lucide-telescope"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="m10.065 12.493-6.18 1.318a.934.934 0 0 1-1.108-.702l-.537-2.15a1.07 1.07 0 0 1 .691-1.265l13.504-4.44" />
+  <path d="m13.56 11.747 4.332-.924" />
+  <path d="m16 21-3.105-6.21" />
+  <path d="M16.485 5.94a2 2 0 0 1 1.455-2.425l1.09-.272a1 1 0 0 1 1.212.727l1.515 6.06a1 1 0 0 1-.727 1.213l-1.09.272a2 2 0 0 1-2.425-1.455z" />
+  <path d="m6.158 8.633 1.114 4.456" />
+  <path d="m8 21 3.105-6.21" />
+  <circle cx="12" cy="13" r="2" />
+</svg></span><h5>Research</h5></div>
+    <div class="pill" style="--c:#f472b6"><span class="luc"><svg
+  class="lucide lucide-folder-lock"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <rect width="8" height="5" x="14" y="17" rx="1" />
+  <path d="M10 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v2.5" />
+  <path d="M20 17v-2a2 2 0 1 0-4 0v2" />
+</svg></span><h5>Your Vault</h5></div>
   </div>
-  <p style="margin-top:22px">Find it. Price it. Write it. Win it — one platform.</p></div>
+  <p style="margin-top:40px">Find it. Price it. Write it. Win it — <span class="green">one platform.</span></p></div>
 
 <!-- ===== INTELLIGENCE ===== -->
 <div class="slide divider sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="d-ic"><span class="luc"><svg
@@ -114,8 +209,10 @@
   <path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17" />
 </svg></span></div><div class="title">You shouldn't need <span class="x">5 tools</span><br>to get <span class="green">one answer.</span></div></div>
 <div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Mindy Chat · the old way</div><div class="tools"><div class="tool">SAM</div><div class="tool">USAspending</div><div class="tool">FPDS</div><div class="tool">Sheets</div><div class="tool">ChatGPT</div></div><div class="title sm">Five tabs. Still guessing.</div><div class="cost">5 tools · 0 confidence</div></div>
-<div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot-wrap"><div class="shot-bar"><span class="shot-dot d-r"></span><span class="shot-dot d-y"></span><span class="shot-dot d-g"></span><span class="shot-url">getmindy.ai&nbsp;/&nbsp;mindy-chat</span></div><div class="shot-ph"><b>📸  Drop screenshot</b><span>screenshots/mindy-chat.png</span></div></div><div class="title">Ask in plain English.<br>Get a <span class="green">grounded</span> answer.</div><div class="supp">Mindy Chat</div></div>
+<div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot-wrap"><div class="shot-bar"><span class="shot-dot d-r"></span><span class="shot-dot d-y"></span><span class="shot-dot d-g"></span><span class="shot-url">getmindy.ai&nbsp;/&nbsp;mindy-chat</span></div><img src="screenshots/mindy-chat.png"></div><div class="title">Ask in plain English.<br>Get a <span class="green">grounded</span> answer.</div><div class="supp">Mindy Chat</div></div>
 <div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="bignum">28</div><div class="title sm">One question. A real answer.</div><div class="supp">data sources behind every reply</div></div>
+
+<!--INJECT:AI_INTERLUDE-->
 
 <!-- Today's Intel -->
 <div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Today's Intel</div><div class="viz red"><span class="luc"><svg
@@ -148,7 +245,7 @@
   <circle cx="12" cy="12" r="10" />
   <path d="M12 6v6l4 2" />
 </svg></span></div><div class="title sm">Skim SAM.gov and hope.</div><div class="cost">And you usually missed it</div></div>
-<div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot-wrap"><div class="shot-bar"><span class="shot-dot d-r"></span><span class="shot-dot d-y"></span><span class="shot-dot d-g"></span><span class="shot-url">getmindy.ai&nbsp;/&nbsp;todays-intel</span></div><div class="shot-ph"><b>📸  Drop screenshot</b><span>screenshots/todays-intel.png</span></div></div><div class="title">Your market, <span class="green">briefed</span><br>every morning.</div><div class="supp">Today's Intel</div></div>
+<div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot-wrap"><div class="shot-bar"><span class="shot-dot d-r"></span><span class="shot-dot d-y"></span><span class="shot-dot d-g"></span><span class="shot-url">getmindy.ai&nbsp;/&nbsp;todays-intel</span></div><img src="screenshots/todays-intel.png"></div><div class="title">Your market, <span class="green">briefed</span><br>every morning.</div><div class="supp">Today's Intel</div></div>
 <div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="bignum">24,000</div><div class="title sm">You walk in already knowing.</div><div class="supp">contracts scanned for you every night</div></div>
 
 <!-- Source Feed -->
@@ -184,7 +281,7 @@
   <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" />
   <path d="M8 16H3v5" />
 </svg></span></div><div class="title sm">Saved searches. Manual refreshes.</div><div class="cost">Late · or never</div></div>
-<div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot-wrap"><div class="shot-bar"><span class="shot-dot d-r"></span><span class="shot-dot d-y"></span><span class="shot-dot d-g"></span><span class="shot-url">getmindy.ai&nbsp;/&nbsp;source-feed</span></div><div class="shot-ph"><b>📸  Drop screenshot</b><span>screenshots/source-feed.png</span></div></div><div class="title">New opportunities<br>the <span class="green">moment</span> they post.</div><div class="supp">Source Feed</div></div>
+<div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot-wrap"><div class="shot-bar"><span class="shot-dot d-r"></span><span class="shot-dot d-y"></span><span class="shot-dot d-g"></span><span class="shot-url">getmindy.ai&nbsp;/&nbsp;source-feed</span></div><img src="screenshots/source-feed.png"></div><div class="title">New opportunities<br>the <span class="green">moment</span> they post.</div><div class="supp">Source Feed</div></div>
 <div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="bignum">88K+</div><div class="title sm">The right ones find you.</div><div class="supp">SAM.gov opportunities tracked live</div></div>
 
 <!-- Market Dashboard -->
@@ -218,7 +315,7 @@
 >
   <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18" />
 </svg></span></div><div class="title sm">A dozen exports and a hunch.</div><div class="cost">A week · a blurry picture</div></div>
-<div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot-wrap"><div class="shot-bar"><span class="shot-dot d-r"></span><span class="shot-dot d-y"></span><span class="shot-dot d-g"></span><span class="shot-url">getmindy.ai&nbsp;/&nbsp;market-dashboard</span></div><div class="shot-ph"><b>📸  Drop screenshot</b><span>screenshots/market-dashboard.png</span></div></div><div class="title">Your whole market,<br><span class="green">one screen.</span></div><div class="supp">Market Dashboard</div></div>
+<div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot-wrap"><div class="shot-bar"><span class="shot-dot d-r"></span><span class="shot-dot d-y"></span><span class="shot-dot d-g"></span><span class="shot-url">getmindy.ai&nbsp;/&nbsp;market-dashboard</span></div><img src="screenshots/market-dashboard.png"></div><div class="title">Your whole market,<br><span class="green">one screen.</span></div><div class="supp">Market Dashboard</div></div>
 <div class="slide sec-intel"><div class="logo">GovCon <span>Giants</span></div><div class="viz circle"><span class="luc"><svg
   class="lucide lucide-layout-dashboard"
   xmlns="http://www.w3.org/2000/svg"
@@ -283,7 +380,7 @@
 >
   <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18" />
 </svg></span></div><div class="title sm">A Google Sheet you forget to update.</div><div class="cost">Deals through the cracks</div></div>
-<div class="slide sec-pipe"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot-wrap"><div class="shot-bar"><span class="shot-dot d-r"></span><span class="shot-dot d-y"></span><span class="shot-dot d-g"></span><span class="shot-url">getmindy.ai&nbsp;/&nbsp;my-pursuits</span></div><div class="shot-ph"><b>📸  Drop screenshot</b><span>screenshots/my-pursuits.png</span></div></div><div class="title">Every bid you're chasing,<br><span class="accent">alive.</span></div><div class="supp">My Pursuits</div></div>
+<div class="slide sec-pipe"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot-wrap"><div class="shot-bar"><span class="shot-dot d-r"></span><span class="shot-dot d-y"></span><span class="shot-dot d-g"></span><span class="shot-url">getmindy.ai&nbsp;/&nbsp;my-pursuits</span></div><img src="screenshots/my-pursuits.png"></div><div class="title">Every bid you're chasing,<br><span class="accent">alive.</span></div><div class="supp">My Pursuits</div></div>
 <div class="slide sec-pipe"><div class="logo">GovCon <span>Giants</span></div><div class="viz circle"><span class="luc"><svg
   class="lucide lucide-trending-up"
   xmlns="http://www.w3.org/2000/svg"
@@ -332,7 +429,7 @@
   <path d="m21 21-4.34-4.34" />
   <circle cx="11" cy="11" r="8" />
 </svg></span></div><div class="title sm">Cold-Google primes. Guess the email.</div><div class="cost">Hours of dead ends</div></div>
-<div class="slide sec-pipe"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot-wrap"><div class="shot-bar"><span class="shot-dot d-r"></span><span class="shot-dot d-y"></span><span class="shot-dot d-g"></span><span class="shot-url">getmindy.ai&nbsp;/&nbsp;my-target-list</span></div><div class="shot-ph"><b>📸  Drop screenshot</b><span>screenshots/my-target-list.png</span></div></div><div class="title">Who to team with.<br>Who to <span class="accent">call.</span></div><div class="supp">My Target List</div></div>
+<div class="slide sec-pipe"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot-wrap"><div class="shot-bar"><span class="shot-dot d-r"></span><span class="shot-dot d-y"></span><span class="shot-dot d-g"></span><span class="shot-url">getmindy.ai&nbsp;/&nbsp;my-target-list</span></div><img src="screenshots/my-target-list.png"></div><div class="title">Who to team with.<br>Who to <span class="accent">call.</span></div><div class="supp">My Target List</div></div>
 <div class="slide sec-pipe"><div class="logo">GovCon <span>Giants</span></div><div class="bignum">317K</div><div class="title sm">Never wonder who to call.</div><div class="supp">contractors + 125K contacts</div></div>
 
 <!-- ===== ESTIMATING ===== -->
@@ -383,7 +480,7 @@
   <line x1="12" x2="12" y1="2" y2="22" />
   <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
 </svg></span></div><div class="title sm">Price off gut feel and hope.</div><div class="cost">Lose money · or lose the bid</div></div>
-<div class="slide sec-est"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot-wrap"><div class="shot-bar"><span class="shot-dot d-r"></span><span class="shot-dot d-y"></span><span class="shot-dot d-g"></span><span class="shot-url">getmindy.ai&nbsp;/&nbsp;pricing-intel</span></div><div class="shot-ph"><b>📸  Drop screenshot</b><span>screenshots/pricing-intel.png</span></div></div><div class="title">See what similar contracts<br><span class="accent">really won.</span></div><div class="supp">Pricing Intel</div></div>
+<div class="slide sec-est"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot-wrap"><div class="shot-bar"><span class="shot-dot d-r"></span><span class="shot-dot d-y"></span><span class="shot-dot d-g"></span><span class="shot-url">getmindy.ai&nbsp;/&nbsp;pricing-intel</span></div><img src="screenshots/pricing-intel.png"></div><div class="title">See what similar contracts<br><span class="accent">really won.</span></div><div class="supp">Pricing Intel</div></div>
 <div class="slide sec-est"><div class="logo">GovCon <span>Giants</span></div><div class="bignum">$750B</div><div class="title sm">Bid with numbers, not a hunch.</div><div class="supp">of real award history</div></div>
 
 <!-- Proposal Assist -->
@@ -420,7 +517,7 @@
   <circle cx="12" cy="12" r="10" />
   <path d="M12 6v6l4 2" />
 </svg></span></div><div class="title sm">Weeks of writing. Or a placeholder draft.</div><div class="cost">A draft that loses the bid</div></div>
-<div class="slide sec-est"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot-wrap"><div class="shot-bar"><span class="shot-dot d-r"></span><span class="shot-dot d-y"></span><span class="shot-dot d-g"></span><span class="shot-url">getmindy.ai&nbsp;/&nbsp;proposal-assist</span></div><div class="shot-ph"><b>📸  Drop screenshot</b><span>screenshots/proposal-assist.png</span></div></div><div class="title">A compliant draft,<br>grounded in <span class="green">your data.</span></div><div class="supp">Proposal Assist</div></div>
+<div class="slide sec-est"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot-wrap"><div class="shot-bar"><span class="shot-dot d-r"></span><span class="shot-dot d-y"></span><span class="shot-dot d-g"></span><span class="shot-url">getmindy.ai&nbsp;/&nbsp;proposal-assist</span></div><img src="screenshots/proposal-assist.png"></div><div class="title">A compliant draft,<br>grounded in <span class="green">your data.</span></div><div class="supp">Proposal Assist</div></div>
 <div class="slide sec-est"><div class="logo">GovCon <span>Giants</span></div><div class="bignum">0</div><div class="title sm">A draft you can submit.</div><div class="supp">hallucinated numbers — it reads your Vault</div></div>
 
 <!-- ===== RESEARCH ===== -->
@@ -471,7 +568,7 @@
   <circle cx="12" cy="12" r="10" />
   <path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z" />
 </svg></span></div><div class="title sm">Pick the one NAICS you know.</div><div class="cost">You miss 72% of your market</div></div>
-<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot-wrap"><div class="shot-bar"><span class="shot-dot d-r"></span><span class="shot-dot d-y"></span><span class="shot-dot d-g"></span><span class="shot-url">getmindy.ai&nbsp;/&nbsp;market-research</span></div><div class="shot-ph"><b>📸  Drop screenshot</b><span>screenshots/market-research.png</span></div></div><div class="title">Paste a cap statement.<br>See your <span class="green">whole market.</span></div><div class="supp">Market Research</div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot-wrap"><div class="shot-bar"><span class="shot-dot d-r"></span><span class="shot-dot d-y"></span><span class="shot-dot d-g"></span><span class="shot-url">getmindy.ai&nbsp;/&nbsp;market-research</span></div><img src="screenshots/market-research.png"></div><div class="title">Paste a cap statement.<br>See your <span class="green">whole market.</span></div><div class="supp">Market Research</div></div>
 <div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="bignum">72%</div><div class="title sm">From one word to your whole market.</div><div class="supp">the obvious NAICS is only 28% of spend</div></div>
 
 <!-- Upcoming Buys -->
@@ -505,7 +602,7 @@
   <circle cx="12" cy="12" r="10" />
   <path d="M12 6v6l4 2" />
 </svg></span></div><div class="title sm">Wait for the RFP. Then scramble.</div><div class="cost">A year behind the incumbent</div></div>
-<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot-wrap"><div class="shot-bar"><span class="shot-dot d-r"></span><span class="shot-dot d-y"></span><span class="shot-dot d-g"></span><span class="shot-url">getmindy.ai&nbsp;/&nbsp;upcoming-buys</span></div><div class="shot-ph"><b>📸  Drop screenshot</b><span>screenshots/upcoming-buys.png</span></div></div><div class="title">See what agencies<br><span class="green">plan to buy.</span></div><div class="supp">Upcoming Buys</div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot-wrap"><div class="shot-bar"><span class="shot-dot d-r"></span><span class="shot-dot d-y"></span><span class="shot-dot d-g"></span><span class="shot-url">getmindy.ai&nbsp;/&nbsp;upcoming-buys</span></div><img src="screenshots/upcoming-buys.png"></div><div class="title">See what agencies<br><span class="green">plan to buy.</span></div><div class="supp">Upcoming Buys</div></div>
 <div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="bignum">9,973</div><div class="title sm">Be early, not late.</div><div class="supp">FY2026 forecasted buys — refreshed this week</div></div>
 
 <!-- Expiring Contracts -->
@@ -543,110 +640,8 @@
   <path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22" />
   <path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2" />
 </svg></span></div><div class="title sm">Find out after it already awarded.</div><div class="cost">Too late to bid</div></div>
-<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot-wrap"><div class="shot-bar"><span class="shot-dot d-r"></span><span class="shot-dot d-y"></span><span class="shot-dot d-g"></span><span class="shot-url">getmindy.ai&nbsp;/&nbsp;expiring-contracts</span></div><div class="shot-ph"><b>📸  Drop screenshot</b><span>screenshots/expiring-contracts.png</span></div></div><div class="title">Find recompetes<br><span class="green">12–18 months early.</span></div><div class="supp">Expiring Contracts</div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot-wrap"><div class="shot-bar"><span class="shot-dot d-r"></span><span class="shot-dot d-y"></span><span class="shot-dot d-g"></span><span class="shot-url">getmindy.ai&nbsp;/&nbsp;expiring-contracts</span></div><img src="screenshots/expiring-contracts.png"></div><div class="title">Find recompetes<br><span class="green">12–18 months early.</span></div><div class="supp">Expiring Contracts</div></div>
 <div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="bignum">~80%</div><div class="title sm">Position before the competition.</div><div class="supp">of all opportunities are recompetes</div></div>
-
-<!-- Vehicle Expiry Watch -->
-<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Vehicle Expiry Watch</div><div class="viz red"><span class="luc"><svg
-  class="lucide lucide-lock"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
-  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-</svg></span></div><div class="title">Miss the on-ramp —<br>locked out for <span class="x">a decade.</span></div></div>
-<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Vehicle Expiry Watch · the old way</div><div class="viz red"><span class="luc"><svg
-  class="lucide lucide-lock"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
-  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-</svg></span></div><div class="title sm">Hear it re-opened from a competitor.</div><div class="cost">Locked out 5–10 years</div></div>
-<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot-wrap"><div class="shot-bar"><span class="shot-dot d-r"></span><span class="shot-dot d-y"></span><span class="shot-dot d-g"></span><span class="shot-url">getmindy.ai&nbsp;/&nbsp;vehicle-expiry-watch</span></div><div class="shot-ph"><b>📸  Drop screenshot</b><span>screenshots/vehicle-expiry-watch.png</span></div></div><div class="title">Know when the big vehicles<br><span class="green">re-open.</span></div><div class="supp">Vehicle Expiry Watch</div></div>
-<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="viz circle"><span class="luc"><svg
-  class="lucide lucide-bell"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M10.268 21a2 2 0 0 0 3.464 0" />
-  <path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" />
-</svg></span></div><div class="title sm">Be ready when the door <span class="accent">opens.</span></div></div>
-
-<!-- Market Research Report -->
-<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Research Report</div><div class="viz red"><span class="luc"><svg
-  class="lucide lucide-file-text"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z" />
-  <path d="M14 2v5a1 1 0 0 0 1 1h5" />
-  <path d="M10 9H8" />
-  <path d="M16 13H8" />
-  <path d="M16 17H8" />
-</svg></span></div><div class="title">You need a report —<br><span class="x">not a screenshot.</span></div></div>
-<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Research Report · the old way</div><div class="viz red"><span class="luc"><svg
-  class="lucide lucide-dollar-sign"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <line x1="12" x2="12" y1="2" y2="22" />
-  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-</svg></span></div><div class="title sm">Pay a consultant. Wait weeks.</div><div class="cost">Weeks · thousands</div></div>
-<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot-wrap"><div class="shot-bar"><span class="shot-dot d-r"></span><span class="shot-dot d-y"></span><span class="shot-dot d-g"></span><span class="shot-url">getmindy.ai&nbsp;/&nbsp;market-research-report</span></div><div class="shot-ph"><b>📸  Drop screenshot</b><span>screenshots/market-research-report.png</span></div></div><div class="title">A full market report,<br><span class="green">on demand.</span></div><div class="supp">Market Research Report</div></div>
-<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="viz circle"><span class="luc"><svg
-  class="lucide lucide-file-text"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z" />
-  <path d="M14 2v5a1 1 0 0 0 1 1h5" />
-  <path d="M10 9H8" />
-  <path d="M16 13H8" />
-  <path d="M16 17H8" />
-</svg></span></div><div class="title sm">A consultant's report —<br><span class="accent">in minutes.</span></div></div>
 
 <!-- Federal Grants -->
 <div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="kicker">Federal Grants</div><div class="viz red"><span class="luc"><svg
@@ -682,7 +677,7 @@
   <path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143" />
   <path d="m2 2 20 20" />
 </svg></span></div><div class="title sm">Grants live in a system you never open.</div><div class="cost">Money left on the table</div></div>
-<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot-wrap"><div class="shot-bar"><span class="shot-dot d-r"></span><span class="shot-dot d-y"></span><span class="shot-dot d-g"></span><span class="shot-url">getmindy.ai&nbsp;/&nbsp;federal-grants</span></div><div class="shot-ph"><b>📸  Drop screenshot</b><span>screenshots/federal-grants.png</span></div></div><div class="title">Search live grants<br>beside <span class="green">contracts.</span></div><div class="supp">Federal Grants</div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot-wrap"><div class="shot-bar"><span class="shot-dot d-r"></span><span class="shot-dot d-y"></span><span class="shot-dot d-g"></span><span class="shot-url">getmindy.ai&nbsp;/&nbsp;federal-grants</span></div><img src="screenshots/federal-grants.png"></div><div class="title">Search live grants<br>beside <span class="green">contracts.</span></div><div class="supp">Federal Grants</div></div>
 <div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="viz circle"><span class="luc"><svg
   class="lucide lucide-banknote"
   xmlns="http://www.w3.org/2000/svg"
@@ -736,7 +731,7 @@
   <path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143" />
   <path d="m2 2 20 20" />
 </svg></span></div><div class="title sm">You don't know who's in your space.</div><div class="cost">Flying blind</div></div>
-<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot-wrap"><div class="shot-bar"><span class="shot-dot d-r"></span><span class="shot-dot d-y"></span><span class="shot-dot d-g"></span><span class="shot-url">getmindy.ai&nbsp;/&nbsp;contractors</span></div><div class="shot-ph"><b>📸  Drop screenshot</b><span>screenshots/contractors.png</span></div></div><div class="title">Search the whole<br><span class="green">contractor universe.</span></div><div class="supp">Contractors</div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot-wrap"><div class="shot-bar"><span class="shot-dot d-r"></span><span class="shot-dot d-y"></span><span class="shot-dot d-g"></span><span class="shot-url">getmindy.ai&nbsp;/&nbsp;contractors</span></div><img src="screenshots/contractors.png"></div><div class="title">Search the whole<br><span class="green">contractor universe.</span></div><div class="supp">Contractors</div></div>
 <div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="bignum">317,106</div><div class="title sm">Know the whole field.</div><div class="supp">contractors — rivals and partners alike</div></div>
 
 <!-- Decision Makers -->
@@ -775,7 +770,7 @@
   <circle cx="10" cy="8" r="5" />
   <path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3" />
 </svg></span></div><div class="title sm">Submit into the void. No name.</div><div class="cost">Nobody knows you exist</div></div>
-<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot-wrap"><div class="shot-bar"><span class="shot-dot d-r"></span><span class="shot-dot d-y"></span><span class="shot-dot d-g"></span><span class="shot-url">getmindy.ai&nbsp;/&nbsp;decision-makers</span></div><div class="shot-ph"><b>📸  Drop screenshot</b><span>screenshots/decision-makers.png</span></div></div><div class="title">Full buyer rosters,<br>by <span class="green">office.</span></div><div class="supp">Decision Makers</div></div>
+<div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot-wrap"><div class="shot-bar"><span class="shot-dot d-r"></span><span class="shot-dot d-y"></span><span class="shot-dot d-g"></span><span class="shot-url">getmindy.ai&nbsp;/&nbsp;decision-makers</span></div><img src="screenshots/decision-makers.png"></div><div class="title">Full buyer rosters,<br>by <span class="green">office.</span></div><div class="supp">Decision Makers</div></div>
 <div class="slide sec-res"><div class="logo">GovCon <span>Giants</span></div><div class="bignum">125K+</div><div class="title sm">Know who to call.</div><div class="supp">contacts · 170 OSBP commands</div></div>
 
 <!-- ===== VAULT ===== -->
@@ -830,7 +825,7 @@
   <path d="M12 10v2" />
   <path d="M16 10v6" />
 </svg></span></div><div class="title sm">Your data in folders the AI can't see.</div><div class="cost">Generic in · generic out</div></div>
-<div class="slide sec-acct"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot-wrap"><div class="shot-bar"><span class="shot-dot d-r"></span><span class="shot-dot d-y"></span><span class="shot-dot d-g"></span><span class="shot-url">getmindy.ai&nbsp;/&nbsp;my-vault</span></div><div class="shot-ph"><b>📸  Drop screenshot</b><span>screenshots/my-vault.png</span></div></div><div class="title">Your documents become<br>Mindy's <span style="color:#f472b6">memory.</span></div><div class="supp">My Vault</div></div>
+<div class="slide sec-acct"><div class="logo">GovCon <span>Giants</span></div><div class="live">DEMO LIVE</div><div class="shot-wrap"><div class="shot-bar"><span class="shot-dot d-r"></span><span class="shot-dot d-y"></span><span class="shot-dot d-g"></span><span class="shot-url">getmindy.ai&nbsp;/&nbsp;my-vault</span></div><img src="screenshots/my-vault.png"></div><div class="title">Your documents become<br>Mindy's <span style="color:#f472b6">memory.</span></div><div class="supp">My Vault</div></div>
 <div class="slide sec-acct"><div class="logo">GovCon <span>Giants</span></div><div class="viz circle"><span class="luc"><svg
   class="lucide lucide-folder-kanban"
   xmlns="http://www.w3.org/2000/svg"

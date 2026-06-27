@@ -12,7 +12,7 @@ Drop screenshots here to fill the frames in `mindy-launch-master.html` (125 slid
 - Frames crop to a **wide banner** (`object-fit: cover`, **top-aligned**) — the *top* of the image is what shows.
 - Feature shots render ~**880×382**; one-box / lineage shots ~**760** wide. Landscape browser captures work best.
 
-## Checklist (24)
+## Checklist (22)
 
 ### Story / opening (7)
 - [ ] `youtube-channel.png` — slide 4
@@ -23,7 +23,7 @@ Drop screenshots here to fill the frames in `mindy-launch-master.html` (125 slid
 - [ ] `brain-no-data.png` — slide 34 (right of split: ChatGPT · Gemini · Claude)
 - [ ] `one-box-results.png` — slide 35 (input → Mindy's total results)
 
-### Feature demos (17)
+### Feature demos (15)
 - [ ] `mindy-chat.png` — slide 43
 - [ ] `todays-intel.png` — slide 51
 - [ ] `source-feed.png` — slide 55
@@ -34,13 +34,11 @@ Drop screenshots here to fill the frames in `mindy-launch-master.html` (125 slid
 - [ ] `proposal-assist.png` — slide 77
 - [ ] `market-research.png` — slide 82
 - [ ] `upcoming-buys.png` — slide 86
-- [ ] `expiring-contracts.png` — slide 90
-- [ ] `vehicle-expiry-watch.png` — slide 94
-- [ ] `market-research-report.png` — slide 98
-- [ ] `federal-grants.png` — slide 102
-- [ ] `contractors.png` — slide 106
-- [ ] `decision-makers.png` — slide 110
-- [ ] `my-vault.png` — slide 115
+- [ ] `expiring-contracts.png`
+- [ ] `federal-grants.png`
+- [ ] `contractors.png`
+- [ ] `decision-makers.png`
+- [ ] `my-vault.png`
 
 ---
 *Slide numbers reflect the current build and will shift if slides are added/removed. Regenerate this list with the snippet in `presentations/build-master.js` notes if needed.*

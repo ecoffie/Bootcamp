@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<title>The Mindy Launch — The Mission (closer)</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',system-ui,sans-serif;background:#0f172a;color:#fff;display:flex;justify-content:center}
+  .slide{width:1280px;height:720px;padding:64px 72px;display:none;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+    background:linear-gradient(135deg,#0f172a 0%,#1e1b4b 100%);position:relative;page-break-after:always;overflow:hidden}
+  .slide.active{display:flex}
+  .slide::before{content:'';position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,#6366f1,#8b5cf6,#a78bfa)}
+  .logo{position:absolute;top:28px;right:60px;font-weight:900;font-size:17px;color:#cbd5e1}.logo span{color:#10b981}
+  .slide-number{position:absolute;bottom:26px;right:60px;font-size:14px;color:#475569}
+  .kicker{font-size:18px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:#6366f1;margin-bottom:26px}
+  .x{color:#f87171}.green{color:#10b981}.amber{color:#fbbf24}.muted{color:#64748b}
+  .title{font-size:56px;font-weight:900;line-height:1.12;max-width:1040px}.title.sm{font-size:42px}
+  .supp{font-size:28px;color:#94a3b8;margin-top:24px;max-width:920px}
+  .foot{font-size:14px;color:#475569;margin-top:14px}
+  .bignum{font-size:130px;font-weight:900;line-height:1;margin-bottom:6px;color:#a78bfa}
+  .bignum.red{color:#f87171}
+  .stat3{display:flex;gap:26px;margin:6px 0 14px}
+  .sb{background:rgba(30,27,75,.5);border:1px solid #4338ca;border-radius:18px;padding:26px 34px;text-align:center;min-width:250px}
+  .sb .n{font-size:60px;font-weight:900;line-height:1}.sb .l{font-size:18px;color:#cbd5e1;margin-top:8px}
+  .sb.g .n{color:#10b981}.sb.r .n{color:#f87171}.sb.b .n{color:#a78bfa}
+  .goaltbl{border-collapse:collapse;width:920px;margin:6px 0 14px}
+  .goaltbl th{font-size:14px;letter-spacing:1.5px;text-transform:uppercase;color:#64748b;padding:10px 18px;text-align:right;border-bottom:2px solid #334155}
+  .goaltbl th:first-child{text-align:left}
+  .goaltbl td{font-size:24px;font-weight:800;padding:14px 18px;text-align:right;border-bottom:1px solid #1e293b}
+  .goaltbl td:first-child{text-align:left;color:#e2e8f0;font-weight:700;font-size:22px}
+  .goaltbl .ok{color:#10b981}.goaltbl .bad{color:#f87171}.goaltbl .sa{color:#a78bfa}
+  .tools{display:flex;gap:22px;margin:8px 0 18px;justify-content:center}
+  .tool{background:rgba(30,27,75,.55);border:1px solid #4338ca;border-radius:16px;padding:22px 30px;font-size:30px;font-weight:900}
+</style></head><body>
+
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="kicker">The Mission</div>
+  <div class="title">Reverse the <span class="x">shrinking</span><br>industrial base.</div>
+  <div class="supp">The number of small businesses winning federal work is collapsing.<br>Mindy exists to turn that around.</div></div>
+
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="kicker">The collapse</div>
+  <div class="bignum red">58,681</div>
+  <div class="title sm">small businesses won a federal prime in FY2022 —<br><span class="x">fewer than half</span> of a decade earlier.</div>
+  <div class="stat3" style="margin-top:24px"><div class="sb r"><div class="n">−70%</div><div class="l">small awardees at DoD since 2011</div></div><div class="sb b"><div class="n">$183.3B</div><div class="l">to small biz in FY2024 — record $, fewer firms</div></div></div>
+  <div class="foot">SBA FY2024 Procurement Scorecard · HigherGov / FPDS · Nextgov</div></div>
+
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="kicker">The gap · measured live</div>
+  <div class="stat3"><div class="sb g"><div class="n">51.4%</div><div class="l">of solicitations set aside for small biz</div></div>
+    <div class="sb r"><div class="n">48.6%</div><div class="l">still full-and-open — the bigger dollars</div></div>
+    <div class="sb b"><div class="n">28.8%</div><div class="l">of federal dollars reach small biz</div></div></div>
+  <div class="title sm" style="margin-top:18px">Small business wins half the bids —<br>but barely a <span class="x">quarter</span> of the money.</div>
+  <div class="foot">19,132 live solicitations · May 2020 – Jun 2026 · SBA FY2024</div></div>
+
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="kicker">The concentration</div>
+  <div class="stat3"><div class="sb r"><div class="n">$47.8B</div><div class="l">Lockheed Martin — one company</div></div>
+    <div class="sb r"><div class="n">30%</div><div class="l">of the Pentagon → just 5 primes</div></div>
+    <div class="sb b"><div class="n">$183B</div><div class="l">ALL small business — across 58,681 firms</div></div></div>
+  <div class="title sm">A handful of giants take the top.<br><span class="x">58,681</span> fight for what's left.</div>
+  <div class="foot">DoD FY2024: top 10 primes $139.8B · SBA FY2024 scorecard</div></div>
+
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="kicker">Goal "met" &ne; actually set aside</div>
+  <table class="goaltbl">
+    <tr><th>Category</th><th>Goal</th><th>Achieved $</th><th>Solicited as set-aside</th></tr>
+    <tr><td>Total Small Business</td><td style="color:#94a3b8">23%</td><td class="ok">28.8% &check;</td><td class="sa">41.41%</td></tr>
+    <tr><td>8(a) / SDB</td><td style="color:#94a3b8">13%</td><td class="bad">12.27% &times;</td><td class="bad">0.54%</td></tr>
+    <tr><td>WOSB / EDWOSB</td><td style="color:#94a3b8">5%</td><td class="bad">4.97% &times;</td><td class="bad">2.01%</td></tr>
+    <tr><td>HUBZone</td><td style="color:#94a3b8">3%</td><td class="bad">2.75% &times;</td><td class="bad">0.46%</td></tr>
+    <tr><td>SDVOSB</td><td style="color:#94a3b8">5%</td><td class="ok">5.14% &check;</td><td class="sa">6.09%</td></tr>
+  </table>
+  <div class="supp" style="font-size:22px">Agencies hit the dollar goals by <span class="x">crediting firms that win full-and-open.</span><br>Actually solicited as a set-aside? A fraction.</div></div>
+
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="title">When you see this,<br>there are <span class="green">two</span> choices.</div>
+  <div class="tools" style="margin-top:28px">
+    <div class="tool" style="border-color:#b91c1c;color:#fca5a5;background:rgba(127,29,29,.18)">Cry about it</div>
+    <div class="tool" style="border-color:#10b981;color:#10b981;background:rgba(6,78,59,.25)">Do something about it</div>
+  </div></div>
+
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="title">I chose to<br><span class="green">do something about it.</span></div></div>
+
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="kicker">The opportunity · Rule of Two</div>
+  <div class="title sm">When market research shows <span class="green">two capable</span><br>small businesses, it <span class="green">must</span> be set aside.</div>
+  <div class="supp" style="margin-top:8px">Shift just <b style="color:#fff">0.5%</b> of the $571B full-and-open pool…</div>
+  <div class="stat3" style="margin-top:18px"><div class="sb g"><div class="n">$2.9B</div><div class="l">redirected to small biz / yr</div></div>
+    <div class="sb g"><div class="n">914</div><div class="l">more small businesses sustained</div></div></div>
+  <div class="title sm" style="margin-top:18px">Mindy makes more of them <span class="green">visible &amp; capable.</span> That's the mission.</div></div>
+
+
+
+<!-- ===== EACH IS INSUFFICIENT ===== -->
+<script>/* slides stitched into master; nav handled by master */</script>
+</body></html>
