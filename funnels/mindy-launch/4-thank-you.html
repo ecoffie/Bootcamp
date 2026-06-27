@@ -81,21 +81,30 @@
             <div class="w-10 h-10 bg-violet-900/50 border border-violet-700/50 rounded-lg flex items-center justify-center text-violet-400">💻</div>
             <div>
               <p class="text-slate-500 text-sm">Where</p>
-              <p class="text-white font-semibold">Live online — link emailed before the event</p>
+              <p class="text-white font-semibold">Live on Zoom — your link is right below</p>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Access: everyone gets the live link by email before the event. No join
-           link is ever placed in this page, so it can't leak to non-registrants. -->
-      <div class="max-w-md mx-auto mb-12 bg-violet-900/20 border border-violet-700/50 rounded-2xl p-8 text-center">
-        <div class="text-3xl mb-3">📧</div>
-        <h3 class="text-xl font-bold text-white mb-2">Your access link is on the way</h3>
-        <p class="text-slate-400 text-sm">
-          You're registered. We'll email your live access link before the event —
-          so add June 27 to your calendar below and keep an eye on your inbox.
+      <!-- Live Zoom join details — shown directly so last-minute registrants can
+           join instantly. (Also emailed in the confirmation.) -->
+      <div class="max-w-md mx-auto mb-12 bg-violet-900/20 border-2 border-violet-600 rounded-2xl p-8 text-center">
+        <p class="text-violet-300 text-xs font-bold uppercase tracking-widest mb-4">Your Zoom Link</p>
+        <a href="https://us06web.zoom.us/j/89280506481?pwd=zFol5CPiXUW5PtO51FhDlwbuWrLQVi.1"
+           target="_blank" rel="noopener"
+           class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-violet-600 hover:bg-violet-500 text-white rounded-xl font-bold text-lg transition">
+          Join on Zoom
+        </a>
+        <p class="text-slate-400 text-sm mt-5">
+          Meeting ID: <span class="text-white font-semibold">892 8050 6481</span>
+          &nbsp;·&nbsp; Passcode: <span class="text-white font-semibold">206225</span>
         </p>
+        <p class="text-slate-500 text-xs mt-3 break-all">
+          <a href="https://us06web.zoom.us/j/89280506481?pwd=zFol5CPiXUW5PtO51FhDlwbuWrLQVi.1"
+             target="_blank" rel="noopener" class="text-violet-400 hover:text-violet-300">https://us06web.zoom.us/j/89280506481?pwd=zFol5CPiXUW5PtO51FhDlwbuWrLQVi.1</a>
+        </p>
+        <p class="text-slate-400 text-sm mt-5">We've also emailed this to you — save it for June 27.</p>
       </div>
 
       <!-- Add to Calendar — so they get a reminder for June 27 -->
@@ -188,11 +197,14 @@
     (function () {
       // ── Add to Calendar ──
       // June 27, 2026, 10:00 AM–1:00 PM ET (EDT = UTC−4) → 14:00–17:00 UTC, 3-hour event.
+      var zoomUrl = 'https://us06web.zoom.us/j/89280506481?pwd=zFol5CPiXUW5PtO51FhDlwbuWrLQVi.1';
       var title = 'Mindy Launch — Live Demo (GovCon Giants)';
       var details =
-        'Watch the full Mindy launch live. We’ll email your access link before the event.' +
+        'Watch the full Mindy launch live.' +
+        '\\n\\nJoin Zoom: ' + zoomUrl +
+        '\\nMeeting ID: 892 8050 6481 · Passcode: 206225' +
         '\\n\\nTry Mindy free anytime at https://getmindy.ai';
-      var location = 'Live online (access link emailed before the event)';
+      var location = zoomUrl;
       var startUtc = '20260627T140000Z';
       var endUtc   = '20260627T170000Z';
 
