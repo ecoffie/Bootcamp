@@ -9,7 +9,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:#0f172a;color:#fff;disp
 body{font-family:'Inter',system-ui,sans-serif;background:#0f172a;color:#fff;display:flex;justify-content:center}
 @keyframes cubespin{0%,18%{transform:rotateY(0)}25%,43%{transform:rotateY(-90deg)}50%,68%{transform:rotateY(-180deg)}75%,93%{transform:rotateY(-270deg)}100%{transform:rotateY(-360deg)}}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
-  /* ===== OPENING + BIG PICTURE (30 slides) ===== */
+  /* ===== OPENING + BIG PICTURE (31 slides) ===== */
 .dOPEN .slide{width:1280px;height:720px;padding:64px 72px;display:none;flex-direction:column;justify-content:center;align-items:center;text-align:center;
     background:linear-gradient(135deg,#0f172a 0%,#1e1b4b 100%);position:relative;page-break-after:always;overflow:hidden}
 .dOPEN .slide.active{display:flex}
@@ -466,10 +466,15 @@ body{font-family:'Inter',system-ui,sans-serif;background:#0f172a;color:#fff;disp
 
 
 
-<!-- one box: the resolution to "you have to choose" (AI/grounding interlude moved to after the first demo) -->
+<!-- one box (1/2): you tell Mindy what you do -> it builds your market -->
 <div class="slide"><div class="logo">GovCon <span>Giants</span></div>
-  <div class="title sm" style="margin-bottom:18px">You tell Mindy what you do.<br>It hands back <span class="green">everything — in one box.</span></div>
-  <div class="shot" data-shot="one-box-results" data-url="getmindy.ai"></div></div>
+  <div class="title sm" style="margin-bottom:16px">You tell Mindy <span class="green">what you do.</span></div>
+  <img src="screenshots/one-box-building.png" alt="" style="height:510px;border-radius:16px;box-shadow:0 24px 70px rgba(0,0,0,.5)"></div>
+
+<!-- one box (2/2): it hands back everything in one box -->
+<div class="slide"><div class="logo">GovCon <span>Giants</span></div>
+  <div class="title sm" style="margin-bottom:16px">It hands back <span class="green">everything — in one box.</span></div>
+  <img src="screenshots/one-box-results.png" alt="" style="height:510px;border-radius:16px;box-shadow:0 24px 70px rgba(0,0,0,.5)"></div>
 
 <div class="slide"><div class="logo">GovCon <span>Giants</span></div><div class="kicker green">The Mindy Data Core</div>
   <div class="core-wrap"><div class="core"><div class="t">MINDY</div><div class="s">34 sources · one core</div></div>
