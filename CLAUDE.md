@@ -283,10 +283,10 @@ Breaks: 10:15-10:30 AM, 12:00-12:45 PM (lunch), 2:15-2:30 PM, 4:45-5:00 PM
 
 ---
 
-## Mindy Launch (June 2026)
+## Mindy Launch (July 2026)
 
 **Event:** The Mindy Launch — full live demo of Mindy (the AI BD analyst, live at getmindy.ai)
-**Date:** Saturday, June 27, 2026, 10:00 AM – 4:00 PM ET | Free, on Zoom
+**Date:** Saturday, July 25, 2026, 10:00 AM – 1:00 PM ET | Free, on Zoom  _(moved from June 27; all funnel pages, emails, YT decks + launch deck synced to July 25)_
 **Register:** `govcongiants.com/mindy-launch` (**.com only** — .org is retired)
 **Positioning:** "Mindy is the AI BD analyst for federal small business — reads the solicitation, knows the incumbent, finds who's buying, drafts the response. Grounded in real government data, never generic AI."
 

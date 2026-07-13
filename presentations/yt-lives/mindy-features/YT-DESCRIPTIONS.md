@@ -1,6 +1,6 @@
 # Mindy Feature Series — YouTube Livestream Descriptions
 
-5-part pre-launch runway → THE MINDY LAUNCH: Saturday, June 27, 2026
+5-part pre-launch runway → THE MINDY LAUNCH: Saturday, July 25, 2026
 Channel category: Science & Technology
 Copy/paste ready. One file, 5 lives, separated by `##` headers.
 
@@ -18,7 +18,7 @@ CTA rules used throughout: PRIMARY = register for the Mindy Launch (`govcongiant
 
 "Drones" isn't a NAICS code — it's a market spread across 70+ codes worth $245M in FY2025, and the one "obvious" code is just 28% of it. If your alerts are set on that one code, you're missing 72% of your market. Let me show you the fix.
 
-🔗 Register for the MINDY LAUNCH (full launch, Sat June 27): govcongiants.com/mindy-launch
+🔗 Register for the MINDY LAUNCH (full launch, Sat July 25): govcongiants.com/mindy-launch
 🔗 Try Mindy now, free: https://getmindy.ai
 
 Most federal BD tools make you pick your NAICS code first — and most people pick one, pick the wrong one, and silently miss three-quarters of their market. Mindy flips it. You type what you do in plain words — "drones," "janitorial," "medical supplies" — and she finds the real federal market behind it from live USASpending award data.
@@ -48,21 +48,21 @@ In this stream we cover:
 
 Every code, every dollar on screen comes from USASpending's live award data — FY-labeled, with the dollar amount as proof. Mindy never guesses your market. She shows you where the money actually flows.
 
-🔗 The full launch is Saturday, June 27. Register for the MINDY LAUNCH: govcongiants.com/mindy-launch
+🔗 The full launch is Saturday, July 25. Register for the MINDY LAUNCH: govcongiants.com/mindy-launch
 
 ———
 
 ABOUT
 I'm Eric Coffie, founder of GovCon Giants. I've helped thousands of small businesses break into federal contracting. Mindy is the AI BD analyst I wish existed when I started — she reads the solicitation, knows the incumbent's real contract, finds who's buying, and drafts the response. Grounded in real government data (USASpending, SAM, SBA, GAO), never generic AI.
 
-Subscribe and hit the bell — this is part 1 of a 5-part runway to the Mindy Launch on June 27.
+Subscribe and hit the bell — this is part 1 of a 5-part runway to the Mindy Launch on July 25.
 
 #govcon #federalcontracting #NAICS #PSC #marketresearch #ai #govconai #samgov #smallbusiness #mindy #govcongiants
 
 **Tags:** government contracting software, GovCon AI, federal market research, SAM.gov alternative, USASpending search tool, NAICS code finder, NAICS vs PSC, federal market research tool, contracting office intelligence, OSBP, keyword market research, drones NAICS, cybersecurity NAICS, federal contracting for small business, Mindy, GovCon Giants
 
 **Pinned Comment:**
-👇 The full launch is the MINDY LAUNCH — Saturday, June 27. Register here:
+👇 The full launch is the MINDY LAUNCH — Saturday, July 25. Register here:
 govcongiants.com/mindy-launch
 
 Want to try it before then? Mindy is live free: https://getmindy.ai
@@ -81,7 +81,7 @@ Drop your industry in plain words ("drones", "janitorial", "IT support") and I'l
 
 About 80% of federal opportunities are recompetes — you're taking work from someone who already has it. One click in Mindy shows who: their contract ceiling, when it expires, and the vehicle you'd need to compete. Bidding blind ends today.
 
-🔗 Register for the MINDY LAUNCH (full launch, Sat June 27): govcongiants.com/mindy-launch
+🔗 Register for the MINDY LAUNCH (full launch, Sat July 25): govcongiants.com/mindy-launch
 🔗 Try Mindy now, free: https://getmindy.ai
 
 Most opportunities are recompetes — someone already holds the work. Knowing who, how big, when it ends, and what vehicle it's under is the difference between bidding blind and bidding to win. Mindy answers "is this worth pursuing?" the moment you look at the opportunity — not after weeks of research.
@@ -101,21 +101,21 @@ In this stream we cover:
 
 Every incumbent, ceiling, and expiry on screen is inferred from real USASpending award data (best match by NAICS + agency + title), pulled live, confidence-labeled, with a "verify on USASpending" link. Mindy is honest when there's no clear incumbent — she never fabricates one.
 
-🔗 The full launch is Saturday, June 27. Register for the MINDY LAUNCH: govcongiants.com/mindy-launch
+🔗 The full launch is Saturday, July 25. Register for the MINDY LAUNCH: govcongiants.com/mindy-launch
 
 ———
 
 ABOUT
 I'm Eric Coffie, founder of GovCon Giants. Mindy is the AI BD analyst for federal small businesses — she reads the solicitation, knows the incumbent's real contract, finds who's buying, and drafts the response. Grounded in real government data (USASpending, SAM, SBA, GAO), never generic AI.
 
-Subscribe and hit the bell — part 2 of a 5-part runway to the Mindy Launch on June 27.
+Subscribe and hit the bell — part 2 of a 5-part runway to the Mindy Launch on July 25.
 
 #govcon #federalcontracting #recompete #incumbent #bidnobid #ai #govconai #IDIQ #OTA #smallbusiness #mindy #govcongiants
 
 **Tags:** recompete intelligence, government contracting software, GovCon AI, USASpending search tool, incumbent research, contract ceiling, bid no-bid decision, federal contract vehicles, IDIQ vs task order, OTA CSO BAA, SAM.gov alternative, federal market research, who holds the contract, recompete research, Mindy, GovCon Giants
 
 **Pinned Comment:**
-👇 The full launch is the MINDY LAUNCH — Saturday, June 27. Register here:
+👇 The full launch is the MINDY LAUNCH — Saturday, July 25. Register here:
 govcongiants.com/mindy-launch
 
 Want to try it before then? Mindy is live free: https://getmindy.ai
@@ -134,7 +134,7 @@ Drop an opportunity title or agency in chat and I'll show you what "who holds th
 
 ChatGPT doesn't know your company or your bid — so it fills your proposal with [placeholders] and guesses. Mindy reads the entire solicitation, runs a real bid/no-bid gate, builds a compliance matrix of every "shall," and drafts sections grounded in your actual UEI, CAGE, and past performance. Then she exports clean Word docs.
 
-🔗 Register for the MINDY LAUNCH (full launch, Sat June 27): govcongiants.com/mindy-launch
+🔗 Register for the MINDY LAUNCH (full launch, Sat July 25): govcongiants.com/mindy-launch
 🔗 Try Mindy now, free: https://getmindy.ai
 
 It's called Proposal Assist for a reason — it's a first-pass partner that's honest about edge cases, not a magic button. You pick a pursuit (or upload the docs) and Mindy does the heavy lifting from your real company profile, not generic AI filler.
@@ -156,21 +156,21 @@ In this stream we cover:
 
 Every draft pulls from your Vault (real UEI/CAGE/past performance) plus the actual extracted solicitation. The compliance matrix is built by reading the real requirements. The "Has SOW/PWS" filter works by fetching and reading the real attached documents — Mindy is honest about which opps actually have a scope doc to evaluate.
 
-🔗 The full launch is Saturday, June 27. Register for the MINDY LAUNCH: govcongiants.com/mindy-launch
+🔗 The full launch is Saturday, July 25. Register for the MINDY LAUNCH: govcongiants.com/mindy-launch
 
 ———
 
 ABOUT
 I'm Eric Coffie, founder of GovCon Giants. Mindy is the AI BD analyst for federal small businesses — she reads the solicitation, knows the incumbent's real contract, finds who's buying, and drafts the response. Grounded in real government data (USASpending, SAM, SBA, GAO), never generic AI.
 
-Subscribe and hit the bell — part 3 of a 5-part runway to the Mindy Launch on June 27.
+Subscribe and hit the bell — part 3 of a 5-part runway to the Mindy Launch on July 25.
 
 #govcon #federalcontracting #proposalwriting #compliancematrix #aiproposal #govconai #ai #SOW #PWS #smallbusiness #mindy #govcongiants
 
 **Tags:** federal proposal writing software, government contracting software, GovCon AI, AI proposal writing, compliance matrix, federal compliance matrix, SOW vs PWS, capability statement, bid no-bid, UEI CAGE, SAM.gov alternative, federal market research, proposal assist, semantic search opportunities, Mindy, GovCon Giants
 
 **Pinned Comment:**
-👇 The full launch is the MINDY LAUNCH — Saturday, June 27. Register here:
+👇 The full launch is the MINDY LAUNCH — Saturday, July 25. Register here:
 govcongiants.com/mindy-launch
 
 Want to try it before then? Mindy is live free: https://getmindy.ai
@@ -189,7 +189,7 @@ What's the part of proposal writing that eats your time — compliance matrix, p
 
 "Here are some Department of Defense contacts" is a sample of a giant agency. "Here are all 42 people at DLA Aviation" is a real BD target list. Mindy resolves contacts down to the actual buying office, badges every role, and decodes the cryptic military codes into plain English.
 
-🔗 Register for the MINDY LAUNCH (full launch, Sat June 27): govcongiants.com/mindy-launch
+🔗 Register for the MINDY LAUNCH (full launch, Sat July 25): govcongiants.com/mindy-launch
 🔗 Try Mindy now, free: https://getmindy.ai
 
 Raw SAM contact dumps are full of noise — POC labels, base codes, foreign offices you'll never bid. Mindy cleans it, decodes it, and tells you which role to call for what. Drawn from 125K+ federal contacts and a 170-command OSBP directory.
@@ -211,21 +211,21 @@ In this stream we cover:
 
 Contacts come from SAM.gov POCs plus the 170-command OSBP directory — roles classified, military codes decoded, overseas offices filtered, resolved to the actual buying office via DoDAAC. Mindy is honest about scope: complete rosters where the data supports it (DoD/DLA/Navy commands), agency preview elsewhere.
 
-🔗 The full launch is Saturday, June 27. Register for the MINDY LAUNCH: govcongiants.com/mindy-launch
+🔗 The full launch is Saturday, July 25. Register for the MINDY LAUNCH: govcongiants.com/mindy-launch
 
 ———
 
 ABOUT
 I'm Eric Coffie, founder of GovCon Giants. Mindy is the AI BD analyst for federal small businesses — she reads the solicitation, knows the incumbent's real contract, finds who's buying, and drafts the response. Grounded in real government data (USASpending, SAM, SBA, GAO), never generic AI.
 
-Subscribe and hit the bell — part 4 of a 5-part runway to the Mindy Launch on June 27.
+Subscribe and hit the bell — part 4 of a 5-part runway to the Mindy Launch on July 25.
 
 #govcon #federalcontracting #contractingofficer #OSBP #teaming #8a #tribal #govconai #ai #smallbusiness #mindy #govcongiants
 
 **Tags:** government contracting software, GovCon AI, contracting officer contacts, OSBP small business specialist, federal contacting directory, teaming partners government contracts, 8a tribal sole source, DLA NAVSUP NAVFAC contacts, SAM.gov alternative, federal market research, decision maker intelligence, multi-client BD tool, APEX counselor tool, Mindy, GovCon Giants
 
 **Pinned Comment:**
-👇 The full launch is the MINDY LAUNCH — Saturday, June 27. Register here:
+👇 The full launch is the MINDY LAUNCH — Saturday, July 25. Register here:
 govcongiants.com/mindy-launch
 
 Want to try it before then? Mindy is live free: https://getmindy.ai
@@ -244,7 +244,7 @@ Which agency or office do you want to break into? Drop it in chat and I'll show 
 
 This is the last stream before Mindy's full launch — the Mindy Launch is Saturday. Generic AI guesses, and in federal contracting a guess costs you a bid, your credibility, or worse. Mindy never guesses: 317,106 contractors, 125K+ contacts, 88K+ opportunities — every number traced to a real government source.
 
-🔗 Register for the MINDY LAUNCH — the full launch, Saturday June 27. This is the last stream before it goes live: govcongiants.com/mindy-launch
+🔗 Register for the MINDY LAUNCH — the full launch, Saturday July 25. This is the last stream before it goes live: govcongiants.com/mindy-launch
 🔗 Try Mindy now, free: https://getmindy.ai
 
 We built five streams to this point — find your market, win the recompete, write the proposal, know who to call. The finale is the thing that makes all four trustworthy: every Mindy feature is grounded in real, documented, continuously-refreshed federal data. Not an AI guess.
@@ -273,7 +273,7 @@ The trust story in one line: every code, every dollar, every contact traces to a
 
 This is the last stream before the full launch. Do not miss Saturday.
 
-🔗 Register for the MINDY LAUNCH — Saturday, June 27: govcongiants.com/mindy-launch
+🔗 Register for the MINDY LAUNCH — Saturday, July 25: govcongiants.com/mindy-launch
 
 ———
 
@@ -287,7 +287,7 @@ Subscribe and hit the bell — this is part 5, the finale, and the full launch i
 **Tags:** government contracting software, GovCon AI, USASpending search tool, SAM.gov alternative, federal market research, federal contractor database, AI hallucination government contracting, federal data sources, USASpending vs SAM.gov vs FPDS, 317000 contractors, grounded AI, recompete intelligence, federal proposal writing software, Mindy demo day, GovCon Giants
 
 **Pinned Comment:**
-👇 This is the LAST stream before the full launch. The MINDY LAUNCH is Saturday, June 27 — register now:
+👇 This is the LAST stream before the full launch. The MINDY LAUNCH is Saturday, July 25 — register now:
 govcongiants.com/mindy-launch
 
 Can't wait until Saturday? Mindy is live free: https://getmindy.ai
