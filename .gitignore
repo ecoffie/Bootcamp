@@ -8,3 +8,7 @@
 
 # Slide PNG exports (regenerable via export-slides.js)
 presentations/yt-lives/**/live-*-pngs/
+
+# Env files — repo is PUBLIC; never publish any env file
+.env
+.env.*
