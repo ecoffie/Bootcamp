@@ -211,12 +211,20 @@
       <p class="text-slate-400 text-center mb-12">Not screenshots of a pitch deck — the actual product, working on real federal data.</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
         <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden">
-          <!-- 1:1 — these are square screen captures. MP4 not GIF: the source GIFs were
+          <!-- ABSOLUTE paths (/mindy-launch/media/...), never relative.
+               MEASURED BUG: the page is served at "/mindy-launch" with NO trailing
+               slash, so a relative "media/x.mp4" resolves against "/" -> /media/x.mp4
+               -> 404, and BOTH cards rendered as empty boxes. The files, MIME type and
+               codec were all correct (h264 High, yuv420p, faststart, HTTP 200 at the
+               real URL) -- only the resolved path was wrong, which is why the browser
+               reported MEDIA_ELEMENT_ERROR code 4 "source not supported" rather than a
+               404. The repo's own rule already says: absolute paths in static HTML.
+               1:1 — these are square screen captures. MP4 not GIF: the source GIFs were
                14 MB EACH (28 MB on a registration page); h264 is 87% smaller with no
                visible loss. autoplay+muted+loop+playsinline makes it behave exactly like
                a GIF, and iOS only autoplays when muted AND playsinline are both set. -->
           <div style="position:relative;padding-bottom:100%;height:0;">
-            <video src="media/mindy-map-filters.mp4" poster="media/mindy-map-filters.jpg" autoplay muted loop playsinline preload="metadata"
+            <video src="/mindy-launch/media/mindy-map-filters.mp4" poster="/mindy-launch/media/mindy-map-filters.jpg" autoplay muted loop playsinline preload="metadata"
                    style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;"></video>
           </div>
           <div class="p-4">
@@ -231,7 +239,7 @@
                visible loss. autoplay+muted+loop+playsinline makes it behave exactly like
                a GIF, and iOS only autoplays when muted AND playsinline are both set. -->
           <div style="position:relative;padding-bottom:100%;height:0;">
-            <video src="media/mindy-opportunity-detail.mp4" poster="media/mindy-opportunity-detail.jpg" autoplay muted loop playsinline preload="metadata"
+            <video src="/mindy-launch/media/mindy-opportunity-detail.mp4" poster="/mindy-launch/media/mindy-opportunity-detail.jpg" autoplay muted loop playsinline preload="metadata"
                    style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;"></video>
           </div>
           <div class="p-4">
