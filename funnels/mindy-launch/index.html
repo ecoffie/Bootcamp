@@ -158,56 +158,6 @@
     </div>
   </section>
 
-  <!-- LIVE MAP BAND — the real Opportunity Map, drawing ~600 CURRENT federal
-       opportunities at page load. Not a screenshot and not a recording: the pins
-       are today's data, which is the strongest proof a live-demo page can offer.
-
-       DELIBERATELY NON-INTERACTIVE (pointer-events:none + a transparent cover).
-       This page's ONE job is registrations; an interactive map invites a visitor to
-       start evaluating the product instead of signing up, and that is the event's
-       job, not the landing page's. We take the proof, not the rabbit hole.
-
-       ?embed=1 serves a chrome-free variant (no nav, no sign-in, no Save search) at
-       405 KB / ~1.0s vs 1 MB for the full map.
-
-       DESKTOP ONLY (hidden md:block) -- MEASURED, not assumed: at a 390px viewport the
-       Leaflet view does not reflow, so it paints only the top third of the frame (blank
-       white below) zoomed into the Midwest at ~12 pins, with the caption stranded on
-       empty space. A broken white panel is worse than no panel. Mobile visitors still
-       get the hero video and the two product demos, which DO reflow.
-
-       THE COPY SAYS "600 ... OPEN FOR BID" ON PURPOSE. getMapOpportunities() queries
-       sam_opportunities with .eq('active',true) AND response_deadline >= today, so the
-       embed serves OPEN notices only -- which is why every pin renders green while the
-       map's own legend still lists Recompete and Forecast. Do not widen this caption to
-       imply the whole map; the band shows one horizon, and saying otherwise on a page
-       that promises "real government data" would be the exact overclaim we removed from
-       the section below. Browser-verified before shipping:
-       600 markers actually RENDERED, 15 tiles, 0 page errors -- a source check
-       cannot catch the zero-pin failure this map has had before. -->
-  <section class="pt-10 px-6 bg-slate-950 hidden md:block">
-    <div class="max-w-5xl mx-auto">
-      <div class="relative rounded-2xl overflow-hidden border border-slate-800 glow-purple"
-           style="height:420px;">
-        <iframe src="https://getmindy.ai/opportunity-map?embed=1"
-                loading="lazy" title="Live federal opportunity map"
-                style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;pointer-events:none;"></iframe>
-        <!-- transparent cover: belt-and-braces so no scroll/drag reaches the iframe -->
-        <div style="position:absolute;inset:0;"></div>
-        <div style="position:absolute;left:0;right:0;bottom:0;
-                    background:linear-gradient(to top,rgba(2,6,23,.92),rgba(2,6,23,0));
-                    padding:34px 20px 12px;">
-          <p class="text-white font-bold text-center text-sm sm:text-base">
-            600 federal opportunities open for bid — live, right now.
-          </p>
-          <p class="text-slate-400 text-center text-xs mt-1">
-            Every dot is a real solicitation still accepting responses. On August 22 you will build your own view of it.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Promo Video (August 22 launch) -->
   <section class="py-16 px-6 bg-slate-950">
     <div class="max-w-3xl mx-auto">
@@ -565,6 +515,56 @@
         "I built Mindy because I watched small businesses lose contracts<br/>they never knew existed. The big contractors have armies.<br/>Now you have Mindy."
       </p>
       <p class="text-slate-500">— Eric Coffie, Founder of GovCon Giants</p>
+    </div>
+  </section>
+
+  <!-- LIVE MAP BAND — the real Opportunity Map, drawing ~600 CURRENT federal
+       opportunities at page load. Not a screenshot and not a recording: the pins
+       are today's data, which is the strongest proof a live-demo page can offer.
+
+       DELIBERATELY NON-INTERACTIVE (pointer-events:none + a transparent cover).
+       This page's ONE job is registrations; an interactive map invites a visitor to
+       start evaluating the product instead of signing up, and that is the event's
+       job, not the landing page's. We take the proof, not the rabbit hole.
+
+       ?embed=1 serves a chrome-free variant (no nav, no sign-in, no Save search) at
+       405 KB / ~1.0s vs 1 MB for the full map.
+
+       DESKTOP ONLY (hidden md:block) -- MEASURED, not assumed: at a 390px viewport the
+       Leaflet view does not reflow, so it paints only the top third of the frame (blank
+       white below) zoomed into the Midwest at ~12 pins, with the caption stranded on
+       empty space. A broken white panel is worse than no panel. Mobile visitors still
+       get the hero video and the two product demos, which DO reflow.
+
+       THE COPY SAYS "600 ... OPEN FOR BID" ON PURPOSE. getMapOpportunities() queries
+       sam_opportunities with .eq('active',true) AND response_deadline >= today, so the
+       embed serves OPEN notices only -- which is why every pin renders green while the
+       map's own legend still lists Recompete and Forecast. Do not widen this caption to
+       imply the whole map; the band shows one horizon, and saying otherwise on a page
+       that promises "real government data" would be the exact overclaim we removed from
+       the section below. Browser-verified before shipping:
+       600 markers actually RENDERED, 15 tiles, 0 page errors -- a source check
+       cannot catch the zero-pin failure this map has had before. -->
+  <section class="pt-10 px-6 bg-slate-950 hidden md:block">
+    <div class="max-w-5xl mx-auto">
+      <div class="relative rounded-2xl overflow-hidden border border-slate-800 glow-purple"
+           style="height:420px;">
+        <iframe src="https://getmindy.ai/opportunity-map?embed=1"
+                loading="lazy" title="Live federal opportunity map"
+                style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;pointer-events:none;"></iframe>
+        <!-- transparent cover: belt-and-braces so no scroll/drag reaches the iframe -->
+        <div style="position:absolute;inset:0;"></div>
+        <div style="position:absolute;left:0;right:0;bottom:0;
+                    background:linear-gradient(to top,rgba(2,6,23,.92),rgba(2,6,23,0));
+                    padding:34px 20px 12px;">
+          <p class="text-white font-bold text-center text-sm sm:text-base">
+            600 federal opportunities open for bid — live, right now.
+          </p>
+          <p class="text-slate-400 text-center text-xs mt-1">
+            Every dot is a real solicitation still accepting responses. On August 22 you will build your own view of it.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
