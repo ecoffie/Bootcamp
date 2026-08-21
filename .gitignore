@@ -12,3 +12,9 @@ presentations/yt-lives/**/live-*-pngs/
 # Env files — repo is PUBLIC; never publish any env file
 .env
 .env.*
+
+# Mindy Launch page assets: *.mp4 above is the right default for this repo (it holds
+# large source video), but these two are PAGE assets -- the "See Mindy in Action"
+# product demos -- and must ship with the site or the section renders empty.
+# Narrow un-ignore, this directory only.
+!funnels/mindy-launch/media/*.mp4
