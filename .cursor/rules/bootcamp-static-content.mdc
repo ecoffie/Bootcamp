@@ -1,0 +1,12 @@
+---
+description: Static HTML, funnel, slide, and email content conventions
+globs: **/*.html,**/*.css,funnels/**,presentations/**,*-email-sequence*/**,email-templates/**,march-surge-page.html,*-surge-agenda.html
+alwaysApply: false
+---
+
+# Bootcamp static content rule
+
+- Prefer absolute asset paths in static HTML that deploys as a Vercel pocket (relative paths 404 when the pocket root is not the repo root).
+- Design reference: `docs/presentation-design-standards.md` and `january-31-bootcamp-agenda.html`.
+- Before shipping new dollar or corpus claims in slides or emails, resolve the current Market Assassin checkout, read its src/lib/marketing-stats.ts, and remeasure (or use /fact-check). Do not paste 317K or other frozen figures from CLAUDE.md.
+- When touching `.org` URLs, re-run search, classify the occurrence, then edit. No bulk replace.

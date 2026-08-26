@@ -14,7 +14,9 @@ This repository contains all GovCon Giants resources for helping small businesse
 
 ## Key Dates
 
-- **Next Event:** April 25, 2026 (First Partner Challenge Bootcamp - FREE)
+- **Next Event:** VERIFY — no future event is designated by current repository evidence. Confirm before publishing.
+- **Past Launch:** August 22, 2026 (Mindy Launch; see Mindy Launch section below)
+- **Past Bootcamp:** April 25, 2026 (First Partner Challenge Bootcamp - FREE)
 - **Past Bootcamp:** March 28, 2026 (Contract Vehicles Bootcamp - FREE)
 - **Past Bootcamp:** February 28, 2026 (Specifics & Proposals)
 - **Past Bootcamp:** January 31, 2026 (replay at `/jan-31-bootcamp-paid`)
@@ -34,7 +36,7 @@ This repository contains all GovCon Giants resources for helping small businesse
 | `march-surge-email-sequence/` | 7-email March surge sequence |
 | `funnels/` | Marketing funnels (opportunity-hunter, march-surge, etc.) |
 | `funnels/march-surge/` | March 28 Contracting Launchpad Bootcamp funnel (landing, upsell, downsell, thank-you) |
-| `march-surge-page/` | Static HTML deploy folder for March 28 (agenda, slides, hit-list, downloads) |
+| `march-surge-deploy/` | VERIFY thin static pocket on disk (linked Vercel project `march-surge-deploy`). Documented `march-surge-page/` folder and Vercel project `march-surge-page` were not present as of 2026-08-26. March funnel content also lives under `funnels/march-surge/`. |
 | `funnels/march-surge/downloads/` | 6 free resources (expiring contracts, IDIQ guides, templates) |
 | `presentations/` | Bootcamp slides, TempNet, Veteran War Room |
 | `webinar/` | Webinar materials and scripts |
@@ -80,9 +82,10 @@ For specifics, see these docs:
 
 | Project | Path | URL | Framework |
 |---------|------|-----|-----------|
-| GovCon Funnels | `/Users/ericcoffie/Projects/govcon-funnels` | `govcongiants.com` | Next.js 16 |
-| GovCon Shop | `/Users/ericcoffie/govcon-shop` | `shop.govcongiants.com` | Next.js 16 |
-| The Vault | `/Users/ericcoffie/Projects/vault` | `govcongiants.com/vault` | Next.js 15 |
+| GovCon Funnels | `~/govcon-funnels` (verify checkout; stale `Projects/govcon-funnels` path is wrong) | `govcongiants.com` | Next.js 16 |
+| GovCon Shop | `~/govcon-shop` (verify checkout) | `shop.govcongiants.com` | Next.js 16 |
+| Market Assassin / Mindy | `~/Market Assasin/market-assassin` (verify checkout before use); owning stats file `src/lib/marketing-stats.ts` | `getmindy.ai` | Next.js |
+| The Vault | VERIFY — the previously documented checkout does not exist. Candidate in-repo pocket: `govcon-resources/` (Vercel project `govcon-resources`). Confirm the real Vault home before citing. | `govcongiants.com/vault` | Next.js 15 |
 
 ---
 
@@ -174,15 +177,13 @@ Closing Q&A: 4:50-5:00 PM
 ### Deployments
 - **Next.js funnel:** `govcongiants.com/contract-vehicles-bootcamp` (govcon-funnels)
   - Routes: `/march-surge/` (landing, upsell, downsell, thank-you)
-- **Static HTML:** `march-surge-page.vercel.app` (Vercel project: march-surge-page)
-  - Files: index.html, agenda.html, slides.html, hit-list.html, proposal-landing-page.html
-  - 6 download files co-located in same folder
+- **Static HTML:** VERIFY — CLAUDE previously cited `march-surge-page.vercel.app` / Vercel project `march-surge-page`, but `march-surge-page/` is missing on disk. Linked pocket as of 2026-08-26: `march-surge-deploy/` → Vercel project `march-surge-deploy` (contents observed: `index.html` only). Confirm live alias and full file set before deploying or linking.
 
 ### Files Created
 - `presentations/march-28-bootcamp-slides.html` — Main slide deck (99 slides)
 - `presentations/March-28-Contract-Vehicles-Bootcamp.pdf` — PDF export (99 pages)
 - `presentations/march-28-pngs/` — Individual slide images (99 PNGs)
-- `march-surge-page/` — Static deploy folder (agenda, slides, hit-list, downloads)
+- `march-surge-deploy/` — VERIFY vs historical claim of `march-surge-page/` (agenda, slides, hit-list, downloads). Do not assume the old folder name exists.
 - `funnels/march-surge/` — 4-page funnel (landing → upsell → downsell → thank-you)
 - `funnels/march-surge/downloads/` — 6 free resources
 - `march-surge-email-sequence/` — 7 emails
@@ -294,12 +295,12 @@ Breaks: 10:15-10:30 AM, 12:00-12:45 PM (lunch), 2:15-2:30 PM, 4:45-5:00 PM
 1. **Find Your Federal Market** — the hidden 72% (drones = 70+ NAICS, $245M FY2025, obvious code only 28%)
 2. **Win the Recompete** — ~80% of opps are recompetes; who-holds-this-now (incumbent, ceiling, expiry, vehicle)
 3. **Write the Winning Proposal** — Proposal Assist: compliance matrix, Vault-grounded drafts (real UEI/CAGE, not [placeholders])
-4. **Know Who to Call** — full rosters by office, roles badged, codes decoded; 125K+ contacts, 170-command OSBP directory
-5. **Trust the Data** — 317K contractors / 88K opps; why a hallucinated number loses the bid
+4. **Know Who to Call** — full rosters by office, roles badged, codes decoded; contact and OSBP directory counts must be remeasured before citation (do not paste frozen figures)
+5. **Trust the Data** — contractor and opportunity corpus sizes must be remeasured before citation; a hallucinated number loses the bid
 
-### Grounded stats (fact-checked — always cite 317K for the contractor DB, never 2.7K)
-$750B market · $170B small-biz set-aside · 24,000+ contracts scanned/night · 317,106 contractors · 125K+ contacts · 88K+ SAM opps · 7,700+ forecasts · 170 OSBP commands.
-Hidden-market pattern (FY2025 USASpending): drones 72% / cyber 74% ($2.07B) / medical 74% hidden.
+### Grounded stats (do not paste frozen corpus numbers)
+Treat every `317K` contractor claim in this file as stale. Before any public corpus claim, open Market Assassin `src/lib/marketing-stats.ts` (owning structural source, including `CONTRACTOR_COUNT`), remeasure, and round down. Never cite the ~2.7K SEO-page contractor count as the database size. Do not freeze live headcounts into this file.
+Hidden-market pattern (FY2025 USASpending): drones 72% / cyber 74% ($2.07B) / medical 74% hidden. VERIFY non-corpus market figures before reuse.
 
 ### Files
 | Path | Contents |
@@ -360,7 +361,8 @@ Compute bumped Micro→Small (2GB). Migration `market-assassin/supabase/migratio
 - [x] Add "See Mindy in Action" Vimeo reels (portrait 9:16); swap getmindy.ai reels
 - [x] Wire Supabase funnel_leads backup for signups (tested end-to-end)
 - [x] Supabase: bump compute to 2GB + load-reduction indexes + SELECT* trim
-- [x] Sweep .org → .com everywhere; cite 317K (not 2.7K) for contractor DB
+- [ ] Classify remaining `.org` occurrences before editing; do not bulk replace.
+- [ ] Corpus copy: remove stale `317K` claims from published assets; cite only after resolving the current Market Assassin checkout, reading `src/lib/marketing-stats.ts`, and remeasuring.
 - [ ] Fill in real {{STREAM_LINK}} URLs after scheduling the 5 YT lives
 - [ ] Confirm Supabase memory baseline dropped (~24h after tier bump)
 - [ ] (Optional) Phase-2 DB optimization: count:exact→estimated, shared client, cron→local runners
