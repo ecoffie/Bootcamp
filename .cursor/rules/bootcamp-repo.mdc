@@ -1,0 +1,53 @@
+---
+description: Bootcamp repo identity, deploy fence, stats discipline, attribution fence
+alwaysApply: true
+---
+
+# Bootcamp repository rule
+
+This repository is static marketing and bootcamp content, export helpers, and per-folder Vercel pockets. It is not Market Assassin, GovCon Funnels, GovCon Shop, or Vault.
+
+## Authorization
+
+- Do not commit, push, open a PR, merge, publish, or deploy unless Eric explicitly requests that action in the current conversation.
+- Do not add Co-Authored-By or other attribution trailers unless Eric explicitly requests them for that commit.
+
+## Process fences
+
+- Do not run or invent Market Assassin migrate, cron_jobs, or marketing-literature workflows here.
+- Do not copy Market Assassin or GovCon Funnels deployment rules wholesale.
+- Non-trivial work belongs in a git worktree under `.claude/worktrees/<slug>`, branched from current `origin/main`, not from a dirty shared `main` or a stale/prunable worktree.
+- Do not assume `~/SOUL.md` is injected by Cursor. Open it only as on-demand context when the task requires it.
+
+## Corpus numbers
+
+- Treat every `317K` contractor claim as stale.
+- The owning structural source for contractor corpus sizing is Market Assassin `src/lib/marketing-stats.ts` (`CONTRACTOR_COUNT`). Resolve the current Market Assassin checkout, read that file, and remeasure before any public claim.
+- Do not copy numeric floors or live headcounts from memory, search results, or prior chats into Bootcamp persistent instructions or copy.
+- Round public claims down relative to the remeasured value. Never cite the ~2.7K SEO-page contractor count as the database size.
+
+## Executable gates
+
+- Exporters that end in `.catch(console.error)` are diagnostic, not hard gates, because failure may still exit 0.
+- Bare async IIFEs are not intentionally encoded gates; failure depends on runtime unhandled-rejection behavior.
+- A script is a hard gate only when its failure is intentionally represented by a nonzero exit.
+- Prose QA lists, curl recipes, and slash-command checks remain on-demand procedures.
+
+## Deploy / publish
+
+- Never infer the Vercel deployment target from the current working directory.
+- Root `.vercel` links to `govcon-resources`. That is the highest deployment footgun in this repo.
+- `govcon-tools/` is linked as Vercel project `recompete-contract-tracker`, not a name match.
+- Before any deploy or publish: Eric's explicit authorization in the current conversation is required, then verify the intended folder's `.vercel/project.json` `projectName`.
+- Done means open or export the artifact. If deploy was authorized, curl the intended URL for HTTP 200 after ship.
+
+## Related checkouts
+
+- Prefer repository-relative paths inside this repo.
+- For sibling products, resolve and verify the current checkout (commonly under `~/govcon-funnels`, `~/govcon-shop`, and `~/Market Assasin/market-assassin`). Do not treat any absolute machine path as permanent truth.
+- Ignore stale `Projects/govcon-funnels` and `Projects/vault` path strings until Related Projects in `CLAUDE.md` is corrected.
+
+## `.org` hosts
+
+- Existing `.org` occurrences have mixed meanings. Re-run the search and classify each occurrence before editing; do not preserve a search-result count in this rule.
+- Classify as compatibility link, historical/source reference, published artifact text, or stale canonical-host claim. Do not run a global `.org` → `.com` replacement from this rule.
