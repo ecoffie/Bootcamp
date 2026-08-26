@@ -85,7 +85,7 @@ For specifics, see these docs:
 | GovCon Funnels | `~/govcon-funnels` (verify checkout; stale `Projects/govcon-funnels` path is wrong) | `govcongiants.com` | Next.js 16 |
 | GovCon Shop | `~/govcon-shop` (verify checkout) | `shop.govcongiants.com` | Next.js 16 |
 | Market Assassin / Mindy | `~/Market Assasin/market-assassin` (verify checkout before use); owning stats file `src/lib/marketing-stats.ts` | `getmindy.ai` | Next.js |
-| The Vault | VERIFY — `/Users/ericcoffie/Projects/vault` does not exist on disk as of 2026-08-26. Do not invent a path. Candidate in-repo pocket: `govcon-resources/` (Vercel project `govcon-resources`). Confirm real Vault home before citing. | `govcongiants.com/vault` | Next.js 15 |
+| The Vault | VERIFY — the previously documented checkout does not exist. Candidate in-repo pocket: `govcon-resources/` (Vercel project `govcon-resources`). Confirm the real Vault home before citing. | `govcongiants.com/vault` | Next.js 15 |
 
 ---
 

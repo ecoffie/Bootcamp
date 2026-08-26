@@ -37,6 +37,7 @@ This repository is static marketing and bootcamp content, export helpers, and pe
 
 - Never infer the Vercel deployment target from the current working directory.
 - Root `.vercel` links to `govcon-resources`. That is the highest deployment footgun in this repo.
+- GitHub/Vercel preview integration may target a different project than the local `.vercel` link. A green preview does not prove the intended deployment target; verify both the GitHub status target and the intended folder’s `.vercel/project.json` `projectName`.
 - `govcon-tools/` is linked as Vercel project `recompete-contract-tracker`, not a name match.
 - Before any deploy or publish: Eric's explicit authorization in the current conversation is required, then verify the intended folder's `.vercel/project.json` `projectName`.
 - Done means open or export the artifact. If deploy was authorized, curl the intended URL for HTTP 200 after ship.
